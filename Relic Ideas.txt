@@ -43,6 +43,8 @@ You can't avoid them all.
 - Cherry Blossom -
 (Common)
 The first exhaust card you play each combat dosen't exhaust on its first use
+OR
+All exhaust cards become etheral instead
 
 - Bloody Coin -
 (Uncommon)
