@@ -21,6 +21,11 @@ Common
 Draw one card
 Next turn draw two more cards
 
+- Silent Doom -
+(Curse)
+Lose 1 Energy next turn if in hand at the end of the turn
+Can be played to exhaust for 2 energy
+
 
 No Art:
 
@@ -48,7 +53,7 @@ Colorless
 Every time you play an attack this turn draw a card
 Exhaust
 
-- Silent Doom -
-(Curse)
-Lose 1 Energy next turn if in hand at the end of the turn
-Can be played to exhaust for 2 energy
+-  -
+(Colorless)
+Gain 2 Artifact
+Exhaust
