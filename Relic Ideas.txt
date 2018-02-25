@@ -41,7 +41,7 @@ You can't avoid them all.
 "Evade every 10th attack against you."
 
 - Cherry Blossom -
-(Rare)
+(Common)
 The first exhaust card you play each combat dosen't exhaust on its first use
 
 - Bloody Coin -
