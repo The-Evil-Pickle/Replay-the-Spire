@@ -1,0 +1,54 @@
+----CARDS----
+
+Art Done:
+
+- Atom Bomb -
+Rare
+(Cost 4)
+Deal 60 (75) damage
+Apply 3 (4) poisioon to all enemies
+Exhaust
+
+- Molotov -
+Uncommon
+(Cost 2)
+Deal 12 (18) Damage to target
+Deal 6 (9) Damage to all other enemies
+
+- Double Draw -
+Common
+(Cost 1 (0))
+Draw one card
+Next turn draw two more cards
+
+
+No Art:
+
+- Consuming Greed -
+Common
+(Cost 2)
+Draw four cards
+Draw one less card for 3 (2) turns
+Exhaust
+
+- Mercy Rain -
+Uncommon
+(Cost 1)
+Enemy attacks this turn are negated and they instead heal for that ammount
+Exhaust
+
+- Guardian Angel -
+Rare
+(Cost 2) (Power)
+Gain 1 (2) HP every time you draw a card(s)
+
+- Yata-Draw -
+Colorless
+(Cost 0)
+Every time you play an attack this turn draw a card
+Exhaust
+
+- Silent Doom -
+(Curse)
+Lose 1 Energy next turn if in hand at the end of the turn
+Can be played to exhaust for 2 energy

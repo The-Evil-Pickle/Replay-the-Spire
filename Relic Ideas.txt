@@ -1,0 +1,54 @@
+----RELICS----
+
+Onion Ring
+does the opposite of garlic, it starts the player with +3 strength that wears off. 
+
+Mirror makes it so that weak and vulnerable status effects are also given to the enemy that sends them. I was thinking it would look like a hand mirror.
+
+Baseball (Relic - Common)
+We all have our favorite player.
+"On pickup, a random card in your deck becomes free."
+
+Funnel (Relic - Common)
+Use every last drop.
+"At the end of your turn, unused energy is converted to 4 block each."
+
+Garlic (Relic - Uncommon)
+Taking a whiff may cause your eyes to tear up.
+"Enemies lose 3 Strength at the start of combat. They gain 1 Strength over the next 3 turns."
+
+Onion Ring (Relic - Uncommon)
+The onion is encased in a deep-fried breading.The onion is encased in a deep-fried breading.
+"You gain 3 Strength at the start of combat. You lose 1 Strength over the next 3 turns."
+
+Mirror (Relic - Rare)
+You can see yourself through the glass. The good and the bad.
+"Whenever you gain Vulnerable or Weakened, it is also applied to the enemy that sent it."
+
+Arrowhead (Relic - Rare)
+The first thing you ever forged.
+"You may upgrade 2 cards whenever you smith."
+
+Electric Blood (Relic - Boss - Ironclad only)
+You feel your body surging with power. It hurts.
+"Gain 2 energy at the start of each turn. Take 1 damage for each energy used."
+
+Frog Leg (Relic - Boss - Silent only)
+You can't avoid them all.
+"Evade every 10th attack against you."
+
+- Cherry Blossom =
+(Rare)
+On pickup a random exhaust card in your deck can now be played twice before exhausting
+
+- Bloody Coin -
+(Uncommon)
+Gain 5 gold every time you take unblocked damage
+
+- Snack Pack -
+(Uncommon)
+Gain 2 HP whenever you play 3 attacks in a turn
+
+- Bandana -
+(Uncommon)
+Gain 2 thievery
