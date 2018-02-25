@@ -42,7 +42,7 @@ You can't avoid them all.
 
 - Cherry Blossom -
 (Rare)
-On pickup a random exhaust card in your deck can now be played twice before exhausting
+The first exhaust card you play each combat dosen't exhaust on its first use
 
 - Bloody Coin -
 (Uncommon)
