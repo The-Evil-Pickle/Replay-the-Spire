@@ -822,6 +822,13 @@
 	" additional cards."
 	]
   },
+  "Snack Pack": {
+	"NAME": "Snack Pack",
+	"FLAVOR": "Always come prepared with a snack.",
+    "DESCRIPTIONS": [
+	"Every time you play 3 #yAttacks in a single turn, gain 2 HP."
+	]
+  },
   "Snecko Eye": {
 	"NAME": "Snecko Eye",
 	"FLAVOR": "An eye of a fallen snecko. Much larger than you imagined.",

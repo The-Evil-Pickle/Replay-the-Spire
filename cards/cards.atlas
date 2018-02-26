@@ -1269,6 +1269,13 @@ green/attack/unload
   orig: 250, 190
   offset: 1, 4
   index: -1
+green/attack/atomBomb
+  rotate: false
+  xy: 1002, 198
+  size: 244, 182
+  orig: 250, 190
+  offset: 2, 8
+  index: -1
 green/skill/survivor
   rotate: false
   xy: 252, 6
@@ -1363,13 +1370,6 @@ red/skill/trueGrit
 red/skill/warCry
   rotate: false
   xy: 752, 198
-  size: 244, 182
-  orig: 250, 190
-  offset: 2, 8
-  index: -1
-red/attack/atomBomb
-  rotate: false
-  xy: 1002, 198
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
