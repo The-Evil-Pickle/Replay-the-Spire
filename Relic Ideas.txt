@@ -62,3 +62,7 @@ Gain 2 thievery
 - Iron Hammer -
 (Uncommon)
 During the first turn, drawing a card upgrades it for the rest of combat.
+
+- ??? -
+(???)
+Draw three extra cards each turn. Every time you play a card discard a card.
