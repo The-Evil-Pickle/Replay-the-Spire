@@ -41,6 +41,13 @@
 	" additional cards."
 	]
   },
+  "Bandana": {
+	"NAME": "Bandana",
+	"FLAVOR": "The finest article of pickpocketing attire.",
+    "DESCRIPTIONS": [
+	"Gain 2 #yThievery."
+	]
+  },
   "Baseball": {
 	"NAME": "Baseball",
 	"FLAVOR": "We all have our favorite player.",
