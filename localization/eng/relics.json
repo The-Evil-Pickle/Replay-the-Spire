@@ -395,6 +395,13 @@
 	"Energy is now conserved between turns."
 	]
   },
+  "IronHammer": {
+	"NAME": "Iron Hammer",
+	"FLAVOR": "A handy - and heavy - tool.",
+	"DESCRIPTIONS": [
+	"During the first turn, drawing a card upgrades it."
+	]
+  },
   "Juzu Bracelet": {
 	"NAME": "Juzu Bracelet",
 	"FLAVOR": "A ward against the unknown.",

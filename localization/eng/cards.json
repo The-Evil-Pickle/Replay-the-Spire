@@ -8,6 +8,10 @@
     "NAME": "Atom Bomb",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Poison to ALL enemies. NL Exhaust."
   },
+  "LoomingEvil": {
+	"NAME": "Looming Evil",
+	"DESCRIPTION": "Can be played to Exhaust. NL At the end of your turn, shuffle a curse into your draw pile and reduce cost."
+  },
   "Immolate": {
     "NAME": "Immolate",
     "DESCRIPTION": "Exhaust 1 card. If the chosen card was a Status or Curse, deal !D! damage to ALL enemies."
