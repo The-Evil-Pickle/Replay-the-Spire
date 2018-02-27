@@ -58,3 +58,7 @@ Gain 2 HP whenever you play 3 attacks in a turn
 - Bandana -
 (Uncommon)
 Gain 2 thievery
+
+- Iron Hammer -
+(Uncommon)
+During the first turn, drawing a card upgrades it for the rest of combat.
