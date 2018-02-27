@@ -53,11 +53,15 @@ Colorless
 Every time you play an attack this turn draw a card
 Exhaust
 
-- Looming Evil -
+- Looming Evil - !Broken!
 (Curse)
 (Cost 3)
 Can be played to Exhaust.
 If in your hand at the end of the turn, shuffle a random curse into your draw pile and reduce this card's cost by 1.
+
+- Hallucinations -
+(Curse)
+Unplayable. At the end of your turn, shuffle three random cards into your draw pile. Exhaust.
 
 -  -
 (Colorless)

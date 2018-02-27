@@ -1,0 +1,138 @@
+{
+  "Adrenaline Potion": {
+	"NAME": "Adrenaline Potion",
+    "DESCRIPTIONS": [
+			"Draw #b",
+			" card",
+			" and gain #b",
+			" Energy."
+	]
+  },
+  "Ancient Potion": {
+	"NAME": "Ancient Potion",
+    "DESCRIPTIONS": [
+			"Gain #b",
+			" #yArtifact."
+	]
+  },
+  "Block Potion": {
+	"NAME": "Block Potion",
+    "DESCRIPTIONS": [
+			"Gain #b",
+			" #yBlock."
+	]
+  },
+  "Death Potion": {
+	"NAME": "Death Potion",
+    "DESCRIPTIONS": [
+			"Deal #b",
+			" damage. Lose #b",
+			" health."
+	]
+  },
+  "Dexterity Potion": {
+	"NAME": "Dexterity Potion",
+    "DESCRIPTIONS": [
+			"Gain #b",
+			" #yDexterity."
+	]
+  },
+  "Elixir": {
+	"NAME": "Elixir",
+    "DESCRIPTIONS": [
+			"",
+			"",
+			"#yExhaust all #yStatus and #yCurse cards from your hand.",
+			"",
+			"It had no effect..."
+	]
+  },
+  "Energy Potion": {
+	"NAME": "Energy Potion",
+    "DESCRIPTIONS": [
+			"Gain #b",
+			" Energy."
+	]
+  },
+  "Explosive Potion": {
+	"NAME": "Explosive Potion",
+    "DESCRIPTIONS": [
+			"Deal #b",
+			" damage to ALL enemies."
+	]
+  },
+  "Fire Potion": {
+	"NAME": "Fire Potion",
+    "DESCRIPTIONS": [
+			"Deal #b",
+			" damage."
+	]
+  },
+  "Health Potion": {
+	"NAME": "Health Potion",
+    "DESCRIPTIONS": [
+			"Heal #b",
+			" HP."
+	]
+  },
+  "Poison Potion": {
+	"NAME": "Poison Potion",
+    "DESCRIPTIONS": [
+			"Apply #b",
+			" #yPoison."
+	]
+  },
+  "Potion Slot": {
+	"NAME": "Potion Slot",
+    "DESCRIPTIONS": [
+			"Use potions during combat to gain #gbonuses or #rhinder enemies.",
+			"Potion Slot"
+	]
+  },
+    "Regen Potion": {
+	"NAME": "Regen Potion",
+    "DESCRIPTIONS": [
+			"Heal #b",
+			" #yHP at the end of each turn for #b",
+			" turns."
+	]
+  },
+  "Strength Potion": {
+	"NAME": "Strength Potion",
+    "DESCRIPTIONS": [
+			"Gain #b",
+			" #yStrength."
+	]
+  },
+  "Swift Potion": {
+	"NAME": "Swift Potion",
+    "DESCRIPTIONS": [
+			"",
+			"Draw #b",
+			" cards."
+	]
+  },
+  "Thorns Potion": {
+	"NAME": "Thorns Potion",
+    "DESCRIPTIONS": [
+			"Gain #b",
+			" #yThorns."
+	]
+  },
+  "Toxic Potion": {
+	"NAME": "Toxic Potion",
+    "DESCRIPTIONS": [
+			"Apply #b",
+			" #yPoison to ALL enemies. Gain #b",
+			" #yVoulnerable and #b",
+			" #yFrail."
+	]
+  },
+    "Weak Potion": {
+	"NAME": "Weak Potion",
+    "DESCRIPTIONS": [
+			"Apply #b",
+			" #yWeak."
+	]
+  }
+}

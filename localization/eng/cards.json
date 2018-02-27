@@ -12,6 +12,10 @@
 	"NAME": "Looming Evil",
 	"DESCRIPTION": "Can be played to Exhaust. NL At the end of your turn, shuffle a curse into your draw pile and reduce cost."
   },
+  "Hallucinations": {
+	"NAME": "Hallucinations",
+	"DESCRIPTION": "Unplayable. NL At the end of your turn, add !M! random cards to your draw pile. NL Exhaust."
+  },
   "Immolate": {
     "NAME": "Immolate",
     "DESCRIPTION": "Exhaust 1 card. If the chosen card was a Status or Curse, deal !D! damage to ALL enemies."
