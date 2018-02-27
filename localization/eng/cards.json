@@ -10,7 +10,7 @@
   },
   "Life Link": {
     "NAME": "Life Link",
-    "DESCRIPTION": "Apply to an enemy. NL When you lose health, the linked enemy takes that much damage."
+    "DESCRIPTION": "Apply to an enemy. When you lose health, the linked enemy takes that much damage. NL Exhaust."
   },
   "Looming Evil": {
 	"NAME": "Looming Evil",
@@ -18,7 +18,7 @@
   },
   "Hallucinations": {
 	"NAME": "Hallucinations",
-	"DESCRIPTION": "Unplayable. NL At the end of your turn, add !M! random cards to your draw pile. NL Exhaust."
+	"DESCRIPTION": "Unplayable. NL At the end of your turn, add !M! random cards to your draw pile and Exhaust."
   },
   "Immolate": {
     "NAME": "Immolate",
