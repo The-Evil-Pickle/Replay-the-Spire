@@ -172,6 +172,13 @@
 	"Decreases #yBlock gained from cards by #b"
     ]
   },
+  "Doomed": {
+    "NAME": "Doomed",
+    "DESCRIPTIONS": [
+	"Perish in #b", 
+	" turn."
+    ]
+  },
   "Double Damage": {
     "NAME": "Double Damage",
     "DESCRIPTIONS": [
@@ -391,6 +398,13 @@
     "DESCRIPTIONS": [
 	"Whenever you play a #yPower, draw #b", 
 	" cards."
+    ]
+  },
+  "Life Link": {
+    "NAME": "Life Link",
+    "DESCRIPTIONS": [
+	"Whenever you lose health, enemies with #yLife #yLink will also take damage.", 
+	"Takes damage whenever you lose health."
     ]
   },
   "Flex": {
