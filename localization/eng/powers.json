@@ -400,10 +400,10 @@
 	" cards."
     ]
   },
-  "Life Link": {
-    "NAME": "Life Link",
+  "Life Bind": {
+    "NAME": "Life Bind",
     "DESCRIPTIONS": [
-	"Whenever you lose health, enemies with #yLife #yLink will also take damage.", 
+	"Whenever you lose health, enemies with #yLife #yBind will also take damage.", 
 	"Takes damage whenever you lose health."
     ]
   },
