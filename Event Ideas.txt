@@ -1,0 +1,18 @@
+----EVENTS----
+
+- Gremlin Darts -
+Like the Wheel of Fortune event but you can time it with a dart. Would be cool if it had more randomized rewards.
+
+- Upgrade or Remove -
+A random non-upgraded card from your deck is chosen and you are forced to either upgrade or remove it.
+
+- Disenchanter -
+You meet a disenchanter who is desparate to disenchant cards, saying he'll give you 80 gold to degrade one of your upgraded cards.
+
+- Fishing -
+Similar to the bonfire spirits. You find a pool of water, but must use one of your cards as bait.
+Choosing a curse starts a fight with The Maw.
+Colorless does nothing.
+Common card gives a common relic.
+Uncommon card gives an uncommon relic.
+Rare card gives a rare relic.
