@@ -75,6 +75,13 @@
 			" HP."
 	]
   },
+  "Ironskin Potion": {
+	"NAME": "Ironskin Potion",
+    "DESCRIPTIONS": [
+			"Gain #b",
+			" #yBlock at the end of each turn."
+	]
+  },
   "Poison Potion": {
 	"NAME": "Poison Potion",
     "DESCRIPTIONS": [

@@ -53,6 +53,7 @@ public class CardLibrary
     }
     
     private static void addRedCards() {
+        add(new Abandon());
         add(new Anger());
         add(new Armaments());
         add(new Barricade());
@@ -99,6 +100,7 @@ public class CardLibrary
         add(new Intimidate());
         add(new IronWave());
         add(new Juggernaut());
+        add(new LifeLink());
         add(new LimitBreak());
         add(new Metallicize());
         add(new Offering());
@@ -243,8 +245,9 @@ public class CardLibrary
         add(new Clumsy());
         add(new Decay());
         add(new Doubt());
+        add(new Hallucinations());
         add(new Injury());
-        add(new LoomingEvil());
+        //add(new LoomingEvil());
         add(new Necronomicurse());
         add(new Normality());
         add(new Pain());

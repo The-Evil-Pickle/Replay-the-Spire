@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.potions.WeakenPotion;
 
 import com.megacrit.cardcrawl.potions.AdrenalinePotion;
 import com.megacrit.cardcrawl.potions.DeathPotion;
+import com.megacrit.cardcrawl.potions.IronSkinPotion;
 import com.megacrit.cardcrawl.potions.ThornsPotion;
 import com.megacrit.cardcrawl.potions.ToxicPotion;
 
@@ -51,6 +52,7 @@ public class PotionHelper
 	
 	potions.add("Adrenaline Potion");
 	potions.add("Death Potion");
+	potions.add("Ironskin Potion");
 	potions.add("Thorns Potion");
 	potions.add("Toxic Potion");
   }

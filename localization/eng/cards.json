@@ -8,6 +8,11 @@
     "NAME": "Atom Bomb",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Poison to ALL enemies. NL Exhaust."
   },
+  "Abandon": {
+    "NAME": "Abandon",
+    "DESCRIPTION": "Exhaust !M! card. NL Draw 1 card. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Exhaust 1 - !M! cards. NL Draw 1 card. NL Ethereal."
+  },
   "Life Link": {
     "NAME": "Life Bind",
     "DESCRIPTION": "Apply to an enemy. When you lose health, the bound enemy takes that much damage. NL Exhaust."
