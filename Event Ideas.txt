@@ -16,3 +16,23 @@ Colorless does nothing.
 Common card gives a common relic.
 Uncommon card gives an uncommon relic.
 Rare card gives a rare relic.
+
+- Mirror Mist -
+"In the mist you see a twisted reflection of yourself. You struggle to keep your thoughts your own as swirling colors surround you."
+Options:
+*[Requires: Bash] Lose Bash, gain Survivor and Neutralize.
+*[Requires: Ring of the Snake] Lose Ring of the Snake, gain Burning Blood.
+*Transform a random card, then upgrade it.
+
+- Sirens -
+"While stopping to rest, you hear the faint song of sirens. It seems to be calling to you, pulling you closer..."
+Options:
+*[Listen] Remove 3 cards from your deck. Become cursed - Hallucinations.
+*[Meditate] Heal 35 health. 67%: Become cursed - Clumsy x2.
+*[Approach] Gain 40 gold. Alert the sirens.
+^"The sirens notice you, and move to attack!"
+^*[Fight] Gain 25 gold. Take 15 damage. 50%: gain a relic. 50%: Become cursed - Injury.
+^*[Flee] Take 5 damage. Lose a random card.
+^*[Surrender] Lose [random relic (player can see which one)].
+*[Leave]
+
