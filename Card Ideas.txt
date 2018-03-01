@@ -73,6 +73,11 @@ Apply Life Bind to an enemy. When you lose health, that enemy is dealt the same 
 (Cost 0)
 Exhaust 1 card. Draw 1 card. Ethereal.
 
+- Massacre -
+(red)
+(Cost 1)
+Deal 1 damage to all enemies, then lose all strength. Affected by strength 5(8) times.
+
 -  -
 (Colorless)
 Gain 2 Artifact

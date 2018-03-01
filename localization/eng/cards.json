@@ -17,6 +17,10 @@
     "NAME": "Life Bind",
     "DESCRIPTION": "Apply to an enemy. When you lose health, the bound enemy takes that much damage. NL Exhaust."
   },
+  "Massacre": {
+    "NAME": "Massacre",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Lose all Strength. NL Affected !M! times by Strength."
+  },
   "Looming Evil": {
 	"NAME": "Looming Evil",
 	"DESCRIPTION": "Can be played to Exhaust. NL At the end of your turn, shuffle a curse into your draw pile and reduce cost."

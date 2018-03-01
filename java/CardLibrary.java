@@ -102,6 +102,7 @@ public class CardLibrary
         add(new Juggernaut());
         add(new LifeLink());
         add(new LimitBreak());
+		add(new Massacre());
         add(new Metallicize());
         add(new Offering());
         add(new PerfectedStrike());
