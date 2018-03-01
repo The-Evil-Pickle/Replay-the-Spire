@@ -9,8 +9,8 @@
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Poison to ALL enemies. NL Exhaust."
   },
   "Life Link": {
-    "NAME": "Life Link",
-    "DESCRIPTION": "Apply to an enemy. When you lose health, the linked enemy takes that much damage. NL Exhaust."
+    "NAME": "Life Bind",
+    "DESCRIPTION": "Apply to an enemy. When you lose health, the bound enemy takes that much damage. NL Exhaust."
   },
   "Looming Evil": {
 	"NAME": "Looming Evil",

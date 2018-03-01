@@ -63,6 +63,11 @@ If in your hand at the end of the turn, shuffle a random curse into your draw pi
 (Curse)
 Unplayable. At the end of your turn, shuffle three random cards into your draw pile. Exhaust.
 
+- Life Bind -
+(red)
+(cost 1(0 upgraded)
+Apply Life Bind to an enemy. When you lose health, that enemy is dealt the same amount of damage.
+
 -  -
 (Colorless)
 Gain 2 Artifact
