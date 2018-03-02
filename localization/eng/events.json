@@ -199,7 +199,7 @@
 	],
     "OPTIONS": [
 			"[Continue]",
-			"[Take Off Pants] #rLose #ryour #rpants #rand ",
+			"[Take Off Pants] #rLose #ryour #rpants #rand #rLose ",
 			"[Tug] #gKeep #gyour #gpants #gand #gUpgrade ",
 			"[Locked] Requires: Unupgraded Card",
 			"[Leave]"
