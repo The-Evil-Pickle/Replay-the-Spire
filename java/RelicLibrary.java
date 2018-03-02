@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.metrics.LeaderboardPoster.LeaderboardDataType;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 import com.megacrit.cardcrawl.relics.Anchor;
+import com.megacrit.cardcrawl.relics.Arrowhead;
 import com.megacrit.cardcrawl.relics.AncientTeaSet;
 import com.megacrit.cardcrawl.relics.ArtOfWar;
 import com.megacrit.cardcrawl.relics.Astrolabe;
@@ -164,6 +165,7 @@ public class RelicLibrary
     long startTime = System.currentTimeMillis();
     
     add(new Anchor());
+    add(new Arrowhead());
     add(new ArtOfWar());
     add(new Astrolabe());
     add(new BagOfMarbles());

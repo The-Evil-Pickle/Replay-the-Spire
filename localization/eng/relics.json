@@ -7,6 +7,13 @@
 	" #yBlock." 
 	]
   },
+  "Arrowhead": {
+	"NAME": "Arrowhead",
+	"FLAVOR": "The first thing you ever forged.",
+    "DESCRIPTIONS": [
+	"You may #yUpgrade 2 cards whenever you smith."
+	]
+  },
   "Art of War": {
 	"NAME": "Art of War",
 	"FLAVOR": "This ancient manuscript contains wisdom from a past age.",
