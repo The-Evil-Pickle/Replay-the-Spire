@@ -295,6 +295,13 @@
 	"Gain [B] at the start of each turn."
 	]
   },
+  "Electric Blood": {
+	"NAME": "Electric Blood",
+	"FLAVOR": "You feel your body surging with power. It hurts.",
+    "DESCRIPTIONS": [
+	"Gain [R] [R] at the start of each turn. NL Take 1 damage for every [R] you use."
+	]
+  },
   "Frozen Egg 2": {
 	"NAME": "Frozen Egg",
 	"FLAVOR": "The egg lies inert and frozen, never to hatch.",

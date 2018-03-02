@@ -41,6 +41,7 @@ import com.megacrit.cardcrawl.relics.Dodecahedron;
 import com.megacrit.cardcrawl.relics.DreamCatcher;
 import com.megacrit.cardcrawl.relics.DuVuDoll;
 import com.megacrit.cardcrawl.relics.Ectoplasm;
+import com.megacrit.cardcrawl.relics.ElectricBlood;
 import com.megacrit.cardcrawl.relics.Enchiridion;
 import com.megacrit.cardcrawl.relics.EternalFeather;
 import com.megacrit.cardcrawl.relics.FrozenEgg2;
@@ -284,6 +285,7 @@ public class RelicLibrary
     addRed(new BurningBlood());
     addRed(new ChampionsBelt());
     addRed(new CharonsAshes());
+	addRed(new ElectricBlood());
     addRed(new MagicFlower());
     addRed(new MarkOfPain());
     addRed(new PaperFrog());
