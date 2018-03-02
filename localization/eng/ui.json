@@ -52,7 +52,12 @@
 		"All Characters",
 		"Wins and Losses",
 		"Wins",
-		"Losses"
+		"Losses",
+		"Daily",
+		"Any Game Type",
+		"Only Normal",
+		"Only Ascension",
+		"Only Daily Challenge"
     ]
   },
   "LeaderboardsScreen": {
@@ -611,7 +616,7 @@
     "TEXT": [
 		"Daily Challenge",
 		"Connecting to Time Server...",
-		"You have done today's challenge",
+		"#yNOTE: You have done today's challenge. NL Scores aren't submitted for repeat attempts.",
 		"Return",
 		"Embark",
 		"Today's character: ",
