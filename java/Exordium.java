@@ -62,6 +62,7 @@ public class Exordium extends AbstractDungeon
         Exordium.scene = new TheBottomScene();
         Exordium.fadeColor = Color.valueOf("1e0f0aff");
         this.initializeLevelSpecificChances();
+        Exordium.miscRng = new Random(Settings.seed + saveFile.floor_num);
         CardCrawlGame.music.changeBGM(Exordium.id);
         Exordium.mapRng = new Random(Settings.seed);
         generateMap();
