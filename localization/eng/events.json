@@ -745,5 +745,45 @@
 			" #yGold.",
 			"[Leave]"
     ]
+  },
+  "Mirror Mist": {
+	"NAME": "Mirror Mist",
+	"DESCRIPTIONS": [
+		"In the mist you see a twisted reflection of yourself. You struggle to keep your thoughts your own as swirling colors surround you.",
+		"You briefly remember lost memories, but they belong to one other than yourself. The mist clears, leaving you somewhat disoriented.",
+		"You feel as if some part of you has been lost, but you can't quite place it. As the mist clears, the feeling is soon forgotten."
+	],
+	"OPTIONS": [
+		"[Locked] Requires: ",
+		".",
+		"[Lose ",
+		"] #gObtain #gSurvivor #gand #gNeutralize.",
+		"] #gObtain #gBurning #gBlood.",
+		"[Wander] Transform and upgrade a random card.",
+		"[Leave]"
+	]
+  },
+  "Trapped Chest": {
+	"NAME": "Trapped Chest",
+	"DESCRIPTIONS": [
+		"You find a locked chest. Something about it seems a bit off...",
+		"As you open the chest, darts suddently fly out at you!",
+		"The key smoothly unlocks the chest without triggering the trap mechanism.",
+		"Despite your best efforts, the trap manages to hit its mark. But at least the chest is unlocked!",
+		"You manage to dodge the darts - but just barely.",
+		"The chest contains stashed items!"
+	],
+	"OPTIONS": [
+		"[Pick Lock] #gObtain #grandom #gloot. #rTrigger #ra #rtrap.",
+		"[Use Cursed Key] #gObtain #grandom #gloot. #rObtain #rrandom #rcurse.",
+		"[Locked] Requires: Cursed Key.",
+		"[Leave]",
+		"[Endure] #rBecome #rCursed #r- #rPain.",
+		"[Block] #rTake #r",
+		" #rDamage.",
+		"[Dodge] #r",
+		"%: #rTake #r",
+		"[Open Chest]"
+	]
   }
 }

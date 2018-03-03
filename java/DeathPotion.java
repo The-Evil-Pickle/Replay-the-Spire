@@ -23,17 +23,17 @@ public class DeathPotion
   public static final String NAME = potionStrings.NAME;
   public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
   
-  private int secondPotency = 20;
+  private int secondPotency = 15;
   
   public DeathPotion()
   {
     super(NAME, "Death Potion", AbstractPotion.PotionSize.L, AbstractPotion.PotionColor.STRENGTH);
     if (AbstractDungeon.ascensionLevel >= 11) {
-      this.potency = 65;
-	  this.secondPotency = 30;
+      this.potency = 30;
+	  this.secondPotency = 18;
     } else {
-      this.potency = 80;
-	  this.secondPotency = 25;
+      this.potency = 35;
+	  this.secondPotency = 15;
     }
     this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1] + this.secondPotency + DESCRIPTIONS[2]);
     this.isThrown = true;

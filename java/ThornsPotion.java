@@ -28,9 +28,9 @@ public class ThornsPotion
   {
     super(NAME, "Thorns Potion", AbstractPotion.PotionSize.M, AbstractPotion.PotionColor.ANCIENT);
     if (AbstractDungeon.ascensionLevel >= 11) {
-      this.potency = 3;
+      this.potency = 2;
     } else {
-      this.potency = 5;
+      this.potency = 4;
     }
     this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1]);
     this.isThrown = false;

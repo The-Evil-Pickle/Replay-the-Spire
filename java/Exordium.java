@@ -35,6 +35,7 @@ public class Exordium extends AbstractDungeon
         (Exordium.scene = new TheBottomScene()).randomizeScene();
         Exordium.fadeColor = Color.valueOf("1e0f0aff");
         this.initializeSpecialOneTimeEventList();
+		this.specialOneTimeEventList.add("Trapped Chest");
         this.initializeLevelSpecificChances();
         Exordium.mapRng = new Random(Settings.seed);
         generateMap();
@@ -188,6 +189,7 @@ public class Exordium extends AbstractDungeon
         Exordium.eventList.add("Scrap Ooze");
         Exordium.eventList.add("Shining Light");
 		Exordium.eventList.add("Stuck");
+		Exordium.eventList.add("Mirror Mist");
     }
     
     @Override

@@ -18,11 +18,22 @@ Uncommon card gives an uncommon relic.
 Rare card gives a rare relic.
 
 - Mirror Mist -
+(Exordium Event)
 "In the mist you see a twisted reflection of yourself. You struggle to keep your thoughts your own as swirling colors surround you."
 Options:
 *[Requires: Bash] Lose Bash, gain Survivor and Neutralize.
 *[Requires: Ring of the Snake] Lose Ring of the Snake, gain Burning Blood.
 *Transform a random card, then upgrade it.
+
+- Trapped Chest -
+(All Chapter One-Time Event)
+Options:
+*[Pick Lock] Obtain random loot, trigger a trap.
+^*[Endure] Become cursed - Pain.
+^*[Block] Take light damage.
+^*[Dodge] Chance to take heavy damage.
+*[Requires: Cursed Key] Obtain random loot, obtain random curse.
+*[Leave]
 
 - Sirens -
 "While stopping to rest, you hear the faint song of sirens. It seems to be calling to you, pulling you closer..."

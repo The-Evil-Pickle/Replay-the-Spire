@@ -255,6 +255,12 @@ public class EventHelper
             case "The Moai Head": {
                 return new MoaiHead();
             }
+			case "Mirror Mist": {
+				return new MirrorMist();
+			}
+			case "Trapped Chest": {
+				return new TrappedChest();
+			}
             default: {
                 EventHelper.logger.info("---------------------------\nERROR: Unspecified key: " + key + " in EventHelper.\n---------------------------");
                 return null;
