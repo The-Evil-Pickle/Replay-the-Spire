@@ -5,7 +5,7 @@ public class Arrowhead extends AbstractRelic
     public static final String ID = "Arrowhead";
     
     public Arrowhead() {
-        super("Arrowhead", "kunai.png", RelicTier.RARE, LandingSound.HEAVY);
+        super("Arrowhead", "arrowhead.png", RelicTier.RARE, LandingSound.HEAVY);
     }
     
     @Override

@@ -1269,13 +1269,6 @@ green/attack/unload
   orig: 250, 190
   offset: 1, 4
   index: -1
-green/attack/atomBomb
-  rotate: false
-  xy: 1002, 198
-  size: 244, 182
-  orig: 250, 190
-  offset: 2, 8
-  index: -1
 green/skill/survivor
   rotate: false
   xy: 252, 6
@@ -1377,6 +1370,26 @@ red/skill/warCry
 status/wound
   rotate: false
   xy: 748, 14
+  size: 244, 182
+  orig: 250, 190
+  offset: 2, 8
+  index: -1
+
+replaycards.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+green/attack/atomBomb
+  rotate: false
+  xy: 6, 190
+  size: 244, 182
+  orig: 250, 190
+  offset: 2, 8
+  index: -1
+red/skill/abandon
+  rotate: false
+  xy: 6, 380
   size: 244, 182
   orig: 250, 190
   offset: 2, 8

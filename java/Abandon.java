@@ -28,7 +28,7 @@ public class Abandon
   
   public Abandon()
   {
-    super("Abandon", NAME, "red/skill/trueGrit", "red/skill/trueGrit", 0, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.NONE, 1);
+    super("Abandon", NAME, "red/skill/abandon", "red/skill/abandon", 0, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.NONE, 1);
     this.baseMagicNumber = 1;
     this.magicNumber = this.baseMagicNumber;
     this.isEthereal = true;
