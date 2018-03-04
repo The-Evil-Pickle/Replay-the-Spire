@@ -78,7 +78,7 @@ Exhaust 1 card. Draw 1 card. Ethereal.
 (Cost 1)
 Deal 1 damage to all enemies, then lose all strength. Affected by strength 5(8) times.
 
--  -
-(Colorless)
-Gain 2 Artifact
-Exhaust
+
+- Improvise -
+(colorless)
+Choose 1 of 3 random cards to (upgrade and) add to your hand.

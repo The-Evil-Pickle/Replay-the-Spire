@@ -21,9 +21,14 @@
     "NAME": "Massacre",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Lose all Strength. NL Affected !M! times by Strength."
   },
+  "Improvise": {
+    "NAME": "Improvise",
+    "DESCRIPTION": "Choose 1 of 3 random cards to add to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose 1 of 3 random cards to upgrade and add to your hand. NL Exhaust."
+  },
   "Looming Evil": {
 	"NAME": "Looming Evil",
-	"DESCRIPTION": "Can be played to Exhaust. NL At the end of your turn, shuffle a curse into your draw pile and reduce cost."
+	"DESCRIPTION": "Can be played for !M! [R] to Exhaust. NL At the end of your turn, shuffle a curse into your draw pile and reduce cost."
   },
   "Hallucinations": {
 	"NAME": "Hallucinations",
