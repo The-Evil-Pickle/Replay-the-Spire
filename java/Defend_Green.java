@@ -57,7 +57,7 @@ public class Defend_Green
   
   public void upgrade()
   {
-	if (AbstractDungeon.player.hasRelic("Simple Rune"))
+	if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("Simple Rune"))
 	{
 		upgradeBlock(3 + this.timesUpgraded);
 		this.timesUpgraded += 1;

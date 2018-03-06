@@ -1,0 +1,150 @@
+{
+  "Ironclad": {
+	"NAMES": [
+		"The Ironclad"
+	], 
+    "TEXT": [
+		"The remaining soldier of the Ironclads. NL Sold his soul to harness demonic energies."
+	]
+  },
+  "Crowbot": {
+	"NAMES": [
+		"Crowbot"
+	], 
+    "TEXT": [
+		"BEEP BOOP"
+	]
+  },
+  "Silent": {
+	"NAMES": [
+		"The Silent"
+	], 
+    "TEXT": [
+		"A deadly huntress from the foglands. NL Eradicates foes with daggers and poisons."
+	]
+  },
+  "Neow Event": {
+	"NAMES": [
+		"Neow"
+	], 
+    "TEXT": [
+		"~Greetings...~ NL ~I..~ ~am~ ~Neow...~",
+		"~Hello...~ NL ~Again..~",
+		"~Greetings...~",
+		"~Another~ NL ~try...?~",
+		"~Reach~ ~the~ ~boss...~ NL ~to~ ~receive~ ~my..~ ~blessing...~",
+		"~At~ ~least...~ ~confront~ NL ~the~ ~first~ ~boss...~",
+		"~I~ ~brought~ ~you~ ~back...~",
+		"~Choose...~",
+		"~Granted...~",
+		"~Risk...~ NL ~..reward....~",
+		"~Time~ ~for~ ~a~ NL ~CHALLENGE...~"
+	],
+	"OPTIONS": [
+		"[Continue]",
+		"[Talk]",
+		"[Skip]",
+		"[Leave]"
+	]
+  },
+  "Neow Reward": {
+	"NAMES": [
+	
+	], 
+    "TEXT": [
+		"[ #gChoose #ga #gCard #gto #gobtain ]",
+		"[ #gObtain #ga #grandom #grare #gCard ]",
+		"[ #gRemove #ga #gCard #gfrom #gyour #gdeck ]",
+		"[ #gUpgrade #ga #gCard ]",
+		"[ #gTransform #ga #gCard ]",
+		"[ #gObtain #g3 #grandom #gPotions ]",
+		"[ #gObtain #ga #grandom #gcommon #gRelic ]",
+		"[ #gMax #gHP #g+",
+		"[ #gObtain #g",
+		" #gGold ]",
+		"#gRemove #g2 #gCards ]",
+		"#gObtain #ga #grandom #grare #gRelic ]",
+		"#gChoose #ga #grare #gCard #gto #gobtain ]",
+		"#gGain #g",
+		" #gGold ]",
+		"#gTransform #g2 #gCards ]",
+		"#gMax #gHP #g+",
+		"[ #rLose #r",
+		" #rMax #rHP ",
+		"[ #rLose #rall #rGold ",
+		"[ #rObtain #ra #rCurse ",
+		"[ #rLose #r50% #rof #ryour #rcurrent #rHP ",
+		"Choose a Card",
+		"Select a Card to Remove",
+		"Select 2 Cards to Remove",
+		"Select a Card to Transform",
+		"Select 2 Cards to Transform",
+		"Select a Card to Upgrade",
+		"[ #gEnemies #gin #gyour #gnext #gthree #gcombats #ghave #g1 #gHP ]",
+		"[ #gObtain #ga #grandom #gcolorless #gCard ]"
+	],
+	"UNIQUE_REWARDS": [
+		"[ #rLose #ryour #rstarting #rRelic #gObtain #ga #grandom #gboss #gRelic ]"
+	]
+  },
+  "Merchant": {
+	"NAMES": [
+		"Proceed",
+		"~Welcome!~"
+	], 
+    "TEXT": [
+		"Hi! NL Buy something! NL Buy buy buy!",
+		"I like your haircut",
+		"Do you have the time?",
+		"Are you a dog person or a cat person?",
+		"You look ~dangerous,~ NL hehe...",
+		"Take your time... NL ..... NL ... or not",
+		"Do you like this rug? NL It's not for sale",
+		"Support small business!",
+		"Masks are cool, I would know!",
+		"Hmm... NL ...hmm... NL Oh!",
+		"Stay awhile and listen!",
+		"It's dangerous to go alone! Give me all your gold!",
+		"Buy somethin'",
+		"~*YAWN*~",
+		"I like gold.",
+		"My favorite color is blue. NL How bout you?"
+	]
+  },
+  "Shop Screen": {
+	"NAMES": [
+		"~Welcome~ NL ~welcome!~",
+		"Hey now, NL you need NL more #rGold.",
+		"Hey buddy, you got no #rMoney!",
+		"You broke?",
+		"You don't got enough #rGold.",
+		"You can't afford that.",
+		"This isn't a charity.",
+		"~Thaaaanks~",
+		"Another sale... NL hohoho! NL Cha - @Ching!@",
+		"@SOLD!@",
+		"No Refunds.",
+		"Have a nice day.",
+		"Leave",
+		"Select a card to remove from your deck."
+	], 
+    "TEXT": [
+		"Hi! NL Buy something! NL Buy buy buy!",
+		"I like your haircut",
+		"Do you have the time?",
+		"Are you a dog person or a cat person?",
+		"You look ~dangerous,~ NL hehe...",
+		"Take your time... NL ..... NL ... or not",
+		"Do you like this rug? NL It's not for sale",
+		"Support small business!",
+		"Masks are cool, I would know!",
+		"Have you seen my courier?",
+		"Stay awhile and listen!",
+		"It's dangerous to go alone! Give me all your gold!",
+		"Buy somethin'",
+		"~*YAWN*~",
+		"I like gold.",
+		"My favorite color is blue. NL How bout you?"
+	]
+  }
+}

@@ -78,7 +78,7 @@ public class Strike_Red
   
   public void upgrade()
   {
-	  if (AbstractDungeon.player.hasRelic("Simple Rune"))
+	  if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("Simple Rune"))
 	  {
 		upgradeDamage(3 + this.timesUpgraded);
 		this.timesUpgraded += 1;
