@@ -104,6 +104,7 @@ import com.megacrit.cardcrawl.relics.RunicPyramid;
 import com.megacrit.cardcrawl.relics.SelfFormingClay;
 import com.megacrit.cardcrawl.relics.Shovel;
 import com.megacrit.cardcrawl.relics.Shuriken;
+import com.megacrit.cardcrawl.relics.SimpleRune;
 import com.megacrit.cardcrawl.relics.SingingBowl;
 import com.megacrit.cardcrawl.relics.SmilingMask;
 import com.megacrit.cardcrawl.relics.SnackPack;
@@ -248,6 +249,7 @@ public class RelicLibrary
     add(new RunicPyramid());
     add(new Shovel());
     add(new Shuriken());
+    add(new SimpleRune());
     add(new SingingBowl());
     add(new SmilingMask());
     add(new SnackPack());

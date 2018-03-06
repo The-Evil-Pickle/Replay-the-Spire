@@ -63,6 +63,10 @@ Gain 2 thievery
 (Uncommon)
 During the first turn, drawing a card upgrades it for the rest of combat.
 
+- Rune of Simplicity -
+(Common)
+Strikes and Defends can be upgraded any number of times. On pickup, upgrade 2 Strikes or Defends randomly.
+
 - ??? -
 (???)
 Draw three extra cards each turn. Every time you play a card discard a card.

@@ -827,6 +827,14 @@
 	" #yStrength."
 	]
   },
+  "Simple Rune": {
+	"NAME": "Rune of Simplicity",
+	"FLAVOR": "Sometimes, things aren't as complicated as they appear.",
+	"DESCRIPTIONS": [
+		"Strikes and Defends can be #yUpgraded any number of times. On pickup, #yUpgrade #b",
+		" randomly."
+	]
+  },
   "Singing Bowl": {
 	"NAME": "Singing Bowl",
 	"FLAVOR": "This well-used artifact rings out with a beautiful melody when struck.",
@@ -876,7 +884,7 @@
 	"NAME": "Sozu",
 	"FLAVOR": "You notice that magical liquids seem to lose their properties when near this relic.",
     "DESCRIPTIONS": [
-	" You can no longer use potions. ",
+	" You can no longer obtain potions. ",
 	"Gain [R] at the start of each turn.", 
 	"Gain [G] at the start of each turn.",
 	"Gain [B] at the start of each turn."
