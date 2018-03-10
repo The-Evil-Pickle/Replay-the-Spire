@@ -144,6 +144,8 @@ public class PotionHelper
 	  return new DeathPotion();
 	case "Thorns Potion":
 	  return new ThornsPotion();
+	case "Ironskin Potion":
+	  return new IronSkinPotion();
 	case "Toxic Potion":
 	  return new ToxicPotion();
     case "Potion Slot": 

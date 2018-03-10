@@ -59,9 +59,9 @@ public class Stuck extends AbstractImageEvent
                 this.screen = CurScreen.CHOICE;
                 GenericEventDialog.updateBodyText(Stuck.DIALOG_2);
                 GenericEventDialog.clearAllDialogs();
-                GenericEventDialog.setDialogOption(Stuck.OPTIONS[1] + FontHelper.colorString(this.card.name, "r"));
+                GenericEventDialog.setDialogOption(Stuck.OPTIONS[1] + FontHelper.colorString(this.card.name, "r"), this.card.makeStatEquivalentCopy());
                 if (this.upgradeOption) {
-                    GenericEventDialog.setDialogOption(Stuck.OPTIONS[2] + FontHelper.colorString(this.card.name, "g"));
+                    GenericEventDialog.setDialogOption(Stuck.OPTIONS[2] + FontHelper.colorString(this.card.name, "g"), this.card.makeStatEquivalentCopy());
                 }
                 else {
                     GenericEventDialog.setDialogOption(Stuck.OPTIONS[3], true);

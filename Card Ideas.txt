@@ -65,7 +65,7 @@ Unplayable. At the end of your turn, shuffle three random cards into your draw p
 
 - Life Bind -
 (red)
-(Cost 1(0 upgraded)
+(Cost 1(0 upgraded))
 Apply Life Bind to an enemy. When you lose health, that enemy is dealt the same amount of damage.
 
 - Abandon -
