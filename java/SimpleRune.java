@@ -19,7 +19,7 @@ public class SimpleRune
   
   public SimpleRune()
   {
-    super("Simple Rune", "warPaint.png", AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.MAGICAL);
+    super("Simple Rune", "simpleRune.png", AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.MAGICAL);
   }
   
   public String getUpdatedDescription()
