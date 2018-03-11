@@ -151,7 +151,7 @@
   "Venom Potion": {
 	"NAME": "Venom Potion",
     "DESCRIPTIONS": [
-			"Apply #b1",
+			"Apply #b",
 			" #yPoison to enemies when you damage them.",
 			" Lose #b",
 			" #yStrength."

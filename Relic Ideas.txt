@@ -6,7 +6,7 @@ We all have our favorite player.
 "On pickup, a random card in your deck becomes free."
 
 - Funnel -
-(Common)
+(Rare)
 Use every last drop.
 "At the end of your turn, unused energy is converted to 4 block each."
 
@@ -75,6 +75,6 @@ Gain 2 Artifact at the start of combat.
 (Uncommon)
 Gain 8 temporary HP at the start of combat.
 
-- ??? -
-(???)
+- Snecko Scales -
+(Boss (Silent Only))
 Draw three extra cards each turn. Every time you play a card discard a card.

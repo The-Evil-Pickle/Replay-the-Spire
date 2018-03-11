@@ -890,6 +890,13 @@
 	"Draw #b2 additional cards each turn. Start each combat #yConfused."
 	]
   },
+  "Snecko Scales": {
+	"NAME": "Snecko Scales",
+	"FLAVOR": "Scales from a Snecko that shed its skin. They seem to reflect lights with shimmering colors.",
+    "DESCRIPTIONS": [
+	"Draw 3 additional cards each turn. When you play a card, discard a card."
+	]
+  },
   "Snake Skull": {
 	"NAME": "Snecko Skull",
 	"FLAVOR": "A snecko skull in pristine condition. Mysteriously clean and smooth, dirt and grime fall off inexplicably.",

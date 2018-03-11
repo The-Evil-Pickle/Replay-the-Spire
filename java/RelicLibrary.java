@@ -112,6 +112,7 @@ import com.megacrit.cardcrawl.relics.SmilingMask;
 import com.megacrit.cardcrawl.relics.SnackPack;
 import com.megacrit.cardcrawl.relics.SnakeRing;
 import com.megacrit.cardcrawl.relics.SneckoEye;
+import com.megacrit.cardcrawl.relics.SneckoScales;
 import com.megacrit.cardcrawl.relics.SneckoSkull;
 import com.megacrit.cardcrawl.relics.Sozu;
 import com.megacrit.cardcrawl.relics.SpiritPoop;
@@ -283,6 +284,7 @@ public class RelicLibrary
     addGreen(new PaperCrane());
     addGreen(new SnakeRing());
     addGreen(new SneckoSkull());
+    addGreen(new SneckoScales());
     addGreen(new TheSpecimen());
     addGreen(new Tingsha());
     addGreen(new ToughBandages());
