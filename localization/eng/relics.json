@@ -1,4 +1,12 @@
 {
+  "Ancient Bracer": {
+	"NAME": "Ancient Bracer",
+	"FLAVOR": "A piece of armor from an age long past.",
+    "DESCRIPTIONS": [
+	"At the start of each combat, gain #b", 
+	" #yArtifact."
+	]
+  },
   "Anchor": {
 	"NAME": "Anchor",
 	"FLAVOR": "Holding this miniature trinket, you feel heavier and more stable.",
@@ -255,6 +263,16 @@
 	"FLAVOR": "A very dapper looking monocle indeed.",
     "DESCRIPTIONS": [
 	"Merchant prices are reduced by #b20%"
+	]
+  },
+  "Divine Protection": {
+    "NAME": "Divine Protection",
+	"FLAVOR": "The strength to carry on in times of trial.",
+	"DESCRIPTIONS": [
+		"Gain #b",
+		" temporary HP at the start of combat.",
+		" NL (You will lose #r",
+		" HP at the end of this fight)."
 	]
   },
   "Dodecahedron": {

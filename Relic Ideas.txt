@@ -67,6 +67,14 @@ During the first turn, drawing a card upgrades it for the rest of combat.
 (Common)
 Strikes and Defends can be upgraded any number of times. On pickup, upgrade 2 Strikes or Defends randomly.
 
+- Ancient Bracer -
+(Common)
+Gain 2 Artifact at the start of combat.
+
+- Divine Protection -
+(Uncommon)
+Gain 8 temporary HP at the start of combat.
+
 - ??? -
 (???)
 Draw three extra cards each turn. Every time you play a card discard a card.

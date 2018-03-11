@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.badlogic.gdx.math.MathUtils;
 import java.util.ArrayList;
 
@@ -52,6 +53,10 @@ public class Massacre
     AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new CleaveEffect(), 0.1F));
     AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 	AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Strength"));
+	if (p.hasPower("Flex"))
+	{
+		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Flex"));
+	}
   }
   
   public AbstractCard makeCopy()

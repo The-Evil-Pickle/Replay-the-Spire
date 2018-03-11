@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.metrics.LeaderboardPoster;
 import com.megacrit.cardcrawl.metrics.LeaderboardPoster.LeaderboardDataType;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
+import com.megacrit.cardcrawl.relics.AncientBracer;
 import com.megacrit.cardcrawl.relics.Anchor;
 import com.megacrit.cardcrawl.relics.Arrowhead;
 import com.megacrit.cardcrawl.relics.AncientTeaSet;
@@ -37,6 +38,7 @@ import com.megacrit.cardcrawl.relics.Courier;
 import com.megacrit.cardcrawl.relics.CursedKey;
 import com.megacrit.cardcrawl.relics.DarkstonePeriapt;
 import com.megacrit.cardcrawl.relics.DeadBranch;
+import com.megacrit.cardcrawl.relics.DivineProtection;
 import com.megacrit.cardcrawl.relics.Dodecahedron;
 import com.megacrit.cardcrawl.relics.DreamCatcher;
 import com.megacrit.cardcrawl.relics.DuVuDoll;
@@ -166,6 +168,7 @@ public class RelicLibrary
   {
     long startTime = System.currentTimeMillis();
     
+	add(new AncientBracer());
     add(new Anchor());
     add(new Arrowhead());
     add(new ArtOfWar());
@@ -191,6 +194,7 @@ public class RelicLibrary
     add(new CursedKey(null));
     add(new DarkstonePeriapt());
     add(new DeadBranch());
+    add(new DivineProtection());
     add(new Dodecahedron(null));
     add(new DreamCatcher());
     add(new DuVuDoll());
