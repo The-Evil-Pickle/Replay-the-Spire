@@ -10,7 +10,7 @@
   },
   "Poison Darts": {
     "NAME": "Poison Darts",
-    "DESCRIPTION": "Apply !D! Poison !M! times. NL Affected by damage modifiers."
+    "DESCRIPTION": "Apply !D! Poison X times. NL Affected by damage modifiers."
   },
   "Abandon": {
     "NAME": "Abandon",
@@ -27,8 +27,8 @@
   },
   "Improvise": {
     "NAME": "Improvise",
-    "DESCRIPTION": "Choose 1 of 3 random cards to add to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Choose 1 of 3 random cards to upgrade and add to your hand. NL Exhaust."
+    "DESCRIPTION": "Choose 1 of 3 random cards to add to your hand. It costs 1 less. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose 1 of 3 random cards to upgrade and add to your hand. NL It costs 1 less. NL Exhaust."
   },
   "Looming Evil": {
 	"NAME": "Looming Evil",
