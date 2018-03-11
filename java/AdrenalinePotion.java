@@ -28,6 +28,7 @@ public class AdrenalinePotion
     if (AbstractDungeon.ascensionLevel >= 11) {
       this.potency = 1;
 	  this.secondPotency = 1;
+	  this.rarity = AbstractPotion.PotionRarity.UNCOMMON;
     } else {
       this.potency = 2;
 	  this.secondPotency = 1;
@@ -46,6 +47,14 @@ public class AdrenalinePotion
   {
     AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, this.potency));
 	AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.secondPotency));
+  }
+  
+  public void upgradePotion()
+  {
+	this.secondPotency += 1;
+	this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1] + "(s) " + DESCRIPTIONS[2] + this.secondPotency + DESCRIPTIONS[3]);
+    this.tips.clear();
+    this.tips.add(new PowerTip(this.name, this.description));
   }
   
   public AbstractPotion makeCopy()

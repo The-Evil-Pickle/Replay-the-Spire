@@ -37,11 +37,17 @@
 			" #yDexterity."
 	]
   },
+  "Doom Potion": {
+	"NAME": "Doom Potion",
+    "DESCRIPTIONS": [
+			"Destroy an enemy after #b",
+			" turns."
+	]
+  },
   "Elixir": {
 	"NAME": "Elixir",
     "DESCRIPTIONS": [
-			"",
-			"",
+			"#yExhaust ALL #yStatus and #yCurse cards.",
 			"#yExhaust all #yStatus and #yCurse cards from your hand.",
 			"",
 			"It had no effect..."
@@ -104,6 +110,13 @@
 			" turns."
 	]
   },
+  "Spirit Potion": {
+	"NAME": "Spirit Potion",
+    "DESCRIPTIONS": [
+			"Gain #b",
+			" #yIntangible."
+	]
+  },
   "Strength Potion": {
 	"NAME": "Strength Potion",
     "DESCRIPTIONS": [
@@ -131,8 +144,17 @@
     "DESCRIPTIONS": [
 			"Apply #b",
 			" #yPoison to ALL enemies. Gain #b",
-			" #yVoulnerable and #b",
+			" #yVulnerable and #b",
 			" #yFrail."
+	]
+  },
+  "Venom Potion": {
+	"NAME": "Venom Potion",
+    "DESCRIPTIONS": [
+			"Apply #b1",
+			" #yPoison to enemies when you damage them.",
+			" Lose #b",
+			" #yStrength."
 	]
   },
     "Weak Potion": {

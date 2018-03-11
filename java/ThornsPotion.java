@@ -39,6 +39,7 @@ public class ThornsPotion
     
       TipHelper.capitalize(GameDictionary.STRENGTH.NAMES[0]), 
       (String)GameDictionary.keywords.get(GameDictionary.STRENGTH.NAMES[0])));
+	this.rarity = AbstractPotion.PotionRarity.UNCOMMON;
   }
   
   public void use(AbstractCreature target)
@@ -52,5 +53,10 @@ public class ThornsPotion
   public AbstractPotion makeCopy()
   {
     return new ThornsPotion();
+  }
+  
+  public int getPrice()
+  {
+    return 60;
   }
 }

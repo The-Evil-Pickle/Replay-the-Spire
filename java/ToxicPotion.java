@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -45,6 +47,11 @@ public class ToxicPotion
     this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1] + this.secondPotency + DESCRIPTIONS[2] + this.secondPotency + DESCRIPTIONS[3]);
     this.isThrown = true;
     this.tips.add(new PowerTip(this.name, this.description));
+    this.tips.add(new PowerTip(
+    
+      TipHelper.capitalize(GameDictionary.POISON.NAMES[0]), 
+      (String)GameDictionary.keywords.get(GameDictionary.POISON.NAMES[0])));
+	this.rarity = AbstractPotion.PotionRarity.RARE;
   }
   
   public void use(AbstractCreature target)
@@ -62,5 +69,10 @@ public class ToxicPotion
   public AbstractPotion makeCopy()
   {
     return new ToxicPotion();
+  }
+  
+  public int getPrice()
+  {
+    return 70;
   }
 }
