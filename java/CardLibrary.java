@@ -191,6 +191,7 @@ public class CardLibrary
         add(new PhantasmalKiller());
         add(new PiercingWail());
         add(new PoisonedStab());
+        add(new PoisonDarts());
         add(new Predator());
         add(new Prepared());
         add(new QuickSlash());

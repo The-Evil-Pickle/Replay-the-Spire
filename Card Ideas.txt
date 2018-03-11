@@ -78,6 +78,10 @@ Exhaust 1 card. Draw 1 card. Ethereal.
 (Cost 1)
 Deal 1 damage to all enemies, then lose all strength. Affected by strength 5(8) times.
 
+- Poison Darts -
+(green)
+(Cost 1)
+Apply 3 poison 2(3) times. Affected by damage modifiers.
 
 - Improvise -
 (colorless)

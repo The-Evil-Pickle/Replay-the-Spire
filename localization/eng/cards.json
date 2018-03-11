@@ -8,6 +8,10 @@
     "NAME": "Atom Bomb",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Poison to ALL enemies. NL Exhaust."
   },
+  "Poison Darts": {
+    "NAME": "Poison Darts",
+    "DESCRIPTION": "Apply !D! Poison !M! times. NL Affected by damage modifiers."
+  },
   "Abandon": {
     "NAME": "Abandon",
     "DESCRIPTION": "Exhaust !M! card. NL Draw 1 card. NL Ethereal.",
