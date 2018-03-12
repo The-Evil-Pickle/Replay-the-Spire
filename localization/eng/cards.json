@@ -802,7 +802,8 @@
   },
   "Jack Of All Trades": {
     "NAME": "Jack Of All Trades",
-    "DESCRIPTION": "Add !M! random colorless card to your hand. NL Exhaust."
+    "DESCRIPTION": "Add !M! random colorless card to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add !M! random colorless cards to your hand. NL Exhaust."
   },
   "Demon Form": {
     "NAME": "Demon Form",

@@ -6,7 +6,7 @@ We all have our favorite player.
 "On pickup, a random card in your deck becomes free."
 
 - Funnel -
-(Rare)
+(Uncommon)
 Use every last drop.
 "At the end of your turn, unused energy is converted to 4 block each."
 

@@ -11,7 +11,7 @@ public class Funnel extends AbstractRelic
     public static final String ID = "Funnel";
     
     public Funnel() {
-        super("Funnel", "funnel.png", RelicTier.RARE, LandingSound.SOLID);
+        super("Funnel", "funnel.png", RelicTier.UNCOMMON, LandingSound.SOLID);
     }
     
     @Override

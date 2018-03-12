@@ -25,11 +25,11 @@ note: the effects in (parenthesis) are applied by the Ascension mode effect that
 
 ==[COMMON]==
 *All vanilla potions are the common rarity.
-*Ironskin Potion: Gain 3(2) block at the end of each turn.
 *Adrenaline Potion: Draw 2(1) cards and gain 1 energy. [Note: uncommon past Ascension 11]
 
 ==[UNCOMMON]==
 *Thorns Potion: Gain 4(2) Thorns.
+*Ironskin Potion: Gain 3(2) block at the end of each turn.
 
 ==[RARE]==
 *Venom Potion: Gain 1 Envenom. (Lose 1 Strength). [Note: is priced as Uncommon in shops]
