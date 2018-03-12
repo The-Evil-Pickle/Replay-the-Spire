@@ -788,6 +788,13 @@
 	" HP when you #yRest."
 	]
   },
+  "Ring of Chaos": {
+	"NAME": "Ring of Chaos",
+	"FLAVOR": "A ring with wild and unpredictable magic effects.",
+	"DESCRIPTIONS": [
+	"Some card rewards have randomly altered stats and effects."
+	]
+  },
   "Ring of the Serpent": {
 	"NAME": "Ring of the Serpent",
     "DESCRIPTIONS": [

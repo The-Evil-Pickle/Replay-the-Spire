@@ -32,11 +32,19 @@
   },
   "Looming Evil": {
 	"NAME": "Looming Evil",
-	"DESCRIPTION": "Can be played for !M! [R] to Exhaust. NL At the end of your turn, shuffle a curse into your draw pile and reduce cost."
+	"DESCRIPTION": "Can be played for !M! Energy to Exhaust. NL At the end of your turn, shuffle a curse into your draw pile and reduce cost."
   },
   "Hallucinations": {
 	"NAME": "Hallucinations",
 	"DESCRIPTION": "Unplayable. NL At the end of your turn, add !M! random cards to your draw pile and Exhaust."
+  },
+  "Sickly": {
+	"NAME": "Sickly",
+	"DESCRIPTION": "Unplayable. NL At the end of your turn, lose !M! Block."
+  },
+  "Languid": {
+	"NAME": "Languid",
+	"DESCRIPTION": "Unplayable. NL If this is in your hand at the end of your turn, start next turn with 1 less Energy."
   },
   "Immolate": {
     "NAME": "Immolate",

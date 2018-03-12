@@ -1,0 +1,251 @@
+package com.megacrit.cardcrawl.relics;
+
+import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon.CurrentScreen;
+import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
+import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.CardGroup.CardGroupType;
+import java.util.ArrayList;
+import java.lang.*;
+
+public class RingOfChaos
+  extends AbstractRelic
+{
+  public static final String ID = "Ring of Chaos";
+  private boolean calledTransform = true;
+  
+  public RingOfChaos()
+  {
+    super("Ring of Chaos", "betaRelic.png", AbstractRelic.RelicTier.BOSS, AbstractRelic.LandingSound.FLAT);
+  }
+  
+  public static enum ChaosUpgradeType
+  {
+    MAGIC, DAMAGE, BLOCK, COST;
+    
+    private ChaosUpgradeType() {}
+  }
+  
+  public String getUpdatedDescription()
+  {
+    return this.DESCRIPTIONS[0];
+  }
+  
+  /*
+  public void onObtainCard(AbstractCard c)
+  {
+    if (AbstractDungeon.miscRng.randomBoolean() && chaosUpgradeCard(c)) {
+		AbstractDungeon.topLevelEffects.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy()));
+	}
+  }
+  */
+  
+  
+  public boolean chaosUpgradeCard(AbstractCard c)
+  {
+	if (c.type == AbstractCard.CardType.CURSE || c.type == AbstractCard.CardType.STATUS) {
+		return false;
+	}
+	
+	ArrayList<ChaosUpgradeType> upOp = new ArrayList<ChaosUpgradeType>();
+	ArrayList<ChaosUpgradeType> dwnOp = new ArrayList<ChaosUpgradeType>();
+	
+	if (c.baseMagicNumber > 0) {
+		upOp.add(ChaosUpgradeType.MAGIC);
+		if (c.baseMagicNumber > 1) {
+			dwnOp.add(ChaosUpgradeType.MAGIC);
+		}
+	}
+	if (c.baseDamage > -1) {
+		upOp.add(ChaosUpgradeType.DAMAGE);
+		if (c.baseDamage > 1) {
+			dwnOp.add(ChaosUpgradeType.DAMAGE);
+		}
+	}
+	if (c.block > -1){
+		upOp.add(ChaosUpgradeType.BLOCK);
+		if (c.block > 1) {
+			dwnOp.add(ChaosUpgradeType.BLOCK);
+		}
+	}
+	if (c.cost >= 0){
+		if (c.cost != 3) {
+			dwnOp.add(ChaosUpgradeType.COST);
+		}
+		if (c.cost > 0) {
+			upOp.add(ChaosUpgradeType.COST);
+		}
+	}
+	if (dwnOp.size() > 0) {
+		if (upOp.size() > 0){
+			int chaosStack = 1;
+			chaosStack = AbstractDungeon.miscRng.random(Math.min(dwnOp.size(), upOp.size()) - 1) + 1;
+			
+			int prevnum = 0;
+			float downmult = 0.5f;
+			ChaosUpgradeType downside = dwnOp.remove(AbstractDungeon.miscRng.random(dwnOp.size() - 1));
+			if (upOp.contains(downside)) {
+				upOp.remove(downside);
+				if (upOp.size() <= 0) {
+					return false;
+				}
+			}
+			switch(downside){
+				case COST:
+					switch(c.cost){
+						case 0:
+							downmult = 0.25f;
+							break;
+						case 1:
+							downmult = 0.5f;
+							break;
+						case 2:
+							downmult = 0.67f;
+							break;
+						default:
+							downmult = 0.75f;
+					}
+					int diff = c.cost - c.costForTurn;
+					int baseDiff = 1;
+					c.cost += baseDiff;
+					if (c.cost < 0) {
+					  c.cost = 0;
+					}
+					if (c.costForTurn > 0) {
+					  c.costForTurn = (c.cost - diff);
+					}
+					c.upgradedCost = true;
+					break;
+				case MAGIC:
+					switch(c.baseMagicNumber){
+						case 2:
+							downmult = 0.5f;
+							c.baseMagicNumber += -1;
+							c.magicNumber = c.baseMagicNumber;
+							c.upgradedMagicNumber = true;
+							break;
+						case 3:
+							downmult = 0.67f;
+							c.baseMagicNumber += -1;
+							c.magicNumber = c.baseMagicNumber;
+							c.upgradedMagicNumber = true;
+							break;
+						default:
+							prevnum = c.baseMagicNumber;
+							c.baseMagicNumber += (c.baseMagicNumber / -2);
+							c.magicNumber = c.baseMagicNumber;
+							c.upgradedMagicNumber = true;
+							downmult = (float)prevnum / (float)c.baseMagicNumber;
+					}
+					break;
+				case DAMAGE:
+					prevnum = c.baseDamage;
+					c.baseDamage += (c.baseDamage / -2);
+					c.upgradedDamage = true;
+					downmult = (float)prevnum / (float)c.baseDamage;
+					break;
+				case BLOCK:
+					prevnum = c.baseBlock;
+					c.baseBlock += (c.baseBlock / -2);
+					c.upgradedBlock = true;
+					downmult = (float)prevnum / (float)c.baseBlock;
+					break;
+			}
+			
+			ChaosUpgradeType upside = upOp.remove(AbstractDungeon.miscRng.random(upOp.size() - 1));
+			if (dwnOp.contains(upside)) {
+				dwnOp.remove(upside);
+			}
+			switch(upside){
+				case COST:
+					int diff = c.cost - c.costForTurn;
+					int baseDiff = MathUtils.round((float)c.cost * downmult) - c.cost;
+					if (baseDiff >= 0) {
+						baseDiff = -1;
+					}
+					c.cost += baseDiff;
+					if (c.cost < 0) {
+					  c.cost = 0;
+					}
+					if (c.costForTurn > 0) {
+					  c.costForTurn = (c.cost - diff);
+					}
+					c.upgradedCost = true;
+					break;
+				case MAGIC:
+					prevnum = MathUtils.ceilPositive((float)c.baseMagicNumber / downmult) - c.baseMagicNumber;
+					if (prevnum <= 0) {
+						prevnum = 1;
+					}
+					c.baseMagicNumber += prevnum;
+					c.magicNumber = c.baseMagicNumber;
+					c.upgradedMagicNumber = true;
+					break;
+				case DAMAGE:
+					prevnum = MathUtils.ceilPositive((float)c.baseDamage / downmult) - c.baseDamage;
+					if (prevnum <= 0) {
+						prevnum = 1;
+					}
+					c.baseDamage += prevnum;
+					c.upgradedDamage = true;
+					break;
+				case BLOCK:
+					prevnum = MathUtils.ceilPositive((float)c.baseBlock / downmult) - c.baseBlock;
+					if (prevnum <= 0) {
+						prevnum = 1;
+					}
+					c.baseBlock += prevnum;
+					c.upgradedBlock = true;
+					break;
+			}
+			flash();
+			return true;
+		}
+	}
+	return false;
+  }
+  /*
+  public void onEquip()
+  {
+    this.calledTransform = false;
+    ArrayList<AbstractCard> upgradableCards = new ArrayList<AbstractCard>();
+    for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+        upgradableCards.add(c);
+    }
+    Collections.shuffle(upgradableCards, new java.util.Random(AbstractDungeon.miscRng.randomLong()));
+	CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+    if (!upgradableCards.isEmpty()) {
+	  int remaining = 1 + (upgradableCards.size() / 3);
+	  for (int i = 0; i < upgradableCards.size() && remaining > 0; i++) {
+		  if (chaosUpgradeCard(upgradableCards.get(i))) {
+			  remaining -= 1;
+			  group.addToBottom(upgradableCards.get(i).makeStatEquivalentCopy());
+		  }
+	  }
+    }
+	if (!group.group.isEmpty()){
+		AbstractDungeon.gridSelectScreen.openConfirmationGrid(group, this.DESCRIPTIONS[1]);
+		flash();
+	}
+  }
+  
+  public void update()
+  {
+    super.update();
+    if ((!this.calledTransform) && (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.GRID))
+    {
+      this.calledTransform = true;
+      AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25F;
+    }
+  }
+  */
+  
+  public AbstractRelic makeCopy()
+  {
+    return new RingOfChaos();
+  }
+}

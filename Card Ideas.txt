@@ -63,6 +63,14 @@ If in your hand at the end of the turn, shuffle a random curse into your draw pi
 (Curse)
 Unplayable. At the end of your turn, shuffle three random cards into your draw pile. Exhaust.
 
+- Sickly -
+(Curse)
+Unplayable. At the end of your turn, lose 4 block.
+
+- Languid -
+(Curse)
+Unplayable. If this is in your hand at the end of the turn, gain 1 less energy next turn.
+
 - Life Bind -
 (red)
 (Cost 1(0 upgraded))

@@ -4,6 +4,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer.PlayerClass;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.metrics.LeaderboardPoster;
 import com.megacrit.cardcrawl.metrics.LeaderboardPoster.LeaderboardDataType;
+import com.megacrit.cardcrawl.relics.*;
+/*
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 import com.megacrit.cardcrawl.relics.AncientBracer;
@@ -136,6 +138,7 @@ import com.megacrit.cardcrawl.relics.Waffle;
 import com.megacrit.cardcrawl.relics.WarPaint;
 import com.megacrit.cardcrawl.relics.Whetstone;
 import com.megacrit.cardcrawl.relics.WhiteBeast;
+*/
 import com.megacrit.cardcrawl.relics.deprecated.DerpRock;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import java.util.ArrayList;
@@ -250,6 +253,7 @@ public class RelicLibrary
     add(new QuestionCard());
     add(new RedMask());
     add(new RegalPillow());
+	add(new RingOfChaos());
     add(new RunicDome(null));
     add(new RunicPyramid());
     add(new Shovel());

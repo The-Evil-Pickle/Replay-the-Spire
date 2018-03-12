@@ -250,12 +250,14 @@ public class CardLibrary
         add(new Doubt());
         add(new Hallucinations());
         add(new Injury());
+		add(new Languid());
         //add(new LoomingEvil());
         add(new Necronomicurse());
         add(new Normality());
         add(new Pain());
         add(new Parasite());
         add(new Regret());
+        add(new Sickly());
         add(new Writhe());
     }
     

@@ -78,3 +78,7 @@ Gain 8 temporary HP at the start of combat.
 - Snecko Scales -
 (Boss (Silent Only))
 Draw three extra cards each turn. Every time you play a card discard a card.
+
+- Ring of Chaos -
+(Boss)
+Some card rewards have randomized stats.

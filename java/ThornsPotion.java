@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
@@ -35,10 +34,6 @@ public class ThornsPotion
     this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1]);
     this.isThrown = false;
     this.tips.add(new PowerTip(this.name, this.description));
-    this.tips.add(new PowerTip(
-    
-      TipHelper.capitalize(GameDictionary.STRENGTH.NAMES[0]), 
-      (String)GameDictionary.keywords.get(GameDictionary.STRENGTH.NAMES[0])));
 	this.rarity = AbstractPotion.PotionRarity.UNCOMMON;
   }
   
