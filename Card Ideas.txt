@@ -88,9 +88,15 @@ Deal 1 damage to all enemies, then lose all strength. Affected by strength 5(8) 
 
 - Poison Darts -
 (green)
-(Cost 1)
-Apply 3 poison 2(3) times. Affected by damage modifiers.
+(Cost X)
+Apply X+2(3) poison X(+1) times.
 
 - Improvise -
 (colorless)
-Choose 1 of 3 random cards to (upgrade and) add to your hand.
+(Cost 1)
+Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less.
+
+- Poisoned Strike -
+(colorless)
+(Cost 0)
+Apply 3(5) poison. Affected by damage modifiers.

@@ -303,6 +303,7 @@ public class RelicLibrary
     addRed(new PaperFrog());
     addRed(new RedSkull());
     addRed(new RunicCube());
+    addRed(new KingOfHearts());
     addRed(new SelfFormingClay());
     if (Settings.isDev) {
       addBlue(new DerpRock());

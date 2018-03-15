@@ -233,6 +233,7 @@ public class CardLibrary
         add(new MindBlast());
         add(new Panacea());
         add(new Panache());
+        add(new PoisonedStrike());
         add(new Purity());
         add(new SadisticNature());
         add(new SecretTechnique());

@@ -82,3 +82,7 @@ Draw three extra cards each turn. Every time you play a card discard a card.
 - Ring of Chaos -
 (Boss)
 Some card rewards have randomized stats.
+
+- King of Hearts -
+(Uncommon (Ironclad only))
+Whenever you lose HP during your turn, gain twice that amount of block.

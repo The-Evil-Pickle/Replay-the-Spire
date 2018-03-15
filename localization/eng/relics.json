@@ -1127,6 +1127,13 @@
 	" HP."
 	]
   },
+  "King of Hearts": {
+	"NAME": "King of Hearts",
+	"FLAVOR": "Traditionally drawn with his sword going through his head, is sometimes known as the Suicide King.",
+	"DESCRIPTIONS": [
+	"When you lose HP during your turn, gain twice that much block."
+	]
+  },
   "Unceasing Top": {
 	"NAME": "Unceasing Top",
 	"FLAVOR": "The top continues to spin effortlessly as if you were in a dream.",
