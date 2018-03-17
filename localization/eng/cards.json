@@ -51,6 +51,14 @@
 	"NAME": "Languid",
 	"DESCRIPTION": "Unplayable. NL If this is in your hand at the end of your turn, start next turn with 1 less Energy."
   },
+  "Ghost Swipe": {
+    "NAME": "Ghost Swipe",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust. NL Ethereal."
+  },
+  "Ghost Defend": {
+    "NAME": "Ghost Defend",
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust. NL Ethereal."
+  },
   "Immolate": {
     "NAME": "Immolate",
     "DESCRIPTION": "Exhaust 1 card. If the chosen card was a Status or Curse, deal !D! damage to ALL enemies."

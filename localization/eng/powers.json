@@ -270,8 +270,10 @@
   "Explosive": {
     "NAME": "Explosive",
     "DESCRIPTIONS": [
-	"On death, deals #b", 
-	" damage to you."
+      "In #b",
+      " turns, explodes dealing #b",
+	  " damage.",
+	  "At the end of its turn, explodes dealing #b"
     ]
   },
   "Feel No Pain": {
@@ -443,6 +445,15 @@
     "DESCRIPTIONS": [
 	"After taking #b", 
 	" damage, changes to a defensive mode."
+    ]
+  },
+  "Necrotic Poison": {
+    "NAME": "Necrotic Poison",
+    "DESCRIPTIONS": [
+	"At the start of your turn, lose #b",
+	" HP, then reduce #yNecrotic #yPoison by #b1.", 
+	"At the start of its turn, loses #b",
+	"Regular #yPoison will not count down."
     ]
   },
   "Next Turn Block": {

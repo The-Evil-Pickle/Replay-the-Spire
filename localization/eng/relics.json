@@ -733,6 +733,13 @@
 	"Every #b10th #yAttack you play deals double damage."
 	]
   },
+  "Pet Ghost": {
+	"NAME": "Pet Ghost",
+	"FLAVOR": "The ghost of a pet once belonging to a knight.",
+    "DESCRIPTIONS": [
+	"Add a ghost card to your hand every turn."
+	]
+  },
   "Philosopher's Stone": {
 	"NAME": "Philosopher's Stone",
 	"FLAVOR": "Raw energy emanates from the stone, empowering all nearby.",

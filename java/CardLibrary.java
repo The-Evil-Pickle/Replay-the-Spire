@@ -225,6 +225,8 @@ public class CardLibrary
         add(new Finesse());
         add(new FlashOfSteel());
         add(new GoodInstincts());
+        add(new GhostSwipe());
+        add(new GhostDefend());
 		add(new Improvise());
         add(new JackOfAllTrades());
         add(new JAX());

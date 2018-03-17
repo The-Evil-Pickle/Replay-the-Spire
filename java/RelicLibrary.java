@@ -248,6 +248,7 @@ public class RelicLibrary
     add(new PeacePipe());
     add(new Pear());
     add(new PenNib());
+    add(new PetGhost());
     add(new PhilosopherStone());
     add(new PrayerWheel());
     add(new QuestionCard());
