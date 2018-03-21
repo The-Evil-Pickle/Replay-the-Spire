@@ -30,10 +30,10 @@ public class Hallucinations
   
   public Hallucinations()
   {
-    super("Hallucinations", NAME, null, "curse/doubt", -2, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE, 1);
+    super("Hallucinations", NAME, null, "status/beta", -2, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE, 1);
 	
-	this.exhaust = true;
-	this.baseMagicNumber = 3;
+	//this.exhaust = true;
+	this.baseMagicNumber = 1;
     this.magicNumber = this.baseMagicNumber;
   }
   

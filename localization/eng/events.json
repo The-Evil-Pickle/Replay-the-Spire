@@ -785,5 +785,16 @@
 		"%: #rTake #r",
 		"[Open Chest]"
 	]
+  },
+  "Chaos Ring Event": {
+	"NAME": "Dead Man's Ring",
+	"DESCRIPTIONS": [
+		"As you pass by a skeleton, you notice it is wearing a #yred #yring. You feel some sort of #r~chaotic~ #r~energy~ emanating from it; just looking at it makes your head start to pound.",
+		"You don't see how picking up cursed rings you found on dead people could possibly be anything other than a fantastic idea."
+	],
+	"OPTIONS": [
+		"[Take it] #gObtain #ga #gRelic. #rBecome #rCursed - #rHallucinations.",
+		"[Leave]"
+	]
   }
 }

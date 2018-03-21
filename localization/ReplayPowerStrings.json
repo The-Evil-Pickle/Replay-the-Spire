@@ -1,0 +1,31 @@
+{
+  "Doomed": {
+    "NAME": "Doomed",
+    "DESCRIPTIONS": [
+	"Perish in #b", 
+	" turn."
+    ]
+  },
+  "Life Bind": {
+    "NAME": "Life Bind",
+    "DESCRIPTIONS": [
+	"Whenever you lose health, enemies with #yLife #yBind will also take damage.", 
+	"Takes damage whenever you lose health."
+    ]
+  },
+  "Reflection": {
+    "NAME": "Reflection",
+    "DESCRIPTIONS": [
+	"Whenever you gain #yVulnerable or #yWeakened, it is also applied to the enemy that sent it."
+    ]
+  },
+  "Necrotic Poison": {
+    "NAME": "Necrotic Poison",
+    "DESCRIPTIONS": [
+	"At the start of your turn, lose #b",
+	" HP, then reduce #yNecrotic #yPoison by #b1.", 
+	"At the start of its turn, loses #b",
+	"Regular #yPoison will not count down."
+    ]
+  }
+}

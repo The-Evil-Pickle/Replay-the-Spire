@@ -29,7 +29,7 @@ public class DeathPotion
   {
     super(NAME, "Death Potion", AbstractPotion.PotionSize.L, AbstractPotion.PotionColor.STRENGTH);
     if (AbstractDungeon.ascensionLevel >= 11) {
-      this.potency = 30;
+      this.potency = 32;
 	  this.secondPotency = 15;
     } else {
       this.potency = 40;
@@ -39,7 +39,7 @@ public class DeathPotion
     this.isThrown = true;
     this.targetRequired = true;
     this.tips.add(new PowerTip(this.name, this.description));
-	this.rarity = AbstractPotion.PotionRarity.ULTRA;
+	this.rarity = AbstractPotion.PotionRarity.RARE;
   }
   
   public void use(AbstractCreature target)
@@ -54,4 +54,10 @@ public class DeathPotion
   {
     return new DeathPotion();
   }
+  
+  public int getPrice()
+  {
+    return 80;
+  }
+  
 }

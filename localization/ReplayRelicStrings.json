@@ -1,0 +1,133 @@
+{
+	"Ancient Bracer": {
+	"NAME": "Ancient Bracer",
+	"FLAVOR": "A piece of armor from an age long past.",
+    "DESCRIPTIONS": [
+	"At the start of each combat, gain #b", 
+	" #yArtifact."
+	]
+  },
+  "Arrowhead": {
+	"NAME": "Arrowhead",
+	"FLAVOR": "The first thing you ever forged.",
+    "DESCRIPTIONS": [
+	"You may #yUpgrade 2 cards whenever you smith."
+	]
+  },
+  "Bandana": {
+	"NAME": "Bandana",
+	"FLAVOR": "The finest article of pickpocketing attire.",
+    "DESCRIPTIONS": [
+	"Gain 2 #yThievery."
+	]
+  },
+  "Baseball": {
+	"NAME": "Baseball",
+	"FLAVOR": "We all have our favorite player.",
+    "DESCRIPTIONS": [
+	"Upon pick up, a random card in your deck becomes free."
+	]
+  },
+  "Divine Protection": {
+    "NAME": "Divine Protection",
+	"FLAVOR": "The strength to carry on in times of trial.",
+	"DESCRIPTIONS": [
+		"Gain #b",
+		" temporary HP at the start of combat.",
+		" NL (You will lose #r",
+		" HP at the end of this fight)."
+	]
+  },
+  "Electric Blood": {
+	"NAME": "Electric Blood",
+	"FLAVOR": "You feel your body surging with power. It hurts.",
+    "DESCRIPTIONS": [
+	"Gain [R] [R] at the start of each turn. NL Take 1 damage for every [R] you use."
+	]
+  },
+  "Funnel": {
+	"NAME": "Funnel",
+	"FLAVOR": "Use every last drop.",
+    "DESCRIPTIONS": [
+	"At the end of your turn, unused energy is converted to 4 #yBlock each."
+	]
+  },
+  "Garlic": {
+	"NAME": "Garlic",
+	"FLAVOR": "Taking a whiff may cause your eyes to tear up.",
+    "DESCRIPTIONS": [
+	"Enemies lose 3 #yStrength at the start of combat. They gain 1 #yStrength over the next 3 turns."
+	]
+  },
+  "Iron Hammer": {
+	"NAME": "Iron Hammer",
+	"FLAVOR": "A handy - and heavy - tool.",
+	"DESCRIPTIONS": [
+	"During the first turn, drawing a card upgrades it."
+	]
+  },
+  "Mirror": {
+	"NAME": "Mirror",
+	"FLAVOR": "You can see yourself through the glass. The good and the bad.",
+    "DESCRIPTIONS": [
+	"Whenever you gain #yVulnerable or #yWeakened, it is also applied to the enemy that sent it."
+	]
+  },
+  "Onion Ring": {
+	"NAME": "Onion Ring",
+	"FLAVOR": "The onion is encased in a deep-fried breading.",
+    "DESCRIPTIONS": [
+	"You gain 3 #yStrength at the start of combat. You lose 1 #yStrength over the next 3 turns."
+	]
+  },
+  "Pet Ghost": {
+	"NAME": "Pet Ghost",
+	"FLAVOR": "The ghost of a pet once belonging to a knight.",
+    "DESCRIPTIONS": [
+	"Add a ghost card to your hand every turn."
+	]
+  },
+  "Ring of Chaos": {
+	"NAME": "Ring of Chaos",
+	"FLAVOR": "A ring with wild and unpredictable magic effects.",
+	"DESCRIPTIONS": [
+	"Some card rewards have randomly altered stats and effects."
+	]
+  },
+  "Ring of Fury": {
+	"NAME": "Ring of Fury",
+	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"DESCRIPTIONS": [
+	"At the start of combat gain 2 #yStrength and lose 1 #yDexterity."
+	]
+  },
+  "Simple Rune": {
+	"NAME": "Rune of Simplicity",
+	"FLAVOR": "Sometimes, things aren't as complicated as they appear.",
+	"DESCRIPTIONS": [
+		"Strikes and Defends can be #yUpgraded any number of times. On pickup, #yUpgrade #b",
+		" randomly."
+	]
+  },
+  "Snack Pack": {
+	"NAME": "Snack Pack",
+	"FLAVOR": "Always come prepared with a snack.",
+    "DESCRIPTIONS": [
+	"Every time you play 3 #yAttacks in a single turn, gain 2 HP."
+	]
+  },
+  "Snecko Scales": {
+	"NAME": "Snecko Scales",
+	"FLAVOR": "Scales from a Snecko that shed its skin. They seem to reflect lights with shimmering colors.",
+    "DESCRIPTIONS": [
+	"Draw 3 additional cards each turn. When you play a card, discard a card."
+	]
+  },
+  "King of Hearts": {
+	"NAME": "King of Hearts",
+	"FLAVOR": "Traditionally drawn with his sword going through his head, is sometimes known as the Suicide King.",
+	"DESCRIPTIONS": [
+	"When you lose HP during your turn, gain twice that much block."
+	]
+  }
+}

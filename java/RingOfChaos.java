@@ -20,7 +20,7 @@ public class RingOfChaos
   
   public RingOfChaos()
   {
-    super("Ring of Chaos", "betaRelic.png", AbstractRelic.RelicTier.BOSS, AbstractRelic.LandingSound.FLAT);
+    super("Ring of Chaos", "cursedBlood.png", AbstractRelic.RelicTier.BOSS, AbstractRelic.LandingSound.FLAT);
   }
   
   public static enum ChaosUpgradeType
@@ -54,19 +54,19 @@ public class RingOfChaos
 	ArrayList<ChaosUpgradeType> upOp = new ArrayList<ChaosUpgradeType>();
 	ArrayList<ChaosUpgradeType> dwnOp = new ArrayList<ChaosUpgradeType>();
 	
-	if (c.baseMagicNumber > 0) {
+	if (c.baseMagicNumber > 0 && c.rawDescription.contains("!M")) {
 		upOp.add(ChaosUpgradeType.MAGIC);
 		if (c.baseMagicNumber > 1) {
 			dwnOp.add(ChaosUpgradeType.MAGIC);
 		}
 	}
-	if (c.baseDamage > -1) {
+	if (c.baseDamage > -1 && c.rawDescription.contains("!D")) {
 		upOp.add(ChaosUpgradeType.DAMAGE);
 		if (c.baseDamage > 1) {
 			dwnOp.add(ChaosUpgradeType.DAMAGE);
 		}
 	}
-	if (c.block > -1){
+	if (c.block > -1 && c.rawDescription.contains("!B")){
 		upOp.add(ChaosUpgradeType.BLOCK);
 		if (c.block > 1) {
 			dwnOp.add(ChaosUpgradeType.BLOCK);
@@ -82,11 +82,11 @@ public class RingOfChaos
 	}
 	if (dwnOp.size() > 0) {
 		if (upOp.size() > 0){
-			int chaosStack = 1;
-			chaosStack = AbstractDungeon.miscRng.random(Math.min(dwnOp.size(), upOp.size()) - 1) + 1;
 			
 			int prevnum = 0;
 			float downmult = 0.5f;
+			float downtarg = 0.5f;
+			boolean upAll = false;
 			ChaosUpgradeType downside = dwnOp.remove(AbstractDungeon.miscRng.random(dwnOp.size() - 1));
 			if (upOp.contains(downside)) {
 				upOp.remove(downside);
@@ -94,115 +94,152 @@ public class RingOfChaos
 					return false;
 				}
 			}
-			switch(downside){
-				case COST:
-					switch(c.cost){
-						case 0:
-							downmult = 0.25f;
-							break;
-						case 1:
-							downmult = 0.5f;
-							break;
-						case 2:
-							downmult = 0.67f;
-							break;
-						default:
-							downmult = 0.75f;
-					}
-					int diff = c.cost - c.costForTurn;
-					int baseDiff = 1;
-					c.cost += baseDiff;
-					if (c.cost < 0) {
-					  c.cost = 0;
-					}
-					if (c.costForTurn > 0) {
-					  c.costForTurn = (c.cost - diff);
-					}
-					c.upgradedCost = true;
-					break;
-				case MAGIC:
-					switch(c.baseMagicNumber){
-						case 2:
-							downmult = 0.5f;
-							c.baseMagicNumber += -1;
-							c.magicNumber = c.baseMagicNumber;
-							c.upgradedMagicNumber = true;
-							break;
-						case 3:
-							downmult = 0.67f;
-							c.baseMagicNumber += -1;
-							c.magicNumber = c.baseMagicNumber;
-							c.upgradedMagicNumber = true;
-							break;
-						default:
-							prevnum = c.baseMagicNumber;
-							c.baseMagicNumber += (c.baseMagicNumber / -2);
-							c.magicNumber = c.baseMagicNumber;
-							c.upgradedMagicNumber = true;
-							downmult = (float)prevnum / (float)c.baseMagicNumber;
-					}
-					break;
-				case DAMAGE:
-					prevnum = c.baseDamage;
-					c.baseDamage += (c.baseDamage / -2);
-					c.upgradedDamage = true;
-					downmult = (float)prevnum / (float)c.baseDamage;
-					break;
-				case BLOCK:
-					prevnum = c.baseBlock;
-					c.baseBlock += (c.baseBlock / -2);
-					c.upgradedBlock = true;
-					downmult = (float)prevnum / (float)c.baseBlock;
-					break;
-			}
-			
 			ChaosUpgradeType upside = upOp.remove(AbstractDungeon.miscRng.random(upOp.size() - 1));
 			if (dwnOp.contains(upside)) {
 				dwnOp.remove(upside);
 			}
-			switch(upside){
-				case COST:
-					int diff = c.cost - c.costForTurn;
-					int baseDiff = MathUtils.round((float)c.cost * downmult) - c.cost;
-					if (baseDiff >= 0) {
-						baseDiff = -1;
-					}
-					c.cost += baseDiff;
-					if (c.cost < 0) {
-					  c.cost = 0;
-					}
-					if (c.costForTurn > 0) {
-					  c.costForTurn = (c.cost - diff);
-					}
-					c.upgradedCost = true;
-					break;
-				case MAGIC:
-					prevnum = MathUtils.ceilPositive((float)c.baseMagicNumber / downmult) - c.baseMagicNumber;
-					if (prevnum <= 0) {
-						prevnum = 1;
-					}
-					c.baseMagicNumber += prevnum;
-					c.magicNumber = c.baseMagicNumber;
-					c.upgradedMagicNumber = true;
-					break;
-				case DAMAGE:
-					prevnum = MathUtils.ceilPositive((float)c.baseDamage / downmult) - c.baseDamage;
-					if (prevnum <= 0) {
-						prevnum = 1;
-					}
-					c.baseDamage += prevnum;
-					c.upgradedDamage = true;
-					break;
-				case BLOCK:
-					prevnum = MathUtils.ceilPositive((float)c.baseBlock / downmult) - c.baseBlock;
-					if (prevnum <= 0) {
-						prevnum = 1;
-					}
-					c.baseBlock += prevnum;
-					c.upgradedBlock = true;
-					break;
+			if (upside == ChaosUpgradeType.COST) {
+				switch(c.cost){
+					case 1:
+						downtarg = 0.4f;
+						break;
+					case 2:
+						downtarg = 0.5f;
+						break;
+					case 3:
+						downtarg = 0.67f;
+						break;
+					default:
+						downtarg = 0.75f;
+				}
+			}
+			int icounter = 0;
+			while (icounter < 1 || (upside == ChaosUpgradeType.COST && dwnOp.size() > 0)) {
+				if (icounter > 0) {
+					downside = dwnOp.remove(AbstractDungeon.miscRng.random(dwnOp.size() - 1));
+				}
+				icounter += 1;
+				switch(downside){
+					case COST:
+						int baseDiff = 1;
+						switch(c.cost){
+							case 0:
+								downmult = 0.4f;
+								break;
+							case 1:
+								if (AbstractDungeon.miscRng.random(0, 4) == 1) {
+									baseDiff = 2;
+									downmult = 0.33f;
+								} else {
+									downmult = 0.5f;
+								}
+								break;
+							case 2:
+								downmult = 0.67f;
+								break;
+							default:
+								downmult = 0.75f;
+						}
+						int diff = c.cost - c.costForTurn;
+						c.cost += baseDiff;
+						if (c.cost < 0) {
+						  c.cost = 0;
+						}
+						if (c.costForTurn >= 0) {
+						  c.costForTurn = (c.cost - diff);
+						}
+						c.upgradedCost = true;
+						c.isCostModified = true;
+						upAll = true;
+						break;
+					case MAGIC:
+						switch(c.baseMagicNumber){
+							case 2:
+								downmult = 0.5f;
+								c.baseMagicNumber += -1;
+								c.magicNumber = c.baseMagicNumber;
+								c.upgradedMagicNumber = true;
+								break;
+							case 3:
+								downmult = 0.67f;
+								c.baseMagicNumber += -1;
+								c.magicNumber = c.baseMagicNumber;
+								c.upgradedMagicNumber = true;
+								break;
+							default:
+								prevnum = c.baseMagicNumber;
+								c.baseMagicNumber += (c.baseMagicNumber / (-1.0f / downtarg));
+								c.magicNumber = c.baseMagicNumber;
+								c.upgradedMagicNumber = true;
+								downmult = (float)prevnum / (float)c.baseMagicNumber;
+						}
+						break;
+					case DAMAGE:
+						prevnum = c.baseDamage;
+						c.baseDamage += (c.baseDamage / (-1.0f / downtarg));
+						c.upgradedDamage = true;
+						downmult = (float)prevnum / (float)c.baseDamage;
+						break;
+					case BLOCK:
+						prevnum = c.baseBlock;
+						c.baseBlock += (c.baseBlock / (-1.0f / downtarg));
+						c.upgradedBlock = true;
+						downmult = (float)prevnum / (float)c.baseBlock;
+						break;
+				}
+			}
+			icounter = 0;
+			while (icounter < 1 || (upAll && upOp.size() > 0)) {
+				if (icounter > 0) {
+					upside = upOp.remove(AbstractDungeon.miscRng.random(upOp.size() - 1));
+				}
+				icounter += 1;
+				switch(upside){
+					case COST:
+						int diff = c.cost - c.costForTurn;
+						int baseDiff = MathUtils.round((float)c.cost * downmult) - c.cost;
+						if (baseDiff >= 0) {
+							baseDiff = -1;
+						}
+						c.cost += baseDiff;
+						if (c.cost < 0) {
+						  c.cost = 0;
+						}
+						if (c.costForTurn > 0) {
+						  c.costForTurn = (c.cost - diff);
+						}
+						c.upgradedCost = true;
+						c.isCostModified = true;
+						break;
+					case MAGIC:
+						prevnum = MathUtils.ceilPositive((float)c.baseMagicNumber / downmult) - c.baseMagicNumber;
+						if (prevnum <= 0) {
+							prevnum = 1;
+						}
+						c.baseMagicNumber += prevnum;
+						c.magicNumber = c.baseMagicNumber;
+						c.upgradedMagicNumber = true;
+						break;
+					case DAMAGE:
+						prevnum = MathUtils.ceilPositive((float)c.baseDamage / downmult) - c.baseDamage;
+						if (prevnum <= 0) {
+							prevnum = 1;
+						}
+						c.baseDamage += prevnum;
+						c.upgradedDamage = true;
+						break;
+					case BLOCK:
+						prevnum = MathUtils.ceilPositive((float)c.baseBlock / downmult) - c.baseBlock;
+						if (prevnum <= 0) {
+							prevnum = 1;
+						}
+						c.baseBlock += prevnum;
+						c.upgradedBlock = true;
+						break;
+				}
 			}
 			flash();
+			c.name = c.name + "?";
 			return true;
 		}
 	}

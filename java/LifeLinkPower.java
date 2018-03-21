@@ -15,6 +15,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
 
 public class LifeLinkPower
   extends AbstractPower
@@ -38,7 +40,8 @@ public class LifeLinkPower
 	} else {
 		this.description = (DESCRIPTIONS[1]);
 	}
-    loadRegion("hex");
+    //loadRegion("hex");
+	this.img = new Texture("img/powers/LifeBind.png");
 	if (!sender){
 		this.type = AbstractPower.PowerType.DEBUFF;
 	}

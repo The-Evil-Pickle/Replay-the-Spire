@@ -44,7 +44,7 @@ public class VenomPotion
       TipHelper.capitalize(GameDictionary.STRENGTH.NAMES[0]), 
       (String)GameDictionary.keywords.get(GameDictionary.STRENGTH.NAMES[0])));
 	}
-	this.rarity = AbstractPotion.PotionRarity.RARE;
+	this.rarity = AbstractPotion.PotionRarity.UNCOMMON;
   }
   
   public void use(AbstractCreature target)
@@ -63,8 +63,4 @@ public class VenomPotion
     return new VenomPotion();
   }
   
-  public int getPrice()
-  {
-    return 60;
-  }
 }
