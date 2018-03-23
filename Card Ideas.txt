@@ -89,7 +89,7 @@ Deal 1 damage to all enemies, then lose all strength. Affected by strength 5(8) 
 - Poison Darts -
 (green)
 (Cost X)
-Apply X+2(3) poison X(+1) times.
+Apply 2 necrotic poison X(+1) times.
 
 - Improvise -
 (colorless)

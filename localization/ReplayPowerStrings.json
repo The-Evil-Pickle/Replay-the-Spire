@@ -25,7 +25,7 @@
 	"At the start of your turn, lose #b",
 	" HP, then reduce #yNecrotic #yPoison by #b1.", 
 	"At the start of its turn, loses #b",
-	"Regular #yPoison will not count down."
+	" NL Regular #yPoison will not count down."
     ]
   }
 }

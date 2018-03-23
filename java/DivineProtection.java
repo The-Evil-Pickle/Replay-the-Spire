@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 
 public class DivineProtection
@@ -47,7 +48,8 @@ public class DivineProtection
     flash();
     AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
 	if (this.counter > 0) {
-		AbstractDungeon.actionManager.addToTop((AbstractGameAction)new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, this.counter));
+		//AbstractDungeon.actionManager.addToTop((AbstractGameAction)new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, this.counter));
+		AbstractDungeon.player.damage(new DamageInfo(null, this.counter, DamageInfo.DamageType.HP_LOSS));
 	}
     AbstractDungeon.player.decreaseMaxHealth(DivineProtection.HEALTH_AMT);
 	setCounter(0);

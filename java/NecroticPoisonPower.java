@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.unique.PoisonLoseHpAction;
+import com.megacrit.cardcrawl.actions.unique.NecroPoisonLoseHpAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.characters.AbstractPlayer.PlayerClass;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -59,7 +59,7 @@ public class NecroticPoisonPower
       if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead())
       {
         flashWithoutSound();
-        AbstractDungeon.actionManager.addToBottom(new PoisonLoseHpAction(this.owner, this.source, this.amount * 2, AbstractGameAction.AttackEffect.POISON));
+        AbstractDungeon.actionManager.addToBottom(new NecroPoisonLoseHpAction(this.owner, this.source, this.amount * 2, AbstractGameAction.AttackEffect.POISON));
 		if (this.owner.hasPower("Poison")){
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, null, new PoisonPower(this.owner, this.source, 1), 1, AbstractGameAction.AttackEffect.NONE));
 		}

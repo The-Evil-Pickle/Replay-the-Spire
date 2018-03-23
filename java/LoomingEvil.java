@@ -45,19 +45,21 @@ public class LoomingEvil
 	  }
 	  else
 	  {
+		  this.cost = 0;
 		  this.exhaust = true;
 	  }
     }
     else
     {
       //AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new WeakPower(AbstractDungeon.player, 1, true), 1));
-      AbstractCard c = AbstractDungeon.returnTrulyRandomCard(AbstractCard.CardType.CURSE, AbstractDungeon.cardRandomRng).makeCopy();
+      AbstractCard c = AbstractDungeon.returnRandomCurse().makeCopy();
       AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));
       AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
 	  if (this.cost > 0)
 	  {
 		upgradeBaseCost(this.cost - 1);
 		this.magicNumber = this.cost;
+		this.initializeDescription();
 	  }
     }
   }

@@ -3,6 +3,7 @@ package com.megacrit.cardcrawl.cards.red;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.megacrit.cardcrawl.actions.unique.AbandonAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardRarity;
@@ -37,8 +38,9 @@ public class Abandon
   
   public void use(AbstractPlayer p, AbstractMonster m)
   {
-    AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p, p, this.magicNumber, false, true, false));
-    AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
+    //AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p, p, this.magicNumber, false, true, false));
+	AbstractDungeon.actionManager.addToBottom(new AbandonAction(p, p, this.magicNumber, this.upgraded));
+    //AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
   }
   
   public AbstractCard makeCopy()

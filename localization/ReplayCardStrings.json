@@ -5,13 +5,13 @@
   },
   "Poison Darts": {
     "NAME": "Poison Darts",
-    "DESCRIPTION": "Apply !M! #yNecrotic Poison X times.",
-	"UPGRADE_DESCRIPTION": "Apply !M! #yNecrotic Poison (X+1) times."
+    "DESCRIPTION": "Apply !M! Necrotic Poison X times.",
+	"UPGRADE_DESCRIPTION": "Apply !M! Necrotic Poison (X+1) times."
   },
   "Toxin Wave": {
     "NAME": "Toxin Wave",
-    "DESCRIPTION": "Apply !M! #yNecrotic Poison and -1 Strength to ALL enemies. NL Exhaust.",
-	"UPGRADE_DESCRIPTION": "Apply !M! #yNecrotic Poison and -2 Strength to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Apply !M! Necrotic Poison and -1 Strength to ALL enemies. NL Exhaust.",
+	"UPGRADE_DESCRIPTION": "Apply !M! Necrotic Poison and -2 Strength to ALL enemies. NL Exhaust."
   },
   "Hidden Blade": {
     "NAME": "Hidden Blade",
@@ -19,8 +19,8 @@
   },
   "Abandon": {
     "NAME": "Abandon",
-    "DESCRIPTION": "Exhaust !M! card. NL Draw 1 card. NL Ethereal.",
-    "UPGRADE_DESCRIPTION": "Exhaust 1 - !M! cards. NL Draw 1 card. NL Ethereal."
+    "DESCRIPTION": "Exhaust !M! card. NL Draw !M! card. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Exhaust up to !M! cards. NL Draw 1 card for each. NL Ethereal."
   },
   "Life Link": {
     "NAME": "Life Bind",
@@ -54,6 +54,14 @@
   "Languid": {
 	"NAME": "Languid",
 	"DESCRIPTION": "Unplayable. NL If this is in your hand at the end of your turn, start next turn with 1 less Energy."
+  },
+  "Delirium": {
+	"NAME": "Delirium",
+	"DESCRIPTION": "Unplayable. NL At the end of your turn, gain Confusion for 1 round."
+  },
+  "Voices": {
+	"NAME": "Voices",
+	"DESCRIPTION": "Unplayable. NL At the end of your turn, shuffle !M! Dazed into your discard pile. NL Ethereal."
   },
   "Ghost Swipe": {
     "NAME": "Ghost Swipe",

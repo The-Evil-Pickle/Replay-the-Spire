@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.powers.PoisonPower;
+import com.megacrit.cardcrawl.powers.NecroticPoisonPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import java.util.ArrayList;
@@ -38,19 +38,18 @@ public class ToxicPotion
   {
     super(NAME, "Toxic Potion", AbstractPotion.PotionSize.H, AbstractPotion.PotionColor.POISON);
     if (AbstractDungeon.ascensionLevel >= 11) {
-      this.potency = 8;
+      this.potency = 4;
 	  this.secondPotency = 3;
     } else {
-      this.potency = 10;
+      this.potency = 5;
 	  this.secondPotency = 2;
     }
-    this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1] + this.secondPotency + DESCRIPTIONS[2] + this.secondPotency + DESCRIPTIONS[3]);
+    this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1] + (this.secondPotency - 1) + DESCRIPTIONS[2] + this.secondPotency + DESCRIPTIONS[3]);
     this.isThrown = true;
     this.tips.add(new PowerTip(this.name, this.description));
     this.tips.add(new PowerTip(
-    
-      TipHelper.capitalize(GameDictionary.POISON.NAMES[0]), 
-      (String)GameDictionary.keywords.get(GameDictionary.POISON.NAMES[0])));
+      TipHelper.capitalize("necrotic poison"), 
+      (String)GameDictionary.keywords.get("necrotic poison")));
 	this.rarity = AbstractPotion.PotionRarity.RARE;
   }
   
@@ -58,11 +57,11 @@ public class ToxicPotion
   {
     for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
       if (!m.isDeadOrEscaped()) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new PoisonPower(m, AbstractDungeon.player, this.potency), this.potency));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new NecroticPoisonPower(m, AbstractDungeon.player, this.potency), this.potency));
       }
     }
 	
-	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, this.secondPotency, false), this.secondPotency));
+	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, this.secondPotency - 1, false), this.secondPotency - 1));
 	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FrailPower(AbstractDungeon.player, this.secondPotency, false), this.secondPotency));
   }
   
@@ -71,8 +70,4 @@ public class ToxicPotion
     return new ToxicPotion();
   }
   
-  public int getPrice()
-  {
-    return 70;
-  }
 }

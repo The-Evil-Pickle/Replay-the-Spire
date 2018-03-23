@@ -27,21 +27,9 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
-import basemod.BaseMod;
-import basemod.ModPanel;
-import basemod.helpers.RelicType;
-import basemod.interfaces.EditCardsSubscriber;
-//import basemod.interfaces.EditKeywordsSubscriber;
-import basemod.interfaces.EditRelicsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.OnCardUseSubscriber;
-//import basemod.interfaces.OnPowersModifiedSubscriber;
-import basemod.interfaces.PostBattleSubscriber;
-import basemod.interfaces.PostDrawSubscriber;
-import basemod.interfaces.PostDungeonInitializeSubscriber;
-import basemod.interfaces.PostExhaustSubscriber;
-import basemod.interfaces.PostInitializeSubscriber;
-import basemod.interfaces.SetUnlocksSubscriber;
+import basemod.*;
+import basemod.helpers.*;
+import basemod.interfaces.*;
 
 import com.megacrit.cardcrawl.relics.*;
 //SetUnlocksSubscriber, 
@@ -101,6 +89,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         
+		
+        final String[] necroNames = { "necrotic", "necrotic poison" };
+        BaseMod.addKeyword(necroNames, "A powerful poison that deals 2 damage each turn.");
+		
         Settings.isDailyRun = false;
         Settings.isTrial = false;
         Settings.isDemo = false;
@@ -162,7 +154,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		AddAndUnlockCard(new Hallucinations());
 		AddAndUnlockCard(new Languid());
 		AddAndUnlockCard(new Sickly());
-		//AddAndUnlockCard(new LoomingEvil());
+		AddAndUnlockCard(new Delirium());
+		AddAndUnlockCard(new Voices());
+		AddAndUnlockCard(new LoomingEvil());
 		
 		
 		
