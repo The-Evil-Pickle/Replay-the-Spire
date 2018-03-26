@@ -4,6 +4,13 @@ size: 2048,2048
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
+colorless/attack/ritualDagger
+  rotate: false
+  xy: 248, 2
+  size: 244, 182
+  orig: 250, 190
+  offset: 2, 8
+  index: -1
 colorless/skill/apotheosis
   rotate: false
   xy: 740, 1842
@@ -13,168 +20,189 @@ colorless/skill/apotheosis
   index: -1
 colorless/skill/bandageUp
   rotate: false
-  xy: 1478, 1842
+  xy: 1724, 1842
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 colorless/skill/blind
   rotate: false
-  xy: 494, 1658
+  xy: 740, 1658
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 colorless/skill/darkShackles
   rotate: false
-  xy: 2, 1290
+  xy: 248, 1290
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 colorless/skill/deepBreath
   rotate: false
-  xy: 986, 1290
+  xy: 1232, 1290
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 colorless/skill/enlightenment
   rotate: false
-  xy: 1478, 1106
+  xy: 1724, 1106
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 colorless/skill/finesse
   rotate: false
-  xy: 740, 922
+  xy: 986, 922
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
-colorless/skill/goodInstincts
+colorless/skill/ghostly
   rotate: false
   xy: 1724, 922
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
+colorless/skill/goodInstincts
+  rotate: false
+  xy: 248, 738
+  size: 244, 182
+  orig: 250, 190
+  offset: 2, 8
+  index: -1
 colorless/skill/jackOfAllTrades
   rotate: false
-  xy: 1478, 738
+  xy: 2, 554
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 colorless/skill/jax
   rotate: false
-  xy: 1724, 738
+  xy: 248, 554
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 colorless/skill/madness
   rotate: false
-  xy: 494, 554
+  xy: 986, 554
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 colorless/skill/masterOfStrategy
   rotate: false
-  xy: 986, 554
+  xy: 1478, 554
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 colorless/skill/panacea
   rotate: false
-  xy: 986, 370
+  xy: 1478, 370
   size: 250, 182
   orig: 250, 190
   offset: 0, 8
   index: -1
 colorless/skill/purity
   rotate: false
-  xy: 494, 186
+  xy: 1232, 186
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 colorless/skill/secretTechnique
   rotate: false
-  xy: 1724, 186
+  xy: 740, 2
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 colorless/skill/secretWeapon
   rotate: false
-  xy: 2, 2
+  xy: 986, 2
+  size: 244, 182
+  orig: 250, 190
+  offset: 2, 8
+  index: -1
+curse/ascension
+  rotate: false
+  xy: 1232, 1842
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 curse/clumsy
   rotate: false
-  xy: 1232, 1474
+  xy: 1478, 1474
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 curse/decay
   rotate: false
-  xy: 740, 1290
+  xy: 986, 1290
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 curse/doubt
   rotate: false
-  xy: 986, 1106
+  xy: 1232, 1106
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 curse/injury
   rotate: false
-  xy: 986, 738
+  xy: 1478, 738
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 curse/necronomicurse
   rotate: false
-  xy: 1232, 554
+  xy: 1724, 554
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 curse/normality
   rotate: false
-  xy: 1724, 554
+  xy: 248, 370
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 curse/pain
   rotate: false
-  xy: 740, 370
+  xy: 1232, 370
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 curse/parasite
   rotate: false
-  xy: 1238, 370
+  xy: 1730, 370
+  size: 244, 182
+  orig: 250, 190
+  offset: 2, 8
+  index: -1
+curse/pride
+  rotate: false
+  xy: 986, 186
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 curse/regret
   rotate: false
-  xy: 1232, 186
+  xy: 2, 2
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
@@ -202,208 +230,201 @@ green/skill/alchemize
   index: -1
 green/skill/backflip
   rotate: false
-  xy: 1232, 1842
+  xy: 1478, 1842
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/bladeDance
   rotate: false
-  xy: 248, 1658
+  xy: 494, 1658
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/blur
   rotate: false
-  xy: 986, 1658
+  xy: 1232, 1658
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/bouncingFlask
   rotate: false
-  xy: 1232, 1658
+  xy: 1478, 1658
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/bulletTime
   rotate: false
-  xy: 1478, 1658
+  xy: 1724, 1658
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/burst
   rotate: false
-  xy: 248, 1474
+  xy: 494, 1474
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/calculatedGamble
   rotate: false
-  xy: 494, 1474
+  xy: 740, 1474
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/catalyst
   rotate: false
-  xy: 740, 1474
+  xy: 986, 1474
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/cloakAndDagger
   rotate: false
-  xy: 986, 1474
+  xy: 1232, 1474
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/concentrate
   rotate: false
-  xy: 1478, 1474
+  xy: 1724, 1474
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/cripplingPoison
   rotate: false
-  xy: 1724, 1474
+  xy: 2, 1290
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/deadlyPoison
   rotate: false
-  xy: 494, 1290
+  xy: 740, 1290
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/defend
   rotate: false
-  xy: 1232, 1290
+  xy: 1478, 1290
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/deflect
   rotate: false
-  xy: 1724, 1290
+  xy: 2, 1106
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/distractions
   rotate: false
-  xy: 2, 1106
+  xy: 248, 1106
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/dodgeAndRoll
   rotate: false
-  xy: 248, 1106
+  xy: 494, 1106
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/doppelganger
   rotate: false
-  xy: 494, 1106
+  xy: 740, 1106
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/escapePlan
   rotate: false
-  xy: 2, 922
+  xy: 248, 922
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/expertise
   rotate: false
-  xy: 494, 922
+  xy: 740, 922
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/hide
   rotate: false
-  xy: 248, 738
+  xy: 740, 738
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/legSweep
   rotate: false
-  xy: 2, 554
+  xy: 494, 554
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/malaise
   rotate: false
-  xy: 740, 554
+  xy: 1232, 554
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/nightmare
   rotate: false
-  xy: 1478, 554
+  xy: 2, 370
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/outmaneuver
   rotate: false
-  xy: 494, 370
+  xy: 986, 370
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/phantasmalKiller
   rotate: false
-  xy: 1484, 370
+  xy: 2, 186
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/piercingWail
   rotate: false
-  xy: 1730, 370
+  xy: 248, 186
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/prepared
   rotate: false
-  xy: 248, 186
+  xy: 740, 186
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/reflex
   rotate: false
-  xy: 986, 186
+  xy: 1724, 186
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/setup
-  rotate: false
-  xy: 740, 2
-  size: 244, 182
-  orig: 250, 190
-  offset: 2, 8
-  index: -1
-green/skill/stormOfSteel
   rotate: false
   xy: 1724, 2
   size: 244, 182
@@ -419,180 +440,159 @@ red/skill/armaments
   index: -1
 red/skill/battleTrance
   rotate: false
-  xy: 1724, 1842
+  xy: 2, 1658
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/bloodLetting
   rotate: false
-  xy: 740, 1658
+  xy: 986, 1658
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/burningPact
   rotate: false
-  xy: 2, 1474
+  xy: 248, 1474
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/defend
   rotate: false
-  xy: 1478, 1290
+  xy: 1724, 1290
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/doubleTap
   rotate: false
-  xy: 740, 1106
+  xy: 986, 1106
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/dualWield
   rotate: false
-  xy: 1232, 1106
+  xy: 1478, 1106
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/entrench
   rotate: false
-  xy: 1724, 1106
+  xy: 2, 922
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/exhume
   rotate: false
-  xy: 248, 922
+  xy: 494, 922
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/flameBarrier
   rotate: false
-  xy: 986, 922
+  xy: 1232, 922
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/flex
   rotate: false
-  xy: 1232, 922
+  xy: 1478, 922
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/ghostlyArmor
   rotate: false
-  xy: 1478, 922
+  xy: 2, 738
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/havoc
   rotate: false
-  xy: 2, 738
+  xy: 494, 738
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/impervious
   rotate: false
-  xy: 494, 738
+  xy: 986, 738
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/infernalBlade
   rotate: false
-  xy: 740, 738
+  xy: 1232, 738
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/intimidate
   rotate: false
-  xy: 1232, 738
+  xy: 1724, 738
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/limitBreak
   rotate: false
-  xy: 248, 554
+  xy: 740, 554
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/offering
   rotate: false
-  xy: 2, 370
+  xy: 494, 370
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/opening
   rotate: false
-  xy: 248, 370
+  xy: 740, 370
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/powerThrough
   rotate: false
-  xy: 2, 186
+  xy: 494, 186
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/rage
   rotate: false
-  xy: 740, 186
+  xy: 1478, 186
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/secondWind
   rotate: false
-  xy: 1478, 186
+  xy: 494, 2
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/seeingRed
   rotate: false
-  xy: 248, 2
-  size: 244, 182
-  orig: 250, 190
-  offset: 2, 8
-  index: -1
-red/skill/sentinel
-  rotate: false
-  xy: 494, 2
-  size: 244, 182
-  orig: 250, 190
-  offset: 2, 8
-  index: -1
-red/skill/shock_wave
-  rotate: false
-  xy: 986, 2
-  size: 244, 182
-  orig: 250, 190
-  offset: 2, 8
-  index: -1
-red/skill/shrugItOff
-  rotate: false
   xy: 1232, 2
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
-red/skill/spotWeakness
+red/skill/sentinel
   rotate: false
   xy: 1478, 2
   size: 244, 182
@@ -601,21 +601,21 @@ red/skill/spotWeakness
   index: -1
 status/beta
   rotate: false
-  xy: 2, 1658
+  xy: 248, 1658
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 status/burn
   rotate: false
-  xy: 1724, 1658
+  xy: 2, 1474
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 status/dazed
   rotate: false
-  xy: 248, 1290
+  xy: 494, 1290
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
@@ -1201,28 +1201,28 @@ colorless/attack/shiv
   index: -1
 colorless/skill/thinkingAhead
   rotate: false
-  xy: 1002, 570
+  xy: 752, 198
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 colorless/skill/transmutation
   rotate: false
-  xy: 1252, 758
+  xy: 748, 14
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 colorless/skill/trip
   rotate: false
-  xy: 1498, 758
+  xy: 1002, 386
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 curse/writhe
   rotate: false
-  xy: 1002, 386
+  xy: 1494, 390
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
@@ -1269,30 +1269,37 @@ green/attack/unload
   orig: 250, 190
   offset: 1, 4
   index: -1
+green/skill/stormOfSteel
+  rotate: false
+  xy: 1252, 758
+  size: 244, 182
+  orig: 250, 190
+  offset: 2, 8
+  index: -1
 green/skill/survivor
   rotate: false
-  xy: 252, 6
+  xy: 1498, 758
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/tactician
   rotate: false
-  xy: 502, 194
+  xy: 1744, 758
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/terror
   rotate: false
-  xy: 752, 382
+  xy: 502, 10
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 green/skill/underhandedStrike
   rotate: false
-  xy: 502, 10
+  xy: 1252, 574
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
@@ -1353,23 +1360,58 @@ red/attack/whirlWind
   orig: 250, 190
   offset: 1, 4
   index: -1
+red/skill/shock_wave
+  rotate: false
+  xy: 252, 6
+  size: 244, 182
+  orig: 250, 190
+  offset: 2, 8
+  index: -1
+red/skill/shrugItOff
+  rotate: false
+  xy: 502, 194
+  size: 244, 182
+  orig: 250, 190
+  offset: 2, 8
+  index: -1
+red/skill/spotWeakness
+  rotate: false
+  xy: 1002, 570
+  size: 244, 182
+  orig: 250, 190
+  offset: 2, 8
+  index: -1
 red/skill/trueGrit
   rotate: false
-  xy: 1744, 758
+  xy: 998, 202
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 red/skill/warCry
   rotate: false
-  xy: 752, 198
+  xy: 1744, 574
+  size: 244, 182
+  orig: 250, 190
+  offset: 2, 8
+  index: -1
+status/slimed
+  rotate: false
+  xy: 752, 382
+  size: 244, 182
+  orig: 250, 190
+  offset: 2, 8
+  index: -1
+status/void
+  rotate: false
+  xy: 1498, 574
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
   index: -1
 status/wound
   rotate: false
-  xy: 748, 14
+  xy: 1248, 390
   size: 244, 182
   orig: 250, 190
   offset: 2, 8
