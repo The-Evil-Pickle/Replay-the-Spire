@@ -109,7 +109,7 @@ public class NeowReward
       break;
 	case 4:
 	  this.type = NeowRewardType.COLORLESS_CARD;
-	  this.optionLabel += TEXT[29];
+	  this.optionLabel += "[ #gObtain #ga #grandom #gcolorless #gCard ]";
 	  break;
     default: 
       this.type = NeowRewardType.TRANSFORM_CARD;

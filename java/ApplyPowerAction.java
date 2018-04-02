@@ -126,7 +126,7 @@ public class ApplyPowerAction extends AbstractGameAction
                 }
                 if (this.target.hasPower("Reflection") && !this.source.equals(this.target) && (this.powerToApply.ID.equals("Weakened") || this.powerToApply.ID.equals("Vulnerable"))) {
                     AbstractDungeon.player.getRelic("Mirror").flash();
-                    AbstractDungeon.actionManager.addToTop((AbstractGameAction)new TextAboveCreatureAction(this.target, ApplyPowerAction.TEXT[4]));
+                    AbstractDungeon.actionManager.addToTop((AbstractGameAction)new TextAboveCreatureAction(this.target, "Reflected"));
                     if (this.powerToApply.ID.equals("Vulnerable")) {
                         AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new ApplyPowerAction(this.source, this.target, (AbstractPower)new VulnerablePower(this.source, this.amount + 1, false), this.amount + 1));
                     }

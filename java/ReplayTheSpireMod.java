@@ -21,9 +21,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
@@ -115,6 +113,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		BaseMod.addRelic(new KingOfHearts(), RelicType.RED);
 		BaseMod.addRelic(new Mirror(), RelicType.SHARED);
 		BaseMod.addRelic(new OnionRing(), RelicType.SHARED);
+		BaseMod.addRelic(new OozeArmor(), RelicType.SHARED);
 		BaseMod.addRelic(new PetGhost(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfChaos(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfFury(), RelicType.SHARED);
@@ -180,6 +179,14 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
         String powerStrings = Gdx.files.internal("localization/ReplayPowerStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(PowerStrings.class, powerStrings);
+        // EventStrings
+        String eventStrings = Gdx.files.internal("localization/ReplayEventStrings.json").readString(
+        		String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
+        // PotionStrings
+        String potionStrings = Gdx.files.internal("localization/ReplayPotionStrings.json").readString(
+        		String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(PotionStrings.class, potionStrings);
 		
 		logger.info("done editting strings");
 	}

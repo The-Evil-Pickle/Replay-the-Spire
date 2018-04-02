@@ -5,8 +5,8 @@
   },
   "Poison Darts": {
     "NAME": "Poison Darts",
-    "DESCRIPTION": "Apply !M! Necrotic Poison X times.",
-	"UPGRADE_DESCRIPTION": "Apply !M! Necrotic Poison (X+1) times."
+    "DESCRIPTION": "Apply X + !M! Necrotic Poison X times.",
+	"UPGRADE_DESCRIPTION": "Apply X + !M! Necrotic Poison (X+1) times."
   },
   "Toxin Wave": {
     "NAME": "Toxin Wave",

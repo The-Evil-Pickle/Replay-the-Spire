@@ -35,22 +35,6 @@ The first thing you ever forged.
 You feel your body surging with power. It hurts.
 "Gain 2 energy at the start of each turn. Take 1 damage for each energy used."
 
-- Frog Leg -
-(Boss - Silent only)
-You can't avoid them all.
-"Evade every 10th attack against you."
-
-- Cherry Blossom -
-Transience of life
-(Common)
-The first exhaust card you play each combat dosen't exhaust on its first use
-OR
-All exhaust cards become etheral instead
-
-- Bloody Coin -
-(Uncommon)
-Gain 5 gold every time you take unblocked damage
-
 - Snack Pack -
 (Uncommon)
 Gain 2 HP whenever you play 3 attacks in a turn
@@ -86,3 +70,44 @@ Some card rewards have randomized stats.
 - King of Hearts -
 (Uncommon (Ironclad only))
 Whenever you lose HP during your turn, gain twice that amount of block.
+
+
+
+
+==[[!!Planed/Uncoded!!]]==
+
+- Frog Leg -
+(Boss - Silent only)
+You can't avoid them all.
+"Evade every 10th attack against you."
+
+- Cherry Blossom -
+Transience of life
+(Common)
+The first exhaust card you play each combat dosen't exhaust on its first use
+OR
+All exhaust cards become etheral instead
+
+- Bloody Coin -
+(Uncommon)
+Gain 5 gold every time you take unblocked damage
+
+- Ooze Armor -
+(Boss (Ironclad Only))
+Gain 1 energy each turn. Gain Slow and Malleable at the start of combat.
+
+- Deep Pockets -
+(Common (Silent Only))
+Add 3 Shivs to your deck on pickup. Whenever you draw a Shiv, draw a card.
+
+- Honey Jar -
+(Boss)
+Draw 1 more card each turn. You cannot skip rewards.
+
+- Polymerization Catalyst -
+(Uncommon)
+You may now Transform cards at rest sites.
+
+- Burning Branch -
+(Rare (Event?))
+Gain 2 max health. Whenever you enter a rest site, start the next combat with 4 regeneration (@2hp/t). Can be upgraded at rest sites (+6mxhp/+3regen).

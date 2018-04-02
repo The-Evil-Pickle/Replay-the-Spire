@@ -23,7 +23,7 @@
     "NAME": "Necrotic Poison",
     "DESCRIPTIONS": [
 	"At the start of your turn, lose #b",
-	" HP, then reduce #yNecrotic #yPoison by #b1.", 
+	" HP, then reduce #yNecrotic #yPoison by half.", 
 	"At the start of its turn, loses #b",
 	" NL Regular #yPoison will not count down."
     ]

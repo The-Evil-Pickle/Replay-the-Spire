@@ -129,5 +129,15 @@
 	"DESCRIPTIONS": [
 	"When you lose HP during your turn, gain twice that much block."
 	]
+  },
+  "Ooze Armor": {
+	"NAME": "Ooze Armor",
+	"FLAVOR": "Armor with the flexability and toughness of living slime.",
+    "DESCRIPTIONS": [
+	" NL Gain 4 #yMalleable, -2 #ySlow, and 2 #ySlimed at the start of combat",
+	"Gain [R] and draw a card at the start of each turn.", 
+	"Gain [G] and draw a card at the start of each turn.",
+	"Gain [B] and draw a card at the start of each turn."
+	]
   }
 }

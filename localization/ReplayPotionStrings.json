@@ -1,0 +1,67 @@
+{
+  "Adrenaline Potion": {
+	"NAME": "Adrenaline Potion",
+    "DESCRIPTIONS": [
+			"Draw #b",
+			" card",
+			" and gain #b",
+			" Energy."
+	]
+  },
+  "Death Potion": {
+	"NAME": "Death Potion",
+    "DESCRIPTIONS": [
+			"Deal #b",
+			" damage. Lose #b",
+			" health."
+	]
+  },
+  "Doom Potion": {
+	"NAME": "Doom Potion",
+    "DESCRIPTIONS": [
+			"Destroy an enemy after #b",
+			" turns."
+	]
+  },
+  "Elixir": {
+	"NAME": "Elixir",
+    "DESCRIPTIONS": [
+			"#yExhaust ALL #yStatus and #yCurse cards.",
+			"#yExhaust all #yStatus and #yCurse cards from your hand.",
+			"",
+			"It had no effect..."
+	]
+  },
+  "Spirit Potion": {
+	"NAME": "Spirit Potion",
+    "DESCRIPTIONS": [
+			"Gain #b",
+			" #yIntangible."
+	]
+  },
+  "Thorns Potion": {
+	"NAME": "Thorns Potion",
+    "DESCRIPTIONS": [
+			"Gain #b",
+			" #yThorns."
+	]
+  },
+  "Toxic Potion": {
+	"NAME": "Toxic Potion",
+    "DESCRIPTIONS": [
+			"Apply #b",
+			" #yPoison to ALL enemies. Gain #b",
+			" #yVulnerable and #b",
+			" #yFrail."
+	]
+  },
+  "Venom Potion": {
+	"NAME": "Venom Potion",
+    "DESCRIPTIONS": [
+			"Apply #b",
+			" #yPoison to enemies when you damage them.",
+			" Lose #b",
+			" #yStrength."
+	]
+  }
+}

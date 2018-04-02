@@ -1,0 +1,69 @@
+{
+  "Stuck": {
+	"NAME": "Stuck",
+    "DESCRIPTIONS": [
+			"While crawling though some rubble, you manage to get your leg stuck in some rocks.",
+			"What should you do?",
+			"Hopefully nobody sees you like this!",
+			"Your dignity is more important than time."
+	],
+    "OPTIONS": [
+			"[Continue]",
+			"[Take Off Pants] #rLose #ryour #rpants #rand #rLose ",
+			"[Tug] #gKeep #gyour #gpants #gand #gUpgrade ",
+			"[Locked] Requires: Unupgraded Card",
+			"[Leave]"
+    ]
+  },
+  "Mirror Mist": {
+	"NAME": "Mirror Mist",
+	"DESCRIPTIONS": [
+		"In the mist you see a twisted reflection of yourself. You struggle to keep your thoughts your own as swirling colors surround you.",
+		"You briefly remember lost memories, but they belong to one other than yourself. The mist clears, leaving you somewhat disoriented.",
+		"You feel as if some part of you has been lost, but you can't quite place it. As the mist clears, the feeling is soon forgotten."
+	],
+	"OPTIONS": [
+		"[Locked] Requires: ",
+		".",
+		"[Lose ",
+		"] #gObtain #gSurvivor #gand #gNeutralize.",
+		"] #gObtain #gBurning #gBlood.",
+		"[Wander] Transform and upgrade a random card.",
+		"[Leave]"
+	]
+  },
+  "Trapped Chest": {
+	"NAME": "Trapped Chest",
+	"DESCRIPTIONS": [
+		"You find a locked chest. Something about it seems a bit off...",
+		"As you open the chest, darts suddently fly out at you!",
+		"The key smoothly unlocks the chest without triggering the trap mechanism.",
+		"Despite your best efforts, the trap manages to hit its mark. But at least the chest is unlocked!",
+		"You manage to dodge the darts - but just barely.",
+		"The chest contains stashed items!"
+	],
+	"OPTIONS": [
+		"[Pick Lock] #gObtain #grandom #gloot. #rTrigger #ra #rtrap.",
+		"[Use Cursed Key] #gObtain #grandom #gloot. #rObtain #rrandom #rcurse.",
+		"[Locked] Requires: Cursed Key.",
+		"[Leave]",
+		"[Endure] #rBecome #rCursed #r- #rPain.",
+		"[Block] #rTake #r",
+		" #rDamage.",
+		"[Dodge] #r",
+		"%: #rTake #r",
+		"[Open Chest]"
+	]
+  },
+  "Chaos Ring Event": {
+	"NAME": "Dead Man's Ring",
+	"DESCRIPTIONS": [
+		"As you pass by a skeleton, you notice it is wearing a #yred #yring. You feel some sort of #r~chaotic~ #r~energy~ emanating from it; just looking at it makes your head start to pound.",
+		"You don't see how picking up cursed rings you found on dead people could possibly be anything other than a fantastic idea."
+	],
+	"OPTIONS": [
+		"[Take it] #gObtain #ga #gRelic. #rBecome #rCursed - #rHallucinations.",
+		"[Leave]"
+	]
+  }
+}

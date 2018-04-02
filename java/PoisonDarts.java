@@ -44,7 +44,7 @@ public class PoisonDarts
 	if (this.upgraded) {
 		upadd = 1;
 	}
-	AbstractDungeon.actionManager.addToBottom(new PoisonDartsAction(p, m, this.magicNumber, this.freeToPlayOnce, this.energyOnUse + upadd));
+	AbstractDungeon.actionManager.addToBottom(new PoisonDartsAction(p, m, this.magicNumber + this.energyOnUse, this.freeToPlayOnce, this.energyOnUse + upadd));
   }
   
   public AbstractCard makeCopy()

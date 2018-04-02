@@ -42,7 +42,7 @@ public class ToxinWave
     super("Toxin Wave", NAME, "red/skill/shock_wave", "red/skill/shock_wave", ToxinWave.COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, 1);
     
     this.exhaust = true;
-    this.baseMagicNumber = 3;
+    this.baseMagicNumber = 5;
     this.magicNumber = this.baseMagicNumber;
 	this.strengthmod = -1;
   }
@@ -66,7 +66,7 @@ public class ToxinWave
     if (!this.upgraded)
     {
       upgradeName();
-      upgradeMagicNumber(1);
+      upgradeMagicNumber(2);
 	  this.strengthmod -= 1;
       this.rawDescription = UPGRADE_DESCRIPTION;
       initializeDescription();
