@@ -25,6 +25,7 @@ public class ElectricBlood extends AbstractRelic
     @Override
     public void onUseCard(final AbstractCard targetCard, final UseCardAction useCardAction) {
 		AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, targetCard.costForTurn));
+		//AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, targetCard.costForTurn, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
     }
     
     @Override

@@ -27,5 +27,12 @@
 	"At the start of its turn, loses #b",
 	" NL Regular #yPoison will not count down."
     ]
+  },
+  "Retain Some Block": {
+    "NAME": "Retain Block",
+    "DESCRIPTIONS": [
+	"At the end of each round, retain up to #b",
+	" #yBlock."
+    ]
   }
 }

@@ -17,6 +17,10 @@
     "NAME": "Hidden Blade",
     "DESCRIPTION": "Add a shiv to your hand and draw !M! cards."
   },
+  "Fluid Movement": {
+    "NAME": "Fluid Movement",
+    "DESCRIPTION": "Retain up to !M! Block between rounds."
+  },
   "Abandon": {
     "NAME": "Abandon",
     "DESCRIPTION": "Exhaust !M! card. NL Draw !M! card. NL Ethereal.",
@@ -29,6 +33,10 @@
   "Massacre": {
     "NAME": "Massacre",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Lose all Strength. NL Affected !M! times by Strength."
+  },
+  "Hemogenesis": {
+    "NAME": "Hemogenesis",
+    "DESCRIPTION": "Deal !D! damage. Gain !B! Block. Heal !M! HP. NL Upgrade each time you lose HP while this is in your hand."
   },
   "Improvise": {
     "NAME": "Improvise",

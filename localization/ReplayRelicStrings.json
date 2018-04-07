@@ -42,7 +42,7 @@
 	"NAME": "Electric Blood",
 	"FLAVOR": "You feel your body surging with power. It hurts.",
     "DESCRIPTIONS": [
-	"Gain [R] [R] at the start of each turn. NL Take 1 damage for every [R] you use."
+	"Gain [R] [R] at the start of each turn. NL Lose 1 HP for every [R] you use."
 	]
   },
   "Funnel": {
@@ -138,6 +138,21 @@
 	"Gain [R] and draw a card at the start of each turn.", 
 	"Gain [G] and draw a card at the start of each turn.",
 	"Gain [B] and draw a card at the start of each turn."
+	]
+  },
+  "Gremlin Food": {
+	"NAME": "Gremlin Food",
+	"FLAVOR": "Some gremlins are known to steal food from people, but in return grant a favor while the adventurer sleeps.",
+    "DESCRIPTIONS": [
+	"Whenever you Rest, #yUpgrade a random card."
+	]
+  },
+  "Guide Book": {
+	"NAME": "Guide Book",
+	"FLAVOR": "A book detailing \"tourist spots\" in the spire. It seems to have been written by the shop merchant.",
+    "DESCRIPTIONS": [
+	"On pickup, #yUpgrades ",
+	" cards randomly. NL Prioritizes rarer cards."
 	]
   }
 }

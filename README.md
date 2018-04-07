@@ -26,6 +26,7 @@ Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe or Ghost
 Snack Pack | All | Uncommon | Every time you play 3 **Attacks** in a single turn, gain 2 HP.
 Arrowhead | All | Rare | You may **Upgrade** 2 cards whenever you smith.
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
+GuideBook | All | Shop | On pickup, upgrade 2 cards randomly. Prioritizes rarer cards.
 Ooze Armor | All | Boss | Gain 1 energy and draw 1 card at the start of each turn. At the start of combat, gain Slow (resets to -2) and Malleable (resets to 4), and shuffle 2 Slimed into your draw pile.
 Electric Blood | Ironclad | Boss | Gain 2 energy at the start of each turn. When you play a card, lose HP equal to the cost.
 Snecko Scales | Silent | Boss | Draw 3 additional cards each turn. When you play a card, discard a card.
@@ -37,8 +38,10 @@ Ring of Fury | All | Event | At the start of combat gain 2 **Strength** and lose
 Name | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis)
 --- | --- | --- | --- | --- | ---
 Abandon | Red | Uncommmon | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. **Ethereal**.
+Hemogenesis | Red | Uncommmon | Attack | 2 | Deal 3 damage. Gain 3 Block. Heal 1 HP. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times.
 Life Link | Red | Uncommmon | Skill | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage. **Exhaust**.
 Massacre | Red | Uncommmon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
+Fluid Movement | Green | Commmon | Power | 1 | Retain up to 5(8) block between rounds.
 Hidden Blade | Green | Commmon | Skill | 1 | Add a Shiv to your hand and draw 2(3) cards.
 Toxin Wave | Green | Uncommon | Skill | 2 | Apply 5(7) **Necrotic** **Poison** and -1(-2) **Strength** to ALL enemies. **Exhaust**.
 Atom Bomb | Green | Rare | Attack | 4 | Deal 60(80) damage. Apply 3(4) **Poison** to ALL enemies. **Exhaust**.

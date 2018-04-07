@@ -109,6 +109,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		BaseMod.addRelic(new ElectricBlood(), RelicType.RED);
 		BaseMod.addRelic(new Funnel(), RelicType.SHARED);
 		BaseMod.addRelic(new Garlic(), RelicType.SHARED);
+		BaseMod.addRelic(new GremlinFood(), RelicType.SHARED);
+		BaseMod.addRelic(new GuideBook(), RelicType.SHARED);
 		BaseMod.addRelic(new IronHammer(), RelicType.SHARED);
 		BaseMod.addRelic(new KingOfHearts(), RelicType.RED);
 		BaseMod.addRelic(new Mirror(), RelicType.SHARED);
@@ -132,15 +134,18 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 	
 	@Override
 	public void receiveEditCards() {
-		logger.info("begin editting cards");
+		logger.info("[RtS] begin editting cards");
 		
 		logger.info("adding cards for Ironclad...");
 		AddAndUnlockCard(new Abandon());
+		AddAndUnlockCard(new Hemogenesis());
 		AddAndUnlockCard(new LifeLink());
 		AddAndUnlockCard(new Massacre());
 		//AddAndUnlockCard(new PerfectedStrike());
 		logger.info("adding cards for Silent...");
 		AddAndUnlockCard(new AtomBomb());
+		AddAndUnlockCard(new ToxinWave());
+		AddAndUnlockCard(new FluidMovement());
 		AddAndUnlockCard(new PoisonDarts());
 		AddAndUnlockCard(new ToxinWave());
 		AddAndUnlockCard(new HiddenBlade());
