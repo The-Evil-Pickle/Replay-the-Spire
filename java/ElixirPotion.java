@@ -53,7 +53,7 @@ public class ElixirPotion
     
       TipHelper.capitalize(GameDictionary.CURSE.NAMES[0]), 
       (String)GameDictionary.keywords.get(GameDictionary.CURSE.NAMES[0])));
-	this.rarity = AbstractPotion.PotionRarity.SHOP;
+	//this.rarity = AbstractPotion.PotionRarity.SHOP;
   }
   
   public void use(AbstractCreature target)
@@ -119,5 +119,11 @@ public class ElixirPotion
   public AbstractPotion makeCopy()
   {
     return new ElixirPotion();
+  }
+  
+  
+  public int getPrice()
+  {
+	return 40;
   }
 }

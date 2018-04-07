@@ -26,7 +26,7 @@ public class SpiritPotion
   
   public SpiritPotion()
   {
-    super(NAME, "Spirit Potion", AbstractPotion.PotionSize.L, AbstractPotion.PotionColor.SPOOKY);
+    super(NAME, "Spirit Potion", AbstractPotion.PotionSize.L, AbstractPotion.PotionColor.GREEN);
     if (AbstractDungeon.ascensionLevel >= 11) {
       this.potency = 1;
     } else {
@@ -39,7 +39,7 @@ public class SpiritPotion
     
       TipHelper.capitalize(GameDictionary.STRENGTH.NAMES[0]), 
       (String)GameDictionary.keywords.get(GameDictionary.STRENGTH.NAMES[0])));
-	this.rarity = AbstractPotion.PotionRarity.ULTRA;
+	//this.rarity = AbstractPotion.PotionRarity.ULTRA;
   }
   
   public void use(AbstractCreature target)
@@ -53,5 +53,11 @@ public class SpiritPotion
   public AbstractPotion makeCopy()
   {
     return new SpiritPotion();
+  }
+  
+  
+  public int getPrice()
+  {
+	return 90;
   }
 }

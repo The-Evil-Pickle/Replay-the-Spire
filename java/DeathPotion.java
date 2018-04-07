@@ -39,7 +39,7 @@ public class DeathPotion
     this.isThrown = true;
     this.targetRequired = true;
     this.tips.add(new PowerTip(this.name, this.description));
-	this.rarity = AbstractPotion.PotionRarity.RARE;
+	//this.rarity = AbstractPotion.PotionRarity.RARE;
   }
   
   public void use(AbstractCreature target)

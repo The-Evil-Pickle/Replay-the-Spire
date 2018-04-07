@@ -4,9 +4,10 @@
 This mod aims to expand upon the base game by adding lots of content. It is currently a work in progress, but you can download the [latest release](https://github.com/AstroPenguin642/Replay-the-Spire/releases) to help us improve it.
 
 Currently adds:
- * 19 Relics (2 ironclad, 1 silent, 16 shared)
- * 17 Cards (3 ironclad, 4 silent, 2 colorless, 6 curses)
+ * 21 Relics (2 ironclad, 1 silent, 18 shared)
+ * 19 Cards (4 ironclad, 5 silent, 2 colorless, 6 curses)
  * 4 Events
+ * 10 Potions
 
 
 # Relics
@@ -62,3 +63,17 @@ Ghost Defend | Colorless | Special | Skill | 1 | Gain 5 block. **Exhaust**. **Et
 Name | Type | Description
 --- | --- | ---
 Necrotic Poison | Power (Debuff) | An alternate kind of Poison. Does double damage, but is reduced by half each turn. Normal Poison does not count down while Necrotic Poison is applied.
+
+# Potions
+Name | Rarity | Description (post-ascension-11 changes in parenthesis)
+--- | --- | ---
+Adrenaline Potion | Uncommmon | Draw 2(1) cards and gain 1 energy.
+Ironskin Potion | Uncommmon | Gain 3(2) block at the end of each turn.
+Thorns Potion | Uncommon | Gain 4(2) Thorns.
+Venom Potion | Uncommon | Gain 1 Envenom (and -1 Strength).
+Death Potion | Rare | Deal 40(32) damage and lose 12(15) HP.
+Toxic Potion | Rare | Apply 5(4) Necrotic Poison to all enemies.
+Doom Potion | Ultra Rare | Destroy an enemy after 10(13) turns.
+Spirit Potion | Ultra Rare | Gain 2(1) Intangible.
+Health Potion | Shop | Heal 15(9) HP.
+Elixir | Shop | Exhaust ALL your status and curse cards (in your hand).

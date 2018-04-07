@@ -44,13 +44,13 @@ public class ToxicPotion
       this.potency = 5;
 	  this.secondPotency = 2;
     }
-    this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1] + (this.secondPotency - 1) + DESCRIPTIONS[2] + this.secondPotency + DESCRIPTIONS[3]);
+    this.description = (DESCRIPTIONS[0] + this.potency);// + DESCRIPTIONS[1] + (this.secondPotency - 1) + DESCRIPTIONS[2] + this.secondPotency + DESCRIPTIONS[3]
     this.isThrown = true;
     this.tips.add(new PowerTip(this.name, this.description));
     this.tips.add(new PowerTip(
       TipHelper.capitalize("necrotic poison"), 
       (String)GameDictionary.keywords.get("necrotic poison")));
-	this.rarity = AbstractPotion.PotionRarity.RARE;
+	//this.rarity = AbstractPotion.PotionRarity.RARE;
   }
   
   public void use(AbstractCreature target)
@@ -61,13 +61,18 @@ public class ToxicPotion
       }
     }
 	
-	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, this.secondPotency - 1, false), this.secondPotency - 1));
-	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FrailPower(AbstractDungeon.player, this.secondPotency, false), this.secondPotency));
+	//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, this.secondPotency - 1, false), this.secondPotency - 1));
+	//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FrailPower(AbstractDungeon.player, this.secondPotency, false), this.secondPotency));
   }
   
   public AbstractPotion makeCopy()
   {
     return new ToxicPotion();
+  }
+  
+  public int getPrice()
+  {
+    return 75;
   }
   
 }

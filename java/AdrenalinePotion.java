@@ -28,7 +28,7 @@ public class AdrenalinePotion
     if (AbstractDungeon.ascensionLevel >= 11) {
       this.potency = 1;
 	  this.secondPotency = 1;
-	  this.rarity = AbstractPotion.PotionRarity.UNCOMMON;
+	  //this.rarity = AbstractPotion.PotionRarity.UNCOMMON;
     } else {
       this.potency = 2;
 	  this.secondPotency = 1;
@@ -60,5 +60,13 @@ public class AdrenalinePotion
   public AbstractPotion makeCopy()
   {
     return new AdrenalinePotion();
+  }
+  
+  public int getPrice()
+  {
+	  if (AbstractDungeon.ascensionLevel >= 11) {
+		return 65;
+	  }
+	  return 50;
   }
 }

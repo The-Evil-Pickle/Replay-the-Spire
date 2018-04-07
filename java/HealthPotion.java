@@ -29,7 +29,7 @@ public class HealthPotion
     this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1]);
     this.isThrown = false;
     this.tips.add(new PowerTip(this.name, this.description));
-	this.rarity = AbstractPotion.PotionRarity.SHOP;
+	//this.rarity = AbstractPotion.PotionRarity.SHOP;
   }
   
   public void use(AbstractCreature target)
@@ -40,6 +40,12 @@ public class HealthPotion
   public AbstractPotion makeCopy()
   {
     return new HealthPotion();
+  }
+  
+  
+  public int getPrice()
+  {
+	return 40;
   }
   
 }

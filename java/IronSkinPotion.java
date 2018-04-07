@@ -35,7 +35,7 @@ public class IronSkinPotion
     this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1]);
     this.isThrown = false;
     this.tips.add(new PowerTip(this.name, this.description));
-	this.rarity = AbstractPotion.PotionRarity.UNCOMMON;
+	//this.rarity = AbstractPotion.PotionRarity.UNCOMMON;
   }
   
   public void use(AbstractCreature target)
@@ -51,4 +51,7 @@ public class IronSkinPotion
     return new IronSkinPotion();
   }
   
+  public int getPrice() {
+	  return 60;
+  }
 }

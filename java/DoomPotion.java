@@ -24,7 +24,7 @@ public class DoomPotion
   
   public DoomPotion()
   {
-    super(NAME, "Doom Potion", AbstractPotion.PotionSize.L, AbstractPotion.PotionColor.DOOM);
+    super(NAME, "Doom Potion", AbstractPotion.PotionSize.L, AbstractPotion.PotionColor.GREEN);
     if (AbstractDungeon.ascensionLevel >= 11) {
       this.potency = 13;
     } else {
@@ -34,7 +34,7 @@ public class DoomPotion
     this.isThrown = true;
     this.targetRequired = true;
     this.tips.add(new PowerTip(this.name, this.description));
-	this.rarity = AbstractPotion.PotionRarity.ULTRA;
+	//this.rarity = AbstractPotion.PotionRarity.ULTRA;
   }
   
   public void use(AbstractCreature target)
@@ -45,5 +45,10 @@ public class DoomPotion
   public AbstractPotion makeCopy()
   {
     return new DoomPotion();
+  }
+  
+  public int getPrice()
+  {
+	return 90;
   }
 }

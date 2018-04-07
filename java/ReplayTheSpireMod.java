@@ -19,8 +19,9 @@ import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.potions.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -29,7 +30,11 @@ import basemod.*;
 import basemod.helpers.*;
 import basemod.interfaces.*;
 
+import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.*;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.EnumMap;
 //SetUnlocksSubscriber, 
 
 @SpireInitializer
@@ -44,6 +49,63 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 	
 	public static final String BADGE_IMG = "img/ModBadge.png";
 	
+	protected static int commonPotionChance = 9;
+	protected static int uncommonPotionChance = 7;
+	protected static int rarePotionChance = 4;
+	protected static int ultraPotionChance = 1;
+	protected static int shopPotionChance = 10;
+	
+	public static EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>> potionsByRarity = new EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>>(ReplayTheSpireMod.PotionRarity.class);
+	
+	public static enum PotionRarity
+	{
+		COMMON,  UNCOMMON,  RARE,  ULTRA, SPECIAL,  SHOP;
+		
+		private PotionRarity() {}
+	}
+	
+	
+	public static ReplayTheSpireMod.PotionRarity returnRandomPotionTier(Random rng)
+	{
+		int tmpShopChance = 0;
+		int tmpUltraChance = ultraPotionChance;
+		if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SHOP) {
+			tmpShopChance = shopPotionChance;
+			tmpUltraChance *= 4;
+		}
+		int roll = rng.random(0, commonPotionChance + uncommonPotionChance + rarePotionChance + tmpUltraChance + tmpShopChance - 1);
+		if (roll < commonPotionChance) {
+		  return ReplayTheSpireMod.PotionRarity.COMMON;
+		}
+		if (roll < commonPotionChance + uncommonPotionChance) {
+		  return ReplayTheSpireMod.PotionRarity.UNCOMMON;
+		}
+		if (roll < commonPotionChance + uncommonPotionChance + rarePotionChance) {
+		  return ReplayTheSpireMod.PotionRarity.RARE;
+		}
+		if (roll < commonPotionChance + uncommonPotionChance + rarePotionChance + tmpShopChance) {
+		  return ReplayTheSpireMod.PotionRarity.SHOP;
+		}
+		return ReplayTheSpireMod.PotionRarity.ULTRA;
+	}
+	
+	public static AbstractPotion getRandomPotion()
+	{
+		return getRandomPotion(AbstractDungeon.potionRng);
+	}
+	
+	public static AbstractPotion getRandomPotion(Random rng)
+	{
+		//String randomKey = (String)potions.get(rng.random.nextInt(potions.size()));
+		return getRandomPotion(rng, returnRandomPotionTier(rng));
+	}
+	
+	public static AbstractPotion getRandomPotion(Random rng, ReplayTheSpireMod.PotionRarity rarity)
+	{
+		String randomKey = (String)potionsByRarity.get(rarity).get(AbstractDungeon.potionRng.random.nextInt(potionsByRarity.get(rarity).size()));
+		return PotionHelper.getPotion(randomKey);
+	}
+	
 	public ReplayTheSpireMod() {
 		logger.info("subscribing to postInitialize event");
         BaseMod.subscribeToPostInitialize(this);
@@ -57,6 +119,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		logger.info("subscribing to editStrings event");
         BaseMod.subscribeToEditStrings(this);
         
+		initializePotions();
+		
         // logger.info("subscribing to setUnlocks event");
         // BaseMod.subscribeToSetUnlocks(this);
         
@@ -75,8 +139,157 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		@SuppressWarnings("unused")
 		ReplayTheSpireMod replayMod = new ReplayTheSpireMod();
 		
+		commonPotionChance = 9;
+		uncommonPotionChance = 7;
+		rarePotionChance = 4;
+		ultraPotionChance = 1;
+		shopPotionChance = 10;
+		
+		
+		
 		logger.info("================================================================");
     }
+	
+	public static void addPotionToSet(final Class potionClass, final Color liquidColor, final Color hybridColor, final Color spotsColor, final String potionID, final ReplayTheSpireMod.PotionRarity potionRarity) {
+		BaseMod.addPotion(potionClass, liquidColor, hybridColor, spotsColor, potionID);
+		ReplayTheSpireMod.potionsByRarity.get(potionRarity).add(potionID);
+		
+	}
+	
+	public static void initializePotions() {
+		ReplayTheSpireMod.potionsByRarity = new EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>>(ReplayTheSpireMod.PotionRarity.class);
+		ReplayTheSpireMod.potionsByRarity.put(ReplayTheSpireMod.PotionRarity.COMMON, new ArrayList<String>());
+		ReplayTheSpireMod.potionsByRarity.put(ReplayTheSpireMod.PotionRarity.UNCOMMON, new ArrayList<String>());
+		ReplayTheSpireMod.potionsByRarity.put(ReplayTheSpireMod.PotionRarity.RARE, new ArrayList<String>());
+		ReplayTheSpireMod.potionsByRarity.put(ReplayTheSpireMod.PotionRarity.ULTRA, new ArrayList<String>());
+		ReplayTheSpireMod.potionsByRarity.put(ReplayTheSpireMod.PotionRarity.SPECIAL, new ArrayList<String>());
+		ReplayTheSpireMod.potionsByRarity.put(ReplayTheSpireMod.PotionRarity.SHOP, new ArrayList<String>());
+		
+		ReplayTheSpireMod.potionsByRarity.get(ReplayTheSpireMod.PotionRarity.COMMON).add("Ancient Potion");
+		ReplayTheSpireMod.potionsByRarity.get(ReplayTheSpireMod.PotionRarity.COMMON).add("Block Potion");
+		ReplayTheSpireMod.potionsByRarity.get(ReplayTheSpireMod.PotionRarity.COMMON).add("Dexterity Potion");
+		ReplayTheSpireMod.potionsByRarity.get(ReplayTheSpireMod.PotionRarity.COMMON).add("Energy Potion");
+		ReplayTheSpireMod.potionsByRarity.get(ReplayTheSpireMod.PotionRarity.COMMON).add("Explosive Potion");
+		ReplayTheSpireMod.potionsByRarity.get(ReplayTheSpireMod.PotionRarity.COMMON).add("Fire Potion");
+		ReplayTheSpireMod.potionsByRarity.get(ReplayTheSpireMod.PotionRarity.COMMON).add("Strength Potion");
+		ReplayTheSpireMod.potionsByRarity.get(ReplayTheSpireMod.PotionRarity.COMMON).add("Regen Potion");
+		ReplayTheSpireMod.potionsByRarity.get(ReplayTheSpireMod.PotionRarity.COMMON).add("Swift Potion");
+		ReplayTheSpireMod.potionsByRarity.get(ReplayTheSpireMod.PotionRarity.COMMON).add("Poison Potion");
+		ReplayTheSpireMod.potionsByRarity.get(ReplayTheSpireMod.PotionRarity.COMMON).add("Weak Potion");
+		
+		/*
+		potions.add("Health Potion");
+		potions.add("Elixir");
+		potions.add("Adrenaline Potion");
+		potions.add("Death Potion");
+		potions.add("Ironskin Potion");
+		potions.add("Thorns Potion");
+		potions.add("Toxic Potion");
+		potions.add("Venom Potion");
+		potions.add("Doom Potion");
+		potions.add("Spirit Potion");
+		*/
+		
+		/*
+		  public int getPrice()
+		  {
+			switch(this.rarity){
+				case UNCOMMON:
+				  return 60;
+				case RARE:
+				  return 75;
+				case ULTRA:
+				  return 90;
+				case SHOP:
+				  return 40;
+				default:
+				  return 50;
+			}
+		  }
+		  */
+		
+		ReplayTheSpireMod.addPotionToSet(
+			HealthPotion.class,
+			Color.CHARTREUSE.cpy(),
+			null,
+			null,
+			"Health Potion",
+			ReplayTheSpireMod.PotionRarity.SHOP
+		);
+		ReplayTheSpireMod.addPotionToSet(
+			ElixirPotion.class,
+			Color.GOLD.cpy(),
+			null,
+			Color.DARK_GRAY.cpy(),
+			"Elixir",
+			ReplayTheSpireMod.PotionRarity.SHOP
+		);
+		ReplayTheSpireMod.addPotionToSet(
+			SpiritPotion.class,
+			Color.GOLD.cpy(),
+			Color.CHARTREUSE.cpy(),
+			null,
+			"Spirit Potion",
+			ReplayTheSpireMod.PotionRarity.ULTRA
+		);
+		ReplayTheSpireMod.addPotionToSet(
+			DoomPotion.class,
+			Color.valueOf("0d429dff"),
+			Color.DARK_GRAY.cpy(),
+			null,
+			"Doom Potion",
+			ReplayTheSpireMod.PotionRarity.ULTRA
+		);
+		ReplayTheSpireMod.addPotionToSet(
+			AdrenalinePotion.class,
+			Color.ORANGE.cpy(),
+			null,
+			null,
+			"Adrenaline Potion",
+			ReplayTheSpireMod.PotionRarity.UNCOMMON
+		);
+		ReplayTheSpireMod.addPotionToSet(
+			IronSkinPotion.class,
+			Color.SKY.cpy(),
+			null,
+			null,
+			"Ironskin Potion",
+			ReplayTheSpireMod.PotionRarity.UNCOMMON
+		);
+		ReplayTheSpireMod.addPotionToSet(
+			ThornsPotion.class,
+			Color.GOLD.cpy(),
+			null,
+			Color.LIGHT_GRAY.cpy(),
+			"Thorns Potion",
+			ReplayTheSpireMod.PotionRarity.UNCOMMON
+		);
+		ReplayTheSpireMod.addPotionToSet(
+			VenomPotion.class,
+			Color.OLIVE.cpy(),
+			null,
+			Color.CHARTREUSE.cpy(),
+			"Venom Potion",
+			ReplayTheSpireMod.PotionRarity.UNCOMMON
+		);
+		ReplayTheSpireMod.addPotionToSet(
+			DeathPotion.class,
+			Color.DARK_GRAY.cpy(),
+			Color.FIREBRICK.cpy(),
+			Color.CORAL.cpy(),
+			"Death Potion",
+			ReplayTheSpireMod.PotionRarity.RARE
+		);
+		ReplayTheSpireMod.addPotionToSet(
+			ToxicPotion.class,
+			Color.OLIVE.cpy(),
+			null,
+			Color.CHARTREUSE.cpy(),
+			"Toxic Potion",
+			ReplayTheSpireMod.PotionRarity.RARE
+		);
+		
+	}
 	
 	@Override
     public void receivePostInitialize() {
