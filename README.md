@@ -14,16 +14,17 @@ Currently adds:
 Name | Character | Rarity | Description
 --- | --- | --- | ---
 Ancient Bracer | All | Common | At the start of combat, gain 2 **Artifact**.
+Bandana | All | Common | Gain 2 **Thievery**.
 Baseball | All | Common | Upon pick up, a random card in your deck becomes free.
+Gremlin Food | All | Common | Whenever you rest, **Upgrade** a random card.
 Rune of Simplicity | All | Common | Strikes and Defends can be **Upgraded** any number of times. On pickup, **Upgrade** 2 randomly.
+Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe or Ghost Defend to your hand (chosen randomly).
 Divine Protection | All | Uncommon | Gain 8 temporary HP at the start of combat.
-Bandana | All | Uncommon | Gain 2 **Thievery**.
 Funnel | All | Uncommon | At the end of your turn, gain 4 block for each unspent energy.
 Garlic | All | Uncommon | Enemies lose 3 **Strength** at the start of combat, then gain 1 **Strength** on the next 3 turns.
 Iron Hammer | All | Uncommon | During the first turn, drawing a card upgrades it until the end of combat.
 King of Hearts | Ironclad | Uncommon | When you lose HP during your turn, gain twice that much block.
 Onion Ring | All | Uncommon | Gain 3 **Strength** at the start of combat, then lose 1 **Strength** on the next 3 turns.
-Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe or Ghost Defend to your hand (chosen randomly).
 Snack Pack | All | Uncommon | Every time you play 3 **Attacks** in a single turn, gain 2 HP.
 Arrowhead | All | Rare | You may **Upgrade** 2 cards whenever you smith.
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
