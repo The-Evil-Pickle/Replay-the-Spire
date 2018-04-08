@@ -34,5 +34,12 @@
 	"At the end of each round, retain up to #b",
 	" #yBlock."
     ]
+  },
+  "Retain Some Energy": {
+    "NAME": "Retain Energy",
+    "DESCRIPTIONS": [
+	"At the end of each round, retain up to #b",
+	" #yEnergy."
+    ]
   }
 }

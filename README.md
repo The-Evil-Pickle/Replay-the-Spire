@@ -7,7 +7,7 @@ Currently adds:
  * 21 Relics (2 ironclad, 1 silent, 18 shared)
  * 19 Cards (4 ironclad, 5 silent, 2 colorless, 6 curses)
  * 4 Events
- * 10 Potions
+ * 12 Potions
 
 
 # Relics
@@ -74,6 +74,8 @@ Thorns Potion | Uncommon | Gain 4(2) Thorns.
 Venom Potion | Uncommon | Gain 1 Envenom (and -1 Strength).
 Death Potion | Rare | Deal 40(32) damage and lose 12(15) HP.
 Toxic Potion | Rare | Apply 5(4) Necrotic Poison to all enemies.
+Inspiration Potion | Rare | Add a random (non-)Upgraded power to your hand. It costs 0 this turn.
+Milkshake | Rare | You can retain up to 5(2) unspent energy between rounds.
 Doom Potion | Ultra Rare | Destroy an enemy after 10(13) turns.
 Spirit Potion | Ultra Rare | Gain 2(1) Intangible.
 Health Potion | Shop | Heal 15(9) HP.

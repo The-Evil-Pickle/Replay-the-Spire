@@ -50,7 +50,7 @@
 	"NAME": "Toxic Potion",
     "DESCRIPTIONS": [
 			"Apply #b",
-			" #yPoison to ALL enemies. Gain #b",
+			" #yNecrotic #yPoison to ALL enemies.",
 			" #yVulnerable and #b",
 			" #yFrail."
 	]
@@ -62,6 +62,36 @@
 			" #yPoison to enemies when you damage them.",
 			" Lose #b",
 			" #yStrength."
+	]
+  },
+  "Ironskin Potion": {
+	"NAME": "Ironskin Potion",
+    "DESCRIPTIONS": [
+			"Gain #b",
+			" #yBlock at the end of each turn."
+	]
+  },
+  "Inspiration Potion": {
+	"NAME": "Inspiration Potion",
+    "DESCRIPTIONS": [
+			"Add a random upgraded power to your hand.",
+			"Add a random power to your hand.",
+			" NL It costs 0."
+	]
+  },
+  "Milkshake": {
+	"NAME": "Milkshake",
+    "DESCRIPTIONS": [
+			"You can retain up to #b",
+			" #yEnergy between turns until the end of combat."
+	]
+  },
+  "Cursed Concoction": {
+	"NAME": "Cursed Concoction",
+    "DESCRIPTIONS": [
+			"Gain #b",
+			" #yStrength and #b ",
+			" #yDexterity. NL Add a random #yCurse to your hand."
 	]
   }
 }
