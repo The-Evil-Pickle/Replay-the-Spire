@@ -1,0 +1,97 @@
+{
+  "Adrenaline Potion": {
+	"NAME": "Poción de Adrenalina",
+    "DESCRIPTIONS": [
+			"Roba #b",
+			" carta",
+			" y gana #b",
+			" Energía."
+	]
+  },
+  "Death Potion": {
+	"NAME": "Poción Mortífera",
+    "DESCRIPTIONS": [
+			"Hace #b",
+			" daño. Pierde #b",
+			" vida."
+	]
+  },
+  "Doom Potion": {
+	"NAME": "Poción Sentenciada",
+    "DESCRIPTIONS": [
+			"Destruye un enemigo después de #b",
+			" turnos."
+	]
+  },
+  "Elixir": {
+	"NAME": "Elixir",
+    "DESCRIPTIONS": [
+			"#Agota Todas las #yStatus y #yCurse cartas.",
+			"#yExhaust todos los #yStatus y #yCurse cartas de tu mano.",
+			"",
+			"No tuvo efecto..."
+	]
+  },
+  "Spirit Potion": {
+	"NAME": "Poción Espiritual",
+    "DESCRIPTIONS": [
+			"Gana #b",
+			" #yIntangible."
+	]
+  },
+  "Thorns Potion": {
+	"NAME": "Poción Espinosa",
+    "DESCRIPTIONS": [
+			"Gana #b",
+			" #yThorns."
+	]
+  },
+  "Toxic Potion": {
+	"NAME": "Poción Tóxica",
+    "DESCRIPTIONS": [
+			"Aplica #b",
+			" #yNecrotic #yPoison a TODOS los enemigos.",
+			" #yVulnerable y #b",
+			" #yFrail."
+	]
+  },
+  "Venom Potion": {
+	"NAME": "Poción Envenenada",
+    "DESCRIPTIONS": [
+			"Aplica #b",
+			" #yPoison a todos los enemigos a los que hagas daño.",
+			" Pierde #b",
+			" #yStrength."
+	]
+  },
+  "Ironskin Potion": {
+	"NAME": "Poción de Piel de Acero",
+    "DESCRIPTIONS": [
+			"Gana #b",
+			" #yBlock al final de cada turno."
+	]
+  },
+  "Inspiration Potion": {
+	"NAME": "Poción Inspiradora",
+    "DESCRIPTIONS": [
+			"Añade un poder mejorado aleatoria a tu mano.",
+			"Añade un poder aleatorio a tu mano.",
+			" NL Cuesta 0."
+	]
+  },
+  "Milkshake": {
+	"NAME": "Batido",
+    "DESCRIPTIONS": [
+			"Puedes mantener hasta #b",
+			" #yEnergy entre turnos hasta el final del combate."
+	]
+  },
+  "Cursed Concoction": {
+	"NAME": "Mezcla Maldita",
+    "DESCRIPTIONS": [
+			"Gana #b",
+			" #yStrength y #b ",
+			" #yDexterity. NL Añade una #yCurse aleatoria a tu mano."
+	]
+  }
+}

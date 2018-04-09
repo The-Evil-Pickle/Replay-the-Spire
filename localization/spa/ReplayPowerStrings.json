@@ -1,0 +1,45 @@
+{
+  "Doomed": {
+    "NAME": "Condenado",
+    "DESCRIPTIONS": [
+	"Perece en #b", 
+	" turnos."
+    ]
+  },
+  "Life Bind": {
+    "NAME": "Lazo de la Vida",
+    "DESCRIPTIONS": [
+	"Cuando pierdas vida, enemigos con #yLife #yBind también tomarán daño.", 
+	"Toma daño cuando pierdas vida."
+    ]
+  },
+  "Reflection": {
+    "NAME": "Reflejo",
+    "DESCRIPTIONS": [
+	"Cuando ganas #yVulnerable or #yWeakened, también es aplicado al enemigo que lo provocó."
+    ]
+  },
+  "Necrotic Poison": {
+    "NAME": "Veneno Necrótico",
+    "DESCRIPTIONS": [
+	"Al inicio de tu turno, pierde #b",
+	" HP, entonces reduce #yNecrotic #yPoison por la mitad.", 
+	"Al inicio de su turno, pierde #b",
+	" NL #yPoison Normal no bajará."
+    ]
+  },
+  "Retain Some Block": {
+    "NAME": "Conservar Bloqueo",
+    "DESCRIPTIONS": [
+	"Al final de cada turno, mantiene hasta #b",
+	" #yBlock."
+    ]
+  },
+  "Retain Some Energy": {
+    "NAME": "Conservar Energía",
+    "DESCRIPTIONS": [
+	"Al final de cada turno, conserva hasta #b",
+	" #yEnergy."
+    ]
+  }
+}

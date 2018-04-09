@@ -1,0 +1,158 @@
+{
+	"Ancient Bracer": {
+	"NAME": "Muñequera Antigua",
+	"FLAVOR": "Una parte de armadura de un pasado muy lejano.",
+    "DESCRIPTIONS": [
+	"Al inicio del combate, gana #b", 
+	" #yArtifact."
+	]
+  },
+  "Arrowhead": {
+	"NAME": "Punta de Flecha",
+	"FLAVOR": "La primera cosa que has forjado.",
+    "DESCRIPTIONS": [
+	"Tú puedes #yUpgrade 2 cartas cuando mejoras."
+	]
+  },
+  "Bandana": {
+	"NAME": "Bandana",
+	"FLAVOR": "El mejor artículo para un atuendo de ladronzuelo.",
+    "DESCRIPTIONS": [
+	"Gana 2 #yThievery."
+	]
+  },
+  "Baseball": {
+	"NAME": "Bola de Béisbol",
+	"FLAVOR": "Todos tenemos nuestro jugador favorito.",
+    "DESCRIPTIONS": [
+	"Al recoger, una carta aleatoria de tu mazo se vuelve gratis."
+	]
+  },
+  "Divine Protection": {
+    "NAME": "Protección Divina",
+	"FLAVOR": "La fuerza para continuar en tiempos de adversidad.",
+	"DESCRIPTIONS": [
+		"Gana #b",
+		" HP temporales al inicio del combate.",
+		" NL (Tú perderás #r",
+		" HP al final de esta pelea)."
+	]
+  },
+  "Electric Blood": {
+	"NAME": "Sangre Eléctrica",
+	"FLAVOR": "Sientes que tu cuerpo se llena de poder. Duele.",
+    "DESCRIPTIONS": [
+	"Gana [R] [R] al inicio de cada turno. NL Pierde 1 HP por cada [R] que uses."
+	]
+  },
+  "Funnel": {
+	"NAME": "Embudo",
+	"FLAVOR": "Usa hasta la última gota.",
+    "DESCRIPTIONS": [
+	"Al final de tu turno, energía sin usar se convierte en 4 #yBlock cada una."
+	]
+  },
+  "Garlic": {
+	"NAME": "Ajo",
+	"FLAVOR": "Tomar una bocanada puede hacer que llores.",
+    "DESCRIPTIONS": [
+	"Enemigos pierden 3 #yStrength al inicio del combate. Ellos ganan #yStrength en los próximos 3 turnos."
+	]
+  },
+  "Iron Hammer": {
+	"NAME": "Martillo de Hierro",
+	"FLAVOR": "Una herramienta - práctica - y pesada.",
+	"DESCRIPTIONS": [
+	"Durante el primer turno, robar una carta la mejora."
+	]
+  },
+  "Mirror": {
+	"NAME": "Espejo",
+	"FLAVOR": "Puedes verte a ti mismo en el cristal. Lo bueno y lo malo.",
+    "DESCRIPTIONS": [
+	"Cuando ganas #yVulnerable o #yWeakened, también es aplicado al enemigo que lo provocó."
+	]
+  },
+  "Onion Ring": {
+	"NAME": "Aro de Cebolla",
+	"FLAVOR": "La cebolla está envuelta en un empanado frito.",
+    "DESCRIPTIONS": [
+	"Ganas 3 #yStrength al inicio del combate. Pierdes 1 #yStrength durante los próximos 3 turnos."
+	]
+  },
+  "Pet Ghost": {
+	"NAME": "Mascota Fantasmal",
+	"FLAVOR": "El fantasma de una mascota perteneciente una vez a un caballero.",
+    "DESCRIPTIONS": [
+	"Añade una carta fantasmal a tu mano cada turno."
+	]
+  },
+  "Ring of Chaos": {
+	"NAME": "Anillo del Caos",
+	"FLAVOR": "Un anillo con efectos mágicos salvajes e impredecibles.",
+	"DESCRIPTIONS": [
+	"Algunas recompensas de cartas tienen estadísticas y efectos alterados al azar."
+	]
+  },
+  "Ring of Fury": {
+	"NAME": "Anillo de la Furia",
+	"FLAVOR": "Un anillo maldito que aumenta los sentidos y la insensatez.",
+	"DESCRIPTIONS": [
+	"Al inicio del combate gana 2 #yStrength y pierde 1 #yDexterity."
+	]
+  },
+  "Simple Rune": {
+	"NAME": "Runa de la Sencillez",
+	"FLAVOR": "Algunas veces, las cosas no son tan complicadas como aparentan.",
+	"DESCRIPTIONS": [
+		"Golpes y Defiendes pueden ser #yUpgraded cualquier número de veces. Al cogerlo, #yUpgrade #b",
+		" aleatoriamente."
+	]
+  },
+  "Snack Pack": {
+	"NAME": "Paquete de Aperitivos",
+	"FLAVOR": "Ven siempre preparado con un aperitivo.",
+    "DESCRIPTIONS": [
+	"Cada vez que juegas 3 #yAttacks en un mismo turno, gana 2 HP."
+	]
+  },
+  "Snecko Scales": {
+	"NAME": "Escamas de Lagartija",
+	"FLAVOR": "Escamas de una lagartija que muda su piel. Parecen reflejar la luz con colores brillantes.",
+    "DESCRIPTIONS": [
+	"Roba 3 cartas adicionales cada turno. Cuando juegas una carta, descarta una carta."
+	]
+  },
+  "King of Hearts": {
+	"NAME": "Rey de Corazones",
+	"FLAVOR": "Tradicionalmente dibujado con su espada atravesando su cabeza, a veces se le conoce como el Rey Suicida.",
+	"DESCRIPTIONS": [
+	"Cuando pierdes HP durante tu turno, gana el doble de esa cantidad como bloqueo."
+	]
+  },
+  "Ooze Armor": {
+	"NAME": "Armadura Pringosa",
+	"FLAVOR": "Armadura con la flexibilidad y dureza de un slime viviente.",
+    "DESCRIPTIONS": [
+	" NL Gana 4 #yMalleable, -2 #ySlow, y 2 #ySlimed al inicio del combate",
+	"Gana [R] y roba una carta al inicio de cada turno.", 
+	"Gana [G] y roba una carta al inicio de cada turno.",
+	"Gana [B] y roba una carta al inicio de cada turno."
+	]
+  },
+  "Gremlin Food": {
+	"NAME": "Comida de Gremlin",
+	"FLAVOR": "Algunos gremlins son conocidos por robar comida a las personas, pero a cambio conceden un favor mientras el aventurero duerme.",
+    "DESCRIPTIONS": [
+	"Cuando Descanses, #yUpgrade una carta aleatoria."
+	]
+  },
+  "Guide Book": {
+	"NAME": "Guía",
+	"FLAVOR": "Un libro que detalla \"lugares turísticos\" en el Spire. Parece que ha sido escrito por el mercader.",
+    "DESCRIPTIONS": [
+	"Al cogerlo, #yUpgrades ",
+	" cartas aleatoriamente. NL Prioriza cartas raras."
+	]
+  }
+}

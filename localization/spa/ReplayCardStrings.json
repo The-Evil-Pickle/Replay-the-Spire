@@ -1,0 +1,82 @@
+{
+  "Atom Bomb": {
+    "NAME": "Bomba atómica",
+    "DESCRIPTION": "Hace !D! daño. NL Aplica !M! Veneno a TODOS los enemigos. NL Agota."
+  },
+  "Poison Darts": {
+    "NAME": "Dardos Venenosos",
+    "DESCRIPTION": "Aplica X + !M! Veneno Necrótico X veces.",
+	"UPGRADE_DESCRIPTION": "Aplica X + !M! Veneno Necrótico (X+1) veces."
+  },
+  "Toxin Wave": {
+    "NAME": "Onda Tóxica",
+    "DESCRIPTION": "Aplica !M! Veneno Necrótico y -1 Fuerza a TODOS los enemigos. NL Agota.",
+	"UPGRADE_DESCRIPTION": "Aplica !M! Veneno Necrótico y -2 Fuerza a TODOS los enemigos. NL Agota."
+  },
+  "Hidden Blade": {
+    "NAME": "Hoja Oculta",
+    "DESCRIPTION": "Añade una navaja a tu mano y roba !M! cartas."
+  },
+  "Fluid Movement": {
+    "NAME": "Movimiento Fluido",
+    "DESCRIPTION": "Conserva hasta !M! Bloqueo entre turnos."
+  },
+  "Abandon": {
+    "NAME": "Abandono",
+    "DESCRIPTION": "Agota !M! carta. NL Roba !M! carta. NL Etérea.",
+    "UPGRADE_DESCRIPTION": "Agota hasta !M! cartas. NL Roba una carta por cada carta agotada. NL Etérea."
+  },
+  "Life Link": {
+    "NAME": "Lazo de la Vida",
+    "DESCRIPTION": "Aplica a un enemigo. Cuando pierdas vida, el enemigo enlazado toma esa misma cantidad de daño. NL Agota."
+  },
+  "Massacre": {
+    "NAME": "Masacre",
+    "DESCRIPTION": "Hace !D! daño a TODOS los enemigos. NL Pierde toda la Fuerza. NL Afectado !M! veces por Fuerza."
+  },
+  "Hemogenesis": {
+    "NAME": "Hemogénesis",
+    "DESCRIPTION": "Hace !D! daño. Gana !B! Bloqueo. Cura !M! HP. NL Mejora cada vez que pierdes HP mientras esté en tu mano."
+  },
+  "Improvise": {
+    "NAME": "Improvisar",
+    "DESCRIPTION": "Elige 1 entre 3 cartas aleatorias y añádela a tu mano. Cuesta 1 menos. NL Agota.",
+    "UPGRADE_DESCRIPTION": "Elige 1 entre 3 cartas aleatorias para mejorarla y añádela a tu mano. NL Cuesta 1 menos. NL Agota."
+  },
+  "Poisoned Strike": {
+    "NAME": "Golpe Envenenado",
+    "DESCRIPTION": "Aplica !D! Veneno. NL Afectado por modificadores de fuerza."
+  },
+  "Looming Evil": {
+	"NAME": "Maldad Inminente",
+	"DESCRIPTION": "Puede ser jugada para Agotar !M! Energía. NL Al final de tu turno, baraja una maldición en tu pila de extracción y reduce el coste."
+  },
+  "Hallucinations": {
+	"NAME": "Halucinaciones",
+	"DESCRIPTION": "Injugable. NL Al final de tu turno, añade !M! carta aleatoria a tu pila de extracción."
+  },
+  "Sickly": {
+	"NAME": "Enfermizo",
+	"DESCRIPTION": "Injugable. NL Al final de tu turno, pierde !M! Bloqueo."
+  },
+  "Languid": {
+	"NAME": "Lánguido",
+	"DESCRIPTION": "Injugable. NL Si está en tu mano al final de tu turno, empieza el siguiente turno con 1 menos de Energía."
+  },
+  "Delirium": {
+	"NAME": "Delirio",
+	"DESCRIPTION": "Injugable. NL Al final de tu turno, gana Confusión por 1 turno."
+  },
+  "Voices": {
+	"NAME": "Voces",
+	"DESCRIPTION": "Injugable. NL Al final de tu turno, baraja !M! Aturdido en tu pila de descartes. NL Etérea."
+  },
+  "Ghost Swipe": {
+    "NAME": "Golpe Fantasmal",
+    "DESCRIPTION": "Hace !D! daño. NL Agota. NL Etérea."
+  },
+  "Ghost Defend": {
+    "NAME": "Defensa Fantasmal",
+    "DESCRIPTION": "Gana !B! Bloqueo. NL Agota. NL Etérea."
+  }
+}

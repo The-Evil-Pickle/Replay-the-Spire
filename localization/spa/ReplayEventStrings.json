@@ -1,0 +1,69 @@
+{
+  "Stuck": {
+	"NAME": "Atascado",
+    "DESCRIPTIONS": [
+			"Mientras te arrastrabas por unos escombros, lograstes que tu pierna se quedara atascada entre unas rocas.",
+			"¿Qué deberías hacer?",
+			"¡Espero que nadie te vea así!",
+			"Tu dignidad es más importante que el tiempo."
+	],
+    "OPTIONS": [
+			"[Continuar]",
+			"[Quitarse los pantalones] #rLose #ryour #rpants #rand #rLose ",
+			"[Tirar] #gKeep #gyour #gpants #gand #gUpgrade ",
+			"[Atascado] Requiere: Carta sin mejorar",
+			"[Salir]"
+    ]
+  },
+  "Mirror Mist": {
+	"NAME": "Espejo de Niebla",
+	"DESCRIPTIONS": [
+		"En la niebla puedes ver un reflejo retorcido de ti mismo. Te esfuerzas por mantener tus propios pensamientos ya que los colores envolventes te rodean.",
+		"Recuerdas brevemente recuerdos perdidos, pero ellos le pertenecen a otro más que a ti. La niebla se despeja, dejándote algo desorientado.",
+		"Sientes como si una parte de ti mismo se ha perdido, pero no puedes ubicarla. A medida que la niebla se despeja, el sentimiento se va olvidando."
+	],
+	"OPTIONS": [
+		"[Bloqueado] Requiere: ",
+		".",
+		"[Perder ",
+		"] #gObtain #gSurvivor #gand #gNeutralize.",
+		"] #gObtain #gBurning #gBlood.",
+		"[Deambular] Transforma y mejora una carta aleatoria.",
+		"[Salir]"
+	]
+  },
+  "Trapped Chest": {
+	"NAME": "Cofre Trampa",
+	"DESCRIPTIONS": [
+		"Encuentras un cofre cerrado. Algo parece un poco fuera de lugar...",
+		"¡Al abrir el cofre, unos dardos de pronto vuelan hacia ti!",
+		"La llave suavemente desbloquea el cofre sin activar el mecanismo trampa.",
+		"A pesar de tus mejores esfuerzos, la trampa logra dar en el blanco. ¡Pero al menos el cofre está abierto!",
+		"Logras esquivar los dardos - pero por poco.",
+		"¡El cofre contiene artículos escondidos!"
+	],
+	"OPTIONS": [
+		"[Abre la cerradura] #gObtain #grandom #gloot. #rTrigger #ra #rtrap.",
+		"[Usa Llave Maldita] #gObtain #grandom #gloot. #rObtain #rrandom #rcurse.",
+		"[Boqueado] Requiere: Llave Maldita.",
+		"[Salir]",
+		"[Aguantar] #rBecome #rCursed #r- #rPain.",
+		"[Bloquear] #rTake #r",
+		" #rDamage.",
+		"[Esquivar] #r",
+		"%: #rTake #r",
+		"[Abrir el cofre]"
+	]
+  },
+  "Chaos Ring Event": {
+	"NAME": "Anillo del Hombre Muerto",
+	"DESCRIPTIONS": [
+		"Al pasar al lado de un esqueleto, te das cuenta de que lleva puesto un #yred #yring. Sientes algún tipo de #r~chaotic~ #r~energy~ emanando de él; solo observándolo hace que tu cabeza empiece a latir.",
+		"No ves como tomar anillos malditos que encuentras en gente muerta podría ser otra cosa más que una idea fantástica."
+	],
+	"OPTIONS": [
+		"[Cogerlo] #gObtain #ga #gRelic. #rBecome #rCursed - #rHallucinations.",
+		"[Salir]"
+	]
+  }
+}

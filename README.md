@@ -78,5 +78,10 @@ Inspiration Potion | Rare | Add a random (non-)Upgraded power to your hand. It c
 Milkshake | Rare | You can retain up to 5(2) unspent energy between rounds.
 Doom Potion | Ultra Rare | Destroy an enemy after 10(13) turns.
 Spirit Potion | Ultra Rare | Gain 2(1) Intangible.
-Health Potion | Shop | Heal 15(9) HP.
+Health Potion | Shop | Heal 15(9) HP. [note: has been disabled temporary due to causing a game crash]
 Elixir | Shop | Exhaust ALL your status and curse cards (in your hand).
+
+
+Known Issues:
+ * Cards altered by Ring of Chaos return to the normal version if the run is saved and returned to later.
+ * Potion rarity currently isn't working properly; any tier of potion can be given at equal rarity in most situations.
