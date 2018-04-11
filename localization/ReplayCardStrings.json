@@ -5,8 +5,8 @@
   },
   "Poison Darts": {
     "NAME": "Poison Darts",
-    "DESCRIPTION": "Apply X + !M! Necrotic Poison X times.",
-	"UPGRADE_DESCRIPTION": "Apply X + !M! Necrotic Poison (X+1) times."
+    "DESCRIPTION": "Apply X Necrotic Poison. Apply !M! Necrotic Poison to ALL enemies X times. NL Exhaust.",
+	"UPGRADE_DESCRIPTION": "Apply X Necrotic Poison. Apply !M! Necrotic Poison to ALL enemies X times."
   },
   "Toxin Wave": {
     "NAME": "Toxin Wave",
@@ -36,7 +36,7 @@
   },
   "Hemogenesis": {
     "NAME": "Hemogenesis",
-    "DESCRIPTION": "Deal !D! damage. Gain !B! Block. Heal !M! HP. NL Upgrade each time you lose HP while this is in your hand."
+    "DESCRIPTION": "Deal !D! damage. Gain !B! Block. Heal !M! HP. Exhaust. NL Upgrade each time you lose HP while this is in your hand."
   },
   "Improvise": {
     "NAME": "Improvise",

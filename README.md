@@ -3,6 +3,10 @@
 
 This mod aims to expand upon the base game by adding lots of content. It is currently a work in progress, but you can download the [latest release](https://github.com/AstroPenguin642/Replay-the-Spire/releases) to help us improve it.
 
+Requires:
+ * BaseMod (https://github.com/daviscook477/BaseMod/releases)
+ * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
+
 Currently adds:
  * 21 Relics (2 ironclad, 1 silent, 18 shared)
  * 19 Cards (4 ironclad, 5 silent, 2 colorless, 6 curses)
@@ -17,13 +21,13 @@ Ancient Bracer | All | Common | At the start of combat, gain 2 **Artifact**.
 Bandana | All | Common | Gain 2 **Thievery**.
 Baseball | All | Common | Upon pick up, a random card in your deck becomes free.
 Gremlin Food | All | Common | Whenever you rest, **Upgrade** a random card.
+King of Hearts | Ironclad | Common | When you lose HP during your turn, gain twice that much block.
 Rune of Simplicity | All | Common | Strikes and Defends can be **Upgraded** any number of times. On pickup, **Upgrade** 2 randomly.
 Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe or Ghost Defend to your hand (chosen randomly).
 Divine Protection | All | Uncommon | Gain 8 temporary HP at the start of combat.
 Funnel | All | Uncommon | At the end of your turn, gain 4 block for each unspent energy.
 Garlic | All | Uncommon | Enemies lose 3 **Strength** at the start of combat, then gain 1 **Strength** on the next 3 turns.
 Iron Hammer | All | Uncommon | During the first turn, drawing a card upgrades it until the end of combat.
-King of Hearts | Ironclad | Uncommon | When you lose HP during your turn, gain twice that much block.
 Onion Ring | All | Uncommon | Gain 3 **Strength** at the start of combat, then lose 1 **Strength** on the next 3 turns.
 Snack Pack | All | Uncommon | Every time you play 3 **Attacks** in a single turn, gain 2 HP.
 Arrowhead | All | Rare | You may **Upgrade** 2 cards whenever you smith.
@@ -40,14 +44,14 @@ Ring of Fury | All | Event | At the start of combat gain 2 **Strength** and lose
 Name | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis)
 --- | --- | --- | --- | --- | ---
 Abandon | Red | Uncommmon | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. **Ethereal**.
-Hemogenesis | Red | Uncommmon | Attack | 2 | Deal 3 damage. Gain 3 Block. Heal 1 HP. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times.
 Life Link | Red | Uncommmon | Skill | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage. **Exhaust**.
 Massacre | Red | Uncommmon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
+Hemogenesis | Red | Rare | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2+X where X is the number of times previously upgraded in combat, or 3+X if the card has been upgraded outside of combat).
 Fluid Movement | Green | Commmon | Power | 1 | Retain up to 5(8) block between rounds.
 Hidden Blade | Green | Commmon | Skill | 1 | Add a Shiv to your hand and draw 2(3) cards.
 Toxin Wave | Green | Uncommon | Skill | 2 | Apply 5(7) **Necrotic** **Poison** and -1(-2) **Strength** to ALL enemies. **Exhaust**.
 Atom Bomb | Green | Rare | Attack | 4 | Deal 60(80) damage. Apply 3(4) **Poison** to ALL enemies. **Exhaust**.
-Poison Darts | Green | Rare | Skill | X | Apply X+2 **Necrotic** **Poison** X(+1) times.
+Poison Darts | Green | Rare | Skill | X | Apply X **Necrotic** **Poison**. Apply 2 **Necrotic** **Poison** to ALL enemies X times. **Exhaust**. (doesn't exhaust when upgraded).
 Improvise | Colorless | Uncommmon | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(5) **Poison**. Is affected by damage modifiers.
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
@@ -63,7 +67,7 @@ Ghost Defend | Colorless | Special | Skill | 1 | Gain 5 block. **Exhaust**. **Et
 # Keywords
 Name | Type | Description
 --- | --- | ---
-Necrotic Poison | Power (Debuff) | An alternate kind of Poison. Does double damage, but is reduced by half each turn. Normal Poison does not count down while Necrotic Poison is applied.
+Necrotic Poison | Power (Debuff) | An alternate kind of Poison. Does double damage, but is reduced by half each turn. Does damage at end of turn rather than at start. Normal Poison does not count down while Necrotic Poison is applied.
 
 # Potions
 Name | Rarity | Description (post-ascension-11 changes in parenthesis)
@@ -85,3 +89,6 @@ Elixir | Shop | Exhaust ALL your status and curse cards (in your hand).
 Known Issues:
  * Cards altered by Ring of Chaos return to the normal version if the run is saved and returned to later.
  * Potion rarity currently isn't working properly; any tier of potion can be given at equal rarity in most situations.
+ 
+Changes to Existing Content:
+ * Neow will now sometimes offer a random colorless card as his blessing.

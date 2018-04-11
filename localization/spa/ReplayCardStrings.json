@@ -5,8 +5,8 @@
   },
   "Poison Darts": {
     "NAME": "Dardos Venenosos",
-    "DESCRIPTION": "Aplica X + !M! Veneno Necrótico X veces.",
-	"UPGRADE_DESCRIPTION": "Aplica X + !M! Veneno Necrótico (X+1) veces."
+    "DESCRIPTION": "Aplica X Veneno Necrótico. Aplica !M! Veneno Necrótico a TODOS los enemigos X veces. NL Agota.",
+	"UPGRADE_DESCRIPTION": "Aplica X Veneno Necrótico. Aplica !M! Veneno Necrótico a TODOS los enemigos X veces."
   },
   "Toxin Wave": {
     "NAME": "Onda Tóxica",

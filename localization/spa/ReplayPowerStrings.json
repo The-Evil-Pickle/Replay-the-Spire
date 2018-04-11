@@ -22,9 +22,9 @@
   "Necrotic Poison": {
     "NAME": "Veneno Necrótico",
     "DESCRIPTIONS": [
-	"Al inicio de tu turno, pierde #b",
+	"Al final de tu turno, pierde #b",
 	" HP, entonces reduce #yNecrotic #yPoison por la mitad.", 
-	"Al inicio de su turno, pierde #b",
+	"Al final de su turno, pierde #b",
 	" NL #yPoison Normal no bajará."
     ]
   },
