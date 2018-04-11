@@ -8,7 +8,7 @@ Requires:
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
 Currently adds:
- * 21 Relics (2 ironclad, 1 silent, 18 shared)
+ * 23 Relics (2 ironclad, 1 silent, 20 shared)
  * 19 Cards (4 ironclad, 5 silent, 2 colorless, 6 curses)
  * 4 Events
  * 12 Potions
@@ -33,7 +33,9 @@ Snack Pack | All | Uncommon | Every time you play 3 **Attacks** in a single turn
 Arrowhead | All | Rare | You may **Upgrade** 2 cards whenever you smith.
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
 GuideBook | All | Shop | On pickup, upgrade 2 cards randomly. Prioritizes rarer cards.
+Honey Jar | All | Boss | Draw 1 more card each turn. Retain up to 1 card each turn. Card rewards have 1 more option to chose from. You cannot skip rewards.
 Ooze Armor | All | Boss | Gain 1 energy and draw 1 card at the start of each turn. At the start of combat, gain Slow (resets to -2) and Malleable (resets to 4), and shuffle 2 Slimed into your draw pile.
+Painkiller Herbs | All | Boss | Gain 1 energy every 2 turns. Gain 20 max HP on pickup. Map displays much less information.
 Electric Blood | Ironclad | Boss | Gain 2 energy at the start of each turn. When you play a card, lose HP equal to the cost.
 Snecko Scales | Silent | Boss | Draw 3 additional cards each turn. When you play a card, discard a card.
 Ring of Chaos | All | Boss/Event | Some card rewards have randomly altered stats and effects.
