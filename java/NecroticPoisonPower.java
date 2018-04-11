@@ -58,11 +58,21 @@ public class NecroticPoisonPower
     if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
       if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead())
       {
-        flashWithoutSound();
-        AbstractDungeon.actionManager.addToBottom(new NecroPoisonLoseHpAction(this.owner, this.source, this.amount * 2, AbstractGameAction.AttackEffect.POISON));
+        //flashWithoutSound();
+        //AbstractDungeon.actionManager.addToBottom(new NecroPoisonLoseHpAction(this.owner, this.source, this.amount * 2, AbstractGameAction.AttackEffect.POISON));
 		if (this.owner.hasPower("Poison")){
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, null, new PoisonPower(this.owner, this.source, 1), 1, AbstractGameAction.AttackEffect.NONE));
 		}
+      }
+    }
+  }
+  public void atEndOfTurn(final boolean isPlayer)
+  {
+    if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+      if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead())
+      {
+        flashWithoutSound();
+        AbstractDungeon.actionManager.addToBottom(new NecroPoisonLoseHpAction(this.owner, this.source, this.amount * 2, AbstractGameAction.AttackEffect.POISON));
       }
     }
   }

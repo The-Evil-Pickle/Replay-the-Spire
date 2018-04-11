@@ -9,17 +9,29 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.random.Random;
 import java.util.*;
 
-@SpirePatch(cls = "com.megacrit.cardcrawl.helpers.PotionHelper", method = "getRandomPotion")
+@SpirePatch(cls = "com.megacrit.cardcrawl.helpers.PotionHelper", method = "getPotion")
 public class ReplayPotionHelperPatch {
 	
-	public static AbstractPotion Postfix(AbstractPotion __result, PotionHelper __Instance) {
+	public static boolean isRando = false;
+	
+	public static AbstractPotion Postfix(AbstractPotion __result, final String name) {
+		if (!isRando) {
+			isRando = true;
+			return ReplayTheSpireMod.getRandomPotion();
+		}
+		isRando = false;
+		return __result;
+	}
+	
+	/*
+	public static AbstractPotion Postfix(AbstractPotion __result) {
 		return ReplayTheSpireMod.getRandomPotion();
 	}
-	public static AbstractPotion Postfix(AbstractPotion __result, PotionHelper __Instance, Random __rng) {
+	public static AbstractPotion Postfix(AbstractPotion __result, Random __rng) {
 		return ReplayTheSpireMod.getRandomPotion(__rng);
 	}
 	public static AbstractPotion Postfix(AbstractPotion __result, ArrayList __list) {
 		return __result;
 	}
-	
+	*/
 }

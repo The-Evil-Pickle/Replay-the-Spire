@@ -18,7 +18,8 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.core.*;
+//import com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import com.megacrit.cardcrawl.potions.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.*;
@@ -55,6 +56,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 	protected static int ultraPotionChance = 1;
 	protected static int shopPotionChance = 10;
 	
+	//public static EnumMap<ReplayTheSpireMod.PotionRarity, int> potionCosts = new EnumMap<ReplayTheSpireMod.PotionRarity, int>(ReplayTheSpireMod.PotionRarity.class);
+	
 	public static EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>> potionsByRarity = new EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>>(ReplayTheSpireMod.PotionRarity.class);
 	
 	public static enum PotionRarity
@@ -64,16 +67,53 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		private PotionRarity() {}
 	}
 	
+	public static int GetPotionCost(AbstractPotion potion) 
+	{
+		for (ReplayTheSpireMod.PotionRarity rarity : ReplayTheSpireMod.PotionRarity.values()) 
+		{
+			for (String sid : potionsByRarity.get(rarity)) {
+				if (sid.equals(potion.ID)) {
+					switch(rarity) {
+						case COMMON:
+							return 50;
+						case UNCOMMON:
+							return 60;
+						case RARE:
+							return 75;
+						case ULTRA:
+							return 90;
+						case SPECIAL:
+							return 70;
+						case SHOP:
+							return 40;
+						default:
+							return 50;
+					}
+				}
+			}
+		}
+		return 50;
+	}
 	
 	public static ReplayTheSpireMod.PotionRarity returnRandomPotionTier(Random rng)
 	{
+		logger.info("CP1");
 		int tmpShopChance = 0;
 		int tmpUltraChance = ultraPotionChance;
+		logger.info("CP2");
 		if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SHOP) {
+			logger.info("CP3");
 			tmpShopChance = shopPotionChance;
 			tmpUltraChance *= 4;
 		}
+		logger.info("CP4");
+		logger.info(commonPotionChance);
+		logger.info(uncommonPotionChance);
+		logger.info(rarePotionChance);
+		logger.info(tmpUltraChance);
+		logger.info(tmpShopChance);
 		int roll = rng.random(0, commonPotionChance + uncommonPotionChance + rarePotionChance + tmpUltraChance + tmpShopChance - 1);
+		logger.info("CP5");
 		if (roll < commonPotionChance) {
 		  return ReplayTheSpireMod.PotionRarity.COMMON;
 		}
@@ -96,13 +136,22 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 	
 	public static AbstractPotion getRandomPotion(Random rng)
 	{
+		if (rng == null) {
+			rng = AbstractDungeon.potionRng;
+		}
+		if (rng == null) {
+			logger.info("FUCK");
+			rng = new Random();
+		}
 		//String randomKey = (String)potions.get(rng.random.nextInt(potions.size()));
 		return getRandomPotion(rng, returnRandomPotionTier(rng));
 	}
 	
 	public static AbstractPotion getRandomPotion(Random rng, ReplayTheSpireMod.PotionRarity rarity)
 	{
-		String randomKey = (String)potionsByRarity.get(rarity).get(AbstractDungeon.potionRng.random.nextInt(potionsByRarity.get(rarity).size()));
+		logger.info("CP6");
+		String randomKey = (String)potionsByRarity.get(rarity).get(rng.random.nextInt(potionsByRarity.get(rarity).size()));
+		logger.info("CP7");
 		return PotionHelper.getPotion(randomKey);
 	}
 	
@@ -120,6 +169,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
         BaseMod.subscribeToEditStrings(this);
         
 		initializePotions();
+		
 		
         // logger.info("subscribing to setUnlocks event");
         // BaseMod.subscribeToSetUnlocks(this);
@@ -139,11 +189,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		@SuppressWarnings("unused")
 		ReplayTheSpireMod replayMod = new ReplayTheSpireMod();
 		
-		commonPotionChance = 9;
-		uncommonPotionChance = 7;
-		rarePotionChance = 4;
-		ultraPotionChance = 1;
-		shopPotionChance = 10;
 		
 		
 		
@@ -157,6 +202,15 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 	}
 	
 	public static void initializePotions() {
+		/*
+		ReplayTheSpireMod.potionCosts = new EnumMap<ReplayTheSpireMod.PotionRarity, int>(ReplayTheSpireMod.PotionRarity.class);
+		ReplayTheSpireMod.potionCosts.put(ReplayTheSpireMod.PotionRarity.COMMON, 50);
+		ReplayTheSpireMod.potionCosts.put(ReplayTheSpireMod.PotionRarity.UNCOMMON, 60);
+		ReplayTheSpireMod.potionCosts.put(ReplayTheSpireMod.PotionRarity.RARE, 75);
+		ReplayTheSpireMod.potionCosts.put(ReplayTheSpireMod.PotionRarity.ULTRA, 90);
+		ReplayTheSpireMod.potionCosts.put(ReplayTheSpireMod.PotionRarity.SPECIAL, 75);
+		ReplayTheSpireMod.potionCosts.put(ReplayTheSpireMod.PotionRarity.SHOP, 40);
+		*/
 		ReplayTheSpireMod.potionsByRarity = new EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>>(ReplayTheSpireMod.PotionRarity.class);
 		ReplayTheSpireMod.potionsByRarity.put(ReplayTheSpireMod.PotionRarity.COMMON, new ArrayList<String>());
 		ReplayTheSpireMod.potionsByRarity.put(ReplayTheSpireMod.PotionRarity.UNCOMMON, new ArrayList<String>());
@@ -207,7 +261,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 			}
 		  }
 		  */
-		
+		/*
 		ReplayTheSpireMod.addPotionToSet(
 			HealthPotion.class,
 			Color.CHARTREUSE.cpy(),
@@ -216,6 +270,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 			"Health Potion",
 			ReplayTheSpireMod.PotionRarity.SHOP
 		);
+		*/
 		ReplayTheSpireMod.addPotionToSet(
 			ElixirPotion.class,
 			Color.GOLD.cpy(),
@@ -288,21 +343,70 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 			"Toxic Potion",
 			ReplayTheSpireMod.PotionRarity.RARE
 		);
+		ReplayTheSpireMod.addPotionToSet(
+			MilkshakePotion.class,
+			Color.LIGHT_GRAY.cpy(),
+			Color.WHITE.cpy(),
+			null,
+			"Milkshake",
+			ReplayTheSpireMod.PotionRarity.RARE
+		);
+		ReplayTheSpireMod.addPotionToSet(
+			InspirationPotion.class,
+			Color.LIGHT_GRAY.cpy(),
+			null,
+			Color.SKY.cpy(),
+			"Inspiration Potion",
+			ReplayTheSpireMod.PotionRarity.RARE
+		);
 		
 	}
 	
 	@Override
     public void receivePostInitialize() {
+		
+		commonPotionChance = 9;
+		uncommonPotionChance = 7;
+		rarePotionChance = 4;
+		ultraPotionChance = 1;
+		shopPotionChance = 10;
+		
         // Mod badge
         Texture badgeTexture = new Texture(BADGE_IMG);
         ModPanel settingsPanel = new ModPanel();
-        settingsPanel.addLabel("Settings menu W.I.P.", 400.0f, 700.0f, (me) -> {});
+        settingsPanel.addLabel("Potion Rarities", 1000.0f, 700.0f, (me) -> {});
+		
+		ModSlider potionSliderC = new ModSlider("Common", 1000.0f, 650.0f, 10.0f, "", settingsPanel, (me) -> {
+			//logger.info((int)Math.round(me.value * me.multiplier));
+			ReplayTheSpireMod.commonPotionChance = (int)Math.round(me.value * me.multiplier);
+		});
+		potionSliderC.setValue((float)ReplayTheSpireMod.commonPotionChance / potionSliderC.multiplier);
+		settingsPanel.addUIElement(potionSliderC);
+		
+		ModSlider potionSliderUC = new ModSlider("Uncommon", 1000.0f, 600.0f, 10.0f, "", settingsPanel, (me) -> {
+			ReplayTheSpireMod.uncommonPotionChance = (int)Math.round(me.value * me.multiplier);
+		});
+		potionSliderUC.setValue((float)ReplayTheSpireMod.uncommonPotionChance / potionSliderUC.multiplier);
+		settingsPanel.addUIElement(potionSliderUC);
+		
+		ModSlider potionSliderR = new ModSlider("Rare", 1000.0f, 550.0f, 10.0f, "", settingsPanel, (me) -> {
+			ReplayTheSpireMod.rarePotionChance = (int)Math.round(me.value * me.multiplier);
+		});
+		potionSliderR.setValue((float)ReplayTheSpireMod.rarePotionChance / potionSliderR.multiplier);
+		settingsPanel.addUIElement(potionSliderR);
+		
+		ModSlider potionSliderUR = new ModSlider("Ultra Rare", 1000.0f, 500.0f, 10.0f, "", settingsPanel, (me) -> {
+			ReplayTheSpireMod.ultraPotionChance = (int)Math.round(me.value * me.multiplier);
+		});
+		potionSliderUR.setValue((float)ReplayTheSpireMod.ultraPotionChance / potionSliderUR.multiplier);
+		settingsPanel.addUIElement(potionSliderUR);
+		
 		
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         
 		
         final String[] necroNames = { "necrotic", "necrotic poison" };
-        BaseMod.addKeyword(necroNames, "A powerful poison that deals 2 damage each turn.");
+        BaseMod.addKeyword(necroNames, "A powerful poison that deals 2 damage each turn, but doesn't last as long.");
 		
         Settings.isDailyRun = false;
         Settings.isTrial = false;
@@ -324,11 +428,13 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		BaseMod.addRelic(new Garlic(), RelicType.SHARED);
 		BaseMod.addRelic(new GremlinFood(), RelicType.SHARED);
 		BaseMod.addRelic(new GuideBook(), RelicType.SHARED);
+		BaseMod.addRelic(new HoneyJar(), RelicType.SHARED);
 		BaseMod.addRelic(new IronHammer(), RelicType.SHARED);
 		BaseMod.addRelic(new KingOfHearts(), RelicType.RED);
 		BaseMod.addRelic(new Mirror(), RelicType.SHARED);
 		BaseMod.addRelic(new OnionRing(), RelicType.SHARED);
 		BaseMod.addRelic(new OozeArmor(), RelicType.SHARED);
+		BaseMod.addRelic(new PainkillerHerb(), RelicType.SHARED);
 		BaseMod.addRelic(new PetGhost(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfChaos(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfFury(), RelicType.SHARED);
@@ -385,24 +491,30 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 	public void receiveEditStrings() {
 		logger.info("begin editting strings");
 		
+		String jsonPath = "localization/";
+		if (Settings.language.toString().equals("SPA")) {
+			logger.info("Spanish detected!");
+			jsonPath = "localization/spa/";
+		}
+		
         // RelicStrings
-        String relicStrings = Gdx.files.internal("localization/ReplayRelicStrings.json").readString(
+        String relicStrings = Gdx.files.internal(jsonPath + "ReplayRelicStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
         // CardStrings
-        String cardStrings = Gdx.files.internal("localization/ReplayCardStrings.json").readString(
+        String cardStrings = Gdx.files.internal(jsonPath + "ReplayCardStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
         // PowerStrings
-        String powerStrings = Gdx.files.internal("localization/ReplayPowerStrings.json").readString(
+        String powerStrings = Gdx.files.internal(jsonPath + "ReplayPowerStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(PowerStrings.class, powerStrings);
         // EventStrings
-        String eventStrings = Gdx.files.internal("localization/ReplayEventStrings.json").readString(
+        String eventStrings = Gdx.files.internal(jsonPath + "ReplayEventStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
         // PotionStrings
-        String potionStrings = Gdx.files.internal("localization/ReplayPotionStrings.json").readString(
+        String potionStrings = Gdx.files.internal(jsonPath + "ReplayPotionStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(PotionStrings.class, potionStrings);
 		

@@ -22,17 +22,23 @@ public class Hemogenesis extends AbstractCard
     public static final String DESCRIPTION;
     private static final int COST = 2;
     private static final int POOL = 1;
+	private int upgradeTick = 2;
     
     public Hemogenesis() {
-        this(0);
+        this(0, 2);
     }
     public Hemogenesis(final int upgrades) {
-        super("Hemogenesis", Hemogenesis.NAME, "status/beta", "status/beta", 2, Hemogenesis.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.UNCOMMON, CardTarget.ENEMY, 1);
-        this.baseDamage = 3;
-        this.baseBlock = 3;
-        this.baseMagicNumber = 1;
+        this(upgrades, 2);
+    }
+    public Hemogenesis(final int upgrades, final int ticks) {
+        super("Hemogenesis", Hemogenesis.NAME, "status/beta", "status/beta", 2, Hemogenesis.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.RARE, CardTarget.ENEMY, 1);
+        this.baseDamage = 5;
+        this.baseBlock = 5;
+        this.baseMagicNumber = 5;
+		this.upgradeTick = ticks;
         this.magicNumber = this.baseMagicNumber;
 		this.timesUpgraded = upgrades;
+		this.exhaust = true;
     }
     
     @Override
@@ -45,23 +51,35 @@ public class Hemogenesis extends AbstractCard
     
     @Override
     public AbstractCard makeCopy() {
-        return new Hemogenesis(this.timesUpgraded);
+        return new Hemogenesis(this.timesUpgraded, this.upgradeTick);
     }
     
     @Override
     public void upgrade() {
-        this.upgradeDamage(2 + (this.timesUpgraded / 2));
-        this.upgradeBlock(2 + (this.timesUpgraded / 2));
-        this.upgradeMagicNumber(1 + ((this.timesUpgraded + 1) / 2));
-        ++this.timesUpgraded;
+		this.name = Hemogenesis.NAME;
+		boolean isSmithUpgrade = (AbstractDungeon.currMapNode == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT || AbstractDungeon.getMonsters().areMonstersBasicallyDead());
+		if (isSmithUpgrade) {
+			this.upgradeTick = 3;
+		}
+        this.upgradeDamage(this.upgradeTick + this.timesUpgraded);
+        this.upgradeBlock(this.upgradeTick + this.timesUpgraded);
+        this.upgradeMagicNumber(this.upgradeTick + this.timesUpgraded);
+		if (!isSmithUpgrade) {
+			++this.timesUpgraded;
+		}
         this.upgraded = true;
-        this.name = Hemogenesis.NAME + "+" + this.timesUpgraded;
+		if (this.upgradeTick > 2) {
+			this.name += "+";
+		}
+		if (this.timesUpgraded > 1 || !isSmithUpgrade) {
+			this.name += "+" + this.timesUpgraded;
+		}
         this.initializeTitle();
     }
     
     @Override
     public boolean canUpgrade() {
-		if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+		if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
 			return true;
         }
 		return (!this.upgraded);

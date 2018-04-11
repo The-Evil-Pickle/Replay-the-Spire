@@ -8,7 +8,6 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 public class ReplayBottomPatch {
 	
 	public static void Postfix(AbstractDungeon __instance) {
-		__instance.eventList.add("Stuck");
 		__instance.eventList.add("Mirror Mist");
 	}
 	

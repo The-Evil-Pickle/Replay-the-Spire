@@ -154,5 +154,32 @@
 	"On pickup, #yUpgrades ",
 	" cards randomly. NL Prioritizes rarer cards."
 	]
+  },
+  "Painkiller Herb": {
+	"NAME": "Painkiller Herbs",
+	"FLAVOR": "Herbs with a powerful cognitive effect that reduces pain. Warning: may cause a feeling of disorientation.",
+    "DESCRIPTIONS": [
+	" NL Gain ",
+	" max HP on pickup. NL Less map information.",
+	"Gain [R] at the start of every other turn.",
+	"Gain [G] at the start of every other turn.",
+	"Gain [B] at the start of every other turn."
+	]
+  },
+  "Honey Jar": {
+	"NAME": "Honey Jar",
+	"FLAVOR": "Delicious!",
+    "DESCRIPTIONS": [
+	"Draw 1 more card each turn. NL #yRetain up to 1 card each turn. NL Extra choice on card reward screens. NL You cannot skip rewards."
+	]
+  },
+  "Sizzling Blood": {
+	"NAME": "Sizzling Blood",
+	"FLAVOR": "It burns with fire and poison.",
+    "DESCRIPTIONS": [
+	"Heal ",
+	" HP at the end of combat. NL Gain ",
+	" max HP on pickup."
+	]
   }
 }

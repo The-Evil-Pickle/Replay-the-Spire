@@ -88,7 +88,7 @@ Elixir | Shop | Exhaust ALL your status and curse cards (in your hand).
 
 Known Issues:
  * Cards altered by Ring of Chaos return to the normal version if the run is saved and returned to later.
- * Potion rarity currently isn't working properly; any tier of potion can be given at equal rarity in most situations.
+ * Config settings will not save when the game is closed.
  
 Changes to Existing Content:
  * Neow will now sometimes offer a random colorless card as his blessing.

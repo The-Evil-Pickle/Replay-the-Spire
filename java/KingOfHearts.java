@@ -19,7 +19,7 @@ public class KingOfHearts
   
   public KingOfHearts()
   {
-    super("King of Hearts", "kingOfHearts.png", AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.FLAT);
+    super("King of Hearts", "kingOfHearts.png", AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.FLAT);
   }
   
   public String getUpdatedDescription()

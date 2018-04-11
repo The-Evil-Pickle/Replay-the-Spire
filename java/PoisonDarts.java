@@ -36,15 +36,16 @@ public class PoisonDarts
     
 	this.baseMagicNumber = 2;
     this.magicNumber = this.baseMagicNumber;
+	this.exhaust = true;
   }
   
   public void use(AbstractPlayer p, AbstractMonster m)
   {
 	int upadd = 0;
 	if (this.upgraded) {
-		upadd = 1;
+		//upadd = 1;
 	}
-	AbstractDungeon.actionManager.addToBottom(new PoisonDartsAction(p, m, this.magicNumber + this.energyOnUse, this.freeToPlayOnce, this.energyOnUse + upadd));
+	AbstractDungeon.actionManager.addToBottom(new PoisonDartsAction(p, m, this.magicNumber, this.freeToPlayOnce, this.energyOnUse + upadd));
   }
   
   public AbstractCard makeCopy()
@@ -58,6 +59,7 @@ public class PoisonDarts
     {
       upgradeName();
       //upgradeMagicNumber(1);
+	  this.exhaust = false;
       this.rawDescription = UPGRADE_DESCRIPTION;
       initializeDescription();
     }
