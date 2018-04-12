@@ -19,7 +19,7 @@
   },
   "Fluid Movement": {
     "NAME": "Fluid Movement",
-    "DESCRIPTION": "Retain up to !M! Block between rounds."
+    "DESCRIPTION": "Keep up to !M! Block between rounds."
   },
   "Abandon": {
     "NAME": "Abandon",

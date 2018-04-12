@@ -29,7 +29,8 @@
 		"] #gObtain #gSurvivor #gand #gNeutralize.",
 		"] #gObtain #gBurning #gBlood.",
 		"[Wander] Transform and upgrade a random card.",
-		"[Leave]"
+		"[Leave]",
+		"] #gObtain #gSizzling #gBlood."
 	]
   },
   "Trapped Chest": {
