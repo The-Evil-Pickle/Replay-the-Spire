@@ -47,12 +47,14 @@ public class PoisonDartsAction
     }
     if (effect > 0)
     {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.m, this.p, new NecroticPoisonPower(this.m, this.p, effect), effect, AbstractGameAction.AttackEffect.POISON));
+		//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.m, this.p, new NecroticPoisonPower(this.m, this.p, effect), effect, AbstractGameAction.AttackEffect.POISON));
       for (int i = 0; i < (effect); i++) {
-        //AbstractDungeon.actionManager.addToBottom(new DamageAction(this.m, new DamageInfo(this.p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.m, this.p, new NecroticPoisonPower(this.m, this.p, this.damage), this.damage, AbstractGameAction.AttackEffect.POISON));
+		/*
 		for (AbstractMonster mm : AbstractDungeon.getMonsters().monsters) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mm, this.p, new NecroticPoisonPower(mm, this.p, this.damage), this.damage, AbstractGameAction.AttackEffect.POISON));
 		}
+		*/
       }
       if (!this.freeToPlayOnce) {
         this.p.energy.use(EnergyPanel.totalCount);

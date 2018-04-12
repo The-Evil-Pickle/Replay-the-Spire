@@ -34,17 +34,22 @@ public class Voices extends AbstractCard
             this.useBlueCandle(p);
         }
         else {
-			for (int counter = 0; counter < this.magicNumber; counter++){
-				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Dazed(), this.magicNumber));
-			}
-            AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
+			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Dazed(), this.magicNumber));
+			AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.limbo));
+			AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.discardPile));
+            //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
         }
+    }
+    
+    @Override
+    public void triggerWhenDrawn() {
+        AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
     }
     
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
         this.dontTriggerOnUseCard = true;
-        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, null));
+        AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
     }
     
     @Override

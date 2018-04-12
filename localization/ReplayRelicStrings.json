@@ -159,11 +159,11 @@
 	"NAME": "Painkiller Herbs",
 	"FLAVOR": "Herbs with a powerful cognitive effect that reduces pain. Warning: may cause a feeling of disorientation.",
     "DESCRIPTIONS": [
-	" NL Gain ",
+	" NL Gain #b",
 	" max HP on pickup. NL Less map information.",
-	"Gain [R] at the start of every other turn.",
-	"Gain [G] at the start of every other turn.",
-	"Gain [B] at the start of every other turn."
+	"Every #b2 turns, gain [R] .",
+	"Every #b2 turns, gain [G] .",
+	"Every #b2 turns, gain [B] ."
 	]
   },
   "Honey Jar": {
@@ -177,9 +177,23 @@
 	"NAME": "Sizzling Blood",
 	"FLAVOR": "It burns with fire and poison.",
     "DESCRIPTIONS": [
-	"Heal ",
-	" HP at the end of combat. NL Gain ",
+	"At the end of combat heal #b",
+	" HP. NL Gain #b",
 	" max HP on pickup."
+	]
+  },
+  "White Beast Statue": {
+	"NAME": "White Beast Statue",
+	"FLAVOR": "A small white statue of a creature you have never seen before.",
+    "DESCRIPTIONS": [
+	"Potions always drop after combat. NL Lower chance of getting rare potions."
+	]
+  },
+  "Chameleon Ring": {
+	"NAME": "Chameleon Ring",
+	"FLAVOR": "A ring that glimmers with slowly shifting colors.",
+    "DESCRIPTIONS": [
+	"Higher chance of getting rare potions. NL You can now #yBrew at Rest Sites."
 	]
   }
 }

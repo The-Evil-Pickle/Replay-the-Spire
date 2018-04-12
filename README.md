@@ -8,7 +8,7 @@ Requires:
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
 Currently adds:
- * 23 Relics (2 ironclad, 1 silent, 20 shared)
+ * 24 Relics (2 ironclad, 1 silent, 21 shared)
  * 19 Cards (4 ironclad, 5 silent, 2 colorless, 6 curses)
  * 4 Events
  * 12 Potions
@@ -31,7 +31,9 @@ Iron Hammer | All | Uncommon | During the first turn, drawing a card upgrades it
 Onion Ring | All | Uncommon | Gain 3 **Strength** at the start of combat, then lose 1 **Strength** on the next 3 turns.
 Snack Pack | All | Uncommon | Every time you play 3 **Attacks** in a single turn, gain 2 HP.
 Arrowhead | All | Rare | You may **Upgrade** 2 cards whenever you smith.
+Chameleon Ring | All | Rare | Higher chance to find rarer potions. You may brew 2 random potions at rest sites.
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
+Chemical X | All | Shop | Your cost X effects are increased by 2.
 GuideBook | All | Shop | On pickup, upgrade 2 cards randomly. Prioritizes rarer cards.
 Honey Jar | All | Boss | Draw 1 more card each turn. Retain up to 1 card each turn. Card rewards have 1 more option to chose from. You cannot skip rewards.
 Ooze Armor | All | Boss | Gain 1 energy and draw 1 card at the start of each turn. At the start of combat, gain Slow (resets to -2) and Malleable (resets to 4), and shuffle 2 Slimed into your draw pile.
@@ -53,7 +55,7 @@ Fluid Movement | Green | Commmon | Power | 1 | Retain up to 5(8) block between r
 Hidden Blade | Green | Commmon | Skill | 1 | Add a Shiv to your hand and draw 2(3) cards.
 Toxin Wave | Green | Uncommon | Skill | 2 | Apply 5(7) **Necrotic** **Poison** and -1(-2) **Strength** to ALL enemies. **Exhaust**.
 Atom Bomb | Green | Rare | Attack | 4 | Deal 60(80) damage. Apply 3(4) **Poison** to ALL enemies. **Exhaust**.
-Poison Darts | Green | Rare | Skill | X | Apply X **Necrotic** **Poison**. Apply 2 **Necrotic** **Poison** to ALL enemies X times. **Exhaust**. (doesn't exhaust when upgraded).
+Poison Darts | Green | Rare | Skill | X | Apply 3(5) **Necrotic** **Poison** X times.
 Improvise | Colorless | Uncommmon | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(5) **Poison**. Is affected by damage modifiers.
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
@@ -69,7 +71,7 @@ Ghost Defend | Colorless | Special | Skill | 1 | Gain 5 block. **Exhaust**. **Et
 # Keywords
 Name | Type | Description
 --- | --- | ---
-Necrotic Poison | Power (Debuff) | An alternate kind of Poison. Does double damage, but is reduced by half each turn. Does damage at end of turn rather than at start. Normal Poison does not count down while Necrotic Poison is applied.
+Necrotic Poison | Power (Debuff) | An alternate kind of Poison. Does double damage, but is reduced by half each turn. Normal Poison does not count down while Necrotic Poison is applied.
 
 # Potions
 Name | Rarity | Description (post-ascension-11 changes in parenthesis)
@@ -91,6 +93,8 @@ Elixir | Shop | Exhaust ALL your status and curse cards (in your hand).
 Known Issues:
  * Cards altered by Ring of Chaos return to the normal version if the run is saved and returned to later.
  * Config settings will not save when the game is closed.
+ * Potions are not seeded, and held potions may be re-rolled when the game is saved and returned to later.
  
 Changes to Existing Content:
  * Neow will now sometimes offer a random colorless card as his blessing.
+ * White Beast Statue lowers the chance of finding rarer potions.

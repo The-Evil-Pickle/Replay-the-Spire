@@ -30,15 +30,20 @@ public class Delirium extends AbstractCard
             this.useBlueCandle(p);
         }
         else {
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ConfusionPower(AbstractDungeon.player, 1), 1));
-            AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ConfusionPower(AbstractDungeon.player, 1, false), 1));
+            //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
         }
+    }
+    
+    @Override
+    public void triggerWhenDrawn() {
+        AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
     }
     
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
         this.dontTriggerOnUseCard = true;
-        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, null));
+        AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
     }
     
     @Override

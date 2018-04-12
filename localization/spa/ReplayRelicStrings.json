@@ -156,30 +156,30 @@
 	]
   },
   "Painkiller Herb": {
-	"NAME": "Painkiller Herbs",
-	"FLAVOR": "Herbs with a powerful cognitive effect that reduces pain. Warning: may cause a feeling of disorientation.",
+    "NAME": "Hierbas Analgésicas",
+    "FLAVOR": "Hierbas con un poderoso efecto cognitivo que reduce el dolor. Aviso: puede causar un efecto de desorientación.",
     "DESCRIPTIONS": [
-	" NL Gain ",
-	" max HP on pickup. NL Less map information.",
-	"Gain [R] every 2 turns.",
-	"Gain [G] every 2 turns.",
-	"Gain [B] every 2 turns."
-	]
+    " NL Gana #b",
+    " HP máxima al cogerlo. NL Menos información del mapa.",
+    "Gana [R] cada 2 turnos.",
+    "Gana [G] cada 2 turnos.",
+    "Gana [B] cada 2 turnos."
+    ]
   },
   "Honey Jar": {
-	"NAME": "Honey Jar",
-	"FLAVOR": "Delicious!",
+    "NAME": "Tarro de Miel",
+    "FLAVOR": "¡Delicioso!",
     "DESCRIPTIONS": [
-	"Draw 1 more card each turn. NL #yRetain up to 1 card each turn. NL Extra choice on card reward screens. NL You cannot skip rewards."
-	]
+    "Roba 1 carta más cada turno. NL #yRetain hasta 1 carta cada turno. NL Elección extra en la pantalla de recompensa de cartas. NL No puedes saltarte recompensas."
+    ]
   },
   "Sizzling Blood": {
-	"NAME": "Sizzling Blood",
+	"NAME": "Sangre Candente",
 	"FLAVOR": "It burns with fire and poison.",
     "DESCRIPTIONS": [
-	"Heal ",
-	" HP at the end of combat. NL Gain ",
-	" max HP on pickup."
+	"Al final del combate cura #b",
+	" HP. NL Gana #b",
+	" HP máxima al cogerlo."
 	]
   }
 }

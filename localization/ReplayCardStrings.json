@@ -5,7 +5,7 @@
   },
   "Poison Darts": {
     "NAME": "Poison Darts",
-    "DESCRIPTION": "Apply X Necrotic Poison. Apply !M! Necrotic Poison to ALL enemies X times. NL Exhaust.",
+    "DESCRIPTION": "Apply !M! Necrotic Poison X times.",
 	"UPGRADE_DESCRIPTION": "Apply X Necrotic Poison. Apply !M! Necrotic Poison to ALL enemies X times."
   },
   "Toxin Wave": {
@@ -49,7 +49,11 @@
   },
   "Looming Evil": {
 	"NAME": "Looming Evil",
-	"DESCRIPTION": "Can be played for !M! Energy to Exhaust. NL At the end of your turn, shuffle a curse into your draw pile and reduce cost."
+	"DESCRIPTION": "Can be played for !M! Energy to Exhaust. NL At the end of your turn, shuffle a curse into your draw pile and reduce cost.",
+    	"EXTENDED_DESCRIPTION": [
+    	"Can be played for ",
+    	" Energy to Exhaust. NL At the end of your turn, shuffle a curse into your draw pile and reduce cost."
+		]
   },
   "Hallucinations": {
 	"NAME": "Hallucinations",

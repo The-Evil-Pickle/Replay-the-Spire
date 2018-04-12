@@ -34,9 +34,8 @@ public class PoisonDarts
   {
     super("Poison Darts", NAME, "status/beta", "status/beta", -1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY, 1);
     
-	this.baseMagicNumber = 2;
+	this.baseMagicNumber = 3;
     this.magicNumber = this.baseMagicNumber;
-	this.exhaust = true;
   }
   
   public void use(AbstractPlayer p, AbstractMonster m)
@@ -58,10 +57,10 @@ public class PoisonDarts
     if (!this.upgraded)
     {
       upgradeName();
-      //upgradeMagicNumber(1);
-	  this.exhaust = false;
-      this.rawDescription = UPGRADE_DESCRIPTION;
-      initializeDescription();
+      upgradeMagicNumber(2);
+	  //this.exhaust = false;
+      //this.rawDescription = UPGRADE_DESCRIPTION;
+      //initializeDescription();
     }
   }
 }

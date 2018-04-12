@@ -3,15 +3,8 @@ package com.megacrit.cardcrawl.cards.curses;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
-import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardRarity;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardTarget;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
-import com.megacrit.cardcrawl.cards.CardQueueItem;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -34,7 +27,7 @@ public class Sickly
   {
     super("Sickly", NAME, "status/beta", "status/beta", -2, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE, 1);
 	
-	this.baseMagicNumber = 4;
+	this.baseMagicNumber = 3;
     this.magicNumber = this.baseMagicNumber;
   }
   
@@ -48,15 +41,20 @@ public class Sickly
     {
       AbstractDungeon.actionManager.addToTop(new LoseBlockAction(p, p, this.magicNumber));
       
-      AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
+      //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
     }
   }
   
-  public void triggerOnEndOfTurnForPlayingCard()
-  {
-    this.dontTriggerOnUseCard = true;
-    AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, null));
-  }
+    @Override
+    public void triggerWhenDrawn() {
+        AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
+    }
+    
+    @Override
+    public void triggerOnEndOfTurnForPlayingCard() {
+        this.dontTriggerOnUseCard = true;
+        AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
+    }
   
   public AbstractCard makeCopy()
   {

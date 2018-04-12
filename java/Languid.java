@@ -2,8 +2,7 @@ package com.megacrit.cardcrawl.cards.curses;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardRarity;
@@ -46,15 +45,20 @@ public class Languid
     {
       AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DarknessPower(1), 1));
       
-      AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
+      //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
     }
   }
   
-  public void triggerOnEndOfTurnForPlayingCard()
-  {
-    this.dontTriggerOnUseCard = true;
-    AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, null));
-  }
+    @Override
+    public void triggerWhenDrawn() {
+        AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
+    }
+    
+    @Override
+    public void triggerOnEndOfTurnForPlayingCard() {
+        this.dontTriggerOnUseCard = true;
+        AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
+    }
   
   public AbstractCard makeCopy()
   {

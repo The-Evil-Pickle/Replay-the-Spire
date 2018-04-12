@@ -16,7 +16,7 @@ public class HoneyJar extends AbstractRelic
     public static final String ID = "Honey Jar";
     
     public HoneyJar() {
-        super("Honey Jar", "betaRelic.png", RelicTier.BOSS, LandingSound.FLAT);
+        super("Honey Jar", "honeyJar.png", RelicTier.BOSS, LandingSound.FLAT);
     }
     
     @Override

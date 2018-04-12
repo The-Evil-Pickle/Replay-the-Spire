@@ -5,7 +5,7 @@
   },
   "Poison Darts": {
     "NAME": "Dardos Venenosos",
-    "DESCRIPTION": "Aplica X Veneno Necrótico. Aplica !M! Veneno Necrótico a TODOS los enemigos X veces. NL Agota.",
+    "DESCRIPTION": "Aplica !M! Veneno Necrótico X veces.",
 	"UPGRADE_DESCRIPTION": "Aplica X Veneno Necrótico. Aplica !M! Veneno Necrótico a TODOS los enemigos X veces."
   },
   "Toxin Wave": {
@@ -49,7 +49,11 @@
   },
   "Looming Evil": {
 	"NAME": "Maldad Inminente",
-	"DESCRIPTION": "Puede ser jugada para Agotar !M! Energía. NL Al final de tu turno, baraja una maldición en tu pila de extracción y reduce el coste."
+	"DESCRIPTION": "Puede ser jugada para Agotar !M! Energía. NL Al final de tu turno, baraja una maldición en tu pila de extracción y reduce el coste.",
+    	"EXTENDED_DESCRIPTION": [
+    	"Puede ser jugada para Agotar ",
+    	" Energía. NL Al final de tu turno, baraja una maldición en tu pila de extracción y reduce el coste."
+		]
   },
   "Hallucinations": {
 	"NAME": "Halucinaciones",

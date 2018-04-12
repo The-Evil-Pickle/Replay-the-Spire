@@ -17,7 +17,7 @@ public class PainkillerHerb extends AbstractRelic
     private static final int HEAL_AMT = 6;
     
     public PainkillerHerb() {
-        super("Painkiller Herb", "betaRelic.png", RelicTier.BOSS, LandingSound.FLAT);
+        super("Painkiller Herb", "mapHide.png", RelicTier.BOSS, LandingSound.FLAT);
     }
     /*
     @Override

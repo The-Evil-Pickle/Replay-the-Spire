@@ -81,7 +81,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 						case RARE:
 							return 75;
 						case ULTRA:
-							return 90;
+							return 100;
 						case SPECIAL:
 							return 70;
 						case SHOP:
@@ -97,33 +97,44 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 	
 	public static ReplayTheSpireMod.PotionRarity returnRandomPotionTier(Random rng)
 	{
-		logger.info("CP1");
 		int tmpShopChance = 0;
 		int tmpUltraChance = ultraPotionChance;
-		logger.info("CP2");
-		if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SHOP) {
-			logger.info("CP3");
-			tmpShopChance = shopPotionChance;
-			tmpUltraChance *= 4;
+		int tmpCommonChance = commonPotionChance;
+		int tmpUncommonChance = uncommonPotionChance;
+		int tmpRareChance = rarePotionChance;
+		if (AbstractDungeon.player != null) {
+			if (AbstractDungeon.player.hasRelic("White Beast Statue")) {
+				tmpCommonChance += 5;
+				tmpUncommonChance += 2;
+				tmpRareChance -= 1;
+				if (tmpRareChance < 0)
+					tmpRareChance = 0;
+			}
+			if (AbstractDungeon.player.hasRelic("Chameleon Ring")) {
+				tmpCommonChance /= 2;
+				tmpRareChance += 3;
+				tmpUltraChance += 4;
+			}
 		}
-		logger.info("CP4");
-		logger.info(commonPotionChance);
-		logger.info(uncommonPotionChance);
-		logger.info(rarePotionChance);
-		logger.info(tmpUltraChance);
-		logger.info(tmpShopChance);
-		int roll = rng.random(0, commonPotionChance + uncommonPotionChance + rarePotionChance + tmpUltraChance + tmpShopChance - 1);
-		logger.info("CP5");
-		if (roll < commonPotionChance) {
+		tmpUltraChance *= potionsByRarity.get(ReplayTheSpireMod.PotionRarity.ULTRA).size();
+		tmpCommonChance *= potionsByRarity.get(ReplayTheSpireMod.PotionRarity.COMMON).size();
+		tmpUncommonChance *= potionsByRarity.get(ReplayTheSpireMod.PotionRarity.UNCOMMON).size();
+		tmpRareChance *= potionsByRarity.get(ReplayTheSpireMod.PotionRarity.RARE).size();
+		if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SHOP) {
+			tmpShopChance = shopPotionChance * potionsByRarity.get(ReplayTheSpireMod.PotionRarity.SHOP).size();
+			tmpUltraChance += 4 * potionsByRarity.get(ReplayTheSpireMod.PotionRarity.ULTRA).size();
+		}
+		int roll = rng.random(0, tmpCommonChance + tmpUncommonChance + tmpRareChance + tmpUltraChance + tmpShopChance - 1);
+		if (roll < tmpCommonChance) {
 		  return ReplayTheSpireMod.PotionRarity.COMMON;
 		}
-		if (roll < commonPotionChance + uncommonPotionChance) {
+		if (roll < tmpCommonChance + tmpUncommonChance) {
 		  return ReplayTheSpireMod.PotionRarity.UNCOMMON;
 		}
-		if (roll < commonPotionChance + uncommonPotionChance + rarePotionChance) {
+		if (roll < tmpCommonChance + tmpUncommonChance + tmpRareChance) {
 		  return ReplayTheSpireMod.PotionRarity.RARE;
 		}
-		if (roll < commonPotionChance + uncommonPotionChance + rarePotionChance + tmpShopChance) {
+		if (roll < tmpCommonChance + tmpUncommonChance + tmpRareChance + tmpShopChance) {
 		  return ReplayTheSpireMod.PotionRarity.SHOP;
 		}
 		return ReplayTheSpireMod.PotionRarity.ULTRA;
@@ -140,7 +151,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 			rng = AbstractDungeon.potionRng;
 		}
 		if (rng == null) {
-			logger.info("FUCK");
 			rng = new Random();
 		}
 		//String randomKey = (String)potions.get(rng.random.nextInt(potions.size()));
@@ -149,9 +159,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 	
 	public static AbstractPotion getRandomPotion(Random rng, ReplayTheSpireMod.PotionRarity rarity)
 	{
-		logger.info("CP6");
 		String randomKey = (String)potionsByRarity.get(rarity).get(rng.random.nextInt(potionsByRarity.get(rarity).size()));
-		logger.info("CP7");
 		return PotionHelper.getPotion(randomKey);
 	}
 	
@@ -407,6 +415,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		
         final String[] necroNames = { "necrotic", "necrotic poison" };
         BaseMod.addKeyword(necroNames, "A powerful poison that deals 2 damage each turn, but doesn't last as long.");
+		final String[] refundNames = { "refund", "refunds"};
+		BaseMod.addKeyword(refundNames, "Returns all energy spent on playing the card.");
+		
 		
         Settings.isDailyRun = false;
         Settings.isTrial = false;
@@ -422,6 +433,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		BaseMod.addRelic(new Arrowhead(), RelicType.SHARED);
 		BaseMod.addRelic(new Bandana(), RelicType.SHARED);
 		BaseMod.addRelic(new Baseball(), RelicType.SHARED);
+		BaseMod.addRelic(new ChameleonRing(), RelicType.SHARED);
+		BaseMod.addRelic(new ChemicalX(), RelicType.SHARED);
 		BaseMod.addRelic(new DivineProtection(), RelicType.SHARED);
 		BaseMod.addRelic(new ElectricBlood(), RelicType.RED);
 		BaseMod.addRelic(new Funnel(), RelicType.SHARED);
@@ -517,6 +530,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
         String potionStrings = Gdx.files.internal(jsonPath + "ReplayPotionStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(PotionStrings.class, potionStrings);
+        // UIStrings
+        String uiStrings = Gdx.files.internal(jsonPath + "ReplayUIStrings.json").readString(
+        		String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(UIStrings.class, uiStrings);
 		
 		logger.info("done editting strings");
 	}

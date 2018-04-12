@@ -1,8 +1,7 @@
 package com.megacrit.cardcrawl.cards.curses;
 
 import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardRarity;
@@ -24,6 +23,7 @@ public class LoomingEvil
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Looming Evil");
   public static final String NAME = cardStrings.NAME;
   public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+  public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
   private static final int COST = 3;
   private static final int POOL = 2;
   
@@ -45,7 +45,7 @@ public class LoomingEvil
 	  }
 	  else
 	  {
-		  this.cost = 0;
+		  //this.cost = 0;
 		  this.exhaust = true;
 	  }
     }
@@ -53,22 +53,30 @@ public class LoomingEvil
     {
       //AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new WeakPower(AbstractDungeon.player, 1, true), 1));
       AbstractCard c = AbstractDungeon.returnRandomCurse().makeCopy();
-      AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));
-      AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
+      AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, c, 1, true, false));
+      //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
 	  if (this.cost > 0)
 	  {
 		upgradeBaseCost(this.cost - 1);
 		this.magicNumber = this.cost;
+		this.rawDescription = LoomingEvil.EXTENDED_DESCRIPTION[0] + this.cost + LoomingEvil.EXTENDED_DESCRIPTION[1];
 		this.initializeDescription();
 	  }
     }
   }
   
-  public void triggerOnEndOfTurnForPlayingCard()
-  {
-    this.dontTriggerOnUseCard = true;
-    AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, null));
-  }
+    @Override
+    public void triggerWhenDrawn() {
+        AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
+		this.rawDescription = LoomingEvil.EXTENDED_DESCRIPTION[0] + this.cost + LoomingEvil.EXTENDED_DESCRIPTION[1];
+		this.initializeDescription();
+    }
+    
+    @Override
+    public void triggerOnEndOfTurnForPlayingCard() {
+        this.dontTriggerOnUseCard = true;
+        AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
+    }
   
     public boolean canUse(AbstractPlayer p, AbstractMonster m)
   {
@@ -88,4 +96,5 @@ public class LoomingEvil
   }
   
   public void upgrade() {}
+  
 }

@@ -1,17 +1,11 @@
 package com.megacrit.cardcrawl.cards.curses;
 
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardRarity;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardTarget;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
-import com.megacrit.cardcrawl.cards.CardQueueItem;
+import com.megacrit.cardcrawl.actions.*;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
@@ -37,38 +31,44 @@ public class Hallucinations
     this.magicNumber = this.baseMagicNumber;
   }
   
-  public void use(AbstractPlayer p, AbstractMonster m)
-  {
-    if ((!this.dontTriggerOnUseCard) && (p.hasRelic("Blue Candle")))
-    {
-      useBlueCandle(p);
-    }
-    else
-    {
-      for (int counter = 0; counter < this.magicNumber; counter++){
-		  AbstractCard.CardRarity rarity = AbstractCard.CardRarity.COMMON;
-		  int r = MathUtils.random(20);
-		  if (r == 20)
-		  {
-			  rarity = AbstractCard.CardRarity.RARE;
-		  } else {
-			  if (r >= 15) {
-				  rarity = AbstractCard.CardRarity.UNCOMMON;
+	@Override
+	public void use(AbstractPlayer p, AbstractMonster m)
+	{
+		if ((!this.dontTriggerOnUseCard) && (p.hasRelic("Blue Candle")))
+		{
+		  useBlueCandle(p);
+		}
+		else
+		{
+		  for (int counter = 0; counter < this.magicNumber; counter++){
+			  AbstractCard.CardRarity rarity = AbstractCard.CardRarity.COMMON;
+			  int r = MathUtils.random(20);
+			  if (r == 20)
+			  {
+				  rarity = AbstractCard.CardRarity.RARE;
+			  } else {
+				  if (r >= 15) {
+					  rarity = AbstractCard.CardRarity.UNCOMMON;
+				  }
 			  }
+			  AbstractCard c = AbstractDungeon.getCard(rarity).makeCopy();
+			  AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(p, p, c, 1, true, false));
 		  }
-		  AbstractCard c = AbstractDungeon.getCard(rarity).makeCopy();
-		  AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(p, p, c, 1, true, false));
-	  }
-      AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
+		  //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
+		}
+	}
+  
+    @Override
+    public void triggerWhenDrawn() {
+        AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
     }
-  }
-  
-  public void triggerOnEndOfTurnForPlayingCard()
-  {
-    this.dontTriggerOnUseCard = true;
-    AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, null));
-  }
-  
+    
+    @Override
+    public void triggerOnEndOfTurnForPlayingCard() {
+        this.dontTriggerOnUseCard = true;
+        AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
+    }
+    
   public AbstractCard makeCopy()
   {
     return new Hallucinations();
