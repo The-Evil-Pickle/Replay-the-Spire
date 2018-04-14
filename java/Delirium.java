@@ -43,7 +43,8 @@ public class Delirium extends AbstractCard
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
         this.dontTriggerOnUseCard = true;
-        AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
+        //AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
+		AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
     
     @Override
