@@ -26,7 +26,7 @@ public class ReplayRewardSkipPositionPatch {
 				ReplayRewardSkipPositionPatch.HIDE_X = AbstractDungeon.topPanel.mapHb.cX - 400.0f * Settings.scale;
 				ReplayRewardSkipPositionPatch.SHOW_X = AbstractDungeon.topPanel.mapHb.cX;
 			}
-			if (__Instance.hasTakenAll) {
+			if (__Instance.rewards.isEmpty()) {
 				AbstractDungeon.overlayMenu.proceedButton.show();
 				AbstractDungeon.topPanel.mapHb.move(ReplayRewardSkipPositionPatch.SHOW_X, AbstractDungeon.topPanel.mapHb.cY);
 			} else {

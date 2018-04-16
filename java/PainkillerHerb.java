@@ -17,7 +17,7 @@ public class PainkillerHerb extends AbstractRelic
     private static final int HEAL_AMT = 6;
     
     public PainkillerHerb() {
-        super("Painkiller Herb", "mapHide.png", RelicTier.BOSS, LandingSound.FLAT);
+        super("Painkiller Herb", "cherryBlossom.png", RelicTier.BOSS, LandingSound.FLAT);
     }
     /*
     @Override
@@ -38,24 +38,24 @@ public class PainkillerHerb extends AbstractRelic
     
     private String setDescription(final AbstractPlayer.PlayerClass c) {
         if (c == null) {
-            return this.DESCRIPTIONS[2] + this.DESCRIPTIONS[0] + PainkillerHerb.HP_AMT + this.DESCRIPTIONS[1];
+            return this.DESCRIPTIONS[1] + this.DESCRIPTIONS[0];
         }
         switch (c) {
             case IRONCLAD: {
-                return this.DESCRIPTIONS[2] + this.DESCRIPTIONS[0] + PainkillerHerb.HP_AMT + this.DESCRIPTIONS[1];
+                return this.DESCRIPTIONS[1] + this.DESCRIPTIONS[0];
             }
             case THE_SILENT: {
-                return this.DESCRIPTIONS[3] + this.DESCRIPTIONS[0] + PainkillerHerb.HP_AMT + this.DESCRIPTIONS[1];
+                return this.DESCRIPTIONS[2] + this.DESCRIPTIONS[0];
             }
             case CROWBOT: {
-                return this.DESCRIPTIONS[4] + this.DESCRIPTIONS[0] + PainkillerHerb.HP_AMT + this.DESCRIPTIONS[1];
+                return this.DESCRIPTIONS[3] + this.DESCRIPTIONS[0];
             }
             default: {
-                return this.DESCRIPTIONS[2] + this.DESCRIPTIONS[0] + PainkillerHerb.HP_AMT + this.DESCRIPTIONS[1];
+                return this.DESCRIPTIONS[1] + this.DESCRIPTIONS[0];
             }
         }
     }
-	
+	/*
     @Override
     public void atTurnStart() {
         if (this.counter == -1) {
@@ -71,22 +71,22 @@ public class PainkillerHerb extends AbstractRelic
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
         }
     }
-	
+	*/
     @Override
     public void onEquip() {
-        AbstractDungeon.player.increaseMaxHp(PainkillerHerb.HP_AMT, true);
-		this.counter = 0;
-        //final EnergyManager energy = AbstractDungeon.player.energy;
-        //++energy.energyMaster;
+        //AbstractDungeon.player.increaseMaxHp(PainkillerHerb.HP_AMT, true);
+		//this.counter = 0;
+        final EnergyManager energy = AbstractDungeon.player.energy;
+        ++energy.energyMaster;
         //AbstractDungeon.getCurrRoom().addGoldToRewards(30);
     }
-    /*
+    
     @Override
     public void onUnequip() {
         final EnergyManager energy = AbstractDungeon.player.energy;
         --energy.energyMaster;
     }
-	*/
+	
     /*
     @Override
     public void onEnterRoom(final AbstractRoom room) {

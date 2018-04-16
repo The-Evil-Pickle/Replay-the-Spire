@@ -37,7 +37,7 @@ Chemical X | All | Shop | Your cost X effects are increased by 2.
 GuideBook | All | Shop | On pickup, upgrade 2 cards randomly. Prioritizes rarer cards.
 Honey Jar | All | Boss | Draw 1 more card each turn. Retain up to 1 card each turn. Card rewards have 1 more option to chose from. You cannot skip rewards.
 Ooze Armor | All | Boss | Gain 1 energy and draw 1 card at the start of each turn. At the start of combat, gain Slow (resets to -2) and Malleable (resets to 4), and shuffle 2 Slimed into your draw pile.
-Painkiller Herbs | All | Boss | Gain 1 energy every 2 turns. Gain 20 max HP on pickup. Map displays much less information.
+Sweet Flower | All | Boss | Gain 1 more energy each turn. Map displays much less information.
 Electric Blood | Ironclad | Boss | Gain 2 energy at the start of each turn. When you play a card, lose HP equal to the cost.
 Snecko Scales | Silent | Boss | Draw 3 additional cards each turn. When you play a card, discard a card.
 Ring of Chaos | All | Boss/Event | Some card rewards have randomly altered stats and effects.
@@ -94,7 +94,9 @@ Known Issues:
  * Cards altered by Ring of Chaos return to the normal version if the run is saved and returned to later.
  * Config settings will not save when the game is closed.
  * Potions are not seeded, and held potions may be re-rolled when the game is saved and returned to later.
+ * Honey Jar + Question Card doesn't stack.
  
 Changes to Existing Content:
  * Neow will now sometimes offer a random colorless card as his blessing.
  * White Beast Statue lowers the chance of finding rarer potions.
+ * If you have Honey Jar and Singing Bowl at the same time, using Singing Bowl's max hp gain option also picks a reward card at random.

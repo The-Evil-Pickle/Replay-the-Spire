@@ -156,14 +156,13 @@
 	]
   },
   "Painkiller Herb": {
-	"NAME": "Painkiller Herbs",
-	"FLAVOR": "Herbs with a powerful cognitive effect that reduces pain. Warning: may cause a feeling of disorientation.",
+	"NAME": "Sweet Flower",
+	"FLAVOR": "The sickly sweet scent of this flower makes you feel dizzy...",
     "DESCRIPTIONS": [
-	" NL Gain #b",
-	" max HP on pickup. NL Less map information.",
-	"Every #b2 turns, gain [R] .",
-	"Every #b2 turns, gain [G] .",
-	"Every #b2 turns, gain [B] ."
+	" NL Less map information.",
+	"Gain [R] at the start of each turn.", 
+	"Gain [G] at the start of each turn.",
+	"Gain [B] at the start of each turn."
 	]
   },
   "Honey Jar": {

@@ -452,6 +452,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		BaseMod.addRelic(new RingOfChaos(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfFury(), RelicType.SHARED);
 		BaseMod.addRelic(new SimpleRune(), RelicType.SHARED);
+		BaseMod.addRelic(new SizzlingBlood(), RelicType.SHARED);
 		BaseMod.addRelic(new SnackPack(), RelicType.SHARED);
 		BaseMod.addRelic(new SneckoScales(), RelicType.GREEN);
         
@@ -493,7 +494,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		AddAndUnlockCard(new Delirium());
 		AddAndUnlockCard(new Voices());
 		AddAndUnlockCard(new LoomingEvil());
-		
 		
 		
 		logger.info("done editting cards");

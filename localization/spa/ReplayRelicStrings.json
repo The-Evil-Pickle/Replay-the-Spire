@@ -159,11 +159,10 @@
     "NAME": "Hierbas Analgésicas",
     "FLAVOR": "Hierbas con un poderoso efecto cognitivo que reduce el dolor. Aviso: puede causar un efecto de desorientación.",
     "DESCRIPTIONS": [
-    " NL Gana #b",
-    " HP máxima al cogerlo. NL Menos información del mapa.",
-    "Gana [R] cada 2 turnos.",
-    "Gana [G] cada 2 turnos.",
-    "Gana [B] cada 2 turnos."
+    " NL Menos información del mapa.",
+    "Gana [R] al comienzo de cada turno.",
+	"Gana [G] al comienzo de cada turno.",
+	"Gana [B] al comienzo de cada turno."
     ]
   },
   "Honey Jar": {
