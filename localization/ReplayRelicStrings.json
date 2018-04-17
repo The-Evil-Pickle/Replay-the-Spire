@@ -18,7 +18,9 @@
 	"NAME": "Bandana",
 	"FLAVOR": "The finest article of pickpocketing attire.",
     "DESCRIPTIONS": [
-	"Gain 2 #yThievery."
+	"Gain #b",
+	" #yThievery for the first #b",
+	" turns of combat."
 	]
   },
   "Baseball": {

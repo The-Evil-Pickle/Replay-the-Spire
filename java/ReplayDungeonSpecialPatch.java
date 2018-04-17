@@ -9,7 +9,7 @@ public class ReplayDungeonSpecialPatch {
 	
 	public static void Postfix(AbstractDungeon __instance) {
 		__instance.specialOneTimeEventList.add("Trapped Chest");
-		__instance.specialOneTimeEventList.add("Chaos Ring Event");
+		//__instance.specialOneTimeEventList.add("Chaos Ring Event");
 		__instance.specialOneTimeEventList.add("Stuck");
 	}
 	

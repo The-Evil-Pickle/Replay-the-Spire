@@ -47,6 +47,10 @@
     "NAME": "Poisoned Strike",
     "DESCRIPTION": "Apply !D! Poison. NL Affected by damage modifiers."
   },
+  "Specialist": {
+    "NAME": "Specialist",
+    "DESCRIPTION": "All non-attack damage you deal is increased by !M! ."
+  },
   "Looming Evil": {
 	"NAME": "Looming Evil",
 	"DESCRIPTION": "Can be played for !M! Energy to Exhaust. NL At the end of your turn, shuffle a curse into your draw pile and reduce cost.",
@@ -74,6 +78,10 @@
   "Voices": {
 	"NAME": "Voices",
 	"DESCRIPTION": "Unplayable. NL At the end of your turn, shuffle !M! Dazed into your discard pile. NL Ethereal."
+  },
+  "Spreading Infection": {
+	"NAME": "Spreading Infection",
+	"DESCRIPTION": "Unplayable. NL At the end of your turn, duplicate all other Status and Curse cards in your hand."
   },
   "Ghost Swipe": {
     "NAME": "Ghost Swipe",

@@ -41,5 +41,12 @@
 	"Al final de cada turno, conserva hasta #b",
 	" #yEnergy."
     ]
+  },
+  "Specialist": {
+    "NAME": "Especialista",
+    "DESCRIPTIONS": [
+	"Aumenta el daño de non ataque en #b", 
+	"Reduce el daño de non ataque en #b"
+    ]
   }
 }

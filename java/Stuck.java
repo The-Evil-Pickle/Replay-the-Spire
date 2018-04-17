@@ -17,14 +17,14 @@ public class Stuck extends AbstractImageEvent
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
     public static final String[] OPTIONS;
-    private static final String DIALOG_1;
+    private static final String DIALOG_1;	
     private static final String DIALOG_2;
     private CurScreen screen;
     private AbstractCard card;
 	private boolean upgradeOption;
     
     public Stuck() {
-        super(Stuck.NAME, Stuck.DIALOG_1, "images/events/falling.jpg");
+        super(Stuck.NAME, Stuck.DIALOG_1, "images/events/stuck.png");
         this.screen = CurScreen.INTRO;
         this.setCards();
         GenericEventDialog.setDialogOption(Stuck.OPTIONS[0]);

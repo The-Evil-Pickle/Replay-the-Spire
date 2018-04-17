@@ -18,7 +18,7 @@ public class DivineProtection
   
   public DivineProtection()
   {
-    super("Divine Protection", "betaRelic.png", AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.MAGICAL);
+    super("Divine Protection", "divineProtection.png", AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.MAGICAL);
 	
 	this.counter = 0;
   }

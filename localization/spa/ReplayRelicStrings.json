@@ -18,7 +18,9 @@
 	"NAME": "Bandana",
 	"FLAVOR": "El mejor artículo para un atuendo de ladronzuelo.",
     "DESCRIPTIONS": [
-	"Gana 2 #yThievery."
+	"Gana #b",
+	" #yThievery para #b",
+	" turnos."
 	]
   },
   "Baseball": {

@@ -9,8 +9,8 @@ Requires:
 
 Currently adds:
  * 24 Relics (2 ironclad, 1 silent, 21 shared)
- * 19 Cards (4 ironclad, 5 silent, 2 colorless, 6 curses)
- * 4 Events
+ * 20 Cards (4 ironclad, 5 silent, 3 colorless, 6 curses)
+ * 3 Events
  * 12 Potions
 
 
@@ -40,8 +40,7 @@ Ooze Armor | All | Boss | Gain 1 energy and draw 1 card at the start of each tur
 Sweet Flower | All | Boss | Gain 1 more energy each turn. Map displays much less information.
 Electric Blood | Ironclad | Boss | Gain 2 energy at the start of each turn. When you play a card, lose HP equal to the cost.
 Snecko Scales | Silent | Boss | Draw 3 additional cards each turn. When you play a card, discard a card.
-Ring of Chaos | All | Boss/Event | Some card rewards have randomly altered stats and effects.
-Ring of Fury | All | Event | At the start of combat gain 2 **Strength** and lose 1 **Dexterity**.
+Ring of Chaos | All | Boss | Some card rewards have randomly altered stats and effects.
 
 
 # Cards
@@ -58,6 +57,7 @@ Atom Bomb | Green | Rare | Attack | 4 | Deal 60(80) damage. Apply 3(4) **Poison*
 Poison Darts | Green | Rare | Skill | X | Apply 3(5) **Necrotic** **Poison** X times.
 Improvise | Colorless | Uncommmon | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(5) **Poison**. Is affected by damage modifiers.
+Specialist | Colorless | Rare | Power | 0 | All non-attack damage you deal is increased by 2(3).
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
 Sickly | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, lose 3 **Block**.
 Languid | Curse | Curse | Curse | - | **Unplayable**. If this is in your hand at the end of your turn, start next turn with 1 less Energy.

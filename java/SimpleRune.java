@@ -1,8 +1,6 @@
 package com.megacrit.cardcrawl.relics;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
-import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -31,7 +29,8 @@ public class SimpleRune
   {
     ArrayList<AbstractCard> upgradableCards = new ArrayList();
     for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-      if (c.cardID == "Strike_R" || c.cardID == "Strike_G" || c.cardID == "Strike_B" || c.cardID == "Defend_R" || c.cardID == "Defend_G" || c.cardID == "Defend_B") {
+	  //(c.cardID == "Strike_R" || c.cardID == "Strike_G" || c.cardID == "Strike_B" || c.cardID == "Defend_R" || c.cardID == "Defend_G" || c.cardID == "Defend_B" || 
+      if ((c.cardID.toLowerCase().contains("strike") || c.cardID.toLowerCase().contains("defend")) && c.rarity == AbstractCard.CardRarity.BASIC){
         upgradableCards.add(c);
       }
     }

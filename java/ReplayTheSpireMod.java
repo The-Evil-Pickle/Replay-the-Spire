@@ -444,7 +444,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		BaseMod.addRelic(new HoneyJar(), RelicType.SHARED);
 		BaseMod.addRelic(new IronHammer(), RelicType.SHARED);
 		BaseMod.addRelic(new KingOfHearts(), RelicType.RED);
-		BaseMod.addRelic(new Mirror(), RelicType.SHARED);
+		//BaseMod.addRelic(new Mirror(), RelicType.SHARED);
 		BaseMod.addRelic(new OnionRing(), RelicType.SHARED);
 		BaseMod.addRelic(new OozeArmor(), RelicType.SHARED);
 		BaseMod.addRelic(new PainkillerHerb(), RelicType.SHARED);
@@ -487,11 +487,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		AddAndUnlockCard(new GhostSwipe());
 		AddAndUnlockCard(new Improvise());
 		AddAndUnlockCard(new PoisonedStrike());
+		AddAndUnlockCard(new Specialist());
 		logger.info("adding curses...");
 		AddAndUnlockCard(new Hallucinations());
 		AddAndUnlockCard(new Languid());
 		AddAndUnlockCard(new Sickly());
-		AddAndUnlockCard(new Delirium());
+		//AddAndUnlockCard(new Delirium());
 		AddAndUnlockCard(new Voices());
 		AddAndUnlockCard(new LoomingEvil());
 		

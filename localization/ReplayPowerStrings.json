@@ -41,5 +41,12 @@
 	"At the end of each round, retain up to #b",
 	" #yEnergy."
     ]
+  },
+  "Specialist": {
+    "NAME": "Specialist",
+    "DESCRIPTIONS": [
+	"Increases non-attack damage by #b", 
+	"Decrease non-attack damage by #b"
+    ]
   }
 }

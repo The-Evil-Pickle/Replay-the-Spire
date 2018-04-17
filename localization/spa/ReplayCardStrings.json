@@ -47,6 +47,10 @@
     "NAME": "Golpe Envenenado",
     "DESCRIPTION": "Aplica !D! Veneno. NL Afectado por modificadores de fuerza."
   },
+  "Specialist": {
+    "NAME": "Especialista",
+    "DESCRIPTION": "Aumenta el daño de non ataque en !M! ."
+  },
   "Looming Evil": {
 	"NAME": "Maldad Inminente",
 	"DESCRIPTION": "Puede ser jugada para Agotar !M! Energía. NL Al final de tu turno, baraja una maldición en tu pila de extracción y reduce el coste.",
