@@ -31,7 +31,7 @@ public class PoisonedStrike
   
   public PoisonedStrike()
   {
-    super("Poisoned Strike", NAME, "status/beta", "status/beta", 0, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, 1);
+    super("Poisoned Strike", NAME, "status/beta", "status/beta", 0, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, 1);
     
     this.baseDamage = 3;
   }

@@ -16,7 +16,6 @@ public class RunThrough extends AbstractCard
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
-    public static final String UPGRADE_DESCRIPTION;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 9;
     private static final int BASE_DRAW = 1;
@@ -46,8 +45,6 @@ public class RunThrough extends AbstractCard
             this.upgradeName();
             this.upgradeDamage(3);
             this.upgradeMagicNumber(3);
-            this.rawDescription = RunThrough.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
         }
     }
     
@@ -55,6 +52,5 @@ public class RunThrough extends AbstractCard
         cardStrings = CardCrawlGame.languagePack.getCardStrings("Run Through");
         NAME = RunThrough.cardStrings.NAME;
         DESCRIPTION = RunThrough.cardStrings.DESCRIPTION;
-        UPGRADE_DESCRIPTION = RunThrough.cardStrings.UPGRADE_DESCRIPTION;
     }
 }
