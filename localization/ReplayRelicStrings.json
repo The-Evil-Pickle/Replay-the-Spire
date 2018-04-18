@@ -196,5 +196,14 @@
     "DESCRIPTIONS": [
 	"Higher chance of getting rare potions. NL You can now #yBrew at Rest Sites."
 	]
+  },
+  "Grinning Jar": {
+    "NAME": "Grinning Jar",
+	"FLAVOR": "\"I play Grinning Jar, which allows me to draw 2 cards from my deck!\"",
+    "DESCRIPTIONS": [
+		"Obtain a Skill that draws 2 cards. NL Obtain an additional copy for every #b",
+		" other cards added to your deck.",
+		"The jar is pleased"
+	]
   }
 }

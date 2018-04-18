@@ -16,9 +16,10 @@ public class Specialist extends AbstractCard
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION;
     private static final int POOL = 1;
 	private static final int COST = 0;
-    private static final int DMG = 2;
+    private static final int DMG = 3;
     private static final int UPG_DMG = 1;
     
     public Specialist() {
@@ -42,6 +43,9 @@ public class Specialist extends AbstractCard
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(Specialist.UPG_DMG);
+            this.isInnate = true;
+            this.rawDescription = Specialist.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
     
@@ -49,5 +53,6 @@ public class Specialist extends AbstractCard
         cardStrings = CardCrawlGame.languagePack.getCardStrings("Specialist");
         NAME = Specialist.cardStrings.NAME;
         DESCRIPTION = Specialist.cardStrings.DESCRIPTION;
+		UPGRADE_DESCRIPTION = Specialist.cardStrings.UPGRADE_DESCRIPTION;
     }
 }

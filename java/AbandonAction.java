@@ -62,6 +62,7 @@ public class AbandonAction extends AbstractGameAction
                 for (int tmp = this.p.hand.size(), i = 0; i < tmp; ++i) {
                     final AbstractCard c = this.p.hand.getTopCard();
                     this.p.hand.moveToExhaustPile(c);
+					AbstractDungeon.actionManager.addToTop(new DrawCardAction(this.p, 1));
                 }
                 CardCrawlGame.dungeon.checkForPactAchievement();
                 return;

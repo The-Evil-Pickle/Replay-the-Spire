@@ -18,7 +18,7 @@ import basemod.*;
 public class HoneyBowlDrawPatch {
 	
 	public static void Prefix(SingingBowlButton __instance, SpriteBatch sb) {
-		if (AbstractDungeon.player.hasRelic("Honey Jar")) {
+		if (AbstractDungeon.player.hasRelic("Honey Jar") && AbstractDungeon.player.hasRelic("Singing Bowl")) {
 			FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, "*and take a card randomly", Settings.WIDTH / 2.0f + 200.0f * Settings.scale, 167.0f * Settings.scale, Color.WHITE.cpy());
 		}
 	}

@@ -18,14 +18,7 @@ public class SlowPower extends AbstractPower
 	private int baseAmount;
     
     public SlowPower(final AbstractCreature owner, final int amount) {
-        this.name = SlowPower.NAME;
-        this.ID = "Slow";
-		this.baseAmount = 0;
-        this.owner = owner;
-        this.amount = amount;
-        this.updateDescription();
-        this.img = ImageMaster.loadImage("images/powers/32/slow.png");
-        this.type = PowerType.DEBUFF;
+        this(owner, amount, 0);
     }
 	
     public SlowPower(final AbstractCreature owner, final int amount, final int baseAmount) {
@@ -37,6 +30,7 @@ public class SlowPower extends AbstractPower
         this.updateDescription();
         this.img = ImageMaster.loadImage("images/powers/32/slow.png");
         this.type = PowerType.DEBUFF;
+        this.canGoNegative = true;
     }
     
     @Override

@@ -21,6 +21,11 @@
     "NAME": "Fluid Movement",
     "DESCRIPTION": "Keep up to !M! Block between rounds."
   },
+  "Sneak Up": {
+    "NAME": "Sneak Up",
+    "DESCRIPTION": "Gain !M! Intangible. NL Discard 1 card. NL Innate. NL Exhaust. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Intangible. NL Innate. NL Exhaust. NL Ethereal."
+  },
   "Abandon": {
     "NAME": "Abandon",
     "DESCRIPTION": "Exhaust !M! card. NL Draw !M! card. NL Ethereal.",
@@ -38,6 +43,14 @@
     "NAME": "Hemogenesis",
     "DESCRIPTION": "Deal !D! damage. Gain !B! Block. Heal !M! HP. Exhaust. NL Upgrade each time you lose HP while this is in your hand."
   },
+  "Run Through": {
+    "NAME": "Run Through",
+    "DESCRIPTION": "Target enemy loses !D! HP and !M! Block."
+  },
+  "Defy Death": {
+    "NAME": "Defy Death",
+    "DESCRIPTION": "Gain !B! Block. NL Costs [R] less for each card you've Exhausted this combat."
+  },
   "Improvise": {
     "NAME": "Improvise",
     "DESCRIPTION": "Choose 1 of 3 random cards to add to your hand. It costs 1 less. NL Exhaust.",
@@ -49,7 +62,8 @@
   },
   "Specialist": {
     "NAME": "Specialist",
-    "DESCRIPTION": "All non-attack damage you deal is increased by !M! ."
+    "DESCRIPTION": "All non-attack damage you deal is increased by !M! .",
+	"UPGRADE_DESCRIPTION": "Innate. NL All non-attack damage you deal is increased by !M! ."
   },
   "Looming Evil": {
 	"NAME": "Looming Evil",
@@ -83,6 +97,10 @@
 	"NAME": "Spreading Infection",
 	"DESCRIPTION": "Unplayable. NL At the end of your turn, duplicate all other Status and Curse cards in your hand."
   },
+  "Faulty Equipment": {
+	"NAME": "Faulty Equipment",
+	"DESCRIPTION": "Unplayable. NL Can be Exhausted or removed from your deck by Upgrading."
+  },
   "Ghost Swipe": {
     "NAME": "Ghost Swipe",
     "DESCRIPTION": "Deal !D! damage. NL Exhaust. NL Ethereal."
@@ -90,5 +108,14 @@
   "Ghost Defend": {
     "NAME": "Ghost Defend",
     "DESCRIPTION": "Gain !B! Block. NL Exhaust. NL Ethereal."
+  },
+  "Pot Of Greed": {
+    "NAME": "Grinning Jar",
+    "DESCRIPTION": "Draw !M! cards. NL You may not play another Grinning Jar this turn.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards.",
+	"EXTENDED_DESCRIPTION": [
+		"I've already played a Grinning Jar this turn!",
+		"I've already played this card once this turn!"
+	]
   }
 }

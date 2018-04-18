@@ -16,9 +16,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
+import basemod.*;
+import basemod.abstracts.*;
 
 public class Abandon
-  extends AbstractCard
+  extends CustomCard
 {
   public static final String ID = "Abandon";
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Abandon");
@@ -30,7 +32,7 @@ public class Abandon
   
   public Abandon()
   {
-    super("Abandon", NAME, "red/skill/abandon", "red/skill/abandon", 0, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.NONE, 1);
+    super("Abandon", NAME, "cards/replay/abandon.png", 0, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.NONE, 1);
     this.baseMagicNumber = 1;
     this.magicNumber = this.baseMagicNumber;
     this.isEthereal = true;

@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.vfx.*;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.powers.*;
 
 public class TPH_ConfusionPower extends AbstractPower
 {
@@ -19,9 +20,9 @@ public class TPH_ConfusionPower extends AbstractPower
 	private int lowerStrengthLimit;
 	private int upperStrengthLimit;
     
-    public ConfusionPower(final AbstractCreature owner) {
+    public TPH_ConfusionPower(final AbstractCreature owner) {
         this.name = ConfusionPower.NAME;
-        this.ID = "Confusion";
+        this.ID = "TPH_Confusion";
         this.owner = owner;
         this.type = PowerType.DEBUFF;
 		this.strengthMod = 0;
@@ -31,9 +32,9 @@ public class TPH_ConfusionPower extends AbstractPower
         this.loadRegion("confusion");
 		this.isTurnBased = false;
     }
-    public ConfusionPower(final AbstractCreature owner, int amount) {
+    public TPH_ConfusionPower(final AbstractCreature owner, int amount) {
         this.name = ConfusionPower.NAME;
-        this.ID = "Confusion";
+        this.ID = "TPH_Confusion";
         this.owner = owner;
         this.type = PowerType.DEBUFF;
 		this.isTurnBased = true;
@@ -47,9 +48,9 @@ public class TPH_ConfusionPower extends AbstractPower
         this.updateDescription();
         this.loadRegion("confusion");
     }
-    public ConfusionPower(final AbstractCreature owner, int amount, boolean isSourceMonster) {
+    public TPH_ConfusionPower(final AbstractCreature owner, int amount, boolean isSourceMonster) {
         this.name = ConfusionPower.NAME;
-        this.ID = "Confusion";
+        this.ID = "TPH_Confusion";
         this.owner = owner;
         this.type = PowerType.DEBUFF;
 		this.isTurnBased = true;
@@ -80,10 +81,10 @@ public class TPH_ConfusionPower extends AbstractPower
 			}
 			
 			if (this.amount <= 0) {
-				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Confusion"));
+				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "TPH_Confusion"));
 			}
 			else {
-				AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "Confusion", 1));
+				AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "TPH_Confusion", 1));
 			}
 			
 		}
@@ -106,10 +107,10 @@ public class TPH_ConfusionPower extends AbstractPower
 				}
 				
 				if (this.amount <= 0) {
-					AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Confusion"));
+					AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "TPH_Confusion"));
 				}
 				else {
-					AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "Confusion", 1));
+					AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "TPH_Confusion", 1));
 				}
 				
 			}
@@ -127,7 +128,7 @@ public class TPH_ConfusionPower extends AbstractPower
     @Override
     public void updateDescription() {
 		if (this.owner.isPlayer)
-			this.description = ConfusionPower.DESCRIPTIONS[0];
+			this.description = TPH_ConfusionPower.DESCRIPTIONS[0];
 		else
 			this.description = this.owner.name + " gets a random amount of strength between " + this.lowerStrengthLimit + " and +" + this.upperStrengthLimit + " each round. NL (Currently " + this.strengthMod + ")";
 		if (this.isTurnBased) {
@@ -151,7 +152,7 @@ public class TPH_ConfusionPower extends AbstractPower
     
     static {
         powerStrings = CardCrawlGame.languagePack.getPowerStrings("Confusion");
-        NAME = ConfusionPower.powerStrings.NAME;
-        DESCRIPTIONS = ConfusionPower.powerStrings.DESCRIPTIONS;
+        NAME = TPH_ConfusionPower.powerStrings.NAME;
+        DESCRIPTIONS = TPH_ConfusionPower.powerStrings.DESCRIPTIONS;
     }
 }

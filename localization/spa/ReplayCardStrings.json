@@ -38,6 +38,10 @@
     "NAME": "Hemogénesis",
     "DESCRIPTION": "Hace !D! daño. Gana !B! Bloqueo. Cura !M! HP. NL Mejora cada vez que pierdes HP mientras esté en tu mano."
   },
+  "Run Through": {
+    "NAME": "Run Through",
+    "DESCRIPTION": "Target enemy loses !D! HP and !M! Block."
+  },
   "Improvise": {
     "NAME": "Improvisar",
     "DESCRIPTION": "Elige 1 entre 3 cartas aleatorias y añádela a tu mano. Cuesta 1 menos. NL Agota.",
@@ -50,6 +54,7 @@
   "Specialist": {
     "NAME": "Especialista",
     "DESCRIPTION": "Aumenta el daño de non ataque en !M! ."
+	"UPGRADE_DESCRIPTION": "Innate. NL Aumenta el daño de non ataque en !M! ."
   },
   "Looming Evil": {
 	"NAME": "Maldad Inminente",

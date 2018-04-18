@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.core.*;
+import tobyspowerhouse.powers.*;
 
 public class Delirium extends AbstractCard
 {
@@ -30,7 +31,7 @@ public class Delirium extends AbstractCard
             this.useBlueCandle(p);
         }
         else {
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ConfusionPower(AbstractDungeon.player, 1, false), 1));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TPH_ConfusionPower(AbstractDungeon.player, 1, false), 1));
             //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
         }
     }

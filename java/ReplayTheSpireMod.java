@@ -40,7 +40,7 @@ import java.util.EnumMap;
 
 @SpireInitializer
 public class ReplayTheSpireMod implements PostInitializeSubscriber,
-EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
+EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscriber
 {
 	public static final Logger logger = LogManager.getLogger(ReplayTheSpireMod.class.getName());
 	
@@ -54,7 +54,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 	protected static int uncommonPotionChance = 7;
 	protected static int rarePotionChance = 4;
 	protected static int ultraPotionChance = 1;
-	protected static int shopPotionChance = 10;
+	protected static int shopPotionChance = 12;
 	
 	//public static EnumMap<ReplayTheSpireMod.PotionRarity, int> potionCosts = new EnumMap<ReplayTheSpireMod.PotionRarity, int>(ReplayTheSpireMod.PotionRarity.class);
 	
@@ -175,6 +175,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		
 		logger.info("subscribing to editStrings event");
         BaseMod.subscribeToEditStrings(this);
+		
+		logger.info("subscribing to postDraw event");
+        BaseMod.subscribeToPostDraw(this);
         
 		initializePotions();
 		
@@ -377,7 +380,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		uncommonPotionChance = 7;
 		rarePotionChance = 4;
 		ultraPotionChance = 1;
-		shopPotionChance = 10;
+		shopPotionChance = 12;
 		
         // Mod badge
         Texture badgeTexture = new Texture(BADGE_IMG);
@@ -440,6 +443,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		BaseMod.addRelic(new Funnel(), RelicType.SHARED);
 		BaseMod.addRelic(new Garlic(), RelicType.SHARED);
 		BaseMod.addRelic(new GremlinFood(), RelicType.SHARED);
+		BaseMod.addRelic(new GrinningJar(), RelicType.SHARED);
 		BaseMod.addRelic(new GuideBook(), RelicType.SHARED);
 		BaseMod.addRelic(new HoneyJar(), RelicType.SHARED);
 		BaseMod.addRelic(new IronHammer(), RelicType.SHARED);
@@ -474,7 +478,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		AddAndUnlockCard(new Hemogenesis());
 		AddAndUnlockCard(new LifeLink());
 		AddAndUnlockCard(new Massacre());
-		//AddAndUnlockCard(new PerfectedStrike());
+		AddAndUnlockCard(new RunThrough());
+		AddAndUnlockCard(new DefyDeath());
 		logger.info("adding cards for Silent...");
 		AddAndUnlockCard(new AtomBomb());
 		AddAndUnlockCard(new ToxinWave());
@@ -482,6 +487,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		AddAndUnlockCard(new PoisonDarts());
 		AddAndUnlockCard(new ToxinWave());
 		AddAndUnlockCard(new HiddenBlade());
+		AddAndUnlockCard(new SneakUp());
 		logger.info("adding colorless cards...");
 		AddAndUnlockCard(new GhostDefend());
 		AddAndUnlockCard(new GhostSwipe());
@@ -492,10 +498,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		AddAndUnlockCard(new Hallucinations());
 		AddAndUnlockCard(new Languid());
 		AddAndUnlockCard(new Sickly());
-		//AddAndUnlockCard(new Delirium());
+		AddAndUnlockCard(new Delirium());
 		AddAndUnlockCard(new Voices());
 		AddAndUnlockCard(new LoomingEvil());
-		
+		logger.info("adding unobtainable cards...");
+		AddAndUnlockCard(new PotOfGreed());
 		
 		logger.info("done editting cards");
 	}
@@ -539,7 +546,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 		logger.info("done editting strings");
 	}
 	
-	
+	public void receivePostDraw(AbstractCard c) {
+		if (AbstractDungeon.player.hasPower("TPH_Confusion") && c.cost > -1 && c.color != AbstractCard.CardColor.CURSE && c.type != AbstractCard.CardType.STATUS) {
+			c.setCostForTurn(AbstractDungeon.cardRandomRng.random(3));
+		}
+	}
 	
 	
 }

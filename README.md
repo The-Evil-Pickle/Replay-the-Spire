@@ -9,7 +9,7 @@ Requires:
 
 Currently adds:
  * 24 Relics (2 ironclad, 1 silent, 21 shared)
- * 20 Cards (4 ironclad, 5 silent, 3 colorless, 6 curses)
+ * 23 Cards (6 ironclad, 6 silent, 3 colorless, 6 curses)
  * 3 Events
  * 12 Potions
 
@@ -21,6 +21,7 @@ Ancient Bracer | All | Common | At the start of combat, gain 2 **Artifact**.
 Bandana | All | Common | Gain 2 **Thievery**.
 Baseball | All | Common | Upon pick up, a random card in your deck becomes free.
 Gremlin Food | All | Common | Whenever you rest, **Upgrade** a random card.
+Grinning Jar | All | Common | On pickup, add a Grinning Jar card to your deck. Obtain another copy for every 12 cards added to your deck.
 King of Hearts | Ironclad | Common | When you lose HP during your turn, gain twice that much block.
 Rune of Simplicity | All | Common | Strikes and Defends can be **Upgraded** any number of times. On pickup, **Upgrade** 2 randomly.
 Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe or Ghost Defend to your hand (chosen randomly).
@@ -46,7 +47,9 @@ Ring of Chaos | All | Boss | Some card rewards have randomly altered stats and e
 # Cards
 Name | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis)
 --- | --- | --- | --- | --- | ---
+Run Through | Red | Common | Attack | 1 | Target loses 9(12) HP and 5(8) Block.
 Abandon | Red | Uncommmon | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. **Ethereal**.
+Defy Death | Red | Uncommmon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat.
 Life Link | Red | Uncommmon | Skill | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage. **Exhaust**.
 Massacre | Red | Uncommmon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
 Hemogenesis | Red | Rare | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2+X where X is the number of times previously upgraded in combat, or 3+X if the card has been upgraded outside of combat).
@@ -55,9 +58,10 @@ Hidden Blade | Green | Commmon | Skill | 1 | Add a Shiv to your hand and draw 2(
 Toxin Wave | Green | Uncommon | Skill | 2 | Apply 5(7) **Necrotic** **Poison** and -1(-2) **Strength** to ALL enemies. **Exhaust**.
 Atom Bomb | Green | Rare | Attack | 4 | Deal 60(80) damage. Apply 3(4) **Poison** to ALL enemies. **Exhaust**.
 Poison Darts | Green | Rare | Skill | X | Apply 3(5) **Necrotic** **Poison** X times.
+Sneak Up | Green | Rare | Skill | 1 | **Innate.** Discard 1 card (upgrade removes). Gain 1 **Intangible.** **Exhaust.** **Ethereal.**
 Improvise | Colorless | Uncommmon | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(5) **Poison**. Is affected by damage modifiers.
-Specialist | Colorless | Rare | Power | 0 | All non-attack damage you deal is increased by 2(3).
+Specialist | Colorless | Rare | Power | 0 | All non-attack damage you deal is increased by 3(4). (**Innate.**))
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
 Sickly | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, lose 3 **Block**.
 Languid | Curse | Curse | Curse | - | **Unplayable**. If this is in your hand at the end of your turn, start next turn with 1 less Energy.
@@ -66,7 +70,7 @@ Voices | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, sh
 Looming Evil | Curse | Curse | Curse | 3 | Can be played for 3 Energy to **Exhaust**. At the end of your turn, shuffle a random curse into your draw pile and reduce the cost to play this card by 1.
 Ghost Swipe | Colorless | Special | Attack | 1 | Deal 6 damage. **Exhaust**. **Ethereal**.
 Ghost Defend | Colorless | Special | Skill | 1 | Gain 5 block. **Exhaust**. **Ethereal**.
-
+Grinning Jar | Colorless | Special | Skill | 0 | Draw 2 cards. You cannot play another Grinning Jar card this turn (upgrade removes).
 
 # Keywords
 Name | Type | Description
