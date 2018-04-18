@@ -26,6 +26,11 @@
     "DESCRIPTION": "Agota !M! carta. NL Roba !M! carta. NL Etérea.",
     "UPGRADE_DESCRIPTION": "Agota hasta !M! cartas. NL Roba una carta por cada carta agotada. NL Etérea."
   },
+  "Sneak Up": {
+    "NAME": "Sneak Up",
+    "DESCRIPTION": "Gain !M! Intangible. NL Discard 1 card. NL Innate. NL Exhaust. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Intangible. NL Innate. NL Exhaust. NL Ethereal."
+  },
   "Life Link": {
     "NAME": "Lazo de la Vida",
     "DESCRIPTION": "Aplica a un enemigo. Cuando pierdas vida, el enemigo enlazado toma esa misma cantidad de daño. NL Agota."
@@ -41,6 +46,10 @@
   "Run Through": {
     "NAME": "Run Through",
     "DESCRIPTION": "Target enemy loses !D! HP and !M! Block."
+  },
+  "Defy Death": {
+    "NAME": "Defy Death",
+    "DESCRIPTION": "Gain !B! Block. NL Costs [R] less for each card you've Exhausted this combat."
   },
   "Improvise": {
     "NAME": "Improvisar",
