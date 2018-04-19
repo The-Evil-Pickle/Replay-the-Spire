@@ -10,8 +10,10 @@ import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.*;
 import com.megacrit.cardcrawl.core.*;
+import basemod.*;
+import basemod.abstracts.*;
 
-public class DefyDeath extends AbstractCard
+public class DefyDeath extends CustomCard
 {
     public static final String ID = "Defy Death";
     private static final CardStrings cardStrings;
@@ -22,7 +24,7 @@ public class DefyDeath extends AbstractCard
     private static final int POOL = 1;
     
     public DefyDeath() {
-        super("Defy Death", DefyDeath.NAME, "status/beta", "status/beta", DefyDeath.COST, DefyDeath.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.UNCOMMON, CardTarget.SELF, 1);
+        super("Defy Death", DefyDeath.NAME, "cards/replay/defyDeath.png", DefyDeath.COST, DefyDeath.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.UNCOMMON, CardTarget.SELF, 1);
         this.baseBlock = DefyDeath.DEFENSE_GAINED;
     }
     

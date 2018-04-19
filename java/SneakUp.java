@@ -10,8 +10,10 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.*;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.core.*;
+import basemod.*;
+import basemod.abstracts.*;
 
-public class SneakUp extends AbstractCard
+public class SneakUp extends CustomCard
 {
     public static final String ID = "Sneak Up";
     private static final CardStrings cardStrings;
@@ -21,7 +23,7 @@ public class SneakUp extends AbstractCard
     private static final int COST = 1;
     
     public SneakUp() {
-        super("Sneak Up", SneakUp.NAME, "status/beta", "status/beta", SneakUp.COST, SneakUp.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF, 1);
+        super("Sneak Up", SneakUp.NAME, "cards/replay/sneakUp.png", SneakUp.COST, SneakUp.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF, 1);
         this.exhaust = true;
         this.isEthereal = true;
         this.isInnate = true;

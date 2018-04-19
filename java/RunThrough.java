@@ -9,8 +9,10 @@ import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.*;
 import com.megacrit.cardcrawl.core.*;
+import basemod.*;
+import basemod.abstracts.*;
 
-public class RunThrough extends AbstractCard
+public class RunThrough extends CustomCard
 {
     public static final String ID = "Run Through";
     private static final CardStrings cardStrings;
@@ -22,7 +24,7 @@ public class RunThrough extends AbstractCard
     private static final int POOL = 1;
     
     public RunThrough() {
-        super("Run Through", RunThrough.NAME, "status/beta", "status/beta", 1, RunThrough.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.COMMON, CardTarget.ENEMY, 1);
+        super("Run Through", RunThrough.NAME, "cards/replay/runThrough.png", 1, RunThrough.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.COMMON, CardTarget.ENEMY, 1);
         this.baseDamage = 9;
         this.baseMagicNumber = 5;
         this.magicNumber = this.baseMagicNumber;

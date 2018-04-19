@@ -13,8 +13,10 @@ import com.megacrit.cardcrawl.vfx.*;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
+import basemod.*;
+import basemod.abstracts.*;
 
-public class Hemogenesis extends AbstractCard
+public class Hemogenesis extends CustomCard
 {
     public static final String ID = "Hemogenesis";
     private static final CardStrings cardStrings;
@@ -31,7 +33,7 @@ public class Hemogenesis extends AbstractCard
         this(upgrades, 2);
     }
     public Hemogenesis(final int upgrades, final int ticks) {
-        super("Hemogenesis", Hemogenesis.NAME, "status/beta", "status/beta", 2, Hemogenesis.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.RARE, CardTarget.ENEMY, 1);
+        super("Hemogenesis", Hemogenesis.NAME, "cards/replay/hemogenesis.png", 2, Hemogenesis.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.RARE, CardTarget.ENEMY, 1);
         this.baseDamage = 5;
         this.baseBlock = 5;
         this.baseMagicNumber = 5;

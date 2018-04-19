@@ -20,9 +20,7 @@ import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.relics.BurningBlood;
-import com.megacrit.cardcrawl.relics.SnakeRing;
+import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.badlogic.gdx.math.MathUtils;
@@ -42,6 +40,7 @@ public class MirrorMist
   private CurScreen screen = CurScreen.INTRO;
   private boolean hasBash = false;
   private boolean hasRing = false;
+  private boolean sizzling = false;
   
   private static enum CurScreen
   {
@@ -58,6 +57,10 @@ public class MirrorMist
 	this.hasBash = CardHelper.hasCardWithID("Bash");
 	this.hasRing = AbstractDungeon.player.hasRelic("Ring of the Snake");
 	
+	//if (AbstractDungeon.ascensionLevel > 15) {
+		this.sizzling = true;
+	//}
+	
 	String bashName = new Bash().name;
 	String ringName = new SnakeRing().name;
 	if (this.hasBash)
@@ -68,7 +71,11 @@ public class MirrorMist
 	}
 	if (this.hasRing)
 	{
-		GenericEventDialog.setDialogOption(OPTIONS[2] + ringName + OPTIONS[4]);
+		if (this.sizzling) {
+			GenericEventDialog.setDialogOption(OPTIONS[2] + ringName + OPTIONS[7]);
+		} else {
+			GenericEventDialog.setDialogOption(OPTIONS[2] + ringName + OPTIONS[4]);
+		}
 	} else {
 		GenericEventDialog.setDialogOption(OPTIONS[0] + ringName + OPTIONS[1], true);
 	}
@@ -83,7 +90,7 @@ public class MirrorMist
       switch (buttonPressed)
       {
       case 0: 
-        logMetric("Bash to Survivor+Neutralize");
+        //logMetric("Bash to Survivor+Neutralize");
 		GenericEventDialog.updateBodyText(RESULT_DIALOG_A);
         CardCrawlGame.sound.play("CARD_EXHAUST");
         AbstractDungeon.effectList.add(new PurgeCardEffect(new Bash()));
@@ -94,13 +101,17 @@ public class MirrorMist
 		UnlockTracker.markCardAsSeen("Survivor");
         break;
       case 1: 
-        logMetric("Ring to Blood");
+        //logMetric("Ring to Blood");
 		GenericEventDialog.updateBodyText(RESULT_DIALOG_A);
 		AbstractDungeon.player.loseRelic("Ring of the Snake");
-		AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, new BurningBlood());
+		if (!this.sizzling) {
+			AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, new BurningBlood());
+		} else {
+			AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, new SizzlingBlood());
+		}
         break;
       default: 
-        logMetric("Wander");
+        //logMetric("Wander");
         GenericEventDialog.updateBodyText(RESULT_DIALOG_B);
 		float displayCount = 0.0F;
 		

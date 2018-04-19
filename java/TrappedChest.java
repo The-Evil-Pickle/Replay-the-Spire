@@ -95,7 +95,7 @@ public class TrappedChest
       case 0: 
         this.screen = CurScreen.TRAP;
         GenericEventDialog.updateBodyText(DESCRIPTIONS[1]);
-        logMetric("Triggered Chest Trap");
+        //logMetric("Triggered Chest Trap");
         GenericEventDialog.updateDialogOption(0, OPTIONS[4], CardLibrary.getCopy("Pain"));
         GenericEventDialog.updateDialogOption(1, OPTIONS[5] + this.hpLoss + OPTIONS[6]);
         GenericEventDialog.updateDialogOption(2, OPTIONS[7] + this.dodgeChance + OPTIONS[8] + this.maxHpLoss + OPTIONS[6]);
@@ -103,14 +103,14 @@ public class TrappedChest
       case 1: 
         this.screen = CurScreen.CURSE;
         GenericEventDialog.updateBodyText(DESCRIPTIONS[2]);
-        logMetric("Used Cursed Key");
+        //logMetric("Used Cursed Key");
         GenericEventDialog.updateDialogOption(0, OPTIONS[9]);
         GenericEventDialog.clearRemainingOptions();
 		AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(
         AbstractDungeon.returnRandomCurse(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
         break;
       case 2: 
-        logMetric("Ignored Chest");
+        //logMetric("Ignored Chest");
 		openMap();
         break;
 	  }
@@ -127,7 +127,7 @@ public class TrappedChest
 				AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Pain(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
 
 				UnlockTracker.markCardAsSeen("Pain");
-				logMetric("Take Pain");
+				//logMetric("Take Pain");
 				break;
 			case 1: 
 				GenericEventDialog.updateBodyText(DESCRIPTIONS[3]);
@@ -136,7 +136,7 @@ public class TrappedChest
 				CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
 				CardCrawlGame.sound.play("BLUNT_FAST");
 				AbstractDungeon.player.damage(new DamageInfo(null, this.hpLoss));
-				logMetric("Take Damage");
+				//logMetric("Take Damage");
 				break;
 			case 2: 
 				int r = MathUtils.random(100);
@@ -152,7 +152,7 @@ public class TrappedChest
 					CardCrawlGame.sound.play("BLUNT_FAST");
 					AbstractDungeon.player.damage(new DamageInfo(null, this.maxHpLoss));
 				}
-				logMetric("Dodge");
+				//logMetric("Dodge");
 				break;
 		}
 		break;

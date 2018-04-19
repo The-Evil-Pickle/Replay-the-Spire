@@ -9,8 +9,10 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.core.*;
+import basemod.*;
+import basemod.abstracts.*;
 
-public class Specialist extends AbstractCard
+public class Specialist extends CustomCard
 {
     public static final String ID = "Specialist";
     private static final CardStrings cardStrings;
@@ -19,11 +21,11 @@ public class Specialist extends AbstractCard
     public static final String UPGRADE_DESCRIPTION;
     private static final int POOL = 1;
 	private static final int COST = 0;
-    private static final int DMG = 3;
+    private static final int DMG = 2;
     private static final int UPG_DMG = 1;
     
     public Specialist() {
-        super("Specialist", Specialist.NAME, null, "status/beta", Specialist.COST, Specialist.DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.RARE, CardTarget.SELF, 1);
+        super("Specialist", Specialist.NAME, "cards/replay/specialist.png", Specialist.COST, Specialist.DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.UNCOMMON, CardTarget.SELF, 1);
         this.baseMagicNumber = Specialist.DMG;
         this.magicNumber = this.baseMagicNumber;
     }
