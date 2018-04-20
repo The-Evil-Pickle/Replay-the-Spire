@@ -15,9 +15,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.ArrayList;
+import basemod.*;
+import basemod.abstracts.*;
 
 public class LoomingEvil
-  extends AbstractCard
+  extends CustomCard
 {
   public static final String ID = "Looming Evil";
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Looming Evil");
@@ -29,7 +31,7 @@ public class LoomingEvil
   
   public LoomingEvil()
   {
-    super("Looming Evil", NAME, "status/beta", "status/beta", 3, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE, 2);
+    super("Looming Evil", NAME, "cards/replay/loomingEvil.png", 3, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE, 2);
 	
 	this.baseMagicNumber = this.cost;
     this.magicNumber = this.baseMagicNumber;

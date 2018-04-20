@@ -10,8 +10,10 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.core.*;
+import basemod.*;
+import basemod.abstracts.*;
 
-public class Voices extends AbstractCard
+public class Voices extends CustomCard
 {
     public static final String ID = "Voices";
     private static final CardStrings cardStrings;
@@ -22,7 +24,7 @@ public class Voices extends AbstractCard
     private static final int WEAK_AMT = 1;
     
     public Voices() {
-        super("Voices", Voices.NAME, null, "status/beta", -2, Voices.DESCRIPTION, CardType.CURSE, CardColor.CURSE, CardRarity.CURSE, CardTarget.NONE, 1);
+        super("Voices", Voices.NAME, "cards/replay/voices.png", -2, Voices.DESCRIPTION, CardType.CURSE, CardColor.CURSE, CardRarity.CURSE, CardTarget.NONE, 1);
 		this.exhaust = true;
 		this.baseMagicNumber = 2;
 		this.magicNumber = this.baseMagicNumber;

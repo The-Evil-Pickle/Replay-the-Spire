@@ -13,7 +13,7 @@ public class GuideBook extends AbstractRelic
     private static final int CARD_AMT = 2;
     
     public GuideBook() {
-        super("Guide Book", "betaRelic.png", RelicTier.SHOP, LandingSound.SOLID);
+        super("Guide Book", "betaRelic.png", RelicTier.SHOP, LandingSound.FLAT);
     }
     
     @Override

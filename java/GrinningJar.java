@@ -47,17 +47,19 @@ public class GrinningJar extends AbstractRelic
             this.counter ++;
 			if (this.counter >= GrinningJar.SIZECOUNTER) {
 				this.flash();
+				/*
 				final CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 				final AbstractCard addedcard = new PotOfGreed();
 				group.addToBottom(addedcard.makeCopy());
 				AbstractDungeon.gridSelectScreen.openConfirmationGrid(group, this.DESCRIPTIONS[2]);
 				//AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new PotOfGreed(), Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
-				
+				*/
+				AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(new PotOfGreed(), Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
 				this.counter = 0;
 			}
         }
     }
-    
+	
     @Override
     public AbstractRelic makeCopy() {
         return new GrinningJar();

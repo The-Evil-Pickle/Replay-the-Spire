@@ -24,9 +24,11 @@ import com.megacrit.cardcrawl.powers.NecroticPoisonPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect.ShockWaveType;
+import basemod.*;
+import basemod.abstracts.*;
 
 public class ToxinWave
-  extends AbstractCard
+  extends CustomCard
 {
   public static final String ID = "Toxin Wave";
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Toxin Wave");
@@ -39,7 +41,7 @@ public class ToxinWave
   
   public ToxinWave()
   {
-    super("Toxin Wave", NAME, "red/skill/shock_wave", "red/skill/shock_wave", ToxinWave.COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, 1);
+    super("Toxin Wave", NAME, "cards/replay/toxinWave.png", ToxinWave.COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, 1);
     
     this.exhaust = true;
     this.baseMagicNumber = 4;

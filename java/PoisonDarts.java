@@ -17,9 +17,11 @@ import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.actions.unique.PoisonDartsAction;
+import basemod.*;
+import basemod.abstracts.*;
 
 public class PoisonDarts
-  extends AbstractCard
+  extends CustomCard
 {
   public static final String ID = "Poison Darts";
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Poison Darts");
@@ -32,7 +34,7 @@ public class PoisonDarts
   
   public PoisonDarts()
   {
-    super("Poison Darts", NAME, "status/beta", "status/beta", -1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY, 1);
+    super("Poison Darts", NAME, "cards/replay/poisonDarts.png", -1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY, 1);
     
 	this.baseMagicNumber = 3;
     this.magicNumber = this.baseMagicNumber;
@@ -57,7 +59,7 @@ public class PoisonDarts
     if (!this.upgraded)
     {
       upgradeName();
-      upgradeMagicNumber(2);
+      upgradeMagicNumber(1);
 	  //this.exhaust = false;
       //this.rawDescription = UPGRADE_DESCRIPTION;
       //initializeDescription();

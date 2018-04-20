@@ -41,9 +41,9 @@ public class Massacre
   {
     super("Massacre", NAME, "red/attack/cleave", "red/attack/cleave", 1, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, 1);
     
-    this.baseDamage = 2;
+    this.baseDamage = 1;
     this.isMultiDamage = true;
-	this.baseMagicNumber = 6;
+	this.baseMagicNumber = 5;
     this.magicNumber = this.baseMagicNumber;
   }
   
@@ -69,8 +69,8 @@ public class Massacre
     if (!this.upgraded)
     {
       upgradeName();
-      upgradeDamage(3);
-      upgradeMagicNumber(2);
+      upgradeDamage(2);
+      upgradeMagicNumber(3);
     }
   }
   

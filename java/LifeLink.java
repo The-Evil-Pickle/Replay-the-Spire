@@ -14,9 +14,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LifeLinkPower;
+import basemod.*;
+import basemod.abstracts.*;
 
 public class LifeLink
-  extends AbstractCard
+  extends CustomCard
 {
   public static final String ID = "Life Link";
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Life Link");
@@ -28,7 +30,7 @@ public class LifeLink
   
   public LifeLink()
   {
-    super("Life Link", NAME, "red/skill/opening", "red/skill/opening", 1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, 1);
+    super("Life Link", NAME, "cards/replay/lifeBind.png", 1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, 1);
     
     this.exhaust = true;
   }

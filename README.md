@@ -8,8 +8,8 @@ Requires:
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
 Currently adds:
- * 24 Relics (2 ironclad, 1 silent, 21 shared)
- * 23 Cards (6 ironclad, 6 silent, 3 colorless, 6 curses)
+ * 24 Relics (2 ironclad, 2 silent, 20 shared)
+ * 21 Cards (6 ironclad, 6 silent, 3 colorless, 6 curses)
  * 3 Events
  * 12 Potions
 
@@ -17,7 +17,7 @@ Currently adds:
 # Relics
 Name | Character | Rarity | Description
 --- | --- | --- | ---
-Ancient Bracer | All | Common | At the start of combat, gain 2 **Artifact**.
+Ancient Bracer | Silent | Common | At the start of combat, gain 2 **Artifact**.
 Bandana | All | Common | Gain 2 **Thievery**.
 Baseball | All | Common | Upon pick up, a random card in your deck becomes free.
 Gremlin Food | All | Common | Whenever you rest, **Upgrade** a random card.
@@ -57,11 +57,11 @@ Fluid Movement | Green | Commmon | Power | 1 | Retain up to 5(8) block between r
 Hidden Blade | Green | Commmon | Skill | 1 | Add a Shiv to your hand and draw 2(3) cards.
 Toxin Wave | Green | Uncommon | Skill | 2 | Apply 5(7) **Necrotic** **Poison** and -1(-2) **Strength** to ALL enemies. **Exhaust**.
 Atom Bomb | Green | Rare | Attack | 4 | Deal 60(80) damage. Apply 3(4) **Poison** to ALL enemies. **Exhaust**.
-Poison Darts | Green | Rare | Skill | X | Apply 3(5) **Necrotic** **Poison** X times.
+Poison Darts | Green | Rare | Skill | X | Apply 3(4) **Necrotic** **Poison** X times.
 Sneak Up | Green | Rare | Skill | 1 | **Innate.** Discard 1 card (upgrade removes). Gain 1 **Intangible.** **Exhaust.** **Ethereal.**
 Improvise | Colorless | Uncommmon | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(5) **Poison**. Is affected by damage modifiers.
-Specialist | Colorless | Rare | Power | 0 | All non-attack damage you deal is increased by 3(4). (**Innate.**))
+Specialist | Colorless | Uncommon | Power | 0 | All non-attack damage you deal is increased by 2(3). (**Innate.**))
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
 Sickly | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, lose 3 **Block**.
 Languid | Curse | Curse | Curse | - | **Unplayable**. If this is in your hand at the end of your turn, start next turn with 1 less Energy.

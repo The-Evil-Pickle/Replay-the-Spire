@@ -9,8 +9,10 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.core.*;
+import basemod.*;
+import basemod.abstracts.*;
 
-public class FluidMovement extends AbstractCard
+public class FluidMovement extends CustomCard
 {
     public static final String ID = "Fluid Movement";
     private static final CardStrings cardStrings;
@@ -18,7 +20,7 @@ public class FluidMovement extends AbstractCard
     public static final String DESCRIPTION;
     
     public FluidMovement() {
-        super("Fluid Movement", FluidMovement.NAME, "status/beta", "status/beta", 1, FluidMovement.DESCRIPTION, CardType.POWER, CardColor.GREEN, CardRarity.COMMON, CardTarget.SELF, 1);
+        super("Fluid Movement", FluidMovement.NAME, "cards/replay/fluidMovement.png", 1, FluidMovement.DESCRIPTION, CardType.POWER, CardColor.GREEN, CardRarity.COMMON, CardTarget.SELF, 1);
         this.baseMagicNumber = 5;
         this.magicNumber = this.baseMagicNumber;
     }
