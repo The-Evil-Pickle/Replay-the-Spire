@@ -96,7 +96,7 @@ public class TrappedChest
         this.screen = CurScreen.TRAP;
         GenericEventDialog.updateBodyText(DESCRIPTIONS[1]);
         //logMetric("Triggered Chest Trap");
-        GenericEventDialog.updateDialogOption(0, OPTIONS[4], CardLibrary.getCopy("Pain"));
+        GenericEventDialog.updateDialogOption(0, OPTIONS[4], new Pain());
         GenericEventDialog.updateDialogOption(1, OPTIONS[5] + this.hpLoss + OPTIONS[6]);
         GenericEventDialog.updateDialogOption(2, OPTIONS[7] + this.dodgeChance + OPTIONS[8] + this.maxHpLoss + OPTIONS[6]);
         break;

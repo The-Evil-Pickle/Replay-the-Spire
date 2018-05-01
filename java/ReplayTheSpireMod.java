@@ -9,39 +9,54 @@ import com.megacrit.cardcrawl.cards.green.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.*;
+import com.badlogic.gdx.graphics.*;
+import com.badlogic.gdx.graphics.g2d.*;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.actions.*;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.utility.*;
+import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.core.*;
 //import com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import com.megacrit.cardcrawl.potions.*;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.rooms.*;
+import com.megacrit.cardcrawl.unlock.*;
+import com.megacrit.cardcrawl.vfx.*;
 
 import basemod.*;
 import basemod.helpers.*;
 import basemod.interfaces.*;
+import java.lang.reflect.*;
 
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.*;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.EnumMap;
+import java.util.*;
 //SetUnlocksSubscriber, 
 
 @SpireInitializer
 public class ReplayTheSpireMod implements PostInitializeSubscriber,
 EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscriber
 {
+	public static void InitCardTitle(AbstractCard c) {
+		FontHelper.cardTitleFont_L.getData().setScale(1.0f);
+        final GlyphLayout gl = new GlyphLayout(FontHelper.cardTitleFont_L, c.name, new Color(), 0.0f, 1, false);
+        if (c.cost > 0 || c.cost == -1) {
+            if (gl.width > AbstractCard.IMG_WIDTH * 0.6f) {
+                //c.useSmallTitleFont = true;
+				ReflectionHacks.setPrivate(c, AbstractCard.class, "useSmallTitleFont", true);
+            }
+        }
+        else if (gl.width > AbstractCard.IMG_WIDTH * 0.7f) {
+            //c.useSmallTitleFont = true;
+			ReflectionHacks.setPrivate(c, AbstractCard.class, "useSmallTitleFont", true);
+        }
+	}
+	
 	public static final Logger logger = LogManager.getLogger(ReplayTheSpireMod.class.getName());
 	
 	private static final String MODNAME = "ReplayTheSpireMod";
@@ -213,6 +228,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	}
 	
 	public static void initializePotions() {
+		logger.info("begin editting potions");
 		/*
 		ReplayTheSpireMod.potionCosts = new EnumMap<ReplayTheSpireMod.PotionRarity, int>(ReplayTheSpireMod.PotionRarity.class);
 		ReplayTheSpireMod.potionCosts.put(ReplayTheSpireMod.PotionRarity.COMMON, 50);
@@ -371,11 +387,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			ReplayTheSpireMod.PotionRarity.RARE
 		);
 		
+		logger.info("end editting potions");
 	}
 	
 	@Override
     public void receivePostInitialize() {
-		
+		logger.info("begin editting json");
 		commonPotionChance = 9;
 		uncommonPotionChance = 7;
 		rarePotionChance = 4;
@@ -411,17 +428,21 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		});
 		potionSliderUR.setValue((float)ReplayTheSpireMod.ultraPotionChance / potionSliderUR.multiplier);
 		settingsPanel.addUIElement(potionSliderUR);
+		logger.info("end editting json");
 		
 		
+		logger.info("badge");
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         
 		
+		logger.info("keywords");
         final String[] necroNames = { "necrotic", "necrotic poison" };
         BaseMod.addKeyword(necroNames, "A powerful poison that deals 2 damage each turn, but doesn't last as long.");
 		final String[] refundNames = { "refund", "refunds"};
 		BaseMod.addKeyword(refundNames, "Returns all energy spent on playing the card.");
 		
 		
+		logger.info("end post init");
         Settings.isDailyRun = false;
         Settings.isTrial = false;
         Settings.isDemo = false;
@@ -432,7 +453,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		logger.info("begin editting relics");
         
         // Add relics
-		BaseMod.addRelic(new AncientBracer(), RelicType.SHARED);
+		BaseMod.addRelic(new AncientBracer(), RelicType.GREEN);
 		BaseMod.addRelic(new Arrowhead(), RelicType.SHARED);
 		BaseMod.addRelic(new Bandana(), RelicType.SHARED);
 		BaseMod.addRelic(new Baseball(), RelicType.SHARED);
@@ -472,7 +493,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	@Override
 	public void receiveEditCards() {
 		logger.info("[RtS] begin editting cards");
-		
 		logger.info("adding cards for Ironclad...");
 		AddAndUnlockCard(new Abandon());
 		AddAndUnlockCard(new Hemogenesis());
@@ -489,24 +509,52 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new HiddenBlade());
 		AddAndUnlockCard(new SneakUp());
 		logger.info("adding colorless cards...");
-		AddAndUnlockCard(new GhostDefend());
-		AddAndUnlockCard(new GhostSwipe());
 		AddAndUnlockCard(new Improvise());
 		AddAndUnlockCard(new PoisonedStrike());
 		AddAndUnlockCard(new Specialist());
 		logger.info("adding curses...");
 		AddAndUnlockCard(new Hallucinations());
-		AddAndUnlockCard(new Languid());
+		//AddAndUnlockCard(new Languid());
 		AddAndUnlockCard(new Sickly());
 		AddAndUnlockCard(new Delirium());
 		AddAndUnlockCard(new Voices());
 		AddAndUnlockCard(new LoomingEvil());
 		logger.info("adding unobtainable cards...");
 		AddAndUnlockCard(new PotOfGreed());
-		
+		AddAndUnlockCard(new GhostDefend());
+		AddAndUnlockCard(new GhostSwipe());
+		AddAndUnlockCard(new GhostFetch());
 		logger.info("done editting cards");
 	}
 	
+	
+	private static void doStringOverrides(final Type stringType, final String jsonString) {
+		
+		HashMap<Type, String> typeMaps = (HashMap<Type, String>)ReflectionHacks.getPrivateStatic(BaseMod.class, "typeMaps");
+		HashMap<Type, Type> typeTokens = (HashMap<Type, Type>)ReflectionHacks.getPrivateStatic(BaseMod.class, "typeTokens");
+		/*new HashMap<Type, String>();
+        typeMaps.put(CardStrings.class, "cards");
+        typeMaps.put(CharacterStrings.class, "characters");
+        typeMaps.put(CreditStrings.class, "credits");
+        typeMaps.put(EventStrings.class, "events");
+        typeMaps.put(KeywordStrings.class, "keywords");
+        typeMaps.put(MonsterStrings.class, "monsters");
+        typeMaps.put(PotionStrings.class, "potions");
+        typeMaps.put(PowerStrings.class, "powers");
+        typeMaps.put(RelicStrings.class, "relics");
+        typeMaps.put(ScoreBonusStrings.class, "scoreBonuses");
+        typeMaps.put(TutorialStrings.class, "tutorials");
+        typeMaps.put(UIStrings.class, "ui");
+		*/
+		
+        final String typeMap = typeMaps.get(stringType);
+        final Type typeToken = typeTokens.get(stringType);
+        //final String modName = findCallingModName();
+        final Map localizationStrings = (Map)ReflectionHacks.getPrivateStatic(LocalizedStrings.class, typeMap);
+        final Map map = new HashMap((Map)BaseMod.gson.fromJson(jsonString, typeToken));
+        localizationStrings.putAll(map);
+        ReflectionHacks.setPrivateStaticFinal(LocalizedStrings.class, typeMap, localizationStrings);
+	}
 	
 	@Override
 	public void receiveEditStrings() {
@@ -522,10 +570,16 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         String relicStrings = Gdx.files.internal(jsonPath + "ReplayRelicStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
+		relicStrings = Gdx.files.internal(jsonPath + "ReplayOverrideRelicStrings.json").readString(
+        		String.valueOf(StandardCharsets.UTF_8));
+        ReplayTheSpireMod.doStringOverrides(RelicStrings.class, relicStrings);
         // CardStrings
         String cardStrings = Gdx.files.internal(jsonPath + "ReplayCardStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
+		cardStrings = Gdx.files.internal(jsonPath + "ReplayOverrideCardStrings.json").readString(
+        		String.valueOf(StandardCharsets.UTF_8));
+        ReplayTheSpireMod.doStringOverrides(CardStrings.class, cardStrings);
         // PowerStrings
         String powerStrings = Gdx.files.internal(jsonPath + "ReplayPowerStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));

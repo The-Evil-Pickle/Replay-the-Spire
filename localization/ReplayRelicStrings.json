@@ -30,6 +30,13 @@
 	"Upon pick up, a random card in your deck becomes free."
 	]
   },
+  "Chemical X": {
+	"NAME": "Chemical X",
+	"FLAVOR": "WARNING: Do not combine with sugar, spice, and everything nice.",
+    "DESCRIPTIONS": [
+	"Whenever you play a cost #bX card, its effects are increased by #b"
+	]
+  },
   "Divine Protection": {
     "NAME": "Divine Protection",
 	"FLAVOR": "The strength to carry on in times of trial.",
@@ -139,7 +146,7 @@
 	" NL Gain 4 #yMalleable, -2 #ySlow, and 2 #ySlimed at the start of combat",
 	"Gain [R] and draw a card at the start of each turn.", 
 	"Gain [G] and draw a card at the start of each turn.",
-	"Gain [B] and draw a card at the start of each turn."
+	"Gain [E] and draw a card at the start of each turn."
 	]
   },
   "Gremlin Food": {
@@ -164,7 +171,7 @@
 	" NL Less map information.",
 	"Gain [R] at the start of each turn.", 
 	"Gain [G] at the start of each turn.",
-	"Gain [B] at the start of each turn."
+	"Gain [E] at the start of each turn."
 	]
   },
   "Honey Jar": {
@@ -205,5 +212,54 @@
 		" other cards added to your deck.",
 		"The jar is pleased"
 	]
-  }
+  },
+  "Solar Panel": {
+    "NAME": "Solar Panel",
+	"FLAVOR": "Clean, renewable power.",
+    "DESCRIPTIONS": [
+		"At the end of combat, heal #b",
+		" HP for each of your active Lightning orbs."
+	]
+  },
+  "Backup Battery": {
+    "NAME": "Backup Battery",
+	"FLAVOR": "Emergency rations for robots.",
+    "DESCRIPTIONS": [
+		"At the end of each round, conserve up to #b",
+		" energy. NL Increase this effect by #b1 until end of combat each time you Evoke Plasma (up to #b",
+		" max)."
+	]
+  },
+  "Solidified Core": {
+    "NAME": "Solidified Core",
+	"FLAVOR": "Hard as a rock. Or maybe a geode.",
+    "DESCRIPTIONS": [
+		"At the start of combat, Channel #b",
+		" Frost and #b",
+		" Crystal.",
+		" NL Replaces Cracked Core.",
+		" NL Replaces Iron Core."
+		
+	]
+  },
+  "Iron Core": {
+    "NAME": "Iron Core",
+	"FLAVOR": "Powered by unceasing flames and rage.",
+    "DESCRIPTIONS": [
+		"At the start of combat, Channel #b1 Fire. NL On pickup, some Red cards are added to the card pool."
+	]
+  },
+  "m_BlackCat":{
+		"NAME": "Curse Cat",
+		"FLAVOUR": "Woem",
+		"DESCRIPTIONS":["Shuffle a random Curse in your deck at the beginning of each fight."]
+	},
+	"m_Cross Pendant": {
+		"NAME": "Cross Pendant",
+		"FLAVOR": "A simple cross shaped pendant. Praying on it is said to bring good fortunes.",
+		"DESCRIPTIONS": [
+			"At the start of each combat, choose a card out of three and add it to your hand. It has Exhaust."
+		]
+	}
+	
 }

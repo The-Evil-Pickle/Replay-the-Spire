@@ -13,7 +13,9 @@ public class ReplayCanUpgradePatch {
 			((c.type == AbstractCard.CardType.ATTACK && c.cardID.toLowerCase().contains("strike")) || 
 			(c.type == AbstractCard.CardType.SKILL && c.cardID.toLowerCase().contains("defend")))
 			) {
-				c.upgraded = false;
+				if (c.color != AbstractCard.CardColor.RED && c.color != AbstractCard.CardColor.GREEN) {
+					c.upgraded = false;
+				}
 				return true;
 			}
 		}

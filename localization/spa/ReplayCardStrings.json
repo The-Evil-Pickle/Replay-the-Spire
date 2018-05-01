@@ -33,7 +33,7 @@
   },
   "Life Link": {
     "NAME": "Lazo de la Vida",
-    "DESCRIPTION": "Aplica a un enemigo. Cuando pierdas vida, el enemigo enlazado toma esa misma cantidad de daño. NL Agota."
+    "DESCRIPTION": "Aplica a un enemigo. Cuando pierdas vida, el enemigo enlazado toma esa misma cantidad de daño."
   },
   "Massacre": {
     "NAME": "Masacre",
@@ -62,7 +62,7 @@
   },
   "Specialist": {
     "NAME": "Especialista",
-    "DESCRIPTION": "Aumenta el daño de non ataque en !M! ."
+    "DESCRIPTION": "Aumenta el daño de non ataque en !M! .",
 	"UPGRADE_DESCRIPTION": "Innate. NL Aumenta el daño de non ataque en !M! ."
   },
   "Looming Evil": {
@@ -100,5 +100,30 @@
   "Ghost Defend": {
     "NAME": "Defensa Fantasmal",
     "DESCRIPTION": "Gana !B! Bloqueo. NL Agota. NL Etérea."
+  },
+  "Ghost Fetch": {
+    "NAME": "Fetch Fantasmal",
+    "DESCRIPTION": "Choose a basic card from your draw pile to draw. NL Agota. NL Etérea.",
+	"UPGRADE_DESCRIPTION": "Choose a basic card from your draw pile to draw. NL It costs 0 this turn. NL Agota. NL Etérea.",
+	"EXTENDED_DESCRIPTION": [
+    	"There are no Basic cards NL in my draw pile."
+    ]
+  },
+  "Pot Of Greed": {
+    "NAME": "Grinning Jar",
+    "DESCRIPTION": "Draw !M! cards. NL You may not play another Grinning Jar this turn.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards.",
+	"EXTENDED_DESCRIPTION": [
+		"I've already played a Grinning Jar this turn!",
+		"I've already played this card once this turn!"
+	]
+  },
+  "Corpse Explosion": {
+    "NAME": "Explosión de Cadaver",
+    "DESCRIPTION": "El enemigo pierde todo Veneno. Apply Necrotic Poison equal to the amount lost to ALL enemies. NL Agota.",
+    "UPGRADE_DESCRIPTION": "El enemigo pierde todo Veneno. Apply Necrotic Poison equal to the amount lost to ALL enemies.",
+    "EXTENDED_DESCRIPTION": [
+      "Ese enemigo no está Envenenado."
+    ]
   }
 }

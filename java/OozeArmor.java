@@ -43,11 +43,8 @@ public class OozeArmor extends AbstractRelic
             case THE_SILENT: {
                 return this.DESCRIPTIONS[2] + this.DESCRIPTIONS[0];
             }
-            case CROWBOT: {
-                return this.DESCRIPTIONS[3] + this.DESCRIPTIONS[0];
-            }
             default: {
-                return this.DESCRIPTIONS[1] + this.DESCRIPTIONS[0];
+                return this.DESCRIPTIONS[3] + this.DESCRIPTIONS[0];
             }
         }
     }

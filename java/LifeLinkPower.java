@@ -17,6 +17,8 @@ import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class LifeLinkPower
   extends AbstractPower
@@ -26,6 +28,7 @@ public class LifeLinkPower
   public static final String NAME = powerStrings.NAME;
   public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
   
+  public static final Logger logger = LogManager.getLogger(LifeLinkPower.class.getName());
   private boolean sender = false;
   
   public LifeLinkPower(AbstractCreature owner, int amount, boolean sender)
@@ -35,16 +38,19 @@ public class LifeLinkPower
     this.owner = owner;
     this.amount = amount;
 	this.sender = sender;
-	if (sender){
+	if (this.sender){
 		this.description = (DESCRIPTIONS[0]);
 	} else {
 		this.description = (DESCRIPTIONS[1]);
 	}
     //loadRegion("hex");
 	this.img = new Texture("img/powers/LifeBind.png");
-	if (!sender){
+	if (!this.sender){
 		this.type = AbstractPower.PowerType.DEBUFF;
 	}
+	logger.info("LBP");
+	logger.info(this.owner.name);
+	logger.info(this.sender);
   }
   
   public void stackPower(int stackAmount)
@@ -60,19 +66,27 @@ public class LifeLinkPower
     this.amount += stackAmount;
   }
   
-  public void onLoseHp(int damageAmount) {
-	if (!this.sender){
-		return;
+  public int onAttacked(final DamageInfo info, final int damageAmount) {
+	  logger.info("LB damage");
+	  logger.info(this.owner.name);
+	  logger.info(damageAmount);
+	if (!this.sender || damageAmount <= 0){
+		logger.info("!sender");
+		return damageAmount;
 	}
+	logger.info("CP1");
 	for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
       if (!m.isDeadOrEscaped()) {
+		  logger.info("Checking " + m.name);
 		if (m.hasPower("Life Bind")) {
-			DamageInfo info = new DamageInfo(this.owner, damageAmount * m.getPower("Life Bind").amount, DamageInfo.DamageType.THORNS);
-			info.applyEnemyPowersOnly(m);
-			AbstractDungeon.actionManager.addToTop(new DamageAction(m, info, AbstractGameAction.AttackEffect.FIRE));
+			logger.info("Has Power");
+			DamageInfo newinfo = new DamageInfo(this.owner, damageAmount * m.getPower("Life Bind").amount, DamageInfo.DamageType.THORNS);
+			newinfo.applyEnemyPowersOnly(m);
+			AbstractDungeon.actionManager.addToTop(new DamageAction(m, newinfo, AbstractGameAction.AttackEffect.FIRE));
 		}
       }
     }
+        return damageAmount;
   }
   
 }

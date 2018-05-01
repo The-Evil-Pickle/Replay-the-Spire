@@ -44,7 +44,7 @@ public class Specialist extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(Specialist.UPG_DMG);
+            //this.upgradeMagicNumber(Specialist.UPG_DMG);
             this.isInnate = true;
             this.rawDescription = Specialist.UPGRADE_DESCRIPTION;
             this.initializeDescription();

@@ -48,5 +48,111 @@
 	"Increases non-attack damage by #b", 
 	"Decrease non-attack damage by #b"
     ]
+  },
+  "Eggshell": {
+    "NAME": "Eggshell",
+    "DESCRIPTIONS": [
+	"Gains #b", 
+	" #yBlock at the end of its turn. NL Losing HP from an attack reduces #yEggshell by #b1 (but not below 0). NL If #yEggshell equals #b0, you draw an extra card at the start of ",
+	"'s turn."
+    ]
+  },
+  "Color Shift": {
+    "NAME": "Color Shift",
+    "DESCRIPTIONS": [
+	"Will shift color to #y",
+	" if you play #b",
+	" more #yAttacks. NL ",
+	" more #ySkills.",
+	"None",
+	"Green",
+	"Yellow",
+	"Red",
+	"Blue",
+	"Orange",
+	"Purple",
+	"Gray"
+    ]
+  },
+  "Saturation": {
+    "NAME": "Saturation",
+    "DESCRIPTIONS": [
+	"Increases potency of #yColor #yShift effects."
+    ]
+  },
+  "Color Shift Green": {
+    "NAME": "Color Shift: Green",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Gains #b",
+	" #yArtifact and removes debuffs. NL #yOn #yUnblocked #yAttack: Applies #b",
+	" #yPoison. NL #yOn #ySpecial #yAbility: Heals #b",
+	" HP."
+    ]
+  },
+  "Color Shift Yellow": {
+    "NAME": "Color Shift: Yellow",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Applies #b",
+	" #yConfusion. NL #yOn #yUnblocked #yAttack: Adds #b",
+	" #yDazed into your draw pile. NL #yOn #ySpecial #yAbility: Applies #b",
+	" #yConfusion."
+    ]
+  },
+  "Color Shift Red": {
+    "NAME": "Color Shift: Red",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Gains #b",
+	" #yStrength. NL #yOn #yUnblocked #yAttack: Applies #b",
+	" #yVulnerable. NL #yOn #ySpecial #yAbility: Applies #b",
+	" #yFrail and destroys all #yBlock. NL #yOn #yShift #yEnd: Loses #b",
+	" #yStrength."
+    ]
+  },
+  "Color Shift Blue": {
+    "NAME": "Color Shift: Blue",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Gains #b",
+	" #yPlated #yArmor and #b",
+	" #yMetalisize. NL #yOn #yUnblocked #yAttack: Applies #b",
+	" #yWeak. NL #yOn #ySpecial #yAbility: Gains #b",
+	" #yBlock and gives ALL enemies #b",
+	" #yPlated #yArmor. NL #yOn #yShift #yEnd: Loses #b",
+	" #yMetalisize."
+    ]
+  },
+  "Color Shift Orange": {
+    "NAME": "Color Shift: Orange",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Gains #b",
+	" #yThorns. NL #yOn #yUnblocked #yAttack: Heals #b",
+	" HP. NL #yOn #ySpecial #yAbility: Applies #b",
+	" #yConfusion. NL #yOn #yShift #yEnd: Loses #b",
+	" #yThorns."
+    ]
+  },
+  "Color Shift Purple": {
+    "NAME": "Color Shift: Purple",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Adds #b",
+	" #yCurse to your discard pile. NL #yOn #yUnblocked #yAttack: Applies #b",
+	" #yConfusion. NL #yOn #ySpecial #yAbility: Adds #b",
+	" #yVoid to your discard pile."
+    ]
+  },
+  "Color Shift Gray": {
+    "NAME": "Color Shift: Gray",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Adds #b",
+	" #yWounds to your discard pile. NL #yOn #yUnblocked #yAttack: Adds #b",
+	" #ySlimed to your hand. NL #yOn #ySpecial #yAbility: Applies #b",
+	" #yConfusion."
+    ]
+  },
+  "Sleeping": {
+    "NAME": "Asleep",
+    "DESCRIPTIONS": [
+	"Won't do anything yet. Wakes up when damaged or after #b",
+	" turns."
+    ]
   }
 }

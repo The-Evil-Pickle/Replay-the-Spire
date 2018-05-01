@@ -42,6 +42,10 @@ public class MirrorMist
   private boolean hasRing = false;
   private boolean sizzling = false;
   
+  private boolean hasCog = false;
+  private boolean hasCat = false;
+  private boolean hasCross = false;
+  
   private static enum CurScreen
   {
     INTRO,  RESULT;
@@ -57,12 +61,46 @@ public class MirrorMist
 	this.hasBash = CardHelper.hasCardWithID("Bash");
 	this.hasRing = AbstractDungeon.player.hasRelic("Ring of the Snake");
 	
+	/*
+	this.hasCog = AbstractDungeon.player.hasRelic("Cogwheel");
+	this.hasCross = AbstractDungeon.player.hasRelic("DivineWrath");
+	this.hasCat = AbstractDungeon.player.hasRelic("BlackCat");
+	//cons relic
+	"Cogwheel"//gives 1 artifact
+	
+	
+	//jugg cards
+	"On Guard"//plated armor
+	"Overpower"//affected more by strength
+	//give cross pendant?
+	
+	//seeker
+	card "AstralHaze"//attacking enemies take weak and voulnerable
+	relic "Arcanosphere"//top-cycle
+	//
+	
+	//valiant
+	card "MinorHealing" (x2)//heal, exhaust
+	card "BlindingLight" //weaken all
+	relic "DivineWrath" (called cross pendant)//addd one of three cards to hand and give it exhaust
+	//give vampire relic?
+	
+	//with
+	relic "BlackCat" // random curse, energy from drawing curses
+	card zombie spit// apply 1 decrept
+	bone barrier // block and artifact for 1 turn
+	//give arcanosphere?
+	
+	//necro
+	relic vampire, heals 2 hp on kill
+	
+	*/
 	//if (AbstractDungeon.ascensionLevel > 15) {
 		this.sizzling = true;
 	//}
 	
 	String bashName = new Bash().name;
-	String ringName = new SnakeRing().name;
+	String ringName = "Ring of the Snake";
 	if (this.hasBash)
 	{
 		GenericEventDialog.setDialogOption(OPTIONS[2] + bashName + OPTIONS[3]);
@@ -71,6 +109,7 @@ public class MirrorMist
 	}
 	if (this.hasRing)
 	{
+		ringName = AbstractDungeon.player.getRelic("Ring of the Snake").name;
 		if (this.sizzling) {
 			GenericEventDialog.setDialogOption(OPTIONS[2] + ringName + OPTIONS[7]);
 		} else {
@@ -80,6 +119,7 @@ public class MirrorMist
 		GenericEventDialog.setDialogOption(OPTIONS[0] + ringName + OPTIONS[1], true);
 	}
     GenericEventDialog.setDialogOption(OPTIONS[5]);
+	
   }
 
   protected void buttonEffect(int buttonPressed)
@@ -110,6 +150,9 @@ public class MirrorMist
 			AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, new SizzlingBlood());
 		}
         break;
+	  case 3:
+		//special modded fun stuff
+		
       default: 
         //logMetric("Wander");
         GenericEventDialog.updateBodyText(RESULT_DIALOG_B);

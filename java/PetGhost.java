@@ -4,10 +4,11 @@ import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.colorless.GhostSwipe;
-import com.megacrit.cardcrawl.cards.colorless.GhostDefend;
+import com.megacrit.cardcrawl.cards.colorless.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.random.Random;
+import com.megacrit.cardcrawl.characters.*;
+import com.megacrit.cardcrawl.core.*;
 
 public class PetGhost
   extends AbstractRelic
@@ -28,10 +29,31 @@ public class PetGhost
   public void atTurnStart() 
   {
 	AbstractCard c;
-	if (AbstractDungeon.cardRandomRng.randomBoolean()){
-		c = new GhostSwipe();
-	} else {
-		c = new GhostDefend();
+	switch (AbstractDungeon.cardRandomRng.random(0, 2)) {
+		case 0:
+			c = new GhostSwipe();
+			break;
+		case 1:
+			c = new GhostDefend();
+			break;
+		default:
+			boolean hasBasic = false;
+			if (AbstractDungeon.player != null) {				
+				for (final AbstractCard c2 : AbstractDungeon.player.drawPile.group) {
+					if (c2.rarity == AbstractCard.CardRarity.BASIC || c2.cardID == "Ghost Defend" || c2.cardID == "Ghost Swipe") {
+						hasBasic = true;
+					}
+				}
+			}
+			if (hasBasic) {
+				c = new GhostFetch();
+			} else {
+				if (AbstractDungeon.cardRandomRng.randomBoolean()){
+					c = new GhostSwipe();
+				} else {
+					c = new GhostDefend();
+				}
+			}
 	}
 	AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, false));
     AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));

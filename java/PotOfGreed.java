@@ -8,8 +8,10 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
+import basemod.*;
+import basemod.abstracts.*;
 
-public class PotOfGreed extends AbstractCard
+public class PotOfGreed extends CustomCard
 {
     public static final String ID = "Pot Of Greed";
     private static final CardStrings cardStrings;
@@ -24,7 +26,7 @@ public class PotOfGreed extends AbstractCard
 	public boolean copyPlayedThisTurn = false;
     
     public PotOfGreed() {
-        super("Pot Of Greed", PotOfGreed.NAME, "status/beta", "status/beta", 0, PotOfGreed.DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF, 1);
+        super("Pot Of Greed", PotOfGreed.NAME, "cards/replay/greed.png", 0, PotOfGreed.DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF, 1);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }

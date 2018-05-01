@@ -49,8 +49,8 @@ public class NecroPoisonLoseHpAction extends AbstractGameAction
                 final AbstractPower p = this.target.getPower("Necrotic Poison");
                 if (p != null) {
                     final AbstractPower abstractPower = p;
-					if (abstractPower.amount > 3) {
-						abstractPower.amount -= (abstractPower.amount / 2);
+					if (abstractPower.amount > 1) {
+						abstractPower.amount -= ((abstractPower.amount + 1) / 2);
 					} else {
 						--abstractPower.amount;
 					}

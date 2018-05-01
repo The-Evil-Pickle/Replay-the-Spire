@@ -1,0 +1,10 @@
+{
+  "Corpse Explosion": {
+    "NAME": "Corpse Explosion",
+    "DESCRIPTION": "Enemy loses all Poison. Apply Necrotic Poison equal to the amount lost to ALL enemies. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Enemy loses all Poison. Apply Necrotic Poison equal to the amount lost to ALL enemies.",
+    "EXTENDED_DESCRIPTION": [
+      "That enemy isn't Poisoned."
+    ]
+  }
+}

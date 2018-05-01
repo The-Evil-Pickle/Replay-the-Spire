@@ -24,7 +24,7 @@ Gremlin Food | All | Common | Whenever you rest, **Upgrade** a random card.
 Grinning Jar | All | Common | On pickup, add a Grinning Jar card to your deck. Obtain another copy for every 12 cards added to your deck.
 King of Hearts | Ironclad | Common | When you lose HP during your turn, gain twice that much block.
 Rune of Simplicity | All | Common | Strikes and Defends can be **Upgraded** any number of times. On pickup, **Upgrade** 2 randomly.
-Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe or Ghost Defend to your hand (chosen randomly).
+Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe, Ghost Defend, or Ghost Fetch to your hand (chosen randomly).
 Chameleon Ring | All | Uncommon | Higher chance to find rarer potions. You may brew 2 random potions at rest sites.
 Divine Protection | All | Uncommon | Gain 8 temporary HP at the start of combat.
 Funnel | All | Uncommon | At the end of your turn, gain 4 block for each unspent energy.
@@ -50,7 +50,7 @@ Name | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis
 Run Through | Red | Common | Attack | 1 | Target loses 9(12) HP and 5(8) Block.
 Abandon | Red | Uncommmon | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. **Ethereal**.
 Defy Death | Red | Uncommmon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat.
-Life Link | Red | Uncommmon | Skill | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage. **Exhaust**.
+Life Link | Red | Uncommmon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
 Massacre | Red | Uncommmon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
 Hemogenesis | Red | Rare | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2+X where X is the number of times previously upgraded in combat, or 3+X if the card has been upgraded outside of combat).
 Fluid Movement | Green | Commmon | Power | 1 | Retain up to 5(8) block between rounds.
@@ -61,7 +61,7 @@ Poison Darts | Green | Rare | Skill | X | Apply 3(4) **Necrotic** **Poison** X t
 Sneak Up | Green | Rare | Skill | 1 | **Innate.** Discard 1 card (upgrade removes). Gain 1 **Intangible.** **Exhaust.** **Ethereal.**
 Improvise | Colorless | Uncommmon | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(5) **Poison**. Is affected by damage modifiers.
-Specialist | Colorless | Uncommon | Power | 0 | All non-attack damage you deal is increased by 2(3). (**Innate.**))
+Specialist | Colorless | Uncommon | Power | 0 | All non-attack damage you deal is increased by 2. (**Innate.**)
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
 Sickly | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, lose 3 **Block**.
 Languid | Curse | Curse | Curse | - | **Unplayable**. If this is in your hand at the end of your turn, start next turn with 1 less Energy.
@@ -70,12 +70,13 @@ Voices | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, sh
 Looming Evil | Curse | Curse | Curse | 3 | Can be played for 3 Energy to **Exhaust**. At the end of your turn, shuffle a random curse into your draw pile and reduce the cost to play this card by 1.
 Ghost Swipe | Colorless | Special | Attack | 1 | Deal 6 damage. **Exhaust**. **Ethereal**.
 Ghost Defend | Colorless | Special | Skill | 1 | Gain 5 block. **Exhaust**. **Ethereal**.
+Ghost Fetch | Colorless | Special | Skill | 0 | Choose a basic card from your draw pile and add it to your hand. **Exhaust**. **Ethereal**.
 Grinning Jar | Colorless | Special | Skill | 0 | Draw 2 cards. You cannot play another Grinning Jar card this turn (upgrade removes).
 
 # Keywords
 Name | Type | Description
 --- | --- | ---
-Necrotic Poison | Power (Debuff) | An alternate kind of Poison. Does double damage, but is reduced by half each turn. Normal Poison does not count down while Necrotic Poison is applied.
+Necrotic Poison | Power (Debuff) | An alternate kind of Poison. Does double damage, but is reduced by half each turn (rounding down). Normal Poison does not count down while Necrotic Poison is applied.
 
 # Potions
 Name | Rarity | Description (post-ascension-11 changes in parenthesis)
@@ -101,6 +102,7 @@ Known Issues:
  * Honey Jar + Question Card doesn't stack.
  
 Changes to Existing Content:
- * Neow will now sometimes offer a random colorless card as his blessing.
+ * Neow now has a wider variety of blessings to choose from.
+ * Corpse Explosion now applies 1x Necrotic Poison rather than dealing 2x damage.
  * White Beast Statue lowers the chance of finding rarer potions.
  * If you have Honey Jar and Singing Bowl at the same time, using Singing Bowl's max hp gain option also picks a reward card at random.
