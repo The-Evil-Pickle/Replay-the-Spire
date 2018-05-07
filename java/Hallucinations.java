@@ -11,9 +11,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.ArrayList;
+import basemod.*;
+import basemod.abstracts.*;
 
 public class Hallucinations
-  extends AbstractCard
+  extends CustomCard
 {
   public static final String ID = "Hallucinations";
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Hallucinations");
@@ -24,7 +26,7 @@ public class Hallucinations
   
   public Hallucinations()
   {
-    super("Hallucinations", NAME, null, "status/beta", -2, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE, 1);
+    super("Hallucinations", NAME, "cards/replay/hallucinations.png", -2, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE);
 	
 	//this.exhaust = true;
 	this.baseMagicNumber = 1;

@@ -29,7 +29,7 @@ public class HiddenBlade
   
   public HiddenBlade()
   {
-    super("Hidden Blade", NAME, "status/beta", "status/beta", 1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, 1);
+    super("Hidden Blade", NAME, "status/beta", "status/beta", 1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
     
     this.baseMagicNumber = 2;
     this.magicNumber = this.baseMagicNumber;

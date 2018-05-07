@@ -66,5 +66,22 @@
 		"[Take it] #gObtain #ga #gRelic. #rBecome #rCursed - #rHallucinations.",
 		"[Leave]"
 	]
+  },
+  "Grembo": {
+	"NAME": "Grembo The Great",
+	"DESCRIPTIONS": [
+		"A small gremlin wielding a tiny sword approaches you. NL \"Behold! It is I, @GREMBO@ @THE@ @GREAT!@\" NL The creature seems to think itself much more threatening than it actually is.",
+		"The gremlin speaks. NL \"Grembo has watched you fight. Grembo also like to fight! Grembo will lend you great strength, if you give shinies!\" NL He seems trustworthy, if somewhat delusional.",
+		"\"An adequate payment! The legendary strength of Grembo is yours!\" NL As he says this, a small collection of gremlins emerge from the shadows. It seems you've made some friends.",
+		"\"Fine. Grembo does not care! Grembo has other, stronger warriors to lend his sword to!\" NL He isn't very good at hiding his disappointment. He disappears back into the shadows of the city."
+	],
+	"OPTIONS": [
+		"[Continue]",
+		"[Locked: requires ",
+		"[Lose ",
+		" gold",
+		"] #yJoin #gforces #gwith #gGrembo #gThe #gGreat.",
+		"[Decline]"
+	]
   }
 }

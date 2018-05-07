@@ -22,7 +22,7 @@ public class GhostFetch extends AbstractCard
     private static final int POOL = 1;
     
     public GhostFetch() {
-        super("Ghost Fetch", GhostFetch.NAME, "colorless/skill/goodInstincts", "colorless/skill/goodInstincts", 0, GhostFetch.DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE, 1);
+        super("Ghost Fetch", GhostFetch.NAME, "colorless/skill/goodInstincts", "colorless/skill/goodInstincts", 0, GhostFetch.DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
         this.exhaust = true;
 		this.isEthereal = true;
     }

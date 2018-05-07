@@ -19,20 +19,21 @@ import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DarknessPower;
 import java.util.ArrayList;
+import basemod.*;
+import basemod.abstracts.*;
 
 public class Languid
-  extends AbstractCard
+  extends CustomCard
 {
   public static final String ID = "Languid";
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Languid");
   public static final String NAME = cardStrings.NAME;
   public static final String DESCRIPTION = cardStrings.DESCRIPTION;
   private static final int COST = -2;
-  private static final int POOL = 1;
   
   public Languid()
   {
-    super("Languid", NAME, "status/beta", "status/beta", -2, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE, 1);
+    super("Languid", NAME, "cards/replay/betaCurse.png", -2, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE);
   }
   
   public void use(AbstractPlayer p, AbstractMonster m)

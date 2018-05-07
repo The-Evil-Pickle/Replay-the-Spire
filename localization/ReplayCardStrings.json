@@ -94,6 +94,19 @@
     "DESCRIPTION": "All non-attack damage you deal is increased by !M! .",
 	"UPGRADE_DESCRIPTION": "Innate. NL All non-attack damage you deal is increased by !M! ."
   },
+  "Crow Ritual": {
+    "NAME": "Awakened One Ritual",
+    "DESCRIPTION": "Add !M! Ritual Components to your discard pile. If 5 are ever in your hand at once, they become !D! damage Attacks."
+  },
+  "Ritual Component": {
+    "NAME": "Ritual Component",
+    "DESCRIPTION": "Draw 1 card. NL If it is an Attack, take !M! damage.",
+	"UPGRADE_DESCRIPTION": "Draw 1 card."
+  },
+  "Dark Echo": {
+    "NAME": "Dark Echo",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies."
+  },
   "Looming Evil": {
 	"NAME": "Looming Evil",
 	"DESCRIPTION": "Can be played for !M! Energy to Exhaust. NL At the end of your turn, shuffle a curse into your draw pile and reduce cost.",
@@ -128,7 +141,11 @@
   },
   "Faulty Equipment": {
 	"NAME": "Faulty Equipment",
-	"DESCRIPTION": "Unplayable. NL Can be Exhausted or removed from your deck by Upgrading."
+	"DESCRIPTION": "Unplayable. NL Can only be Exhausted or removed from your deck by Upgrading."
+  },
+  "Amnesia": {
+	"NAME": "Amnesia",
+	"DESCRIPTION": "Unplayable. NL At the end of your turn, Exhaust your hand."
   },
   "Ghost Swipe": {
     "NAME": "Ghost Swipe",
@@ -155,16 +172,17 @@
 		"I've already played this card once this turn!"
 	]
   },
+  "Grembo's Gang": {
+    "NAME": "Grembo's Gang",
+    "DESCRIPTION": "Summon X random gremlins that last !M! rounds. NL Maximum of 3.",
+    "UPGRADE_DESCRIPTION": "Summon X random gremlins. NL Maximum of 3."
+  },
+  "AutogenPotionCard": {
+    "NAME": "AutogenPotionCard",
+    "DESCRIPTION": " NL Exhaust. NL Retain."
+  },
   "Scorching Beam": {
     "NAME": "Scorching Beam",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Channel !M! Fire."
-  },
-  "Corpse Explosion": {
-    "NAME": "Corpse Explosion",
-    "DESCRIPTION": "Enemy loses all Poison. Apply Necrotic Poison equal to the amount lost to ALL enemies. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Enemy loses all Poison. Apply Necrotic Poison equal to the amount lost to ALL enemies.",
-    "EXTENDED_DESCRIPTION": [
-      "That enemy isn't Poisoned."
-    ]
   }
 }

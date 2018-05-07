@@ -31,7 +31,7 @@ public class GhostSwipe
   
   public GhostSwipe()
   {
-    super("Ghost Swipe", NAME, "colorless/attack/swiftStrike", "colorless/attack/swiftStrike", 1, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.ENEMY, 0);
+    super("Ghost Swipe", NAME, "colorless/attack/swiftStrike", "colorless/attack/swiftStrike", 1, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.ENEMY);
     
     this.baseDamage = 6;
     this.exhaust = true;

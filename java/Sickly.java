@@ -12,20 +12,21 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.ArrayList;
+import basemod.*;
+import basemod.abstracts.*;
 
 public class Sickly
-  extends AbstractCard
+  extends CustomCard
 {
   public static final String ID = "Sickly";
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Sickly");
   public static final String NAME = cardStrings.NAME;
   public static final String DESCRIPTION = cardStrings.DESCRIPTION;
   private static final int COST = -2;
-  private static final int POOL = 1;
   
   public Sickly()
   {
-    super("Sickly", NAME, "status/beta", "status/beta", -2, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE, 1);
+    super("Sickly", NAME, "cards/replay/betaCurse.png", -2, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE);
 	
 	this.baseMagicNumber = 3;
     this.magicNumber = this.baseMagicNumber;

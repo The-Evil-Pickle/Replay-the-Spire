@@ -39,7 +39,7 @@ public class Massacre
   
   public Massacre()
   {
-    super("Massacre", NAME, "red/attack/cleave", "red/attack/cleave", 1, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, 1);
+    super("Massacre", NAME, "red/attack/cleave", "red/attack/cleave", 1, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY);
     
     this.baseDamage = 1;
     this.isMultiDamage = true;

@@ -23,14 +23,14 @@ public class Improvise
   public static final String NAME = cardStrings.NAME;
   public static final String DESCRIPTION = cardStrings.DESCRIPTION;
   public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-  private static final int COST = 0;
+  private static final int COST = 1;
   private static final int POOL = 1;
   private static final int START_AMT = 1;
   private static final int UPG_AMT = 1;
   
   public Improvise()
   {
-    super("Improvise", NAME, "colorless/skill/jackOfAllTrades", "colorless/skill/jackOfAllTrades", 0, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.NONE, 1);
+    super("Improvise", NAME, "status/beta", "status/beta", 1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.NONE);
     
     this.exhaust = true;
   }

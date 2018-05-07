@@ -49,6 +49,20 @@
 	"Decrease non-attack damage by #b"
     ]
   },
+  "Awakened Ritual": {
+    "NAME": "Awakened Ritual",
+    "DESCRIPTIONS": [
+	"If you ever have at least #b5 #yRitual #yComponents in your hand, they are replaced with #yDark #yEcho attacks.", 
+	" NL (need #b",
+	" more in hand)"
+    ]
+  },
+  "Friendly": {
+    "NAME": "Friendly",
+    "DESCRIPTIONS": [
+	"This monster is on your side, and will attack enemies or help you."
+    ]
+  },
   "Eggshell": {
     "NAME": "Eggshell",
     "DESCRIPTIONS": [

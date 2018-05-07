@@ -88,7 +88,7 @@ public class ReplayChaosPatch {
 				numToChange += AbstractDungeon.miscRng.random(2);
 			}
 			for (int i = 0; i < __result.size() && numToChange > 0; i++){
-				if (((RingOfChaos)AbstractDungeon.player.getRelic("Ring of Chaos")).chaosUpgradeCard(__result.get(i))) {
+				if (((RingOfChaos)AbstractDungeon.player.getRelic("ReplayTheSpireMod:Ring of Chaos")).chaosUpgradeCard(__result.get(i))) {
 					numToChange -= 1;
 				}
 			}

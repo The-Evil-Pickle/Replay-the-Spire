@@ -8,8 +8,8 @@ Requires:
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
 Currently adds:
- * 24 Relics (2 ironclad, 2 silent, 20 shared)
- * 21 Cards (6 ironclad, 6 silent, 3 colorless, 6 curses)
+ * 26 Relics (2 ironclad, 2 silent, 22 shared)
+ * 22 Cards (6 ironclad, 6 silent, 4 colorless, 6 curses)
  * 3 Events
  * 12 Potions
 
@@ -33,6 +33,7 @@ Iron Hammer | All | Uncommon | During the first turn, drawing a card upgrades it
 Onion Ring | All | Uncommon | Gain 3 **Strength** at the start of combat, then lose 1 **Strength** on the next 3 turns.
 Snack Pack | All | Uncommon | Every time you play 3 **Attacks** in a single turn, gain 2 HP.
 Arrowhead | All | Rare | You may **Upgrade** 2 cards whenever you smith.
+Durian | All | Rare | Gain 5 Max HP on pickup. At the start of your turn, reduce your **Weakened,** **Frail,** and/or **Vulnerable** to 2 (if > 2).
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
 Chemical X | All | Shop | Your cost X effects are increased by 2.
 GuideBook | All | Shop | On pickup, upgrade 2 cards randomly. Prioritizes rarer cards.
@@ -62,6 +63,7 @@ Sneak Up | Green | Rare | Skill | 1 | **Innate.** Discard 1 card (upgrade remove
 Improvise | Colorless | Uncommmon | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(5) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | All non-attack damage you deal is increased by 2. (**Innate.**)
+Awakened One Ritual | Colorless | Rare | Power | 0 | Add 6(8) Ritual Components to your discard pile. If you ever have 5 or more in your hand at once, replace them with Attacks that deal 42 damage.
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
 Sickly | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, lose 3 **Block**.
 Languid | Curse | Curse | Curse | - | **Unplayable**. If this is in your hand at the end of your turn, start next turn with 1 less Energy.
@@ -72,6 +74,7 @@ Ghost Swipe | Colorless | Special | Attack | 1 | Deal 6 damage. **Exhaust**. **E
 Ghost Defend | Colorless | Special | Skill | 1 | Gain 5 block. **Exhaust**. **Ethereal**.
 Ghost Fetch | Colorless | Special | Skill | 0 | Choose a basic card from your draw pile and add it to your hand. **Exhaust**. **Ethereal**.
 Grinning Jar | Colorless | Special | Skill | 0 | Draw 2 cards. You cannot play another Grinning Jar card this turn (upgrade removes).
+Ritual Component | Colorless | Special | Skill | 0 | Draw 1 card. If it is an Attack, take 1 damage.
 
 # Keywords
 Name | Type | Description

@@ -16,9 +16,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
+import basemod.*;
+import basemod.abstracts.*;
 
 public class GhostDefend
-  extends AbstractCard
+  extends CustomCard
 {
   public static final String ID = "Ghost Defend";
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Ghost Defend");
@@ -30,7 +32,7 @@ public class GhostDefend
   
   public GhostDefend()
   {
-    super("Ghost Defend", NAME, "colorless/skill/goodInstincts", "colorless/skill/goodInstincts", 1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.SELF, 0);
+    super("Ghost Defend", NAME, "cards/replay/defend.png", 1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.SELF, 0);
     
     this.baseBlock = 5;
     this.exhaust = true;

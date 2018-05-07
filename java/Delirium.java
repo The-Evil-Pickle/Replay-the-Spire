@@ -10,8 +10,10 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.core.*;
 import tobyspowerhouse.powers.*;
+import basemod.*;
+import basemod.abstracts.*;
 
-public class Delirium extends AbstractCard
+public class Delirium extends CustomCard
 {
     public static final String ID = "Delirium";
     private static final CardStrings cardStrings;
@@ -22,7 +24,7 @@ public class Delirium extends AbstractCard
     private static final int WEAK_AMT = 1;
     
     public Delirium() {
-        super("Delirium", Delirium.NAME, null, "status/beta", -2, Delirium.DESCRIPTION, CardType.CURSE, CardColor.CURSE, CardRarity.CURSE, CardTarget.NONE, 1);
+        super("Delirium", Delirium.NAME, "cards/replay/betaCurse.png", -2, Delirium.DESCRIPTION, CardType.CURSE, CardColor.CURSE, CardRarity.CURSE, CardTarget.NONE);
     }
     
     @Override

@@ -79,7 +79,8 @@
 	"NAME": "Mirror",
 	"FLAVOR": "You can see yourself through the glass. The good and the bad.",
     "DESCRIPTIONS": [
-	"Whenever you gain #yVulnerable or #yWeakened, it is also applied to the enemy that sent it."
+	"Whenever you gain #yVulnerable or #yWeakened, it is also applied to the enemy that sent it.",
+	"Reflected"
 	]
   },
   "Onion Ring": {
@@ -211,6 +212,13 @@
 		"Obtain a Skill that draws 2 cards. NL Obtain an additional copy for every #b",
 		" other cards added to your deck.",
 		"The jar is pleased"
+	]
+  },
+  "Durian": {
+    "NAME": "Durian",
+	"FLAVOR": "text missing",
+    "DESCRIPTIONS": [
+		"At the start of your turn, reduce your Weak, Voulnerable, and Frail to #b2. NL On pickup, increase your max HP by #b"
 	]
   },
   "Solar Panel": {

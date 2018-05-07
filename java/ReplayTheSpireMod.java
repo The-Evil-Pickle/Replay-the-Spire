@@ -82,8 +82,38 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		private PotionRarity() {}
 	}
 	
+	public static PotionRarity GetPotionRarity(AbstractPotion potion) {
+		for (ReplayTheSpireMod.PotionRarity rarity : ReplayTheSpireMod.PotionRarity.values()) 
+		{
+			for (String sid : potionsByRarity.get(rarity)) {
+				if (sid.equals(potion.ID)) {
+					return rarity;
+				}
+			}
+		}
+		return PotionRarity.SPECIAL;
+	}
+	
 	public static int GetPotionCost(AbstractPotion potion) 
 	{
+		ReplayTheSpireMod.PotionRarity rarity = ReplayTheSpireMod.GetPotionRarity(potion);
+		switch(rarity) {
+			case COMMON:
+				return 50;
+			case UNCOMMON:
+				return 60;
+			case RARE:
+				return 75;
+			case ULTRA:
+				return 100;
+			case SPECIAL:
+				return 70;
+			case SHOP:
+				return 40;
+			default:
+				return 50;
+		}
+		/*
 		for (ReplayTheSpireMod.PotionRarity rarity : ReplayTheSpireMod.PotionRarity.values()) 
 		{
 			for (String sid : potionsByRarity.get(rarity)) {
@@ -107,7 +137,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				}
 			}
 		}
-		return 50;
+		*/
 	}
 	
 	public static ReplayTheSpireMod.PotionRarity returnRandomPotionTier(Random rng)
@@ -459,6 +489,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new Baseball(), RelicType.SHARED);
 		BaseMod.addRelic(new ChameleonRing(), RelicType.SHARED);
 		BaseMod.addRelic(new ChemicalX(), RelicType.SHARED);
+		BaseMod.addRelic(new Durian(), RelicType.SHARED);
 		BaseMod.addRelic(new DivineProtection(), RelicType.SHARED);
 		BaseMod.addRelic(new ElectricBlood(), RelicType.RED);
 		BaseMod.addRelic(new Funnel(), RelicType.SHARED);
@@ -476,7 +507,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new PetGhost(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfChaos(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfFury(), RelicType.SHARED);
-		BaseMod.addRelic(new SimpleRune(), RelicType.SHARED);
+		//BaseMod.addRelic(new SimpleRune(), RelicType.SHARED);
 		BaseMod.addRelic(new SizzlingBlood(), RelicType.SHARED);
 		BaseMod.addRelic(new SnackPack(), RelicType.SHARED);
 		BaseMod.addRelic(new SneckoScales(), RelicType.GREEN);
@@ -512,6 +543,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Improvise());
 		AddAndUnlockCard(new PoisonedStrike());
 		AddAndUnlockCard(new Specialist());
+		AddAndUnlockCard(new AwakenedRitual());
 		logger.info("adding curses...");
 		AddAndUnlockCard(new Hallucinations());
 		//AddAndUnlockCard(new Languid());
@@ -524,6 +556,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new GhostDefend());
 		AddAndUnlockCard(new GhostSwipe());
 		AddAndUnlockCard(new GhostFetch());
+		AddAndUnlockCard(new RitualComponent());
+		AddAndUnlockCard(new DarkEchoRitualCard());
 		logger.info("done editting cards");
 	}
 	
