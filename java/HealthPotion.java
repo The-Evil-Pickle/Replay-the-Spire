@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.localization.PotionStrings;
+import ReplayTheSpireMod.*;
 import java.util.ArrayList;
 
 public class HealthPotion
@@ -24,7 +25,7 @@ public class HealthPotion
     if (AbstractDungeon.ascensionLevel >= 11) {
       this.potency = 9;
     } else {
-      this.potency = 15;
+      this.potency = 12;
     }
     this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1]);
     this.isThrown = false;
@@ -34,7 +35,7 @@ public class HealthPotion
   
   public void use(AbstractCreature target)
   {
-    AbstractDungeon.actionManager.addToBottom(new HealAction(target, AbstractDungeon.player, this.potency));
+    AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, this.potency));
   }
   
   public AbstractPotion makeCopy()
@@ -45,7 +46,7 @@ public class HealthPotion
   
   public int getPrice()
   {
-	return 40;
+	return ReplayTheSpireMod.GetPotionCost(this);
   }
   
 }

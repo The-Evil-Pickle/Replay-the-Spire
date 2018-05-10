@@ -90,8 +90,15 @@
 	"NAME": "Cursed Concoction",
     "DESCRIPTIONS": [
 			"Gain #b",
-			" #yStrength and #b ",
-			" #yDexterity. NL Add a random #yCurse to your hand."
+			" #yStrength and #b",
+			" #yDexterity. NL Add a random #yCurse to your draw pile."
+	]
+  },
+  "Confusion Potion": {
+	"NAME": "Confusion Potion",
+    "DESCRIPTIONS": [
+			"Apply #b",
+			" #yConfusion."
 	]
   }
 }

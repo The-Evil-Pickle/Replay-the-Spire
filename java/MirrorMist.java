@@ -1,11 +1,10 @@
 package com.megacrit.cardcrawl.events.thebottom;
 
 import com.megacrit.cardcrawl.audio.SoundMaster;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.cards.red.Bash;
-import com.megacrit.cardcrawl.cards.green.Neutralize;
-import com.megacrit.cardcrawl.cards.green.Survivor;
+import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.cards.red.*;
+import com.megacrit.cardcrawl.cards.green.*;
+import com.megacrit.cardcrawl.cards.blue.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -21,6 +20,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.relics.*;
+import ReplayTheSpireMod.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.badlogic.gdx.math.MathUtils;
@@ -40,6 +40,8 @@ public class MirrorMist
   private CurScreen screen = CurScreen.INTRO;
   private boolean hasBash = false;
   private boolean hasRing = false;
+  private boolean hasCast = false;
+  private boolean hasCore = false;
   private boolean sizzling = false;
   
   private boolean hasCog = false;
@@ -53,14 +55,30 @@ public class MirrorMist
     private CurScreen() {}
   }
   
-  
   public MirrorMist()
   {
     super(NAME, DIALOG_1, "images/events/livingWall.jpg");
     
 	this.hasBash = CardHelper.hasCardWithID("Bash");
+	this.hasCast = CardHelper.hasCardWithID("Dualcast");
+	this.hasRing = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Ring of the Snake");
+	this.hasCore = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Cracked Core");
+	/*
 	this.hasRing = AbstractDungeon.player.hasRelic("Ring of the Snake");
-	
+	for (final AbstractRelic r : AbstractDungeon.player.relics) {
+		if (r.relicId.equals("Ring of the Snake")) {
+			this.hasRing = true;
+			break;
+		}
+	}
+	this.hasCore = AbstractDungeon.player.hasRelic("Cracked Core");
+	for (final AbstractRelic r : AbstractDungeon.player.relics) {
+		if (r.relicId.equals("Cracked Core")) {
+			this.hasCore = true;
+			break;
+		}
+	}
+	*/
 	/*
 	this.hasCog = AbstractDungeon.player.hasRelic("Cogwheel");
 	this.hasCross = AbstractDungeon.player.hasRelic("DivineWrath");
@@ -100,7 +118,9 @@ public class MirrorMist
 	//}
 	
 	String bashName = new Bash().name;
+	String dualName = new Dualcast().name;
 	String ringName = "Ring of the Snake";
+	String coreName = "Cracked Core";
 	if (this.hasBash)
 	{
 		GenericEventDialog.setDialogOption(OPTIONS[2] + bashName + OPTIONS[3]);
@@ -117,6 +137,16 @@ public class MirrorMist
 		}
 	} else {
 		GenericEventDialog.setDialogOption(OPTIONS[0] + ringName + OPTIONS[1], true);
+	}
+	if (this.hasCast)
+	{
+		if (this.hasCore) {
+			GenericEventDialog.setDialogOption(OPTIONS[2] + dualName + OPTIONS[9] + coreName + OPTIONS[8] + bashName + OPTIONS[10] + OPTIONS[1]);
+		} else {
+			GenericEventDialog.setDialogOption(OPTIONS[2] + dualName + OPTIONS[8] + bashName + OPTIONS[1]);
+		}
+	} else {
+		GenericEventDialog.setDialogOption(OPTIONS[0] + dualName + OPTIONS[1], true);
 	}
     GenericEventDialog.setDialogOption(OPTIONS[5]);
 	
@@ -143,7 +173,8 @@ public class MirrorMist
       case 1: 
         //logMetric("Ring to Blood");
 		GenericEventDialog.updateBodyText(RESULT_DIALOG_A);
-		AbstractDungeon.player.loseRelic("Ring of the Snake");
+		//AbstractDungeon.player.loseRelic("Ring of the Snake");
+		ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_loseRelic("Ring of the Snake");
 		if (!this.sizzling) {
 			AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, new BurningBlood());
 		} else {
@@ -151,6 +182,21 @@ public class MirrorMist
 		}
         break;
 	  case 3:
+		//Cast to Bash etc
+		GenericEventDialog.updateBodyText(RESULT_DIALOG_A);
+        CardCrawlGame.sound.play("CARD_EXHAUST");
+        AbstractDungeon.effectList.add(new PurgeCardEffect(new Dualcast()));
+        AbstractDungeon.player.masterDeck.removeCard("Dualcast");
+		AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Bash(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+		UnlockTracker.markCardAsSeen("Bash");
+		/*
+		if (this.hasCore) {
+			ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_loseRelic("Cracked Core");
+			AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, new IronCore());
+		}
+		*/
+        break;
+	  case 4:
 		//special modded fun stuff
 		
       default: 

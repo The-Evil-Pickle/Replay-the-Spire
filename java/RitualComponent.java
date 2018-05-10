@@ -31,10 +31,12 @@ public class RitualComponent extends CustomCard
 		if (AbstractDungeon.player.drawPile.isEmpty()) {
             AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
         }
+		/*
 		if(!this.upgraded) {
 			//AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, this.magicNumber, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
 			AbstractDungeon.actionManager.addToBottom(new RitualComponentAction(this.magicNumber));
 		}
+		*/
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
     }
     
@@ -47,16 +49,16 @@ public class RitualComponent extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(-1);
-            this.rawDescription = RitualComponent.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            //this.upgradeMagicNumber(-1);
+            //this.rawDescription = RitualComponent.UPGRADE_DESCRIPTION;
+            //this.initializeDescription();
         }
     }
     
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings("Ritual Component");
         NAME = RitualComponent.cardStrings.NAME;
-        DESCRIPTION = RitualComponent.cardStrings.DESCRIPTION;
+        DESCRIPTION = RitualComponent.cardStrings.UPGRADE_DESCRIPTION;//DESCRIPTION;
         UPGRADE_DESCRIPTION = RitualComponent.cardStrings.UPGRADE_DESCRIPTION;
     }
 }

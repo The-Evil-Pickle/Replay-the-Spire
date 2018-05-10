@@ -172,6 +172,10 @@
 		"I've already played this card once this turn!"
 	]
   },
+  "CounterbalanceIntang": {
+    "NAME": "Counter",
+    "DESCRIPTION": "Gain !M! Intangible. NL Exhaust. NL Retain."
+  },
   "Grembo's Gang": {
     "NAME": "Grembo's Gang",
     "DESCRIPTION": "Summon X random gremlins that last !M! rounds. NL Maximum of 3.",
@@ -184,5 +188,9 @@
   "Scorching Beam": {
     "NAME": "Scorching Beam",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Channel !M! Fire."
+  },
+  "Firewall": {
+    "NAME": "Firewall",
+    "DESCRIPTION": "Gain !B! Block. NL Each time you block incoming damage this round, Channel !M! Fire."
   }
 }

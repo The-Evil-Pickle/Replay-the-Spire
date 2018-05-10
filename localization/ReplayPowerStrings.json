@@ -57,6 +57,13 @@
 	" more in hand)"
     ]
   },
+  "Snake Venom": {
+    "NAME": "Snake Venom",
+    "DESCRIPTIONS": [
+	"The next Attack you play applies #b",
+	" Necrotic Poison each time it deals unblocked damage."
+    ]
+  },
   "Friendly": {
     "NAME": "Friendly",
     "DESCRIPTIONS": [

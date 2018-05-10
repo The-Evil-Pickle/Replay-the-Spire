@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.localization.PotionStrings;
+import ReplayTheSpireMod.*;
 import java.util.ArrayList;
 
 public class DeathPotion
@@ -57,7 +58,7 @@ public class DeathPotion
   
   public int getPrice()
   {
-    return 80;
+    return ReplayTheSpireMod.GetPotionCost(this) + 5;
   }
   
 }

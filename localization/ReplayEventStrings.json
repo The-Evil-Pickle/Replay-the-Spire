@@ -30,7 +30,10 @@
 		"] #gObtain #gBurning #gBlood.",
 		"[Wander] Transform and upgrade a random card.",
 		"[Leave]",
-		"] #gObtain #gSizzling #gBlood."
+		"] #gObtain #gSizzling #gBlood.",
+		"] #gObtain #g",
+		" and ",
+		" #gand #gIron #gCore"
 	]
   },
   "Trapped Chest": {
@@ -77,7 +80,7 @@
 	],
 	"OPTIONS": [
 		"[Continue]",
-		"[Locked: requires ",
+		"[Locked] Requires: ",
 		"[Lose ",
 		" gold",
 		"] #yJoin #gforces #gwith #gGrembo #gThe #gGreat.",

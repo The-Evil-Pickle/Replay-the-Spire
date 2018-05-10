@@ -27,6 +27,7 @@ import com.megacrit.cardcrawl.cards.curses.Pain;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import ReplayTheSpireMod.*;
 import com.megacrit.cardcrawl.core.Settings;
 import java.util.ArrayList;
 
@@ -61,7 +62,7 @@ public class TrappedChest
     
     GenericEventDialog.setDialogOption(OPTIONS[0]);
 	
-	this.hasKey = AbstractDungeon.player.hasRelic("Cursed Key");
+	this.hasKey = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Cursed Key");
 	if (this.hasKey){
 		GenericEventDialog.setDialogOption(OPTIONS[1]);
 	} else {

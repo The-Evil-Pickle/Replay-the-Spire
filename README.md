@@ -94,6 +94,7 @@ Inspiration Potion | Rare | Add a random (non-)Upgraded power to your hand. It c
 Milkshake | Rare | You can retain up to 5(2) unspent energy between rounds.
 Doom Potion | Ultra Rare | Destroy an enemy after 10(13) turns.
 Spirit Potion | Ultra Rare | Gain 2(1) Intangible.
+Cursed Concoction | Ultra Rare | Gain 3(2) Strength and 2(1) Dexterity. Add a random curse to your draw pile.
 Health Potion | Shop | Heal 15(9) HP. [note: has been disabled temporary due to causing a game crash]
 Elixir | Shop | Exhaust ALL your status and curse cards (in your hand).
 
@@ -101,7 +102,6 @@ Elixir | Shop | Exhaust ALL your status and curse cards (in your hand).
 Known Issues:
  * Cards altered by Ring of Chaos return to the normal version if the run is saved and returned to later.
  * Config settings will not save when the game is closed.
- * Potions are not seeded, and held potions may be re-rolled when the game is saved and returned to later.
  * Honey Jar + Question Card doesn't stack.
  
 Changes to Existing Content:

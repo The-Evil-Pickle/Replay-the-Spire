@@ -75,6 +75,45 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	
 	public static EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>> potionsByRarity = new EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>>(ReplayTheSpireMod.PotionRarity.class);
 	
+	public static boolean BypassStupidBasemodRelicRenaming_hasRelic(String targetID) {
+		for (final AbstractRelic r : AbstractDungeon.player.relics) {
+			String unren = r.relicId.substring(r.relicId.lastIndexOf(":") + 1);
+            if (r.relicId.equals(targetID) || unren.equals(targetID)) {
+                return true;
+            }
+        }
+        return false;
+	}
+	public static boolean BypassStupidBasemodRelicRenaming_loseRelic(String targetID) {
+		if (!ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(targetID)) {
+            return false;
+        }
+        AbstractRelic toRemove = null;
+        for (final AbstractRelic r : AbstractDungeon.player.relics) {
+            String unren = r.relicId.substring(r.relicId.lastIndexOf(":") + 1);
+            if (r.relicId.equals(targetID) || unren.equals(targetID)) {
+                r.onUnequip();
+                toRemove = r;
+            }
+        }
+        if (toRemove == null) {
+            logger.info("WHY WAS RELIC: " + AbstractDungeon.player.name + " NOT FOUND???");
+            return false;
+        }
+        AbstractDungeon.player.relics.remove(toRemove);
+        AbstractDungeon.player.reorganizeRelics();
+        return true;
+	}
+	public static AbstractRelic BypassStupidBasemodRelicRenaming_getRelic(String targetID) {
+		for (final AbstractRelic r : AbstractDungeon.player.relics) {
+            String unren = r.relicId.substring(r.relicId.lastIndexOf(":") + 1);
+            if (r.relicId.equals(targetID) || unren.equals(targetID)) {
+                return r;
+            }
+        }
+        return null;
+	}
+	
 	public static enum PotionRarity
 	{
 		COMMON,  UNCOMMON,  RARE,  ULTRA, SPECIAL,  SHOP;
@@ -87,6 +126,17 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		{
 			for (String sid : potionsByRarity.get(rarity)) {
 				if (sid.equals(potion.ID)) {
+					return rarity;
+				}
+			}
+		}
+		return PotionRarity.SPECIAL;
+	}
+	public static PotionRarity GetPotionRarity(String s) {
+		for (ReplayTheSpireMod.PotionRarity rarity : ReplayTheSpireMod.PotionRarity.values()) 
+		{
+			for (String sid : potionsByRarity.get(rarity)) {
+				if (sid.equals(s)) {
 					return rarity;
 				}
 			}
@@ -138,6 +188,72 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			}
 		}
 		*/
+	}
+	
+	public static void RigPotionsList() {
+		int tmpShopChance = 0;
+		int tmpUltraChance = ultraPotionChance;
+		int tmpCommonChance = commonPotionChance;
+		int tmpUncommonChance = uncommonPotionChance;
+		int tmpRareChance = rarePotionChance;
+		if (AbstractDungeon.player != null) {
+			if (AbstractDungeon.player.hasRelic("White Beast Statue")) {
+				tmpCommonChance += 5;
+				tmpUncommonChance += 2;
+				tmpRareChance -= 1;
+				if (tmpRareChance < 0)
+					tmpRareChance = 0;
+			}
+			if (AbstractDungeon.player.hasRelic("Chameleon Ring")) {
+				tmpCommonChance /= 2;
+				tmpRareChance += 3;
+				tmpUltraChance += 4;
+			}
+		}
+		tmpUltraChance *= potionsByRarity.get(ReplayTheSpireMod.PotionRarity.ULTRA).size();
+		tmpCommonChance *= potionsByRarity.get(ReplayTheSpireMod.PotionRarity.COMMON).size();
+		tmpUncommonChance *= potionsByRarity.get(ReplayTheSpireMod.PotionRarity.UNCOMMON).size();
+		tmpRareChance *= potionsByRarity.get(ReplayTheSpireMod.PotionRarity.RARE).size();
+		if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SHOP || (AbstractDungeon.nextRoom != null && AbstractDungeon.nextRoom.room != null && AbstractDungeon.nextRoom.room instanceof ShopRoom)) {
+			tmpShopChance = shopPotionChance * potionsByRarity.get(ReplayTheSpireMod.PotionRarity.SHOP).size();
+			tmpUltraChance += 4 * potionsByRarity.get(ReplayTheSpireMod.PotionRarity.ULTRA).size();
+		}
+		
+		
+		PotionHelper.potions = new ArrayList<String>();
+		for (ReplayTheSpireMod.PotionRarity rarity : ReplayTheSpireMod.PotionRarity.values()) 
+		{
+			for (String sid : potionsByRarity.get(rarity)) {
+				if (!PotionHelper.potions.contains(sid)) {
+					int byrar = 0;
+					switch(rarity) {
+						case COMMON:
+							byrar = tmpCommonChance;
+							break;
+						case UNCOMMON:
+							byrar = tmpUncommonChance;
+							break;
+						case RARE:
+							byrar = tmpRareChance;
+							break;
+						case ULTRA:
+							byrar = tmpUltraChance;
+							break;
+						case SPECIAL:
+							byrar = 0;
+							break;
+						case SHOP:
+							byrar = tmpShopChance;
+							break;
+						default:
+							byrar = tmpCommonChance;
+					}
+					for (int i = 0; i < byrar; i++) {
+						PotionHelper.potions.add(sid);
+					}
+				}
+			}
+		}
 	}
 	
 	public static ReplayTheSpireMod.PotionRarity returnRandomPotionTier(Random rng)
@@ -318,7 +434,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			}
 		  }
 		  */
-		/*
 		ReplayTheSpireMod.addPotionToSet(
 			HealthPotion.class,
 			Color.CHARTREUSE.cpy(),
@@ -327,7 +442,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			"Health Potion",
 			ReplayTheSpireMod.PotionRarity.SHOP
 		);
-		*/
 		ReplayTheSpireMod.addPotionToSet(
 			ElixirPotion.class,
 			Color.GOLD.cpy(),
@@ -342,6 +456,14 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			Color.CHARTREUSE.cpy(),
 			null,
 			"Spirit Potion",
+			ReplayTheSpireMod.PotionRarity.ULTRA
+		);
+		ReplayTheSpireMod.addPotionToSet(
+			CursedPotion.class,
+			Color.DARK_GRAY.cpy(),
+			null,
+			Color.RED.cpy(),
+			"Cursed Concoction",
 			ReplayTheSpireMod.PotionRarity.ULTRA
 		);
 		ReplayTheSpireMod.addPotionToSet(
@@ -510,6 +632,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		//BaseMod.addRelic(new SimpleRune(), RelicType.SHARED);
 		BaseMod.addRelic(new SizzlingBlood(), RelicType.SHARED);
 		BaseMod.addRelic(new SnackPack(), RelicType.SHARED);
+		BaseMod.addRelic(new SnakeBasket(), RelicType.GREEN);
 		BaseMod.addRelic(new SneckoScales(), RelicType.GREEN);
         
         logger.info("done editting relics");
@@ -551,6 +674,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Delirium());
 		AddAndUnlockCard(new Voices());
 		AddAndUnlockCard(new LoomingEvil());
+		AddAndUnlockCard(new Amnesia());
+		AddAndUnlockCard(new FaultyEquipment());
+		AddAndUnlockCard(new SpreadingInfection());
 		logger.info("adding unobtainable cards...");
 		AddAndUnlockCard(new PotOfGreed());
 		AddAndUnlockCard(new GhostDefend());
