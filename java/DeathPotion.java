@@ -28,14 +28,13 @@ public class DeathPotion
   
   public DeathPotion()
   {
-    super(NAME, "Death Potion", AbstractPotion.PotionSize.L, AbstractPotion.PotionColor.STRENGTH);
+    super(NAME, "Death Potion", PotionRarity.RARE, AbstractPotion.PotionSize.SPHERE, AbstractPotion.PotionColor.STRENGTH);
     if (AbstractDungeon.ascensionLevel >= 11) {
-      this.potency = 32;
 	  this.secondPotency = 15;
     } else {
-      this.potency = 40;
 	  this.secondPotency = 12;
     }
+	this.potency = this.getPotency();
     this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1] + this.secondPotency + DESCRIPTIONS[2]);
     this.isThrown = true;
     this.targetRequired = true;
@@ -43,6 +42,11 @@ public class DeathPotion
 	//this.rarity = AbstractPotion.PotionRarity.RARE;
   }
   
+	@Override
+	public int getPotency(final int ascensionLevel) {
+		return (ascensionLevel < 11) ? 60 : 40;
+	}
+	
   public void use(AbstractCreature target)
   {
     DamageInfo info = new DamageInfo(AbstractDungeon.player, this.potency, DamageInfo.DamageType.THORNS);
@@ -58,7 +62,7 @@ public class DeathPotion
   
   public int getPrice()
   {
-    return ReplayTheSpireMod.GetPotionCost(this) + 5;
+    return 90;
   }
   
 }

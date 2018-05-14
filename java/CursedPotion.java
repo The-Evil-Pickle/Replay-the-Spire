@@ -22,18 +22,18 @@ public class CursedPotion
   
   public CursedPotion()
   {
-    super(NAME, "Cursed Concoction", AbstractPotion.PotionSize.H, AbstractPotion.PotionColor.GREEN);
-    if (AbstractDungeon.ascensionLevel >= 11) {
-      this.potency = 2;
-    } else {
-      this.potency = 3;
-    }
+    super(NAME, "Cursed Concoction", PotionRarity.RARE, AbstractPotion.PotionSize.BOTTLE, AbstractPotion.PotionColor.GREEN);
+    this.potency = this.getPotency();
     this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1] + (this.potency - 1) + DESCRIPTIONS[2]);
     this.isThrown = false;
     this.tips.add(new PowerTip(this.name, this.description));
 	//this.rarity = AbstractPotion.PotionRarity.RARE;
   }
   
+    @Override
+    public int getPotency(final int ascensionLevel) {
+        return (ascensionLevel < 11) ? 3 : 2;
+    }
   public void use(AbstractCreature target)
   {
     target = AbstractDungeon.player;
@@ -49,12 +49,6 @@ public class CursedPotion
   public AbstractPotion makeCopy()
   {
     return new CursedPotion();
-  }
-  
-  
-  public int getPrice()
-  {
-	return ReplayTheSpireMod.GetPotionCost(this) - 5;
   }
   
 }

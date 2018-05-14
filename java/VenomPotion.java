@@ -26,12 +26,11 @@ public class VenomPotion
   
   public VenomPotion()
   {
-    super(NAME, "Venom Potion", AbstractPotion.PotionSize.S, AbstractPotion.PotionColor.POISON);
+    super(NAME, "Venom Potion", PotionRarity.UNCOMMON, AbstractPotion.PotionSize.S, AbstractPotion.PotionColor.POISON);
+	this.potency = this.getPotency();
     if (AbstractDungeon.ascensionLevel >= 11) {
-      this.potency = 1;
       this.description = (DESCRIPTIONS[0] + 1 + DESCRIPTIONS[1] + DESCRIPTIONS[2] + this.potency + DESCRIPTIONS[3]);
     } else {
-      this.potency = 0;
 	  this.description = (DESCRIPTIONS[0] + 1 + DESCRIPTIONS[1]);
     }
     this.isThrown = false;
@@ -57,15 +56,15 @@ public class VenomPotion
 	  }
     }
   }
+    @Override
+    public int getPotency(final int ascensionLevel) {
+        return (ascensionLevel < 11) ? 0 : 1;
+    }
   
   public AbstractPotion makeCopy()
   {
     return new VenomPotion();
   }
   
-  public int getPrice()
-  {
-    return 60;
-  }
   
 }

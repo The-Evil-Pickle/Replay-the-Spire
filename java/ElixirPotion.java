@@ -31,13 +31,11 @@ public class ElixirPotion
   
   public ElixirPotion()
   {
-    super(NAME, "Elixir", AbstractPotion.PotionSize.S, AbstractPotion.PotionColor.ELIXIR);
+    super(NAME, "Elixir", PotionRarity.COMMON, AbstractPotion.PotionSize.T, AbstractPotion.PotionColor.ELIXIR);
     this.description = DESCRIPTIONS[0];
-    if (AbstractDungeon.ascensionLevel >= 11) {
-      this.potency = 1;
+	this.potency = this.getPotency();
+    if (this.potency < 2) {
       this.description = DESCRIPTIONS[1];
-    } else {
-      this.potency = 2;
     }
     this.isThrown = false;
     this.tips.add(new PowerTip(this.name, this.description));
@@ -56,6 +54,10 @@ public class ElixirPotion
 	//this.rarity = AbstractPotion.PotionRarity.SHOP;
   }
   
+    @Override
+    public int getPotency(final int ascensionLevel) {
+        return (ascensionLevel < 11) ? 2 : 1;
+    }
   public void use(AbstractCreature target)
   {
 	if (this.potency <= 1) {
@@ -124,6 +126,6 @@ public class ElixirPotion
   
   public int getPrice()
   {
-	return 40;
+	return 35;
   }
 }

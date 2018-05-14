@@ -11,7 +11,13 @@ Currently adds:
  * 26 Relics (2 ironclad, 2 silent, 22 shared)
  * 22 Cards (6 ironclad, 6 silent, 4 colorless, 6 curses)
  * 3 Events
- * 12 Potions
+ * 8 Potions
+
+Some content originally from this mod is now in the official release of the game!
+ * Potion rarities
+ * Liquid Bronze (originally "Thorns Potion")
+ * Ghost in a Jar (originally "Spirit Potion")
+ * Power Potion (originally "Inspiration Potion")
 
 
 # Relics
@@ -84,19 +90,14 @@ Necrotic Poison | Power (Debuff) | An alternate kind of Poison. Does double dama
 # Potions
 Name | Rarity | Description (post-ascension-11 changes in parenthesis)
 --- | --- | ---
-Adrenaline Potion | Uncommmon | Draw 2(1) cards and gain 1 energy.
-Ironskin Potion | Uncommmon | Gain 3(2) block at the end of each turn.
-Thorns Potion | Uncommon | Gain 4(2) Thorns.
+Adrenaline Potion | Common | Draw 2(1) cards and gain 1 energy.
+Elixir | Common | Exhaust ALL your status and curse cards (in your hand).
 Venom Potion | Uncommon | Gain 1 Envenom (and -1 Strength).
-Death Potion | Rare | Deal 40(32) damage and lose 12(15) HP.
-Toxic Potion | Rare | Apply 5(4) Necrotic Poison to all enemies.
-Inspiration Potion | Rare | Add a random (non-)Upgraded power to your hand. It costs 0 this turn.
-Milkshake | Rare | You can retain up to 5(2) unspent energy between rounds.
-Doom Potion | Ultra Rare | Destroy an enemy after 10(13) turns.
-Spirit Potion | Ultra Rare | Gain 2(1) Intangible.
-Cursed Concoction | Ultra Rare | Gain 3(2) Strength and 2(1) Dexterity. Add a random curse to your draw pile.
-Health Potion | Shop | Heal 15(9) HP. [note: has been disabled temporary due to causing a game crash]
-Elixir | Shop | Exhaust ALL your status and curse cards (in your hand).
+Toxic Potion | Uncommon | Apply 5(4) Necrotic Poison to all enemies.
+Milkshake | Uncommon | You can retain up to 5(2) unspent energy between rounds.
+Death Potion | Rare | Deal 60(40) damage and lose 12(15) HP.
+Doom Potion | Rare | Destroy an enemy after 10(13) turns.
+Cursed Concoction | Rare | Gain 3(2) Strength and 2(1) Dexterity. Add a random curse to your draw pile.
 
 
 Known Issues:

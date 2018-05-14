@@ -19,20 +19,14 @@ public class AdrenalinePotion
   public static final String NAME = potionStrings.NAME;
   public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
   
-  private int secondPotency = 1;
+  public int secondPotency;
   
   public AdrenalinePotion()
   {
-    super(NAME, "Adrenaline Potion", AbstractPotion.PotionSize.T, AbstractPotion.PotionColor.EXPLOSIVE);
+    super(NAME, "Adrenaline Potion", PotionRarity.COMMON, AbstractPotion.PotionSize.BOLT, AbstractPotion.PotionColor.EXPLOSIVE);
 	String p = "s ";
-    if (AbstractDungeon.ascensionLevel >= 11) {
-      this.potency = 1;
-	  this.secondPotency = 1;
-	  //this.rarity = AbstractPotion.PotionRarity.UNCOMMON;
-    } else {
-      this.potency = 2;
-	  this.secondPotency = 1;
-    }
+	this.secondPotency = 1;
+	this.potency = this.getPotency();
 	
 	if (this.potency == 1)
 	{
@@ -43,6 +37,11 @@ public class AdrenalinePotion
     this.tips.add(new PowerTip(this.name, this.description));
   }
   
+	@Override
+	public int getPotency(final int ascensionLevel) {
+		return (ascensionLevel < 11) ? 2 : 1;
+	}
+
   public void use(AbstractCreature target)
   {
     AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, this.potency));
@@ -62,11 +61,4 @@ public class AdrenalinePotion
     return new AdrenalinePotion();
   }
   
-  public int getPrice()
-  {
-	  if (AbstractDungeon.ascensionLevel >= 11) {
-		return 65;
-	  }
-	  return 50;
-  }
 }

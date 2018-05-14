@@ -24,12 +24,8 @@ public class DoomPotion
   
   public DoomPotion()
   {
-    super(NAME, "Doom Potion", AbstractPotion.PotionSize.L, AbstractPotion.PotionColor.GREEN);
-    if (AbstractDungeon.ascensionLevel >= 11) {
-      this.potency = 13;
-    } else {
-      this.potency = 10;
-    }
+    super(NAME, "Doom Potion", PotionRarity.RARE, AbstractPotion.PotionSize.SPHERE, AbstractPotion.PotionColor.GREEN);
+    this.potency = this.getPotency();
     this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1]);
     this.isThrown = true;
     this.targetRequired = true;
@@ -47,8 +43,9 @@ public class DoomPotion
     return new DoomPotion();
   }
   
-  public int getPrice()
-  {
-	return 90;
-  }
+	@Override
+	public int getPotency(final int ascensionLevel) {
+		return (ascensionLevel < 11) ? 10 : 13;
+	}
+	
 }

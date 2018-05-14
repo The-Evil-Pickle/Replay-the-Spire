@@ -86,5 +86,33 @@
 		"] #yJoin #gforces #gwith #gGrembo #gThe #gGreat.",
 		"[Decline]"
 	]
+  },
+  "Tinkerer": {
+	"NAME": "The Tinkerer",
+	"DESCRIPTIONS": [
+		"A man with messy hair and wild eyes hidden behind goggles appears from the alleyways. NL \" @WELCOME!@ I am known as #yThe #yTinkerer. Might I have a look at your equipment?\"",
+		"The Tinkerer scraps the offered object, using the pieces to improve some of your other equipment. He seems to quite enjoy the task.",
+		"The man produces a number of tools and begins to work. NL ",
+		"The man gleefully takes the offered item and starts pulling it appart and rearranging its insides. NL ",
+		"In a flurry of motion, the man grabs the object and adjusts its various components. NL ",
+		"After some time, he proudly presents you the result of his work.",
+		"When he gives the device back, you hardly recognise it.",
+		"Eventually he returns the subject of his expirementing, excited telling you about the new features and improvements he's added.",
+		"In a sudden explosion of light and fire, the object is destroyed. In a state of panic, the man appologises profusely for his failiure.",
+		"When you get your equipment back, it has been rendered nothing more than a useless pile of parts. The man seems oblivious of this fact."
+	],
+	"OPTIONS": [
+		"[Leave]",
+		"[Locked] Requires: ???",
+		"[Locked] Requires: Upgraded Card",
+		"[Lose Upgraded Card] #gUpgrade #g",
+		" #gcards.",
+		"[Lose ",
+		"] #g",
+		"% #gObtain ",
+		"[Used]",
+		"Remove a card",
+		"Upgrade 2 cards"
+	]
   }
 }

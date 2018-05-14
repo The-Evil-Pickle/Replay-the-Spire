@@ -76,6 +76,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>> potionsByRarity = new EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>>(ReplayTheSpireMod.PotionRarity.class);
 	
 	public static boolean BypassStupidBasemodRelicRenaming_hasRelic(String targetID) {
+		if (AbstractDungeon.player == null) {
+			return false;
+		}
 		for (final AbstractRelic r : AbstractDungeon.player.relics) {
 			String unren = r.relicId.substring(r.relicId.lastIndexOf(":") + 1);
             if (r.relicId.equals(targetID) || unren.equals(targetID)) {
@@ -105,6 +108,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         return true;
 	}
 	public static AbstractRelic BypassStupidBasemodRelicRenaming_getRelic(String targetID) {
+		if (AbstractDungeon.player == null) {
+			return null;
+		}
 		for (final AbstractRelic r : AbstractDungeon.player.relics) {
             String unren = r.relicId.substring(r.relicId.lastIndexOf(":") + 1);
             if (r.relicId.equals(targetID) || unren.equals(targetID)) {
@@ -450,6 +456,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			"Elixir",
 			ReplayTheSpireMod.PotionRarity.SHOP
 		);
+		/*
 		ReplayTheSpireMod.addPotionToSet(
 			SpiritPotion.class,
 			Color.GOLD.cpy(),
@@ -458,6 +465,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			"Spirit Potion",
 			ReplayTheSpireMod.PotionRarity.ULTRA
 		);
+		*/
 		ReplayTheSpireMod.addPotionToSet(
 			CursedPotion.class,
 			Color.DARK_GRAY.cpy(),
@@ -480,8 +488,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			null,
 			null,
 			"Adrenaline Potion",
-			ReplayTheSpireMod.PotionRarity.UNCOMMON
+			ReplayTheSpireMod.PotionRarity.COMMON
 		);
+		/*
 		ReplayTheSpireMod.addPotionToSet(
 			IronSkinPotion.class,
 			Color.SKY.cpy(),
@@ -498,6 +507,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			"Thorns Potion",
 			ReplayTheSpireMod.PotionRarity.UNCOMMON
 		);
+		*/
 		ReplayTheSpireMod.addPotionToSet(
 			VenomPotion.class,
 			Color.OLIVE.cpy(),
@@ -530,6 +540,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			"Milkshake",
 			ReplayTheSpireMod.PotionRarity.RARE
 		);
+		/*
 		ReplayTheSpireMod.addPotionToSet(
 			InspirationPotion.class,
 			Color.LIGHT_GRAY.cpy(),
@@ -538,7 +549,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			"Inspiration Potion",
 			ReplayTheSpireMod.PotionRarity.RARE
 		);
-		
+		*/
 		logger.info("end editting potions");
 	}
 	

@@ -8,10 +8,14 @@
     "DESCRIPTION": "Apply !M! Necrotic Poison X times.",
 	"UPGRADE_DESCRIPTION": "Apply X Necrotic Poison. Apply !M! Necrotic Poison to ALL enemies X times."
   },
+  "Draining Mist": {
+    "NAME": "Draining Mist",
+    "DESCRIPTION": "Apply 3 Necrotic Poison to a random enemy !M! times. NL Apply -1 Strength to ALL enemies. NL Exhaust.",
+	"UPGRADE_DESCRIPTION": "Apply 3 Necrotic Poison to a random enemy !M! times. NL Apply -2 Strength to ALL enemies. NL Exhaust."
+  },
   "Toxin Wave": {
     "NAME": "Toxin Wave",
-    "DESCRIPTION": "Apply !M! Necrotic Poison and -1 Strength to ALL enemies. NL Exhaust.",
-	"UPGRADE_DESCRIPTION": "Apply !M! Necrotic Poison and -2 Strength to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Apply !M! Necrotic Poison to ALL enemies."
   },
   "Hidden Blade": {
     "NAME": "Hidden Blade",
@@ -50,6 +54,11 @@
   "Run Through": {
     "NAME": "Run Through",
     "DESCRIPTION": "Target enemy loses !D! HP and !M! Block."
+  },
+  "Demonic Infusion": {
+    "NAME": "Demonic Infusion",
+    "DESCRIPTION": "Upgrade a Skill or Attack in your hand X times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Upgrade a Skill or Attack in your hand X+ !M! times. NL Exhaust."
   },
   "Scrap": {
     "NAME": "Scrap",

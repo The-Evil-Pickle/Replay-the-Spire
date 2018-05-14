@@ -2,7 +2,9 @@
   "Doomed": {
     "NAME": "Doomed",
     "DESCRIPTIONS": [
-	"Perish in #b", 
+	"Will lose #b",
+	" HP in #b", 
+	" turns.", 
 	" turn."
     ]
   },

@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.powers.NecroticPoisonPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.FrailPower;
+import ReplayTheSpireMod.*;
 import java.util.ArrayList;
 
 public class ToxicPotion
@@ -36,15 +37,14 @@ public class ToxicPotion
   
   public ToxicPotion()
   {
-    super(NAME, "Toxic Potion", AbstractPotion.PotionSize.H, AbstractPotion.PotionColor.POISON);
+    super(NAME, "Toxic Potion", PotionRarity.UNCOMMON, AbstractPotion.PotionSize.JAR, AbstractPotion.PotionColor.POISON);
     if (AbstractDungeon.ascensionLevel >= 11) {
-      this.potency = 4;
 	  this.secondPotency = 3;
     } else {
-      this.potency = 5;
 	  this.secondPotency = 2;
     }
-    this.description = (DESCRIPTIONS[0] + this.potency);// + DESCRIPTIONS[1] + (this.secondPotency - 1) + DESCRIPTIONS[2] + this.secondPotency + DESCRIPTIONS[3]
+	this.potency = this.getPotency();
+    this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1]);// + DESCRIPTIONS[1] + (this.secondPotency - 1) + DESCRIPTIONS[2] + this.secondPotency + DESCRIPTIONS[3]
     this.isThrown = true;
     this.tips.add(new PowerTip(this.name, this.description));
     this.tips.add(new PowerTip(
@@ -64,15 +64,14 @@ public class ToxicPotion
 	//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, this.secondPotency - 1, false), this.secondPotency - 1));
 	//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FrailPower(AbstractDungeon.player, this.secondPotency, false), this.secondPotency));
   }
-  
+  @Override
+    public int getPotency(final int ascensionLevel) {
+        return (ascensionLevel < 11) ? 5 : 4;
+    }
   public AbstractPotion makeCopy()
   {
     return new ToxicPotion();
   }
   
-  public int getPrice()
-  {
-    return 75;
-  }
   
 }

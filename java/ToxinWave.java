@@ -35,18 +35,15 @@ public class ToxinWave
   public static final String NAME = cardStrings.NAME;
   public static final String DESCRIPTION = cardStrings.DESCRIPTION;
   public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-  private static final int COST = 2;
+  private static final int COST = 1;
   private static final int POOL = 1;
-  private int strengthmod = -1;
   
   public ToxinWave()
   {
     super("Toxin Wave", NAME, "cards/replay/toxinWave.png", ToxinWave.COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, 1);
     
-    this.exhaust = true;
-    this.baseMagicNumber = 4;
+    this.baseMagicNumber = 3;
     this.magicNumber = this.baseMagicNumber;
-	this.strengthmod = -1;
   }
   
   public void use(AbstractPlayer p, AbstractMonster m)
@@ -68,10 +65,7 @@ public class ToxinWave
     if (!this.upgraded)
     {
       upgradeName();
-      upgradeMagicNumber(2);
-	  this.strengthmod -= 1;
-      this.rawDescription = UPGRADE_DESCRIPTION;
-      initializeDescription();
+      upgradeMagicNumber(1);
     }
   }
 }
