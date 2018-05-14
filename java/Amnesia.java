@@ -27,7 +27,7 @@ public class Amnesia
   public Amnesia()
   {
     super("Amnesia", NAME, "cards/replay/betaCurse.png", -2, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE);
-	
+	this.exhaust = true;
   }
   
   public void use(AbstractPlayer p, AbstractMonster m)
@@ -39,19 +39,19 @@ public class Amnesia
     else
     {
 	  
-		AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.limbo));
-		AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.discardPile));
 		final int count = AbstractDungeon.player.hand.size();
 		for (int i = 0; i < count; ++i) {
 			AbstractDungeon.actionManager.addToTop(new ExhaustAction(AbstractDungeon.player, AbstractDungeon.player, 1, true, true));
 		}
-		
+		//AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.limbo));
+		//AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.discardPile));
+		//AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
       //AbstractDungeon.actionManager.addToTop(new LoseBlockAction(p, p, this.magicNumber));
       
       //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
     }
   }
-  
+	
     @Override
     public void triggerWhenDrawn() {
         AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));

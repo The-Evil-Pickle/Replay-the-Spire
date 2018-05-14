@@ -9,7 +9,7 @@ Requires:
 
 Currently adds:
  * 26 Relics (2 ironclad, 2 silent, 22 shared)
- * 22 Cards (6 ironclad, 6 silent, 4 colorless, 6 curses)
+ * 22 Cards (6 ironclad, 6 silent, 4 colorless, 9 curses)
  * 3 Events
  * 8 Potions
 
@@ -70,8 +70,11 @@ Improvise | Colorless | Uncommmon | Skill | 1 | Choose 1 of 3 random cards to (u
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(5) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | All non-attack damage you deal is increased by 2. (**Innate.**)
 Awakened One Ritual | Colorless | Rare | Power | 0 | Add 6(8) Ritual Components to your discard pile. If you ever have 5 or more in your hand at once, replace them with Attacks that deal 42 damage.
+Amnesia | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, **Exhaust** your hand. **Ethereal**.
+Faulty Equipment | Curse | Curse | Curse | - | **Unplayable**. Can only be **Exhausted** or removed from your deck by **Upgrading**.
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
 Sickly | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, lose 3 **Block**.
+Spreading Infection | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a copy of all other status and curse cards in your hand to your discard pile.
 Languid | Curse | Curse | Curse | - | **Unplayable**. If this is in your hand at the end of your turn, start next turn with 1 less Energy.
 Delirium | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, gain Confusion for 1 round.
 Voices | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, shuffle 2 Dazed into your discard pile. **Ethereal**.
@@ -80,7 +83,7 @@ Ghost Swipe | Colorless | Special | Attack | 1 | Deal 6 damage. **Exhaust**. **E
 Ghost Defend | Colorless | Special | Skill | 1 | Gain 5 block. **Exhaust**. **Ethereal**.
 Ghost Fetch | Colorless | Special | Skill | 0 | Choose a basic card from your draw pile and add it to your hand. **Exhaust**. **Ethereal**.
 Grinning Jar | Colorless | Special | Skill | 0 | Draw 2 cards. You cannot play another Grinning Jar card this turn (upgrade removes).
-Ritual Component | Colorless | Special | Skill | 0 | Draw 1 card. If it is an Attack, take 1 damage.
+Ritual Component | Colorless | Special | Skill | 0 | Draw 1 card.
 
 # Keywords
 Name | Type | Description
