@@ -119,6 +119,14 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         }
         return null;
 	}
+	public static boolean BypassStupidBasemodRelicRenaming_flashRelic(String targetID) {
+		AbstractRelic r = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic(targetID);
+		if (r == null) {
+			return false;
+		}
+		r.flash();
+        return true;
+	}
 	
 	public static enum PotionRarity
 	{
@@ -440,6 +448,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			}
 		  }
 		  */
+		  /*
 		ReplayTheSpireMod.addPotionToSet(
 			HealthPotion.class,
 			Color.CHARTREUSE.cpy(),
@@ -447,7 +456,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			null,
 			"Health Potion",
 			ReplayTheSpireMod.PotionRarity.SHOP
-		);
+		);*/
 		ReplayTheSpireMod.addPotionToSet(
 			ElixirPotion.class,
 			Color.GOLD.cpy(),
@@ -555,7 +564,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	
 	@Override
     public void receivePostInitialize() {
-		logger.info("begin editting json");
+		//logger.info("begin editting json");
 		commonPotionChance = 9;
 		uncommonPotionChance = 7;
 		rarePotionChance = 4;
@@ -565,6 +574,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         // Mod badge
         Texture badgeTexture = new Texture(BADGE_IMG);
         ModPanel settingsPanel = new ModPanel();
+		/*
         settingsPanel.addLabel("Potion Rarities", 1000.0f, 700.0f, (me) -> {});
 		
 		ModSlider potionSliderC = new ModSlider("Common", 1000.0f, 650.0f, 10.0f, "", settingsPanel, (me) -> {
@@ -592,7 +602,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		potionSliderUR.setValue((float)ReplayTheSpireMod.ultraPotionChance / potionSliderUR.multiplier);
 		settingsPanel.addUIElement(potionSliderUR);
 		logger.info("end editting json");
-		
+		*/
 		
 		logger.info("badge");
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
@@ -622,6 +632,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new Baseball(), RelicType.SHARED);
 		BaseMod.addRelic(new ChameleonRing(), RelicType.SHARED);
 		BaseMod.addRelic(new ChemicalX(), RelicType.SHARED);
+		BaseMod.addRelic(new CounterBalance(), RelicType.SHARED);
 		BaseMod.addRelic(new Durian(), RelicType.SHARED);
 		BaseMod.addRelic(new DivineProtection(), RelicType.SHARED);
 		BaseMod.addRelic(new ElectricBlood(), RelicType.RED);
@@ -633,9 +644,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new HoneyJar(), RelicType.SHARED);
 		BaseMod.addRelic(new IronHammer(), RelicType.SHARED);
 		BaseMod.addRelic(new KingOfHearts(), RelicType.RED);
-		//BaseMod.addRelic(new Mirror(), RelicType.SHARED);
+		BaseMod.addRelic(new Mirror(), RelicType.SHARED);
 		BaseMod.addRelic(new OnionRing(), RelicType.SHARED);
-		BaseMod.addRelic(new OozeArmor(), RelicType.SHARED);
+		BaseMod.addRelic(new OozeArmor(), RelicType.RED);
 		BaseMod.addRelic(new PainkillerHerb(), RelicType.SHARED);
 		BaseMod.addRelic(new PetGhost(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfChaos(), RelicType.SHARED);

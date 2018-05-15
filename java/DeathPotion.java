@@ -24,7 +24,7 @@ public class DeathPotion
   public static final String NAME = potionStrings.NAME;
   public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
   
-  private int secondPotency = 15;
+  public int secondPotency = 15;
   
   public DeathPotion()
   {

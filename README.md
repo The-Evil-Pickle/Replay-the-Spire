@@ -8,8 +8,8 @@ Requires:
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
 Currently adds:
- * 26 Relics (2 ironclad, 2 silent, 22 shared)
- * 22 Cards (6 ironclad, 6 silent, 4 colorless, 9 curses)
+ * 28 Relics (3 ironclad, 3 silent, 22 shared)
+ * 25 Cards (6 ironclad, 6 silent, 4 colorless, 9 curses)
  * 3 Events
  * 8 Potions
 
@@ -31,7 +31,7 @@ Grinning Jar | All | Common | On pickup, add a Grinning Jar card to your deck. O
 King of Hearts | Ironclad | Common | When you lose HP during your turn, gain twice that much block.
 Rune of Simplicity | All | Common | Strikes and Defends can be **Upgraded** any number of times. On pickup, **Upgrade** 2 randomly.
 Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe, Ghost Defend, or Ghost Fetch to your hand (chosen randomly).
-Chameleon Ring | All | Uncommon | Higher chance to find rarer potions. You may brew 2 random potions at rest sites.
+Chameleon Ring | All | Uncommon | Potions are ~50% more potent. You may brew 2 random potions at rest sites.
 Divine Protection | All | Uncommon | Gain 8 temporary HP at the start of combat.
 Funnel | All | Uncommon | At the end of your turn, gain 4 block for each unspent energy.
 Garlic | All | Uncommon | Enemies lose 3 **Strength** at the start of combat, then gain 1 **Strength** on the next 3 turns.
@@ -39,12 +39,14 @@ Iron Hammer | All | Uncommon | During the first turn, drawing a card upgrades it
 Onion Ring | All | Uncommon | Gain 3 **Strength** at the start of combat, then lose 1 **Strength** on the next 3 turns.
 Snack Pack | All | Uncommon | Every time you play 3 **Attacks** in a single turn, gain 2 HP.
 Arrowhead | All | Rare | You may **Upgrade** 2 cards whenever you smith.
+Basket of Snakes | Silent | Rare | Every 5th **Attack** you play applies 2 **Necrotic** **Poison** upon dealing unblocked damage.
+Counterbalance | All | Rare | During boss and elite fights all enemy Strength gain, Block gain, and healing is reduced by half.
 Durian | All | Rare | Gain 5 Max HP on pickup. At the start of your turn, reduce your **Weakened,** **Frail,** and/or **Vulnerable** to 2 (if > 2).
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
 Chemical X | All | Shop | Your cost X effects are increased by 2.
 GuideBook | All | Shop | On pickup, upgrade 2 cards randomly. Prioritizes rarer cards.
 Honey Jar | All | Boss | Draw 1 more card each turn. Retain up to 1 card each turn. Card rewards have 1 more option to chose from. You cannot skip rewards.
-Ooze Armor | All | Boss | Gain 1 energy and draw 1 card at the start of each turn. At the start of combat, gain Slow (resets to -2) and Malleable (resets to 4), and shuffle 2 Slimed into your draw pile.
+Ooze Armor | Ironclad | Boss | Gain 1 energy and draw 1 card at the start of each turn. At the start of combat, gain Slow (resets to -2) and Malleable (resets to 4), and shuffle 2 Slimed into your draw pile.
 Sweet Flower | All | Boss | Gain 1 more energy each turn. Map displays much less information.
 Electric Blood | Ironclad | Boss | Gain 2 energy at the start of each turn. When you play a card, lose HP equal to the cost.
 Snecko Scales | Silent | Boss | Draw 3 additional cards each turn. When you play a card, discard a card.
@@ -54,7 +56,7 @@ Ring of Chaos | All | Boss | Some card rewards have randomly altered stats and e
 # Cards
 Name | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis)
 --- | --- | --- | --- | --- | ---
-Run Through | Red | Common | Attack | 1 | Target loses 9(12) HP and 5(8) Block.
+Run Through | Red | Common | Attack | 1 | Target loses 8(11) HP and 5(8) Block.
 Abandon | Red | Uncommmon | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. **Ethereal**.
 Defy Death | Red | Uncommmon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat.
 Life Link | Red | Uncommmon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
@@ -105,11 +107,9 @@ Cursed Concoction | Rare | Gain 3(2) Strength and 2(1) Dexterity. Add a random c
 
 Known Issues:
  * Cards altered by Ring of Chaos return to the normal version if the run is saved and returned to later.
- * Config settings will not save when the game is closed.
  * Honey Jar + Question Card doesn't stack.
  
 Changes to Existing Content:
  * Neow now has a wider variety of blessings to choose from.
  * Corpse Explosion now applies 1x Necrotic Poison rather than dealing 2x damage.
- * White Beast Statue lowers the chance of finding rarer potions.
  * If you have Honey Jar and Singing Bowl at the same time, using Singing Bowl's max hp gain option also picks a reward card at random.

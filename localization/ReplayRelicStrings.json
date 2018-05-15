@@ -202,7 +202,7 @@
 	"NAME": "Chameleon Ring",
 	"FLAVOR": "A ring that glimmers with slowly shifting colors.",
     "DESCRIPTIONS": [
-	"Higher chance of getting rare potions. NL You can now #yBrew at Rest Sites."
+	"Find more potent potions. NL You can now #yBrew at Rest Sites."
 	]
   },
   "Grinning Jar": {
@@ -230,7 +230,7 @@
 		" #yNecrotic #yPoison each time it deals unblocked damage."
 	]
   },
-  "Counterbalance": {
+  "Counterbalance_old": {
     "NAME": "Counterbalance",
 	"FLAVOR": "text missing",
     "DESCRIPTIONS": [
@@ -253,6 +253,13 @@
 		" NL At the start of combat, heal #b10 HP.",
 		" NL At the start of each round, gain #b3 Block.",
 		" NL Conserve up to #b2 unspent energy between rounds."
+	]
+  },
+  "Counterbalance": {
+    "NAME": "Counterbalance",
+	"FLAVOR": "For every strength, there is a weakness.",
+    "DESCRIPTIONS": [
+		"During boss and elite fights enemy #yStrength gain, #yBlock gain, and #yHealing is reduced by half."
 	]
   },
   "Solar Panel": {
