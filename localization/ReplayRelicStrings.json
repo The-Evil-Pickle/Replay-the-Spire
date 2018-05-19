@@ -51,7 +51,8 @@
 	"NAME": "Electric Blood",
 	"FLAVOR": "You feel your body surging with power. It hurts.",
     "DESCRIPTIONS": [
-	"Gain [R] [R] at the start of each turn. NL Lose 1 HP for every [R] you use."
+	"Gain [R] [R] at the start of each turn. NL Lose #b1 HP for every [R] you use, excluding the first #b",
+	" used each turn."
 	]
   },
   "Funnel": {
@@ -104,13 +105,6 @@
 	"Some card rewards have randomly altered stats and effects."
 	]
   },
-  "Ring of Fury": {
-	"NAME": "Ring of Fury",
-	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
-	"DESCRIPTIONS": [
-	"At the start of combat gain 2 #yStrength and lose 1 #yDexterity."
-	]
-  },
   "Simple Rune": {
 	"NAME": "Rune of Simplicity",
 	"FLAVOR": "Sometimes, things aren't as complicated as they appear.",
@@ -130,7 +124,8 @@
 	"NAME": "Snecko Scales",
 	"FLAVOR": "Scales from a Snecko that shed its skin. They seem to reflect lights with shimmering colors.",
     "DESCRIPTIONS": [
-	"Draw 3 additional cards each turn. When you play a card, discard a card."
+	"Draw #b",
+	" additional cards each turn. When you play a card, discard a card."
 	]
   },
   "King of Hearts": {
@@ -262,12 +257,27 @@
 		"During boss and elite fights enemy #yStrength gain, #yBlock gain, and #yHealing is reduced by half."
 	]
   },
+  "Vampiric Spirits": {
+    "NAME": "Vampiric Spirits",
+	"FLAVOR": "A fondness for shadows, a thirst for blood; traits held by rogues and vampires alike.",
+    "DESCRIPTIONS": [
+		"On the first turn of combat, #b",
+		"% of all unblocked Attack damage you deal is returned as health."
+	]
+  },
   "Solar Panel": {
     "NAME": "Solar Panel",
 	"FLAVOR": "Clean, renewable power.",
     "DESCRIPTIONS": [
 		"At the end of combat, heal #b",
 		" HP for each of your active Lightning orbs."
+	]
+  },
+  "Carrot": {
+    "NAME": "Carrot",
+	"FLAVOR": "Filled with power.",
+    "DESCRIPTIONS": [
+		"You gain #b3 #yFocus at the start of combat. You lose #b1 #yFocus over the next #b3 turns."
 	]
   },
   "Backup Battery": {
@@ -289,6 +299,76 @@
 		" NL Replaces Cracked Core.",
 		" NL Replaces Iron Core."
 		
+	]
+  },
+  "Ring of Fury": {
+	"NAME": "Ring of Fury",
+	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"DESCRIPTIONS": [
+	"At the start of combat gain #b",
+	" #yStrength and lose #b",
+	" #yDexterity."
+	]
+  },
+  "Ring of Peace": {
+	"NAME": "Ring of Peace",
+	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"DESCRIPTIONS": [
+	"At the start of combat apply #b",
+	" #yWeak and #b",
+	" #yBuffer to ALL fighters."
+	]
+  },
+  "Ring of Panic": {
+	"NAME": "Ring of Panic",
+	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"DESCRIPTIONS": [
+	"At the start of combat you become #yConfused for #b",
+	" turns. NL Gain [E] [E] at the start of rounds 1 and 2. NL Gain [E] at the start of round 3."
+	]
+  },
+  "Ring of Hypnosis": {
+	"NAME": "Ring of Hypnosis",
+	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"DESCRIPTIONS": [
+	"All enemies start with #b",
+	" #yConfusion."
+	]
+  },
+  "Ring of Searing": {
+	"NAME": "Ring of Searing",
+	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"DESCRIPTIONS": [
+	"At the start of your turn, ALL enemies above #b",
+	"% Max HP lose #b",
+	"% of their current HP. NL At the end of each round, if you are above #b",
+	"% Max HP, lose #b",
+	" HP."
+	]
+  },
+  "Ring of Burning": {
+	"NAME": "Ring of Burning",
+	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"DESCRIPTIONS": [
+	"When you run out of energy, the cost of cards in your hand are reduced to #b0 for the turn. NL Cards played while out of energy have a #b",
+	"% chance to #yExhaust. NL Each time you spend energy, take that much damage."
+	]
+  },
+  "Ring of Fangs": {
+	"NAME": "Ring of Fangs",
+	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"DESCRIPTIONS": [
+	"At the start of combat lose #b",
+	" #yStrength. NL Whenever you deal unblocked attack damage, apply #b1 #yPoison."
+	]
+  },
+  "Ring of Shattering": {
+	"NAME": "Ring of Shattering",
+	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"DESCRIPTIONS": [
+	"At the start of combat you gain #b",
+	" #yFocus and lose #b",
+	" Orb Slots."
 	]
   },
   "Iron Core": {

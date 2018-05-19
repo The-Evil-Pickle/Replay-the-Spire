@@ -9,8 +9,8 @@ Requires:
 
 Currently adds:
  * 28 Relics (3 ironclad, 3 silent, 22 shared)
- * 25 Cards (6 ironclad, 6 silent, 4 colorless, 9 curses)
- * 3 Events
+ * 27 Cards (7 ironclad, 7 silent, 4 colorless, 9 curses)
+ * 4 Events
  * 8 Potions
 
 Some content originally from this mod is now in the official release of the game!
@@ -48,7 +48,7 @@ GuideBook | All | Shop | On pickup, upgrade 2 cards randomly. Prioritizes rarer 
 Honey Jar | All | Boss | Draw 1 more card each turn. Retain up to 1 card each turn. Card rewards have 1 more option to chose from. You cannot skip rewards.
 Ooze Armor | Ironclad | Boss | Gain 1 energy and draw 1 card at the start of each turn. At the start of combat, gain Slow (resets to -2) and Malleable (resets to 4), and shuffle 2 Slimed into your draw pile.
 Sweet Flower | All | Boss | Gain 1 more energy each turn. Map displays much less information.
-Electric Blood | Ironclad | Boss | Gain 2 energy at the start of each turn. When you play a card, lose HP equal to the cost.
+Electric Blood | Ironclad | Boss | Gain 2 energy at the start of each turn. When you spend energy, lose that much HP, excluding the first 2 energy spent each turn.
 Snecko Scales | Silent | Boss | Draw 3 additional cards each turn. When you play a card, discard a card.
 Ring of Chaos | All | Boss | Some card rewards have randomly altered stats and effects.
 
@@ -61,10 +61,12 @@ Abandon | Red | Uncommmon | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that 
 Defy Death | Red | Uncommmon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat.
 Life Link | Red | Uncommmon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
 Massacre | Red | Uncommmon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
+Demonic Infusion | Red | Rare | Skill | X | Upgrade a card X(+1) times. **Exhaust**.
 Hemogenesis | Red | Rare | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2+X where X is the number of times previously upgraded in combat, or 3+X if the card has been upgraded outside of combat).
 Fluid Movement | Green | Commmon | Power | 1 | Retain up to 5(8) block between rounds.
 Hidden Blade | Green | Commmon | Skill | 1 | Add a Shiv to your hand and draw 2(3) cards.
-Toxin Wave | Green | Uncommon | Skill | 2 | Apply 5(7) **Necrotic** **Poison** and -1(-2) **Strength** to ALL enemies. **Exhaust**.
+Toxin Wave | Green | Uncommon | Skill | 1 | Apply 3(4) **Necrotic** **Poison** to ALL enemies.
+Draining Mist | Green | Uncommon | Skill | 3 | Apply 3 **Necrotic** **Poison** to a random enemy 2(3) times. Apply -1(-2) **Strength** to ALL enemies. **Exhaust**.
 Atom Bomb | Green | Rare | Attack | 4 | Deal 60(80) damage. Apply 3(4) **Poison** to ALL enemies. **Exhaust**.
 Poison Darts | Green | Rare | Skill | X | Apply 3(4) **Necrotic** **Poison** X times.
 Sneak Up | Green | Rare | Skill | 1 | **Innate.** Discard 1 card (upgrade removes). Gain 1 **Intangible.** **Exhaust.** **Ethereal.**

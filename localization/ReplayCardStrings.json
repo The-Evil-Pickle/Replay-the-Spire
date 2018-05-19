@@ -60,6 +60,10 @@
     "DESCRIPTION": "Upgrade a Skill or Attack in your hand X times. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Upgrade a Skill or Attack in your hand X+ !M! times. NL Exhaust."
   },
+  "Cursed Blade": {
+    "NAME": "Cursed Blade",
+    "DESCRIPTION": "Deal !D! damage. NL You cannot play other cards while this is in your hand."
+  },
   "Scrap": {
     "NAME": "Scrap",
     "DESCRIPTION": "Deal !D! damage. NL If this kills a (non-minion) enemy, heal 6 HP and permanently increase this card's Damage by !M!."
