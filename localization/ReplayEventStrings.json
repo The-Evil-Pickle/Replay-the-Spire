@@ -31,9 +31,9 @@
 		"[Wander] Transform and upgrade a random card.",
 		"[Leave]",
 		"] #gObtain #gSizzling #gBlood.",
-		"] #gObtain #g",
+		"] #gObtain ",
 		" and ",
-		"[Search] #gObtain #g",
+		"[Search] #gObtain ",
 		" #gGold. #r",
 		"%: #rBecome #rCursed #r- #r",
 		"[Meditate] #gFully #gheal. #rBecome #rCursed #r- #r"
@@ -72,8 +72,8 @@
 		"You don't see how picking up cursed rings you found on dead people could possibly be anything other than a fantastic idea."
 	],
 	"OPTIONS": [
-		"[Left Hand] #gObtain #ga #gRelic. #r50%: #rBecome #rCursed - #r",
-		"[Right Hand] #gObtain #ga #gRelic. #r50%: #rBecome #rCursed - #r",
+		"[Left Hand] #gObtain #ga #gRelic. #r50%: #rBecome #rCursed - ",
+		"[Right Hand] #gObtain #ga #gRelic. #r50%: #rBecome #rCursed - ",
 		"[Both Hands] #gObtain #g2 #gRelics. #r50%: #rBecome #rCursed #r(random)",
 		"[Leave]"
 	]

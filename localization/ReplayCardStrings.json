@@ -81,11 +81,11 @@
     "NAME": "Mirror Shield",
     "DESCRIPTION": "Channel 1 Frost. NL Channel 1 Crystal. NL Each time you completely block incoming Attack damage this round, deal that much damage back to the attacker."
   },
-  "Illuminate": {
+  "ReplayIlluminate": {
     "NAME": "Illuminate",
     "DESCRIPTION": "Channel 1 Light. NL Exhaust."
   },
-  "Overclock": {
+  "ReplayOverclock": {
     "NAME": "Overclock",
     "DESCRIPTION": "Gain !M! Focus. NL At the end of your turn, lose !M! Focus."
   },

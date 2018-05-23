@@ -1,28 +1,24 @@
 package com.megacrit.cardcrawl.events.thebottom;
 
-import com.megacrit.cardcrawl.audio.SoundMaster;
+import com.megacrit.cardcrawl.audio.*;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.cards.red.*;
 import com.megacrit.cardcrawl.cards.green.*;
 import com.megacrit.cardcrawl.cards.blue.*;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.events.AbstractEvent;
-import com.megacrit.cardcrawl.events.AbstractImageEvent;
-import com.megacrit.cardcrawl.events.GenericEventDialog;
-import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.localization.LocalizedStrings;
-import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
-import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.cards.curses.*;
+import com.megacrit.cardcrawl.characters.*;
+import com.megacrit.cardcrawl.core.*;
+import com.megacrit.cardcrawl.dungeons.*;
+import com.megacrit.cardcrawl.events.*;
+import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.screens.select.*;
+import com.megacrit.cardcrawl.vfx.*;
+import com.megacrit.cardcrawl.vfx.cardManip.*;
+import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.relics.*;
 import ReplayTheSpireMod.*;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.rooms.*;
+import com.megacrit.cardcrawl.unlock.*;
 import com.badlogic.gdx.math.MathUtils;
 import java.util.ArrayList;
 
@@ -38,15 +34,33 @@ public class MirrorMist
   private static final String RESULT_DIALOG_A = DESCRIPTIONS[1];
   private static final String RESULT_DIALOG_B = DESCRIPTIONS[2];
   private CurScreen screen = CurScreen.INTRO;
-  private boolean hasBash = false;
-  private boolean hasRing = false;
-  private boolean hasCast = false;
-  private boolean hasCore = false;
-  private boolean sizzling = false;
   
-  private boolean hasCog = false;
-  private boolean hasCat = false;
-  private boolean hasCross = false;
+  private AbstractCard loss_c_1;
+  private AbstractCard loss_c_1b;
+  private AbstractCard loss_c_2;
+  private AbstractCard loss_c_2b;
+  private AbstractCard gain_c_1;
+  private AbstractCard gain_c_1b;
+  private AbstractCard gain_c_2;
+  private AbstractCard gain_c_2b;
+  private AbstractRelic loss_r_1;
+  private AbstractRelic loss_r_1b;
+  private AbstractRelic loss_r_2;
+  private AbstractRelic loss_r_2b;
+  private AbstractRelic gain_r_1;
+  private AbstractRelic gain_r_1b;
+  private AbstractRelic gain_r_2;
+  private AbstractRelic gain_r_2b;
+  private boolean has_1;
+  private boolean has_1b;
+  private boolean has_2;
+  private boolean has_2b;
+  private boolean moddedguy;
+  
+  private int goldgain;
+  private int searchcursechance;
+  private AbstractCard searchCurse;
+  private AbstractCard searchCurse2;
   
   private static enum CurScreen
   {
@@ -55,99 +69,225 @@ public class MirrorMist
     private CurScreen() {}
   }
   
+  private static boolean hasUpgradedCard(final String targetID) {
+	  boolean r = false;
+        for (final AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+            if (c.cardID.equals(targetID)) {
+                if (c.upgraded) {
+					r = true;
+				} else {
+					return false;
+				}
+            }
+        }
+        return r;
+    }
+  
+  private void checkForUpgrades() {
+	  if (this.has_1) {
+		  if (this.loss_c_1 != null && MirrorMist.hasUpgradedCard(this.loss_c_1.cardID)) {
+			  this.loss_c_1.upgrade();
+			  if (this.gain_c_1 != null) {
+				  this.gain_c_1.upgrade();
+			  }
+			  if (this.loss_c_1b == null && this.loss_r_1b == null && this.gain_c_1b != null) {
+				  this.gain_c_1b.upgrade();
+			  }
+		  }
+	  }
+	  if (this.has_1b) {
+		  if (this.loss_c_1b != null && MirrorMist.hasUpgradedCard(this.loss_c_1b.cardID)) {
+			   this.loss_c_1b.upgrade();
+			  if (this.gain_c_1b != null) {
+				  this.gain_c_1b.upgrade();
+			  }
+		  }
+	  }
+	  if (this.has_2) {
+		  if (this.loss_c_2 != null && MirrorMist.hasUpgradedCard(this.loss_c_2.cardID)) {
+			   this.loss_c_2.upgrade();
+			  if (this.gain_c_2 != null) {
+				  this.gain_c_2.upgrade();
+			  }
+			  if (this.loss_c_2b == null && this.loss_r_2b == null && this.gain_c_2b != null) {
+				  this.gain_c_2b.upgrade();
+			  }
+		  }
+	  }
+	  if (this.has_2b) {
+		  if (this.loss_c_2b != null && MirrorMist.hasUpgradedCard(this.loss_c_2b.cardID)) {
+			   this.loss_c_2b.upgrade();
+			  if (this.gain_c_2b != null) {
+				  this.gain_c_2b.upgrade();
+			  }
+		  }
+	  }
+  }
+  
   public MirrorMist()
   {
     super(NAME, DIALOG_1, "images/events/livingWall.jpg");
     
-	this.hasBash = CardHelper.hasCardWithID("Bash");
-	this.hasCast = CardHelper.hasCardWithID("Dualcast");
-	this.hasRing = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Ring of the Snake");
-	this.hasCore = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Cracked Core");
-	/*
-	this.hasRing = AbstractDungeon.player.hasRelic("Ring of the Snake");
-	for (final AbstractRelic r : AbstractDungeon.player.relics) {
-		if (r.relicId.equals("Ring of the Snake")) {
-			this.hasRing = true;
+	this.goldgain = 40;
+	this.searchcursechance = 50;
+	this.searchCurse = new Delirium();
+	this.searchCurse2 = new Hallucinations();
+	
+	this.has_1 = false;
+	this.has_1b = false;
+	this.has_2 = false;
+	this.has_2b = false;
+	this.moddedguy = false;
+	
+	switch(AbstractDungeon.player.chosenClass) {
+		case IRONCLAD: {
+			this.has_1 = CardHelper.hasCardWithID("Bash");
+			this.has_1b = CardHelper.hasCardWithID("Bash");
+			this.has_2 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Burning Blood");
+			this.loss_c_1 = new Bash();
+			this.gain_c_1 = new Survivor();
+			this.gain_c_1b = new Neutralize();
+			this.loss_r_2 = new BurningBlood();
+			this.gain_c_2 = new SelfRepair();
+			this.gain_c_2.upgrade();
 			break;
 		}
-	}
-	this.hasCore = AbstractDungeon.player.hasRelic("Cracked Core");
-	for (final AbstractRelic r : AbstractDungeon.player.relics) {
-		if (r.relicId.equals("Cracked Core")) {
-			this.hasCore = true;
+		case THE_SILENT: {
+			this.has_1 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Ring of the Snake");
+			this.has_2 = CardHelper.hasCardWithID("Survivor");
+			this.has_2b = CardHelper.hasCardWithID("Neutralize");
+			this.loss_r_1 = new SnakeRing();
+			this.gain_r_1 = new SizzlingBlood();
+			this.loss_c_2 = new Survivor();
+			this.loss_c_2b = new Neutralize();
+			this.gain_c_2 = new Leap();
+			this.gain_c_2b = new GoForTheEyes();
 			break;
 		}
-	}
-	*/
-	/*
-	this.hasCog = AbstractDungeon.player.hasRelic("Cogwheel");
-	this.hasCross = AbstractDungeon.player.hasRelic("DivineWrath");
-	this.hasCat = AbstractDungeon.player.hasRelic("BlackCat");
-	//cons relic
-	"Cogwheel"//gives 1 artifact
-	
-	
-	//jugg cards
-	"On Guard"//plated armor
-	"Overpower"//affected more by strength
-	//give cross pendant?
-	
-	//seeker
-	card "AstralHaze"//attacking enemies take weak and voulnerable
-	relic "Arcanosphere"//top-cycle
-	//
-	
-	//valiant
-	card "MinorHealing" (x2)//heal, exhaust
-	card "BlindingLight" //weaken all
-	relic "DivineWrath" (called cross pendant)//addd one of three cards to hand and give it exhaust
-	//give vampire relic?
-	
-	//with
-	relic "BlackCat" // random curse, energy from drawing curses
-	card zombie spit// apply 1 decrept
-	bone barrier // block and artifact for 1 turn
-	//give arcanosphere?
-	
-	//necro
-	relic vampire, heals 2 hp on kill
-	
-	*/
-	//if (AbstractDungeon.ascensionLevel > 15) {
-		this.sizzling = true;
-	//}
-	
-	String bashName = new Bash().name;
-	String dualName = new Dualcast().name;
-	String ringName = "Ring of the Snake";
-	String coreName = "Cracked Core";
-	if (this.hasBash)
-	{
-		GenericEventDialog.setDialogOption(OPTIONS[2] + bashName + OPTIONS[3]);
-	} else {
-		GenericEventDialog.setDialogOption(OPTIONS[0] + bashName + OPTIONS[1], true);
-	}
-	if (this.hasRing)
-	{
-		ringName = AbstractDungeon.player.getRelic("Ring of the Snake").name;
-		if (this.sizzling) {
-			GenericEventDialog.setDialogOption(OPTIONS[2] + ringName + OPTIONS[7]);
-		} else {
-			GenericEventDialog.setDialogOption(OPTIONS[2] + ringName + OPTIONS[4]);
+		case DEFECT: {
+			this.has_1 = CardHelper.hasCardWithID("Dualcast");
+			//this.has_1b = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Cracked Core");
+			this.has_2 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Cracked Core");
+			this.loss_c_1 = new Dualcast();
+			this.gain_c_1 = new Bash();
+			//this.loss_r_1b = new CrackedCore();
+			//this.gain_r_1b = new IronCore();
+			this.loss_r_2 = new CrackedCore();
+			this.gain_r_2 = new SnakeRing();
+			break;
 		}
-	} else {
-		GenericEventDialog.setDialogOption(OPTIONS[0] + ringName + OPTIONS[1], true);
-	}
-	if (this.hasCast)
-	{
-		if (this.hasCore) {
-			GenericEventDialog.setDialogOption(OPTIONS[2] + dualName + OPTIONS[9] + coreName + OPTIONS[8] + bashName + OPTIONS[10] + OPTIONS[1]);
-		} else {
-			GenericEventDialog.setDialogOption(OPTIONS[2] + dualName + OPTIONS[8] + bashName + OPTIONS[1]);
+		default: {
+			this.moddedguy = true;
 		}
-	} else {
-		GenericEventDialog.setDialogOption(OPTIONS[0] + dualName + OPTIONS[1], true);
 	}
+	
+	if (this.moddedguy) {
+		GenericEventDialog.setDialogOption(OPTIONS[10] + this.goldgain + OPTIONS[11] + this.searchcursechance + OPTIONS[12] + this.searchCurse.name + ".", this.searchCurse);
+		GenericEventDialog.setDialogOption(OPTIONS[13] + this.searchCurse2.name + ".", this.searchCurse2);
+	} else {
+		this.checkForUpgrades();
+		String string_1 = "";
+		String string_2 = "";
+		if (this.has_1 || this.has_1b) {
+			string_1 = OPTIONS[2];
+			String obstring = OPTIONS[8];
+			if (this.has_1) {
+				if (this.loss_c_1 != null) {
+					string_1 += this.loss_c_1.name;
+				} else if (this.loss_r_1 != null) {
+					string_1 += this.loss_r_1.name;
+				}
+				if (this.gain_c_1 != null) {
+					obstring += FontHelper.colorString(this.gain_c_1.name, "g");
+				} else if (this.gain_r_1 != null) {
+					obstring += FontHelper.colorString(this.gain_r_1.name, "g");
+				}
+			}
+			if (this.has_1b) {
+				if (this.has_1) {
+					if (this.loss_c_1b != null || this.loss_r_1b != null) {
+						string_1 += " and ";
+					}
+					obstring += " #gand ";
+				}
+				if (this.loss_c_1b != null) {
+					string_1 += this.loss_c_1b.name;
+				} else if (this.loss_r_1b != null) {
+					string_1 += this.loss_r_1b.name;
+				}
+				if (this.gain_c_1b != null) {
+					obstring += FontHelper.colorString(this.gain_c_1b.name, "g");
+				} else if (this.gain_r_1b != null) {
+					obstring += FontHelper.colorString(this.gain_r_1b.name, "g");
+				}
+			}
+			string_1 += obstring + ".";
+		} else {
+			string_1 = OPTIONS[0];
+			if (this.loss_c_1 != null) {
+				string_1 += this.loss_c_1.name;
+			} else if (this.loss_r_1 != null) {
+				string_1 += this.loss_r_1.name;
+			}
+			if (this.loss_c_1b != null) {
+				string_1 += " or " + this.loss_c_1b.name;
+			} else if (this.loss_r_1b != null) {
+				string_1 += " or " + this.loss_r_1b.name;
+			}
+			string_1 += ".";
+		}
+		if (this.has_2 || this.has_2b) {
+			string_2 = OPTIONS[2];
+			String obstring = OPTIONS[8];
+			if (this.has_2) {
+				if (this.loss_c_2 != null) {
+					string_2 += this.loss_c_2.name;
+				} else if (this.loss_r_2 != null) {
+					string_2 += this.loss_r_2.name;
+				}
+				if (this.gain_c_2 != null) {
+					obstring += FontHelper.colorString(this.gain_c_2.name, "g");
+				} else if (this.gain_r_2 != null) {
+					obstring += FontHelper.colorString(this.gain_r_2.name, "g");
+				}
+			}
+			if (this.has_2b) {
+				if (this.has_2) {
+					if (this.loss_c_2b != null || this.loss_r_2b != null) {
+						string_2 += " and ";
+					}
+					obstring += " #gand ";
+				}
+				if (this.loss_c_2b != null) {
+					string_2 += this.loss_c_2b.name;
+				} else if (this.loss_r_2b != null) {
+					string_2 += this.loss_r_2b.name;
+				}
+				if (this.gain_c_2b != null) {
+					obstring += FontHelper.colorString(this.gain_c_2b.name, "g");
+				} else if (this.gain_r_2b != null) {
+					obstring += FontHelper.colorString(this.gain_r_2b.name, "g");
+				}
+			}
+			string_2 += obstring + ".";
+		} else {
+			string_2 = OPTIONS[0];
+			if (this.loss_c_2 != null) {
+				string_2 += this.loss_c_2.name;
+			} else if (this.loss_r_2 != null) {
+				string_2 += this.loss_r_2.name;
+			}
+			if (this.loss_c_2b != null) {
+				string_2 += " or " + this.loss_c_2b.name;
+			} else if (this.loss_r_2b != null) {
+				string_2 += " or " + this.loss_r_2b.name;
+			}
+			string_2 += ".";
+		}
+		GenericEventDialog.setDialogOption(string_1, (!this.has_1 && !this.has_1b));
+		GenericEventDialog.setDialogOption(string_2, (!this.has_2 && !this.has_2b));
+	}
+	
     GenericEventDialog.setDialogOption(OPTIONS[5]);
 	
   }
@@ -160,45 +300,93 @@ public class MirrorMist
       switch (buttonPressed)
       {
       case 0: 
+		if (this.moddedguy) {
+			AbstractDungeon.effectList.add(new RainingGoldEffect(this.goldgain));
+            AbstractDungeon.player.gainGold(this.goldgain);
+			if (AbstractDungeon.miscRng.randomBoolean(((float)this.searchcursechance) / 100.0F)) {
+				//GenericEventDialog.updateBodyText(AccursedBlacksmith.RUMMAGE_RESULT + AccursedBlacksmith.CURSE_RESULT2);
+				AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.searchCurse.makeCopy(), Settings.WIDTH / 2, Settings.HEIGHT / 2));
+				UnlockTracker.markCardAsSeen(this.searchCurse.cardID);
+			}
+		} else {
+		if (this.has_1) {
+			if (this.loss_c_1 != null) {
+				AbstractDungeon.effectList.add(new PurgeCardEffect(this.loss_c_1.makeCopy()));
+				AbstractDungeon.player.masterDeck.removeCard(this.loss_c_1.cardID);
+				CardCrawlGame.sound.play("CARD_EXHAUST");
+			} else if (this.loss_r_1 != null) {
+				ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_loseRelic(this.loss_r_1.relicId);
+			}
+			if (this.gain_c_1 != null) {
+				AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.gain_c_1, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+				UnlockTracker.markCardAsSeen(this.gain_c_1.cardID);
+			}
+			if (this.gain_r_1 != null) {
+				AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, this.gain_r_1);
+			}
+		}
+		if (this.has_1b) {
+			if (this.loss_c_1b != null) {
+				AbstractDungeon.effectList.add(new PurgeCardEffect(this.loss_c_1b.makeCopy()));
+				AbstractDungeon.player.masterDeck.removeCard(this.loss_c_1b.cardID);
+				CardCrawlGame.sound.play("CARD_EXHAUST");
+			} else if (this.loss_r_1b != null) {
+				ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_loseRelic(this.loss_r_1b.relicId);
+			}
+			if (this.gain_c_1b != null) {
+				AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.gain_c_1b, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+				UnlockTracker.markCardAsSeen(this.gain_c_1b.cardID);
+			}
+			if (this.gain_r_1b != null) {
+				AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, this.gain_r_1b);
+			}
+		}
         //logMetric("Bash to Survivor+Neutralize");
 		GenericEventDialog.updateBodyText(RESULT_DIALOG_A);
-        CardCrawlGame.sound.play("CARD_EXHAUST");
-        AbstractDungeon.effectList.add(new PurgeCardEffect(new Bash()));
-        AbstractDungeon.player.masterDeck.removeCard("Bash");
-		AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Neutralize(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-		UnlockTracker.markCardAsSeen("Neutralize");
-		AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Survivor(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-		UnlockTracker.markCardAsSeen("Survivor");
+		}
         break;
       case 1: 
         //logMetric("Ring to Blood");
 		GenericEventDialog.updateBodyText(RESULT_DIALOG_A);
-		//AbstractDungeon.player.loseRelic("Ring of the Snake");
-		ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_loseRelic("Ring of the Snake");
-		if (!this.sizzling) {
-			AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, new BurningBlood());
+		if (this.moddedguy) {
+			AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth);
+			AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.searchCurse2.makeCopy(), Settings.WIDTH / 2, Settings.HEIGHT / 2));
+			UnlockTracker.markCardAsSeen(this.searchCurse2.cardID);
 		} else {
-			AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, new SizzlingBlood());
+		if (this.has_2) {
+			if (this.loss_c_2 != null) {
+				AbstractDungeon.effectList.add(new PurgeCardEffect(this.loss_c_2.makeCopy()));
+				AbstractDungeon.player.masterDeck.removeCard(this.loss_c_2.cardID);
+				CardCrawlGame.sound.play("CARD_EXHAUST");
+			} else if (this.loss_r_2 != null) {
+				ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_loseRelic(this.loss_r_2.relicId);
+			}
+			if (this.gain_c_2 != null) {
+				AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.gain_c_2, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+				UnlockTracker.markCardAsSeen(this.gain_c_2.cardID);
+			}
+			if (this.gain_r_2 != null) {
+				AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, this.gain_r_2);
+			}
+		}
+		if (this.has_2b) {
+			if (this.loss_c_2b != null) {
+				AbstractDungeon.effectList.add(new PurgeCardEffect(this.loss_c_2b.makeCopy()));
+				AbstractDungeon.player.masterDeck.removeCard(this.loss_c_2b.cardID);
+				CardCrawlGame.sound.play("CARD_EXHAUST");
+			} else if (this.loss_r_2b != null) {
+				ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_loseRelic(this.loss_r_2b.relicId);
+			}
+			if (this.gain_c_2b != null) {
+				AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.gain_c_2b, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+				UnlockTracker.markCardAsSeen(this.gain_c_2b.cardID);
+			}
+			if (this.gain_r_2b != null) {
+				AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, this.gain_r_2b);
+			}
+		}
 		}
         break;
-	  case 3:
-		//Cast to Bash etc
-		GenericEventDialog.updateBodyText(RESULT_DIALOG_A);
-        CardCrawlGame.sound.play("CARD_EXHAUST");
-        AbstractDungeon.effectList.add(new PurgeCardEffect(new Dualcast()));
-        AbstractDungeon.player.masterDeck.removeCard("Dualcast");
-		AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Bash(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-		UnlockTracker.markCardAsSeen("Bash");
-		/*
-		if (this.hasCore) {
-			ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_loseRelic("Cracked Core");
-			AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, new IronCore());
-		}
-		*/
-        break;
-	  case 4:
-		//special modded fun stuff
-		
       default: 
         //logMetric("Wander");
         GenericEventDialog.updateBodyText(RESULT_DIALOG_B);

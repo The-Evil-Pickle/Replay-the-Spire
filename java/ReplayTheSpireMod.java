@@ -36,6 +36,7 @@ import java.lang.reflect.*;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.*;
 import java.util.*;
+import java.util.function.*;
 //SetUnlocksSubscriber, 
 
 @SpireInitializer
@@ -127,6 +128,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		r.flash();
         return true;
 	}
+	
 	
 	public static enum PotionRarity
 	{
@@ -337,6 +339,15 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		String randomKey = (String)potionsByRarity.get(rarity).get(rng.random.nextInt(potionsByRarity.get(rarity).size()));
 		return PotionHelper.getPotion(randomKey);
 	}
+	
+	public static enum ChaosMagicSetting
+	{
+		ALWAYS,  COST_ONLY,  NEVER,  STRICT;
+		
+		private ChaosMagicSetting() {}
+	}
+	
+	public static ChaosMagicSetting RingOfChaos_CompatibilityMode = ChaosMagicSetting.COST_ONLY;
 	
 	public ReplayTheSpireMod() {
 		logger.info("subscribing to postInitialize event");
@@ -562,18 +573,78 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		logger.info("end editting potions");
 	}
 	
+	
+	public int currentSettingsTab;
+	public int currentSettingsSubTab;
+	public ModPanel settingsPanel;
+	
+	public ModToggleButton chaos_button_1;
+	public ModToggleButton chaos_button_2;
+	public ModToggleButton chaos_button_3;
+	public ModToggleButton chaos_button_4;
+	
+	private ModToggleButton makeLabeledButton(final String labelText, final float xPos, final float yPos, final Color color, final BitmapFont font, final boolean enabled, final ModPanel p, final Consumer<ModLabel> labelUpdate, final Consumer<ModToggleButton> c) {
+		p.addLabel(labelText, xPos + 40.0f, yPos + 8.0f, (me) -> {});
+		return new ModToggleButton(xPos, yPos, enabled, false, p, c);
+	}
+	
 	@Override
     public void receivePostInitialize() {
-		//logger.info("begin editting json");
-		commonPotionChance = 9;
-		uncommonPotionChance = 7;
-		rarePotionChance = 4;
-		ultraPotionChance = 1;
-		shopPotionChance = 12;
 		
         // Mod badge
         Texture badgeTexture = new Texture(BADGE_IMG);
-        ModPanel settingsPanel = new ModPanel();
+		this.currentSettingsSubTab = 0;
+        this.settingsPanel = new ModPanel();
+		settingsPanel.addLabel("Avoid Ring Of Chaos magic number changes?", 350.0f, 750.0f, (me) -> {});
+		settingsPanel.addLabel("(Avoiding these changes makes RoC less buggy, but also have less interesting effect variety)", 350.0f, 700.0f, (me) -> {});
+		chaos_button_1 = makeLabeledButton("Don't avoid changes including magic number (more variety, more bugs)", 350.0f, 650.0f, Color.WHITE, FontHelper.buttonLabelFont, false, this.settingsPanel, (me) -> {}, me -> {
+            if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
+				me.enabled = true;
+			} else {
+				ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.ALWAYS;
+				this.chaos_button_1.enabled = true;
+				this.chaos_button_2.enabled = false;
+				this.chaos_button_3.enabled = false;
+				this.chaos_button_4.enabled = false;
+			}
+		});
+		settingsPanel.addUIElement(chaos_button_1);
+		chaos_button_2 = makeLabeledButton("Avoid changes including only magic number (compromise option)", 350.0f, 600.0f, Color.WHITE, FontHelper.buttonLabelFont, true, this.settingsPanel, (me) -> {}, me -> {
+            if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
+				me.enabled = true;
+			} else {
+				ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.COST_ONLY;
+				this.chaos_button_1.enabled = false;
+				this.chaos_button_2.enabled = true;
+				this.chaos_button_3.enabled = false;
+				this.chaos_button_4.enabled = false;
+			}
+		});
+		settingsPanel.addUIElement(chaos_button_2);
+		chaos_button_3 = makeLabeledButton("Avoid all magic number changes (less variety, full stability)", 350.0f, 550.0f, Color.WHITE, FontHelper.buttonLabelFont, false, this.settingsPanel, (me) -> {}, me -> {
+            if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
+				me.enabled = true;
+			} else {
+				ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.NEVER;
+				this.chaos_button_1.enabled = false;
+				this.chaos_button_2.enabled = false;
+				this.chaos_button_3.enabled = true;
+				this.chaos_button_4.enabled = false;
+			}
+		});
+		settingsPanel.addUIElement(chaos_button_3);
+		chaos_button_4 = makeLabeledButton("Never change any values on cards with magic number (for the extremely paranoid)", 350.0f, 500.0f, Color.WHITE, FontHelper.buttonLabelFont, false, this.settingsPanel, (me) -> {}, me -> {
+            if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
+				me.enabled = true;
+			} else {
+				ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.STRICT;
+				this.chaos_button_1.enabled = false;
+				this.chaos_button_2.enabled = false;
+				this.chaos_button_3.enabled = false;
+				this.chaos_button_4.enabled = true;
+			}
+		});
+		settingsPanel.addUIElement(chaos_button_4);
 		/*
         settingsPanel.addLabel("Potion Rarities", 1000.0f, 700.0f, (me) -> {});
 		
@@ -609,9 +680,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         
 		
 		logger.info("keywords");
-        final String[] necroNames = { "necrotic", "necrotic poison" };
+        final String[] necroNames = { "necrotic", "necrotic poison", "Necrotic" };
         BaseMod.addKeyword(necroNames, "A powerful poison that deals 2 damage each turn, but doesn't last as long.");
-		final String[] refundNames = { "refund", "refunds"};
+		final String[] refundNames = { "refund", "refunds", "Refund"};
 		BaseMod.addKeyword(refundNames, "Returns all energy spent on playing the card.");
 		
 		
@@ -651,11 +722,19 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new PetGhost(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfChaos(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfFury(), RelicType.SHARED);
+		BaseMod.addRelic(new RingOfPeace(), RelicType.SHARED);
+		BaseMod.addRelic(new RingOfFangs(), RelicType.SHARED);
+		BaseMod.addRelic(new RingOfPanic(), RelicType.SHARED);
+		BaseMod.addRelic(new RingOfSearing(), RelicType.SHARED);
+		BaseMod.addRelic(new RingOfShattering(), RelicType.SHARED);
+		BaseMod.addRelic(new RingOfHypnosis(), RelicType.SHARED);
 		//BaseMod.addRelic(new SimpleRune(), RelicType.SHARED);
 		BaseMod.addRelic(new SizzlingBlood(), RelicType.SHARED);
 		BaseMod.addRelic(new SnackPack(), RelicType.SHARED);
 		BaseMod.addRelic(new SnakeBasket(), RelicType.GREEN);
 		BaseMod.addRelic(new SneckoScales(), RelicType.GREEN);
+		BaseMod.addRelic(new TagBag(), RelicType.SHARED);
+		BaseMod.addRelic(new VampiricSpirits(), RelicType.GREEN);
         
         logger.info("done editting relics");
 	}
@@ -676,9 +755,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Massacre());
 		AddAndUnlockCard(new RunThrough());
 		AddAndUnlockCard(new DefyDeath());
+		AddAndUnlockCard(new DemonicInfusion());
 		logger.info("adding cards for Silent...");
 		AddAndUnlockCard(new AtomBomb());
-		AddAndUnlockCard(new ToxinWave());
+		AddAndUnlockCard(new DrainingMist());
 		AddAndUnlockCard(new FluidMovement());
 		AddAndUnlockCard(new PoisonDarts());
 		AddAndUnlockCard(new ToxinWave());
@@ -697,7 +777,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Voices());
 		AddAndUnlockCard(new LoomingEvil());
 		AddAndUnlockCard(new Amnesia());
-		AddAndUnlockCard(new FaultyEquipment());
+		//AddAndUnlockCard(new FaultyEquipment());
 		AddAndUnlockCard(new SpreadingInfection());
 		logger.info("adding unobtainable cards...");
 		AddAndUnlockCard(new PotOfGreed());

@@ -3,12 +3,12 @@
 
 This mod aims to expand upon the base game by adding lots of content. It is currently a work in progress, but you can download the [latest release](https://github.com/AstroPenguin642/Replay-the-Spire/releases) to help us improve it.
 
-Requires:
+### Requires:
  * BaseMod (https://github.com/daviscook477/BaseMod/releases)
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
-Currently adds:
- * 28 Relics (3 ironclad, 3 silent, 22 shared)
+### Currently adds:
+ * 29 Relics (3 ironclad, 3 silent, 23 shared)
  * 27 Cards (7 ironclad, 7 silent, 4 colorless, 9 curses)
  * 4 Events
  * 8 Potions
@@ -24,12 +24,13 @@ Some content originally from this mod is now in the official release of the game
 Name | Character | Rarity | Description
 --- | --- | --- | ---
 Ancient Bracer | Silent | Common | At the start of combat, gain 2 **Artifact**.
-Bandana | All | Common | Gain 2 **Thievery**.
+Bandana | All | Common | Gain 2 **Thievery** for the first 5 turns of combat.
 Baseball | All | Common | Upon pick up, a random card in your deck becomes free.
 Gremlin Food | All | Common | Whenever you rest, **Upgrade** a random card.
 Grinning Jar | All | Common | On pickup, add a Grinning Jar card to your deck. Obtain another copy for every 12 cards added to your deck.
 King of Hearts | Ironclad | Common | When you lose HP during your turn, gain twice that much block.
 Rune of Simplicity | All | Common | Strikes and Defends can be **Upgraded** any number of times. On pickup, **Upgrade** 2 randomly.
+Tag Bag | All | Common | Shops have all 3 kinds of sale tags. Sale tags can appear on colorless cards. On-sale cards are cheaper
 Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe, Ghost Defend, or Ghost Fetch to your hand (chosen randomly).
 Chameleon Ring | All | Uncommon | Potions are ~50% more potent. You may brew 2 random potions at rest sites.
 Divine Protection | All | Uncommon | Gain 8 temporary HP at the start of combat.
@@ -59,17 +60,17 @@ Name | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis
 Run Through | Red | Common | Attack | 1 | Target loses 8(11) HP and 5(8) Block.
 Abandon | Red | Uncommmon | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. **Ethereal**.
 Defy Death | Red | Uncommmon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat.
-Life Link | Red | Uncommmon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
+Life Bind | Red | Uncommmon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
 Massacre | Red | Uncommmon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
 Demonic Infusion | Red | Rare | Skill | X | Upgrade a card X(+1) times. **Exhaust**.
 Hemogenesis | Red | Rare | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2+X where X is the number of times previously upgraded in combat, or 3+X if the card has been upgraded outside of combat).
-Fluid Movement | Green | Commmon | Power | 1 | Retain up to 5(8) block between rounds.
+Fluid Movement | Green | Commmon | Power | 1 | Keep up to 5(8) block between rounds.
 Hidden Blade | Green | Commmon | Skill | 1 | Add a Shiv to your hand and draw 2(3) cards.
 Toxin Wave | Green | Uncommon | Skill | 1 | Apply 3(4) **Necrotic** **Poison** to ALL enemies.
 Draining Mist | Green | Uncommon | Skill | 3 | Apply 3 **Necrotic** **Poison** to a random enemy 2(3) times. Apply -1(-2) **Strength** to ALL enemies. **Exhaust**.
+Sneak Up | Green | Uncommon | Skill | 1 | **Innate.** Discard 1 card (upgrade removes). Gain 1 **Intangible.** **Exhaust.** **Ethereal.**
 Atom Bomb | Green | Rare | Attack | 4 | Deal 60(80) damage. Apply 3(4) **Poison** to ALL enemies. **Exhaust**.
 Poison Darts | Green | Rare | Skill | X | Apply 3(4) **Necrotic** **Poison** X times.
-Sneak Up | Green | Rare | Skill | 1 | **Innate.** Discard 1 card (upgrade removes). Gain 1 **Intangible.** **Exhaust.** **Ethereal.**
 Improvise | Colorless | Uncommmon | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(5) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | All non-attack damage you deal is increased by 2. (**Innate.**)
@@ -107,11 +108,50 @@ Doom Potion | Rare | Destroy an enemy after 10(13) turns.
 Cursed Concoction | Rare | Gain 3(2) Strength and 2(1) Dexterity. Add a random curse to your draw pile.
 
 
-Known Issues:
+# Events
+### Mirror Mist
+Exordium event.
+Presents 3 options. 
+The first two change based on the player's character. The third is always "Transform and Upgrade a random card."
+Character-specific options:
+ * Ironclad
+  * Bash -> Survivor & Neutralize
+  * Burning Blood -> Self Repair+
+ * Silent
+  * Ring of the Snake -> Sizzling Blood
+  * Survivor -> Leap, Neutralize -> Go For The Eyes
+ * Defect
+  * Dualcast -> Bash
+  * Cracked Core -> Ring of the Snake
+If an upgraded card is traded for a different card using this event, the corresponding new card will be upgraded.
+
+### Stuck
+Exordium event.
+A random card in the player's deck is selected as the target of this event.
+Options are to either upgrade or remove the selected card.
+
+### Trapped Chest
+Any-stage event.
+The player can choose to ignore the event or obtain rewards at the cost of triggering a trap.
+Options after the trap is triggered are:
+ * Take damage equal to 25% max HP
+ * 50% chance to take damage equal to 40% max HP
+ * Obtain Pain curse.
+The rewards from this event are a random combination of gold, cards, potions, and/or relics.
+If the player has Cursed Key, they can choose to obtain a random curse rather than trigger the trap.
+If the player has Matryoshka, they can use one charge of it to get twice as many rewards.
+
+### Dead Man's Rings
+Any-stage event.
+The player can choose to ignore the event, or find relics at the cost of 
+
+
+## Known Issues:
  * Cards altered by Ring of Chaos return to the normal version if the run is saved and returned to later.
  * Honey Jar + Question Card doesn't stack.
  
-Changes to Existing Content:
+## Changes to Existing Content:
  * Neow now has a wider variety of blessings to choose from.
+ * Shops sometimes have a "2 for 1" tag or "special edition" tag instead of the normal sale tag.
  * Corpse Explosion now applies 1x Necrotic Poison rather than dealing 2x damage.
  * If you have Honey Jar and Singing Bowl at the same time, using Singing Bowl's max hp gain option also picks a reward card at random.

@@ -21,7 +21,7 @@ public class RitualComponent extends CustomCard
     public static final String UPGRADE_DESCRIPTION;
     
     public RitualComponent() {
-        super("Ritual Component", RitualComponent.NAME, "cards/replay/crow_ritual.png", 0, RitualComponent.DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.UNCOMMON, CardTarget.SELF, 1);
+        super("Ritual Component", RitualComponent.NAME, "cards/replay/crow_ritual.png", 0, RitualComponent.DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF, 1);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
     }

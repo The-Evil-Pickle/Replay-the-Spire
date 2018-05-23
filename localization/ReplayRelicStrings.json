@@ -16,7 +16,7 @@
   },
   "Bandana": {
 	"NAME": "Bandana",
-	"FLAVOR": "The finest article of pickpocketing attire.",
+	"FLAVOR": "The finest article of pick-pocketing attire.",
     "DESCRIPTIONS": [
 	"Gain #b",
 	" #yThievery for the first #b",
@@ -137,7 +137,7 @@
   },
   "Ooze Armor": {
 	"NAME": "Ooze Armor",
-	"FLAVOR": "Armor with the flexability and toughness of living slime.",
+	"FLAVOR": "Armor with the flexibility and toughness of living slime.",
     "DESCRIPTIONS": [
 	" NL Gain 4 #yMalleable, -2 #ySlow, and 2 #ySlimed at the start of combat",
 	"Gain [R] and draw a card at the start of each turn.", 
@@ -211,9 +211,9 @@
   },
   "Durian": {
     "NAME": "Durian",
-	"FLAVOR": "text missing",
+	"FLAVOR": "Smells awful, tastes great.",
     "DESCRIPTIONS": [
-		"At the start of your turn, reduce your Weak, Voulnerable, and Frail to #b2. NL On pickup, increase your max HP by #b"
+		"At the start of your turn, reduce your #yWeak, #yVulnerable, and #yFrail to #b2. NL On pickup, increase your max HP by #b"
 	]
   },
   "Basket Of Snakes": {
@@ -225,36 +225,25 @@
 		" #yNecrotic #yPoison each time it deals unblocked damage."
 	]
   },
-  "Counterbalance_old": {
-    "NAME": "Counterbalance",
-	"FLAVOR": "text missing",
-    "DESCRIPTIONS": [
-		"Only active during boss and elite fights. NL Gives #b",
-		" effects. NL Can be upgraded at rest sites to increase number of given effects. NL Effects change each floor, based on floor boss. NL",
-		" NL The first time you draw a Status card each round, Exhaust it and draw #b1 card.",
-		" NL Enemy Block gain is halved.",
-		" NL Enemy Strength gain is halved.",
-		" NL All enemy Minions are Weakened, and are destroyed #b5 turns after being summoned.",
-		" NL At the start of your turn, reduce your Weak, Voulnerable, and Frail by #b1.",
-		" NL Enemies cannot heal or clear their debuffs.",
-		" NL At the start of each round, steal all Artifact from enemies.",
-		" NL Enemies cannot clear their debuffs.",
-		" NL At the start of each round, reduce enemy Time Warp by #b1 and increase enemy Slow by #b1.",
-		" NL At the start of combat, reduce the Strength of all enemies by #b2.",
-		" NL At the start of combat, gain #b5 #yMalleable.",
-		" NL Once per combat, you can become Intangible.",
-		" NL At the start of combat, gain #b1 Strength",
-		" NL At the start of combat, gain #b1 Dexterity.",
-		" NL At the start of combat, heal #b10 HP.",
-		" NL At the start of each round, gain #b3 Block.",
-		" NL Conserve up to #b2 unspent energy between rounds."
-	]
-  },
   "Counterbalance": {
     "NAME": "Counterbalance",
 	"FLAVOR": "For every strength, there is a weakness.",
     "DESCRIPTIONS": [
 		"During boss and elite fights enemy #yStrength gain, #yBlock gain, and #yHealing is reduced by half."
+	]
+  },
+  "Golden Egg": {
+    "NAME": "Golden Egg",
+	"FLAVOR": "Not approved by the FDA.",
+    "DESCRIPTIONS": [
+		"Whenever you add a #yRare card to your deck, it is #yUpgraded."
+	]
+  },
+  "Blue Doll": {
+    "NAME": "Tag Bag",
+	"FLAVOR": "A colorful collection.",
+    "DESCRIPTIONS": [
+		"Shops have all 3 kinds of sale tags. NL Sale tags can appear on colorless cards. NL On-sale cards are cheaper."
 	]
   },
   "Vampiric Spirits": {
@@ -285,7 +274,7 @@
 	"FLAVOR": "Emergency rations for robots.",
     "DESCRIPTIONS": [
 		"At the end of each round, conserve up to #b",
-		" energy. NL Increase this effect by #b1 until end of combat each time you Evoke Plasma (up to #b",
+		" energy. NL Increase this effect by #b1 until end of combat each time you #yEvoke #yPlasma (up to #b",
 		" max)."
 	]
   },
@@ -303,7 +292,7 @@
   },
   "Ring of Fury": {
 	"NAME": "Ring of Fury",
-	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"FLAVOR": "A cursed ring that heightens both senses and senselessness.",
 	"DESCRIPTIONS": [
 	"At the start of combat gain #b",
 	" #yStrength and lose #b",
@@ -312,16 +301,16 @@
   },
   "Ring of Peace": {
 	"NAME": "Ring of Peace",
-	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"FLAVOR": "Peace never lasts long in the Spire.",
 	"DESCRIPTIONS": [
 	"At the start of combat apply #b",
-	" #yWeak and #b",
-	" #yBuffer to ALL fighters."
+	" #yWeak to ALL fighters and gain #b",
+	" #yBuffer"
 	]
   },
   "Ring of Panic": {
 	"NAME": "Ring of Panic",
-	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"FLAVOR": "Fear serves its purpose.",
 	"DESCRIPTIONS": [
 	"At the start of combat you become #yConfused for #b",
 	" turns. NL Gain [E] [E] at the start of rounds 1 and 2. NL Gain [E] at the start of round 3."
@@ -329,7 +318,7 @@
   },
   "Ring of Hypnosis": {
 	"NAME": "Ring of Hypnosis",
-	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"FLAVOR": "The strange colors and reflected lights draw the mind down a wandering path.",
 	"DESCRIPTIONS": [
 	"All enemies start with #b",
 	" #yConfusion."
@@ -337,7 +326,7 @@
   },
   "Ring of Searing": {
 	"NAME": "Ring of Searing",
-	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"FLAVOR": "A cursed ring that burns everything around it to ash.",
 	"DESCRIPTIONS": [
 	"At the start of your turn, ALL enemies above #b",
 	"% Max HP lose #b",
@@ -356,7 +345,7 @@
   },
   "Ring of Fangs": {
 	"NAME": "Ring of Fangs",
-	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"FLAVOR": "The fangs poke into the wearer, making wielding weapons difficult.",
 	"DESCRIPTIONS": [
 	"At the start of combat lose #b",
 	" #yStrength. NL Whenever you deal unblocked attack damage, apply #b1 #yPoison."
@@ -364,7 +353,7 @@
   },
   "Ring of Shattering": {
 	"NAME": "Ring of Shattering",
-	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"FLAVOR": "What is broken can be made better for it.",
 	"DESCRIPTIONS": [
 	"At the start of combat you gain #b",
 	" #yFocus and lose #b",

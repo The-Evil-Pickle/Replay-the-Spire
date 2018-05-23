@@ -17,7 +17,7 @@ public class ReplayApplyPowerPatch {
 	public static void Prefix(ApplyPowerAction __instance) {
 		float duration = (float)ReflectionHacks.getPrivate((Object)__instance, (Class)AbstractGameAction.class, "duration");
 		float startDuration = (float)ReflectionHacks.getPrivate((Object)__instance, (Class)ApplyPowerAction.class, "startingDuration");
-		if (!__instance.target.isDying && !__instance.target.isDead && duration == startDuration) {
+		if (__instance != null && __instance.target != null && !__instance.target.isDying && !__instance.target.isDead && duration == startDuration) {
 			AbstractPower powerToApply = (AbstractPower)ReflectionHacks.getPrivate((Object)__instance, (Class)ApplyPowerAction.class, "powerToApply");
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Mirror") && __instance.target.isPlayer && __instance.source != null && __instance.source != __instance.target) {
 				if (powerToApply.ID.equals("Weakened")) {

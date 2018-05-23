@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.CardGroup.CardGroupType;
 import java.util.ArrayList;
 import java.lang.*;
+import ReplayTheSpireMod.*;
 
 public class RingOfChaos
   extends AbstractRelic
@@ -51,15 +52,24 @@ public class RingOfChaos
 		return false;
 	}
 	
+	if (c.type == AbstractCard.CardType.POWER && ReplayTheSpireMod.RingOfChaos_CompatibilityMode != ReplayTheSpireMod.ChaosMagicSetting.ALWAYS) {
+		return false;
+	}
+	
 	ArrayList<ChaosUpgradeType> upOp = new ArrayList<ChaosUpgradeType>();
 	ArrayList<ChaosUpgradeType> dwnOp = new ArrayList<ChaosUpgradeType>();
 	
 	if (c.baseMagicNumber > 0 && c.rawDescription.contains("!M")) {
-		upOp.add(ChaosUpgradeType.MAGIC);
-		if (c.baseMagicNumber > 1) {
-			dwnOp.add(ChaosUpgradeType.MAGIC);
+		if (ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.STRICT) {
+			return false;
 		}
-	}
+		if (ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.ALWAYS) {
+			upOp.add(ChaosUpgradeType.MAGIC);
+			if (c.baseMagicNumber > 1) {
+				dwnOp.add(ChaosUpgradeType.MAGIC);
+			}
+		}
+	}  
 	if (c.baseDamage > -1 && c.rawDescription.contains("!D")) {
 		upOp.add(ChaosUpgradeType.DAMAGE);
 		if (c.baseDamage > 1) {
@@ -73,11 +83,15 @@ public class RingOfChaos
 		}
 	}
 	if (c.cost >= 0){
-		if (c.cost != 3) {
-			dwnOp.add(ChaosUpgradeType.COST);
-		}
-		if (c.cost > 0) {
-			upOp.add(ChaosUpgradeType.COST);
+		AbstractCard checkCard = c.makeCopy();
+		checkCard.upgrade();
+		if (!c.canUpgrade() || checkCard.cost == c.cost) {
+			if (c.cost != 3) {
+				dwnOp.add(ChaosUpgradeType.COST);
+			}
+			if (c.cost > 0) {
+				upOp.add(ChaosUpgradeType.COST);
+			}
 		}
 	}
 	if (dwnOp.size() > 0) {
@@ -94,11 +108,27 @@ public class RingOfChaos
 					return false;
 				}
 			}
+			if (downside == ChaosUpgradeType.COST) {
+				if (c.baseMagicNumber > 0 && c.rawDescription.contains("!M") && 
+				(ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.COST_ONLY)) {
+					upOp.add(ChaosUpgradeType.MAGIC);
+					if (c.baseMagicNumber > 1) {
+						dwnOp.add(ChaosUpgradeType.MAGIC);
+					}
+				}
+			}
 			ChaosUpgradeType upside = upOp.remove(AbstractDungeon.miscRng.random(upOp.size() - 1));
 			if (dwnOp.contains(upside)) {
 				dwnOp.remove(upside);
 			}
 			if (upside == ChaosUpgradeType.COST) {
+				if (c.baseMagicNumber > 0 && c.rawDescription.contains("!M") && 
+				(ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.COST_ONLY)) {
+					upOp.add(ChaosUpgradeType.MAGIC);
+					if (c.baseMagicNumber > 1) {
+						dwnOp.add(ChaosUpgradeType.MAGIC);
+					}
+				}
 				switch(c.cost){
 					case 1:
 						downtarg = 0.4f;
