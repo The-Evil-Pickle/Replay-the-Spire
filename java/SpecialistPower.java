@@ -1,5 +1,6 @@
 package com.megacrit.cardcrawl.powers;
 
+import ReplayTheSpireMod.*;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -8,6 +9,8 @@ import com.megacrit.cardcrawl.unlock.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.core.*;
+import com.badlogic.gdx.*;
+import com.badlogic.gdx.graphics.*;
 
 public class SpecialistPower extends AbstractPower
 {
@@ -28,11 +31,17 @@ public class SpecialistPower extends AbstractPower
             this.amount = -999;
         }
         this.updateDescription();
-        //this.loadRegion("strength");
-		this.img = ImageMaster.loadImage("images/powers/32/venomology.png");
+        this.loadRegion("specialist");
+		//this.img = ImageMaster.loadImage("images/powers/32/venomology.png");
         this.canGoNegative = true;
     }
     
+	@Override
+    protected void loadRegion(final String fileName) {
+        this.region48 = ReplayTheSpireMod.powerAtlas.findRegion("48/" + fileName);
+		this.region128 = ReplayTheSpireMod.powerAtlas.findRegion("128/" + fileName);
+    }
+	
     @Override
     public void stackPower(final int stackAmount) {
         this.fontScale = 8.0f;

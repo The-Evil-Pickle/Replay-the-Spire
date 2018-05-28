@@ -19,14 +19,14 @@ public class RunThrough extends CustomCard
     public static final String NAME;
     public static final String DESCRIPTION;
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 8;
+    private static final int ATTACK_DMG = 9;
     private static final int BASE_DRAW = 1;
     private static final int POOL = 1;
     
     public RunThrough() {
         super("Run Through", RunThrough.NAME, "cards/replay/runThrough.png", 1, RunThrough.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.COMMON, CardTarget.ENEMY, 1);
         this.baseDamage = RunThrough.ATTACK_DMG;
-        this.baseMagicNumber = 5;
+        this.baseMagicNumber = 4;
         this.magicNumber = this.baseMagicNumber;
     }
     
@@ -45,7 +45,7 @@ public class RunThrough extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(3);
+            this.upgradeDamage(2);
             this.upgradeMagicNumber(3);
         }
     }

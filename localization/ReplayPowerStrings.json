@@ -18,7 +18,7 @@
   "Reflection": {
     "NAME": "Reflection",
     "DESCRIPTIONS": [
-	"Whenever you gain #yVulnerable or #yWeakened, it is also applied to the enemy that sent it."
+	"Whenever you completely block damage, deal that much damage to the attacker."
     ]
   },
   "Necrotic Poison": {
@@ -64,6 +64,20 @@
     "DESCRIPTIONS": [
 	"The next Attack you play applies #b",
 	" Necrotic Poison each time it deals unblocked damage."
+    ]
+  },
+  "Firewall": {
+    "NAME": "Firewall",
+    "DESCRIPTIONS": [
+	"When you block damage, #yChannel #b",
+	" #yHellfire."
+    ]
+  },
+  "Crystallizer": {
+    "NAME": "Crystallizer",
+    "DESCRIPTIONS": [
+	"At the end of your turn, if at least half your orb slots are empty, #yChannel #b",
+	" #yCrystal. NL Counts slots containing #yGlass as empty."
     ]
   },
   "Friendly": {

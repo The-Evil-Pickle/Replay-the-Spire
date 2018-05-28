@@ -1,7 +1,7 @@
 {
 	"Ancient Bracer": {
-	"NAME": "Ancient Bracer",
-	"FLAVOR": "A piece of armor from an age long past.",
+	"NAME": "Antivirus Software",
+	"FLAVOR": "The robotic equivalent to a vaccine.",
     "DESCRIPTIONS": [
 	"At the start of each combat, gain #b", 
 	" #yArtifact."
@@ -55,11 +55,11 @@
 	" used each turn."
 	]
   },
-  "Funnel": {
+  "ReplayFunnel": {
 	"NAME": "Funnel",
 	"FLAVOR": "Use every last drop.",
     "DESCRIPTIONS": [
-	"At the end of your turn, unused energy is converted to 4 #yBlock each."
+	"At the end of your turn, unused energy is converted to #b4 #yBlock each."
 	]
   },
   "Garlic": {
@@ -186,13 +186,6 @@
 	" max HP on pickup."
 	]
   },
-  "White Beast Statue": {
-	"NAME": "White Beast Statue",
-	"FLAVOR": "A small white statue of a creature you have never seen before.",
-    "DESCRIPTIONS": [
-	"Potions always drop after combat. NL Lower chance of getting rare potions."
-	]
-  },
   "Chameleon Ring": {
 	"NAME": "Chameleon Ring",
 	"FLAVOR": "A ring that glimmers with slowly shifting colors.",
@@ -239,11 +232,25 @@
 		"Whenever you add a #yRare card to your deck, it is #yUpgraded."
 	]
   },
+  "Quantum Egg": {
+    "NAME": "Quantum Egg",
+	"FLAVOR": "Tastes like [REDACTED].",
+    "DESCRIPTIONS": [
+		"Whenever a card is created during combat, it is #yUpgraded."
+	]
+  },
   "Blue Doll": {
     "NAME": "Tag Bag",
 	"FLAVOR": "A colorful collection.",
     "DESCRIPTIONS": [
 		"Shops have all 3 kinds of sale tags. NL Sale tags can appear on colorless cards. NL On-sale cards are cheaper."
+	]
+  },
+  "Byrd Skull": {
+    "NAME": "Byrd Skull",
+	"FLAVOR": "The skull of a fallen Byrd. NL ...Get it? Fallen?",
+    "DESCRIPTIONS": [
+		"Your #yInnate cards have #yRefund #b1 and draw #b1 card."
 	]
   },
   "Vampiric Spirits": {
@@ -276,6 +283,13 @@
 		"At the end of each round, conserve up to #b",
 		" energy. NL Increase this effect by #b1 until end of combat each time you #yEvoke #yPlasma (up to #b",
 		" max)."
+	]
+  },
+  "Geode": {
+    "NAME": "Geode",
+	"FLAVOR": "Break it open!",
+    "DESCRIPTIONS": [
+		"The first time you lose HP each combat, trigger the passive effect of all your channeled orbs and #yChannel #b1 #yCrystal."
 	]
   },
   "Solidified Core": {
@@ -364,7 +378,7 @@
     "NAME": "Iron Core",
 	"FLAVOR": "Powered by unceasing flames and rage.",
     "DESCRIPTIONS": [
-		"At the start of combat, Channel #b1 Fire. NL On pickup, some Red cards are added to the card pool."
+		"At the start of combat, Channel #b1 #yHellfire. NL Certain Red cards can appear in futre card reward screens."
 	]
   },
   "m_BlackCat":{

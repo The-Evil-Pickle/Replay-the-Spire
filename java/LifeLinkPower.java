@@ -1,22 +1,16 @@
 package com.megacrit.cardcrawl.powers;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.LocalizedStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
+import ReplayTheSpireMod.*;
+import com.megacrit.cardcrawl.actions.*;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.actions.utility.*;
+import com.megacrit.cardcrawl.core.*;
+import com.megacrit.cardcrawl.monsters.*;
+import com.megacrit.cardcrawl.dungeons.*;
+import com.megacrit.cardcrawl.localization.*;
+import com.badlogic.gdx.*;
+import com.badlogic.gdx.graphics.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -43,16 +37,23 @@ public class LifeLinkPower
 	} else {
 		this.description = (DESCRIPTIONS[1]);
 	}
-    //loadRegion("hex");
-	this.img = new Texture("img/powers/LifeBind.png");
+    loadRegion("lifebind");
+	//this.img = new Texture("img/powers/LifeBind.png");
+	
 	if (!this.sender){
 		this.type = AbstractPower.PowerType.DEBUFF;
 	}
-	logger.info("LBP");
-	logger.info(this.owner.name);
-	logger.info(this.sender);
+	//logger.info("LBP");
+	//logger.info(this.owner.name);
+	//logger.info(this.sender);
   }
   
+	@Override
+    protected void loadRegion(final String fileName) {
+        this.region48 = ReplayTheSpireMod.powerAtlas.findRegion("48/" + fileName);
+		this.region128 = ReplayTheSpireMod.powerAtlas.findRegion("128/" + fileName);
+    }
+	
   public void stackPower(int stackAmount)
   {
 	if (this.sender){
@@ -67,19 +68,19 @@ public class LifeLinkPower
   }
   
   public int onAttacked(final DamageInfo info, final int damageAmount) {
-	  logger.info("LB damage");
-	  logger.info(this.owner.name);
-	  logger.info(damageAmount);
+	  //logger.info("LB damage");
+	  //logger.info(this.owner.name);
+	  //logger.info(damageAmount);
 	if (!this.sender || damageAmount <= 0){
-		logger.info("!sender");
+		//logger.info("!sender");
 		return damageAmount;
 	}
-	logger.info("CP1");
+	//logger.info("CP1");
 	for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
       if (!m.isDeadOrEscaped()) {
-		  logger.info("Checking " + m.name);
+		  //logger.info("Checking " + m.name);
 		if (m.hasPower("Life Bind")) {
-			logger.info("Has Power");
+			//logger.info("Has Power");
 			DamageInfo newinfo = new DamageInfo(this.owner, damageAmount * m.getPower("Life Bind").amount, DamageInfo.DamageType.THORNS);
 			newinfo.applyEnemyPowersOnly(m);
 			AbstractDungeon.actionManager.addToTop(new DamageAction(m, newinfo, AbstractGameAction.AttackEffect.FIRE));

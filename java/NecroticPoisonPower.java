@@ -1,24 +1,20 @@
 package com.megacrit.cardcrawl.powers;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.unique.NecroPoisonLoseHpAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.characters.AbstractPlayer.PlayerClass;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.LocalizedStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.MonsterGroup;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import com.megacrit.cardcrawl.powers.PoisonPower;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
+import ReplayTheSpireMod.*;
+import com.megacrit.cardcrawl.actions.*;
+import com.megacrit.cardcrawl.actions.*;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.unique.*;
+import com.megacrit.cardcrawl.characters.*;
+import com.megacrit.cardcrawl.core.*;
+import com.megacrit.cardcrawl.dungeons.*;
+import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.*;
+import com.megacrit.cardcrawl.rooms.*;
+import com.megacrit.cardcrawl.unlock.*;
+import com.megacrit.cardcrawl.powers.*;
+import com.badlogic.gdx.*;
+import com.badlogic.gdx.graphics.*;
 
 public class NecroticPoisonPower
   extends AbstractPower
@@ -37,13 +33,19 @@ public class NecroticPoisonPower
     this.source = source;
     this.amount = poisonAmt;
     updateDescription();
-    //loadRegion("poison");
-	this.img = new Texture("img/powers/NecroticPoison.png");
+    loadRegion("poison");
+	//this.img = new Texture("img/powers/NecroticPoison.png");
     this.type = AbstractPower.PowerType.DEBUFF;
     
     this.isTurnBased = true;
   }
   
+	@Override
+    protected void loadRegion(final String fileName) {
+        this.region48 = ReplayTheSpireMod.powerAtlas.findRegion("48/" + fileName);
+		this.region128 = ReplayTheSpireMod.powerAtlas.findRegion("128/" + fileName);
+    }
+	
   public void updateDescription()
   {
     if ((this.owner == null) || (this.owner.isPlayer)) {

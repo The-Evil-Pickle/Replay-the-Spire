@@ -25,9 +25,6 @@ public class PoisonedStrike
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Poisoned Strike");
   public static final String NAME = cardStrings.NAME;
   public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-  private static final int ATTACK_DMG = 5;
-  private static final int UPG_DMG = 3;
-  private static final int POOL = 1;
   
   public PoisonedStrike()
   {
@@ -51,7 +48,7 @@ public class PoisonedStrike
     if (!this.upgraded)
     {
       upgradeName();
-      upgradeDamage(2);
+      upgradeDamage(1);
     }
   }
 }

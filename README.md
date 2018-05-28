@@ -8,7 +8,7 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
 ### Currently adds:
- * 29 Relics (3 ironclad, 3 silent, 23 shared)
+ * 32 Relics (3 ironclad, 3 silent, 3 defect, 23 shared)
  * 27 Cards (7 ironclad, 7 silent, 4 colorless, 9 curses)
  * 4 Events
  * 8 Potions
@@ -23,7 +23,7 @@ Some content originally from this mod is now in the official release of the game
 # Relics
 Name | Character | Rarity | Description
 --- | --- | --- | ---
-Ancient Bracer | Silent | Common | At the start of combat, gain 2 **Artifact**.
+Antivirus Software | Defect | Common | At the start of combat, gain 2 **Artifact**.
 Bandana | All | Common | Gain 2 **Thievery** for the first 5 turns of combat.
 Baseball | All | Common | Upon pick up, a random card in your deck becomes free.
 Gremlin Food | All | Common | Whenever you rest, **Upgrade** a random card.
@@ -32,6 +32,7 @@ King of Hearts | Ironclad | Common | When you lose HP during your turn, gain twi
 Rune of Simplicity | All | Common | Strikes and Defends can be **Upgraded** any number of times. On pickup, **Upgrade** 2 randomly.
 Tag Bag | All | Common | Shops have all 3 kinds of sale tags. Sale tags can appear on colorless cards. On-sale cards are cheaper
 Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe, Ghost Defend, or Ghost Fetch to your hand (chosen randomly).
+Carrot | Defect | Uncommon | Gain 3 **Focus** at the start of combat, then lose 1 **Focus** on the next 3 turns.
 Chameleon Ring | All | Uncommon | Potions are ~50% more potent. You may brew 2 random potions at rest sites.
 Divine Protection | All | Uncommon | Gain 8 temporary HP at the start of combat.
 Funnel | All | Uncommon | At the end of your turn, gain 4 block for each unspent energy.
@@ -39,11 +40,13 @@ Garlic | All | Uncommon | Enemies lose 3 **Strength** at the start of combat, th
 Iron Hammer | All | Uncommon | During the first turn, drawing a card upgrades it until the end of combat.
 Onion Ring | All | Uncommon | Gain 3 **Strength** at the start of combat, then lose 1 **Strength** on the next 3 turns.
 Snack Pack | All | Uncommon | Every time you play 3 **Attacks** in a single turn, gain 2 HP.
+Solar Panel | Defect | Uncommon | At the end of combat, gain 2 HP for each of your active **Lightning** orbs.
 Arrowhead | All | Rare | You may **Upgrade** 2 cards whenever you smith.
 Basket of Snakes | Silent | Rare | Every 5th **Attack** you play applies 2 **Necrotic** **Poison** upon dealing unblocked damage.
 Counterbalance | All | Rare | During boss and elite fights all enemy Strength gain, Block gain, and healing is reduced by half.
 Durian | All | Rare | Gain 5 Max HP on pickup. At the start of your turn, reduce your **Weakened,** **Frail,** and/or **Vulnerable** to 2 (if > 2).
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
+Vampiric Spirits | Silent | Rare | During the first turn of combat, 25% of all unblocked attack damage you deal is retuned as health.
 Chemical X | All | Shop | Your cost X effects are increased by 2.
 GuideBook | All | Shop | On pickup, upgrade 2 cards randomly. Prioritizes rarer cards.
 Honey Jar | All | Boss | Draw 1 more card each turn. Retain up to 1 card each turn. Card rewards have 1 more option to chose from. You cannot skip rewards.
@@ -57,7 +60,7 @@ Ring of Chaos | All | Boss | Some card rewards have randomly altered stats and e
 # Cards
 Name | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis)
 --- | --- | --- | --- | --- | ---
-Run Through | Red | Common | Attack | 1 | Target loses 8(11) HP and 5(8) Block.
+Run Through | Red | Common | Attack | 1 | Target loses 9(11) HP and 4(7) Block.
 Abandon | Red | Uncommmon | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. **Ethereal**.
 Defy Death | Red | Uncommmon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat.
 Life Bind | Red | Uncommmon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
@@ -93,6 +96,9 @@ Ritual Component | Colorless | Special | Skill | 0 | Draw 1 card.
 # Keywords
 Name | Type | Description
 --- | --- | ---
+Crystal | Orb | **Passive:** Gives +2 **Focus** to adjacent orbs. **Evoke:** Gain an orb slot if you have less than 3.
+Glass | Orb | No **Passive** effect. When **Evoked**, if you have more than 3 orb slots, consumes your leftmost one and **Evokes** any occupying orb.
+Hellfire | Orb | **Passive:** Gives +2 **Strength** at the start of your turn that is removed at the end of your turn. **Evoke:** Apply 1 **Vulnerable** to a random enemy.
 Necrotic Poison | Power (Debuff) | An alternate kind of Poison. Does double damage, but is reduced by half each turn (rounding down). Normal Poison does not count down while Necrotic Poison is applied.
 
 # Potions
@@ -121,7 +127,7 @@ Character-specific options:
   * Ring of the Snake -> Sizzling Blood
   * Survivor -> Leap, Neutralize -> Go For The Eyes
  * Defect
-  * Dualcast -> Bash
+  * Dualcast -> Bash, Cracked Core -> Iron Core
   * Cracked Core -> Ring of the Snake
 If an upgraded card is traded for a different card using this event, the corresponding new card will be upgraded.
 
@@ -143,7 +149,25 @@ If the player has Matryoshka, they can use one charge of it to get twice as many
 
 ### Dead Man's Rings
 Any-stage event.
-The player can choose to ignore the event, or find relics at the cost of 
+The player can choose to ignore the event, or find relics with a risk to become cursed.
+The first two options give 1 relic, and a 50% chance to recieve a curse. The curses each one offers are different each time the event is encountered, chosen randomly.
+The third option gives 2 relics, and has a 75% chance to recieve a random curse. Unlike the first two options, you can't tell what curse you'll get from this option before you select it.
+Only certain relics can be recieved from this event (see Event Relics). 
+
+
+## Event Relics
+Name | Event | Description
+--- | --- | ---
+Sizzling Blood | Mirror Mist (as Silent) | Restore 4 HP at the end of combat. Gain 4 MAx HP on pick up.
+Iron Core | Mirror Mist (as Defect) | At the start of combat, **Channel** 1 **Hellfire.** Certain red cards can appear in future card rewards. Random orb effects (e.g. Chaos) have a chance to **Channel** **Hellfire.**
+Ring of Fury | Dead Man's Rings | At the start of combat, gain 2 **Strength** and lose 1 **Dexterity.**
+Ring of Peace | Dead Man's Rings | At the start of combat, apply 3 **Weak** to ALL fighters and gain 1 **Buffer.**
+Ring of Panic | Dead Man's Rings | At the start of combat, become **Confused** for 3 turns. Gain 2 energy on the first and second turns, and 1 energy on the third.
+Ring of Hypnosis | Dead Man's Rings | All enemies start with 5 **Confusion.**
+Ring of Searing | Dead Man's Rings (as Ironclad or modded) | At the start of your turn, ALL enemies above 50% max HP lose 10% of their HP, and you lose 5 HP if you are above 75% max HP.
+Ring of Fangs | Dead Man's Rings (as Silent or modded) | At the start of combat, lose 3 **Strength** and gain 1 **Envenom.**
+Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 3 **Focus** and lose 2 orb slots.
+
 
 
 ## Known Issues:
@@ -153,5 +177,6 @@ The player can choose to ignore the event, or find relics at the cost of
 ## Changes to Existing Content:
  * Neow now has a wider variety of blessings to choose from.
  * Shops sometimes have a "2 for 1" tag or "special edition" tag instead of the normal sale tag.
+ * Random orb channeling effects (e.g. Chaos) will now sometimes channel Crystal.
  * Corpse Explosion now applies 1x Necrotic Poison rather than dealing 2x damage.
  * If you have Honey Jar and Singing Bowl at the same time, using Singing Bowl's max hp gain option also picks a reward card at random.

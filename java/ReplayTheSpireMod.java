@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.colorless.*;
 import com.megacrit.cardcrawl.cards.curses.*;
 import com.megacrit.cardcrawl.cards.red.*;
 import com.megacrit.cardcrawl.cards.green.*;
+import com.megacrit.cardcrawl.cards.blue.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -59,6 +60,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	}
 	
 	public static final Logger logger = LogManager.getLogger(ReplayTheSpireMod.class.getName());
+	public static TextureAtlas powerAtlas;
 	
 	private static final String MODNAME = "ReplayTheSpireMod";
     private static final String AUTHOR = "AstroPenguin642, The_Evil_Pickle, Stewart";
@@ -71,6 +73,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	protected static int rarePotionChance = 4;
 	protected static int ultraPotionChance = 1;
 	protected static int shopPotionChance = 12;
+	
+	public static final AbstractCard.CardColor IronCoreColor = AbstractCard.CardColor.RED;
 	
 	//public static EnumMap<ReplayTheSpireMod.PotionRarity, int> potionCosts = new EnumMap<ReplayTheSpireMod.PotionRarity, int>(ReplayTheSpireMod.PotionRarity.class);
 	
@@ -350,6 +354,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static ChaosMagicSetting RingOfChaos_CompatibilityMode = ChaosMagicSetting.COST_ONLY;
 	
 	public ReplayTheSpireMod() {
+		
 		logger.info("subscribing to postInitialize event");
         BaseMod.subscribeToPostInitialize(this);
 		
@@ -385,7 +390,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		
 		@SuppressWarnings("unused")
 		ReplayTheSpireMod replayMod = new ReplayTheSpireMod();
-		
 		
 		
 		
@@ -591,6 +595,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	@Override
     public void receivePostInitialize() {
 		
+		ReplayTheSpireMod.powerAtlas = new com.badlogic.gdx.graphics.g2d.TextureAtlas(Gdx.files.internal("powers/replayPowers.atlas"));
+		
         // Mod badge
         Texture badgeTexture = new Texture(BADGE_IMG);
 		this.currentSettingsSubTab = 0;
@@ -682,8 +688,16 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		logger.info("keywords");
         final String[] necroNames = { "necrotic", "necrotic poison", "Necrotic" };
         BaseMod.addKeyword(necroNames, "A powerful poison that deals 2 damage each turn, but doesn't last as long.");
-		final String[] refundNames = { "refund", "refunds", "Refund"};
-		BaseMod.addKeyword(refundNames, "Returns all energy spent on playing the card.");
+		final String[] refundNames = { "refund", "refunds", "Refund", "Refunds"};
+		BaseMod.addKeyword(refundNames, "Returns energy spent on playing the card, up to the Refund value.");
+		final String[] crystalNames = { "crystal"};
+		BaseMod.addKeyword(crystalNames, "Orb: Gives adjacent orbs #b+2 #yFocus. When #yEvokeed, If you have less than #b3 orb slots, gain an orb slot. NL #yPassive effect is not affected by other #yCrystal orbs.");
+		final String[] hfNames = { "hellfire"};
+		BaseMod.addKeyword(hfNames, "Orb: At the start of your turn, gain #b+2 #yStrength until the end of your turn. NL When #yEvoked, applies 1 #yVulnerable to a random enemy.");
+		final String[] glNames = { "glass"};
+		BaseMod.addKeyword(glNames, "Orb: No #yPassive effect. When #yEvoked while you have more than #b3 orb slots, consumes your leftmost orb slot and #yEvokes the occupying orb.");
+		final String[] rfNames = { "reflection"};
+		BaseMod.addKeyword(rfNames, "Goes down by 1 each round, is removed on 0. While active, completely blocking Attack damage reflects it back at the attacker.");
 		
 		
 		logger.info("end post init");
@@ -697,10 +711,15 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		logger.info("begin editting relics");
         
         // Add relics
-		BaseMod.addRelic(new AncientBracer(), RelicType.GREEN);
+		//BaseMod.addRelic(new AncientBracer(), RelicType.GREEN);
+		RelicLibrary.addBlue(new AncientBracer());
+		RelicLibrary.addBlue(new SolarPanel());
+		RelicLibrary.addBlue(new Carrot());
+		RelicLibrary.addBlue(new Geode());
 		BaseMod.addRelic(new Arrowhead(), RelicType.SHARED);
 		BaseMod.addRelic(new Bandana(), RelicType.SHARED);
 		BaseMod.addRelic(new Baseball(), RelicType.SHARED);
+		BaseMod.addRelic(new ByrdSkull(), RelicType.GREEN);
 		BaseMod.addRelic(new ChameleonRing(), RelicType.SHARED);
 		BaseMod.addRelic(new ChemicalX(), RelicType.SHARED);
 		BaseMod.addRelic(new CounterBalance(), RelicType.SHARED);
@@ -709,17 +728,20 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new ElectricBlood(), RelicType.RED);
 		BaseMod.addRelic(new Funnel(), RelicType.SHARED);
 		BaseMod.addRelic(new Garlic(), RelicType.SHARED);
+		BaseMod.addRelic(new GoldenEgg(), RelicType.SHARED);
 		BaseMod.addRelic(new GremlinFood(), RelicType.SHARED);
 		BaseMod.addRelic(new GrinningJar(), RelicType.SHARED);
 		BaseMod.addRelic(new GuideBook(), RelicType.SHARED);
 		BaseMod.addRelic(new HoneyJar(), RelicType.SHARED);
 		BaseMod.addRelic(new IronHammer(), RelicType.SHARED);
+		BaseMod.addRelic(new IronCore(), RelicType.SHARED);
 		BaseMod.addRelic(new KingOfHearts(), RelicType.RED);
 		BaseMod.addRelic(new Mirror(), RelicType.SHARED);
 		BaseMod.addRelic(new OnionRing(), RelicType.SHARED);
 		BaseMod.addRelic(new OozeArmor(), RelicType.RED);
 		BaseMod.addRelic(new PainkillerHerb(), RelicType.SHARED);
 		BaseMod.addRelic(new PetGhost(), RelicType.SHARED);
+		BaseMod.addRelic(new QuantumEgg(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfChaos(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfFury(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfPeace(), RelicType.SHARED);
@@ -764,6 +786,15 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new ToxinWave());
 		AddAndUnlockCard(new HiddenBlade());
 		AddAndUnlockCard(new SneakUp());
+		logger.info("adding cards for Defect...");
+		AddAndUnlockCard(new PanicButton());
+		AddAndUnlockCard(new MirrorShield());
+		AddAndUnlockCard(new BasicCrystalCard());
+		AddAndUnlockCard(new TimeBomb());
+		AddAndUnlockCard(new WeaponsOverheat());
+		AddAndUnlockCard(new ReflectiveLens());
+		AddAndUnlockCard(new Crystallizer());
+		AddAndUnlockCard(new ReplayRNGCard());
 		logger.info("adding colorless cards...");
 		AddAndUnlockCard(new Improvise());
 		AddAndUnlockCard(new PoisonedStrike());
@@ -786,6 +817,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new GhostFetch());
 		AddAndUnlockCard(new RitualComponent());
 		AddAndUnlockCard(new DarkEchoRitualCard());
+		AddAndUnlockCard(new IC_ScorchingBeam());
+		AddAndUnlockCard(new IC_FireWall());
+		AddAndUnlockCard(new IC_BasicHellfireCard());
 		logger.info("done editting cards");
 	}
 	
@@ -858,7 +892,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         String uiStrings = Gdx.files.internal(jsonPath + "ReplayUIStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(UIStrings.class, uiStrings);
-		
+        // OrbStrings
+		/*
+        String orbStrings = Gdx.files.internal(jsonPath + "ReplayOrbStrings.json").readString(
+        		String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(OrbStrings.class, orbStrings);
+		*/
 		logger.info("done editting strings");
 	}
 	

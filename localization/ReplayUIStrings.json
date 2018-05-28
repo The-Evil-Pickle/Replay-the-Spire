@@ -4,5 +4,11 @@
 		"Brew",
 		"Brew 2 random potions."
 	]
+  },
+  "Claw Rake": {
+    "TEXT": [
+		"Select card to discard.",
+		"Select cards to discard."
+	]
   }
 }

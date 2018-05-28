@@ -57,8 +57,12 @@
   },
   "Demonic Infusion": {
     "NAME": "Demonic Infusion",
-    "DESCRIPTION": "Upgrade a Skill or Attack in your hand X times. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Upgrade a Skill or Attack in your hand X+ !M! times. NL Exhaust."
+    "DESCRIPTION": "Upgrade a Skill or Attack in your hand X times. NL Refund 1. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Upgrade a Skill or Attack in your hand X+ !M! times. NL Refund 1. NL Exhaust."
+  },
+  "Single Out": {
+    "NAME": "Single Out",
+    "DESCRIPTION": "Apply !M! Vulnerable. NL Draw 1 card. If it is not an Attack or Power, Exhaust it."
   },
   "Cursed Blade": {
     "NAME": "Cursed Blade",
@@ -70,16 +74,34 @@
   },
   "ReplayGash": {
     "NAME": "Claw Rake",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Choose a card from your draw pile to discard. NL All Claw cards deal !M! additional damage this combat."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Choose !M! cards from your draw pile to discard. NL All Claw cards deal 1 additional damage this combat for each card discarded, not including Status or Curse cards."
   },
   "Crystallizer": {
     "NAME": "Crystallizer",
-    "DESCRIPTION": "Lose !M! Focus. NL At the end of your turn, if at least half your orb slots are empty, Channel 1 Crystal.",
-    "UPGRADE_DESCRIPTION": "At the end of your turn, if at least half your orb slots are empty, Channel 1 Crystal."
+    "DESCRIPTION": "At the end of your turn, if at least half your orb slots are empty, Channel 1 Crystal.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the end of your turn, if at least half your orb slots are empty, Channel 1 Crystal."
   },
   "Mirror Shield": {
     "NAME": "Mirror Shield",
-    "DESCRIPTION": "Channel 1 Frost. NL Channel 1 Crystal. NL Each time you completely block incoming Attack damage this round, deal that much damage back to the attacker."
+    "DESCRIPTION": "Channel 1 Frost. NL Channel 1 Crystal. NL Gain !M! Reflection."
+  },
+  "Reflective Lens": {
+    "NAME": "Reflective Lens",
+    "DESCRIPTION": "Channel 1 Glass. NL Gain 1 Focus. NL Gain !M! Reflection."
+  },
+  "Panic Button": {
+    "NAME": "Panic Button",
+    "DESCRIPTION": "Evoke all your orbs. NL Draw !M! cards. NL Exhaust. NL Retain."
+  },
+  "ReplayRNGCard": {
+    "NAME": "RNG",
+    "DESCRIPTION": "Channel X random orbs.",
+    "UPGRADE_DESCRIPTION": "Channel (X+1) random orbs."
+  },
+  "BasicCrystalCard": {
+    "NAME": "Crystal Conduit",
+    "DESCRIPTION": "Channel 1 Crystal.",
+    "UPGRADE_DESCRIPTION": "Channel 1 Crystal. NL Channel 1 random orb."
   },
   "ReplayIlluminate": {
     "NAME": "Illuminate",
@@ -91,12 +113,17 @@
   },
   "Time Bomb": {
     "NAME": "Time Bomb",
-    "DESCRIPTION": "Lose 2 Focus. NL Channel 1 Crystal. NL Channel 1 Dark and trigger its passive !M! times. NL Exhaust."
+    "DESCRIPTION": "Gain 2 Orb Slots. NL Channel 2 Glass. NL Channel 1 Dark and trigger its passive !M! times. NL Exhaust."
   },
   "Improvise": {
     "NAME": "Improvise",
     "DESCRIPTION": "Choose 1 of 3 random cards to add to your hand. It costs 1 less. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Choose 1 of 3 random cards to upgrade and add to your hand. NL It costs 1 less. NL Exhaust."
+  },
+  "gfdsgsfdg": {
+    "NAME": "gfdsgsfdg",
+    "DESCRIPTION": "Draw X. NL Refund !M!",
+    "UPGRADE_DESCRIPTION": "Draw X. NL Refund !M!"
   },
   "Poisoned Strike": {
     "NAME": "Poisoned Strike",
@@ -200,10 +227,47 @@
   },
   "Scorching Beam": {
     "NAME": "Scorching Beam",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Channel !M! Fire."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Channel !M! Hellfire."
   },
   "Firewall": {
     "NAME": "Firewall",
-    "DESCRIPTION": "Gain !B! Block. NL Each time you block incoming damage this round, Channel !M! Fire."
+    "DESCRIPTION": "Gain !B! Block. NL Each time you block incoming damage this round, Channel !M! Hellfire."
+  },
+  "IC_BasicHellfireCard": {
+    "NAME": "Molten Core",
+    "DESCRIPTION": "Channel 1 Hellfire. NL Exhaust."
+  },
+  "WeaponsOverheat": {
+    "NAME": "Overheat Weapons",
+    "DESCRIPTION": "Gain 1 Focus if you have <0, Lose 1 Focus if you have >0. NL Channel 1 Hellfire. NL Channel 1 Glass. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Focus if you have <0, Lose 1 Focus if you have >0. NL Channel 1 Hellfire. NL Ethereal."
+  },
+  "OrbOptionCard_Lightning": {
+    "NAME": "Lightning",
+    "DESCRIPTION": "Channel !M! Lightning. NL Exhaust. NL Ethereal."
+  },
+  "OrbOptionCard_Dark": {
+    "NAME": "Dark",
+    "DESCRIPTION": "Channel !M! Dark. NL Exhaust. NL Ethereal."
+  },
+  "OrbOptionCard_Frost": {
+    "NAME": "Frost",
+    "DESCRIPTION": "Channel !M! Frost. NL Exhaust. NL Ethereal."
+  },
+  "OrbOptionCard_Plasma": {
+    "NAME": "Plasma",
+    "DESCRIPTION": "Channel !M! Plasma. NL Exhaust. NL Ethereal."
+  },
+  "OrbOptionCard_Crystal": {
+    "NAME": "Crystal",
+    "DESCRIPTION": "Channel !M! Crystal. NL Exhaust. NL Ethereal."
+  },
+  "OrbOptionCard_Fire": {
+    "NAME": "Hellfire",
+    "DESCRIPTION": "Channel !M! Hellfire. NL Exhaust. NL Ethereal."
+  },
+  "OrbOptionCard_Glass": {
+    "NAME": "Glass",
+    "DESCRIPTION": "Gain !M! orb slot. NL Channel !M! Glass. NL Exhaust. NL Ethereal."
   }
 }

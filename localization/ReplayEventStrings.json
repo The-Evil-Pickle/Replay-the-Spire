@@ -74,7 +74,7 @@
 	"OPTIONS": [
 		"[Left Hand] #gObtain #ga #gRelic. #r50%: #rBecome #rCursed - ",
 		"[Right Hand] #gObtain #ga #gRelic. #r50%: #rBecome #rCursed - ",
-		"[Both Hands] #gObtain #g2 #gRelics. #r50%: #rBecome #rCursed #r(random)",
+		"[Both Hands] #gObtain #g2 #gRelics. #r75%: #rBecome #rCursed #r(random)",
 		"[Leave]"
 	]
   },

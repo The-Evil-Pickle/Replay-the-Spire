@@ -166,12 +166,12 @@ public class MirrorMist
 		}
 		case DEFECT: {
 			this.has_1 = CardHelper.hasCardWithID("Dualcast");
-			//this.has_1b = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Cracked Core");
+			this.has_1b = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Cracked Core");
 			this.has_2 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Cracked Core");
 			this.loss_c_1 = new Dualcast();
 			this.gain_c_1 = new Bash();
-			//this.loss_r_1b = new CrackedCore();
-			//this.gain_r_1b = new IronCore();
+			this.loss_r_1b = new CrackedCore();
+			this.gain_r_1b = new IronCore();
 			this.loss_r_2 = new CrackedCore();
 			this.gain_r_2 = new SnakeRing();
 			break;

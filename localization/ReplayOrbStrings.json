@@ -15,14 +15,14 @@
     ],
     "NAME": "Crystal"
   },
-  "Fire": {
+  "Hellfire": {
     "DESCRIPTION": [
       "#yPassive: At the start of turn, gain #b",
       " #yStrength until end of turn. NL #yEvoke: Gain #b",
       " #yStrength until end of turn and apply #yVulnerable to a random enemy #b",
 	  " time(s)."
     ],
-    "NAME": "Fire"
+    "NAME": "Hellfire"
   },
   "Acid": {
     "DESCRIPTION": [

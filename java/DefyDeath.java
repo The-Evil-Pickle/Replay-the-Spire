@@ -20,7 +20,7 @@ public class DefyDeath extends CustomCard
     public static final String NAME;
     public static final String DESCRIPTION;
     private static final int COST = 5;
-    private static final int DEFENSE_GAINED = 14;
+    private static final int DEFENSE_GAINED = 10;
     private static final int POOL = 1;
     
     public DefyDeath() {
@@ -64,12 +64,14 @@ public class DefyDeath extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBlock(2);
+            this.upgradeBlock(4);
+			/*
 			if (AbstractDungeon.currMapNode == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT || AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-				this.upgradeBaseCost(4);
+				this.upgradeBaseCost(5);
 			} else {
 				this.modifyCostForCombat(-1);
 			}
+			*/
         }
     }
     
