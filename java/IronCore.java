@@ -64,10 +64,10 @@ public class IronCore extends AbstractRelic
 		//tmpPool.add(new WeaponsOverheat());
 		//tmpPool.add(new IC_ScorchingBeam());
 		//tmpPool.add(new IC_FireWall());
-		AbstractDungeon.commonCardPool.addToTop(new IC_BasicHellfireCard());
-		AbstractDungeon.srcCommonCardPool.addToBottom(new IC_BasicHellfireCard());
-		AbstractDungeon.uncommonCardPool.addToTop(new WeaponsOverheat());
-		AbstractDungeon.srcUncommonCardPool.addToBottom(new WeaponsOverheat());
+		//AbstractDungeon.commonCardPool.addToTop(new IC_BasicHellfireCard());
+		//AbstractDungeon.srcCommonCardPool.addToBottom(new IC_BasicHellfireCard());
+		AbstractDungeon.commonCardPool.addToTop(new WeaponsOverheat());
+		AbstractDungeon.srcCommonCardPool.addToBottom(new WeaponsOverheat());
 		AbstractDungeon.uncommonCardPool.addToTop(new IC_ScorchingBeam());
 		AbstractDungeon.srcUncommonCardPool.addToBottom(new IC_ScorchingBeam());
 		AbstractDungeon.rareCardPool.addToTop(new IC_FireWall());

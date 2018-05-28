@@ -791,7 +791,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new MirrorShield());
 		AddAndUnlockCard(new BasicCrystalCard());
 		AddAndUnlockCard(new TimeBomb());
-		AddAndUnlockCard(new WeaponsOverheat());
 		AddAndUnlockCard(new ReflectiveLens());
 		AddAndUnlockCard(new Crystallizer());
 		AddAndUnlockCard(new ReplayRNGCard());
@@ -819,7 +818,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new DarkEchoRitualCard());
 		AddAndUnlockCard(new IC_ScorchingBeam());
 		AddAndUnlockCard(new IC_FireWall());
-		AddAndUnlockCard(new IC_BasicHellfireCard());
+		//AddAndUnlockCard(new IC_BasicHellfireCard());
+		AddAndUnlockCard(new WeaponsOverheat());
 		logger.info("done editting cards");
 	}
 	

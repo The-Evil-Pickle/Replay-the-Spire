@@ -8,8 +8,8 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
 ### Currently adds:
- * 32 Relics (3 ironclad, 3 silent, 3 defect, 23 shared)
- * 27 Cards (7 ironclad, 7 silent, 4 colorless, 9 curses)
+ * 36 Relics (3 ironclad, 4 silent, 4 defect, 25 shared)
+ * 34 Cards (7 ironclad, 7 silent, 7 defect, 4 colorless, 9 curses)
  * 4 Events
  * 8 Potions
 
@@ -26,6 +26,8 @@ Name | Character | Rarity | Description
 Antivirus Software | Defect | Common | At the start of combat, gain 2 **Artifact**.
 Bandana | All | Common | Gain 2 **Thievery** for the first 5 turns of combat.
 Baseball | All | Common | Upon pick up, a random card in your deck becomes free.
+Byrd Skull | Silent | Common | Your **Innate** cards have **Refund 1 and draw 1 card.
+Geode | Defect | Common | The first time you lose HP in combat, trigger the passive effect of your orbs and **Channel** 1 **Crystal.**
 Gremlin Food | All | Common | Whenever you rest, **Upgrade** a random card.
 Grinning Jar | All | Common | On pickup, add a Grinning Jar card to your deck. Obtain another copy for every 12 cards added to your deck.
 King of Hearts | Ironclad | Common | When you lose HP during your turn, gain twice that much block.
@@ -37,10 +39,12 @@ Chameleon Ring | All | Uncommon | Potions are ~50% more potent. You may brew 2 r
 Divine Protection | All | Uncommon | Gain 8 temporary HP at the start of combat.
 Funnel | All | Uncommon | At the end of your turn, gain 4 block for each unspent energy.
 Garlic | All | Uncommon | Enemies lose 3 **Strength** at the start of combat, then gain 1 **Strength** on the next 3 turns.
+Golden Egg | All | Uncommon | Whenever you obtain a rare card, it is **Upgraded.**
 Iron Hammer | All | Uncommon | During the first turn, drawing a card upgrades it until the end of combat.
 Onion Ring | All | Uncommon | Gain 3 **Strength** at the start of combat, then lose 1 **Strength** on the next 3 turns.
 Snack Pack | All | Uncommon | Every time you play 3 **Attacks** in a single turn, gain 2 HP.
 Solar Panel | Defect | Uncommon | At the end of combat, gain 2 HP for each of your active **Lightning** orbs.
+Quantum Egg | All | Uncommon | Whenever a card is created during combat, it is **Upgraded.**
 Arrowhead | All | Rare | You may **Upgrade** 2 cards whenever you smith.
 Basket of Snakes | Silent | Rare | Every 5th **Attack** you play applies 2 **Necrotic** **Poison** upon dealing unblocked damage.
 Counterbalance | All | Rare | During boss and elite fights all enemy Strength gain, Block gain, and healing is reduced by half.
@@ -65,7 +69,7 @@ Abandon | Red | Uncommmon | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that 
 Defy Death | Red | Uncommmon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat.
 Life Bind | Red | Uncommmon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
 Massacre | Red | Uncommmon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
-Demonic Infusion | Red | Rare | Skill | X | Upgrade a card X(+1) times. **Exhaust**.
+Demonic Infusion | Red | Rare | Skill | X | Upgrade a card X(+1) times. **Refund** 1. **Exhaust**.
 Hemogenesis | Red | Rare | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2+X where X is the number of times previously upgraded in combat, or 3+X if the card has been upgraded outside of combat).
 Fluid Movement | Green | Commmon | Power | 1 | Keep up to 5(8) block between rounds.
 Hidden Blade | Green | Commmon | Skill | 1 | Add a Shiv to your hand and draw 2(3) cards.
@@ -74,8 +78,15 @@ Draining Mist | Green | Uncommon | Skill | 3 | Apply 3 **Necrotic** **Poison** t
 Sneak Up | Green | Uncommon | Skill | 1 | **Innate.** Discard 1 card (upgrade removes). Gain 1 **Intangible.** **Exhaust.** **Ethereal.**
 Atom Bomb | Green | Rare | Attack | 4 | Deal 60(80) damage. Apply 3(4) **Poison** to ALL enemies. **Exhaust**.
 Poison Darts | Green | Rare | Skill | X | Apply 3(4) **Necrotic** **Poison** X times.
+Reflective Lens | Blue | Uncommon | Power | 1 | **Channel** 1 **Glass.** Gain 1 **Focus.** Gain 2(4) **Reflection.**
+Panic Button | Blue | Uncommon | Skill | 0 | **Evoke** all your orbs. Draw 2(4) cards. **Exhaust.** **Retain.**
+Crystal Conduit | Blue | Uncommon | Skill | 1 | **Channel** 1 **Crystal** (and 1 random orb).
+Crystallizer | Blue | Rare | Power | 0 | (**Innate.**) At the end of your turn, if at least half your orb slots are empty, **Channel** 1 **Crystal.**
+Mirror Shield | Blue | Rare | Skill | 2 | **Channel** 1 **Frost.** **Channel** 1 **Crystal.** Gain 2(3) **Reflection.**
+Time Bomb | Blue | Rare | Skill | 1 | Gain 2 orb slots. **Channel** 2 **Glass.** **Channel** 1 **Dark,** and trigger its passive 2(3) times. **Exhaust.**
+RNG | Blue | Rare | Skill | X | **Channel** X(+1) random orbs.
 Improvise | Colorless | Uncommmon | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
-Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(5) **Poison**. Is affected by damage modifiers.
+Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | All non-attack damage you deal is increased by 2. (**Innate.**)
 Awakened One Ritual | Colorless | Rare | Power | 0 | Add 6(8) Ritual Components to your discard pile. If you ever have 5 or more in your hand at once, replace them with Attacks that deal 42 damage.
 Amnesia | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, **Exhaust** your hand. **Ethereal**.
@@ -96,10 +107,12 @@ Ritual Component | Colorless | Special | Skill | 0 | Draw 1 card.
 # Keywords
 Name | Type | Description
 --- | --- | ---
+Refund | Misc | When a card with **Refund** is played, energy spent on it is returned (up to the stated amount).
 Crystal | Orb | **Passive:** Gives +2 **Focus** to adjacent orbs. **Evoke:** Gain an orb slot if you have less than 3.
 Glass | Orb | No **Passive** effect. When **Evoked**, if you have more than 3 orb slots, consumes your leftmost one and **Evokes** any occupying orb.
 Hellfire | Orb | **Passive:** Gives +2 **Strength** at the start of your turn that is removed at the end of your turn. **Evoke:** Apply 1 **Vulnerable** to a random enemy.
 Necrotic Poison | Power (Debuff) | An alternate kind of Poison. Does double damage, but is reduced by half each turn (rounding down). Normal Poison does not count down while Necrotic Poison is applied.
+Reflection | Power (Buff) | Each time you completely block attack damage, that damage is reflected back at the attacker.
 
 # Potions
 Name | Rarity | Description (post-ascension-11 changes in parenthesis)
@@ -169,14 +182,15 @@ Ring of Fangs | Dead Man's Rings (as Silent or modded) | At the start of combat,
 Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 3 **Focus** and lose 2 orb slots.
 
 
-
-## Known Issues:
- * Cards altered by Ring of Chaos return to the normal version if the run is saved and returned to later.
- * Honey Jar + Question Card doesn't stack.
- 
 ## Changes to Existing Content:
  * Neow now has a wider variety of blessings to choose from.
  * Shops sometimes have a "2 for 1" tag or "special edition" tag instead of the normal sale tag.
  * Random orb channeling effects (e.g. Chaos) will now sometimes channel Crystal.
  * Corpse Explosion now applies 1x Necrotic Poison rather than dealing 2x damage.
  * If you have Honey Jar and Singing Bowl at the same time, using Singing Bowl's max hp gain option also picks a reward card at random.
+
+
+## Known Issues:
+ * Cards altered by Ring of Chaos return to the normal version if the run is saved and returned to later.
+ * Honey Jar + Question Card doesn't stack.
+ 

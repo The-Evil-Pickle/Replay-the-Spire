@@ -26,7 +26,7 @@ public class ReflectiveLens extends CustomCard
         super(ReflectiveLens.ID, ReflectiveLens.NAME, "cards/replay/mirrorShield.png", ReflectiveLens.COST, ReflectiveLens.DESCRIPTION, CardType.POWER, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
         this.showEvokeValue = true;
         this.showEvokeOrbCount = 1;
-		this.baseMagicNumber = 2;
+		this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
     }
     

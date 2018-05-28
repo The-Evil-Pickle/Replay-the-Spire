@@ -12,7 +12,7 @@ public class QuantumEgg extends AbstractRelic
     public static final String ID = "Quantum Egg";
     
     public QuantumEgg() {
-        super("Quantum Egg", "quantumEgg.png", RelicTier.COMMON, LandingSound.SOLID);
+        super("Quantum Egg", "quantumEgg.png", RelicTier.UNCOMMON, LandingSound.SOLID);
     }
     
     @Override
