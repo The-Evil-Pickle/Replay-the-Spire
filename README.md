@@ -1,5 +1,6 @@
 # Replay the Spire
 #### Expansion mod for Slay the Spire by AstroPenguin642, The_Evil_Pickle, and Stewartisme.
+###### (Currently maintained by The_Evil_Pickle)
 
 This mod aims to expand upon the base game by adding lots of content. It is currently a work in progress, but you can download the [latest release](https://github.com/AstroPenguin642/Replay-the-Spire/releases) to help us improve it.
 
@@ -26,7 +27,7 @@ Name | Character | Rarity | Description
 Antivirus Software | Defect | Common | At the start of combat, gain 2 **Artifact**.
 Bandana | All | Common | Gain 2 **Thievery** for the first 5 turns of combat.
 Baseball | All | Common | Upon pick up, a random card in your deck becomes free.
-Byrd Skull | Silent | Common | Your **Innate** cards have **Refund 1 and draw 1 card.
+Byrd Skull | Silent | Common | Your **Innate** cards have **Refund** 1 and draw 1 card.
 Geode | Defect | Common | The first time you lose HP in combat, trigger the passive effect of your orbs and **Channel** 1 **Crystal.**
 Gremlin Food | All | Common | Whenever you rest, **Upgrade** a random card.
 Grinning Jar | All | Common | On pickup, add a Grinning Jar card to your deck. Obtain another copy for every 12 cards added to your deck.
@@ -47,13 +48,13 @@ Solar Panel | Defect | Uncommon | At the end of combat, gain 2 HP for each of yo
 Quantum Egg | All | Uncommon | Whenever a card is created during combat, it is **Upgraded.**
 Arrowhead | All | Rare | You may **Upgrade** 2 cards whenever you smith.
 Basket of Snakes | Silent | Rare | Every 5th **Attack** you play applies 2 **Necrotic** **Poison** upon dealing unblocked damage.
-Counterbalance | All | Rare | During boss and elite fights all enemy Strength gain, Block gain, and healing is reduced by half.
+Counterbalance | All | Rare | During boss and elite fights all enemy **Strength** gain, **Block** gain, and healing is reduced by half.
 Durian | All | Rare | Gain 5 Max HP on pickup. At the start of your turn, reduce your **Weakened,** **Frail,** and/or **Vulnerable** to 2 (if > 2).
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
 Vampiric Spirits | Silent | Rare | During the first turn of combat, 25% of all unblocked attack damage you deal is retuned as health.
 Chemical X | All | Shop | Your cost X effects are increased by 2.
-GuideBook | All | Shop | On pickup, upgrade 2 cards randomly. Prioritizes rarer cards.
-Honey Jar | All | Boss | Draw 1 more card each turn. Retain up to 1 card each turn. Card rewards have 1 more option to chose from. You cannot skip rewards.
+GuideBook | All | Shop | On pickup, **Upgrade** 2 cards randomly. Prioritizes rarer cards.
+Honey Jar | All | Boss | Draw 1 more card each turn. **Retain** up to 1 card each turn. Card rewards have 1 more option to chose from. You cannot skip rewards.
 Ooze Armor | Ironclad | Boss | Gain 1 energy and draw 1 card at the start of each turn. At the start of combat, gain Slow (resets to -2) and Malleable (resets to 4), and shuffle 2 Slimed into your draw pile.
 Sweet Flower | All | Boss | Gain 1 more energy each turn. Map displays much less information.
 Electric Blood | Ironclad | Boss | Gain 2 energy at the start of each turn. When you spend energy, lose that much HP, excluding the first 2 energy spent each turn.
@@ -130,41 +131,54 @@ Cursed Concoction | Rare | Gain 3(2) Strength and 2(1) Dexterity. Add a random c
 # Events
 ### Mirror Mist
 Exordium event.
+
 Presents 3 options. 
 The first two change based on the player's character. The third is always "Transform and Upgrade a random card."
+
 Character-specific options:
- * Ironclad
+ * **Ironclad:**
   * Bash -> Survivor & Neutralize
   * Burning Blood -> Self Repair+
- * Silent
+ * **Silent:**
   * Ring of the Snake -> Sizzling Blood
   * Survivor -> Leap, Neutralize -> Go For The Eyes
- * Defect
+ * **Defect:**
   * Dualcast -> Bash, Cracked Core -> Iron Core
   * Cracked Core -> Ring of the Snake
 If an upgraded card is traded for a different card using this event, the corresponding new card will be upgraded.
 
 ### Stuck
 Exordium event.
+
 A random card in the player's deck is selected as the target of this event.
+
 Options are to either upgrade or remove the selected card.
+
 
 ### Trapped Chest
 Any-stage event.
+
 The player can choose to ignore the event or obtain rewards at the cost of triggering a trap.
+
 Options after the trap is triggered are:
  * Take damage equal to 25% max HP
  * 50% chance to take damage equal to 40% max HP
  * Obtain Pain curse.
 The rewards from this event are a random combination of gold, cards, potions, and/or relics.
+
 If the player has Cursed Key, they can choose to obtain a random curse rather than trigger the trap.
+
 If the player has Matryoshka, they can use one charge of it to get twice as many rewards.
 
 ### Dead Man's Rings
 Any-stage event.
+
 The player can choose to ignore the event, or find relics with a risk to become cursed.
+
 The first two options give 1 relic, and a 50% chance to recieve a curse. The curses each one offers are different each time the event is encountered, chosen randomly.
+
 The third option gives 2 relics, and has a 75% chance to recieve a random curse. Unlike the first two options, you can't tell what curse you'll get from this option before you select it.
+
 Only certain relics can be recieved from this event (see Event Relics). 
 
 
