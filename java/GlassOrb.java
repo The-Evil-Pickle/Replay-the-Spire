@@ -19,6 +19,8 @@ public class GlassOrb extends AbstractOrb
     //public static final String[] DESC;
     private static Texture img1;
     private static Texture img2;
+	private static final Color validEvokeColor = Color.GREEN.cpy();
+	private static final Color invalidEvokeColor = Color.RED.cpy();
 	private AbstractOrb showingEvoke;
     
     public GlassOrb() {
@@ -42,7 +44,12 @@ public class GlassOrb extends AbstractOrb
     @Override
     public void updateDescription() {
 		this.applyFocus();
-        this.description = "#yPassive: No effect. NL #yEvoke: If you have more than #b" + this.passiveAmount + " orb slots, consumes your leftmost orb slot and #yEvokes any orb occupying it.";//EmptyOrbSlot.DESC[0];
+		if (AbstractDungeon.player.hasPower("Reflective Lens")) {
+			this.description = "#yPassive: At the end of your turn, gain #b" + Integer.toString(this.passiveAmount + AbstractDungeon.player.getPower("Reflective Lens").amount) + " #yReflection.";
+		} else {
+			this.description = "#yPassive: No effect.";
+		}
+		this.description += " NL #yEvoke: If you have more than #b" + this.evokeAmount + " orb slots, consumes your leftmost orb slot and #yEvokes any non-glass orb occupying it.";//EmptyOrbSlot.DESC[0];
     }
     
     @Override
@@ -50,7 +57,9 @@ public class GlassOrb extends AbstractOrb
 		if (AbstractDungeon.player.maxOrbs > this.evokeAmount && AbstractDungeon.player.maxOrbs > 1) {
 			//AbstractDungeon.player.evokeNewestOrb();
 			if (!AbstractDungeon.player.orbs.isEmpty() && !(AbstractDungeon.player.orbs.get(AbstractDungeon.player.orbs.size() - 1) instanceof EmptyOrbSlot)) {
-				AbstractDungeon.player.orbs.get(AbstractDungeon.player.orbs.size() - 1).onEvoke();
+				if (!(AbstractDungeon.player.orbs.get(AbstractDungeon.player.orbs.size() - 1) instanceof GlassOrb)) {
+					AbstractDungeon.player.orbs.get(AbstractDungeon.player.orbs.size() - 1).onEvoke();
+				}
 				final AbstractOrb orbSlot = new EmptyOrbSlot();
 				/*for (int i = 1; i < this.orbs.size(); ++i) {
 					Collections.swap(this.orbs, i, i - 1);
@@ -81,10 +90,24 @@ public class GlassOrb extends AbstractOrb
         sb.setColor(this.c);
         sb.draw(GlassOrb.img2, this.cX - 48.0f - this.bobEffect.y / 8.0f, this.cY - 48.0f + this.bobEffect.y / 8.0f, 48.0f, 48.0f, 96.0f, 96.0f, this.scale, this.scale, 0.0f, 0, 0, 96, 96, false, false);
         sb.draw(GlassOrb.img1, this.cX - 48.0f + this.bobEffect.y / 8.0f, this.cY - 48.0f - this.bobEffect.y / 8.0f, 48.0f, 48.0f, 96.0f, 96.0f, this.scale, this.scale, 0.0f, 0, 0, 96, 96, false, false);
-        //this.renderText(sb);
+        this.renderText(sb);
         this.hb.render(sb);
     }
-    
+	
+    @Override
+    protected void renderText(final SpriteBatch sb) {
+		if (this.showEvokeValue) {
+			if (AbstractDungeon.player.maxOrbs > this.evokeAmount) {
+				FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.evokeAmount), this.cX + AbstractOrb.NUM_X_OFFSET, this.cY + this.bobEffect.y / 2.0f + AbstractOrb.NUM_Y_OFFSET, new Color(GlassOrb.validEvokeColor.r, GlassOrb.validEvokeColor.g, GlassOrb.validEvokeColor.b, this.c.a), this.fontScale);
+			} else {
+				FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.evokeAmount), this.cX + AbstractOrb.NUM_X_OFFSET, this.cY + this.bobEffect.y / 2.0f + AbstractOrb.NUM_Y_OFFSET, new Color(GlassOrb.invalidEvokeColor.r, GlassOrb.invalidEvokeColor.g, GlassOrb.invalidEvokeColor.b, this.c.a), this.fontScale);
+			}
+		}
+		else if (AbstractDungeon.player.hasPower("Reflective Lens")) {
+			FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.passiveAmount + AbstractDungeon.player.getPower("Reflective Lens").amount), this.cX + AbstractOrb.NUM_X_OFFSET, this.cY + this.bobEffect.y / 2.0f + AbstractOrb.NUM_Y_OFFSET, this.c, this.fontScale);
+		}
+    }
+	
 	@Override
     public void showEvokeValue() {
         this.showEvokeValue = true;

@@ -33,7 +33,7 @@ public class Delirium extends CustomCard
             this.useBlueCandle(p);
         }
         else {
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TPH_ConfusionPower(AbstractDungeon.player, 1, false), 1));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TPH_ConfusionPower(AbstractDungeon.player, 1, true), 1));
             //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
         }
     }

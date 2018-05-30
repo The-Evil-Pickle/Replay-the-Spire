@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.monsters.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.defect.*;
+import com.megacrit.cardcrawl.actions.unique.*;
 import com.megacrit.cardcrawl.orbs.*;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -26,15 +27,15 @@ public class ReflectiveLens extends CustomCard
         super(ReflectiveLens.ID, ReflectiveLens.NAME, "cards/replay/mirrorShield.png", ReflectiveLens.COST, ReflectiveLens.DESCRIPTION, CardType.POWER, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
         this.showEvokeValue = true;
         this.showEvokeOrbCount = 1;
-		this.baseMagicNumber = 3;
+		this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
     }
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ChannelAction(new GlassOrb()));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FocusPower(p, 1), 1));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ReflectionPower(p, this.magicNumber), this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ReflectiveLensPower(p, this.magicNumber), this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new CrystalOrbUpdateAction());
     }
     
     @Override
@@ -46,8 +47,8 @@ public class ReflectiveLens extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-			this.upgradeMagicNumber(2);
-			//this.upgradeBaseCost(ReflectiveLens.COST - 1);
+			//this.upgradeMagicNumber(2);
+			this.upgradeBaseCost(ReflectiveLens.COST - 1);
         }
     }
     

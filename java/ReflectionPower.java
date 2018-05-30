@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.badlogic.gdx.graphics.*;
+import ReplayTheSpireMod.*;
 
 public class ReflectionPower
   extends AbstractPower
@@ -35,9 +36,15 @@ public class ReflectionPower
 		this.justApplied = justApplied;
         this.isTurnBased = true;
 		this.description = DESCRIPTIONS[0];
-		//loadRegion("reflection");
-		this.img = new Texture("img/powers/Reflection.png");
+		loadRegion("reflection");
+		//this.img = new Texture("img/powers/Reflection.png");
 	}
+    
+	@Override
+    protected void loadRegion(final String fileName) {
+        this.region48 = ReplayTheSpireMod.powerAtlas.findRegion("48/" + fileName);
+		this.region128 = ReplayTheSpireMod.powerAtlas.findRegion("128/" + fileName);
+    }
   
 	@Override
 	public void updateDescription()

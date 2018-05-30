@@ -83,11 +83,11 @@
   },
   "Mirror Shield": {
     "NAME": "Mirror Shield",
-    "DESCRIPTION": "Channel 1 Frost. NL Channel 1 Crystal. NL Gain !M! Reflection."
+    "DESCRIPTION": "Channel 1 Crystal. NL Channel 1 Frost. NL Gain !B! Block. NL Gain !M! Reflection."
   },
   "Reflective Lens": {
     "NAME": "Reflective Lens",
-    "DESCRIPTION": "Channel 1 Glass. NL Gain 1 Focus. NL Gain !M! Reflection."
+    "DESCRIPTION": "Channel 1 Glass. NL Glass orbs give Reflection as a passive ability."
   },
   "Panic Button": {
     "NAME": "Panic Button",
@@ -120,10 +120,9 @@
     "DESCRIPTION": "Choose 1 of 3 random cards to add to your hand. It costs 1 less. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Choose 1 of 3 random cards to upgrade and add to your hand. NL It costs 1 less. NL Exhaust."
   },
-  "gfdsgsfdg": {
-    "NAME": "gfdsgsfdg",
-    "DESCRIPTION": "Draw X. NL Refund !M!",
-    "UPGRADE_DESCRIPTION": "Draw X. NL Refund !M!"
+  "Survey Options": {
+    "NAME": "Survey Options",
+    "DESCRIPTION": "Draw X. NL Refund !M!. "
   },
   "Poisoned Strike": {
     "NAME": "Poisoned Strike",
@@ -131,8 +130,8 @@
   },
   "Specialist": {
     "NAME": "Specialist",
-    "DESCRIPTION": "All non-attack damage you deal is increased by !M! .",
-	"UPGRADE_DESCRIPTION": "Innate. NL All non-attack damage you deal is increased by !M! ."
+    "DESCRIPTION": "All non-attack damage you deal is increased by !M!. ",
+	"UPGRADE_DESCRIPTION": "Innate. NL All non-attack damage you deal is increased by !M!. "
   },
   "Crow Ritual": {
     "NAME": "Awakened One Ritual",

@@ -23,17 +23,19 @@ public class MirrorShield extends CustomCard
     private static final int COST = 2;
     
     public MirrorShield() {
-        super("Mirror Shield", MirrorShield.NAME, "cards/replay/mirrorShield.png", MirrorShield.COST, MirrorShield.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
+        super("Mirror Shield", MirrorShield.NAME, "cards/replay/mirrorShield.png", MirrorShield.COST, MirrorShield.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.RARE, CardTarget.SELF);
         this.showEvokeValue = true;
         this.showEvokeOrbCount = 2;
 		this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
+		this.baseBlock = 5;
     }
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Frost()));
         AbstractDungeon.actionManager.addToBottom(new ChannelAction(new CrystalOrb()));
+        AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Frost()));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ReflectionPower(p, this.magicNumber), this.magicNumber));
     }
     
@@ -47,6 +49,7 @@ public class MirrorShield extends CustomCard
         if (!this.upgraded) {
             this.upgradeName();
 			this.upgradeMagicNumber(1);
+            this.upgradeBlock(3);
 			//this.upgradeBaseCost(MirrorShield.COST - 1);
         }
     }

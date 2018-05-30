@@ -60,7 +60,7 @@ repeat: none
   orig: 128, 128
   offset: 19, 27
   index: -1
-128/bias
+128/reflection
   rotate: false
   xy: 649, 175
   size: 76, 75
@@ -109,7 +109,7 @@ repeat: none
   orig: 128, 128
   offset: 24, 18
   index: -1
-128/combust
+128/lens
   rotate: false
   xy: 566, 173
   size: 81, 80
@@ -606,7 +606,7 @@ repeat: none
   orig: 48, 48
   offset: 7, 10
   index: -1
-48/bias
+48/reflection
   rotate: false
   xy: 1176, 136
   size: 30, 29
@@ -655,7 +655,7 @@ repeat: none
   orig: 48, 48
   offset: 9, 7
   index: -1
-48/combust
+48/lens
   rotate: false
   xy: 1143, 136
   size: 31, 30

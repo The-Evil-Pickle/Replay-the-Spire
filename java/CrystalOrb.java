@@ -24,8 +24,8 @@ public class CrystalOrb extends AbstractOrb
     private static final float ORB_WAVY_DIST = 0.05f;
     private static final float PI_4 = 12.566371f;
     private static final float ORB_BORDER_SCALE = 1.2f;
-	private static final Color validEvokeColor = Color.GREEN.cpy();
-	private static final Color invalidEvokeColor = Color.RED.cpy();
+	public static final Color validEvokeColor = Color.GREEN.cpy();
+	public static final Color invalidEvokeColor = Color.RED.cpy();
     
     private static Texture img1;
     private static Texture img2;

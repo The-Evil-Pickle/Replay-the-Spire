@@ -19,7 +19,7 @@ public class Carrot extends AbstractRelic
     public void atBattleStart() {
         this.TurnsLeft = 4;
         this.flash();
-        AbstractDungeon.actionManager.addToTop((AbstractGameAction)new RelicAboveCreatureAction((AbstractCreature)AbstractDungeon.player, (AbstractRelic)this));
+        //AbstractDungeon.actionManager.addToTop((AbstractGameAction)new RelicAboveCreatureAction((AbstractCreature)AbstractDungeon.player, (AbstractRelic)this));
         AbstractDungeon.player.addPower((AbstractPower)new FocusPower((AbstractCreature)AbstractDungeon.player, 4));
     }
     

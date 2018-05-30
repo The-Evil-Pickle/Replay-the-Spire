@@ -9,8 +9,8 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
 ### Currently adds:
- * 36 Relics (3 ironclad, 4 silent, 4 defect, 25 shared)
- * 34 Cards (7 ironclad, 7 silent, 7 defect, 4 colorless, 9 curses)
+ * 37 Relics (4 ironclad, 4 silent, 4 defect, 25 shared)
+ * 35 Cards (7 ironclad, 7 silent, 7 defect, 5 colorless, 9 curses)
  * 4 Events
  * 8 Potions
 
@@ -46,6 +46,7 @@ Onion Ring | All | Uncommon | Gain 3 **Strength** at the start of combat, then l
 Snack Pack | All | Uncommon | Every time you play 3 **Attacks** in a single turn, gain 2 HP.
 Solar Panel | Defect | Uncommon | At the end of combat, gain 2 HP for each of your active **Lightning** orbs.
 Quantum Egg | All | Uncommon | Whenever a card is created during combat, it is **Upgraded.**
+Another Sword | Ironclad | Rare | The first card containing "Strike" you play each turn is played twice. Takes 1 additional turn to recharge for each energy spent on the card.
 Arrowhead | All | Rare | You may **Upgrade** 2 cards whenever you smith.
 Basket of Snakes | Silent | Rare | Every 5th **Attack** you play applies 2 **Necrotic** **Poison** upon dealing unblocked damage.
 Counterbalance | All | Rare | During boss and elite fights all enemy **Strength** gain, **Block** gain, and healing is reduced by half.
@@ -79,24 +80,25 @@ Draining Mist | Green | Uncommon | Skill | 3 | Apply 3 **Necrotic** **Poison** t
 Sneak Up | Green | Uncommon | Skill | 1 | **Innate.** Discard 1 card (upgrade removes). Gain 1 **Intangible.** **Exhaust.** **Ethereal.**
 Atom Bomb | Green | Rare | Attack | 4 | Deal 60(80) damage. Apply 3(4) **Poison** to ALL enemies. **Exhaust**.
 Poison Darts | Green | Rare | Skill | X | Apply 3(4) **Necrotic** **Poison** X times.
-Reflective Lens | Blue | Uncommon | Power | 1 | **Channel** 1 **Glass.** Gain 1 **Focus.** Gain 2(4) **Reflection.**
+Reflective Lens | Blue | Uncommon | Power | 1(0) | **Channel** 1 **Glass.** Your **Glass** orbs have a passive effect that gives 1 **Reflection** at the end of each turn.
 Panic Button | Blue | Uncommon | Skill | 0 | **Evoke** all your orbs. Draw 2(4) cards. **Exhaust.** **Retain.**
 Crystal Conduit | Blue | Uncommon | Skill | 1 | **Channel** 1 **Crystal** (and 1 random orb).
 Crystallizer | Blue | Rare | Power | 0 | (**Innate.**) At the end of your turn, if at least half your orb slots are empty, **Channel** 1 **Crystal.**
-Mirror Shield | Blue | Rare | Skill | 2 | **Channel** 1 **Frost.** **Channel** 1 **Crystal.** Gain 2(3) **Reflection.**
+Mirror Shield | Blue | Rare | Skill | 2 | **Channel** 1 **Crystal.** **Channel** 1 **Frost.** Gain 5(8) **Block.** Gain 1(2) **Reflection.**
 Time Bomb | Blue | Rare | Skill | 1 | Gain 2 orb slots. **Channel** 2 **Glass.** **Channel** 1 **Dark,** and trigger its passive 2(3) times. **Exhaust.**
 RNG | Blue | Rare | Skill | X | **Channel** X(+1) random orbs.
 Improvise | Colorless | Uncommmon | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | All non-attack damage you deal is increased by 2. (**Innate.**)
 Awakened One Ritual | Colorless | Rare | Power | 0 | Add 6(8) Ritual Components to your discard pile. If you ever have 5 or more in your hand at once, replace them with Attacks that deal 42 damage.
+Survey Options | Colorless | Rare | Skill | X | Draw X. **Refund** 1(2).
 Amnesia | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, **Exhaust** your hand. **Ethereal**.
 Faulty Equipment | Curse | Curse | Curse | - | **Unplayable**. Can only be **Exhausted** or removed from your deck by **Upgrading**.
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
 Sickly | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, lose 3 **Block**.
 Spreading Infection | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a copy of all other status and curse cards in your hand to your discard pile.
 Languid | Curse | Curse | Curse | - | **Unplayable**. If this is in your hand at the end of your turn, start next turn with 1 less Energy.
-Delirium | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, gain Confusion for 1 round.
+Delirium | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, gain **Confusion** for 1 round.
 Voices | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, shuffle 2 Dazed into your discard pile. **Ethereal**.
 Looming Evil | Curse | Curse | Curse | 3 | Can be played for 3 Energy to **Exhaust**. At the end of your turn, shuffle a random curse into your draw pile and reduce the cost to play this card by 1.
 Ghost Swipe | Colorless | Special | Attack | 1 | Deal 6 damage. **Exhaust**. **Ethereal**.
@@ -207,4 +209,6 @@ Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 
 ## Known Issues:
  * Cards altered by Ring of Chaos return to the normal version if the run is saved and returned to later.
  * Honey Jar + Question Card doesn't stack.
+ * Compile Driver doesn't count custom orbs.
+ * This mod adds so many relics the scrollbar on the relic collection screen doesn't go far enough down for you to see all of them.
  

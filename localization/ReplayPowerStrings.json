@@ -59,6 +59,13 @@
 	" more in hand)"
     ]
   },
+  "Reflective Lens": {
+    "NAME": "Reflective Lens",
+    "DESCRIPTIONS": [
+	"At the end of your turn, gain #b",
+	" #yReflection for each of your #yGlass orbs."
+	]
+  },
   "Snake Venom": {
     "NAME": "Snake Venom",
     "DESCRIPTIONS": [

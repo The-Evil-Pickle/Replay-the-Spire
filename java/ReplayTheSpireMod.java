@@ -750,6 +750,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new RingOfSearing(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfShattering(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfHypnosis(), RelicType.SHARED);
+		BaseMod.addRelic(new SecondSwordRelic(), RelicType.RED);
 		//BaseMod.addRelic(new SimpleRune(), RelicType.SHARED);
 		BaseMod.addRelic(new SizzlingBlood(), RelicType.SHARED);
 		BaseMod.addRelic(new SnackPack(), RelicType.SHARED);
@@ -799,6 +800,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new PoisonedStrike());
 		AddAndUnlockCard(new Specialist());
 		AddAndUnlockCard(new AwakenedRitual());
+		AddAndUnlockCard(new SurveyOptions());
 		logger.info("adding curses...");
 		AddAndUnlockCard(new Hallucinations());
 		//AddAndUnlockCard(new Languid());

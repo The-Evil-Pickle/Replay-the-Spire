@@ -100,5 +100,11 @@
 			"Apply #b",
 			" #yConfusion."
 	]
+  },
+  "Salt Potion": {
+	"NAME": "Salt Potion",
+    "DESCRIPTIONS": [
+			"Restart this fight. NL Your opponent may be different."
+	]
   }
 }

@@ -261,6 +261,13 @@
 		"% of all unblocked Attack damage you deal is returned as health."
 	]
   },
+  "Another Sword": {
+    "NAME": "Another Sword",
+	"FLAVOR": "A second sword. You have two now.",
+    "DESCRIPTIONS": [
+		"The first card containing \"strike\" you play each round is played twice. NL Takes #b1 additional turn to recharge for each [R] spent on the card."
+	]
+  },
   "Solar Panel": {
     "NAME": "Solar Panel",
 	"FLAVOR": "Clean, renewable power.",
