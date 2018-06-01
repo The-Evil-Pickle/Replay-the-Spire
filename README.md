@@ -9,7 +9,7 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
 ### Currently adds:
- * 37 Relics (4 ironclad, 4 silent, 4 defect, 25 shared)
+ * 38 Relics (4 ironclad, 4 silent, 5 defect, 25 shared)
  * 35 Cards (7 ironclad, 7 silent, 7 defect, 5 colorless, 9 curses)
  * 4 Events
  * 8 Potions
@@ -24,7 +24,7 @@ Some content originally from this mod is now in the official release of the game
 # Relics
 Name | Character | Rarity | Description
 --- | --- | --- | ---
-Antivirus Software | Defect | Common | At the start of combat, gain 2 **Artifact**.
+Antivirus Software | Defect | Common | Every time you shuffle your deck, gain 1 **Artifact**. **Artifact** will also be used to exhaust **Status** cards for 1 turn.
 Bandana | All | Common | Gain 2 **Thievery** for the first 5 turns of combat.
 Baseball | All | Common | Upon pick up, a random card in your deck becomes free.
 Byrd Skull | Silent | Common | Your **Innate** cards have **Refund** 1 and draw 1 card.
@@ -52,6 +52,7 @@ Basket of Snakes | Silent | Rare | Every 5th **Attack** you play applies 2 **Nec
 Counterbalance | All | Rare | During boss and elite fights all enemy **Strength** gain, **Block** gain, and healing is reduced by half.
 Durian | All | Rare | Gain 5 Max HP on pickup. At the start of your turn, reduce your **Weakened,** **Frail,** and/or **Vulnerable** to 2 (if > 2).
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
+Raider's Mask | Defect | Rare | After a **Dark** orb triggers its passive effect, if it has more stored damage than the HP of the lowest-health enemy, it is **Evoked.**
 Vampiric Spirits | Silent | Rare | During the first turn of combat, 25% of all unblocked attack damage you deal is retuned as health.
 Chemical X | All | Shop | Your cost X effects are increased by 2.
 GuideBook | All | Shop | On pickup, **Upgrade** 2 cards randomly. Prioritizes rarer cards.

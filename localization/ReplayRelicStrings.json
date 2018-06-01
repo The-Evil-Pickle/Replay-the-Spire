@@ -3,8 +3,7 @@
 	"NAME": "Antivirus Software",
 	"FLAVOR": "The robotic equivalent to a vaccine.",
     "DESCRIPTIONS": [
-	"At the start of each combat, gain #b", 
-	" #yArtifact."
+	"Every time you shuffle your deck, gain #b1 #yArtifact. NL When you draw a #yStatus, consumes #b1 #yArtifact to #yExhaust it and all other #yStatus cards drawn that turn, drawing #b1 card each time."
 	]
   },
   "Arrowhead": {
@@ -297,6 +296,13 @@
 	"FLAVOR": "Break it open!",
     "DESCRIPTIONS": [
 		"The first time you lose HP each combat, trigger the passive effect of all your channeled orbs and #yChannel #b1 #yCrystal."
+	]
+  },
+  "Raider's Mask": {
+    "NAME": "Raider's Mask",
+	"FLAVOR": "Leave no survivors.",
+    "DESCRIPTIONS": [
+		"After a #yDark orb triggers its passive effect, if it has more stored damage than the HP of the lowest-health enemy, it is #yEvoked."
 	]
   },
   "Solidified Core": {

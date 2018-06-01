@@ -31,7 +31,7 @@ public class Crystallizer extends CustomCard
     
     @Override
     public AbstractCard makeCopy() {
-        return new CreativeAI();
+        return new Crystallizer();
     }
     
     @Override
