@@ -12,6 +12,15 @@ public class ReplayPotencyPatch {
 		int r = __result;
 		if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Chameleon Ring")) {
 			switch(__instance.ID) {
+				case "AttackPotion":
+					__instance.description = "Add a random Upgraded Attack card to your hand, it costs #b0 this turn.";
+					return r;
+				case "SkillPotion":
+					__instance.description = "Add a random Upgraded Skill card to your hand, it costs #b0 this turn.";
+					return r;
+				case "PowerPotion":
+					__instance.description = "Add a random Upgraded Power card to your hand, it costs #b0 this turn.";
+					return r;
 				case "Doom Potion":
 				case "Venom Potion":
 					//negative potency effect

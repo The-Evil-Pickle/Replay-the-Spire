@@ -1,10 +1,9 @@
 {
 	"Ancient Bracer": {
-	"NAME": "Muñequera Antigua",
-	"FLAVOR": "Una parte de armadura de un pasado muy lejano.",
+	"NAME": "Software Antivirus",
+	"FLAVOR": "El equivalente robótico a una vacuna.",
     "DESCRIPTIONS": [
-	"Al inicio del combate, gana #b", 
-	" #yArtifact."
+	"Cada vez que barajes tu baraja, gana b1 #yArtifact. NL Cuando robes un #yStatus, consume #b1 #yArtifact para #yExhaust y todas las otras cartas de #yStatus que robes ese turno, robar #b1 carta cada vez."
 	]
   },
   "Arrowhead": {
@@ -30,6 +29,13 @@
 	"Al recoger, una carta aleatoria de tu mazo se vuelve gratis."
 	]
   },
+  "Chemical X": {
+	"NAME": "Sustancia X",
+	"FLAVOR": "PRECAUCIÓN: No combinar con azúcar, especias ni cosas bonitas.",
+    "DESCRIPTIONS": [
+	"Cuando juegues una carta de coste #bX, sus efectos se incrementan por #b"
+	]
+  },
   "Divine Protection": {
     "NAME": "Protección Divina",
 	"FLAVOR": "La fuerza para continuar en tiempos de adversidad.",
@@ -44,7 +50,8 @@
 	"NAME": "Sangre Eléctrica",
 	"FLAVOR": "Sientes que tu cuerpo se llena de poder. Duele.",
     "DESCRIPTIONS": [
-	"Gana [R] [R] al inicio de cada turno. NL Pierde 1 HP por cada [R] que uses."
+	"Gana [R] [R] al inicio de cada turno. NL Pierde 1 HP por cada [R] que uses, excluding the first #b",
+	" used each turn."
 	]
   },
   "Funnel": {
@@ -96,13 +103,6 @@
 	"Algunas recompensas de cartas tienen estadísticas y efectos alterados al azar."
 	]
   },
-  "Ring of Fury": {
-	"NAME": "Anillo de la Furia",
-	"FLAVOR": "Un anillo maldito que aumenta los sentidos y la insensatez.",
-	"DESCRIPTIONS": [
-	"Al inicio del combate gana 2 #yStrength y pierde 1 #yDexterity."
-	]
-  },
   "Simple Rune": {
 	"NAME": "Runa de la Sencillez",
 	"FLAVOR": "Algunas veces, las cosas no son tan complicadas como aparentan.",
@@ -122,7 +122,8 @@
 	"NAME": "Escamas de Lagartija",
 	"FLAVOR": "Escamas de una lagartija que muda su piel. Parecen reflejar la luz con colores brillantes.",
     "DESCRIPTIONS": [
-	"Roba 3 cartas adicionales cada turno. Cuando juegas una carta, descarta una carta."
+	"Roba #b",
+	" cartas adicionales cada turno. Cuando juegas una carta, descarta una carta."
 	]
   },
   "King of Hearts": {
@@ -174,22 +175,245 @@
     "Roba 1 carta más cada turno. NL #yRetain hasta 1 carta cada turno. NL Elección extra en la pantalla de recompensa de cartas. NL No puedes saltarte recompensas."
     ]
   },
+  "Kintsugi": {
+    "NAME": "Kintsugi",
+	"FLAVOR": "What is broken can be made better.",
+    "DESCRIPTIONS": [
+		"Elimina #b",
+		" cartas de tu mazo. NL Gana #b",
+		" #rMaldiciones.",
+		"Elimina"
+	]
+  },
   "Sizzling Blood": {
 	"NAME": "Sangre Candente",
-	"FLAVOR": "It burns with fire and poison.",
+	"FLAVOR": "Quema con fuego y veneno.",
     "DESCRIPTIONS": [
 	"Al final del combate cura #b",
 	" HP. NL Gana #b",
 	" HP máxima al cogerlo."
 	]
   },
-  "Grinning Jar": {
-    "NAME": "Grinning Jar",
-	"FLAVOR": "\"I play Grinning Jar, which allows me to draw 2 cards from my deck!\"",
+  "Chameleon Ring": {
+	"NAME": "Anillo Camaleónico",
+	"FLAVOR": "Un anillo con una luz tenue que cambia lentamente de color.",
     "DESCRIPTIONS": [
-		"Obtain a Skill that draws 2 cards. NL Obtain an additional copy for every #b",
-		" other cards added to your deck.",
-		"The jar is pleased"
+	"Encuentra más pociones potentes. NL Ahora puedes #yBrew en las Áreas de Descanso."
 	]
-  }
+  },
+  "Grinning Jar": {
+    "NAME": "Jarra Sonriente",
+	"FLAVOR": "\"!Juego la Jarra Sonriente, que me permite robar 2 cartas de mi baraja!\"",
+    "DESCRIPTIONS": [
+		"Obtén una Habilidad que permite robar 2 cartas. NL Obtén una copia adicional por cada otra #b",
+		" cartas añadida a tu baraja.",
+		"La jarra está satisfecha."
+	]
+  },
+  "Durian": {
+    "NAME": "Durian",
+	"FLAVOR": "Huele horrible, sabe genial.",
+    "DESCRIPTIONS": [
+		"Al inicio de tu turno, reduce tu #yWeak, #yVulnerable, y #yFrail a #b2. NL Al cogerlo, incrementa tu HP máxima en #b"
+	]
+  },
+  "Basket Of Snakes": {
+    "NAME": "Cesto de Serpientes",
+	"FLAVOR": "No te preocupes; no muerden. Al menos, no te morderán a ti.",
+    "DESCRIPTIONS": [
+		"Cada #b",
+		"th #yAttack que juegues aplica #b",
+		" #yNecrotic #yPoison cada vez que haga daño sin bloquear."
+	]
+  },
+  "Counterbalance": {
+    "NAME": "Contrapeso",
+	"FLAVOR": "Por cada fuerza, hay una debilidad.",
+    "DESCRIPTIONS": [
+		"Durante peleas con jefes y élites #yStrength gana, #yBlock gana, y #yHealing es reducido a la mitad."
+	]
+  },
+  "Golden Egg": {
+    "NAME": "Huevo Dorado",
+	"FLAVOR": "No aprobado por la FDA.",
+    "DESCRIPTIONS": [
+		"Cuando añadas una carta #yRare a tu baraja, esta se #yUpgraded."
+	]
+  },
+  "Quantum Egg": {
+    "NAME": "Huevo Cuántico",
+	"FLAVOR": "Sabe a [REDACTADO].",
+    "DESCRIPTIONS": [
+		"Cuando una carta es creada durante un combate, esta se #yUpgraded."
+	]
+  },
+  "Blue Doll": {
+    "NAME": "Muñeca Azul",
+	"FLAVOR": "Una colección colorida.",
+    "DESCRIPTIONS": [
+		"Tiendas tienen 3 tipos de ofertas. NL Ofertas pueden aparecer en cartas incoloras. NL Cartas rebajadas son más baratas."
+	]
+  },
+  "Byrd Skull": {
+    "NAME": "Calavera de Byrd",
+	"FLAVOR": "La calavera de un Byrd caído. NL ...¿Lo pillas? ¿Caído?",
+    "DESCRIPTIONS": [
+		"Tus cartas #yInnate tienen #yRefund #b1 y roba #b1 carta."
+	]
+  },
+  "Vampiric Spirits": {
+    "NAME": "Espíritus Vampíricos",
+	"FLAVOR": "Un cariño por las sombras, una sed por la sangre; características tanto de pícaros como de vampiros.",
+    "DESCRIPTIONS": [
+		"En el primer turno de un combate, #b",
+		"% de todo el daño no bloqueda del daño de Ataque que hagas te devuelve en forma de vida."
+	]
+  },
+  "Another Sword": {
+    "NAME": "Otra Espada",
+	"FLAVOR": "Una segunda espada. Tienes dos ahora.",
+    "DESCRIPTIONS": [
+		"La primera carta que contenga \"golpe\" que juegues cada ronda se juega dos veces. NL Toma #b1 un turno adicional para recargar por cada [R] gastada en la carta."
+	]
+  },
+  "Solar Panel": {
+    "NAME": "Panel Solar",
+	"FLAVOR": "Limpia, energía renovable.",
+    "DESCRIPTIONS": [
+		"Al final del combate, cura #b",
+		" HP por cada orbe Relámpago activo."
+	]
+  },
+  "Carrot": {
+    "NAME": "Zanahoria",
+	"FLAVOR": "Llena de poder.",
+    "DESCRIPTIONS": [
+		"Ganas #b3 #yFocus al inicio del combate. Pierdes #b1 #yFocus en los próximos #b3 turnos."
+	]
+  },
+  "Backup Battery": {
+    "NAME": "Batería de Reserva",
+	"FLAVOR": "Raciones de emergencia para robots.",
+    "DESCRIPTIONS": [
+		"Al final de cada ronda, conserva hasta #b",
+		" energía. NL Incrementa este efecto por #b1 hasta el final del combate cada vez que #yEvoke #yPlasma (hasta #b",
+		" máximo)."
+	]
+  },
+  "Geode": {
+    "NAME": "Geoda",
+	"FLAVOR": "!Ábrela!",
+    "DESCRIPTIONS": [
+		"La primera vez que pierdes HP en cada combate, activa el efecto pasivo de todos tu orbes canalizados y #Channel #b1 #yCrystal."
+	]
+  },
+  "Raider's Mask": {
+    "NAME": "Máscara del Asaltante",
+	"FLAVOR": "No dejes supervivientes.",
+    "DESCRIPTIONS": [
+		"Después de que un orbe #yDark active su efecto pasivo, si tiene más daño guardado que el HP de el enemigo con menos vida, este se #yEvoked."
+	]
+  },
+  "Solidified Core": {
+    "NAME": "Núcleo Solidificado",
+	"FLAVOR": "Duro como una roca. O puede que una geoda.",
+    "DESCRIPTIONS": [
+		"Al inicio del combate, Canaliza #b",
+		" Escarcha y #b",
+		" Cristal.",
+		" NL Reemplaza Núcleo Agrietado.",
+		" NL Reemplaza Núcleo de Hierro."
+		
+	]
+  },
+  "Ring of Fury": {
+	"NAME": "Anillo de Furia",
+	"FLAVOR": "Un anillo maldito que aumenta ambos, los sentidos y la insensatez.",
+	"DESCRIPTIONS": [
+	"Al inicio del combate gana #b",
+	" #yStrength y pierde #b",
+	" #yDexterity."
+	]
+  },
+  "Ring of Peace": {
+	"NAME": "Anillo de Paz",
+	"FLAVOR": "La paz nunca durante en el Spire.",
+	"DESCRIPTIONS": [
+	"Al inicio del combate aplica #b",
+	" #yWeak a TODOS los enemigos y gana #b",
+	" #yBuffer"
+	]
+  },
+  "Ring of Panic": {
+	"NAME": "Anillo del Pánico",
+	"FLAVOR": "El miedo sirve a su propósito.",
+	"DESCRIPTIONS": [
+	"Al inicio del combate te vuelves #yConfused por #b",
+	" turnos. NL Gana [E] [E] al inicio de las rondas 1 y 2. NL Gana [E] al inicio de la ronda 3."
+	]
+  },
+  "Ring of Hypnosis": {
+	"NAME": "Anillo de Hipnosis",
+	"FLAVOR": "Los colores extraños y las luces reflejadas atraen a la mente a un sendero errante.",
+	"DESCRIPTIONS": [
+	"Todos los enemigos empiezan con #b",
+	" #yConfusion."
+	]
+  },
+  "Ring of Searing": {
+	"NAME": "Anillo Mordaz",
+	"FLAVOR": "Un anillo maldito que quema todo a su alrededor hasta las cenizas.",
+	"DESCRIPTIONS": [
+	"Al inicio de tu turno, TODOS los enemigos sobre #b",
+	"% de HP máxima pierden #b",
+	"% de su HP actual. NL Al final de cada ronda, si tú estas sobre #b",
+	"% de HP máxima, pierde #b",
+	" HP."
+	]
+  },
+  "Ring of Burning": {
+	"NAME": "Anillo del Quemado",
+	"FLAVOR": "Un anillo maldito que aumenta ambos, los sentidos y la insensatez.",
+	"DESCRIPTIONS": [
+	"Cuando te quedes sin energía, el coste de las cartas en tu mano es reducido a #b0 para ese turno. NL Las cartas jugadas mientras estás sin energía tienen un #b",
+	"% de que se #yExhaust. NL Cada vez que gastes energía, toma ese mismo daño."
+	]
+  },
+  "Ring of Fangs": {
+	"NAME": "Anillo de Colmillos",
+	"FLAVOR": "Los colmillos se meten en el usuario, dificultando el empuñar armas.",
+	"DESCRIPTIONS": [
+	"Al inicio del combate pierde #b",
+	" #yStrength. NL Cuando hagas daño sin bloquear, aplica #b1 #yPoison."
+	]
+  },
+  "Ring of Shattering": {
+	"NAME": "Anillo Aplastante",
+	"FLAVOR": "Lo que está roto se puede mejorar.",
+	"DESCRIPTIONS": [
+	"Al inicio del combate gana #b",
+	" #yFocus y pierde #b",
+	" Huecos de Orbes."
+	]
+  },
+  "Iron Core": {
+    "NAME": "Núcleo de Hierro",
+	"FLAVOR": "Impulsado por llamas incensantes e ira.",
+    "DESCRIPTIONS": [
+		"Al inico del combate, Canaliza #b1 #yHellfire. NL Ciertas cartas Rojas pueden aparecer en las futuras pantallas de recompensas de cartas."
+	]
+  },
+  "m_BlackCat":{
+		"NAME": "Gato Maldito",
+		"FLAVOUR": "Woem",
+		"DESCRIPTIONS":["Baraja una Maldición aleatoria en tu baraja al inicio de cada pelea."]
+	},
+	"m_Cross Pendant": {
+		"NAME": "Cruz Colgante",
+		"FLAVOR": "Un simple colgante con la forma de una cruz. Rezar con él se dice que trae la buena suerte.",
+		"DESCRIPTIONS": [
+			"Al inicio de cada combate, elije una carta entre tres y añádela a tu mano. Se Exhausta."
+		]
+	}
+	
 }

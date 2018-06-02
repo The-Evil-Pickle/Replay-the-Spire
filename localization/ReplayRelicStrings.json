@@ -124,7 +124,7 @@
 	"FLAVOR": "Scales from a Snecko that shed its skin. They seem to reflect lights with shimmering colors.",
     "DESCRIPTIONS": [
 	"Draw #b",
-	" additional cards each turn. When you play a card, discard a card."
+	" additional cards each turn. NL When you play a card that costs more than #b0 energy, discard a card."
 	]
   },
   "King of Hearts": {
@@ -189,7 +189,7 @@
 	"NAME": "Chameleon Ring",
 	"FLAVOR": "A ring that glimmers with slowly shifting colors.",
     "DESCRIPTIONS": [
-	"Find more potent potions. NL You can now #yBrew at Rest Sites."
+	"Your potions are more potent. NL You can now #yBrew at Rest Sites."
 	]
   },
   "Grinning Jar": {
@@ -265,6 +265,16 @@
 	"FLAVOR": "A second sword. You have two now.",
     "DESCRIPTIONS": [
 		"The first card containing \"strike\" you play each round is played twice. NL Takes #b1 additional turn to recharge for each [R] spent on the card."
+	]
+  },
+  "Kintsugi": {
+    "NAME": "Kintsugi",
+	"FLAVOR": "What is broken can be made better.",
+    "DESCRIPTIONS": [
+		"Remove #b",
+		" cards from your deck. NL Obtain #b",
+		" random #yCurses.",
+		"Choose cards to remove"
 	]
   },
   "Solar Panel": {

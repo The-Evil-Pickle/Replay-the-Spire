@@ -8,10 +8,14 @@
     "DESCRIPTION": "Aplica !M! Veneno Necrótico X veces.",
 	"UPGRADE_DESCRIPTION": "Aplica X Veneno Necrótico. Aplica !M! Veneno Necrótico a TODOS los enemigos X veces."
   },
+  "Draining Mist": {
+    "NAME": "Niebla Drenante",
+    "DESCRIPTION": "Aplica 3 Veneno Necrótico a un enemigo aleatorio !M! veces. NL Aplica -1 Fuerza a TODOS los enemigos. NL Exhausta.",
+	"UPGRADE_DESCRIPTION": "Aplica 3 Veneno Necrótico a un enemigo aleatorio !M! veces. NL Aplica -2 Fuerza a TODOS los enemigos. NL Exhausta."
+  },
   "Toxin Wave": {
     "NAME": "Onda Tóxica",
-    "DESCRIPTION": "Aplica !M! Veneno Necrótico y -1 Fuerza a TODOS los enemigos. NL Agota.",
-	"UPGRADE_DESCRIPTION": "Aplica !M! Veneno Necrótico y -2 Fuerza a TODOS los enemigos. NL Agota."
+    "DESCRIPTION": "Aplica !M! Veneno Necrótico a TODOS los enemigos."
   },
   "Hidden Blade": {
     "NAME": "Hoja Oculta",
@@ -21,15 +25,19 @@
     "NAME": "Movimiento Fluido",
     "DESCRIPTION": "Conserva hasta !M! Bloqueo entre turnos."
   },
-  "Abandon": {
-    "NAME": "Abandono",
-    "DESCRIPTION": "Agota !M! carta. NL Roba !M! carta. NL Etérea.",
-    "UPGRADE_DESCRIPTION": "Agota hasta !M! cartas. NL Roba una carta por cada carta agotada. NL Etérea."
-  },
   "Sneak Up": {
     "NAME": "Sneak Up",
     "DESCRIPTION": "Gain !M! Intangible. NL Discard 1 card. NL Innate. NL Exhaust. NL Ethereal.",
     "UPGRADE_DESCRIPTION": "Gain !M! Intangible. NL Innate. NL Exhaust. NL Ethereal."
+  },
+  "Abandon": {
+    "NAME": "Abandon",
+    "DESCRIPTION": "Exhaust !M! card. NL Draw !M! card. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Exhaust up to !M! cards. NL Draw 1 card for each. NL Ethereal."
+  },
+  "Defy Death": {
+    "NAME": "Desafía a la Muerte",
+    "DESCRIPTION": "Gana !B! Bloqueo. NL Cuesta [R] menos por cada carta que has Exhaustado este combate."
   },
   "Life Link": {
     "NAME": "Lazo de la Vida",
@@ -44,17 +52,77 @@
     "DESCRIPTION": "Hace !D! daño. Gana !B! Bloqueo. Cura !M! HP. NL Mejora cada vez que pierdes HP mientras esté en tu mano."
   },
   "Run Through": {
-    "NAME": "Run Through",
-    "DESCRIPTION": "Target enemy loses !D! HP and !M! Block."
+    "NAME": "Correr a Través",
+    "DESCRIPTION": "El enemigo Objetivo pierde !D! HP y !M! Bloqueo."
   },
-  "Defy Death": {
-    "NAME": "Defy Death",
-    "DESCRIPTION": "Gain !B! Block. NL Costs [R] less for each card you've Exhausted this combat."
+  "Demonic Infusion": {
+    "NAME": "Infusión Demoníaca",
+    "DESCRIPTION": "Mejora una Habilidad o Ataque en tu mano X veces. NL Devuelve 1. NL Exhausta.",
+    "UPGRADE_DESCRIPTION": "Mejora una Habilidad o Ataque en tu mano X+ !M! veces. NL Devuelve 1. NL Exhausta."
+  },
+  "Single Out": {
+    "NAME": "Única Salida",
+    "DESCRIPTION": "Aplica !M! Vulnerable. NL Roba 1 carta. Si no es un Ataque o un Poder, se Exhausta."
+  },
+  "Cursed Blade": {
+    "NAME": "Cursed Blade",
+    "DESCRIPTION": "Deal !D! damage. NL You cannot play other cards while this is in your hand."
+  },
+  "Scrap": {
+    "NAME": "Chatarra",
+    "DESCRIPTION": "Hace !D! de daño. NL Si mata a un enemigo (no-minion), cura 6 HP e incrementa permanentemente el Daño de esta carta por !M!."
+  },
+  "ReplayGash": {
+    "NAME": "Tajo Repetido",
+    "DESCRIPTION": "Hace !D! de daño a TODOS los enemigos. NL Elige !M! cartas de tu pila de robado para descartar. NL Todas las cartas de Tajos hacen 1 de daño adicional este combate por cada carta descarta, no se incluyen cartas de Estado o Maldición."
+  },
+  "Crystallizer": {
+    "NAME": "Cristalizador",
+    "DESCRIPTION": "Al final de tu turno, si al menos la mitad de los huecos de orbes está vacíos, Canaliza 1 Cristal.",
+    "UPGRADE_DESCRIPTION": "Innata. NL Al final de tu turno, si al menos la mitad de los huecos de orbes está vacíos, Canaliza 1 Cristal."
+  },
+  "Mirror Shield": {
+    "NAME": "Espejo Escudo",
+    "DESCRIPTION": "Canaliza 1 Cristal. NL Canaliza 1 Escarcha. NL Gana !B! Bloqueo. NL Gana !M! Reflejo."
+  },
+  "Reflective Lens": {
+    "NAME": "Lentes Reflectantes",
+    "DESCRIPTION": "Canaliza 1 Vidrio. NL Los orbes Vidrio dan Reflección como efecto pasivo."
+  },
+  "Panic Button": {
+    "NAME": "Botón del Pánico",
+    "DESCRIPTION": "Evoca todos tus orbes. NL Roba !M! cartas. NL Exhausta. NL Retiene."
+  },
+  "RNG": {
+    "NAME": "RNG",
+    "DESCRIPTION": "Canaliza X orbes aleatorios.",
+    "UPGRADE_DESCRIPTION": "Canaliza (X+1) orbes aleatorios."
+  },
+  "Crystal Conduit": {
+    "NAME": "Conducto de Cristal",
+    "DESCRIPTION": "Canaliza 1 Cristal.",
+    "UPGRADE_DESCRIPTION": "Canaliza 1 Cristal. NL Canaliza 1 orbe aleatorio."
+  },
+  "Illuminate": {
+    "NAME": "Iluminado",
+    "DESCRIPTION": "Canaliza 1 Luz. NL Exhausta."
+  },
+  "Overclock": {
+    "NAME": "Overclock",
+    "DESCRIPTION": "Gana !M! Focus. NL Al final de tu turno, pierde !M! Focus."
+  },
+  "Time Bomb": {
+    "NAME": "Bomba de Tiempo",
+    "DESCRIPTION": "Gana 2 Huecos de Orbes. NL Canaliza 2 Vidrio. NL Canaliza 1 Oscuridad y activa su pasiva !M! veces. NL Exhausta."
   },
   "Improvise": {
     "NAME": "Improvisar",
     "DESCRIPTION": "Elige 1 entre 3 cartas aleatorias y añádela a tu mano. Cuesta 1 menos. NL Agota.",
     "UPGRADE_DESCRIPTION": "Elige 1 entre 3 cartas aleatorias para mejorarla y añádela a tu mano. NL Cuesta 1 menos. NL Agota."
+  },
+  "Survey Options": {
+    "NAME": "Opciones en la Encuesta",
+    "DESCRIPTION": "Roba X. NL Devuelve !M!. "
   },
   "Poisoned Strike": {
     "NAME": "Golpe Envenenado",
@@ -64,6 +132,19 @@
     "NAME": "Especialista",
     "DESCRIPTION": "Aumenta el daño de non ataque en !M! .",
 	"UPGRADE_DESCRIPTION": "Innate. NL Aumenta el daño de non ataque en !M! ."
+  },
+  "Crow Ritual": {
+    "NAME": "Ritual de Cuervos",
+    "DESCRIPTION": "Añade !M! Componentes del RItual a tu pila de descartes. Si 5 llegan a estar en tu mano a la vez, se vuelven Ataques !D! de daño."
+  },
+  "Ritual Component": {
+    "NAME": "Componente del Ritual",
+    "DESCRIPTION": "Roba 1 carta. NL Si esta es una Ataque, toma !M! de daño.",
+	"UPGRADE_DESCRIPTION": "Roba 1 carta."
+  },
+  "Dark Echo": {
+    "NAME": "Eco Oscuro",
+    "DESCRIPTION": "Hace !D! de daño a TODOS los enemigos."
   },
   "Looming Evil": {
 	"NAME": "Maldad Inminente",
@@ -93,6 +174,18 @@
 	"NAME": "Voces",
 	"DESCRIPTION": "Injugable. NL Al final de tu turno, baraja !M! Aturdido en tu pila de descartes. NL Etérea."
   },
+  "Spreading Infection": {
+	"NAME": "Infección Contagiosa",
+	"DESCRIPTION": "Injugable. NL Al final de tu turno, duplica todas las otras cartas de Estado y Maldición de tu mano."
+  },
+  "Faulty Equipment": {
+	"NAME": "Equipamiento Defectuoso",
+	"DESCRIPTION": "Injugable. NL Solo puede ser Exhaustada or eliminada de tu baraja Mejorándola."
+  },
+  "Amnesia": {
+	"NAME": "Amnesia",
+	"DESCRIPTION": "Injugable. NL Al final de tu turno, Exhausta tu mano."
+  },
   "Ghost Swipe": {
     "NAME": "Golpe Fantasmal",
     "DESCRIPTION": "Hace !D! daño. NL Agota. NL Etérea."
@@ -118,12 +211,62 @@
 		"I've already played this card once this turn!"
 	]
   },
-  "Corpse Explosion": {
-    "NAME": "Explosión de Cadaver",
-    "DESCRIPTION": "El enemigo pierde todo Veneno. Apply Necrotic Poison equal to the amount lost to ALL enemies. NL Agota.",
-    "UPGRADE_DESCRIPTION": "El enemigo pierde todo Veneno. Apply Necrotic Poison equal to the amount lost to ALL enemies.",
-    "EXTENDED_DESCRIPTION": [
-      "Ese enemigo no está Envenenado."
-    ]
+  "Counter": {
+    "NAME": "Contraataque",
+    "DESCRIPTION": "Gana !M! Intangible. NL Exhausta. NL Retiene."
+  },
+  "Grembo's Gang": {
+    "NAME": "Pandilla de Grembo",
+    "DESCRIPTION": "Invoca X gremlins aleatorios que duran !M! rondas. NL Un máximo de 3.",
+    "UPGRADE_DESCRIPTION": "Invoca X gremlins aleatorios. NL Un máximo de 3."
+  },
+  "AutogenPotionCard": {
+    "NAME": "Carta de Poción Autogeneradora",
+    "DESCRIPTION": " NL Exhausta. NL Retiene."
+  },
+  "Scorching Beam": {
+    "NAME": "Rayo Abrasador",
+    "DESCRIPTION": "Hace !D! de daño a TODOS los enemigos. NL Canaliza !M! Fuego del Infierno."
+  },
+  "Firewall": {
+    "NAME": "Firewall",
+    "DESCRIPTION": "Gana !B! Bloqueo. NL Cada vez que bloqueas daño esta ronda, Canaliza !M! Fuego del Infierno."
+  },
+  "IC_BasicHellfireCard": {
+    "NAME": "Nucleo Derretido",
+    "DESCRIPTION": "Canaliza !M! Fuego del Infierno. NL Exhausta."
+  },
+  "WeaponsOverheat": {
+    "NAME": "Armas Sobrecalentadas",
+    "DESCRIPTION": "Gana 1 Focus si tienes <0, Pierde 1 Focus si tienes >0. NL Canaliza 1 Fuego del Infierno. NL Canaliza 1 Vidrio. NL Etérea.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Focus if you have <0, Lose 1 Focus if you have >0. NL Canaliza 1 Fuego del Infierno. NL Etérea."
+  },
+  "OrbOptionCard_Lightning": {
+    "NAME": "Relámpago",
+    "DESCRIPTION": "Canaliza !M! Relámpago. NL Exhausta. NL Etérea."
+  },
+  "OrbOptionCard_Dark": {
+    "NAME": "Oscuro",
+    "DESCRIPTION": "Canaliza !M! Oscuro. NL Exhausta. NL Etérea."
+  },
+  "OrbOptionCard_Frost": {
+    "NAME": "Escarcha",
+    "DESCRIPTION": "Canaliza !M! Escarcha. NL Exhausta. NL Etérea."
+  },
+  "OrbOptionCard_Plasma": {
+    "NAME": "Plasma",
+    "DESCRIPTION": "Canaliza !M! Plasma. NL Exhausta. NL Etérea."
+  },
+  "OrbOptionCard_Crystal": {
+    "NAME": "Cristal",
+    "DESCRIPTION": "Canaliza !M! Cristal. NL Exhausta. NL Etérea."
+  },
+  "OrbOptionCard_Fire": {
+    "NAME": "Fuego del Infierno",
+    "DESCRIPTION": "Canaliza !M! Fuego del Infierno. NL Exhausta. NL Etérea."
+  },
+  "OrbOptionCard_Glass": {
+    "NAME": "Vidrio",
+    "DESCRIPTION": "Gana !M! hueco de orbe. NL Canaliza !M! Vidrio. NL Exhausta. NL Etérea."
   }
 }

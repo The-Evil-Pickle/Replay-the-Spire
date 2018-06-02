@@ -9,7 +9,7 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
 ### Currently adds:
- * 38 Relics (4 ironclad, 4 silent, 5 defect, 25 shared)
+ * 39 Relics (4 ironclad, 4 silent, 5 defect, 26 shared)
  * 35 Cards (7 ironclad, 7 silent, 7 defect, 5 colorless, 9 curses)
  * 4 Events
  * 8 Potions
@@ -43,6 +43,7 @@ Garlic | All | Uncommon | Enemies lose 3 **Strength** at the start of combat, th
 Golden Egg | All | Uncommon | Whenever you obtain a rare card, it is **Upgraded.**
 Iron Hammer | All | Uncommon | During the first turn, drawing a card upgrades it until the end of combat.
 Onion Ring | All | Uncommon | Gain 3 **Strength** at the start of combat, then lose 1 **Strength** on the next 3 turns.
+Raider's Mask | Defect | Uncommmon | After a **Dark** orb triggers its passive effect, if it has more stored damage than the HP of the lowest-health enemy, it is **Evoked.**
 Snack Pack | All | Uncommon | Every time you play 3 **Attacks** in a single turn, gain 2 HP.
 Solar Panel | Defect | Uncommon | At the end of combat, gain 2 HP for each of your active **Lightning** orbs.
 Quantum Egg | All | Uncommon | Whenever a card is created during combat, it is **Upgraded.**
@@ -52,11 +53,11 @@ Basket of Snakes | Silent | Rare | Every 5th **Attack** you play applies 2 **Nec
 Counterbalance | All | Rare | During boss and elite fights all enemy **Strength** gain, **Block** gain, and healing is reduced by half.
 Durian | All | Rare | Gain 5 Max HP on pickup. At the start of your turn, reduce your **Weakened,** **Frail,** and/or **Vulnerable** to 2 (if > 2).
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
-Raider's Mask | Defect | Rare | After a **Dark** orb triggers its passive effect, if it has more stored damage than the HP of the lowest-health enemy, it is **Evoked.**
 Vampiric Spirits | Silent | Rare | During the first turn of combat, 25% of all unblocked attack damage you deal is retuned as health.
 Chemical X | All | Shop | Your cost X effects are increased by 2.
 GuideBook | All | Shop | On pickup, **Upgrade** 2 cards randomly. Prioritizes rarer cards.
 Honey Jar | All | Boss | Draw 1 more card each turn. **Retain** up to 1 card each turn. Card rewards have 1 more option to chose from. You cannot skip rewards.
+Kintsugi | All | Boss | Remove 5 cards from your deck. Obtain 2 random **Curses**.
 Ooze Armor | Ironclad | Boss | Gain 1 energy and draw 1 card at the start of each turn. At the start of combat, gain Slow (resets to -2) and Malleable (resets to 4), and shuffle 2 Slimed into your draw pile.
 Sweet Flower | All | Boss | Gain 1 more energy each turn. Map displays much less information.
 Electric Blood | Ironclad | Boss | Gain 2 energy at the start of each turn. When you spend energy, lose that much HP, excluding the first 2 energy spent each turn.
@@ -208,8 +209,10 @@ Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 
 
 
 ## Known Issues:
- * Cards altered by Ring of Chaos return to the normal version if the run is saved and returned to later.
+ * Cards altered by Ring of Chaos or Baseball return to the normal version if the run is saved and returned to later.
+ * Config options do not save when the game is closed and re-opened.
  * Honey Jar + Question Card doesn't stack.
  * Compile Driver doesn't count custom orbs.
+ * When Raider's Mask evokes a dark orb, it may cause one of your other orbs to skip activating its passive effect.
  * This mod adds so many relics the scrollbar on the relic collection screen doesn't go far enough down for you to see all of them.
  

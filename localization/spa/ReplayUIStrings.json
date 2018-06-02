@@ -2,7 +2,13 @@
   "Brew Option": {
     "TEXT": [
 		"Brebar",
-		"Obtiene 2 pociónes al alzar."
+		"Obtiene 2 pociÃ³nes al alzar."
+	]
+  },
+  "Claw Rake": {
+    "TEXT": [
+		"Selecciona una carta a descartar.",
+		"Selecciona cartas a descartar."
 	]
   }
 }

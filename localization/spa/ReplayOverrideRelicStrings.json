@@ -1,9 +1,3 @@
 {
-  "White Beast Statue": {
-	"NAME": "White Beast Statue",
-	"FLAVOR": "A small white statue of a creature you have never seen before.",
-    "DESCRIPTIONS": [
-	"Potions always drop after combat. NL Lower chance of getting rare potions."
-	]
-  }
+  
 }

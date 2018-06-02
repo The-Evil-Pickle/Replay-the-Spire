@@ -66,5 +66,50 @@
 		"[Cogerlo] #gObtain #ga #gRelic. #rBecome #rCursed - #rHallucinations.",
 		"[Salir]"
 	]
+  },
+  "Grembo": {
+	"NAME": "Grembo el Genial",
+	"DESCRIPTIONS": [
+		"Un pequeño gremlin que porta una diminuta espada se acerca a ti. NL \"¡Atención! Soy yo, @GREMBO@ @THE@ @GREAT!@\" NL La criatura parece pensar que es mucho más amenazante de lo que realmente es.",
+		"El gremlim habla. NL \"Grembo te ha observado pelear. ¡A Grembo también le gusta pelear! ¡Grembo te prestará su fuerza genial, si le das brillos!\" NL El parece alguien confiable, si también algo delirante.",
+		"\"¡Un pago adecuado! ¡La legendaria fuerza de Grembo es tuya!\" NL Como dice, una pequeña colección de gremlims emerge de las sombras. Parece que has hecho algunos amigos.",
+		"\"¡Está bien. A Grembo no le importa! ¡Grembo tiene otros, guerreros más fuertes a los que prestar su espada!\" NL No es muy bueno escondiendo su desacuerdo. Desaparece de vuelta a las sombras de la ciudad."
+	],
+	"OPTIONS": [
+		"[Continuar]",
+		"[Bloqueado] Requiere: ",
+		"[Pierde ",
+		" oro",
+		"] #yJoin #gforces #gwith #gGrembo #gThe #gGreat.",
+		"[Declina]"
+	]
+  },
+  "Tinkerer": {
+	"NAME": "El chapucero",
+	"DESCRIPTIONS": [
+		"Un hombre con el pelo desaliñado y ojos salvajes escondidos detrás de unas gafas aparece desde un callejón. NL \" @WELCOME!@ Soy conocido como #yThe #yTinkerer. ¿Podría echarle un vistazo a tu equipamiento?\"",
+		"El chapucero convierte en chatarra el objeto ofrecido, usando las piezas para mejorar algo del resto de tu equipamiento. Parece disfrutar de la tarea.",
+		"El hombre saca una serie de herramientas y empieza a trabajar. NL ",
+		"El hombre alegremente toma el objeto ofrecido y empieza a desarmarlo y reorganizar su interior. NL ",
+		"En una ráfaga de movimiento, el hombre coje el objeto y ajusta sus componentes. NL ",
+		"Después de algún tiempo, él orgullosamente te presenta el resultado de su trabajo.",
+		"Cuando devuelve el dispositivo, difícilmente lo reconoces.",
+		"Eventualmente vuelve al tema de sus experimentos, emocionado de decirte sobre sus nuevas funciones y mejoras que ha añadido",
+		"En una repentina explosión de luz y fuego, el objeto es destruido. En un estado de pánico, el hombre pide perdon profusamente por sus fallos.",
+		"CUando tomas tu equipamiento de vuelta, esta ha sido convertido en nada más que una inútil pila de piezas. El hombre no parece consciente de este hecho."
+	],
+	"OPTIONS": [
+		"[Salir]",
+		"[Bloqueado] Requiere: ???",
+		"[Bloqueado] Requiere: Carta Mejorada",
+		"[Pierde Carta Mejorada] #gUpgrade #g",
+		" #gcards.",
+		"[Pierde ",
+		"] #g",
+		"% #gObtain ",
+		"[Usado]",
+		"Elimina una carta",
+		"Mejora 2 cartas"
+	]
   }
 }

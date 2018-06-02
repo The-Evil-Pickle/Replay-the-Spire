@@ -42,7 +42,7 @@ import java.util.function.*;
 
 @SpireInitializer
 public class ReplayTheSpireMod implements PostInitializeSubscriber,
-EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscriber
+EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscriber, PotionGetSubscriber
 {
 	public static void InitCardTitle(AbstractCard c) {
 		FontHelper.cardTitleFont_L.getData().setScale(1.0f);
@@ -369,6 +369,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		
 		logger.info("subscribing to postDraw event");
         BaseMod.subscribeToPostDraw(this);
+		
+		logger.info("subscribing to getPotions event");
+        BaseMod.subscribeToPotionGet(this);
         
 		initializePotions();
 		
@@ -716,6 +719,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		RelicLibrary.addBlue(new SolarPanel());
 		RelicLibrary.addBlue(new Carrot());
 		RelicLibrary.addBlue(new Geode());
+		RelicLibrary.addBlue(new RaidersMask());
 		BaseMod.addRelic(new Arrowhead(), RelicType.SHARED);
 		BaseMod.addRelic(new Bandana(), RelicType.SHARED);
 		BaseMod.addRelic(new Baseball(), RelicType.SHARED);
@@ -736,6 +740,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new IronHammer(), RelicType.SHARED);
 		BaseMod.addRelic(new IronCore(), RelicType.SHARED);
 		BaseMod.addRelic(new KingOfHearts(), RelicType.RED);
+		BaseMod.addRelic(new Kintsugi(), RelicType.SHARED);
 		BaseMod.addRelic(new Mirror(), RelicType.SHARED);
 		BaseMod.addRelic(new OnionRing(), RelicType.SHARED);
 		BaseMod.addRelic(new OozeArmor(), RelicType.RED);
@@ -854,15 +859,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         ReflectionHacks.setPrivateStaticFinal(LocalizedStrings.class, typeMap, localizationStrings);
 	}
 	
-	@Override
-	public void receiveEditStrings() {
-		logger.info("begin editting strings");
-		
-		String jsonPath = "localization/";
-		if (Settings.language.toString().equals("SPA")) {
-			logger.info("Spanish detected!");
-			jsonPath = "localization/spa/";
-		}
+	private void editStringsByLang(String jsonPath) {
 		
         // RelicStrings
         String relicStrings = Gdx.files.internal(jsonPath + "ReplayRelicStrings.json").readString(
@@ -900,12 +897,43 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(OrbStrings.class, orbStrings);
 		*/
+	}
+	
+	@Override
+	public void receiveEditStrings() {
+		logger.info("begin editting strings");
+		String jsonPath = "localization/";
+		editStringsByLang(jsonPath);
+		if (Settings.language.toString().equals("SPA")) {
+			logger.info("Spanish detected!");
+			jsonPath = "localization/spa/";
+			editStringsByLang(jsonPath);
+		}
+		
 		logger.info("done editting strings");
 	}
 	
 	public void receivePostDraw(AbstractCard c) {
 		if (AbstractDungeon.player.hasPower("TPH_Confusion") && c.cost > -1 && c.color != AbstractCard.CardColor.CURSE && c.type != AbstractCard.CardType.STATUS) {
 			c.setCostForTurn(AbstractDungeon.cardRandomRng.random(3));
+		}
+	}
+	
+	public void receivePotionGet(final AbstractPotion p0) {
+		if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Chameleon Ring")) {
+			switch(p0.ID) {
+				case "AttackPotion":
+					p0.description = "Add a random Upgraded Attack card to your hand, it costs #b0 this turn.";
+					return;
+				case "SkillPotion":
+					p0.description = "Add a random Upgraded Skill card to your hand, it costs #b0 this turn.";
+					return;
+				case "PowerPotion":
+					p0.description = "Add a random Upgraded Power card to your hand, it costs #b0 this turn.";
+					return;
+				default:
+					return;
+			}
 		}
 	}
 	

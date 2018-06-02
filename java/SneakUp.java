@@ -23,7 +23,7 @@ public class SneakUp extends CustomCard
     private static final int COST = 1;
     
     public SneakUp() {
-        super("Sneak Up", SneakUp.NAME, "cards/replay/sneakUp.png", SneakUp.COST, SneakUp.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF, 1);
+        super("Sneak Up", SneakUp.NAME, "cards/replay/sneakUp.png", SneakUp.COST, SneakUp.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF);
         this.exhaust = true;
         this.isEthereal = true;
         this.isInnate = true;
@@ -41,20 +41,11 @@ public class SneakUp extends CustomCard
     }
     
     @Override
-    public void triggerOnEndOfPlayerTurn() {
-        if (!this.upgraded) {
-            AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
-        }
-    }
-    
-    @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-			//this.upgradeBaseCost(0);
             this.rawDescription = SneakUp.UPGRADE_DESCRIPTION;
             this.initializeDescription();
-            //this.isEthereal = false;
         }
     }
     

@@ -12,29 +12,33 @@ import com.megacrit.cardcrawl.actions.utility.*;
 public class SneckoScales extends AbstractRelic
 {
     public static final String ID = "Snecko Scales";
+	public static int DRAWCOUNT = 3;
     
     public SneckoScales() {
-        super("Snecko Scales", "betaRelic.png", RelicTier.BOSS, LandingSound.FLAT);
+        super("Snecko Scales", "sneckoScales.png", RelicTier.BOSS, LandingSound.FLAT);
     }
     
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        return this.DESCRIPTIONS[0] + SneckoScales.DRAWCOUNT + this.DESCRIPTIONS[1];
     }
 
     @Override
     public void onUseCard(final AbstractCard targetCard, final UseCardAction useCardAction) {
+		if (targetCard == null || targetCard.freeToPlayOnce || targetCard.costForTurn <= 0) {
+			return;
+		}
 		AbstractDungeon.actionManager.addToBottom(new DiscardAction(AbstractDungeon.player, AbstractDungeon.player, 1, false));
     }
     
     @Override
     public void onEquip() {
-		AbstractDungeon.player.masterHandSize += 3;
+		AbstractDungeon.player.masterHandSize += SneckoScales.DRAWCOUNT;
     }
     
     @Override
     public void onUnequip() {
-		AbstractDungeon.player.masterHandSize -= 3;
+		AbstractDungeon.player.masterHandSize -= SneckoScales.DRAWCOUNT;
     }
     
     @Override

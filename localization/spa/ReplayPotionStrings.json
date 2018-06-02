@@ -93,5 +93,18 @@
 			" #yStrength y #b ",
 			" #yDexterity. NL Añade una #yCurse aleatoria a tu mano."
 	]
+  },
+  "Confusion Potion": {
+	"NAME": "Poción de Confusión",
+    "DESCRIPTIONS": [
+			"Aplica #b",
+			" #yConfusion."
+	]
+  },
+  "Salt Potion": {
+	"NAME": "Poción de Sal",
+    "DESCRIPTIONS": [
+			"Reinicia esta pelea. NL Tu oponente puede ser distinto."
+	]
   }
 }

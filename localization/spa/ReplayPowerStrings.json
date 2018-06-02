@@ -2,8 +2,10 @@
   "Doomed": {
     "NAME": "Condenado",
     "DESCRIPTIONS": [
-	"Perece en #b", 
-	" turnos."
+	"Perderá #b",
+	" HP en #b", 
+	" turnos.", 
+	" turno."
     ]
   },
   "Life Bind": {
@@ -42,11 +44,152 @@
 	" #yEnergy."
     ]
   },
-  "Specialist": {
-    "NAME": "Especialista",
+  "Awakened Ritual": {
+    "NAME": "Ritual del Despertado",
     "DESCRIPTIONS": [
-	"Aumenta el daño de non ataque en #b", 
-	"Reduce el daño de non ataque en #b"
+	"Si logras tener al menos #b5 #yRitual #yComponents en tu mano, son remplazadas por #yDark #yEcho attacks.", 
+	" NL (need #b",
+	" más en mano)"
+    ]
+  },
+  "Reflective Lens": {
+    "NAME": "Lentes Reflectantes",
+    "DESCRIPTIONS": [
+	"Al final de tu turno, gana #b",
+	" #yReflection por cada orbe de #yGlass que poseas."
+	]
+  },
+  "Snake Venom": {
+    "NAME": "Serpiente Venenosa",
+    "DESCRIPTIONS": [
+	"El próximo Ataque que juegues aplica #b",
+	" Veneno Necrótico cada vez que se haga daño sin bloquear."
+    ]
+  },
+  "Firewall": {
+    "NAME": "Firewall",
+    "DESCRIPTIONS": [
+	"Cuando bloquees daño, #yChannel #b",
+	" #yHellfire."
+    ]
+  },
+  "Crystallizer": {
+    "NAME": "Cristalizador",
+    "DESCRIPTIONS": [
+	"Al final de tu turno, si al menos la mitad de tus huecos de orbes están vacíos, #yChannel #b",
+	" #yCrystal. NL Huecas que contengan #yGlass cuentan como vacíos."
+    ]
+  },
+  "Friendly": {
+    "NAME": "Amistoso",
+    "DESCRIPTIONS": [
+	"Este monstruo está de tu parte, y atacará a los enemigos o te ayudará."
+    ]
+  },
+  "Eggshell": {
+    "NAME": "Cáscara de huevo",
+    "DESCRIPTIONS": [
+	"Gana #b", 
+	" #yBlock al final de su turno. NL Perder HP de un ataque reduce #yEggshell por #b1 (pero no por debajo de 0). NL Si #yEggshell es igual a  #b0, roba una carta extra al inicio de ",
+	"'s turno."
+    ]
+  },
+  "Color Shift": {
+    "NAME": "Cambio de Color",
+    "DESCRIPTIONS": [
+	"Cambiará el color a #y",
+	" si juegas #b",
+	" más #yAttacks. NL ",
+	" más #ySkills.",
+	"Nada",
+	"Verde",
+	"Amarillo",
+	"Rojo",
+	"Azul",
+	"Naranja",
+	"Morado",
+	"Gris"
+    ]
+  },
+  "Saturation": {
+    "NAME": "Saturación",
+    "DESCRIPTIONS": [
+	"Incremente la potencia de los efectos de #yColor #yShift ."
+    ]
+  },
+  "Color Shift Green": {
+    "NAME": "Cambio de Color: Verde",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Gana #b",
+	" #yArtifact y elimina debilidades. NL #yOn #yUnblocked #yAttack: Aplica #b",
+	" #yPoison. NL #yOn #ySpecial #yAbility: Cura #b",
+	" HP."
+    ]
+  },
+  "Color Shift Yellow": {
+    "NAME": "Cambio de Color: Amarillo",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Aplica #b",
+	" #yConfusion. NL #yOn #yUnblocked #yAttack: Añade #b",
+	" #yDazed en tu pila de robo. NL #yOn #ySpecial #yAbility: Aplica #b",
+	" #yConfusion."
+    ]
+  },
+  "Color Shift Red": {
+    "NAME": "Cambio de Color: Rojo",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Gana #b",
+	" #yStrength. NL #yOn #yUnblocked #yAttack: Aplica #b",
+	" #yVulnerable. NL #yOn #ySpecial #yAbility: Aplica #b",
+	" #yFrail y destruye todo el #yBlock. NL #yOn #yShift #yEnd: Pierde #b",
+	" #yStrength."
+    ]
+  },
+  "Color Shift Blue": {
+    "NAME": "Cambio de Color: Azul",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Gana #b",
+	" #yPlated #yArmor y #b",
+	" #yMetalisize. NL #yOn #yUnblocked #yAttack: Aplica #b",
+	" #yWeak. NL #yOn #ySpecial #yAbility: Gana #b",
+	" #yBlock y da a TODOS los enemigos #b",
+	" #yPlated #yArmor. NL #yOn #yShift #yEnd: Pierde #b",
+	" #yMetalisize."
+    ]
+  },
+  "Color Shift Orange": {
+    "NAME": "Cambio de Color: Naranja",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Gana #b",
+	" #yThorns. NL #yOn #yUnblocked #yAttack: Cura #b",
+	" HP. NL #yOn #ySpecial #yAbility: Aplica #b",
+	" #yConfusion. NL #yOn #yShift #yEnd: Pierde #b",
+	" #yThorns."
+    ]
+  },
+  "Color Shift Purple": {
+    "NAME": "Cambio de Color: Morado",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Añade #b",
+	" #yCurse a tu pila de descartes. NL #yOn #yUnblocked #yAttack: Aplica #b",
+	" #yConfusion. NL #yOn #ySpecial #yAbility: Añade #b",
+	" #yVoid a tu pila de descartes."
+    ]
+  },
+  "Color Shift Gray": {
+    "NAME": "Cambio de Color: Gris",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Añade #b",
+	" #yWounds a tu pila de descartes. NL #yOn #yUnblocked #yAttack: Añade #b",
+	" #ySlimed a tu mano. NL #yOn #ySpecial #yAbility: Aplica #b",
+	" #yConfusion."
+    ]
+  },
+  "Sleeping": {
+    "NAME": "Dormido",
+    "DESCRIPTIONS": [
+	"No hará nada todavía. Despiera al tomar daño o después de #b",
+	" turnos."
     ]
   }
 }
