@@ -167,13 +167,16 @@ public class MirrorMist
 		case DEFECT: {
 			this.has_1 = CardHelper.hasCardWithID("Dualcast");
 			this.has_1b = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Cracked Core");
-			this.has_2 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Cracked Core");
+			this.has_2b = this.has_1b;
+			this.has_2 = CardHelper.hasCardWithID("Zap");
 			this.loss_c_1 = new Dualcast();
 			this.gain_c_1 = new Bash();
 			this.loss_r_1b = new CrackedCore();
 			this.gain_r_1b = new IronCore();
-			this.loss_r_2 = new CrackedCore();
-			this.gain_r_2 = new SnakeRing();
+			this.loss_r_2b = new CrackedCore();
+			this.gain_r_2b = new SnakeRing();
+			this.loss_c_2 = new Zap();
+			this.gain_c_2 = new DeadlyPoison();
 			break;
 		}
 		default: {
@@ -182,12 +185,14 @@ public class MirrorMist
 	}
 	
 	if (this.moddedguy) {
-		GenericEventDialog.setDialogOption(OPTIONS[10] + this.goldgain + OPTIONS[11] + this.searchcursechance + OPTIONS[12] + this.searchCurse.name + ".", this.searchCurse);
-		GenericEventDialog.setDialogOption(OPTIONS[13] + this.searchCurse2.name + ".", this.searchCurse2);
+		this.imageEventText.setDialogOption(OPTIONS[10] + this.goldgain + OPTIONS[11] + this.searchcursechance + OPTIONS[12] + this.searchCurse.name + ".", this.searchCurse);
+		this.imageEventText.setDialogOption(OPTIONS[13] + this.searchCurse2.name + ".", this.searchCurse2);
 	} else {
 		this.checkForUpgrades();
 		String string_1 = "";
 		String string_2 = "";
+		AbstractCard prevcard_1 = null;
+		AbstractCard prevcard_2 = null;
 		if (this.has_1 || this.has_1b) {
 			string_1 = OPTIONS[2];
 			String obstring = OPTIONS[8];
@@ -199,6 +204,7 @@ public class MirrorMist
 				}
 				if (this.gain_c_1 != null) {
 					obstring += FontHelper.colorString(this.gain_c_1.name, "g");
+					prevcard_1 = this.gain_c_1;
 				} else if (this.gain_r_1 != null) {
 					obstring += FontHelper.colorString(this.gain_r_1.name, "g");
 				}
@@ -217,6 +223,11 @@ public class MirrorMist
 				}
 				if (this.gain_c_1b != null) {
 					obstring += FontHelper.colorString(this.gain_c_1b.name, "g");
+					if (prevcard_1 == null) {
+						prevcard_1 = this.gain_c_1b;
+					} else {
+						prevcard_1 = null;
+					}
 				} else if (this.gain_r_1b != null) {
 					obstring += FontHelper.colorString(this.gain_r_1b.name, "g");
 				}
@@ -247,6 +258,7 @@ public class MirrorMist
 				}
 				if (this.gain_c_2 != null) {
 					obstring += FontHelper.colorString(this.gain_c_2.name, "g");
+					prevcard_2 = this.gain_c_2;
 				} else if (this.gain_r_2 != null) {
 					obstring += FontHelper.colorString(this.gain_r_2.name, "g");
 				}
@@ -265,6 +277,11 @@ public class MirrorMist
 				}
 				if (this.gain_c_2b != null) {
 					obstring += FontHelper.colorString(this.gain_c_2b.name, "g");
+					if (prevcard_2 == null) {
+						prevcard_2 = this.gain_c_2b;
+					} else {
+						prevcard_2 = null;
+					}
 				} else if (this.gain_r_2b != null) {
 					obstring += FontHelper.colorString(this.gain_r_2b.name, "g");
 				}
@@ -284,11 +301,19 @@ public class MirrorMist
 			}
 			string_2 += ".";
 		}
-		GenericEventDialog.setDialogOption(string_1, (!this.has_1 && !this.has_1b));
-		GenericEventDialog.setDialogOption(string_2, (!this.has_2 && !this.has_2b));
+		if (prevcard_1 == null) {
+			this.imageEventText.setDialogOption(string_1, (!this.has_1 && !this.has_1b));
+		} else {
+			this.imageEventText.setDialogOption(string_1, prevcard_1);
+		}
+		if (prevcard_2 == null) {
+			this.imageEventText.setDialogOption(string_2, (!this.has_2 && !this.has_2b));
+		} else {
+			this.imageEventText.setDialogOption(string_2, prevcard_2);
+		}
 	}
 	
-    GenericEventDialog.setDialogOption(OPTIONS[5]);
+    this.imageEventText.setDialogOption(OPTIONS[5]);
 	
   }
 
@@ -342,12 +367,12 @@ public class MirrorMist
 			}
 		}
         //logMetric("Bash to Survivor+Neutralize");
-		GenericEventDialog.updateBodyText(RESULT_DIALOG_A);
+		this.imageEventText.updateBodyText(RESULT_DIALOG_A);
 		}
         break;
       case 1: 
         //logMetric("Ring to Blood");
-		GenericEventDialog.updateBodyText(RESULT_DIALOG_A);
+		this.imageEventText.updateBodyText(RESULT_DIALOG_A);
 		if (this.moddedguy) {
 			AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth);
 			AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.searchCurse2.makeCopy(), Settings.WIDTH / 2, Settings.HEIGHT / 2));
@@ -389,7 +414,7 @@ public class MirrorMist
         break;
       default: 
         //logMetric("Wander");
-        GenericEventDialog.updateBodyText(RESULT_DIALOG_B);
+        this.imageEventText.updateBodyText(RESULT_DIALOG_B);
 		float displayCount = 0.0F;
 		
 		ArrayList<AbstractCard> cards = new ArrayList();
@@ -412,8 +437,8 @@ public class MirrorMist
 		AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25F;
 		
       }
-      GenericEventDialog.clearAllDialogs();
-      GenericEventDialog.setDialogOption(OPTIONS[6]);
+      this.imageEventText.clearAllDialogs();
+      this.imageEventText.setDialogOption(OPTIONS[6]);
       this.screen = CurScreen.RESULT;
       break;
     default: 

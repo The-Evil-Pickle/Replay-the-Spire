@@ -49,15 +49,15 @@ public class TrappedChest
   {
     super(NAME, DIALOG_1, "images/events/mausoleum.jpg");
     
-    GenericEventDialog.setDialogOption(OPTIONS[0]);
+    this.imageEventText.setDialogOption(OPTIONS[0]);
 	
 	this.hasKey = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Cursed Key");
 	if (this.hasKey){
-		GenericEventDialog.setDialogOption(OPTIONS[1]);
+		this.imageEventText.setDialogOption(OPTIONS[1]);
 	} else {
-		GenericEventDialog.setDialogOption(OPTIONS[2], true);
+		this.imageEventText.setDialogOption(OPTIONS[2], true);
 	}
-    GenericEventDialog.setDialogOption(OPTIONS[3]);
+    this.imageEventText.setDialogOption(OPTIONS[3]);
     if (AbstractDungeon.ascensionLevel >= 15)
     {
       this.hpLoss = ((int)(AbstractDungeon.player.maxHealth * 0.33F));
@@ -76,16 +76,16 @@ public class TrappedChest
   }
   
   private void unlockTheChest() {
-	    GenericEventDialog.updateDialogOption(0, OPTIONS[9]);
-        GenericEventDialog.clearRemainingOptions();
+	    this.imageEventText.updateDialogOption(0, OPTIONS[9]);
+        this.imageEventText.clearRemainingOptions();
 		if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Matryoshka")) {
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Matryoshka").counter > 0) {
-				GenericEventDialog.setDialogOption(OPTIONS[12]);
+				this.imageEventText.setDialogOption(OPTIONS[12]);
 			} else {
-				GenericEventDialog.setDialogOption(OPTIONS[11], true);
+				this.imageEventText.setDialogOption(OPTIONS[11], true);
 			}
 		} else {
-			GenericEventDialog.setDialogOption(OPTIONS[10], true);
+			this.imageEventText.setDialogOption(OPTIONS[10], true);
 		}
   }
   
@@ -98,15 +98,15 @@ public class TrappedChest
       {
       case 0: 
         this.screen = CurScreen.TRAP;
-        GenericEventDialog.updateBodyText(DESCRIPTIONS[1]);
+        this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
         //logMetric("Triggered Chest Trap");
-        GenericEventDialog.updateDialogOption(0, OPTIONS[4], new Pain());
-        GenericEventDialog.updateDialogOption(1, OPTIONS[5] + this.hpLoss + OPTIONS[6]);
-        GenericEventDialog.updateDialogOption(2, OPTIONS[7] + this.dodgeChance + OPTIONS[8] + this.maxHpLoss + OPTIONS[6]);
+        this.imageEventText.updateDialogOption(0, OPTIONS[4], new Pain());
+        this.imageEventText.updateDialogOption(1, OPTIONS[5] + this.hpLoss + OPTIONS[6]);
+        this.imageEventText.updateDialogOption(2, OPTIONS[7] + this.dodgeChance + OPTIONS[8] + this.maxHpLoss + OPTIONS[6]);
         break;
       case 1: 
         this.screen = CurScreen.CURSE;
-        GenericEventDialog.updateBodyText(DESCRIPTIONS[2]);
+        this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
         //logMetric("Used Cursed Key");
         this.unlockTheChest();
 		AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(
@@ -123,7 +123,7 @@ public class TrappedChest
 		switch (buttonPressed)
 		{
 			case 0: 
-				GenericEventDialog.updateBodyText(DESCRIPTIONS[3]);
+				this.imageEventText.updateBodyText(DESCRIPTIONS[3]);
 				this.unlockTheChest();
 				CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
 				AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Pain(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
@@ -132,7 +132,7 @@ public class TrappedChest
 				//logMetric("Take Pain");
 				break;
 			case 1: 
-				GenericEventDialog.updateBodyText(DESCRIPTIONS[3]);
+				this.imageEventText.updateBodyText(DESCRIPTIONS[3]);
 				this.unlockTheChest();
 				CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
 				CardCrawlGame.sound.play("BLUNT_FAST");
@@ -142,10 +142,10 @@ public class TrappedChest
 			case 2: 
 				int r = MathUtils.random(100);
 				if (r > this.dodgeChance){
-					GenericEventDialog.updateBodyText(DESCRIPTIONS[4]);
+					this.imageEventText.updateBodyText(DESCRIPTIONS[4]);
 					this.unlockTheChest();
 				} else {
-					GenericEventDialog.updateBodyText(DESCRIPTIONS[3]);
+					this.imageEventText.updateBodyText(DESCRIPTIONS[3]);
 					this.unlockTheChest();
 					CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
 					CardCrawlGame.sound.play("BLUNT_FAST");
@@ -157,9 +157,9 @@ public class TrappedChest
 		break;
 	case CURSE:
 		this.screen = CurScreen.RESULT;
-		GenericEventDialog.updateBodyText(DESCRIPTIONS[5]);
-		GenericEventDialog.updateDialogOption(0, OPTIONS[3]);
-		GenericEventDialog.clearRemainingOptions();
+		this.imageEventText.updateBodyText(DESCRIPTIONS[5]);
+		this.imageEventText.updateDialogOption(0, OPTIONS[3]);
+		this.imageEventText.clearRemainingOptions();
         AbstractDungeon.getCurrRoom().rewards.clear();
 		
 		int rewardSet = MathUtils.random(8);

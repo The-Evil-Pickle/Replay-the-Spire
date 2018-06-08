@@ -25,6 +25,10 @@
     "NAME": "Fluid Movement",
     "DESCRIPTION": "Keep up to !M! Block between rounds."
   },
+  "Combo Extender": {
+    "NAME": "Combo Extender",
+    "DESCRIPTION": "Deal !D! damage. NL If this is drawn after the start of your turn, it costs 0 until it is next played."
+  },
   "Sneak Up": {
     "NAME": "Sneak Up",
     "DESCRIPTION": "Gain !M! Intangible. NL Discard 1 card. NL Innate. NL Exhaust. NL Ethereal.",

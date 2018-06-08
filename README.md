@@ -61,7 +61,7 @@ Kintsugi | All | Boss | Remove 5 cards from your deck. Obtain 2 random **Curses*
 Ooze Armor | Ironclad | Boss | Gain 1 energy and draw 1 card at the start of each turn. At the start of combat, gain Slow (resets to -2) and Malleable (resets to 4), and shuffle 2 Slimed into your draw pile.
 Sweet Flower | All | Boss | Gain 1 more energy each turn. Map displays much less information.
 Electric Blood | Ironclad | Boss | Gain 2 energy at the start of each turn. When you spend energy, lose that much HP, excluding the first 2 energy spent each turn.
-Snecko Scales | Silent | Boss | Draw 3 additional cards each turn. When you play a card, discard a card.
+Snecko Scales | Silent | Boss | Draw 3 additional cards each turn. When you play a card that costs more than 0, discard a card.
 Ring of Chaos | All | Boss | Some card rewards have randomly altered stats and effects.
 
 
@@ -214,5 +214,4 @@ Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 
  * Honey Jar + Question Card doesn't stack.
  * Compile Driver doesn't count custom orbs.
  * When Raider's Mask evokes a dark orb, it may cause one of your other orbs to skip activating its passive effect.
- * This mod adds so many relics the scrollbar on the relic collection screen doesn't go far enough down for you to see all of them.
  

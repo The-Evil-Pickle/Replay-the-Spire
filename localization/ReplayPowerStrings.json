@@ -93,6 +93,29 @@
 	"This monster is on your side, and will attack enemies or help you."
     ]
   },
+  "CommanderSharePower": {
+    "NAME": "Commander",
+    "DESCRIPTIONS": [
+	"Buffs on this monster also apply to other monsters."
+    ]
+  },
+  "Drowning": {
+    "NAME": "Drowning",
+    "DESCRIPTIONS": [
+	"At the end of your turn, lose #b",
+	"At the end of your turn, gain #b",
+	" HP. NL Increases when you take unblocked attack damage, decreases when you play a #ySkill. NL Range is #b",
+	" to ",
+	" #b"
+    ]
+  },
+  "AbePower": {
+    "NAME": "Deadweight",
+    "DESCRIPTIONS": [
+	"#yCaptain #yAbe can't actually fight you underwater (when your #yDrowning level is at #b",
+	" or higher). NL NL What kind of pirate can't swim?"
+    ]
+  },
   "Eggshell": {
     "NAME": "Eggshell",
     "DESCRIPTIONS": [

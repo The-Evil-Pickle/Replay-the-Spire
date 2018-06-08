@@ -44,7 +44,7 @@ public class ReflectiveLensPower extends AbstractPower
     public void updateDescription() {
         this.description = ReflectiveLensPower.DESCRIPTIONS[0] + this.amount + ReflectiveLensPower.DESCRIPTIONS[1];
     }
-    
+    /*
     @Override
     public void atEndOfTurn(final boolean isPlayer) {
 		//int glasscount = 0;
@@ -59,12 +59,8 @@ public class ReflectiveLensPower extends AbstractPower
 				//glasscount += this.amount + o.passiveAmount;
 			}
 		}
-		/*if (glasscount > 0) {
-			this.flash();
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ReflectionPower(AbstractDungeon.player, glasscount), glasscount));
-		}*/
     }
-    
+    */
     static {
         powerStrings = CardCrawlGame.languagePack.getPowerStrings("Reflective Lens");
         NAME = ReflectiveLensPower.powerStrings.NAME;

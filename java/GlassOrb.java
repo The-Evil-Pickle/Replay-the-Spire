@@ -3,14 +3,21 @@ package com.megacrit.cardcrawl.orbs;
 import com.megacrit.cardcrawl.localization.*;
 import com.badlogic.gdx.graphics.*;
 import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.dungeons.*;
 import com.badlogic.gdx.math.*;
 import com.megacrit.cardcrawl.actions.*;
+import com.megacrit.cardcrawl.characters.*;
+import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.actions.defect.*;
 import com.badlogic.gdx.math.*;
-import com.megacrit.cardcrawl.dungeons.*;
 import com.badlogic.gdx.*;
+import com.megacrit.cardcrawl.actions.animations.*;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.megacrit.cardcrawl.core.*;
+import com.megacrit.cardcrawl.vfx.*;
+import com.megacrit.cardcrawl.vfx.combat.*;
+import basemod.*;
 
 public class GlassOrb extends AbstractOrb
 {
@@ -105,6 +112,18 @@ public class GlassOrb extends AbstractOrb
 		}
 		else if (AbstractDungeon.player.hasPower("Reflective Lens")) {
 			FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.passiveAmount + AbstractDungeon.player.getPower("Reflective Lens").amount), this.cX + AbstractOrb.NUM_X_OFFSET, this.cY + this.bobEffect.y / 2.0f + AbstractOrb.NUM_Y_OFFSET, this.c, this.fontScale);
+		}
+    }
+	
+	
+    @Override
+    public void onEndOfTurn() {
+		if (AbstractDungeon.player.hasPower("Reflective Lens")) {
+			float speedTime = 0.6f / AbstractDungeon.player.orbs.size();
+			OrbFlareEffect orbEffect = new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.LIGHTNING);
+			ReflectionHacks.setPrivate((Object)orbEffect, (Class)AbstractGameEffect.class, "color", (Object)(new Color(1.0f, 1.0f, 1.0f, 0.75f)));
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(orbEffect, speedTime));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ReflectionPower(AbstractDungeon.player, AbstractDungeon.player.getPower("Reflective Lens").amount + this.passiveAmount), AbstractDungeon.player.getPower("Reflective Lens").amount + this.passiveAmount));
 		}
     }
 	

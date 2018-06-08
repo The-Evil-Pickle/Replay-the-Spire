@@ -127,6 +127,50 @@
 	" additional cards each turn. NL When you play a card that costs more than #b0 energy, discard a card."
 	]
   },
+  "Snecko Heart": {
+	"NAME": "Snecko Heart",
+	"FLAVOR": "The preserved heart of a fallen Snecko.",
+    "DESCRIPTIONS": [
+	"Start combat #yConfused. NL #yConfusion can never increase the cost of a card by more than #b1. NL The first card you draw each turn always costs #b0."
+	]
+  },
+  "Pondfish Scales": {
+	"NAME": "Pondfish Scales",
+	"FLAVOR": "Scales sometimes held by those who have bested Captain Abe in battle.",
+    "DESCRIPTIONS": [
+	"Whenever you play a #ySkill that does not give #yBlock, gain #b",
+	" #yBlock."
+	]
+  },
+  "Transient Totem": {
+	"NAME": "Transient Totem",
+	"FLAVOR": "This wooden totem can only be percived by those who have passed through The Fading Forest.",
+    "DESCRIPTIONS": [
+	"Gain [E] at the start of each round. NL Mimics the #rnegative effect of a random #yBoss #yRelic each combat. NL ",
+	"#yOut #yof #yCombat: You're not in combat right now, but when you are, the negative effect of this relic will display here.",
+	"#yCursed #yKey: #b",
+	" random #rCurses have been shuffled into your deck (1 for each chest opened since you got this relic).",
+	"#yEctoplasm: You will not be able to obtain gold from this fight.",
+	"#ySozu: You will not be able to obtain potions during or as a reward for this fight.",
+	"#yMark #yof #yPain: #b2 #yWounds have been shuffled into your deck.",
+	"#yVelvet #yChoker: You may not play more than #b6 cards each turn.",
+	"#yRunic #yDome: You cannot see enemy intents.",
+	"#yPhilosopher's #yStone: All enemies have been given #b+2 #yStrength.",
+	"#yBusted #yCrown: Card rewards from this fight will give you #b2 fewer options to choose from.",
+	"#ySnecko #yEye: You are #yConfused.",
+	"#yRunic #yPyramid: You draw #b1 less card each turn.",
+	"#yHoney #yJar: You may not skip rewards from this combat.",
+	"#ySnecko #yScales: When you play a card that costs more than #b0, discard a card.",
+	"#yPandora's #yBox: #b5 random cards have been shuffled into your deck.",
+	"#yBlack #yStar: No negative effect. Lucky!",
+	"#yEternal #yFeather: No negative effect. Lucky!",
+	"#yWhite #yBeast #yStatue: No negative effect. Lucky!",
+	"#yTiny #yHouse: No negative effect. Lucky!",
+	"#yCalling #yBell: #b3 random #rCurses have been shuffled into your deck.",
+	"#yKintsugi: #b2 random #rCurses have been shuffled into your deck.",
+	"#yBlack #yBlood: Burning Blood will not trigger at the end of this combat.",
+	]
+  },
   "King of Hearts": {
 	"NAME": "King of Hearts",
 	"FLAVOR": "Traditionally drawn with his sword going through his head, is sometimes known as the Suicide King.",

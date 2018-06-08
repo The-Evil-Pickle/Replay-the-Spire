@@ -111,10 +111,10 @@ public class ChaosEvent
 	rando = AbstractDungeon.miscRng.random(0, rings.size() - 1);
 	this.ring2 = rings.remove(rando);
 	
-	GenericEventDialog.setDialogOption(OPTIONS[0] + FontHelper.colorString(this.curse.name, "r") + ".", this.curse);
-    GenericEventDialog.setDialogOption(OPTIONS[1] + FontHelper.colorString(this.curse2.name, "r") + ".", this.curse2);
-    GenericEventDialog.setDialogOption(OPTIONS[2]);
-    GenericEventDialog.setDialogOption(OPTIONS[3]);
+	this.imageEventText.setDialogOption(OPTIONS[0] + FontHelper.colorString(this.curse.name, "r") + ".", this.curse);
+    this.imageEventText.setDialogOption(OPTIONS[1] + FontHelper.colorString(this.curse2.name, "r") + ".", this.curse2);
+    this.imageEventText.setDialogOption(OPTIONS[2]);
+    this.imageEventText.setDialogOption(OPTIONS[3]);
   }
   
   protected void buttonEffect(int buttonPressed)
@@ -133,7 +133,7 @@ public class ChaosEvent
 		AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
 		AbstractDungeon.combatRewardScreen.open();
         //UnlockTracker.markCardAsSeen("Hallucinations");
-        GenericEventDialog.updateBodyText(D_RESULT);
+        this.imageEventText.updateBodyText(D_RESULT);
       }
       else if (buttonPressed == 1)
       {
@@ -146,7 +146,7 @@ public class ChaosEvent
 		AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
 		AbstractDungeon.combatRewardScreen.open();
         //UnlockTracker.markCardAsSeen("Hallucinations");
-        GenericEventDialog.updateBodyText(D_RESULT);
+        this.imageEventText.updateBodyText(D_RESULT);
       }
       else if (buttonPressed == 2)
       {
@@ -160,16 +160,16 @@ public class ChaosEvent
 		AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
 		AbstractDungeon.combatRewardScreen.open();
         //UnlockTracker.markCardAsSeen("Hallucinations");
-        GenericEventDialog.updateBodyText(D_RESULT);
+        this.imageEventText.updateBodyText(D_RESULT);
       }
       else
       {
         openMap();
-        GenericEventDialog.clearAllDialogs();
-        GenericEventDialog.setDialogOption(OPTIONS[3]);
+        this.imageEventText.clearAllDialogs();
+        this.imageEventText.setDialogOption(OPTIONS[3]);
       }
-      GenericEventDialog.clearAllDialogs();
-      GenericEventDialog.setDialogOption(OPTIONS[3]);
+      this.imageEventText.clearAllDialogs();
+      this.imageEventText.setDialogOption(OPTIONS[3]);
       this.screen = CurScreen.RESULT;
       break;
     default: 

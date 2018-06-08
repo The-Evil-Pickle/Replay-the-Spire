@@ -1,0 +1,53 @@
+{
+  "Captain Abe": {
+    "MOVES": [
+      "The Collapse",
+      "Captain's Orders",
+      "Keel Haul",
+      "Rob 'em Blind",
+      "Final Trick",
+      "Beyond Hell"
+    ],
+    "NAME": "Captain Abe",
+    "DIALOG": [
+      "@SET@ @SAIL!@",
+      "@WEIGH@ @ANCHOR!@",
+      "@AVAST@ @YE@ NL @SCURVEY@ @DOG!@",
+      "@SCUTTLE@ @THE@ @SHIPWRECK!@",
+      "Die, landlubber!",
+      "All hands on deck!",
+      "I'll be taking that!",
+      "~eh?~ NL ~wha?~",
+      "Capt'n Abe sails once more!",
+      "Don't think ye can NL get past ~Capt'n~ ~Abe~ NL with yer limbs intact!",
+      "~I'm~ ~not~ ~dead~ ~yet!~",
+      "... wait. I am dead.",
+      "~Arg!~ NL Flee now landlubber, or NL @BE@ @FOREVER@ #r@CURSED!@"
+    ]
+  },
+  "Pondfish": {
+    "MOVES": [
+      "Drag to Hell",
+      "Living Lantern",
+      "Teeth Rake",
+      "6 Feet Under",
+      "Splash"
+    ],
+    "NAME": "Pondfish",
+    "DIALOG": [
+      "...",
+      "o- >:["
+    ]
+  },
+  "FadingForestBoss": {
+    "MOVES": [
+		"Welcome...",
+		"The Forest Guides",
+		"The Forest Renews",
+		"The Forest Protects",
+		"The Forest Fades"
+	],
+    "NAME": "The Fading Forest",
+    "DIALOG": []
+  }
+}

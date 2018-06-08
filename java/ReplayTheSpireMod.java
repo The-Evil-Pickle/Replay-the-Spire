@@ -80,6 +80,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	
 	public static EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>> potionsByRarity = new EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>>(ReplayTheSpireMod.PotionRarity.class);
 	
+	
+	
 	public static boolean BypassStupidBasemodRelicRenaming_hasRelic(String targetID) {
 		if (AbstractDungeon.player == null) {
 			return false;
@@ -707,7 +709,22 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         Settings.isDailyRun = false;
         Settings.isTrial = false;
         Settings.isDemo = false;
+		
+		ReplayTheSpireMod.receiveEditUnlocks();
+		
     }
+	
+	private static void receiveEditUnlocks() {
+		if(UnlockTracker.isBossSeen("PONDFISH")) {
+			while (UnlockTracker.isRelicLocked("Pondfish Scales")) {
+				UnlockTracker.lockedRelics.remove("Pondfish Scales");
+			}
+		} else {
+			if (!UnlockTracker.isRelicLocked("Pondfish Scales")) {
+				UnlockTracker.lockedRelics.add("Pondfish Scales");
+			}
+		}
+	}
 	
 	@Override
 	public void receiveEditRelics() {
@@ -891,6 +908,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         String uiStrings = Gdx.files.internal(jsonPath + "ReplayUIStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(UIStrings.class, uiStrings);
+        String mStrings = Gdx.files.internal(jsonPath + "ReplayMonsterStrings.json").readString(
+        		String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(MonsterStrings.class, mStrings);
         // OrbStrings
 		/*
         String orbStrings = Gdx.files.internal(jsonPath + "ReplayOrbStrings.json").readString(

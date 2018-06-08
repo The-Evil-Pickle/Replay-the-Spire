@@ -53,7 +53,7 @@ repeat: none
   orig: 128, 128
   offset: 21, 20
   index: -1
-128/barricade
+128/deadweight
   rotate: false
   xy: 495, 350
   size: 88, 70
@@ -305,7 +305,7 @@ repeat: none
   orig: 128, 128
   offset: 23, 21
   index: -1
-128/lessdraw
+128/drowning
   rotate: false
   xy: 805, 159
   size: 62, 86
@@ -368,7 +368,7 @@ repeat: none
   orig: 128, 128
   offset: 28, 19
   index: -1
-128/platedarmor
+128/inactivedw
   rotate: false
   xy: 516, 422
   size: 90, 88
@@ -599,7 +599,7 @@ repeat: none
   orig: 48, 48
   offset: 8, 7
   index: -1
-48/barricade
+48/deadweight
   rotate: false
   xy: 93, 127
   size: 33, 27
@@ -851,7 +851,7 @@ repeat: none
   orig: 48, 48
   offset: 8, 7
   index: -1
-48/lessdraw
+48/drowning
   rotate: false
   xy: 1393, 171
   size: 24, 33
@@ -914,7 +914,7 @@ repeat: none
   orig: 48, 48
   offset: 10, 7
   index: -1
-48/platedarmor
+48/inactivedw
   rotate: false
   xy: 1711, 212
   size: 33, 34

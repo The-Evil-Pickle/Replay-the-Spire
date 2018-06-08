@@ -27,7 +27,7 @@ public class Stuck extends AbstractImageEvent
         super(Stuck.NAME, Stuck.DIALOG_1, "images/events/stuck.png");
         this.screen = CurScreen.INTRO;
         this.setCards();
-        GenericEventDialog.setDialogOption(Stuck.OPTIONS[0]);
+        this.imageEventText.setDialogOption(Stuck.OPTIONS[0]);
     }
     
     private void setCards() {
@@ -57,32 +57,32 @@ public class Stuck extends AbstractImageEvent
         switch (this.screen) {
             case INTRO: {
                 this.screen = CurScreen.CHOICE;
-                GenericEventDialog.updateBodyText(Stuck.DIALOG_2);
-                GenericEventDialog.clearAllDialogs();
-                GenericEventDialog.setDialogOption(Stuck.OPTIONS[1] + FontHelper.colorString(this.card.name, "r"), this.card.makeStatEquivalentCopy());
+                this.imageEventText.updateBodyText(Stuck.DIALOG_2);
+                this.imageEventText.clearAllDialogs();
+                this.imageEventText.setDialogOption(Stuck.OPTIONS[1] + FontHelper.colorString(this.card.name, "r"), this.card.makeStatEquivalentCopy());
                 if (this.upgradeOption) {
 					AbstractCard c = this.card.makeStatEquivalentCopy();
 					c.upgrade();
-                    GenericEventDialog.setDialogOption(Stuck.OPTIONS[2] + FontHelper.colorString(this.card.name, "g"), c);
+                    this.imageEventText.setDialogOption(Stuck.OPTIONS[2] + FontHelper.colorString(this.card.name, "g"), c);
                 }
                 else {
-                    GenericEventDialog.setDialogOption(Stuck.OPTIONS[3], true);
+                    this.imageEventText.setDialogOption(Stuck.OPTIONS[3], true);
                 }
                 break;
             }
             case CHOICE: {
                 this.screen = CurScreen.RESULT;
-                GenericEventDialog.clearAllDialogs();
-                GenericEventDialog.setDialogOption(Stuck.OPTIONS[4]);
+                this.imageEventText.clearAllDialogs();
+                this.imageEventText.setDialogOption(Stuck.OPTIONS[4]);
                 switch (buttonPressed) {
                     case 0: {
-                        GenericEventDialog.updateBodyText(Stuck.DESCRIPTIONS[2]);
+                        this.imageEventText.updateBodyText(Stuck.DESCRIPTIONS[2]);
                         AbstractDungeon.effectList.add(new PurgeCardEffect(this.card));
                         AbstractDungeon.player.masterDeck.removeCard(this.card);
                         break;
                     }
                     case 1: {
-                        GenericEventDialog.updateBodyText(Stuck.DESCRIPTIONS[3]);
+                        this.imageEventText.updateBodyText(Stuck.DESCRIPTIONS[3]);
 						this.card.upgrade();
 						AbstractDungeon.player.bottledCardUpgradeCheck(this.card);
                         AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(this.card.makeStatEquivalentCopy()));

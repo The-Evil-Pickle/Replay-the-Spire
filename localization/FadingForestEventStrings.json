@@ -1,0 +1,219 @@
+{
+	"FF_Enter": {
+		"NAME": "Enter the Forest",
+		"DESCRIPTIONS": [
+			"You see before you a strange forest of trees. Feeling an evil presence, you turn to go back, only to find the trees surrounding you on all sides. NL NL You have been swallowed by the woods.",
+			"The forest is winding and wild, with no clear paths. You're unsure where you are or where you've been; it is as if the trees themselves move when you look away."
+		],
+		"OPTIONS": [
+			"[Continue]",
+			"[Press forth] #rEncounter #rsomething #rruthless.",
+			"[Stop and rest] #rEncounter #rsomething #rslothful.",
+			"[Analyze the situation] #rEncounter #rsomething #rheartless."
+		]
+	},
+	"FF_Serpent": {
+		"NAME": "The False Serpent",
+		"DESCRIPTIONS": [
+			"You find an unusual pit in the depths of the forest. As you approach the opening, an familiar serpent creature materializes in front of you. NL NL ~\"Ho~ ~hooo!~ ~Hello~ ~hello!~ ~what~ ~have~ ~we~ ~got~ ~here?~ Hello wanderer, I ask a simple question. NL The most fulfilling of lives is that in which you can #y~have~ #y~everything!~ NL Don't you agree?\"",
+			"~\"Yeeeeeeessssssssssessss!~ NL ~Thisss~ ~will~ ~all~ ~be~ ~worthhh~ ~it.~ NL ~..ssSSs.....~ ~ss...~ ~sssss....!\"~",
+			"The serpent is silent for a time. Without warning, it suddently lunges at you with blinding speed - but fades into harmless mist just inches from your face.",
+			"The serpent's grin widens, and it rears its head upwards. Before it can do anything, it disperses into mist - but leaves behind a reward."
+		],
+		"OPTIONS": [
+			"[Agree] #gObtain #ga #grandom #gRelic #geffect. #rAdd #ra #rcopy #rof #rDoubt #rto #ryour #rdraw #rpile.",
+			"[Disagree]",
+			"[Continue]",
+			"[Leave]"
+		]
+	},
+	"FF_Big Fish": {
+		"NAME": "The False Fishers",
+		"DESCRIPTIONS": [
+			"As you make your way between the trees you see a #ybanana, a #ydonut, and a #ybox ~floating~ about. You seem to remember something like this before, but closer inspection reveals no strings or tricks holding the objects in place. NL What do you do?",
+			"You eat the #ybanana. It is nutritious and slightly #bmagical, healing you. NL The other objects turn to mist and vanish.",
+			"You eat the #ydonut. You are filled with energy! Your #yDexterity increases. NL The other objects turn to mist and vanish.",
+			"You grab the box. Inside you find a #yrelic! NL However, the delicious-looking food items turn to mist before you can grab one... NL You are filled with ~sadness,~ but mostly #rregret.."
+		],
+		"OPTIONS": [
+			"[Banana] #gHeal #g",
+			" #gHP.",
+			"[Donut] #gGain #g",
+			" #yDexterity.",
+			"[Box] #gObtain #ga #grandom #gRelic #geffect. #rAdd #ra #rcopy #rof #rRegret #rto #ryour #rdraw #rpile.",
+			"[Leave]"
+		]
+	},
+	"FF_Drug Dealer": {
+		"NAME": "False Dealer",
+		"DESCRIPTIONS": [
+			"A familiar face emerges from the mists. NL \"Welcome. Want some #yJ.A.X.? It'll grant you the strength you desire. You'll need it if you intend to pass through this place. NL Well? Wanna get #yJAXXED?\" NL ",
+			"~\"Excellent.\"~ NL A dangerous looking syringe filled with glowing liquid materializes in the man's hand, and is handed to you. As soon as you take it, the figure vanishes into the fog of the forest.",
+			"\"An unwise choice. You shall learn...\" NL The man's voice fades out of hearing as he himself dissapears before you."
+		],
+		"OPTIONS": [
+			"[Accept] #rLose #r",
+			" #rHP: #gGain #g"
+			" #yStrength."
+			"[Leave]",
+			"[Decline]"
+		]
+	},
+	"FF_Golden Idol": {
+		"NAME": "The False Idol",
+		"DESCRIPTIONS": [
+			"You come across an inconspicuous pedestal with a #yshining #ygold #yidol sitting peacefully atop. You are overcome with the desire to obtain this object. You @MUST@ have it! NL Blind to your surroundings, you step forward...",
+			"As soon as you touch the idol, it turns to mist in your hands. As you snap back to your senses, a huge boulder fades in from out of the mist, pushed towards you by some unseen force.",
+			"@RUUUUUUUUUUN!@ NL The boulder seems to have a mind of its own, changing direction to keep following you through the trees. NL Eventually, the rumbling behind you stops. Turning around, you can see no trace the boulder was ever there. Unfortunately, it feels like you sprained something during your escape.",
+			"You throw yourself at the boulder with everything you have. It evaporates as soon as you strike it, but a powerful force throws you back, slamming you into a nearby tree.",
+			"The boulder follows you, matching your every turn. Just when you think you've lost it, it crashes through a line of trees. NL @WHAM!@ One of the fallen trees lands on you, leaving you with many bruises and more splinters. When you stand back up, the boulder is nowhere to be found.",
+		],
+		"OPTIONS": [
+			"[Continue]",
+			"[Outrun] #rAdd #ra #rWound #rto #ryour #rdraw #rpile.",
+			"[Smash] #rTake #r",
+			" #rDamage.",
+			"[Hide] #rTake #r",
+			" #rDamage. #rGain #r",
+			" #rVulnerable."
+		]
+	},
+	"FF_Mushrooms": {
+		"NAME": "The False Field of Mushrooms",
+		"DESCRIPTIONS": [
+			"You enter an opening in the trees. Inside is a beutiful field full of #b~hypnotizing~ #b~colored~ #b~mushrooms.~ NL You feel they are ~not~ ~of~ ~this~ ~world...~ but even so, you feel oddly compelled to eat a #b~mushroom...~",
+			"As soon as you touch the idol, it turns to mist in your hands. As you snap back to your senses, a huge boulder fades in from out of the mist, pushed towards you by some unseen force.",
+			"@RUUUUUUUUUUN!@ NL The boulder seems to have a mind of its own, changing direction to keep following you through the trees. NL Eventually, the rumbling behind you stops. Turning around, you can see no trace the boulder was ever there. Unfortunately, it feels like you sprained something during your escape.",
+			"You throw yourself at the boulder with everything you have. It evaporates as soon as you strike it, but a powerful force throws you back, slamming you into a nearby tree.",
+			"The boulder follows you, matching your every turn. Just when you think you've lost it, it crashes through a line of trees. NL @WHAM!@ One of the fallen trees lands on you, leaving you with many bruises and more splinters. When you stand back up, the boulder is nowhere to be found.",
+		],
+		"OPTIONS": [
+			"[Stomp] #rAnger #rthe #rMushrooms.",
+			"[Eat] #rTake #r",
+			" #rDamage. #rAdd #rSpreading #rInfection #rto #ryour #rdraw #rpile.",
+		]
+	},
+	"FF_Scrap Ooze": {
+		"NAME": "False Ooze",
+		"DESCRIPTIONS": [
+			"As you make your way through the trees you hear a ~gurgling~ and the @grinding@ of metals. Before you is a slime-like creature with a number of strange artifacts floating within. You can see a #yTreasure at the center... but the slime already seems irked by your presence.",
+			"You manage to grab the #yRelic and yank it out. Once you've done so, however, the creature becomes livid and springs to life."
+		],
+		"OPTIONS": [
+			"[Reach Inside] #rAnger #rthe #rSlime. #gObtain #ga #grandom #gRelic #geffect.",
+			"[Leave]"
+		]
+	},
+	"FF_SensoryStone": {
+		"NAME": "The False Tesseract",
+		"DESCRIPTIONS": [
+			"As go deeper into the woods, you discover a #bglowing #btesseract @spinning@ and ~shifting~ gently in the air.",
+			"You touch it. NL NL A #r@sharp@ #r@pain@ flows through you, followed by vivid flashes of a distant memory. NL ...whose memories are these?",
+			"#r~FEAR.~ NL NL A demonic creature towers above you, wings spread wide as it howls with laughter. Dead bodies of a tribe surround you while the village is engulfed in terrible #p~dark~ #p~flames.~ NL NL The demon calls out, taunting you. NL NL \" #r@YOU@ #r@REALLY@ #r@ARE@ #r@THE@ #r@STRONGEST@ #r@NOW!@ #r@Haha..@ #r@HEHE...@ #r@HAHAHAAAAH!!@ \" NL NL This laughter echoes forever... ",
+			"#g~TRIUMPH.~ NL NL The remains, of a #p~ghostly~ #p~creature,~ sink slowly into the mud before you, barely visible in the moonlight. You have proven yourself amongst your sisters. NL NL Standing victoriously, you wait in silence as the others ceremoniously place the #ycreature's #yskull atop your head. The ritual has concluded. NL NL You head towards the Spire...",
+			"#b~CONFUSION.~ NL NL #y[OBJECTIVE] #gBALANCE #gmust #gbe #gENFORCED NL #y[DEFINE] #gBALANCE NL #y[ERROR] #gBALANCE #gNOT #gFOUND NL #y[DEFINE] #gBALANCE NL #y[ERROR] #gBALANCE #gNOT #gFOUND NL #y[WARNING] #rLarge #robject #rapproaching NL NL ~\"I...~ ~..am~ ~....Neow..\"~"
+		],
+		"OPTIONS": [
+			"[Recall] #gAdd #g1 #gColorless #gcard #gto #gyour #ghand. #rTake #r",
+			"[Recall] #gAdd #g2 #gColorless #gcards #gto #gyour #ghand. #rTake #r",
+			"[Recall] #gAdd #g3 #gColorless #gcards #gto #gyour #ghand. #rTake #r",
+			" #rDamage #r",
+			" #rTimes.",
+			"[Leave]",
+			"[Interact]"
+		]
+	},
+	"FF_Vampires": {
+		"NAME": "False Vampires",
+		"DESCRIPTIONS": [
+			"Your navigation of the forest is interrupted by a number of hooded figures who emerge from the trees all around you. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~brother,~ ~and~ ~feel~ ~the~ ~comfort~ ~of~ ~the~ ~Forest.\"~ NL They don't look like they're planning to attack you, but they don't look like they'll take no for an answer either...",
+			"Your navigation of the forest is interrupted by a number of hooded figures who emerge from the trees all around you. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~sister,~ ~and~ ~feel~ ~the~ ~comfort~ ~of~ ~the~ ~Forest.\"~ NL They don't look like they're planning to attack you, but they don't look like they'll take no for an answer either...",
+			"Your navigation of the forest is interrupted by a number of hooded figures who emerge from the trees all around you. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~lost~ ~one,~ ~and~ ~feel~ ~the~ ~comfort~ ~of~ ~the~ ~Forest.\"~ NL They don't look like they're planning to attack you, but they don't look like they'll take no for an answer either...",
+			"The tall figure grabs your arm, pulls you forward, and sinks his fangs into your neck. You feel a @dark@ @force@ pour into your neck and @course@ through your body. The hooded figures then turn to mist and vanish, one by one. NL An intense ~hunger~ passes through your belly. You #rmust #rfeed...",
+			"You decide to fight your way out. Any foes hit by your attacks evaporate, but an endless number of them continue to emerge from the trees. NL You run. You fight. You take damage. You blink. They are gone."
+		],
+		"OPTIONS": [
+			"[Accept] #gExhaust #gall #gStrikes. #gObtain #g5 #gBites. #rLose #r",
+			" #rHP.",
+			"[Break Through] #rTake #r",
+			" #rdamage.",
+		]
+	},
+	"FF_Headache": {
+		"NAME": "Headache",
+		"DESCRIPTIONS": [
+			"As you make your way past tree after tree, your thoughts become jumbled. You head begins to pound. NL After a short time, the pain becomes unbearable.",
+			"You ignore the pain and press forward. Doing so occupies a significant amount of your strength.",
+			"You close your eyes. You focus on your thoughts, on your heartbeat, on yourself. The pain eases a little - but you've lost track of the dangers around you.",
+			"You try to distract yourself from the pain, and from the unsettling forest that surrounds you. The pain soon subsides. Mostly."
+		],
+		"OPTIONS": [
+			"[Ignore] #rGain #r",
+			" #rWeak.",
+			"[Focus] #rGain #r",
+			" #rFrail.",
+			"[Distract] #rAdd #r",
+			" #rDazed #rto #ryour #rdraw #rpile.",
+			"[Leave]"
+		]
+	},
+	"FF_Curse": {
+		"NAME": "False Walls",
+		"DESCRIPTIONS": [
+			"The trees around you suddently shift, forming a wall to trap you in one place. #b~Bright~ #b~runes~ suddently flare up on the sides of the cage. You sense a ~magic~ ~power~ coming from them...",
+			"You feel an evil magic surge into you. NL The trees part, and you quickly make your way out."
+		],
+		"OPTIONS": [
+			"[Blue Rune] #rBecome #rHexxed.",
+			"[Green Rune] #rBecome #rConfused.",
+			"[Red Rune] #rBecome #rSlowed.",
+			"[Leave]"
+		]
+	},
+	"FF_Fork": {
+		"NAME": "Fork in the Road",
+		"DESCRIPTIONS": [
+			"You encounter a fork in the path through the trees. Each option is identical, save for the noises coming from each one.",
+			"The path soon grows damp and muddy. Before long, you are ambushed by living slimes!",
+			"You can hear things moving through the folliage as you walk. The creatures of the forest reveal themselves with fangs bared!",
+			"You hear hushed voices and whispers of gremmish. Soon enough, a small party of gremlins appears before you!",
+		],
+		"OPTIONS": [
+			"[Sloshing] #rFight #rSlimes.",
+			"[Growling] #rFight #rBeasts.",
+			"[Snickering] #rFight #rGremlins.",
+			"[Fight]"
+		]
+	},
+	"FF_Fork2": {
+		"NAME": "The Two Paths",
+		"DESCRIPTIONS": [
+			"Wandering aimlessly, you find before you two clear paths. One seems to have been carved by fire, the other marked by footprints.",
+			"You take the smoldering path of smoke. The cause of the fires around you soon becomes clear: this route was carved by an automaton!",
+			"Those that came here before you might know the way out. You follow the footprints. NL Unfortunately, what you find is not an exit, but a foe!",
+			"Hoping to avoid any trouble, you wander through the trees without following either path. Your hopes are in vain, of course; you soon come face-to-face with a new threat!",
+		],
+		"OPTIONS": [
+			"[Follow the Scorched Path] #rFight #rSomething #rMechanical.",
+			"[Follow the Footprints] #rFight #rSomething #rHuman.",
+			"[Avoid Both] #rFight #rSomething #rUnknown.",
+			"[Fight]"
+		]
+	},
+	"FF_Ravine": {
+		"NAME": "Ravine",
+		"DESCRIPTIONS": [
+			"A ravine blocks your way. Turning back, you find it is behind you as well. NL The sides are covered with sharp rocks; climbing will likely hurt.",
+			"You take the smoldering path of smoke. The cause of the fires around you soon becomes clear: this route was carved by an automaton!",
+			"Those that came here before you might know the way out. You follow the footprints. NL Unfortunately, what you find is not an exit, but a foe!",
+			"Hoping to avoid any trouble, you wander through the trees without following either path. Your hopes are in vain, of course; you soon come face-to-face with a new threat!",
+		],
+		"OPTIONS": [
+			"[Climb] #rTake #r",
+			" #rdamage.",
+			"[Jump] #r",
+			"%: #rTake #r",
+			" #rdamage #rand #robtain #r1 #rWound."
+		]
+	},
+}
