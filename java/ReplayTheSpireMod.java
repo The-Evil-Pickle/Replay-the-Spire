@@ -63,7 +63,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static TextureAtlas powerAtlas;
 	
 	private static final String MODNAME = "ReplayTheSpireMod";
-    private static final String AUTHOR = "AstroPenguin642, The_Evil_Pickle, Stewart";
+    private static final String AUTHOR = "The_Evil_Pickle, AstroPenguin642, Stewartisme, Slimer509";
     private static final String DESCRIPTION = "Content expansion mod";
 	
 	public static final String BADGE_IMG = "img/ModBadge.png";
@@ -80,6 +80,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	
 	public static EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>> potionsByRarity = new EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>>(ReplayTheSpireMod.PotionRarity.class);
 	
+	public static boolean renderFishFG = false;
+	public static TextureAtlas fishAtlas;
+	public static TextureAtlas.AtlasRegion fishFG;
 	
 	
 	public static boolean BypassStupidBasemodRelicRenaming_hasRelic(String targetID) {
@@ -602,6 +605,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		
 		ReplayTheSpireMod.powerAtlas = new com.badlogic.gdx.graphics.g2d.TextureAtlas(Gdx.files.internal("powers/replayPowers.atlas"));
 		
+		ReplayTheSpireMod.renderFishFG = false;
+		ReplayTheSpireMod.fishAtlas = new TextureAtlas(Gdx.files.internal("images/replayScenes/fishfight.atlas"));
+		ReplayTheSpireMod.fishFG = ReplayTheSpireMod.fishAtlas.findRegion("mod/fg");
         // Mod badge
         Texture badgeTexture = new Texture(BADGE_IMG);
 		this.currentSettingsSubTab = 0;
@@ -833,6 +839,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Amnesia());
 		//AddAndUnlockCard(new FaultyEquipment());
 		AddAndUnlockCard(new SpreadingInfection());
+		AddAndUnlockCard(new AbeCurse());
+		AddAndUnlockCard(new Overencumbered());
 		logger.info("adding unobtainable cards...");
 		AddAndUnlockCard(new PotOfGreed());
 		AddAndUnlockCard(new GhostDefend());

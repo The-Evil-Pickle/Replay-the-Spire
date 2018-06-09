@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.monsters.replay.*;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.cards.status.*;
@@ -15,14 +16,17 @@ import com.megacrit.cardcrawl.actions.animations.*;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.utility.*;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.unique.*;
 import com.megacrit.cardcrawl.vfx.*;
 import com.megacrit.cardcrawl.vfx.combat.*;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
 import com.megacrit.cardcrawl.powers.*;
+import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
 import java.util.*;
 import ReplayTheSpireMod.*;
+import basemod.*;
 import com.megacrit.cardcrawl.core.*;
 import org.apache.logging.log4j.*;
 
@@ -182,7 +186,7 @@ public class PondfishBoss extends AbstractMonster
 				break;
 			}
 			case SPLASH: {
-				this.setMove(PondfishBoss.MOVES[4], nextTurn, Intent.UNKNOWN);
+				this.setMove(PondfishBoss.MOVES[4], nextTurn, Intent.STUN);
 				break;
 			}
 			default: {
@@ -201,8 +205,9 @@ public class PondfishBoss extends AbstractMonster
         switch (this.nextMove) {
 			case STARTUP: {
 				this.updateHitbox(70.0f, 220.0f, 400.0f, 300.0f);
+				AbstractDungeon.actionManager.addToBottom(new RemoveDebuffsAction(this));
                 AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "Activate"));
-				AbstractDungeon.actionManager.addToBottom(new MoveMonsterAction(AbstractDungeon.getCurrRoom().monsters.monsters, -50.0f, 300.0f, 0.75f));
+				AbstractDungeon.actionManager.addToBottom(new MoveMonsterAction(AbstractDungeon.getCurrRoom().monsters.monsters, -75.0f, 330.0f, 0.75f));
 				/*for (final AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
 					if (m instanceof CaptainAbe) {
 						AbstractDungeon.actionManager.addToBottom(new MoveMonsterAction(m, 150.0f, 35.0f, 0.1f));
@@ -261,7 +266,8 @@ public class PondfishBoss extends AbstractMonster
 						AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.SLASH_VERTICAL, true));
 					}
                 }
-				this.setNextTurnAction(PondfishBoss.SPLASH);
+				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+				//this.setNextTurnAction(PondfishBoss.SPLASH);
                 //AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, (byte)1, Intent.ATTACK, this.damage.get(0).base));
                 break;
             }
@@ -279,7 +285,7 @@ public class PondfishBoss extends AbstractMonster
 					if (m instanceof CaptainAbe && m.halfDead) {
 						abe = (CaptainAbe)m;
 					} else {
-						AbstractDungeon.actionManager.addToBottom(new HealAction(m, this, 16));
+						AbstractDungeon.actionManager.addToBottom(new HealAction(m, this, 20));
 						//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new RegrowPower(m, 5), 5));
 					}
 				}
@@ -294,7 +300,8 @@ public class PondfishBoss extends AbstractMonster
 					AbstractDungeon.actionManager.addToBottom(new HealAction(abe, this, abe.maxHealth / 2));
 					//AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(abe, "REVIVE"));
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, abe, new AbePower(abe), 0));
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, this, new RegrowPower(abe), 1));
+					//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, this, new RegrowPower(abe), 1));
+					AbstractDungeon.actionManager.addToBottom(new TalkAction(abe, CaptainAbe.DIALOG[(int)(Math.random() * (3)) + 6]));
 					/*if (AbstractDungeon.player.hasRelic("Philosopher's Stone")) {
 						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, abe, new StrengthPower(abe, 2), 2));
 						break;
@@ -313,6 +320,10 @@ public class PondfishBoss extends AbstractMonster
     protected void getMove(final int num) {
 		if (this.isFirstTurn) {
 			this.setMove(PondfishBoss.STARTUP, Intent.NONE);
+			return;
+		}
+		if (this.lastMove(PondfishBoss.FEET_UNDER)) {
+			this.setMoveNow(PondfishBoss.SPLASH);
 			return;
 		}
 		//this.setMove(PondfishBoss.CHOMP, Intent.ATTACK, this.chompDmg, this.chompAmt);
@@ -433,13 +444,41 @@ public class PondfishBoss extends AbstractMonster
 		if (!this.isDying && !this.isEscaping && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.player.isDead) {
 			for (final AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
 				if (m instanceof CaptainAbe && !m.halfDead) {
-					m.render(sb);
-					//m.renderHealth(sb);
-					//m.renderName(sb);
+					//m.render(sb);
+					m.renderHealth(sb);
+					this.renderNameFor(m, sb);
 				}
 			}
 		}
     }
+	
+	private void renderNameFor(AbstractMonster m, final SpriteBatch sb) {
+        if ((!AbstractDungeon.player.isDraggingCard || AbstractDungeon.player.hoveredCard.target == AbstractCard.CardTarget.ENEMY) && !m.isDying) {
+            final Color c = new Color();
+			final float hoverTimer = (float)ReflectionHacks.getPrivate((Object)m, (Class)AbstractMonster.class, "hoverTimer");
+            if (hoverTimer != 0.0f) {
+                if (hoverTimer * 2.0f > 1.0f) {
+                    c.a = 1.0f;
+                }
+                else {
+                    c.a = hoverTimer * 2.0f;
+                }
+            }
+            else {
+                c.a = MathHelper.slowColorLerpSnap(c.a, 0.0f);
+            }
+            final float tmp = Interpolation.exp5Out.apply(1.5f, 2.0f, hoverTimer);
+            c.r = Interpolation.fade.apply(Color.DARK_GRAY.r, Settings.CREAM_COLOR.r, hoverTimer * 10.0f);
+            c.g = Interpolation.fade.apply(Color.DARK_GRAY.g, Settings.CREAM_COLOR.g, hoverTimer * 3.0f);
+            c.b = Interpolation.fade.apply(Color.DARK_GRAY.b, Settings.CREAM_COLOR.b, hoverTimer * 3.0f);
+            final float y = Interpolation.exp10Out.apply(m.healthHb.cY, m.healthHb.cY - 8.0f * Settings.scale, c.a);
+            final float x = m.hb.cX - m.animX;
+            sb.setColor(new Color(0.0f, 0.0f, 0.0f, c.a / 2.0f * m.hbAlpha));
+            final TextureAtlas.AtlasRegion img = ImageMaster.MOVE_NAME_BG;
+            sb.draw(img, x - img.packedWidth / 2.0f, y - img.packedHeight / 2.0f, img.packedWidth / 2.0f, img.packedHeight / 2.0f, img.packedWidth, img.packedHeight, Settings.scale * tmp, Settings.scale * 2.0f, 0.0f);
+            FontHelper.renderFontCentered(sb, FontHelper.tipHeaderFont, m.name, x, y, new Color(c.r, c.g, c.b, c.a * m.hbAlpha));
+        }
+	}
     
     @Override
     public void die() {

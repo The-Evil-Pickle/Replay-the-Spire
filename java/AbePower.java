@@ -56,7 +56,7 @@ public class AbePower extends AbstractPower
 		this.updateValue();
         if (this.atActiveDepth) {
 			this.flash();
-            AbstractDungeon.actionManager.addToTop(new TextAboveCreatureAction(this.owner, AbePower.NAME));
+            AbstractDungeon.actionManager.addToBottom(new TextAboveCreatureAction(this.owner, AbePower.NAME));
         }
     }
 	

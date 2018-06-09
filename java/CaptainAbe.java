@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.monsters.*;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.cards.curses.*;
 import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.relics.*;
@@ -15,6 +16,7 @@ import com.esotericsoftware.spine.*;
 import com.megacrit.cardcrawl.actions.animations.*;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.utility.*;
+import com.megacrit.cardcrawl.actions.unique.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.vfx.*;
 import com.megacrit.cardcrawl.vfx.combat.*;
@@ -25,6 +27,7 @@ import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
 import java.util.*;
 import com.megacrit.cardcrawl.core.*;
+import tobyspowerhouse.powers.*;
 
 public class CaptainAbe extends AbstractMonster
 {
@@ -149,7 +152,8 @@ public class CaptainAbe extends AbstractMonster
 			if (!this.isDeadOrEscaped()) {
 				ArrayList<AbstractMonster> thisguy = new ArrayList<AbstractMonster>();
 				thisguy.add(this);
-				AbstractDungeon.actionManager.addToBottom(new MoveMonsterAction(thisguy, 0.0f, -325.0f, 0.1f));
+				AbstractDungeon.actionManager.addToBottom(new WaitAction(0.75f));
+				AbstractDungeon.actionManager.addToBottom(new MoveMonsterAction(thisguy, 0.0f, -330.0f, 0.15f));
 				//AbstractDungeon.actionManager.addToBottom(new TalkAction(this, CaptainAbe.DIALOG[2]));
 				this.setMove(CaptainAbe.MOVES[4], CaptainAbe.FINALE_1, Intent.STRONG_DEBUFF);
 				this.createIntent();
@@ -162,6 +166,9 @@ public class CaptainAbe extends AbstractMonster
     @Override
     public void usePreBattleAction() {
         AbstractDungeon.getCurrRoom().cannotLose = true;
+		if (AbstractDungeon.ascensionLevel >= 9) {
+			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, 20));
+		}
         //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RegrowPower(this)));
     }
 	
@@ -326,10 +333,10 @@ public class CaptainAbe extends AbstractMonster
     public void takeTurn() {
         switch (this.nextMove) {
             case ORDERS: {
-				if (this.isFirstOrders) {
-					AbstractDungeon.actionManager.addToBottom(new TalkAction(this, CaptainAbe.DIALOG[5]));
-				}
 				if (this.notWaterLogged()) {
+					if (this.isFirstOrders) {
+						AbstractDungeon.actionManager.addToBottom(new TalkAction(this, CaptainAbe.DIALOG[5]));
+					}
 					for (final AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
 						if (m.isDying) {
                             continue;
@@ -341,10 +348,10 @@ public class CaptainAbe extends AbstractMonster
 						}
                         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(m, this, this.ordersBlk));
 					}
+					this.isFirstOrders = false;
 				} else {
 					this.getPower("AbePower").onSpecificTrigger();
 				}
-				this.isFirstOrders = false;
 				this.setNextTurn(CaptainAbe.SLASH);
                 break;
             }
@@ -385,7 +392,7 @@ public class CaptainAbe extends AbstractMonster
 				} else {
 					this.getPower("AbePower").onSpecificTrigger();
 				}
-				if (AbstractDungeon.player.currentBlock > 55 && !this.isFirstOrders) {
+				if (AbstractDungeon.player.currentBlock > 45 && !this.isFirstOrders) {
 					this.setNextTurn(CaptainAbe.ROB_BLIND);
 				} else {
 					this.setNextTurn(CaptainAbe.ORDERS);
@@ -397,12 +404,7 @@ public class CaptainAbe extends AbstractMonster
 				this.woundCD--;
 				if (this.notWaterLogged()) {
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, FRAIL_AMT, true), FRAIL_AMT));
-					if (this.woundCD <= 0) {
-						AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Wound(), 1));
-						this.woundCD = WOUND_CD;
-					} else {
-						AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Dazed(), 1));
-					}
+					AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Wound(), 1));
 				} else {
 					this.getPower("AbePower").onSpecificTrigger();
 				}
@@ -412,6 +414,9 @@ public class CaptainAbe extends AbstractMonster
             case FINALE_1: {
 				AbstractDungeon.actionManager.addToBottom(new TalkAction(this, CaptainAbe.DIALOG[10]));
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new HexPower(AbstractDungeon.player, 1)));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TPH_ConfusionPower(AbstractDungeon.player, 3, true)));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new PondfishDrowning(AbstractDungeon.player, 3), 3));
+				AbstractDungeon.actionManager.addToBottom(new RemoveDebuffsAction(this));
                 this.setNextTurn(FINALE_2);
                 break;
             }
@@ -426,7 +431,7 @@ public class CaptainAbe extends AbstractMonster
                 break;
             }
             case FINALE_4: {
-				final AbstractCard abeCurse = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE);
+				final AbstractCard abeCurse = new AbeCurse();
 				UnlockTracker.markCardAsSeen(abeCurse.cardID);
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(this, new ShockWaveEffect(this.hb.cX, this.hb.cY, Color.MAROON, ShockWaveEffect.ShockWaveType.ADDITIVE), 0.5f));
 				AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(abeCurse, Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, false));

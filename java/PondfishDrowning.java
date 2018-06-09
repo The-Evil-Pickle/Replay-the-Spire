@@ -28,7 +28,7 @@ public class PondfishDrowning extends AbstractPower
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
 	private boolean atActiveDepth;
-	private static int MINVAL = -3;
+	private static int MINVAL = -1;
 	private static int MAXVAL = 10;
     private Color color2;
     private Color redColor2;
@@ -59,11 +59,12 @@ public class PondfishDrowning extends AbstractPower
     @Override
     public void updateDescription() {
 		if (this.amount < 0) {
-			this.description = PondfishDrowning.DESCRIPTIONS[1] + (this.amount * -1) + PondfishDrowning.DESCRIPTIONS[2] + PondfishDrowning.MINVAL + PondfishDrowning.DESCRIPTIONS[3] + PondfishDrowning.MAXVAL + ".";
-			this.type = PowerType.BUFF;
+			//this.description = PondfishDrowning.DESCRIPTIONS[1] + (this.amount * -1) + PondfishDrowning.DESCRIPTIONS[2] + PondfishDrowning.MINVAL + PondfishDrowning.DESCRIPTIONS[3] + PondfishDrowning.MAXVAL + ".";
+			//this.type = PowerType.BUFF;
+			this.description = PondfishDrowning.DESCRIPTIONS[0] + 0 + PondfishDrowning.DESCRIPTIONS[2] + PondfishDrowning.MINVAL + PondfishDrowning.DESCRIPTIONS[3] + PondfishDrowning.MAXVAL + ".";
 		} else {
 			this.description = PondfishDrowning.DESCRIPTIONS[0] + this.amount + PondfishDrowning.DESCRIPTIONS[2] + PondfishDrowning.MINVAL + PondfishDrowning.DESCRIPTIONS[3] + PondfishDrowning.MAXVAL + ".";
-			this.type = PowerType.DEBUFF;
+			//this.type = PowerType.DEBUFF;
 		}
 		this.checkForAbe();
     }
@@ -105,10 +106,19 @@ public class PondfishDrowning extends AbstractPower
         }
 	}
 	
-    @Override
+    /*@Override
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
         if (this.amount > PondfishDrowning.MINVAL && card.type == AbstractCard.CardType.SKILL) {
             this.flashWithoutSound();
+            this.reducePower(1);
+			this.updateDescription();
+        }
+    }*/
+	
+    @Override
+    public void onAttack(final DamageInfo info, final int damageAmount, final AbstractCreature target) {
+        if (damageAmount > 0 && target != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
+            this.flash();
             this.reducePower(1);
 			this.updateDescription();
         }
@@ -117,7 +127,7 @@ public class PondfishDrowning extends AbstractPower
 	@Override
     public int onAttacked(final DamageInfo info, final int damageAmount) {
         if (info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0 && !this.owner.hasPower("Buffer")) {
-            this.flashWithoutSound();
+            this.flash();
             this.stackPower(1);
 			this.updateDescription();
         }
@@ -130,10 +140,10 @@ public class PondfishDrowning extends AbstractPower
 			this.flash();
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(this.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.HP_LOSS)));
 		}
-		else if (this.amount < 0) {
+		/*else if (this.amount < 0) {
 			this.flash();
 			AbstractDungeon.actionManager.addToBottom(new HealAction(this.owner, this.owner, this.amount * -1));
-		}
+		}*/
     }
 	
 	@Override
@@ -145,7 +155,7 @@ public class PondfishDrowning extends AbstractPower
             }
             FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(this.amount), x, y, this.fontScale, c);
         }
-        else if (this.amount < 0 && this.canGoNegative) {
+        else if (this.amount <= 0) {
             this.greenColor2.a = c.a;
             c = this.greenColor2;
             FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(this.amount), x, y, this.fontScale, c);

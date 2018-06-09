@@ -190,6 +190,14 @@
 	"NAME": "Amnesia",
 	"DESCRIPTION": "Unplayable. NL At the end of your turn, Exhaust your hand."
   },
+  "AbeCurse": {
+	"NAME": "Abe's Revenge",
+	"DESCRIPTION": "Unplayable. NL At the end of your turn, gain !M! Frail. NL Ethereal."
+  },
+  "Overencumbered": {
+	"NAME": "Over-Encumbered",
+	"DESCRIPTION": "Unplayable. NL When you draw this, add !M! Dazed to your hand and draw a card."
+  },
   "Ghost Swipe": {
     "NAME": "Ghost Swipe",
     "DESCRIPTION": "Deal !D! damage. NL Exhaust. NL Ethereal."

@@ -93,18 +93,12 @@
 	"This monster is on your side, and will attack enemies or help you."
     ]
   },
-  "CommanderSharePower": {
-    "NAME": "Commander",
-    "DESCRIPTIONS": [
-	"Buffs on this monster also apply to other monsters."
-    ]
-  },
   "Drowning": {
     "NAME": "Drowning",
     "DESCRIPTIONS": [
 	"At the end of your turn, lose #b",
 	"At the end of your turn, gain #b",
-	" HP. NL Increases when you take unblocked attack damage, decreases when you play a #ySkill. NL Range is #b",
+	" HP. NL Increases when you take unblocked attack damage, decreases when you deal unblocked attack damage. NL Range is #b",
 	" to ",
 	" #b"
     ]

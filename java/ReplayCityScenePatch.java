@@ -25,19 +25,14 @@ import com.megacrit.cardcrawl.rooms.*;
 
 public class ReplayCityScenePatch {
 	
-	public static boolean renderFishFG = false;
-	public static final TextureAtlas fishAtlas = new TextureAtlas(Gdx.files.internal("images/replayScenes/fishfight.atlas"));
-	public static final TextureAtlas.AtlasRegion fishFG = ReplayCityScenePatch.fishAtlas.findRegion("mod/fg");
-	
-	
 	@SpirePatch(cls = "com.megacrit.cardcrawl.scenes.TheCityScene", method = "randomizeScene")
 	public static class CitySceneRandomizePatch {
 		public static void Postfix(TheCityScene __instance) {
-			if (AbstractDungeon.getCurrRoom().monsters.getMonster("PondfishBoss") != null) {//AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && 
-				ReplayCityScenePatch.renderFishFG = true;
+			if (AbstractDungeon.getCurrRoom() instanceof MonsterRoom && AbstractDungeon.getCurrRoom().monsters.getMonster("PondfishBoss") != null) {//AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && 
+				ReplayTheSpireMod.renderFishFG = true;
 			}
 			else {
-				ReplayCityScenePatch.renderFishFG = false;
+				ReplayTheSpireMod.renderFishFG = false;
 			}
 		}
 	}
@@ -45,8 +40,8 @@ public class ReplayCityScenePatch {
 	@SpirePatch(cls = "com.megacrit.cardcrawl.scenes.TheCityScene", method = "renderCombatRoomFg")
 	public static class CitySceneFGPatch {
 		public static void Prefix(TheCityScene __instance, final SpriteBatch sb) {
-			if (ReplayCityScenePatch.renderFishFG) {
-				sb.draw(ReplayCityScenePatch.fishFG.getTexture(), ReplayCityScenePatch.fishFG.offsetX * Settings.scale, ReplayCityScenePatch.fishFG.offsetY * Settings.scale + AbstractDungeon.sceneOffsetY, 0.0f, 0.0f, ReplayCityScenePatch.fishFG.packedWidth, ReplayCityScenePatch.fishFG.packedHeight, Settings.scale, Settings.scale, 0.0f, ReplayCityScenePatch.fishFG.getRegionX(), ReplayCityScenePatch.fishFG.getRegionY(), ReplayCityScenePatch.fishFG.getRegionWidth(), ReplayCityScenePatch.fishFG.getRegionHeight(), false, false);
+			if (AbstractDungeon.getCurrRoom() instanceof MonsterRoom && ReplayTheSpireMod.renderFishFG) {
+				sb.draw(ReplayTheSpireMod.fishFG.getTexture(), ReplayTheSpireMod.fishFG.offsetX * Settings.scale, ReplayTheSpireMod.fishFG.offsetY * Settings.scale + AbstractDungeon.sceneOffsetY, 0.0f, 0.0f, ReplayTheSpireMod.fishFG.packedWidth, ReplayTheSpireMod.fishFG.packedHeight, Settings.scale, Settings.scale, 0.0f, ReplayTheSpireMod.fishFG.getRegionX(), ReplayTheSpireMod.fishFG.getRegionY(), ReplayTheSpireMod.fishFG.getRegionWidth(), ReplayTheSpireMod.fishFG.getRegionHeight(), false, false);
 			}
 			//__instance.renderAtlasRegionIf(sb, ReplayCityScenePatch.fishFG, ReplayCityScenePatch.renderFishFG);
 		}

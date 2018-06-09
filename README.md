@@ -13,6 +13,7 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * 35 Cards (7 ironclad, 7 silent, 7 defect, 5 colorless, 9 curses)
  * 4 Events
  * 8 Potions
+ * 1 Boss
 
 Some content originally from this mod is now in the official release of the game!
  * Potion rarities
@@ -93,7 +94,7 @@ Improvise | Colorless | Uncommmon | Skill | 1 | Choose 1 of 3 random cards to (u
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | All non-attack damage you deal is increased by 2. (**Innate.**)
 Awakened One Ritual | Colorless | Rare | Power | 0 | Add 6(8) Ritual Components to your discard pile. If you ever have 5 or more in your hand at once, replace them with Attacks that deal 42 damage.
-Survey Options | Colorless | Rare | Skill | X | Draw X. **Refund** 1(2).
+Survey Options | Colorless | Uncommon | Skill | X | Draw X. **Refund** 1(2).
 Amnesia | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, **Exhaust** your hand. **Ethereal**.
 Faulty Equipment | Curse | Curse | Curse | - | **Unplayable**. Can only be **Exhausted** or removed from your deck by **Upgrading**.
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
