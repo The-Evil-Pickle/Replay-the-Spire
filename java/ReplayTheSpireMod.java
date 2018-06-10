@@ -823,6 +823,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new ReflectiveLens());
 		AddAndUnlockCard(new Crystallizer());
 		AddAndUnlockCard(new ReplayRNGCard());
+		AddAndUnlockCard(new FIFOQueue());
 		logger.info("adding colorless cards...");
 		AddAndUnlockCard(new Improvise());
 		AddAndUnlockCard(new PoisonedStrike());

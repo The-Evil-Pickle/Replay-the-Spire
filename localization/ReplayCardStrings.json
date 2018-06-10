@@ -119,6 +119,11 @@
     "NAME": "Time Bomb",
     "DESCRIPTION": "Gain 2 Orb Slots. NL Channel 2 Glass. NL Channel 1 Dark and trigger its passive !M! times. NL Exhaust."
   },
+  "FIFO Queue": {
+    "NAME": "FIFO Queue",
+    "DESCRIPTION": "Gain 4 Orb Slots.",
+	"UPGRADE_DESCRIPTION": "Innate. Gain 4 Orb Slots."
+  },
   "Improvise": {
     "NAME": "Improvise",
     "DESCRIPTION": "Choose 1 of 3 random cards to add to your hand. It costs 1 less. NL Exhaust.",

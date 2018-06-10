@@ -1,0 +1,53 @@
+package com.megacrit.cardcrawl.cards.blue;
+
+import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.characters.*;
+import com.megacrit.cardcrawl.monsters.*;
+import com.megacrit.cardcrawl.dungeons.*;
+import com.megacrit.cardcrawl.actions.defect.*;
+import com.megacrit.cardcrawl.actions.*;
+import com.megacrit.cardcrawl.core.*;
+
+public class FIFOQueue extends AbstractCard
+{
+    public static final String ID = "FIFO Queue";
+    private static final CardStrings cardStrings;
+    public static final String NAME;
+    public static final String DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION;
+    private static final int COST = 2;
+    
+    public FIFOQueue() {
+        super("FIFO Queue", FIFOQueue.NAME, null, "cards/replay/replayBetaPower.png", 1, FIFOQueue.DESCRIPTION, CardType.POWER, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
+        this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber;
+    }
+    
+    @Override
+    public void use(final AbstractPlayer p, final AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new IncreaseMaxOrbAction(this.magicNumber));
+    }
+    
+    @Override
+    public AbstractCard makeCopy() {
+        return new FIFOQueue();
+    }
+    
+    @Override
+    public void upgrade() {
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeMagicNumber(1);
+            this.rawDescription = FIFOQueue.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
+        }
+    }
+    
+    static {
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("FIFO Queue");
+        NAME = FIFOQueue.cardStrings.NAME;
+        DESCRIPTION = FIFOQueue.cardStrings.DESCRIPTION;
+        UPGRADE_DESCRIPTION = FIFOQueue.cardStrings.UPGRADE_DESCRIPTION;
+    }
+}
