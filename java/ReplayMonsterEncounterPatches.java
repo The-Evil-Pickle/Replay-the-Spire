@@ -24,6 +24,9 @@ public class ReplayMonsterEncounterPatches {
 				case "Pondfish": {
 					return new MonsterGroup(new AbstractMonster[] {new CaptainAbe(170.0f, -55.0f), new PondfishBoss(0.0f, -650.0f)});
 				}
+				case "Fading Forest": {
+					return new MonsterGroup(new AbstractMonster[] {new FadingForestBoss()});
+				}
 				default: {
 					return __result;
 				}
@@ -42,6 +45,9 @@ public class ReplayMonsterEncounterPatches {
 					}
 					case "CaptainAbe": {
 						return new CaptainAbe(170.0f, -55.0f);
+					}
+					case "Fading Forest": case "FadingForest": {
+						return new FadingForestBoss();
 					}
 					default: {
 						return __result;
@@ -63,10 +69,20 @@ public class ReplayMonsterEncounterPatches {
 					DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/pondfish.png");
 					DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/pondfish.png");
 				}
+				if (key.equals("Fading Forest")) {
+					DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/OldBossIcon.png");
+					DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/OldBossIcon.png");
+				}
 			}
 		}
 	}
 	
+	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.Exordium", method = "initializeBoss")
+	public static class ReplayExordiumBossListPatch {
+		public static void Prefix(Exordium __Instance) {
+			//Exordium.bossList.add("Fading Forest");
+		}
+	}
 	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.TheCity", method = "initializeBoss")
 	public static class ReplayCityBossListPatch {
 		public static void Prefix(TheCity __Instance) {

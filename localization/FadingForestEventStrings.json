@@ -3,13 +3,17 @@
 		"NAME": "Enter the Forest",
 		"DESCRIPTIONS": [
 			"You see before you a strange forest of trees. Feeling an evil presence, you turn to go back, only to find the trees surrounding you on all sides. NL NL You have been swallowed by the woods.",
-			"The forest is winding and wild, with no clear paths. You're unsure where you are or where you've been; it is as if the trees themselves move when you look away."
+			"The forest is winding and wild, with no clear paths. You're unsure where you are or where you've been; it is as if the trees themselves move when you look away.",
+			"You push your way through the trees and fog. It's not long before you run into a monster doing the same thing.",
+			"You decide to stop and recover your strength before setting out again. As the mists and shadows shift, you become aware of another creature resting nearby.",
+			"You stop and consider the situation, peering through the heavy fog at the trees surrounding you. You can just about make out some shapes moving around - and they're coming closer."
 		],
 		"OPTIONS": [
 			"[Continue]",
-			"[Press forth] #rEncounter #rsomething #rruthless.",
+			"[Press forth] #rEncounter #rsomething #runrelenting.",
 			"[Stop and rest] #rEncounter #rsomething #rslothful.",
-			"[Analyze the situation] #rEncounter #rsomething #rheartless."
+			"[Analyze the situation] #rEncounter #rsomething #rheartless.",
+			"[Fight!]"
 		]
 	},
 	"FF_Serpent": {
@@ -24,6 +28,17 @@
 			"[Agree] #gObtain #ga #grandom #gRelic #geffect. #rAdd #ra #rcopy #rof #rDoubt #rto #ryour #rdraw #rpile.",
 			"[Disagree]",
 			"[Continue]",
+			"[Leave]"
+		]
+	},
+	"FF_Scrap Ooze": {
+		"NAME": "False Ooze",
+		"DESCRIPTIONS": [
+			"As you make your way through the trees you hear a ~gurgling~ and the @clanking@ of metal objects. Before you is a slime-like creature with a number of strange artifacts floating within. You can see a #yTreasure at the center... but the slime already seems irked by your presence.",
+			"You manage to grab the #yRelic and yank it out. Your clothes collect a fair amount of slime in the proccess."
+		],
+		"OPTIONS": [
+			"[Reach Inside] #gObtain #ga #grandom #gRelic #geffect. #rAdd #r3 #rcopies #rof #rSlimed #rto #ryour #rdraw #rpile.",
 			"[Leave]"
 		]
 	},
@@ -44,6 +59,22 @@
 			"[Leave]"
 		]
 	},
+	"FF_Will-o-Wisp": {
+		"NAME": "Will-o-Wisp",
+		"DESCRIPTIONS": [
+			"A floating light emerges from the fog, hovering eerily nearby. A ghost, or a spirit - a wisp.",
+			"The warmth of the spirit is strangly comforting.",
+			"You follow the wandering light for some time, going deeper into the forest. As you walk, you feel as if you have left your worries behind.",
+			"The wisp explodes into a burst of fire and light. When your vision returns, a relic has been left behind."
+		],
+		"OPTIONS": [
+			"[Touch] #gHeal #g",
+			" #gHP.",
+			"[Follow] #gExhaust #gany #g1 #g(non-curse) #gCard.",
+			"[Strike] #gObtain #ga #grandom #gRelic #geffect. #rAdd #ra #rcopy #rof #rBurn+ #rto #ryour #rdraw #rpile.",
+			"[Leave]"
+		]
+	},
 	"FF_Drug Dealer": {
 		"NAME": "False Dealer",
 		"DESCRIPTIONS": [
@@ -53,8 +84,8 @@
 		],
 		"OPTIONS": [
 			"[Accept] #rLose #r",
-			" #rHP: #gGain #g"
-			" #yStrength."
+			" #rHP: #gGain #g",
+			" #yStrength.",
 			"[Leave]",
 			"[Decline]"
 		]
@@ -88,20 +119,10 @@
 			"The boulder follows you, matching your every turn. Just when you think you've lost it, it crashes through a line of trees. NL @WHAM!@ One of the fallen trees lands on you, leaving you with many bruises and more splinters. When you stand back up, the boulder is nowhere to be found.",
 		],
 		"OPTIONS": [
+			"[Continue]",
 			"[Stomp] #rAnger #rthe #rMushrooms.",
 			"[Eat] #rTake #r",
-			" #rDamage. #rAdd #rSpreading #rInfection #rto #ryour #rdraw #rpile.",
-		]
-	},
-	"FF_Scrap Ooze": {
-		"NAME": "False Ooze",
-		"DESCRIPTIONS": [
-			"As you make your way through the trees you hear a ~gurgling~ and the @grinding@ of metals. Before you is a slime-like creature with a number of strange artifacts floating within. You can see a #yTreasure at the center... but the slime already seems irked by your presence.",
-			"You manage to grab the #yRelic and yank it out. Once you've done so, however, the creature becomes livid and springs to life."
-		],
-		"OPTIONS": [
-			"[Reach Inside] #rAnger #rthe #rSlime. #gObtain #ga #grandom #gRelic #geffect.",
-			"[Leave]"
+			" #rDamage. #rAdd #rSpreading #rInfection #rto #ryour #rdiscard #rpile.",
 		]
 	},
 	"FF_SensoryStone": {
@@ -153,7 +174,7 @@
 			"[Focus] #rGain #r",
 			" #rFrail.",
 			"[Distract] #rAdd #r",
-			" #rDazed #rto #ryour #rdraw #rpile.",
+			" #rDazed #rto #ryour #rdiscard #rpile.",
 			"[Leave]"
 		]
 	},
@@ -203,10 +224,10 @@
 	"FF_Ravine": {
 		"NAME": "Ravine",
 		"DESCRIPTIONS": [
-			"A ravine blocks your way. Turning back, you find it is behind you as well. NL The sides are covered with sharp rocks; climbing will likely hurt.",
-			"You take the smoldering path of smoke. The cause of the fires around you soon becomes clear: this route was carved by an automaton!",
-			"Those that came here before you might know the way out. You follow the footprints. NL Unfortunately, what you find is not an exit, but a foe!",
-			"Hoping to avoid any trouble, you wander through the trees without following either path. Your hopes are in vain, of course; you soon come face-to-face with a new threat!",
+			"A ravine blocks your way. Turning back, you find it is behind you as well. NL The sides are covered with sharp rocks; climbing will likely hurt. You may be able to jump across, but it seems pretty far...",
+			"You climb carefully, but the jagged rocks and steep slopes still take their toll.",
+			"With grace and more than a little panic you manage to jump the chasm unharmed.",
+			"Your leap through the air ends at the bottom of the chasm. You have to climb back up - and what's worse, it feels like you broke something."
 		],
 		"OPTIONS": [
 			"[Climb] #rTake #r",
@@ -216,4 +237,13 @@
 			" #rdamage #rand #robtain #r1 #rWound."
 		]
 	},
+	"FF_Finale": {
+		"NAME": "The Forest Fades",
+		"DESCRIPTIONS": [
+			"The swirling fogs around you begin to thin; the threats begin to fade out of reality. Soon the forest itself is gone, leaving you back in familiar territory. NL You have survived the ordeal of the forest."
+		],
+		"OPTIONS": [
+			"[Continue]"
+		]
+	}
 }

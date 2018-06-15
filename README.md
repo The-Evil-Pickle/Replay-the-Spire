@@ -54,6 +54,7 @@ Basket of Snakes | Silent | Rare | Every 5th **Attack** you play applies 2 **Nec
 Counterbalance | All | Rare | During boss and elite fights all enemy **Strength** gain, **Block** gain, and healing is reduced by half.
 Durian | All | Rare | Gain 5 Max HP on pickup. At the start of your turn, reduce your **Weakened,** **Frail,** and/or **Vulnerable** to 2 (if > 2).
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
+Pondfish Scales | All | Rare | Whenever you play a Skill that does not give Block, gain 2 Block.
 Vampiric Spirits | Silent | Rare | During the first turn of combat, 25% of all unblocked attack damage you deal is retuned as health.
 Chemical X | All | Shop | Your cost X effects are increased by 2.
 GuideBook | All | Shop | On pickup, **Upgrade** 2 cards randomly. Prioritizes rarer cards.
@@ -90,11 +91,11 @@ Crystallizer | Blue | Rare | Power | 0 | (**Innate.**) At the end of your turn, 
 Mirror Shield | Blue | Rare | Skill | 2 | **Channel** 1 **Crystal.** **Channel** 1 **Frost.** Gain 5(8) **Block.** Gain 1(2) **Reflection.**
 Time Bomb | Blue | Rare | Skill | 1 | Gain 2 orb slots. **Channel** 2 **Glass.** **Channel** 1 **Dark,** and trigger its passive 2(3) times. **Exhaust.**
 RNG | Blue | Rare | Skill | X | **Channel** X(+1) random orbs.
-Improvise | Colorless | Uncommmon | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
-Specialist | Colorless | Uncommon | Power | 0 | All non-attack damage you deal is increased by 2. (**Innate.**)
-Awakened One Ritual | Colorless | Rare | Power | 0 | Add 6(8) Ritual Components to your discard pile. If you ever have 5 or more in your hand at once, replace them with Attacks that deal 42 damage.
+Specialist | Colorless | Uncommon | Power | 0 | Lose 1 Focus. All non-attack damage you deal is increased by 2. (**Innate.**)
 Survey Options | Colorless | Uncommon | Skill | X | Draw X. **Refund** 1(2).
+Improvise | Colorless | Rare | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
+Awakened One Ritual | Colorless | Rare | Power | 0 | Add 6(8) Ritual Components to your discard pile. If you ever have 5 or more in your hand at once, replace them with Attacks that deal 42 damage.
 Amnesia | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, **Exhaust** your hand. **Ethereal**.
 Faulty Equipment | Curse | Curse | Curse | - | **Unplayable**. Can only be **Exhausted** or removed from your deck by **Upgrading**.
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
@@ -211,8 +212,7 @@ Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 
 
 ## Known Issues:
  * Cards altered by Ring of Chaos or Baseball return to the normal version if the run is saved and returned to later.
- * Config options do not save when the game is closed and re-opened.
- * Honey Jar + Question Card doesn't stack.
+ * Honey Jar + Question Card doesn't stack (except in the case of busted crown).
  * Compile Driver doesn't count custom orbs.
  * When Raider's Mask evokes a dark orb, it may cause one of your other orbs to skip activating its passive effect.
  

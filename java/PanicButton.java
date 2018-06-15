@@ -20,7 +20,7 @@ public class PanicButton extends CustomCard
     private static final int COST = 0;
     
     public PanicButton() {
-        super("Panic Button", PanicButton.NAME, "cards/replay/replayBetaSkill.png", PanicButton.COST, PanicButton.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.NONE);
+        super("Panic Button", PanicButton.NAME, "cards/replay/panicButton.png", PanicButton.COST, PanicButton.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.NONE);
         this.showEvokeValue = true;
 		this.exhaust = true;
 		this.baseMagicNumber = 2;

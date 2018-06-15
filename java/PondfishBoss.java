@@ -227,6 +227,7 @@ public class PondfishBoss extends AbstractMonster
 				this.isFirstTurn = false;
 				this.halfDead = false;
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+				UnlockTracker.markBossAsSeen("PONDFISH");
 				break;
 			}
             case CHOMP: {
@@ -286,7 +287,6 @@ public class PondfishBoss extends AbstractMonster
 						abe = (CaptainAbe)m;
 					} else {
 						AbstractDungeon.actionManager.addToBottom(new HealAction(m, this, 20));
-						//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new RegrowPower(m, 5), 5));
 					}
 				}
 				if (abe != null && abe.halfDead) {
@@ -297,10 +297,10 @@ public class PondfishBoss extends AbstractMonster
 						AbstractDungeon.actionManager.addToBottom(new SFXAction("DARKLING_REGROW_1", MathUtils.random(-0.1f, 0.1f)));
 					}
 					abe.halfDead = false;
-					AbstractDungeon.actionManager.addToBottom(new HealAction(abe, this, abe.maxHealth / 2));
+					AbstractDungeon.actionManager.addToBottom(new HealAction(abe, this, (abe.maxHealth / 2) - 10));
 					//AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(abe, "REVIVE"));
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, abe, new AbePower(abe), 0));
-					//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, this, new RegrowPower(abe), 1));
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, this, new IntangiblePower(abe, 1), 1));
 					AbstractDungeon.actionManager.addToBottom(new TalkAction(abe, CaptainAbe.DIALOG[(int)(Math.random() * (3)) + 6]));
 					/*if (AbstractDungeon.player.hasRelic("Philosopher's Stone")) {
 						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, abe, new StrengthPower(abe, 2), 2));

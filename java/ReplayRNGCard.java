@@ -22,7 +22,6 @@ public class ReplayRNGCard extends AbstractCard
         super("ReplayRNGCard", ReplayRNGCard.NAME, "blue/skill/tempest", "blue/skill/tempest", -1, ReplayRNGCard.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.RARE, CardTarget.SELF);
         this.showEvokeValue = true;
         this.showEvokeOrbCount = 3;
-        this.exhaust = true;
     }
     
     @Override

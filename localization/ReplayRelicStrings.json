@@ -142,6 +142,13 @@
 	" #yBlock."
 	]
   },
+  "Abe's Treasure": {
+	"NAME": "Abe's Treasure",
+	"FLAVOR": "Cursed?",
+    "DESCRIPTIONS": [
+	"Gain [E] at the start of your turn. NL Start combat with #yDrowning."
+	]
+  },
   "Transient Totem": {
 	"NAME": "Transient Totem",
 	"FLAVOR": "This wooden totem can only be percived by those who have passed through The Fading Forest.",

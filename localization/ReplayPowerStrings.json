@@ -215,5 +215,50 @@
 	"Won't do anything yet. Wakes up when damaged or after #b",
 	" turns."
     ]
+  },
+  "FF_Spore Cloud": {
+    "NAME": "Spore Mist",
+    "DESCRIPTIONS": [
+      "If killed by #yFade, applies #yVulnerable to you for #b",
+      " turns."
+    ]
+  },
+  "FF_Thievery": {
+    "NAME": "Soul Stealer",
+    "DESCRIPTIONS": [
+      "Steals one of your buffs each time they deal unblocked attack damage."
+    ]
+  },
+  "RP_HourglassPower": {
+    "NAME": "Mercury Hourglass",
+    "DESCRIPTIONS": [
+      "At the start of your turn, deal #b",
+	  " damage to ALL enemies."
+    ]
+  },
+  "RP_ThreadPower": {
+    "NAME": "Thread and Needle",
+    "DESCRIPTIONS": [
+      "Gives #b5 #yPlated #yArmor."
+    ]
+  },
+  "RP_OrichalcumPower": {
+    "NAME": "Orichalcum",
+    "DESCRIPTIONS": [
+      "If you have no #yBlock at the end of your turn, gain #b",
+	  " #yBlock."
+    ]
+  },
+  "RP_SmoothStonePower": {
+    "NAME": "Oddly Smooth Stone",
+    "DESCRIPTIONS": [
+      "Gives #b1 #yDexterity."
+    ]
+  },
+  "RP_VajraPower": {
+    "NAME": "Vajra",
+    "DESCRIPTIONS": [
+      "Gives #b1 #yStrength."
+    ]
   }
 }

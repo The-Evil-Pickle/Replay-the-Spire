@@ -19,7 +19,7 @@
   },
   "Hidden Blade": {
     "NAME": "Hidden Blade",
-    "DESCRIPTION": "Add a shiv to your hand and draw !M! cards."
+    "DESCRIPTION": "Add a Shiv to your hand and draw !M! cards."
   },
   "Fluid Movement": {
     "NAME": "Fluid Movement",
@@ -33,6 +33,11 @@
     "NAME": "Sneak Up",
     "DESCRIPTION": "Gain !M! Intangible. NL Discard 1 card. NL Innate. NL Exhaust. NL Ethereal.",
     "UPGRADE_DESCRIPTION": "Gain !M! Intangible. NL Innate. NL Exhaust. NL Ethereal."
+  },
+  "ReplayNecrosis": {
+    "NAME": "Necrosis",
+    "DESCRIPTION": "Poison is applied as Necrotic Poison instead.",
+    "UPGRADE_DESCRIPTION": "Poison is applied as Necrotic Poison instead."
   },
   "Abandon": {
     "NAME": "Abandon",
@@ -119,10 +124,10 @@
     "NAME": "Time Bomb",
     "DESCRIPTION": "Gain 2 Orb Slots. NL Channel 2 Glass. NL Channel 1 Dark and trigger its passive !M! times. NL Exhaust."
   },
-  "FIFO Queue": {
-    "NAME": "FIFO Queue",
-    "DESCRIPTION": "Gain 4 Orb Slots.",
-	"UPGRADE_DESCRIPTION": "Innate. Gain 4 Orb Slots."
+  "FIFO Queue": { 
+    "NAME": "FIFO Queue", 
+    "DESCRIPTION": "Gain !M! Orb Slots.", 
+    "UPGRADE_DESCRIPTION": "Innate. Gain !M! Orb Slots." 
   },
   "Improvise": {
     "NAME": "Improvise",
@@ -140,7 +145,10 @@
   "Specialist": {
     "NAME": "Specialist",
     "DESCRIPTION": "All non-attack damage you deal is increased by !M!. ",
-	"UPGRADE_DESCRIPTION": "Innate. NL All non-attack damage you deal is increased by !M!. "
+	"UPGRADE_DESCRIPTION": "Innate. NL All non-attack damage you deal is increased by !M!. ",
+	"EXTENDED_DESCRIPTION": [
+		"Lose 1 Focus. NL "
+	]
   },
   "Crow Ritual": {
     "NAME": "Awakened One Ritual",

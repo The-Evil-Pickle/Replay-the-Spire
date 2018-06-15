@@ -40,8 +40,8 @@ public class Overencumbered extends CustomCard
     @Override
     public void triggerWhenDrawn() {
 		super.triggerWhenDrawn();
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Dazed(), this.magicNumber));
-		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
+		AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new Dazed(), this.magicNumber));
+		AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
     }
     
     @Override

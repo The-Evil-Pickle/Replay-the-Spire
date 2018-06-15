@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.*;
@@ -33,6 +33,7 @@ import basemod.*;
 import basemod.helpers.*;
 import basemod.interfaces.*;
 import java.lang.reflect.*;
+import java.io.*;
 
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.*;
@@ -73,6 +74,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	protected static int rarePotionChance = 4;
 	protected static int ultraPotionChance = 1;
 	protected static int shopPotionChance = 12;
+	
+	public static final ArrayList<ReplayUnlockAchieve> unlockAchievements = new ArrayList<ReplayUnlockAchieve>();
 	
 	public static final AbstractCard.CardColor IronCoreColor = AbstractCard.CardColor.RED;
 	
@@ -396,6 +399,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static void initialize() {
     	logger.info("========================= ReplayTheSpireMod INIT =========================");
 		
+		ReplayTheSpireMod.initAchievementUnlocks();
+		
 		@SuppressWarnings("unused")
 		ReplayTheSpireMod replayMod = new ReplayTheSpireMod();
 		
@@ -441,18 +446,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.potionsByRarity.get(ReplayTheSpireMod.PotionRarity.COMMON).add("Poison Potion");
 		ReplayTheSpireMod.potionsByRarity.get(ReplayTheSpireMod.PotionRarity.COMMON).add("Weak Potion");
 		
-		/*
-		potions.add("Health Potion");
-		potions.add("Elixir");
-		potions.add("Adrenaline Potion");
-		potions.add("Death Potion");
-		potions.add("Ironskin Potion");
-		potions.add("Thorns Potion");
-		potions.add("Toxic Potion");
-		potions.add("Venom Potion");
-		potions.add("Doom Potion");
-		potions.add("Spirit Potion");
-		*/
 		
 		/*
 		  public int getPrice()
@@ -612,9 +605,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         Texture badgeTexture = new Texture(BADGE_IMG);
 		this.currentSettingsSubTab = 0;
         this.settingsPanel = new ModPanel();
+		loadSettingsData();
 		settingsPanel.addLabel("Avoid Ring Of Chaos magic number changes?", 350.0f, 750.0f, (me) -> {});
 		settingsPanel.addLabel("(Avoiding these changes makes RoC less buggy, but also have less interesting effect variety)", 350.0f, 700.0f, (me) -> {});
-		chaos_button_1 = makeLabeledButton("Don't avoid changes including magic number (more variety, more bugs)", 350.0f, 650.0f, Color.WHITE, FontHelper.buttonLabelFont, false, this.settingsPanel, (me) -> {}, me -> {
+		chaos_button_1 = makeLabeledButton("Don't avoid changes including magic number (more variety, more bugs)", 350.0f, 650.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.ALWAYS, this.settingsPanel, (me) -> {}, me -> {
             if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
 				me.enabled = true;
 			} else {
@@ -623,10 +617,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				this.chaos_button_2.enabled = false;
 				this.chaos_button_3.enabled = false;
 				this.chaos_button_4.enabled = false;
+				saveSettingsData();
 			}
 		});
 		settingsPanel.addUIElement(chaos_button_1);
-		chaos_button_2 = makeLabeledButton("Avoid changes including only magic number (compromise option)", 350.0f, 600.0f, Color.WHITE, FontHelper.buttonLabelFont, true, this.settingsPanel, (me) -> {}, me -> {
+		chaos_button_2 = makeLabeledButton("Avoid changes including only magic number (compromise option)", 350.0f, 600.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.COST_ONLY, this.settingsPanel, (me) -> {}, me -> {
             if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
 				me.enabled = true;
 			} else {
@@ -635,10 +630,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				this.chaos_button_2.enabled = true;
 				this.chaos_button_3.enabled = false;
 				this.chaos_button_4.enabled = false;
+				saveSettingsData();
 			}
 		});
 		settingsPanel.addUIElement(chaos_button_2);
-		chaos_button_3 = makeLabeledButton("Avoid all magic number changes (less variety, full stability)", 350.0f, 550.0f, Color.WHITE, FontHelper.buttonLabelFont, false, this.settingsPanel, (me) -> {}, me -> {
+		chaos_button_3 = makeLabeledButton("Avoid all magic number changes (less variety, full stability)", 350.0f, 550.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.NEVER, this.settingsPanel, (me) -> {}, me -> {
             if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
 				me.enabled = true;
 			} else {
@@ -647,10 +643,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				this.chaos_button_2.enabled = false;
 				this.chaos_button_3.enabled = true;
 				this.chaos_button_4.enabled = false;
+				saveSettingsData();
 			}
 		});
 		settingsPanel.addUIElement(chaos_button_3);
-		chaos_button_4 = makeLabeledButton("Never change any values on cards with magic number (for the extremely paranoid)", 350.0f, 500.0f, Color.WHITE, FontHelper.buttonLabelFont, false, this.settingsPanel, (me) -> {}, me -> {
+		chaos_button_4 = makeLabeledButton("Never change any values on cards with magic number (for the extremely paranoid)", 350.0f, 500.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.STRICT, this.settingsPanel, (me) -> {}, me -> {
             if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
 				me.enabled = true;
 			} else {
@@ -659,6 +656,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				this.chaos_button_2.enabled = false;
 				this.chaos_button_3.enabled = false;
 				this.chaos_button_4.enabled = true;
+				saveSettingsData();
 			}
 		});
 		settingsPanel.addUIElement(chaos_button_4);
@@ -702,12 +700,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		final String[] refundNames = { "refund", "refunds", "Refund", "Refunds"};
 		BaseMod.addKeyword(refundNames, "Returns energy spent on playing the card, up to the Refund value.");
 		final String[] crystalNames = { "crystal"};
-		BaseMod.addKeyword(crystalNames, "Orb: Gives adjacent orbs #b+2 #yFocus. When #yEvokeed, If you have less than #b3 orb slots, gain an orb slot. NL #yPassive effect is not affected by other #yCrystal orbs.");
+		BaseMod.addKeyword(crystalNames, "Orb: Gives adjacent orbs #b+2 #yFocus. When #yEvoked, if you have fewer than #b3 orb slots, gain an orb slot. NL #yPassive effect is not affected by other #yCrystal orbs.");
 		final String[] hfNames = { "hellfire"};
 		BaseMod.addKeyword(hfNames, "Orb: At the start of your turn, gain #b+2 #yStrength until the end of your turn. NL When #yEvoked, applies 1 #yVulnerable to a random enemy.");
 		final String[] glNames = { "glass"};
 		BaseMod.addKeyword(glNames, "Orb: No #yPassive effect. When #yEvoked while you have more than #b3 orb slots, consumes your leftmost orb slot and #yEvokes the occupying orb.");
-		final String[] rfNames = { "reflection"};
+		final String[] rfNames = { "reflection", "Reflection"};
 		BaseMod.addKeyword(rfNames, "Goes down by 1 each round, is removed on 0. While active, completely blocking Attack damage reflects it back at the attacker.");
 		
 		
@@ -720,21 +718,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		
     }
 	
-	private static void receiveEditUnlocks() {
-		if(UnlockTracker.isBossSeen("PONDFISH")) {
-			while (UnlockTracker.isRelicLocked("Pondfish Scales")) {
-				UnlockTracker.lockedRelics.remove("Pondfish Scales");
-			}
-		} else {
-			if (!UnlockTracker.isRelicLocked("Pondfish Scales")) {
-				UnlockTracker.lockedRelics.add("Pondfish Scales");
-			}
-		}
-	}
 	
 	@Override
 	public void receiveEditRelics() {
 		logger.info("begin editting relics");
+		ReplayTheSpireMod.receiveEditUnlocks();
         
         // Add relics
 		//BaseMod.addRelic(new AncientBracer(), RelicType.GREEN);
@@ -768,6 +756,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new OnionRing(), RelicType.SHARED);
 		BaseMod.addRelic(new OozeArmor(), RelicType.RED);
 		BaseMod.addRelic(new PainkillerHerb(), RelicType.SHARED);
+		BaseMod.addRelic(new PondfishScales(), RelicType.SHARED);
 		BaseMod.addRelic(new PetGhost(), RelicType.SHARED);
 		BaseMod.addRelic(new QuantumEgg(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfChaos(), RelicType.SHARED);
@@ -787,6 +776,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new TagBag(), RelicType.SHARED);
 		BaseMod.addRelic(new VampiricSpirits(), RelicType.GREEN);
         
+		
         logger.info("done editting relics");
 	}
 	
@@ -821,9 +811,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new BasicCrystalCard());
 		AddAndUnlockCard(new TimeBomb());
 		AddAndUnlockCard(new ReflectiveLens());
-		AddAndUnlockCard(new Crystallizer());
+		//AddAndUnlockCard(new Crystallizer());
 		AddAndUnlockCard(new ReplayRNGCard());
-		AddAndUnlockCard(new FIFOQueue());
+		AddAndUnlockCard(new FIFOQueue()); 
 		logger.info("adding colorless cards...");
 		AddAndUnlockCard(new Improvise());
 		AddAndUnlockCard(new PoisonedStrike());
@@ -909,6 +899,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         String eventStrings = Gdx.files.internal(jsonPath + "ReplayEventStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
+        String eventStringsF = Gdx.files.internal(jsonPath + "FadingForestEventStrings.json").readString(
+        		String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(EventStrings.class, eventStringsF);
         // PotionStrings
         String potionStrings = Gdx.files.internal(jsonPath + "ReplayPotionStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
@@ -966,5 +959,161 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 	}
 	
+	
+	public static void saveRunData() {
+		try {
+			SpireConfig config = new SpireConfig("ReplayTheSpireMod", "replayRunSaveData");
+			if (AbstractDungeon.player.hasRelic("Baseball")) {
+				
+			} else {
+				
+			}
+			if (AbstractDungeon.player.hasRelic("Chaos Ring")) {
+				
+			} else {
+				
+			}
+			
+			config.save();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void saveSettingsData() {
+		try {
+			SpireConfig config = new SpireConfig("ReplayTheSpireMod", "replaySettingsData");
+			switch(ReplayTheSpireMod.RingOfChaos_CompatibilityMode) {
+				case ALWAYS: 
+					config.setInt("chaos_mode", 0);
+					break;
+				case COST_ONLY: 
+					config.setInt("chaos_mode", 1);
+					break;
+				case NEVER: 
+					config.setInt("chaos_mode", 2);
+					break;
+				case STRICT: 
+					config.setInt("chaos_mode", 3);
+					break;
+			}
+			config.save();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+    public static void loadSettingsData() {
+    	logger.info("ReplayTheSpireMod | Loading Data...");
+    	try {
+			Properties defaultProperties = new Properties();
+			defaultProperties.setProperty("chaos_mode", "1");
+			SpireConfig config = new SpireConfig("ReplayTheSpireMod", "replaySettingsData");
+			config.load();
+			
+			try {
+				switch(config.getInt("chaos_mode")) {
+					case 0:
+						ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.ALWAYS;
+						break;
+					case 1:
+						ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.COST_ONLY;
+						break;
+					case 2:
+						ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.NEVER;
+						break;
+					case 3:
+						ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.STRICT;
+						break;
+				}
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			}
+			
+			
+		} catch (IOException e) {
+			logger.error("Failed to load ReplayTheSpireMod settings data!");
+			e.printStackTrace();
+		}
+    	
+    }
+	
+	public static boolean rua_DefeatedAbe = false;
+	public static boolean rua_DefeatedForest = false;
+	
+	public static void completeAchievement(String key) {
+		ReplayTheSpireMod.loadUnlocksData();
+		for (ReplayUnlockAchieve ach : ReplayTheSpireMod.unlockAchievements) {
+			if (ach.achievementId.equals(key)) {
+				ach.isUnlocked = true;
+			}
+		}
+		ReplayTheSpireMod.saveUnlocksData();
+	}
+	
+	public static void saveUnlocksData() {
+		try {
+			SpireConfig config = new SpireConfig("ReplayTheSpireMod", "replayUnlocksData");
+			for (ReplayUnlockAchieve ach : ReplayTheSpireMod.unlockAchievements) {
+				config.setBool(ach.achievementId, ach.isUnlocked);
+			}
+			//config.setBool("abe_win", rua_DefeatedAbe);
+			//config.setBool("forest_win", rua_DefeatedForest);
+			config.save();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+    public static void loadUnlocksData() {
+    	logger.info("ReplayTheSpireMod | Loading Unlock Data...");
+    	try {
+			SpireConfig config = new SpireConfig("ReplayTheSpireMod", "replayUnlocksData");
+			config.load();
+			for (ReplayUnlockAchieve ach : ReplayTheSpireMod.unlockAchievements) {
+				ach.isUnlocked = config.getBool(ach.achievementId);
+			}
+			//rua_DefeatedAbe = config.getBool("abe_win");
+			//rua_DefeatedForest = config.getBool("forest_win");
+			
+		} catch (IOException e) {
+			logger.error("Failed to load ReplayTheSpireMod unlocks data!");
+			e.printStackTrace();
+		}
+    }
+	
+	public static void receiveEditUnlocks() {
+		loadUnlocksData();
+		for (ReplayUnlockAchieve ach : ReplayTheSpireMod.unlockAchievements) {
+			String unlockReq = UnlockTracker.unlockReqs.get(ach.relicId);
+			if (unlockReq == null) {
+				UnlockTracker.unlockReqs.put(ach.relicId, ach.desc + " to unlock.");
+			}
+			if(ach.isUnlocked) {
+				while (UnlockTracker.isRelicLocked(ach.relicId)) {
+					UnlockTracker.lockedRelics.remove(ach.relicId);
+				}
+			} else {
+				if (!UnlockTracker.isRelicLocked(ach.relicId)) {
+					UnlockTracker.lockedRelics.add(ach.relicId);
+				}
+			}
+		}
+	}
+	
+	public static void initAchievementUnlocks() {
+		ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("abe_win", "Big Fish in a Small Pond", "Defeat Captain Abe", "Pondfish Scales"));
+		//ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("abe_perfect", "The Worst Pirate I've Ever Heard Of", "Defeat Captain Abe without losing HP", "Abe's Treasure"));
+		//ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("abe_special", "From Beyond Hell", "Complete a run with Abe's Revenge in your deck", "noneyetmyguy"));
+		//ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("forest_win", "The Trees Have Ears", "Defeat The Fading Forest", "Transient Totem"));
+		//ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("forest_perfect", "Onceler", "Defeat The Fading Forest without losing HP", "noneyetmyguy"));
+		//ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("forest_special", "Environmentalist", "Defeat The Fading Forest killing anything", "noneyetmyguy"));
+		//ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("complete_eye", "Baffling", "Complete a run with Snecko Eye", "Snecko Heart"));
+	}
+	
+    /*
+    public static void clearRunData() {
+    	logger.info("ReplayTheSpireMod | Clearing Saved Data...");
+    	saveData();
+    }
+    */
 	
 }

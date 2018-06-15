@@ -216,7 +216,7 @@ public class CaptainAbe extends AbstractMonster
     @Override
     public void die() {
         if (!AbstractDungeon.getCurrRoom().cannotLose) {
-			UnlockTracker.markBossAsSeen("PONDFISH");
+			ReplayTheSpireMod.completeAchievement("abe_win");
             this.deathTimer += 1.5f;
 			super.die();
 			this.onBossVictoryLogic();

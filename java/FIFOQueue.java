@@ -8,8 +8,9 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.defect.*;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.core.*;
+import basemod.abstracts.*;
 
-public class FIFOQueue extends AbstractCard
+public class FIFOQueue extends CustomCard
 {
     public static final String ID = "FIFO Queue";
     private static final CardStrings cardStrings;
@@ -19,7 +20,7 @@ public class FIFOQueue extends AbstractCard
     private static final int COST = 2;
     
     public FIFOQueue() {
-        super("FIFO Queue", FIFOQueue.NAME, null, "cards/replay/replayBetaPower.png", 1, FIFOQueue.DESCRIPTION, CardType.POWER, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
+        super("FIFO Queue", FIFOQueue.NAME, "cards/replay/replayBetaPower.png", FIFOQueue.COST, FIFOQueue.DESCRIPTION, CardType.POWER, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseMagicNumber = 4;
         this.magicNumber = this.baseMagicNumber;
     }
@@ -39,6 +40,7 @@ public class FIFOQueue extends AbstractCard
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(1);
+            this.isInnate = true;
             this.rawDescription = FIFOQueue.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
