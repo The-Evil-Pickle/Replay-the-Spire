@@ -87,7 +87,7 @@ Poison Darts | Green | Rare | Skill | X | Apply 3(4) **Necrotic** **Poison** X t
 Reflective Lens | Blue | Uncommon | Power | 1(0) | **Channel** 1 **Glass.** Your **Glass** orbs have a passive effect that gives 1 **Reflection** at the end of each turn.
 Panic Button | Blue | Uncommon | Skill | 0 | **Evoke** all your orbs. Draw 2(4) cards. **Exhaust.** **Retain.**
 Crystal Conduit | Blue | Uncommon | Skill | 1 | **Channel** 1 **Crystal** (and 1 random orb).
-Crystallizer | Blue | Rare | Power | 0 | (**Innate.**) At the end of your turn, if at least half your orb slots are empty, **Channel** 1 **Crystal.**
+FIFO Queue | Blue | Uncommmon | Power | 2 | (**Innate.**) Gain 4(5) orb slots.
 Mirror Shield | Blue | Rare | Skill | 2 | **Channel** 1 **Crystal.** **Channel** 1 **Frost.** Gain 5(8) **Block.** Gain 1(2) **Reflection.**
 Time Bomb | Blue | Rare | Skill | 1 | Gain 2 orb slots. **Channel** 2 **Glass.** **Channel** 1 **Dark,** and trigger its passive 2(3) times. **Exhaust.**
 RNG | Blue | Rare | Skill | X | **Channel** X(+1) random orbs.
