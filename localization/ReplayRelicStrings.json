@@ -189,10 +189,18 @@
 	"NAME": "Ooze Armor",
 	"FLAVOR": "Armor with the flexibility and toughness of living slime.",
     "DESCRIPTIONS": [
-	" NL Gain 4 #yMalleable, -2 #ySlow, and 2 #ySlimed at the start of combat",
-	"Gain [R] and draw a card at the start of each turn.", 
-	"Gain [G] and draw a card at the start of each turn.",
-	"Gain [E] and draw a card at the start of each turn."
+	" NL Gain 4 #yMalleable and -2 #ySlow at the start of combat",
+	"Gain [R] at the start of each turn.", 
+	"Gain [G] at the start of each turn.",
+	"Gain [E] at the start of each turn."
+	]
+  },
+  "ChewingGum": {
+	"NAME": "Chewing Gum",
+	"FLAVOR": "Sticky and sweet.",
+    "DESCRIPTIONS": [
+	"Gain [E] at the start of each turn. NL Every time you shuffle your deck, add #b",
+	" #rSlimed to your draw pile."
 	]
   },
   "Gremlin Food": {
@@ -201,6 +209,14 @@
     "DESCRIPTIONS": [
 	"Whenever you Rest, #yUpgrade a random card."
 	]
+  },
+  "BranchBurnRelic": {
+    "NAME": "Kindling",
+    "FLAVOR": "The fire burns bright.",
+    "DESCRIPTIONS": [
+      "Whenever you enter a Rest Site, start the next combat with #b",
+	  " #yRegen."
+    ]
   },
   "Guide Book": {
 	"NAME": "Guide Book",
@@ -225,6 +241,13 @@
 	"FLAVOR": "Delicious!",
     "DESCRIPTIONS": [
 	"Draw 1 more card each turn. NL #yRetain up to 1 card each turn. NL Extra choice on card reward screens. NL You cannot skip rewards."
+	]
+  },
+  "Replay_Grab Bag": {
+	"NAME": "Grab Bag",
+	"FLAVOR": "Trinkets and treats. What will you get?",
+    "DESCRIPTIONS": [
+	"Choose #b1 #yEnergy Boss Relic and #b1 #yNon-Energy Boss Relic to obtain. NL Both choices will be out of #b3 random relics, and cannot be skipped."
 	]
   },
   "Sizzling Blood": {
@@ -323,9 +346,10 @@
 	"FLAVOR": "What is broken can be made better.",
     "DESCRIPTIONS": [
 		"Remove #b",
-		" cards from your deck. NL Obtain #b",
-		" random #yCurses.",
-		"Choose cards to remove"
+		" cards from your deck. NL Choose #b",
+		" #yCurses to obtain.",
+		"Choose cards to remove",
+		"Choose curses to obtain"
 	]
   },
   "Solar Panel": {
@@ -364,6 +388,13 @@
 	"FLAVOR": "Leave no survivors.",
     "DESCRIPTIONS": [
 		"After a #yDark orb triggers its passive effect, if it has more stored damage than the HP of the lowest-health enemy, it is #yEvoked."
+	]
+  },
+  "agfadhgsfhsgergfn": {
+    "NAME": "agfadhgsfhsgergfn",
+	"FLAVOR": "idk",
+    "DESCRIPTIONS": [
+		"Each time you #yEvoke #yFrost, gain #b1 #yReflection."
 	]
   },
   "Solidified Core": {
@@ -446,6 +477,24 @@
 	"At the start of combat you gain #b",
 	" #yFocus and lose #b",
 	" Orb Slots."
+	]
+  },
+  "Ring of Misfortune": {
+	"NAME": "Ring of Misfortune",
+	"FLAVOR": "Weary wear.",
+	"DESCRIPTIONS": [
+	"At the start of combat add a random #rCurse to your discard pile. NL Each time you draw a #rCurse, gain [E] and #b",
+	" #yBlock."
+	]
+  },
+  "Ring of Greed": {
+	"NAME": "Ring of Greed",
+	"FLAVOR": "Great wealth often rides with great dispair.",
+	"DESCRIPTIONS": [
+	"On pick up, obtain #b",
+	" gold and #b",
+	" random relics with effects related to gold or shops. NL For every #b",
+	" gold you obtain, add #b1 random #rCurse to your deck."
 	]
   },
   "Iron Core": {

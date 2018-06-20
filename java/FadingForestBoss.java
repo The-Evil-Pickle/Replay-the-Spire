@@ -147,21 +147,24 @@ public class FadingForestBoss extends AbstractMonster
     }
     
 	private void giveRelicEffect() {
-		switch (AbstractDungeon.miscRng.random(0, 4)) {
+		switch (AbstractDungeon.miscRng.random(0, 5)) {
 			case 0:
-				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, this, new RP_HourglassPower(AbstractDungeon.player)));
+				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, this, new RP_HourglassPower(AbstractDungeon.player), 3));
 				break;
 			case 1:
-				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, this, new RP_ThreadPower(AbstractDungeon.player)));
+				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, this, new RP_ThreadPower(AbstractDungeon.player), 1));
 				break;
 			case 2:
-				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, this, new RP_OrichalcumPower(AbstractDungeon.player)));
+				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, this, new RP_OrichalcumPower(AbstractDungeon.player), 6));
 				break;
 			case 3:
-				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, this, new RP_SmoothStonePower(AbstractDungeon.player)));
+				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, this, new RP_KunaiPower(AbstractDungeon.player), 1));
 				break;
 			case 4:
-				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, this, new RP_VajraPower(AbstractDungeon.player)));
+				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, this, new RP_GiryaPower(AbstractDungeon.player), 3));
+				break;
+			case 5:
+				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, this, new RP_LetterOpenerPower(AbstractDungeon.player), 5));
 				break;
 		}
 	}
@@ -298,6 +301,26 @@ public class FadingForestBoss extends AbstractMonster
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
 				break;
             }
+            case FORK_NOISE: {
+				this.imageEventText.loadImage("images/events/fadingForest/fadingForest.jpg");
+                this.imageEventText.updateBodyText(this.eDesc(0));
+				this.imageEventText.setDialogOption(this.eOp(0));
+				this.imageEventText.setDialogOption(this.eOp(1));
+				this.imageEventText.setDialogOption(this.eOp(2));
+				AbstractDungeon.actionManager.addToBottom(new ForestEventAction());
+				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+				break;
+            }
+            case FORK_PATHS: {
+				this.imageEventText.loadImage("images/events/fadingForest/fadingForest.jpg");
+                this.imageEventText.updateBodyText(this.eDesc(0));
+				this.imageEventText.setDialogOption(this.eOp(0));
+				this.imageEventText.setDialogOption(this.eOp(1));
+				this.imageEventText.setDialogOption(this.eOp(2));
+				AbstractDungeon.actionManager.addToBottom(new ForestEventAction());
+				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+				break;
+            }
         }
     }
     
@@ -367,8 +390,10 @@ public class FadingForestBoss extends AbstractMonster
 							default:
 								this.imageEventText.updateBodyText(this.eDesc(4));
 								m = new FF_Sentry(0, 30, false);
+								AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new ArtifactPower(m, 1), 1));
 								AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
 								m = new FF_Sentry(-200, 30, true);
+								AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new ArtifactPower(m, 1), 1));
 								AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
 								break;
 						}
@@ -445,7 +470,10 @@ public class FadingForestBoss extends AbstractMonster
 			case ATTACK_MUSHROOMS: {
 				switch(p0) {
 					case 0:
-						AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new FF_FungiBeast(-350f, 0f), true));
+						AbstractMonster m = new FF_FungiBeast(-350f, 0f);
+						AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new FadingPower(m, 3), 3));
+						AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new SporeCloudPower(m, 1), 1));
+						AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
 						break;
 					default:
 						AbstractDungeon.actionManager.addToTop(new MakeTempCardInDiscardAction(new SpreadingInfection(), 1));
@@ -567,7 +595,9 @@ public class FadingForestBoss extends AbstractMonster
     @Override
     public void render(final SpriteBatch sb) {
         super.render(sb);
-		this.imageEventText.render(sb);
+		if (!AbstractDungeon.id.equals("Exordium") {
+			this.imageEventText.render(sb);
+		}
 		if (this.tint.color.a <= 0.751f) {
 			this.tint.changeColor(new Color(1.0f, 1.0f, 1.0f, 1.0f));
 		} else if (this.tint.color.a >= 0.99f) {
@@ -578,6 +608,8 @@ public class FadingForestBoss extends AbstractMonster
     
     @Override
     public void die() {
+		this.imageEventText.clear();
+		ForestEventAction.forest = null;
         this.deathTimer += 1.5f;
         super.die();
         this.onBossVictoryLogic();

@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.helpers.input.*;
 import com.megacrit.cardcrawl.rooms.*;
 import ReplayTheSpireMod.patches.*;
 import ReplayTheSpireMod.*;

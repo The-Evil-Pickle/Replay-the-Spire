@@ -84,8 +84,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>> potionsByRarity = new EnumMap<ReplayTheSpireMod.PotionRarity, ArrayList<String>>(ReplayTheSpireMod.PotionRarity.class);
 	
 	public static boolean renderFishFG = false;
+	public static boolean renderForestBG = false;
 	public static TextureAtlas fishAtlas;
 	public static TextureAtlas.AtlasRegion fishFG;
+	public static Texture forestBG;
 	
 	
 	public static boolean BypassStupidBasemodRelicRenaming_hasRelic(String targetID) {
@@ -601,6 +603,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.renderFishFG = false;
 		ReplayTheSpireMod.fishAtlas = new TextureAtlas(Gdx.files.internal("images/replayScenes/fishfight.atlas"));
 		ReplayTheSpireMod.fishFG = ReplayTheSpireMod.fishAtlas.findRegion("mod/fg");
+		ReplayTheSpireMod.forestBG = ImageMaster.loadImage("images/monsters/fadingForest/fadingForest_bg.png");
         // Mod badge
         Texture badgeTexture = new Texture(BADGE_IMG);
 		this.currentSettingsSubTab = 0;
@@ -705,7 +708,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addKeyword(hfNames, "Orb: At the start of your turn, gain #b+2 #yStrength until the end of your turn. NL When #yEvoked, applies 1 #yVulnerable to a random enemy.");
 		final String[] glNames = { "glass"};
 		BaseMod.addKeyword(glNames, "Orb: No #yPassive effect. When #yEvoked while you have more than #b3 orb slots, consumes your leftmost orb slot and #yEvokes the occupying orb.");
-		final String[] rfNames = { "reflection", "Reflection"};
+		final String[] rfNames = { "reflection", "Reflection", "reflection."};
 		BaseMod.addKeyword(rfNames, "Goes down by 1 each round, is removed on 0. While active, completely blocking Attack damage reflects it back at the attacker.");
 		
 		
@@ -732,11 +735,13 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		RelicLibrary.addBlue(new Geode());
 		RelicLibrary.addBlue(new RaidersMask());
 		BaseMod.addRelic(new Arrowhead(), RelicType.SHARED);
+		BaseMod.addRelic(new AbesTreasure(), RelicType.SHARED);
 		BaseMod.addRelic(new Bandana(), RelicType.SHARED);
 		BaseMod.addRelic(new Baseball(), RelicType.SHARED);
 		BaseMod.addRelic(new ByrdSkull(), RelicType.GREEN);
 		BaseMod.addRelic(new ChameleonRing(), RelicType.SHARED);
 		BaseMod.addRelic(new ChemicalX(), RelicType.SHARED);
+		BaseMod.addRelic(new ChewingGum(), RelicType.SHARED);
 		BaseMod.addRelic(new CounterBalance(), RelicType.SHARED);
 		BaseMod.addRelic(new Durian(), RelicType.SHARED);
 		BaseMod.addRelic(new DivineProtection(), RelicType.SHARED);
@@ -773,6 +778,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new SnackPack(), RelicType.SHARED);
 		BaseMod.addRelic(new SnakeBasket(), RelicType.GREEN);
 		BaseMod.addRelic(new SneckoScales(), RelicType.GREEN);
+		BaseMod.addRelic(new SneckoHeart(), RelicType.SHARED);
 		BaseMod.addRelic(new TagBag(), RelicType.SHARED);
 		BaseMod.addRelic(new VampiricSpirits(), RelicType.GREEN);
         
@@ -937,7 +943,17 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	
 	public void receivePostDraw(AbstractCard c) {
 		if (AbstractDungeon.player.hasPower("TPH_Confusion") && c.cost > -1 && c.color != AbstractCard.CardColor.CURSE && c.type != AbstractCard.CardType.STATUS) {
-			c.setCostForTurn(AbstractDungeon.cardRandomRng.random(3));
+			if (BypassStupidBasemodRelicRenaming_hasRelic("Snecko Heart")) {
+				SneckoHeart snek = (SneckoHeart)BypassStupidBasemodRelicRenaming_getRelic("Snecko Heart");
+				if (snek.checkCard(c)) {
+					snek.flash();
+					c.setCostForTurn(-99);
+				} else {
+					c.setCostForTurn(AbstractDungeon.cardRandomRng.random(Math.min(3, c.cost + 1)));
+				}
+			} else {
+				c.setCostForTurn(AbstractDungeon.cardRandomRng.random(3));
+			}
 		}
 	}
 	
@@ -1101,12 +1117,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	
 	public static void initAchievementUnlocks() {
 		ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("abe_win", "Big Fish in a Small Pond", "Defeat Captain Abe", "Pondfish Scales"));
-		//ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("abe_perfect", "The Worst Pirate I've Ever Heard Of", "Defeat Captain Abe without losing HP", "Abe's Treasure"));
+		ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("abe_perfect", "The Worst Pirate I've Ever Heard Of", "Defeat Captain Abe without his Deadweight power ever triggering", "Abe's Treasure"));
 		//ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("abe_special", "From Beyond Hell", "Complete a run with Abe's Revenge in your deck", "noneyetmyguy"));
 		//ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("forest_win", "The Trees Have Ears", "Defeat The Fading Forest", "Transient Totem"));
 		//ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("forest_perfect", "Onceler", "Defeat The Fading Forest without losing HP", "noneyetmyguy"));
 		//ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("forest_special", "Environmentalist", "Defeat The Fading Forest killing anything", "noneyetmyguy"));
-		//ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("complete_eye", "Baffling", "Complete a run with Snecko Eye", "Snecko Heart"));
+		ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("complete_eye", "Baffling", "Complete a run with Snecko Eye", "Snecko Heart"));
 	}
 	
     /*

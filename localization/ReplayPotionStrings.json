@@ -91,7 +91,7 @@
     "DESCRIPTIONS": [
 			"Gain #b",
 			" #yStrength and #b",
-			" #yDexterity. NL Add a random #yCurse to your draw pile."
+			" #yDexterity. NL Add a random #yCurse to your draw and discard piles."
 	]
   },
   "Confusion Potion": {

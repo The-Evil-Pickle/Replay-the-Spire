@@ -28,6 +28,26 @@ import java.util.*;
 public class ReplayCorpseExplosionPatch {
 	
 	public static void Replace(CorpseExplosion __instance, final AbstractPlayer p, final AbstractMonster m) {
+		if (__instance.upgraded) {
+			if (m.getPower("Poison") == null) {
+				AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, CorpseExplosion.EXTENDED_DESCRIPTION[0], true));
+				return;
+			}
+			int pAmnt = m.getPower("Poison").amount;
+			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, "Poison"));
+			for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+			  AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new NecroticPoisonPower(mo, p, pAmnt), pAmnt, AbstractGameAction.AttackEffect.POISON));
+			}
+		} else {
+			for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+				if (mo.getPower("Poison") != null) {
+					int pAmnt = mo.getPower("Poison").amount;
+					AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(mo, p, "Poison"));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new NecroticPoisonPower(mo, p, pAmnt), pAmnt, AbstractGameAction.AttackEffect.POISON));
+				}
+			}
+		}
+		/*
 		__instance.exhaust = false;
 		if (m.getPower("Poison") == null) {
             AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, CorpseExplosion.EXTENDED_DESCRIPTION[0], true));
@@ -39,6 +59,7 @@ public class ReplayCorpseExplosionPatch {
 		for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 		  AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new NecroticPoisonPower(mo, p, pAmnt), pAmnt, AbstractGameAction.AttackEffect.POISON));
 		}
+		*/
 	}
 	
 }

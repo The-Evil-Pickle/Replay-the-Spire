@@ -9,7 +9,7 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
 ### Currently adds:
- * 39 Relics (4 ironclad, 4 silent, 5 defect, 26 shared)
+ * 40 Relics (4 ironclad, 4 silent, 5 defect, 27 shared)
  * 35 Cards (7 ironclad, 7 silent, 7 defect, 5 colorless, 9 curses)
  * 4 Events
  * 8 Potions
@@ -26,20 +26,20 @@ Some content originally from this mod is now in the official release of the game
 Name | Character | Rarity | Description
 --- | --- | --- | ---
 Antivirus Software | Defect | Common | Every time you shuffle your deck, gain 1 **Artifact**. **Artifact** will also be used to exhaust **Status** cards for 1 turn.
-Bandana | All | Common | Gain 2 **Thievery** for the first 5 turns of combat.
 Baseball | All | Common | Upon pick up, a random card in your deck becomes free.
-Byrd Skull | Silent | Common | Your **Innate** cards have **Refund** 1 and draw 1 card.
 Geode | Defect | Common | The first time you lose HP in combat, trigger the passive effect of your orbs and **Channel** 1 **Crystal.**
 Gremlin Food | All | Common | Whenever you rest, **Upgrade** a random card.
 Grinning Jar | All | Common | On pickup, add a Grinning Jar card to your deck. Obtain another copy for every 12 cards added to your deck.
 King of Hearts | Ironclad | Common | When you lose HP during your turn, gain twice that much block.
 Rune of Simplicity | All | Common | Strikes and Defends can be **Upgraded** any number of times. On pickup, **Upgrade** 2 randomly.
-Tag Bag | All | Common | Shops have all 3 kinds of sale tags. Sale tags can appear on colorless cards. On-sale cards are cheaper
+Tag Bag | All | Common | Shops have all 3 kinds of sale tags. Sale tags can appear on colorless cards. On-sale cards are slightly cheaper
 Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe, Ghost Defend, or Ghost Fetch to your hand (chosen randomly).
+Bandana | All | Uncommon | Gain 2 **Thievery** for the first 3 turns of combat.
+Basket of Snakes | Silent | Uncommon | Every 5th **Attack** you play applies 2 **Necrotic** **Poison** upon dealing unblocked damage.
 Carrot | Defect | Uncommon | Gain 3 **Focus** at the start of combat, then lose 1 **Focus** on the next 3 turns.
 Chameleon Ring | All | Uncommon | Potions are ~50% more potent. You may brew 2 random potions at rest sites.
 Divine Protection | All | Uncommon | Gain 8 temporary HP at the start of combat.
-Funnel | All | Uncommon | At the end of your turn, gain 4 block for each unspent energy.
+Funnel | All | Uncommon | At the end of your turn, gain 4 **Block** for each unspent energy.
 Garlic | All | Uncommon | Enemies lose 3 **Strength** at the start of combat, then gain 1 **Strength** on the next 3 turns.
 Golden Egg | All | Uncommon | Whenever you obtain a rare card, it is **Upgraded.**
 Iron Hammer | All | Uncommon | During the first turn, drawing a card upgrades it until the end of combat.
@@ -50,19 +50,22 @@ Solar Panel | Defect | Uncommon | At the end of combat, gain 2 HP for each of yo
 Quantum Egg | All | Uncommon | Whenever a card is created during combat, it is **Upgraded.**
 Another Sword | Ironclad | Rare | The first card containing "Strike" you play each turn is played twice. Takes 1 additional turn to recharge for each energy spent on the card.
 Arrowhead | All | Rare | You may **Upgrade** 2 cards whenever you smith.
-Basket of Snakes | Silent | Rare | Every 5th **Attack** you play applies 2 **Necrotic** **Poison** upon dealing unblocked damage.
+Byrd Skull | Silent | Rare | Your **Innate** cards have **Refund** 1 and draw 1 card.
 Counterbalance | All | Rare | During boss and elite fights all enemy **Strength** gain, **Block** gain, and healing is reduced by half.
 Durian | All | Rare | Gain 5 Max HP on pickup. At the start of your turn, reduce your **Weakened,** **Frail,** and/or **Vulnerable** to 2 (if > 2).
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
-Pondfish Scales | All | Rare | Whenever you play a Skill that does not give Block, gain 2 Block.
+Pondfish Scales | All | Rare | Whenever you play a Skill that does not give **Block,** gain 2 **Block**.
 Vampiric Spirits | Silent | Rare | During the first turn of combat, 25% of all unblocked attack damage you deal is retuned as health.
 Chemical X | All | Shop | Your cost X effects are increased by 2.
 GuideBook | All | Shop | On pickup, **Upgrade** 2 cards randomly. Prioritizes rarer cards.
+Abe's Treasure | All | Boss | Gain 1 more energy each turn. Start combat with **Drowning**.
+Chewing Gum | All | Boss | Gain 1 more energy each turn. Each time you shuffle your deck, add 2 Slimed to your draw pile..
 Honey Jar | All | Boss | Draw 1 more card each turn. **Retain** up to 1 card each turn. Card rewards have 1 more option to chose from. You cannot skip rewards.
-Kintsugi | All | Boss | Remove 5 cards from your deck. Obtain 2 random **Curses**.
-Ooze Armor | Ironclad | Boss | Gain 1 energy and draw 1 card at the start of each turn. At the start of combat, gain Slow (resets to -2) and Malleable (resets to 4), and shuffle 2 Slimed into your draw pile.
+Kintsugi | All | Boss | Remove 5 cards from your deck. Choose 2 **Curses** to obtain.
+Ooze Armor | Ironclad | Boss | Gain 1 energy at the start of each turn. At the start of combat, gain **Slow** (resets to -2) and **Malleable** (resets to 4).
 Sweet Flower | All | Boss | Gain 1 more energy each turn. Map displays much less information.
 Electric Blood | Ironclad | Boss | Gain 2 energy at the start of each turn. When you spend energy, lose that much HP, excluding the first 2 energy spent each turn.
+Snecko Heart | All | Boss | Start combat **Confused**. **Confusion** will never increase the cost of a card by more than 1. The first card you draw each turn always costs 0.
 Snecko Scales | Silent | Boss | Draw 3 additional cards each turn. When you play a card that costs more than 0, discard a card.
 Ring of Chaos | All | Boss | Some card rewards have randomly altered stats and effects.
 
@@ -87,7 +90,7 @@ Poison Darts | Green | Rare | Skill | X | Apply 3(4) **Necrotic** **Poison** X t
 Reflective Lens | Blue | Uncommon | Power | 1(0) | **Channel** 1 **Glass.** Your **Glass** orbs have a passive effect that gives 1 **Reflection** at the end of each turn.
 Panic Button | Blue | Uncommon | Skill | 0 | **Evoke** all your orbs. Draw 2(4) cards. **Exhaust.** **Retain.**
 Crystal Conduit | Blue | Uncommon | Skill | 1 | **Channel** 1 **Crystal** (and 1 random orb).
-FIFO Queue | Blue | Uncommmon | Power | 2 | (**Innate.**) Gain 4(5) orb slots.
+FIFO Queue | Blue | Uncommmon | Power | 2(X) | Gain 4(2X+1) orb slots.
 Mirror Shield | Blue | Rare | Skill | 2 | **Channel** 1 **Crystal.** **Channel** 1 **Frost.** Gain 5(8) **Block.** Gain 1(2) **Reflection.**
 Time Bomb | Blue | Rare | Skill | 1 | Gain 2 orb slots. **Channel** 2 **Glass.** **Channel** 1 **Dark,** and trigger its passive 2(3) times. **Exhaust.**
 RNG | Blue | Rare | Skill | X | **Channel** X(+1) random orbs.
@@ -131,7 +134,7 @@ Toxic Potion | Uncommon | Apply 5(4) Necrotic Poison to all enemies.
 Milkshake | Uncommon | You can retain up to 5(2) unspent energy between rounds.
 Death Potion | Rare | Deal 60(40) damage and lose 12(15) HP.
 Doom Potion | Rare | Destroy an enemy after 10(13) turns.
-Cursed Concoction | Rare | Gain 3(2) Strength and 2(1) Dexterity. Add a random curse to your draw pile.
+Cursed Concoction | Rare | Gain 3(2) Strength and 2(1) Dexterity. Add a random curse to your draw and discard piles.
 
 
 # Events
@@ -206,8 +209,9 @@ Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 
  * Neow now has a wider variety of blessings to choose from.
  * Shops sometimes have a "2 for 1" tag or "special edition" tag instead of the normal sale tag.
  * Random orb channeling effects (e.g. Chaos) will now sometimes channel Crystal.
- * Corpse Explosion now applies 1x Necrotic Poison rather than dealing 2x damage.
+ * Corpse Explosion now exhausts and applies 1x Necrotic Poison rather than dealing 2x damage.
  * If you have Honey Jar and Singing Bowl at the same time, using Singing Bowl's max hp gain option also picks a reward card at random.
+ * Burning Branch can now be exchanged for a different relic at rest sites.
 
 
 ## Known Issues:

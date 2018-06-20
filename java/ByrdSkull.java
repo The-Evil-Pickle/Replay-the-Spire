@@ -12,7 +12,7 @@ public class ByrdSkull extends AbstractRelic
     public static final String ID = "Byrd Skull";
     
     public ByrdSkull() {
-        super("Byrd Skull", "betaRelic.png", RelicTier.COMMON, LandingSound.FLAT);
+        super("Byrd Skull", "betaRelic.png", RelicTier.RARE, LandingSound.FLAT);
     }
     
     @Override
@@ -24,7 +24,6 @@ public class ByrdSkull extends AbstractRelic
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
         if (card.isInnate && card.type != AbstractCard.CardType.CURSE) {
             this.flash();
-            //AbstractDungeon.actionManager.addToTop(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 2));
 			AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
 			AbstractDungeon.actionManager.addToTop(new ReplayRefundAction(card, 1));
             AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));

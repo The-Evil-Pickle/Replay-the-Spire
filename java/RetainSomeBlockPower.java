@@ -1,8 +1,10 @@
 package com.megacrit.cardcrawl.powers;
 
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.*;
+import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.vfx.combat.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
@@ -35,10 +37,14 @@ public class RetainSomeBlockPower extends AbstractPower
     
     @Override
     public void atStartOfTurn() {
-		if (this.owner.currentBlock > 0) {
+		if (this.owner.currentBlock > 0 && !this.owner.hasPower("Blur") && !this.owner.hasPower("Barricade")) {
 			this.flash();
 			AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.owner.hb.cX, this.owner.hb.cY, AbstractGameAction.AttackEffect.SHIELD));
-			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, Math.min(this.amount, this.owner.currentBlock)));
+			if (this.owner instanceof AbstractPlayer && ((AbstractPlayer)this.owner).hasRelic("Calipers") && this.owner.currentBlock > Calipers.BLOCK_LOSS) {
+				AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, Math.min(Math.min(this.amount, Calipers.BLOCK_LOSS), this.owner.currentBlock - Calipers.BLOCK_LOSS)));
+			} else {
+				AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, Math.min(this.amount, this.owner.currentBlock)));
+			}
 		}
     }
     

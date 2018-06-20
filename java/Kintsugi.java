@@ -13,12 +13,15 @@ public class Kintsugi extends AbstractRelic
 {
     public static final String ID = "Kintsugi";
     private boolean cardsSelected;
+	private boolean cursesSelected;
 	public static final int REMOVECOUNT = 5;
 	public static final int CURSECOUNT = 2;
+	public static final int CURSEOPTIONS = 3;
     
     public Kintsugi() {
         super("Kintsugi", "kintsugi.png", RelicTier.BOSS, LandingSound.FLAT);
         this.cardsSelected = true;
+		this.cursesSelected = true;
     }
     
     @Override
@@ -29,6 +32,7 @@ public class Kintsugi extends AbstractRelic
     @Override
     public void onEquip() {
         this.cardsSelected = false;
+		this.cursesSelected = false;
         final CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (final AbstractCard card : AbstractDungeon.player.masterDeck.group) {
             if (!card.cardID.equals("Necronomicurse") && !card.cardID.equals("AscendersBane")) {
@@ -90,8 +94,13 @@ public class Kintsugi extends AbstractRelic
                 }*/
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
-            float displayCount = 0.0f;
-			for (int i=0; i < this.CURSECOUNT; i++) {
+            //float displayCount = 0.0f;
+			final CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+			for (int i=0; i < this.CURSEOPTIONS; i++) {
+				final AbstractCard bowlCurse = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE);
+				UnlockTracker.markCardAsSeen(bowlCurse.cardID);
+				tmp.addToTop(bowlCurse);
+				/*
 				if (AbstractDungeon.player.hasRelic("Omamori") && AbstractDungeon.player.getRelic("Omamori").counter != 0) {
 					((Omamori)AbstractDungeon.player.getRelic("Omamori")).use();
 				}
@@ -101,9 +110,34 @@ public class Kintsugi extends AbstractRelic
 					AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(bowlCurse, Settings.WIDTH / 2.0f + displayCount, Settings.HEIGHT / 2.0f, false));
 					displayCount += Settings.WIDTH / 4.0f;
 				}
+				*/
 			}
-            AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25f;
+			if (!AbstractDungeon.isScreenUp) {
+				AbstractDungeon.gridSelectScreen.open(tmp, this.CURSECOUNT, this.DESCRIPTIONS[4], false, false, false, false);
+			}
+			else {
+				//AbstractDungeon.dynamicBanner.hide();
+				//AbstractDungeon.previousScreen = AbstractDungeon.screen;
+				AbstractDungeon.gridSelectScreen.open(tmp, this.CURSECOUNT, this.DESCRIPTIONS[4], false, false, false, false);
+			}
+            //AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25f;
         }
+		if (this.cardsSelected && !this.cursesSelected && AbstractDungeon.gridSelectScreen.selectedCards.size() == this.CURSECOUNT) {
+			this.cursesSelected = true;
+            float displayCount = 0.0f;
+			for (final AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
+                card.untip();
+                card.unhover();
+				if (AbstractDungeon.player.hasRelic("Omamori") && AbstractDungeon.player.getRelic("Omamori").counter != 0) {
+					((Omamori)AbstractDungeon.player.getRelic("Omamori")).use();
+				} else {
+					AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(card.makeCopy(), Settings.WIDTH / 2.0f + displayCount, Settings.HEIGHT / 2.0f, false));
+					displayCount += Settings.WIDTH / 4.0f;
+				}
+            }
+            AbstractDungeon.gridSelectScreen.selectedCards.clear();
+            AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25f;
+		}
     }
     
     @Override

@@ -1,9 +1,9 @@
 {
-  "White Beast Statue_OLD": {
-	"NAME": "White Beast Statue",
-	"FLAVOR": "A small white statue of a creature you have never seen before.",
+  "Dead Branch": {
+    "NAME": "Dead Branch",
+    "FLAVOR": "The branch of a tree from a forgotten era.",
     "DESCRIPTIONS": [
-	"Potions always drop after combat. NL Lower chance of getting rare potions."
-	]
+      "Whenever you #yExhaust a card, add a random card to your hand. NL Can be #yBurned at rest sites."
+    ]
   }
 }

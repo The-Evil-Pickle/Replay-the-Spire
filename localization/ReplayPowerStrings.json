@@ -260,5 +260,30 @@
     "DESCRIPTIONS": [
       "Gives #b1 #yStrength."
     ]
+  },
+  "RP_GiryaPower": {
+    "NAME": "Girya",
+    "DESCRIPTIONS": [
+      "Gives #b1 #yStrength at the start of turn. NL #b",
+	  " remaining."
+    ]
+  },
+  "RP_KunaiPower": {
+    "NAME": "Kunai",
+      "DESCRIPTIONS": [
+      "If you play #b",
+      " more #yAttack this turn, gain #b",
+      " #yDexterity.",
+      " more #yAttacks this turn, gain #b"
+    ]
+  },
+  "RP_LetterOpenerPower": {
+    "NAME": "Letter Opener",
+	"DESCRIPTIONS": [
+      "If you play #b",
+      " more #ySkill this turn, deal #b",
+      " damage to ALL enemies.",
+      " more #ySkills this turn, deal #b"
+    ]
   }
 }

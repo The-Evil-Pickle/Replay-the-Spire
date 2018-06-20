@@ -33,7 +33,7 @@ public class Stuck extends AbstractImageEvent
     private void setCards() {
         final ArrayList<AbstractCard> list = new ArrayList<AbstractCard>();
         for (final AbstractCard abstractCard : AbstractDungeon.player.masterDeck.group) {
-            if (abstractCard.upgraded == false) {
+            if (abstractCard.canUpgrade()) {
                 list.add(abstractCard);
             }
         }

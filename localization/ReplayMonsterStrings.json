@@ -49,5 +49,16 @@
 	],
     "NAME": "The Fading Forest",
     "DIALOG": []
+  },
+  "FF_ComboSlime_L": {
+    "MOVES": [
+      "Mixed Spit",
+      "Split",
+      "Lick"
+    ],
+    "NAME": "False Combo Slime (L)",
+    "DIALOG": [
+      ""
+    ]
   }
 }

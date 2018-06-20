@@ -76,6 +76,7 @@ public class CaptainAbe extends AbstractMonster
 	private boolean isFirstTurn;
 	private byte nextPlannedMove;
 	private boolean isFirstOrders;
+	private boolean neverDeadWeighted;
 	
 	private ArrayList<AbstractGameAction.AttackEffect> slashEffects;
     
@@ -84,6 +85,7 @@ public class CaptainAbe extends AbstractMonster
 		ReplayTheSpireMod.logger.info("init Abe");
 		this.isFirstTurn = true;
 		this.isFirstOrders = true;
+		this.neverDeadWeighted = true;
 		//this.animX = 0f;
 		//this.animY = 0f;
 		this.nextPlannedMove = CaptainAbe.SLASH;
@@ -217,6 +219,9 @@ public class CaptainAbe extends AbstractMonster
     public void die() {
         if (!AbstractDungeon.getCurrRoom().cannotLose) {
 			ReplayTheSpireMod.completeAchievement("abe_win");
+			if (this.neverDeadWeighted) {
+				ReplayTheSpireMod.completeAchievement("abe_perfect");
+			}
             this.deathTimer += 1.5f;
 			super.die();
 			this.onBossVictoryLogic();
@@ -351,6 +356,7 @@ public class CaptainAbe extends AbstractMonster
 					this.isFirstOrders = false;
 				} else {
 					this.getPower("AbePower").onSpecificTrigger();
+					this.neverDeadWeighted = false;
 				}
 				this.setNextTurn(CaptainAbe.SLASH);
                 break;
@@ -379,6 +385,7 @@ public class CaptainAbe extends AbstractMonster
 					}
 				} else {
 					this.getPower("AbePower").onSpecificTrigger();
+					this.neverDeadWeighted = false;
 				}
                 this.setNextTurn(CaptainAbe.KEEL_HAUL);
                 //AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, (byte)3, Intent.ATTACK_DEBUFF, this.damage.get(1).base));
@@ -391,6 +398,7 @@ public class CaptainAbe extends AbstractMonster
 					AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), this.randoEffect()));
 				} else {
 					this.getPower("AbePower").onSpecificTrigger();
+					this.neverDeadWeighted = false;
 				}
 				if (AbstractDungeon.player.currentBlock > 45 && !this.isFirstOrders) {
 					this.setNextTurn(CaptainAbe.ROB_BLIND);
@@ -407,6 +415,7 @@ public class CaptainAbe extends AbstractMonster
 					AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Wound(), 1));
 				} else {
 					this.getPower("AbePower").onSpecificTrigger();
+					this.neverDeadWeighted = false;
 				}
 				this.setNextTurn(CaptainAbe.BASH);
 				break;

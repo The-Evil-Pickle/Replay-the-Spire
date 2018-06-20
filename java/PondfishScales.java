@@ -3,6 +3,7 @@ package com.megacrit.cardcrawl.relics;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.helpers.input.*;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.actions.*;

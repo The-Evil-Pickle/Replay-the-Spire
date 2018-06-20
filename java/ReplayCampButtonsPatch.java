@@ -42,5 +42,25 @@ public class ReplayCampButtonsPatch
 				//e.printStackTrace();
 			}
 		}
+		if (AbstractDungeon.player.hasRelic("Dead Branch")) {
+			final CampfireUI campfire = (CampfireUI)meObj;
+			try {
+				final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");
+				final BranchBurnOption button = new BranchBurnOption();
+				campfireButtons.add(button);
+				float x = 950.f;
+				float y = 990.0f - (270.0f * (float)((campfireButtons.size() + 1) / 2));
+				if (campfireButtons.size() % 2 == 0) {
+					x = 1110.0f;
+					campfireButtons.get(campfireButtons.size() - 2).setPosition(800.0f * Settings.scale, y * Settings.scale);
+				}
+				campfireButtons.get(campfireButtons.size() - 1).setPosition(x * Settings.scale, y * Settings.scale);
+			}
+			catch (SecurityException | IllegalArgumentException ex2) {
+				//final RuntimeException ex;
+				//final RuntimeException e = ex;
+				//e.printStackTrace();
+			}
+		}
     }
 }

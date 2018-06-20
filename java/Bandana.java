@@ -14,12 +14,12 @@ import com.badlogic.gdx.graphics.*;
 public class Bandana extends AbstractRelic
 {
     public static final String ID = "Bandana";
-	public static final int DURATION = 5;
+	public static final int DURATION = 3;
 	public static final int POWER = 2;
 	private boolean firstTurn = false;
     
     public Bandana() {
-        super("Bandana", "bandana.png", AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.FLAT);
+        super("Bandana", "bandana.png", AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.FLAT);
     }
     
     public String getUpdatedDescription() {
@@ -36,7 +36,7 @@ public class Bandana extends AbstractRelic
     public void onAttack(final DamageInfo damageInfo, final int n, final AbstractCreature abstractCreature) {
 		if (this.counter > 0 && damageInfo.type == DamageInfo.DamageType.NORMAL) {
 			final AbstractPlayer player = AbstractDungeon.player;
-			player.gold += Bandana.POWER;
+			//player.gold += Bandana.POWER;
 			CardCrawlGame.sound.play("GOLD_JINGLE");
 			for (int i = 0; i < Bandana.POWER; ++i) {
 				AbstractDungeon.effectList.add(new GainPennyEffect(abstractCreature.hb.cX, abstractCreature.hb.cY));

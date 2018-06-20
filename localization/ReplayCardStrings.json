@@ -77,6 +77,19 @@
     "NAME": "Cursed Blade",
     "DESCRIPTION": "Deal !D! damage. NL You cannot play other cards while this is in your hand."
   },
+  "ReplayReversal": {
+    "NAME": "Reversal",
+    "DESCRIPTION": "Keep Block at the end of this round. NL Gain !M! Reflection.",
+	"UPGRADE_DESCRIPTION": "Keep Block at the end of the next 2 rounds. NL Gain !M! Reflection.",
+	"EXTENDED_DESCRIPTION": [
+		"Keep Block at the end of the next ",
+		" rounds. NL Gain !M! Reflection."
+	]
+  },
+  "LeadingStrike": {
+    "NAME": "Leading Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Choose an Attack in your hand and reduce its cost to !M! this turn."
+  },
   "Scrap": {
     "NAME": "Scrap",
     "DESCRIPTION": "Deal !D! damage. NL If this kills a (non-minion) enemy, heal 6 HP and permanently increase this card's Damage by !M!."
@@ -116,6 +129,11 @@
     "NAME": "Illuminate",
     "DESCRIPTION": "Channel 1 Light. NL Exhaust."
   },
+  "ReplaySort": {
+    "NAME": "Sort",
+    "DESCRIPTION": "Shuffle all Rare cards in your discard pile back into your draw pile. NL Exhaust.",
+    "DESCRIPTION": "Shuffle all Rare cards in your discard pile back into your draw pile. NL Draw !M! card. NL Exhaust."
+  },
   "ReplayOverclock": {
     "NAME": "Overclock",
     "DESCRIPTION": "Gain !M! Focus. NL At the end of your turn, lose !M! Focus."
@@ -127,7 +145,7 @@
   "FIFO Queue": { 
     "NAME": "FIFO Queue", 
     "DESCRIPTION": "Gain !M! Orb Slots.", 
-    "UPGRADE_DESCRIPTION": "Innate. Gain !M! Orb Slots." 
+    "UPGRADE_DESCRIPTION": "Gain 2X + 1 Orb Slots." 
   },
   "Improvise": {
     "NAME": "Improvise",
