@@ -41,7 +41,7 @@
 	"FLAVOR": "The strength to carry on in times of trial.",
 	"DESCRIPTIONS": [
 		"Gain #b",
-		" temporary HP at the start of combat.",
+		" #yShielding at the start of combat.",
 		" NL (You will lose #r",
 		" HP at the end of this fight)."
 	]

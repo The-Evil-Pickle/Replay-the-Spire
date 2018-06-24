@@ -78,6 +78,24 @@
 		"[Leave]"
 	]
   },
+  "ReplayMapScout": {
+	"NAME": "Map Scout",
+	"DESCRIPTIONS": [
+		"A yound man with a wild look in his eyes approaches you, rattling on about the dangers of the Spire. NL \"Monsters beyond imagination lie ahead! Ah, but I, I know this place! I have seen where these dangers reside, and how to avoid them! You are interested, yes?\" NL It seems he knows how to avoid certain threats, and is willing to share his knowlegde - for a bit of gold, anyway.",
+		"Done."
+	],
+	"OPTIONS": [
+		"[Locked] You already have a scout info relic.",
+		"[Locked] Requires: ",
+		" gold",
+		"[Lose ",
+		"] You will no longer be able to encounter #yThe #yAwakened #yOne.",
+		"] You will no longer be able to encounter #yDeca #yand #yDonu.",
+		"] You will no longer be able to encounter #yTime #yEater.",
+		"] Obtain ",
+		"[Leave]"
+	]
+  },
   "Grembo": {
 	"NAME": "Grembo The Great",
 	"DESCRIPTIONS": [

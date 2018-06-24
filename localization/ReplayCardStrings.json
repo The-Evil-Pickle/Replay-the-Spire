@@ -131,8 +131,8 @@
   },
   "ReplaySort": {
     "NAME": "Sort",
-    "DESCRIPTION": "Shuffle all Rare cards in your discard pile back into your draw pile. NL Exhaust.",
-    "DESCRIPTION": "Shuffle all Rare cards in your discard pile back into your draw pile. NL Draw !M! card. NL Exhaust."
+    "DESCRIPTION": "Shuffle all Rare cards in your discard pile back into your draw pile. NL Draw !M! card. NL Exhaust.",
+    "DESCRIPTION": "Shuffle all Rare cards in your discard pile back into your draw pile. NL Draw !M! card. NL Exhaust. NL Retain."
   },
   "ReplayOverclock": {
     "NAME": "Overclock",

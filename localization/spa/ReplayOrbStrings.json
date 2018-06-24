@@ -1,0 +1,34 @@
+{
+  "Light": {
+    "DESCRIPTION": [
+      "#yPassive: At the end of turn, increase this Orb's healing by #b",
+      ". NL #yEvoke: Heal #b",
+      " HP."
+    ],
+    "NAME": "Light"
+  },
+  "Crystal": {
+    "DESCRIPTION": [
+      "#yPassive: Adjacent orbs have #b+",
+      " #yFocus. NL #yEvoke: If you have less than #b",
+      " orb slots, gain an orb slot. NL #yPassive effect is not affected by other Crystal orbs."
+    ],
+    "NAME": "Crystal"
+  },
+  "Hellfire": {
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, gain #b",
+      " #yStrength until end of turn. NL #yEvoke: Gain #b",
+      " #yStrength until end of turn and apply #yVulnerable to a random enemy #b",
+	  " time(s)."
+    ],
+    "NAME": "Hellfire"
+  },
+  "Acid": {
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, apply #b",
+      " #yPoison to a random enemy. NL #yEvoke: Replace all #yPoison with #yNecrotic #yPoison."
+    ],
+    "NAME": "Acid"
+  },
+}

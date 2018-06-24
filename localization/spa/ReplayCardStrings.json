@@ -131,7 +131,10 @@
   "Specialist": {
     "NAME": "Especialista",
     "DESCRIPTION": "Aumenta el daño de non ataque en !M! .",
-	"UPGRADE_DESCRIPTION": "Innate. NL Aumenta el daño de non ataque en !M! ."
+	"UPGRADE_DESCRIPTION": "Innate. NL Aumenta el daño de non ataque en !M! .",
+	"EXTENDED_DESCRIPTION": [
+		"Lose 1 Focus. NL "
+	]
   },
   "Crow Ritual": {
     "NAME": "Ritual de Cuervos",

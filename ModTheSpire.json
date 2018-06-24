@@ -4,7 +4,7 @@
   "author_list": ["The_Evil_Pickle", "AstroPenguin642", "Stewartisme", "Slimer509"],
   "description": "Huge content expansion mod. Adds new cards, relics, potions, events, monsters, and shenanigans.",
   "dependencies": ["basemod"],
-  "version": "0.4.9",
-  "sts_version": "06-14-2018",
+  "version": "0.4.10",
+  "sts_version": "06-21-2018",
   "mts_version": "2.6.0"
 }

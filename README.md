@@ -27,6 +27,7 @@ Name | Character | Rarity | Description
 --- | --- | --- | ---
 Antivirus Software | Defect | Common | Every time you shuffle your deck, gain 1 **Artifact**. **Artifact** will also be used to exhaust **Status** cards for 1 turn.
 Baseball | All | Common | Upon pick up, a random card in your deck becomes free.
+Funnel | All | Common | At the end of your turn, gain 4 **Block** for each unspent energy.
 Geode | Defect | Common | The first time you lose HP in combat, trigger the passive effect of your orbs and **Channel** 1 **Crystal.**
 Gremlin Food | All | Common | Whenever you rest, **Upgrade** a random card.
 Grinning Jar | All | Common | On pickup, add a Grinning Jar card to your deck. Obtain another copy for every 12 cards added to your deck.
@@ -38,8 +39,7 @@ Bandana | All | Uncommon | Gain 2 **Thievery** for the first 3 turns of combat.
 Basket of Snakes | Silent | Uncommon | Every 5th **Attack** you play applies 2 **Necrotic** **Poison** upon dealing unblocked damage.
 Carrot | Defect | Uncommon | Gain 3 **Focus** at the start of combat, then lose 1 **Focus** on the next 3 turns.
 Chameleon Ring | All | Uncommon | Potions are ~50% more potent. You may brew 2 random potions at rest sites.
-Divine Protection | All | Uncommon | Gain 8 temporary HP at the start of combat.
-Funnel | All | Uncommon | At the end of your turn, gain 4 **Block** for each unspent energy.
+Divine Protection | All | Uncommon | Gain 8 **Shielding** at the start of combat.
 Garlic | All | Uncommon | Enemies lose 3 **Strength** at the start of combat, then gain 1 **Strength** on the next 3 turns.
 Golden Egg | All | Uncommon | Whenever you obtain a rare card, it is **Upgraded.**
 Iron Hammer | All | Uncommon | During the first turn, drawing a card upgrades it until the end of combat.
@@ -118,6 +118,7 @@ Ritual Component | Colorless | Special | Skill | 0 | Draw 1 card.
 Name | Type | Description
 --- | --- | ---
 Refund | Misc | When a card with **Refund** is played, energy spent on it is returned (up to the stated amount).
+Shielding | Misc | A form of **Block** that can block HP loss, and does not wear off between rounds.
 Crystal | Orb | **Passive:** Gives +2 **Focus** to adjacent orbs. **Evoke:** Gain an orb slot if you have less than 3.
 Glass | Orb | No **Passive** effect. When **Evoked**, if you have more than 3 orb slots, consumes your leftmost one and **Evokes** any occupying orb.
 Hellfire | Orb | **Passive:** Gives +2 **Strength** at the start of your turn that is removed at the end of your turn. **Evoke:** Apply 1 **Vulnerable** to a random enemy.

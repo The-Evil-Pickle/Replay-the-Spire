@@ -1,0 +1,81 @@
+{
+  "Strike_snek": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "Defend_snek": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "sneck_Paralyzing Gaze": {
+    "NAME": "Paralyzing Gaze",
+    "DESCRIPTION": "Apply !M! Confusion. NL Exhaust."
+  },
+  "snek_Tail Whip": {
+    "NAME": "Tail Whip",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
+  },
+  "snek_Dartviper Form": {
+    "NAME": "Dartviper Form",
+    "DESCRIPTION": "Gain !M! Snake Venom each turn."
+  },
+  "snek_Sink Fangs": {
+    "NAME": "Sink Fangs",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Necrotic Poison."
+  },
+  "snek_Pandemonium": {
+    "NAME": "Pandemonium",
+    "DESCRIPTION": "Apply 1 Confusion to a random character X times. NL Draw X Cards. NL Refund. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply 1 Confusion to a random character X times. NL Draw X Cards. NL Refund.",
+  },
+  "snek_": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage to a random enemy X times. NL Refund !M!"
+  },
+  "snek_Slither": {
+    "NAME": "Slither",
+    "DESCRIPTION": "Gain !B! Block. NL A random card in your hand costs !M! less this turn."
+  },
+  "snek_Wild Rush": {
+    "NAME": "Wild Rush",
+    "DESCRIPTION": "Draw 1 card for each confused character. NL Refund cost -1."
+  },
+  "snek_": {
+    "NAME": "Strike",
+    "DESCRIPTION": "The next card you play this turn costs twice as much, but triggers twice."
+  },
+  "snek_Absence Of Mind": {
+    "NAME": "Absence of Mind",
+    "DESCRIPTION": "Gain !M! Confusion. NL Exhaust all Status cards in your hand or discard pile.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Confusion. NL Exhaust all Status and Curse cards in your hand or discard pile."
+  },
+  "snek_": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Gain [E] [E]. NL Draw 1 card. NL Gain !M! Confusion. NL Refund. NL Exhaust.",
+    "DESCRIPTION": "Gain [E] [E]. NL Draw 2 cards. NL Gain !M! Confusion. NL Refund. NL Exhaust."
+  },
+  "snek_Hybernation": {
+    "NAME": "Hybernation",
+    "DESCRIPTION": "Conserve up to !M! energy between rounds."
+  },
+  "snek_": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage. NL If the target is Confused, Refund and draw a card."
+  },
+  "snek_": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Apply !M! Weak to all Confused enemies. NL Exhaust."
+  },
+  "snek_": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Gain X Snake Venom. NL Refund !M!"
+  },
+  "snek_": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! * X damage !M! times."
+  },
+  "snek_": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! * X damage !M! times."
+  },
+}

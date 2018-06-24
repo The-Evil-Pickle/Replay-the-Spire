@@ -102,8 +102,14 @@ public class ChaosEvent
 			rings.add(new RingOfSearing());
 		}
 	}
-	if (AbstractDungeon.id.equals("TheBeyond") && !AbstractDungeon.player.hasRelic("Ring of Chaos")) {
-		rings.add(new RingOfChaos());
+	if (AbstractDungeon.id.equals("TheBeyond")) {
+		if (!AbstractDungeon.player.hasRelic("Ring of Chaos")) {
+			rings.add(new RingOfChaos());
+		}
+	} else {
+		if (!AbstractDungeon.player.hasRelic("Ectoplasm")) {
+			rings.add(new RingOfChaos());
+		}
 	}
 	
 	int rando = AbstractDungeon.miscRng.random(0, rings.size() - 1);
