@@ -88,7 +88,69 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static TextureAtlas fishAtlas;
 	public static TextureAtlas.AtlasRegion fishFG;
 	public static Texture forestBG;
+	public static Texture shieldingIcon;
+	public static int playerShielding = 0;
+	public static ArrayList<Integer> monsterShielding = new ArrayList<Integer>();
 	
+	public static int shieldingAmount(AbstractCreature creature) {
+		if (creature == null) {
+			return 0;
+		}
+		if (creature instanceof AbstractPlayer) {
+			return ReplayTheSpireMod.playerShielding;
+		}
+		for (int i = 0; i < AbstractDungeon.getMonsters().monsters.size(); i++) {
+			if (AbstractDungeon.getMonsters().monsters.get(i) != null && AbstractDungeon.getMonsters().monsters.get(i) == creature) {
+				while (ReplayTheSpireMod.monsterShielding.size() <= i) {
+					ReplayTheSpireMod.monsterShielding.add(0);
+				}
+				return ReplayTheSpireMod.monsterShielding.get(i);
+			}
+		}
+		return 0;
+	}
+	public static void addShielding(AbstractCreature creature, int amt) {
+		if (creature == null) {
+			return;
+		}
+		if (creature instanceof AbstractPlayer) {
+			ReplayTheSpireMod.playerShielding += amt;
+			return;
+		}
+		for (int i = 0; i < AbstractDungeon.getMonsters().monsters.size(); i++) {
+			if (AbstractDungeon.getMonsters().monsters.get(i) != null && AbstractDungeon.getMonsters().monsters.get(i) == creature) {
+				while (ReplayTheSpireMod.monsterShielding.size() <= i) {
+					ReplayTheSpireMod.monsterShielding.add(0);
+				}
+				ReplayTheSpireMod.monsterShielding.set(i, ReplayTheSpireMod.monsterShielding.get(i) + amt);
+			}
+		}
+		
+	}
+	public static void clearShielding(AbstractCreature creature) {
+		if (creature == null) {
+			return;
+		}
+		if (creature instanceof AbstractPlayer) {
+			ReplayTheSpireMod.playerShielding = 0;
+			return;
+		}
+		for (int i = 0; i < AbstractDungeon.getMonsters().monsters.size(); i++) {
+			if (AbstractDungeon.getMonsters().monsters.get(i) != null && AbstractDungeon.getMonsters().monsters.get(i) == creature) {
+				while (ReplayTheSpireMod.monsterShielding.size() <= i) {
+					ReplayTheSpireMod.monsterShielding.add(0);
+					return;
+				}
+				ReplayTheSpireMod.monsterShielding.set(i, 0);
+				return;
+			}
+		}
+		
+	}
+	public static void clearShielding() {
+		ReplayTheSpireMod.playerShielding = 0;
+		ReplayTheSpireMod.monsterShielding = new ArrayList<Integer>();
+	}
 	
 	public static boolean BypassStupidBasemodRelicRenaming_hasRelic(String targetID) {
 		if (AbstractDungeon.player == null) {
@@ -604,6 +666,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.fishAtlas = new TextureAtlas(Gdx.files.internal("images/replayScenes/fishfight.atlas"));
 		ReplayTheSpireMod.fishFG = ReplayTheSpireMod.fishAtlas.findRegion("mod/fg");
 		ReplayTheSpireMod.forestBG = ImageMaster.loadImage("images/monsters/fadingForest/fadingForest_bg.png");
+		ReplayTheSpireMod.shieldingIcon = ImageMaster.loadImage("images/ui/replay/shielding.png");
         // Mod badge
         Texture badgeTexture = new Texture(BADGE_IMG);
 		this.currentSettingsSubTab = 0;
@@ -710,7 +773,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addKeyword(glNames, "Orb: No #yPassive effect. When #yEvoked while you have more than #b3 orb slots, consumes your leftmost orb slot and #yEvokes the occupying orb.");
 		final String[] rfNames = { "reflection", "Reflection", "reflection."};
 		BaseMod.addKeyword(rfNames, "Goes down by 1 each round, is removed on 0. While active, completely blocking Attack damage reflects it back at the attacker.");
-		
+		final String[] shieldNames = { "shielding", "Shielding", "Shielding."};
+		BaseMod.addKeyword(shieldNames, "An alternate form of #yBlock that can directly block HP loss. NL #yShielding is not lost at the end of each round.");
+		/*
+		final String[] specNames = { "spectral", "Spectral", "Spectral."};
+		BaseMod.addKeyword(specNames, "Is #yEthereal. NL #yExhausts when played or discarded. NL When drawn, you draw an additional card.");
+		*/
 		
 		logger.info("end post init");
         Settings.isDailyRun = false;
@@ -772,6 +840,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new RingOfSearing(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfShattering(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfHypnosis(), RelicType.SHARED);
+		//BaseMod.addRelic(new RingOfGreed(), RelicType.SHARED);
+		BaseMod.addRelic(new RingOfMisfortune(), RelicType.SHARED);
 		BaseMod.addRelic(new SecondSwordRelic(), RelicType.RED);
 		//BaseMod.addRelic(new SimpleRune(), RelicType.SHARED);
 		BaseMod.addRelic(new SizzlingBlood(), RelicType.SHARED);
@@ -826,6 +896,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Specialist());
 		AddAndUnlockCard(new AwakenedRitual());
 		AddAndUnlockCard(new SurveyOptions());
+		AddAndUnlockCard(new ReplayUltimateDefense());
 		logger.info("adding curses...");
 		AddAndUnlockCard(new Hallucinations());
 		//AddAndUnlockCard(new Languid());

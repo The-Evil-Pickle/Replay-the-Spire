@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.actions.common.*;
 public class ChewingGum extends AbstractRelic
 {
     public static final String ID = "ChewingGum";
-	public static final int SLIMED = 2;
+	public static final int SLIMED = 3;
     
     public ChewingGum() {
         super("ChewingGum", "chewingGum.png", RelicTier.BOSS, LandingSound.FLAT);
@@ -42,7 +42,7 @@ public class ChewingGum extends AbstractRelic
     @Override
     public void onShuffle() {
         this.flash();
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new Slimed(), ChewingGum.SLIMED, true, false));
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Slimed(), ChewingGum.SLIMED, true, false));
     }
     
     @Override

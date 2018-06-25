@@ -31,7 +31,7 @@ public class LoomingEvil
   
   public LoomingEvil()
   {
-    super("Looming Evil", NAME, "cards/replay/loomingEvil.png", 3, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE, 2);
+    super("Looming Evil", NAME, "cards/replay/loomingEvil.png", 3, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE);
 	
 	this.baseMagicNumber = this.cost;
     this.magicNumber = this.baseMagicNumber;
@@ -55,7 +55,7 @@ public class LoomingEvil
     {
       //AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new WeakPower(AbstractDungeon.player, 1, true), 1));
       AbstractCard c = AbstractDungeon.returnRandomCurse().makeCopy();
-      AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, c, 1, true, false));
+      AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, 1, true, false));
       //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
 	  if (this.cost > 0)
 	  {

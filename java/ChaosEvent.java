@@ -80,13 +80,16 @@ public class ChaosEvent
 	ArrayList<AbstractRelic> rings = new ArrayList<AbstractRelic>();
 	rings.add(new RingOfFury());
 	rings.add(new RingOfPeace());
-	if (!AbstractDungeon.player.hasRelic("Snecko Eye")) {
+	if (!AbstractDungeon.player.hasRelic("Snecko Eye") && !AbstractDungeon.player.hasRelic("Snecko Heart")) {
 		rings.add(new RingOfPanic());
 	}
 	rings.add(new RingOfHypnosis());
+	rings.add(new RingOfMisfortune());
 	switch(AbstractDungeon.player.chosenClass) {
 		case IRONCLAD: {
-			rings.add(new RingOfSearing());
+			if (!AbstractDungeon.player.hasRelic("Dodecahedron")) {
+				rings.add(new RingOfSearing());
+			}
 			break;
 		}
 		case THE_SILENT: {
@@ -99,7 +102,9 @@ public class ChaosEvent
 		}
 		default: {
 			rings.add(new RingOfFangs());
-			rings.add(new RingOfSearing());
+			if (!AbstractDungeon.player.hasRelic("Dodecahedron")) {
+				rings.add(new RingOfSearing());
+			}
 		}
 	}
 	if (AbstractDungeon.id.equals("TheBeyond")) {
@@ -108,7 +113,7 @@ public class ChaosEvent
 		}
 	} else {
 		if (!AbstractDungeon.player.hasRelic("Ectoplasm")) {
-			rings.add(new RingOfChaos());
+			//rings.add(new RingOfGreed());
 		}
 	}
 	

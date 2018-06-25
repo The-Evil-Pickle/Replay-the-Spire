@@ -58,11 +58,8 @@ public class SneckoHeart extends AbstractRelic
     
     @Override
     public void atPreBattle() {
-		//if (!ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Snecko Eye")) {
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TPH_ConfusionPower(AbstractDungeon.player)));
-			AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-		//}
-        //this.flash();
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TPH_ConfusionPower(AbstractDungeon.player)));
+		AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
 	
 	public boolean checkCard(AbstractCard drawnCard) {

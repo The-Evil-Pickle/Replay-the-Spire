@@ -54,7 +54,7 @@ public class Hallucinations
 				  }
 			  }
 			  AbstractCard c = AbstractDungeon.getCard(rarity).makeCopy();
-			  AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(p, p, c, 1, true, false));
+			  AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, 1, true, false));
 		  }
 		  //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
 		}

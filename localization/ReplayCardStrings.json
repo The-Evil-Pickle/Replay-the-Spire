@@ -168,6 +168,11 @@
 		"Lose 1 Focus. NL "
 	]
   },
+  "ReplayUltimateDefense": {
+    "NAME": "The Ultimate Defense",
+    "DESCRIPTION": "Gain !M! Artifact. NL Gain !M! Dexterity. NL Gain 5 Plated Armor. NL Gain !B! Shielding.",
+	"UPGRADE_DESCRIPTION": "Gain !M! Artifact. NL Gain !M! Dexterity. NL Gain 1 Intangible. NL Gain 5 Plated Armor. NL Gain !B! Shielding."
+  },
   "Crow Ritual": {
     "NAME": "Awakened One Ritual",
     "DESCRIPTION": "Add !M! Ritual Components to your discard pile. If 5 are ever in your hand at once, they become !D! damage Attacks."

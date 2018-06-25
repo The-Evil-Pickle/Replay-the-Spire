@@ -13,6 +13,6 @@ import java.util.*;
 public class ReplayNextRoomPatch {
 	
 	public static void Prefix() {
-		ReplayTheSpireMod.RigPotionsList();
+		ReplayTheSpireMod.clearShielding();
 	}
 }
