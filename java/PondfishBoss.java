@@ -46,7 +46,7 @@ public class PondfishBoss extends AbstractMonster
 	public static final int RAKE_DAMAGE = 4;
 	public static final int RAKE_COUNT = 2;
 	public static final int RAKE_VULN = 1;
-	public static final int DRAG_DROWN = 5;
+	public static final int DRAG_DROWN = 4;
 	public static final int UNDER_DAMAGE = 2;
 	public static final int UNDER_AMT = 6;
 	

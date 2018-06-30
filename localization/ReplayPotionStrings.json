@@ -106,5 +106,12 @@
     "DESCRIPTIONS": [
 			"Restart this fight. NL Your opponent may be different."
 	]
+  },
+  "ReplayShieldPotion": {
+	"NAME": "Shield Potion",
+    "DESCRIPTIONS": [
+			"Gain #b",
+			" #yShielding."
+	]
   }
 }

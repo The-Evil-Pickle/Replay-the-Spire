@@ -606,6 +606,14 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			ReplayTheSpireMod.PotionRarity.UNCOMMON
 		);
 		ReplayTheSpireMod.addPotionToSet(
+			ShieldPotion.class,
+			Color.ROYAL.cpy(),
+			null,
+			null,
+			"ReplayShieldPotion",
+			ReplayTheSpireMod.PotionRarity.UNCOMMON
+		);
+		ReplayTheSpireMod.addPotionToSet(
 			DeathPotion.class,
 			Color.DARK_GRAY.cpy(),
 			Color.FIREBRICK.cpy(),
@@ -801,7 +809,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		RelicLibrary.addBlue(new SolarPanel());
 		RelicLibrary.addBlue(new Carrot());
 		RelicLibrary.addBlue(new Geode());
-		RelicLibrary.addBlue(new RaidersMask());
+		//RelicLibrary.addBlue(new RaidersMask());
 		BaseMod.addRelic(new Arrowhead(), RelicType.SHARED);
 		BaseMod.addRelic(new AbesTreasure(), RelicType.SHARED);
 		BaseMod.addRelic(new Bandana(), RelicType.SHARED);

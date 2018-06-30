@@ -36,7 +36,7 @@ public class SneakUp extends CustomCard
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1), 1));
 		if (!this.upgraded) {
-			AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
+			AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, true));
 		}
     }
     

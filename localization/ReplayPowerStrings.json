@@ -87,6 +87,15 @@
 	" #yCrystal. NL Counts slots containing #yGlass as empty."
     ]
   },
+  "LanguidPower": {
+    "NAME": "Languid",
+    "DESCRIPTIONS": [
+	"All damage dealt by ",
+	" is reduced by #b",
+	". Lasts #b",
+	" more turns."
+    ]
+  },
   "Friendly": {
     "NAME": "Friendly",
     "DESCRIPTIONS": [
@@ -227,6 +236,13 @@
     "NAME": "Soul Stealer",
     "DESCRIPTIONS": [
       "Steals one of your buffs each time they deal unblocked attack damage."
+    ]
+  },
+  "FF_Rage": {
+    "NAME": "Ethereous Rage",
+    "DESCRIPTIONS": [
+      "Each time a monster dies, gains #b",
+	  " #yStrength."
     ]
   },
   "RP_HourglassPower": {

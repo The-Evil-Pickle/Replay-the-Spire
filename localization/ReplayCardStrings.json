@@ -31,7 +31,7 @@
   },
   "Sneak Up": {
     "NAME": "Sneak Up",
-    "DESCRIPTION": "Gain !M! Intangible. NL Discard 1 card. NL Innate. NL Exhaust. NL Ethereal.",
+    "DESCRIPTION": "Gain !M! Intangible. NL Discard a random card. NL Innate. NL Exhaust. NL Ethereal.",
     "UPGRADE_DESCRIPTION": "Gain !M! Intangible. NL Innate. NL Exhaust. NL Ethereal."
   },
   "ReplayNecrosis": {
@@ -316,5 +316,40 @@
   "OrbOptionCard_Glass": {
     "NAME": "Glass",
     "DESCRIPTION": "Gain !M! orb slot. NL Channel !M! Glass. NL Exhaust. NL Ethereal."
+  },
+  "MimicStatus": {
+    "NAME": "Mad Mimicry",
+    "DESCRIPTION": "Duplicate a random card in your hand. NL Exhaust."
+  },
+  "ReplayMimic_AttackMimicry": {
+    "NAME": "Attack Mimicry",
+    "DESCRIPTION": "If target enemy intends to attack, add a copy of that attack to your hand. NL Exhaust."
+  },
+  "ReplayMimic_RelicMimicry": {
+    "NAME": "Relic Mimicry",
+    "DESCRIPTION": "Gain a random relic effect.",
+	"UPGRADE_DESCRIPTION": "Gain a random non-common relic effect."
+  },
+  "ReplayMimic_Lock": {
+    "NAME": "Mimic's Lock",
+    "DESCRIPTION": "Gain !M! Artifact. NL Gain !M! Dexterity."
+  },
+  "ReplayMimic_Shell": {
+    "NAME": "Mimic's Shell",
+    "DESCRIPTION": "Gain !M! Plated Armor."
+  },
+  "ReplayMimic_Boo": {
+    "NAME": "BOO!",
+    "DESCRIPTION": "Apply !M! Weak. NL Apply !M! Confusion."
+  },
+  "ReplayMimic_MadMimicry": {
+    "NAME": "Mimic Madness",
+    "DESCRIPTION": "Duplicate a card in your hand. NL Exhaust. NL Ethereal.",
+	"UPGRADE_DESCRIPTION": "Duplicate a card in your hand. NL Exhaust."
+  },
+  "ReplayMimic_PowerMimicry": {
+    "NAME": "Power Mimicry",
+    "DESCRIPTION": "Copy 1 stack of a random enemy buff X times. NL Refund !M!. ",
+    "UPGRADE_DESCRIPTION": "Copy 1 stack of a random enemy buff X times. NL Refund !M!. "
   }
 }
