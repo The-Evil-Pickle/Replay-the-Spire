@@ -21,7 +21,6 @@ Some content originally from this mod is now in the official release of the game
  * Ghost in a Jar (originally "Spirit Potion")
  * Power Potion (originally "Inspiration Potion")
 
-
 # Relics
 Name | Character | Rarity | Description
 --- | --- | --- | ---
@@ -114,6 +113,12 @@ Ghost Fetch | Colorless | Special | Skill | 0 | Choose a basic card from your dr
 Grinning Jar | Colorless | Special | Skill | 0 | Draw 2 cards. You cannot play another Grinning Jar card this turn (upgrade removes).
 Ritual Component | Colorless | Special | Skill | 0 | Draw 1 card.
 
+**Note:** The following items are currently under maintainence, and have been temporarily removed:
+ * Rune of Simplicity
+ * Raider's Mask
+ * Languid (curse)
+ * Faulty Equipment
+
 # Keywords
 Name | Type | Description
 --- | --- | ---
@@ -136,6 +141,7 @@ Milkshake | Uncommon | You can retain up to 5(2) unspent energy between rounds.
 Death Potion | Rare | Deal 60(40) damage and lose 12(15) HP.
 Doom Potion | Rare | Destroy an enemy after 10(13) turns.
 Cursed Concoction | Rare | Gain 3(2) Strength and 2(1) Dexterity. Add a random curse to your draw and discard piles.
+
 
 
 # Events

@@ -1,0 +1,581 @@
+{
+	"Ancient Bracer": {
+	"NAME": "Antivirus Software",
+	"FLAVOR": "The robotic equivalent to a vaccine.",
+    "DESCRIPTIONS": [
+	"Every time you shuffle your deck, gain #b1 #yArtifact. NL When you draw a #yStatus, consumes #b1 #yArtifact to #yExhaust it and all other #yStatus cards drawn that turn, drawing #b1 card each time."
+	]
+  },
+  "Arrowhead": {
+	"NAME": "Arrowhead",
+	"FLAVOR": "The first thing you ever forged.",
+    "DESCRIPTIONS": [
+	"You may #yUpgrade 2 cards whenever you smith."
+	]
+  },
+  "Bandana": {
+	"NAME": "Bandana",
+	"FLAVOR": "The finest article of pick-pocketing attire.",
+    "DESCRIPTIONS": [
+	"Gain #b",
+	" #yThievery for the first #b",
+	" turns of combat."
+	]
+  },
+  "Baseball": {
+	"NAME": "Baseball",
+	"FLAVOR": "We all have our favorite player.",
+    "DESCRIPTIONS": [
+	"Upon pick up, a random card in your deck becomes free."
+	]
+  },
+  "Chemical X": {
+	"NAME": "Chemical X",
+	"FLAVOR": "WARNING: Do not combine with sugar, spice, and everything nice.",
+    "DESCRIPTIONS": [
+	"Whenever you play a cost #bX card, its effects are increased by #b"
+	]
+  },
+  "Divine Protection": {
+    "NAME": "Divine Protection",
+	"FLAVOR": "The strength to carry on in times of trial.",
+	"DESCRIPTIONS": [
+		"Gain #b",
+		" #yShielding at the start of combat.",
+		" NL (You will lose #r",
+		" HP at the end of this fight)."
+	]
+  },
+  "Electric Blood": {
+	"NAME": "Electric Blood",
+	"FLAVOR": "You feel your body surging with power. It hurts.",
+    "DESCRIPTIONS": [
+	"Gain [R] [R] at the start of each turn. NL Lose #b1 HP for every [R] you use, excluding the first #b",
+	" used each turn."
+	]
+  },
+  "ReplayFunnel": {
+	"NAME": "Funnel",
+	"FLAVOR": "Use every last drop.",
+    "DESCRIPTIONS": [
+	"At the end of your turn, unused energy is converted to #b4 #yBlock each."
+	]
+  },
+  "Garlic": {
+	"NAME": "Garlic",
+	"FLAVOR": "Taking a whiff may cause your eyes to tear up.",
+    "DESCRIPTIONS": [
+	"Enemies lose 3 #yStrength at the start of combat. They gain 1 #yStrength over the next 3 turns."
+	]
+  },
+  "Iron Hammer": {
+	"NAME": "Iron Hammer",
+	"FLAVOR": "A handy - and heavy - tool.",
+	"DESCRIPTIONS": [
+	"During the first turn, drawing a card upgrades it."
+	]
+  },
+  "Mirror": {
+	"NAME": "Mirror",
+	"FLAVOR": "You can see yourself through the glass. The good and the bad.",
+    "DESCRIPTIONS": [
+	"Whenever you gain #yVulnerable or #yWeakened, it is also applied to the enemy that sent it.",
+	"Reflected"
+	]
+  },
+  "Onion Ring": {
+	"NAME": "Onion Ring",
+	"FLAVOR": "The onion is encased in a deep-fried breading.",
+    "DESCRIPTIONS": [
+	"You gain 3 #yStrength at the start of combat. You lose 1 #yStrength over the next 3 turns."
+	]
+  },
+  "Pet Ghost": {
+	"NAME": "Pet Ghost",
+	"FLAVOR": "The ghost of a pet once belonging to a knight.",
+    "DESCRIPTIONS": [
+	"Add a ghost card to your hand every turn."
+	]
+  },
+  "Ring of Chaos": {
+	"NAME": "Ring of Chaos",
+	"FLAVOR": "A ring with wild and unpredictable magic effects.",
+	"DESCRIPTIONS": [
+	"Some card rewards have randomly altered stats and effects."
+	]
+  },
+  "Simple Rune": {
+	"NAME": "Rune of Simplicity",
+	"FLAVOR": "Sometimes, things aren't as complicated as they appear.",
+	"DESCRIPTIONS": [
+		"Strikes and Defends can be #yUpgraded any number of times. On pickup, #yUpgrade #b",
+		" randomly."
+	]
+  },
+  "Snack Pack": {
+	"NAME": "Snack Pack",
+	"FLAVOR": "Always come prepared with a snack.",
+    "DESCRIPTIONS": [
+	"Every time you play 3 #yAttacks in a single turn, gain 2 HP."
+	]
+  },
+  "Snecko Scales": {
+	"NAME": "Snecko Scales",
+	"FLAVOR": "Scales from a Snecko that shed its skin. They seem to reflect lights with shimmering colors.",
+    "DESCRIPTIONS": [
+	"Draw #b",
+	" additional cards each turn. NL When you play a card that costs more than #b0 energy, discard a card."
+	]
+  },
+  "Snecko Heart": {
+	"NAME": "Snecko Heart",
+	"FLAVOR": "The preserved heart of a fallen Snecko.",
+    "DESCRIPTIONS": [
+	"Start combat #yConfused. NL #yConfusion can never increase the cost of a card by more than #b1. NL The first card you draw each turn always costs #b0."
+	]
+  },
+  "Pondfish Scales": {
+	"NAME": "Pondfish Scales",
+	"FLAVOR": "Scales sometimes held by those who have bested Captain Abe in battle.",
+    "DESCRIPTIONS": [
+	"Whenever you play a #ySkill that does not give #yBlock, gain #b",
+	" #yBlock."
+	]
+  },
+  "Abe's Treasure": {
+	"NAME": "Abe's Treasure",
+	"FLAVOR": "Cursed?",
+    "DESCRIPTIONS": [
+	"Gain [E] at the start of your turn. NL Start combat with #yDrowning. NL Each time you shuffle your deck, add a copy of #rAbe's #rRevenge to your draw pile."
+	]
+  },
+  "Transient Totem": {
+	"NAME": "Transient Totem",
+	"FLAVOR": "This wooden totem can only be percived by those who have passed through The Fading Forest.",
+    "DESCRIPTIONS": [
+	"Gain [E] at the start of each round. NL Mimics the #rnegative effect of a random #yBoss #yRelic each combat. NL ",
+	"#yOut #yof #yCombat: You're not in combat right now, but when you are, the negative effect of this relic will display here.",
+	"#yCursed #yKey: #b",
+	" random #rCurses have been shuffled into your deck (1 for each chest opened since you got this relic).",
+	"#yEctoplasm: You will not be able to obtain gold from this fight.",
+	"#ySozu: You will not be able to obtain potions during or as a reward for this fight.",
+	"#yMark #yof #yPain: #b2 #yWounds have been shuffled into your deck.",
+	"#yVelvet #yChoker: You may not play more than #b6 cards each turn.",
+	"#yRunic #yDome: You cannot see enemy intents.",
+	"#yPhilosopher's #yStone: All enemies have been given #b+2 #yStrength.",
+	"#yBusted #yCrown: Card rewards from this fight will give you #b2 fewer options to choose from.",
+	"#ySnecko #yEye: You are #yConfused.",
+	"#yRunic #yPyramid: You draw #b1 less card each turn.",
+	"#yHoney #yJar: You may not skip rewards from this combat.",
+	"#ySnecko #yScales: When you play a card that costs more than #b0, discard a card.",
+	"#yPandora's #yBox: #b5 random cards have been shuffled into your deck.",
+	"#yBlack #yStar: No negative effect. Lucky!",
+	"#yEternal #yFeather: No negative effect. Lucky!",
+	"#yWhite #yBeast #yStatue: No negative effect. Lucky!",
+	"#yTiny #yHouse: No negative effect. Lucky!",
+	"#yCalling #yBell: #b3 random #rCurses have been shuffled into your deck.",
+	"#yKintsugi: #b2 random #rCurses have been shuffled into your deck.",
+	"#yBlack #yBlood: Burning Blood will not trigger at the end of this combat.",
+	]
+  },
+  "King of Hearts": {
+	"NAME": "King of Hearts",
+	"FLAVOR": "Traditionally drawn with his sword going through his head, is sometimes known as the Suicide King.",
+	"DESCRIPTIONS": [
+	"When you lose HP during your turn, gain twice that much block."
+	]
+  },
+  "Ooze Armor": {
+	"NAME": "Ooze Armor",
+	"FLAVOR": "Armor with the flexibility and toughness of living slime.",
+    "DESCRIPTIONS": [
+	" NL Gain 4 #yMalleable and -2 #ySlow at the start of combat",
+	"Gain [R] at the start of each turn.", 
+	"Gain [G] at the start of each turn.",
+	"Gain [E] at the start of each turn."
+	]
+  },
+  "ChewingGum": {
+	"NAME": "Chewing Gum",
+	"FLAVOR": "Sticky and sweet.",
+    "DESCRIPTIONS": [
+	"Gain [E] at the start of each turn. NL Every time you shuffle your deck, add #b",
+	" #rSlimed to your draw pile."
+	]
+  },
+  "Gremlin Food": {
+	"NAME": "Gremlin Food",
+	"FLAVOR": "Some gremlins are known to steal food from people, but in return grant a favor while the adventurer sleeps.",
+    "DESCRIPTIONS": [
+	"Whenever you Rest, #yUpgrade a random card."
+	]
+  },
+  "BranchBurnRelic": {
+    "NAME": "Kindling",
+    "FLAVOR": "The fire burns bright.",
+    "DESCRIPTIONS": [
+      "Whenever you enter a Rest Site, start the next combat with #b",
+	  " #yRegen."
+    ]
+  },
+  "Guide Book": {
+	"NAME": "Guide Book",
+	"FLAVOR": "A book detailing \"tourist spots\" in the spire. It seems to have been written by the shop merchant.",
+    "DESCRIPTIONS": [
+	"On pickup, #yUpgrades ",
+	" cards randomly. NL Prioritizes rarer cards."
+	]
+  },
+  "Painkiller Herb": {
+	"NAME": "Sweet Flower",
+	"FLAVOR": "The sickly sweet scent of this flower makes you feel dizzy...",
+    "DESCRIPTIONS": [
+	" NL Less map information.",
+	"Gain [R] at the start of each turn.", 
+	"Gain [G] at the start of each turn.",
+	"Gain [E] at the start of each turn."
+	]
+  },
+  "Honey Jar": {
+	"NAME": "Honey Jar",
+	"FLAVOR": "Delicious!",
+    "DESCRIPTIONS": [
+	"Draw 1 more card each turn. NL #yRetain up to 1 card each turn. NL Extra choice on card reward screens. NL You cannot skip rewards."
+	]
+  },
+  "Replay_Grab Bag": {
+	"NAME": "Grab Bag",
+	"FLAVOR": "Trinkets and treats. What will you get?",
+    "DESCRIPTIONS": [
+	"Choose #b1 #yEnergy Boss Relic and #b1 #yNon-Energy Boss Relic to obtain. NL Both choices will be out of #b3 random relics, and cannot be skipped."
+	]
+  },
+  "Sizzling Blood": {
+	"NAME": "Sizzling Blood",
+	"FLAVOR": "It burns with fire and poison.",
+    "DESCRIPTIONS": [
+	"At the end of combat heal #b",
+	" HP. NL Gain #b",
+	" max HP on pickup."
+	]
+  },
+  "Chameleon Ring": {
+	"NAME": "Chameleon Ring",
+	"FLAVOR": "A ring that glimmers with slowly shifting colors.",
+    "DESCRIPTIONS": [
+	"Your potions are more potent. NL You can now #yBrew at Rest Sites."
+	]
+  },
+  "Grinning Jar": {
+    "NAME": "Grinning Jar",
+	"FLAVOR": "\"I play Grinning Jar, which allows me to draw 2 cards from my deck!\"",
+    "DESCRIPTIONS": [
+		"Obtain a Skill that draws 2 cards. NL Obtain an additional copy for every #b",
+		" other cards added to your deck.",
+		"The jar is pleased"
+	]
+  },
+  "Durian": {
+    "NAME": "Durian",
+	"FLAVOR": "Smells awful, tastes great.",
+    "DESCRIPTIONS": [
+		"Whenever you gain a #rDebuff, gain #yShielding equal to the amount. NL At the start of your turn, reduce your #yWeak, #yVulnerable, and #yFrail to #b2. NL On pickup, increase your max HP by #b"
+	]
+  },
+  "Basket Of Snakes": {
+    "NAME": "Basket of Snakes",
+	"FLAVOR": "Don't worry; they won't bite. At least, they won't bite you.",
+    "DESCRIPTIONS": [
+		"Every #b",
+		"th #yAttack you play applies #b",
+		" #yNecrotic #yPoison each time it deals unblocked damage."
+	]
+  },
+  "Counterbalance": {
+    "NAME": "Counterbalance",
+	"FLAVOR": "For every strength, there is a weakness.",
+    "DESCRIPTIONS": [
+		"During boss and elite fights enemy #yStrength gain, #yBlock gain, and #yHealing is reduced by half."
+	]
+  },
+  "Golden Egg": {
+    "NAME": "Golden Egg",
+	"FLAVOR": "Not approved by the FDA.",
+    "DESCRIPTIONS": [
+		"Whenever you add a #yRare card to your deck, it is #yUpgraded."
+	]
+  },
+  "Quantum Egg": {
+    "NAME": "Quantum Egg",
+	"FLAVOR": "Tastes like [REDACTED].",
+    "DESCRIPTIONS": [
+		"Whenever a card is created during combat, it is #yUpgraded."
+	]
+  },
+  "Blue Doll": {
+    "NAME": "Tag Bag",
+	"FLAVOR": "A colorful collection.",
+    "DESCRIPTIONS": [
+		"Shops have all 3 kinds of sale tags. NL Sale tags can appear on colorless cards. NL On-sale cards are cheaper."
+	]
+  },
+  "Byrd Skull": {
+    "NAME": "Byrd Skull",
+	"FLAVOR": "The skull of a fallen Byrd. NL ...Get it? Fallen?",
+    "DESCRIPTIONS": [
+		"Your #yInnate cards have #yRefund #b1 and draw #b1 card."
+	]
+  },
+  "Vampiric Spirits": {
+    "NAME": "Vampiric Spirits",
+	"FLAVOR": "A fondness for shadows, a thirst for blood; traits held by rogues and vampires alike.",
+    "DESCRIPTIONS": [
+		"On the first turn of combat, #b",
+		"% of all unblocked Attack damage you deal is returned as health."
+	]
+  },
+  "Another Sword": {
+    "NAME": "Another Sword",
+	"FLAVOR": "A second sword. You have two now.",
+    "DESCRIPTIONS": [
+		"The first card containing \"strike\" you play each round is played twice. NL Takes #b1 additional turn to recharge for each [R] spent on the card."
+	]
+  },
+  "Kintsugi": {
+    "NAME": "Kintsugi",
+	"FLAVOR": "What is broken can be made better.",
+    "DESCRIPTIONS": [
+		"Remove #b",
+		" cards from your deck. NL Choose #b",
+		" #yCurses to obtain. NL (Attempting to remove Curses with the first effect #yTransforms them instead).",
+		"Choose cards to remove",
+		"Choose curses to obtain"
+	]
+  },
+  "Bottled Flurry": {
+    "NAME": "Bottled Flurry",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"On pick up, choose a card. NL You #yRetain that card at the end of your turn."
+	]
+  },
+  "Bottled Steam": {
+    "NAME": "Bottled Steam",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"On pick up, choose a card. NL Each time you shuffle your deck, that card is placed on the top."
+	]
+  },
+  "ReplayPickaxe": {
+    "NAME": "Pickaxe",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"You can now #yMine at rest sites."
+	]
+  },
+  "minegem_1": {
+    "NAME": "Ruby",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Increases Max HP by #b",
+		". NL #ySell #yValue: #b"
+	]
+  },
+  "minegem_2": {
+    "NAME": "Emerald",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Heal #b",
+		" HP at the end of combat. NL #ySell #yValue: #b"
+	]
+  },
+  "minegem_3": {
+    "NAME": "Saphire",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Gain #b",
+		" #yShieling at the start of combat. NL #ySell #yValue: #b"
+	]
+  },
+  "minegem_4": {
+    "NAME": "Cursed Gem",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Add a #rCurse to your discard pile at the start of combat. NL #ySell #yValue: #b"
+	]
+  },
+  "minegem_5": {
+    "NAME": "Diamond",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Gain #b",
+		" #yBlock at the end of your turn. NL #ySell #yValue: #b"
+	]
+  },
+  "Solar Panel": {
+    "NAME": "Solar Panel",
+	"FLAVOR": "Clean, renewable power.",
+    "DESCRIPTIONS": [
+		"At the end of combat, heal #b",
+		" HP for each of your active Lightning orbs."
+	]
+  },
+  "Carrot": {
+    "NAME": "Carrot",
+	"FLAVOR": "Filled with power.",
+    "DESCRIPTIONS": [
+		"You gain #b3 #yFocus at the start of combat. You lose #b1 #yFocus over the next #b3 turns."
+	]
+  },
+  "Backup Battery": {
+    "NAME": "Backup Battery",
+	"FLAVOR": "Emergency rations for robots.",
+    "DESCRIPTIONS": [
+		"At the end of each round, conserve up to #b",
+		" energy. NL Increase this effect by #b1 until end of combat each time you #yEvoke #yPlasma (up to #b",
+		" max)."
+	]
+  },
+  "Geode": {
+    "NAME": "Geode",
+	"FLAVOR": "Break it open!",
+    "DESCRIPTIONS": [
+		"The first time you lose HP each combat, trigger the passive effect of all your channeled orbs and #yChannel #b1 #yCrystal."
+	]
+  },
+  "Raider's Mask": {
+    "NAME": "Raider's Mask",
+	"FLAVOR": "Leave no survivors.",
+    "DESCRIPTIONS": [
+		"After a #yDark orb triggers its passive effect, if it has more stored damage than the HP of the lowest-health enemy, it is #yEvoked."
+	]
+  },
+  "agfadhgsfhsgergfn": {
+    "NAME": "agfadhgsfhsgergfn",
+	"FLAVOR": "idk",
+    "DESCRIPTIONS": [
+		"Each time you #yEvoke #yFrost, gain #b1 #yReflection."
+	]
+  },
+  "Solidified Core": {
+    "NAME": "Solidified Core",
+	"FLAVOR": "Hard as a rock. Or maybe a geode.",
+    "DESCRIPTIONS": [
+		"At the start of combat, Channel #b",
+		" Frost and #b",
+		" Crystal.",
+		" NL Replaces Cracked Core.",
+		" NL Replaces Iron Core."
+		
+	]
+  },
+  "Ring of Fury": {
+	"NAME": "Ring of Fury",
+	"FLAVOR": "A cursed ring that heightens both senses and senselessness.",
+	"DESCRIPTIONS": [
+	"At the start of combat gain #b",
+	" #yStrength and lose #b",
+	" #yDexterity."
+	]
+  },
+  "Ring of Peace": {
+	"NAME": "Ring of Peace",
+	"FLAVOR": "Peace never lasts long in the Spire.",
+	"DESCRIPTIONS": [
+	"At the start of combat apply #b",
+	" #yWeak to ALL fighters and gain #b",
+	" #yBuffer"
+	]
+  },
+  "Ring of Panic": {
+	"NAME": "Ring of Panic",
+	"FLAVOR": "Fear serves its purpose.",
+	"DESCRIPTIONS": [
+	"At the start of combat you become #yConfused for #b",
+	" turns. NL Gain [E] [E] at the start of rounds 1 and 2. NL Gain [E] at the start of round 3."
+	]
+  },
+  "Ring of Hypnosis": {
+	"NAME": "Ring of Hypnosis",
+	"FLAVOR": "The strange colors and reflected lights draw the mind down a wandering path.",
+	"DESCRIPTIONS": [
+	"All enemies start with #b",
+	" #yConfusion."
+	]
+  },
+  "Ring of Searing": {
+	"NAME": "Ring of Searing",
+	"FLAVOR": "A cursed ring that burns everything around it to ash.",
+	"DESCRIPTIONS": [
+	"At the start of your turn, ALL enemies above #b",
+	"% Max HP lose #b",
+	"% of their current HP. NL At the end of each round, if you are above #b",
+	"% Max HP, lose #b",
+	" HP."
+	]
+  },
+  "Ring of Burning": {
+	"NAME": "Ring of Burning",
+	"FLAVOR": "A cursed ring that hightens both senses and senselessness.",
+	"DESCRIPTIONS": [
+	"When you run out of energy, the cost of cards in your hand are reduced to #b0 for the turn. NL Cards played while out of energy have a #b",
+	"% chance to #yExhaust. NL Each time you spend energy, take that much damage."
+	]
+  },
+  "Ring of Fangs": {
+	"NAME": "Ring of Fangs",
+	"FLAVOR": "The fangs poke into the wearer, making wielding weapons difficult.",
+	"DESCRIPTIONS": [
+	"At the start of combat lose #b",
+	" #yStrength. NL Whenever you deal unblocked attack damage, apply #b1 #yPoison."
+	]
+  },
+  "Ring of Shattering": {
+	"NAME": "Ring of Shattering",
+	"FLAVOR": "What is broken can be made better for it.",
+	"DESCRIPTIONS": [
+	"At the start of combat you gain #b",
+	" #yFocus and lose #b",
+	" Orb Slots."
+	]
+  },
+  "Ring of Misfortune": {
+	"NAME": "Ring of Misfortune",
+	"FLAVOR": "Weary wear.",
+	"DESCRIPTIONS": [
+	"At the start of combat add a random #rCurse to your discard pile. NL Each time you draw a #rCurse, gain [E] and #b",
+	" #yShielding. NL Each time you draw a #rStatus, gain #b",
+	" #yBlock."
+	]
+  },
+  "Ring of Greed": {
+	"NAME": "Ring of Greed",
+	"FLAVOR": "Great wealth often rides with great dispair.",
+	"DESCRIPTIONS": [
+	"On pick up, obtain #b",
+	" gold and #b",
+	" random relics with effects related to gold or shops. NL For every #b",
+	" gold you obtain, add #b1 random #rCurse to your deck."
+	]
+  },
+  "Iron Core": {
+    "NAME": "Iron Core",
+	"FLAVOR": "Powered by unceasing flames and rage.",
+    "DESCRIPTIONS": [
+		"At the start of combat, Channel #b1 #yHellfire. NL Certain Red cards can appear in futre card reward screens."
+	]
+  },
+  "m_BlackCat":{
+		"NAME": "Curse Cat",
+		"FLAVOUR": "Woem",
+		"DESCRIPTIONS":["Shuffle a random Curse in your deck at the beginning of each fight."]
+	},
+	"m_Cross Pendant": {
+		"NAME": "Cross Pendant",
+		"FLAVOR": "A simple cross shaped pendant. Praying on it is said to bring good fortunes.",
+		"DESCRIPTIONS": [
+			"At the start of each combat, choose a card out of three and add it to your hand. It has Exhaust."
+		]
+	}
+	
+}

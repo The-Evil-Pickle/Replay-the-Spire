@@ -1,0 +1,316 @@
+{
+  "Doomed": {
+    "NAME": "Doomed",
+    "DESCRIPTIONS": [
+	"Will lose #b",
+	" HP in #b", 
+	" turns.", 
+	" turn."
+    ]
+  },
+  "Life Bind": {
+    "NAME": "Life Bind",
+    "DESCRIPTIONS": [
+	"Whenever you lose health, enemies with #yLife #yBind will also take damage.", 
+	"Takes damage whenever you lose health."
+    ]
+  },
+  "Reflection": {
+    "NAME": "Reflection",
+    "DESCRIPTIONS": [
+	"Whenever you completely block damage, deal that much damage to the attacker."
+    ]
+  },
+  "Necrotic Poison": {
+    "NAME": "Necrotic Poison",
+    "DESCRIPTIONS": [
+	"At the start of your turn, lose #b",
+	" HP, then reduce #yNecrotic #yPoison by half.", 
+	"At the start of its turn, loses #b",
+	" NL Regular #yPoison will not count down."
+    ]
+  },
+  "Retain Some Block": {
+    "NAME": "Retain Block",
+    "DESCRIPTIONS": [
+	"At the end of each round, retain up to #b",
+	" #yBlock."
+    ]
+  },
+  "Retain Some Energy": {
+    "NAME": "Retain Energy",
+    "DESCRIPTIONS": [
+	"At the end of each round, retain up to #b",
+	" #yEnergy."
+    ]
+  },
+  "Scrap Shanks": {
+    "NAME": "Scrap Shanks",
+    "DESCRIPTIONS": [
+	"When you discard a card during your turn, add #b", 
+	" Shiv",
+	" Shivs",
+	" and #b",
+	" Upgraded",
+	" to your hand."
+    ]
+  },
+  "Specialist": {
+    "NAME": "Specialist",
+    "DESCRIPTIONS": [
+	"Increases non-attack damage by #b", 
+	"Decrease non-attack damage by #b"
+    ]
+  },
+  "Awakened Ritual": {
+    "NAME": "Awakened Ritual",
+    "DESCRIPTIONS": [
+	"If you ever have at least #b5 #yRitual #yComponents in your hand, they are replaced with #yDark #yEcho attacks.", 
+	" NL (need #b",
+	" more in hand)"
+    ]
+  },
+  "Reflective Lens": {
+    "NAME": "Reflective Lens",
+    "DESCRIPTIONS": [
+	"At the end of your turn, gain #b",
+	" #yReflection for each of your #yGlass orbs."
+	]
+  },
+  "Snake Venom": {
+    "NAME": "Snake Venom",
+    "DESCRIPTIONS": [
+	"The next Attack you play applies #b",
+	" Necrotic Poison each time it deals unblocked damage."
+    ]
+  },
+  "Firewall": {
+    "NAME": "Firewall",
+    "DESCRIPTIONS": [
+	"When you block damage, #yChannel #b",
+	" #yHellfire."
+    ]
+  },
+  "Crystallizer": {
+    "NAME": "Crystallizer",
+    "DESCRIPTIONS": [
+	"At the end of your turn, if at least half your orb slots are empty, #yChannel #b",
+	" #yCrystal. NL Counts slots containing #yGlass as empty."
+    ]
+  },
+  "LanguidPower": {
+    "NAME": "Languid",
+    "DESCRIPTIONS": [
+	"All damage dealt by ",
+	" is reduced by #b",
+	". Lasts #b",
+	" more turns."
+    ]
+  },
+  "Friendly": {
+    "NAME": "Friendly",
+    "DESCRIPTIONS": [
+	"This monster is on your side, and will attack enemies or help you."
+    ]
+  },
+  "Drowning": {
+    "NAME": "Drowning",
+    "DESCRIPTIONS": [
+	"At the end of your turn, lose #b",
+	"At the end of your turn, gain #b",
+	" HP. NL Increases when you take unblocked attack damage, decreases when you deal unblocked attack damage. NL Range is #b",
+	" to ",
+	" #b"
+    ]
+  },
+  "AbePower": {
+    "NAME": "Deadweight",
+    "DESCRIPTIONS": [
+	"#yCaptain #yAbe can't actually fight you underwater (when your #yDrowning level is at #b",
+	" or higher). NL NL What kind of pirate can't swim?"
+    ]
+  },
+  "Eggshell": {
+    "NAME": "Eggshell",
+    "DESCRIPTIONS": [
+	"Gains #b", 
+	" #yBlock at the end of its turn. NL Losing HP from an attack reduces #yEggshell by #b1 (but not below 0). NL If #yEggshell equals #b0, you draw an extra card at the start of ",
+	"'s turn."
+    ]
+  },
+  "Color Shift": {
+    "NAME": "Color Shift",
+    "DESCRIPTIONS": [
+	"Will shift color to #y",
+	" if you play #b",
+	" more #yAttacks. NL ",
+	" more #ySkills.",
+	"None",
+	"Green",
+	"Yellow",
+	"Red",
+	"Blue",
+	"Orange",
+	"Purple",
+	"Gray"
+    ]
+  },
+  "Saturation": {
+    "NAME": "Saturation",
+    "DESCRIPTIONS": [
+	"Increases potency of #yColor #yShift effects."
+    ]
+  },
+  "Color Shift Green": {
+    "NAME": "Color Shift: Green",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Gains #b",
+	" #yArtifact and removes debuffs. NL #yOn #yUnblocked #yAttack: Applies #b",
+	" #yPoison. NL #yOn #ySpecial #yAbility: Heals #b",
+	" HP."
+    ]
+  },
+  "Color Shift Yellow": {
+    "NAME": "Color Shift: Yellow",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Applies #b",
+	" #yConfusion. NL #yOn #yUnblocked #yAttack: Adds #b",
+	" #yDazed into your draw pile. NL #yOn #ySpecial #yAbility: Applies #b",
+	" #yConfusion."
+    ]
+  },
+  "Color Shift Red": {
+    "NAME": "Color Shift: Red",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Gains #b",
+	" #yStrength. NL #yOn #yUnblocked #yAttack: Applies #b",
+	" #yVulnerable. NL #yOn #ySpecial #yAbility: Applies #b",
+	" #yFrail and destroys all #yBlock. NL #yOn #yShift #yEnd: Loses #b",
+	" #yStrength."
+    ]
+  },
+  "Color Shift Blue": {
+    "NAME": "Color Shift: Blue",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Gains #b",
+	" #yPlated #yArmor and #b",
+	" #yMetalisize. NL #yOn #yUnblocked #yAttack: Applies #b",
+	" #yWeak. NL #yOn #ySpecial #yAbility: Gains #b",
+	" #yBlock and gives ALL enemies #b",
+	" #yPlated #yArmor. NL #yOn #yShift #yEnd: Loses #b",
+	" #yMetalisize."
+    ]
+  },
+  "Color Shift Orange": {
+    "NAME": "Color Shift: Orange",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Gains #b",
+	" #yThorns. NL #yOn #yUnblocked #yAttack: Heals #b",
+	" HP. NL #yOn #ySpecial #yAbility: Applies #b",
+	" #yConfusion. NL #yOn #yShift #yEnd: Loses #b",
+	" #yThorns."
+    ]
+  },
+  "Color Shift Purple": {
+    "NAME": "Color Shift: Purple",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Adds #b",
+	" #yCurse to your discard pile. NL #yOn #yUnblocked #yAttack: Applies #b",
+	" #yConfusion. NL #yOn #ySpecial #yAbility: Adds #b",
+	" #yVoid to your discard pile."
+    ]
+  },
+  "Color Shift Gray": {
+    "NAME": "Color Shift: Gray",
+    "DESCRIPTIONS": [
+	"#yOn #yShift: Adds #b",
+	" #yWounds to your discard pile. NL #yOn #yUnblocked #yAttack: Adds #b",
+	" #ySlimed to your hand. NL #yOn #ySpecial #yAbility: Applies #b",
+	" #yConfusion."
+    ]
+  },
+  "Sleeping": {
+    "NAME": "Asleep",
+    "DESCRIPTIONS": [
+	"Won't do anything yet. Wakes up when damaged or after #b",
+	" turns."
+    ]
+  },
+  "FF_Spore Cloud": {
+    "NAME": "Spore Mist",
+    "DESCRIPTIONS": [
+      "If killed by #yFade, applies #yVulnerable to you for #b",
+      " turns."
+    ]
+  },
+  "FF_Thievery": {
+    "NAME": "Soul Stealer",
+    "DESCRIPTIONS": [
+      "Steals one of your buffs each time they deal unblocked attack damage."
+    ]
+  },
+  "FF_Rage": {
+    "NAME": "Ethereous Rage",
+    "DESCRIPTIONS": [
+      "Each time a monster dies, gains #b",
+	  " #yStrength."
+    ]
+  },
+  "RP_HourglassPower": {
+    "NAME": "Mercury Hourglass",
+    "DESCRIPTIONS": [
+      "At the start of your turn, deal #b",
+	  " damage to ALL enemies."
+    ]
+  },
+  "RP_ThreadPower": {
+    "NAME": "Thread and Needle",
+    "DESCRIPTIONS": [
+      "Gives #b5 #yPlated #yArmor."
+    ]
+  },
+  "RP_OrichalcumPower": {
+    "NAME": "Orichalcum",
+    "DESCRIPTIONS": [
+      "If you have no #yBlock at the end of your turn, gain #b",
+	  " #yBlock."
+    ]
+  },
+  "RP_SmoothStonePower": {
+    "NAME": "Oddly Smooth Stone",
+    "DESCRIPTIONS": [
+      "Gives #b1 #yDexterity."
+    ]
+  },
+  "RP_VajraPower": {
+    "NAME": "Vajra",
+    "DESCRIPTIONS": [
+      "Gives #b1 #yStrength."
+    ]
+  },
+  "RP_GiryaPower": {
+    "NAME": "Girya",
+    "DESCRIPTIONS": [
+      "Gives #b1 #yStrength at the start of turn. NL #b",
+	  " remaining."
+    ]
+  },
+  "RP_KunaiPower": {
+    "NAME": "Kunai",
+      "DESCRIPTIONS": [
+      "If you play #b",
+      " more #yAttack this turn, gain #b",
+      " #yDexterity.",
+      " more #yAttacks this turn, gain #b"
+    ]
+  },
+  "RP_LetterOpenerPower": {
+    "NAME": "Letter Opener",
+	"DESCRIPTIONS": [
+      "If you play #b",
+      " more #ySkill this turn, deal #b",
+      " damage to ALL enemies.",
+      " more #ySkills this turn, deal #b"
+    ]
+  }
+}
