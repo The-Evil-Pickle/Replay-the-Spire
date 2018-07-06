@@ -576,6 +576,14 @@
 		"DESCRIPTIONS": [
 			"At the start of each combat, choose a card out of three and add it to your hand. It has Exhaust."
 		]
+	},
+	"m_ChemicalBlood": {
+		"NAME": "Chemical Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"Whenever you take damage during your turn, gain #b1 #yFuel. NL At the end of combat, gain HP equal to your total fuel, up to #b",
+			" max. NL Certain Red cards can now be obtained."
+		]
 	}
 	
 }

@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.core.*;
 //import com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import com.megacrit.cardcrawl.potions.*;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.*;
@@ -32,6 +33,9 @@ import com.megacrit.cardcrawl.vfx.*;
 import basemod.*;
 import basemod.helpers.*;
 import basemod.interfaces.*;
+import madsciencemod.MadScienceMod;
+import madsciencemod.powers.*;
+
 import java.lang.reflect.*;
 import java.io.*;
 
@@ -863,6 +867,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new TagBag(), RelicType.SHARED);
 		BaseMod.addRelic(new VampiricSpirits(), RelicType.GREEN);
         
+		initializeCrossoverRelics();
 		
         logger.info("done editting relics");
 	}
@@ -936,6 +941,38 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		//AddAndUnlockCard(new IC_BasicHellfireCard());
 		AddAndUnlockCard(new WeaponsOverheat());
 		logger.info("done editting cards");
+	}
+	
+
+    private enum LoadType {
+    	RELIC,
+    	CARD,
+    	KEYWORD,
+    }
+
+    public static boolean foundmod_science = false;
+    
+
+    private static void initializeCrossoverRelics() {
+    	try {
+    		initializeScienceMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Mad Science Mod not detected");
+		}
+    }
+    
+	private static void initializeScienceMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
+		Class<MadScienceMod> madScienceMod = MadScienceMod.class;
+		logger.info("ReplayTheSpireMod | Detected Mad Science Mod!");
+		foundmod_science = true;
+		
+		if(type == LoadType.RELIC) {
+			logger.info("InfiniteSpire | Initializing Relics for Replay The Spire...");
+			BaseMod.addRelicToCustomPool((AbstractRelic)new ChemicalBlood(), madsciencemod.patches.CardColorEnum.BRONZE.toString());
+		}
+		if(type == LoadType.CARD) {
+			logger.info("InfiniteSpire | Initializing Cards for Replay The Spire...");
+		}
 	}
 	
 	

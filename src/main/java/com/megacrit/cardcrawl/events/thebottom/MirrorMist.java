@@ -219,7 +219,11 @@ public class MirrorMist
 				this.has_1b = this.has_1 && CardHelper.hasCardWithID("PoweredStrike");
 				if (this.has_1) {
 					this.loss_r_1 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("FuelTank");
-					this.gain_r_1 = new SizzlingBlood();
+					if (ReplayTheSpireMod.foundmod_science) {
+						this.gain_r_1 = new ChemicalBlood();
+					} else {
+						this.gain_r_1 = new SizzlingBlood();
+					}
 					if (this.has_1b) {
 						for (final AbstractCard c : AbstractDungeon.player.masterDeck.group) {
 							if (c.cardID.equals("PoweredStrike")) {

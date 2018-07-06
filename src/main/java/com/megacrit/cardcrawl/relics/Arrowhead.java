@@ -1,7 +1,10 @@
 package com.megacrit.cardcrawl.relics;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
+import com.megacrit.cardcrawl.vfx.campfire.CampfireSmithEffect;
 
+import basemod.ReflectionHacks;
 import replayTheSpire.patches.ArrowheadPatches;
 
 public class Arrowhead extends AbstractRelic
@@ -24,6 +27,7 @@ public class Arrowhead extends AbstractRelic
     public void onSmith() {
     	if (ArrowheadPatches.didSecondUpgrade) {
     		AbstractDungeon.overlayMenu.cancelButton.hide();
+    		ReflectionHacks.setPrivate((Object)(AbstractDungeon.gridSelectScreen), (Class)GridCardSelectScreen.class, "canCancel", (Object)false);
     	}
     }
     

@@ -26,6 +26,13 @@
 		      <scope>system</scope>
           <systemPath>${basedir}/../lib/ModTheSpire.jar</systemPath>
 	      </dependency>
+        <dependency>
+	        <groupId>madsciencemod</groupId>
+		      <artifactId>MadScienceMod</artifactId>
+		      <version>0.1.8</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/MadScienceMod.jar</systemPath>
+	      </dependency>
     </dependencies>
   <build>
     <resources>
