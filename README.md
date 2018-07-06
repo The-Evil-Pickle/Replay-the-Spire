@@ -9,10 +9,10 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
 ### Currently adds:
- * 40 Relics (4 ironclad, 4 silent, 5 defect, 27 shared)
- * 35 Cards (7 ironclad, 7 silent, 7 defect, 5 colorless, 9 curses)
+ * 42 Relics (4 ironclad, 4 silent, 4 defect, 30 shared)
+ * 39 Cards (8 ironclad, 8 silent, 8 defect, 6 colorless, 9 curses)
  * 4 Events
- * 8 Potions
+ * 9 Potions
  * 1 Boss
 
 Some content originally from this mod is now in the official release of the game!
@@ -25,6 +25,7 @@ Some content originally from this mod is now in the official release of the game
 Name | Character | Rarity | Description
 --- | --- | --- | ---
 Antivirus Software | Defect | Common | Every time you shuffle your deck, gain 1 **Artifact**. **Artifact** will also be used to exhaust **Status** cards for 1 turn.
+Bandana | All | Common | Gain 2 **Thievery** for the first 3 turns of combat.
 Baseball | All | Common | Upon pick up, a random card in your deck becomes free.
 Funnel | All | Common | At the end of your turn, gain 4 **Block** for each unspent energy.
 Geode | Defect | Common | The first time you lose HP in combat, trigger the passive effect of your orbs and **Channel** 1 **Crystal.**
@@ -34,7 +35,6 @@ King of Hearts | Ironclad | Common | When you lose HP during your turn, gain twi
 Rune of Simplicity | All | Common | Strikes and Defends can be **Upgraded** any number of times. On pickup, **Upgrade** 2 randomly.
 Tag Bag | All | Common | Shops have all 3 kinds of sale tags. Sale tags can appear on colorless cards. On-sale cards are slightly cheaper
 Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe, Ghost Defend, or Ghost Fetch to your hand (chosen randomly).
-Bandana | All | Uncommon | Gain 2 **Thievery** for the first 3 turns of combat.
 Basket of Snakes | Silent | Uncommon | Every 5th **Attack** you play applies 2 **Necrotic** **Poison** upon dealing unblocked damage.
 Carrot | Defect | Uncommon | Gain 3 **Focus** at the start of combat, then lose 1 **Focus** on the next 3 turns.
 Chameleon Ring | All | Uncommon | Potions are ~50% more potent. You may brew 2 random potions at rest sites.
@@ -51,7 +51,7 @@ Another Sword | Ironclad | Rare | The first card containing "Strike" you play ea
 Arrowhead | All | Rare | You may **Upgrade** 2 cards whenever you smith.
 Byrd Skull | Silent | Rare | Your **Innate** cards have **Refund** 1 and draw 1 card.
 Counterbalance | All | Rare | During boss and elite fights all enemy **Strength** gain, **Block** gain, and healing is reduced by half.
-Durian | All | Rare | Gain 5 Max HP on pickup. At the start of your turn, reduce your **Weakened,** **Frail,** and/or **Vulnerable** to 2 (if > 2).
+Durian | All | Rare | Gain 5 Max HP on pickup. Each time you gain a debuff, also gain that much **Shielding.** At the start of your turn, reduce your **Weakened,** **Frail,** and/or **Vulnerable** to 2 (if > 2).
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
 Pondfish Scales | All | Rare | Whenever you play a Skill that does not give **Block,** gain 2 **Block**.
 Vampiric Spirits | Silent | Rare | During the first turn of combat, 25% of all unblocked attack damage you deal is retuned as health.
@@ -75,29 +75,33 @@ Name | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis
 Run Through | Red | Common | Attack | 1 | Target loses 9(11) HP and 4(7) Block.
 Abandon | Red | Uncommmon | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. **Ethereal**.
 Defy Death | Red | Uncommmon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat.
+Hemogenesis | Red | Uncommon | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2+X where X is the number of times previously upgraded in combat, or 3+X if the card has been upgraded outside of combat).
 Life Bind | Red | Uncommmon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
 Massacre | Red | Uncommmon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
 Demonic Infusion | Red | Rare | Skill | X | Upgrade a card X(+1) times. **Refund** 1. **Exhaust**.
-Hemogenesis | Red | Rare | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2+X where X is the number of times previously upgraded in combat, or 3+X if the card has been upgraded outside of combat).
+Eclipse | Red | Rare | Skill | 3 | **Exhaust** your hand. For each card, add a random card to your hand that costs 1 less than normal. (**Refund** 1.)
 Fluid Movement | Green | Commmon | Power | 1 | Keep up to 5(8) block between rounds.
 Hidden Blade | Green | Commmon | Skill | 1 | Add a Shiv to your hand and draw 2(3) cards.
 Toxin Wave | Green | Uncommon | Skill | 1 | Apply 3(4) **Necrotic** **Poison** to ALL enemies.
 Draining Mist | Green | Uncommon | Skill | 3 | Apply 3 **Necrotic** **Poison** to a random enemy 2(3) times. Apply -1(-2) **Strength** to ALL enemies. **Exhaust**.
+Scrap Shanks | Green | Uncommon | Power | 0 | When you discard a card during your turn, add 1 (**Upgraded**) **Shiv** to your hand.
 Sneak Up | Green | Uncommon | Skill | 1 | **Innate.** Discard 1 card (upgrade removes). Gain 1 **Intangible.** **Exhaust.** **Ethereal.**
 Atom Bomb | Green | Rare | Attack | 4 | Deal 60(80) damage. Apply 3(4) **Poison** to ALL enemies. **Exhaust**.
-Poison Darts | Green | Rare | Skill | X | Apply 3(4) **Necrotic** **Poison** X times.
+Poison Darts | Green | Rare | Skill | X | Apply 3(4) **Necrotic** **Poison** X times. Apply X Poison to ALL enemies.
 Reflective Lens | Blue | Uncommon | Power | 1(0) | **Channel** 1 **Glass.** Your **Glass** orbs have a passive effect that gives 1 **Reflection** at the end of each turn.
 Panic Button | Blue | Uncommon | Skill | 0 | **Evoke** all your orbs. Draw 2(4) cards. **Exhaust.** **Retain.**
 Crystal Conduit | Blue | Uncommon | Skill | 1 | **Channel** 1 **Crystal** (and 1 random orb).
 FIFO Queue | Blue | Uncommmon | Power | 2(X) | Gain 4(2X+1) orb slots.
+Sort | Blue | Uncommmon | Skill | 1 | Shuffle all Rare cards in your discard pile into your draw pile. Draw 2 cards. (**Retain.**)
 Mirror Shield | Blue | Rare | Skill | 2 | **Channel** 1 **Crystal.** **Channel** 1 **Frost.** Gain 5(8) **Block.** Gain 1(2) **Reflection.**
 Time Bomb | Blue | Rare | Skill | 1 | Gain 2 orb slots. **Channel** 2 **Glass.** **Channel** 1 **Dark,** and trigger its passive 2(3) times. **Exhaust.**
 RNG | Blue | Rare | Skill | X | **Channel** X(+1) random orbs.
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | Lose 1 Focus. All non-attack damage you deal is increased by 2. (**Innate.**)
 Survey Options | Colorless | Uncommon | Skill | X | Draw X. **Refund** 1(2).
-Improvise | Colorless | Rare | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
+Improvise | Colorless | Uncommon | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
 Awakened One Ritual | Colorless | Rare | Power | 0 | Add 6(8) Ritual Components to your discard pile. If you ever have 5 or more in your hand at once, replace them with Attacks that deal 42 damage.
+Midas Touch | Colorless | Rare | Skill | 0 | **Exhaust** any number of cards in your hand. Add a random Rare card to your hand for each.
 Amnesia | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, **Exhaust** your hand. **Ethereal**.
 Faulty Equipment | Curse | Curse | Curse | - | **Unplayable**. Can only be **Exhausted** or removed from your deck by **Upgrading**.
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
@@ -138,6 +142,7 @@ Elixir | Common | Exhaust ALL your status and curse cards (in your hand).
 Venom Potion | Uncommon | Gain 1 Envenom (and -1 Strength).
 Toxic Potion | Uncommon | Apply 5(4) Necrotic Poison to all enemies.
 Milkshake | Uncommon | You can retain up to 5(2) unspent energy between rounds.
+Shield Potion | Uncommon | Gain 12(8) Shielding.
 Death Potion | Rare | Deal 60(40) damage and lose 12(15) HP.
 Doom Potion | Rare | Destroy an enemy after 10(13) turns.
 Cursed Concoction | Rare | Gain 3(2) Strength and 2(1) Dexterity. Add a random curse to your draw and discard piles.
@@ -213,7 +218,6 @@ Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 
 
 
 ## Changes to Existing Content:
- * Neow now has a wider variety of blessings to choose from.
  * Shops sometimes have a "2 for 1" tag or "special edition" tag instead of the normal sale tag.
  * Random orb channeling effects (e.g. Chaos) will now sometimes channel Crystal.
  * Corpse Explosion now exhausts and applies 1x Necrotic Poison rather than dealing 2x damage.
@@ -225,5 +229,4 @@ Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 
  * Cards altered by Ring of Chaos or Baseball return to the normal version if the run is saved and returned to later.
  * Honey Jar + Question Card doesn't stack (except in the case of busted crown).
  * Compile Driver doesn't count custom orbs.
- * When Raider's Mask evokes a dark orb, it may cause one of your other orbs to skip activating its passive effect.
  
