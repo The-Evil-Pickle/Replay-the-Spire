@@ -96,6 +96,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static TextureAtlas.AtlasRegion fishFG;
 	public static Texture forestBG;
 	public static Texture shieldingIcon;
+	public static Texture bonfireIcon;
+	public static Texture bonfireBG;
 	public static int playerShielding = 0;
 	public static ArrayList<Integer> monsterShielding = new ArrayList<Integer>();
 	public static boolean noSkipRewardsRoom;
@@ -683,6 +685,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.fishFG = ReplayTheSpireMod.fishAtlas.findRegion("mod/fg");
 		ReplayTheSpireMod.forestBG = ImageMaster.loadImage("images/monsters/fadingForest/fadingForest_bg.png");
 		ReplayTheSpireMod.shieldingIcon = ImageMaster.loadImage("images/ui/replay/shielding.png");
+		ReplayTheSpireMod.bonfireIcon = ImageMaster.loadImage("images/ui/map/replay_bonfire.png");
+		ReplayTheSpireMod.bonfireBG = ImageMaster.loadImage("images/ui/map/replay_bonfireOutline.png");
         // Mod badge
         Texture badgeTexture = new Texture(BADGE_IMG);
 		this.currentSettingsSubTab = 0;
@@ -903,7 +907,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new SneakUp());
 		AddAndUnlockCard(new ScrapShanks());
 		logger.info("adding cards for Defect...");
-		AddAndUnlockCard(new PanicButton());
+		AddAndUnlockCard(new com.megacrit.cardcrawl.cards.blue.PanicButton());
 		AddAndUnlockCard(new MirrorShield());
 		AddAndUnlockCard(new BasicCrystalCard());
 		AddAndUnlockCard(new TimeBomb());

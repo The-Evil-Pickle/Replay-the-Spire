@@ -2,10 +2,11 @@
 <classpath>
 	<classpathentry excluding="ReplayTheSpireMod/" kind="src" path="src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="D:/Tobias/Documents/spire_mods/lib/BaseMod.jar"/>
-	<classpathentry kind="lib" path="D:/Tobias/Documents/spire_mods/lib/desktop-1.0.jar"/>
-	<classpathentry kind="lib" path="D:/Tobias/Documents/spire_mods/lib/ModTheSpire.jar"/>
-	<classpathentry kind="lib" path="D:/Tobias/Documents/spire_mods/lib/MadScienceMod.jar"/>
-	<classpathentry kind="lib" path="D:/Tobias/Documents/spire_mods/lib/FruityMod.jar"/>
+	<classpathentry kind="lib" path="C:/Users/quick/Desktop/Spire Mods/lib/BaseMod.jar"/>
+	<classpathentry kind="lib" path="C:/Users/quick/Desktop/Spire Mods/lib/desktop-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/quick/Desktop/Spire Mods/lib/ModTheSpire.jar"/>
+	<classpathentry kind="lib" path="C:/Users/quick/Desktop/Spire Mods/lib/MadScienceMod.jar"/>
+	<classpathentry kind="lib" path="C:/Users/quick/Desktop/Spire Mods/lib/FruityMod.jar"/>
+	<classpathentry kind="lib" path="C:/Users/quick/Desktop/Spire Mods/lib/FetchMod.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
