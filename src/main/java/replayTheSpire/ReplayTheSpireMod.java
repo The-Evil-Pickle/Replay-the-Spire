@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.core.*;
 //import com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import com.megacrit.cardcrawl.potions.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.TheWorksPower;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.*;
@@ -33,6 +34,8 @@ import com.megacrit.cardcrawl.vfx.*;
 import basemod.*;
 import basemod.helpers.*;
 import basemod.interfaces.*;
+import fruitymod.FruityMod;
+import fruitymod.patches.*;
 import madsciencemod.MadScienceMod;
 import madsciencemod.powers.*;
 
@@ -788,11 +791,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addKeyword(rfNames, "Goes down by 1 each round, is removed on 0. While active, completely blocking Attack damage reflects it back at the attacker.");
 		final String[] shieldNames = { "shielding", "Shielding", "Shielding."};
 		BaseMod.addKeyword(shieldNames, "An alternate form of #yBlock that can directly block HP loss. NL #yShielding is not lost at the end of each round.");
-		/*
 		final String[] langNames = { "languid", "Languid", "Languid."};
 		BaseMod.addKeyword(langNames, "Fighters with #yLanguid deal #b1 less #yAttack damage per stack. NL Is reduced by #b1 at the end of each round.");
+		/*
 		final String[] specNames = { "spectral", "Spectral", "Spectral."};
-		BaseMod.addKeyword(specNames, "Is #yEthereal. NL #yExhausts when played or discarded. NL When drawn, you draw an additional card.");
+		BaseMod.addKeyword(specNames, "Is #yEthereal. NL #yExhausts when played or discarded. NL When drawn, you draw an additional card. NL If your hand is full and you draw a card, this card is #yExhausted from your hand to make room.");
 		*/
 		
 		logger.info("end post init");
@@ -951,6 +954,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     }
 
     public static boolean foundmod_science = false;
+    public static boolean foundmod_seeker = false;
     
 
     private static void initializeCrossoverRelics() {
@@ -958,6 +962,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     		initializeScienceMod(LoadType.RELIC);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Mad Science Mod not detected");
+		}
+    	try {
+			initializeFruityMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | FruityMod not detected");
 		}
     }
     
@@ -967,11 +976,25 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		foundmod_science = true;
 		
 		if(type == LoadType.RELIC) {
-			logger.info("InfiniteSpire | Initializing Relics for Replay The Spire...");
+			logger.info("ReplayTheSpireMod | Initializing Relics for MadScience...");
 			BaseMod.addRelicToCustomPool((AbstractRelic)new ChemicalBlood(), madsciencemod.patches.CardColorEnum.BRONZE.toString());
 		}
 		if(type == LoadType.CARD) {
-			logger.info("InfiniteSpire | Initializing Cards for Replay The Spire...");
+			logger.info("ReplayTheSpireMod | Initializing Cards for MadScience...");
+		}
+	}
+	
+
+	private static void initializeFruityMod(LoadType type)throws ClassNotFoundException, NoClassDefFoundError {
+		Class<FruityMod> fruityMod = FruityMod.class;
+		logger.info("ReplayTheSpireMod | Detected FruityMod!");
+		foundmod_seeker = true;
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for FruityMod...");
+			BaseMod.addRelicToCustomPool(new m_ArcaneBlood(), AbstractCardEnum.SEEKER_PURPLE.toString());
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for FruityMod...");
 		}
 	}
 	
@@ -1078,6 +1101,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				c.setCostForTurn(AbstractDungeon.cardRandomRng.random(3));
 			}
 		}
+		if (AbstractDungeon.player.hasPower(TheWorksPower.POWER_ID)) {
+			AbstractDungeon.player.getPower(TheWorksPower.POWER_ID).onSpecificTrigger();
+		}
 	}
 	
 	public void receivePotionGet(final AbstractPotion p0) {
@@ -1085,12 +1111,18 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			switch(p0.ID) {
 				case "AttackPotion":
 					p0.description = "Add a random Upgraded Attack card to your hand, it costs #b0 this turn.";
+					p0.tips = new ArrayList<PowerTip>();
+					p0.tips.add(new PowerTip(p0.name, p0.description));
 					return;
 				case "SkillPotion":
 					p0.description = "Add a random Upgraded Skill card to your hand, it costs #b0 this turn.";
+					p0.tips = new ArrayList<PowerTip>();
+					p0.tips.add(new PowerTip(p0.name, p0.description));
 					return;
 				case "PowerPotion":
 					p0.description = "Add a random Upgraded Power card to your hand, it costs #b0 this turn.";
+					p0.tips = new ArrayList<PowerTip>();
+					p0.tips.add(new PowerTip(p0.name, p0.description));
 					return;
 				default:
 					return;

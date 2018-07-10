@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.actions.common.*;
 import java.util.*;
 import com.badlogic.gdx.math.*;
 import com.megacrit.cardcrawl.unlock.*;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import com.megacrit.cardcrawl.ui.*;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
@@ -38,6 +39,7 @@ public class AbesTreasure extends AbstractRelic
     public void onEquip() {
         final EnergyManager energy = AbstractDungeon.player.energy;
         ++energy.energyMaster;
+        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new AbeCurse(), Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
     }
     
     @Override
@@ -56,13 +58,13 @@ public class AbesTreasure extends AbstractRelic
     public AbstractRelic makeCopy() {
         return new AbesTreasure();
     }
-
+/*
     @Override
     public void onShuffle() {
         this.flash();
 		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new AbeCurse(), 1, true, false));
     }
-    
+    */
 	@Override
     public void renderLock(final SpriteBatch sb, final Color outlineColor) {
 		final float rot = (float)ReflectionHacks.getPrivate((Object)this, (Class)AbstractRelic.class, "rotation");

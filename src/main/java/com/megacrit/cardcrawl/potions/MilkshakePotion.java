@@ -27,7 +27,7 @@ public class MilkshakePotion extends AbstractPotion
     }
     @Override
     public int getPotency(final int ascensionLevel) {
-        return (ascensionLevel < 11) ? 5 : 2;
+        return 5;//(ascensionLevel < 11) ? 5 : 2;
     }
     @Override
     public void use(AbstractCreature target) {

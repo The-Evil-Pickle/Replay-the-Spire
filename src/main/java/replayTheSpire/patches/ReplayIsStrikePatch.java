@@ -25,7 +25,7 @@ public class ReplayIsStrikePatch {
 	
 	public static boolean PostFix(boolean __result, final AbstractCard c) {
 		if (!__result) {
-			return c instanceof PoisonedStrike;
+			return ((c instanceof PoisonedStrike) || (c instanceof StrikeFromHell));
 		}
 		return __result;
 	}

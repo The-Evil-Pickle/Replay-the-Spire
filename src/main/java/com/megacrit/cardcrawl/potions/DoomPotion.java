@@ -45,7 +45,7 @@ public class DoomPotion
   
 	@Override
 	public int getPotency(final int ascensionLevel) {
-		return (ascensionLevel < 11) ? 10 : 13;
+		return 10;//(ascensionLevel < 11) ? 10 : 13;
 	}
 	
 }

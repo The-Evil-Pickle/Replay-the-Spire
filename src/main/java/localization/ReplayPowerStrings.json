@@ -55,6 +55,15 @@
 	" to your hand."
     ]
   },
+  "The Works": {
+    "NAME": "The Works",
+    "DESCRIPTIONS": [
+	"For every #b", 
+	" cards you draw this turn, gain ",
+	" and deal #b",
+	" damage to a random enemy."
+    ]
+  },
   "Specialist": {
     "NAME": "Specialist",
     "DESCRIPTIONS": [

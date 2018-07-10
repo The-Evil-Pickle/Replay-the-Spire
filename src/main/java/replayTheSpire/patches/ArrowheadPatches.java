@@ -17,12 +17,8 @@ public class ArrowheadPatches {
 		
 		@SpireInsertPatch(rloc = 18)
 		public static void Insert(CampfireSmithEffect __Instance) {
-			ReplayTheSpireMod.logger.info("line 18");
-			ReplayTheSpireMod.logger.info(ArrowheadPatches.hasSecondUpgrade);
-			ReplayTheSpireMod.logger.info(ArrowheadPatches.didSecondUpgrade);
 			//ReplayTheSpireMod.logger.info((boolean)ReflectionHacks.getPrivate((Object)__Instance, (Class)CampfireSmithEffect.class, "selectedCard"));
 			if (ArrowheadPatches.hasSecondUpgrade) {// && (boolean)ReflectionHacks.getPrivate((Object)__Instance, (Class)CampfireSmithEffect.class, "selectedCard")
-				ReplayTheSpireMod.logger.info("[[[[ACTIVE]]]]");
 				ReflectionHacks.setPrivate((Object)__Instance, (Class)CampfireSmithEffect.class, "openedScreen", (Object)false);
 				ReflectionHacks.setPrivate((Object)__Instance, (Class)CampfireSmithEffect.class, "selectedCard", (Object)false);
 				ReflectionHacks.setPrivate((Object)__Instance, (Class)CampfireSmithEffect.class, "screenColor", (Object)(AbstractDungeon.fadeColor.cpy()));
@@ -39,7 +35,6 @@ public class ArrowheadPatches {
 	public static class VfxConstPatch {
 		
 		public static void Postfix(CampfireSmithEffect __Instance) {
-			ReplayTheSpireMod.logger.info("CAMPFIRE CONST");
 			ArrowheadPatches.didSecondUpgrade = false;
 			if (AbstractDungeon.player.hasRelic("Arrowhead")) {
 				ArrowheadPatches.hasSecondUpgrade = true;

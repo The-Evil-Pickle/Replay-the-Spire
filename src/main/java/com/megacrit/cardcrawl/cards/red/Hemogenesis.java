@@ -63,9 +63,9 @@ public class Hemogenesis extends CustomCard
 		if (isSmithUpgrade) {
 			this.upgradeTick = 3;
 		}
-        this.upgradeDamage(this.upgradeTick + this.timesUpgraded);
-        this.upgradeBlock(this.upgradeTick + this.timesUpgraded);
-        this.upgradeMagicNumber(this.upgradeTick + this.timesUpgraded);
+        this.upgradeDamage(this.upgradeTick);// + this.timesUpgraded
+        this.upgradeBlock(this.upgradeTick);// + this.timesUpgraded
+        this.upgradeMagicNumber(this.upgradeTick);// + this.timesUpgraded
 		if (!isSmithUpgrade) {
 			++this.timesUpgraded;
 		}

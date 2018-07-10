@@ -58,7 +58,7 @@ public class VenomPotion
   }
     @Override
     public int getPotency(final int ascensionLevel) {
-        return (ascensionLevel < 11) ? 0 : 1;
+        return 1;//(ascensionLevel < 11) ? 0 : 1;
     }
   
   public AbstractPotion makeCopy()

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.*;
 public class BranchBurnRelic extends AbstractRelic
 {
     public static final String ID = "BranchBurnRelic";
-    private static final int REGEN_AMT = 4;
+    private static final int REGEN_AMT = 5;
     private boolean firstTurn;
     
     public BranchBurnRelic() {

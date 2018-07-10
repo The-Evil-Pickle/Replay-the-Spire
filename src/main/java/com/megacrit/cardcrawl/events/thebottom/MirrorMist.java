@@ -14,6 +14,9 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.screens.select.*;
 import com.megacrit.cardcrawl.vfx.*;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
+
+import fruitymod.characters.*;
+
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.relics.*;
 import replayTheSpire.*;
@@ -213,7 +216,7 @@ public class MirrorMist
 			break;
 		}
 		default: {
-			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("FuelTank") || CardHelper.hasCardWithID("HideBehindJunk") || CardHelper.hasCardWithID("PoweredStrike") || CardHelper.hasCardWithID("Defend_Bronze") || CardHelper.hasCardWithID("Strike_Bronze")) {
+			if (ReplayTheSpireMod.foundmod_science && (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("FuelTank") || CardHelper.hasCardWithID("HideBehindJunk") || CardHelper.hasCardWithID("PoweredStrike") || CardHelper.hasCardWithID("Defend_Bronze") || CardHelper.hasCardWithID("Strike_Bronze"))) {
 				//MAD SCIENTIST
 				this.has_1 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("FuelTank");
 				this.has_1b = this.has_1 && CardHelper.hasCardWithID("PoweredStrike");
@@ -251,6 +254,30 @@ public class MirrorMist
 					}
 					this.gain_c_3 = new Scrape();
 				}
+				this.thirdOption = true;
+				break;
+			}
+			if (ReplayTheSpireMod.foundmod_seeker && AbstractDungeon.player instanceof TheSeeker) {
+				this.has_1 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Arcanosphere");
+				this.has_1b = CardHelper.hasCardWithID("AstralHaze");
+				this.has_2 = this.has_1b;
+				this.has_3 = this.has_2;
+				this.loss_r_1 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Arcanosphere");
+				//this.loss_r_1 = new Arcanosphere();
+				this.gain_r_1 = new m_ArcaneBlood();
+				if (this.has_1b) {
+					for (final AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+						if (c.cardID.equals("AstralHaze")) {
+							this.loss_c_1b = c.makeCopy();
+						}
+					}
+					this.gain_c_1b = new Hemokinesis();
+				}
+				this.gain_c_1b = new RecklessCharge();
+				this.loss_c_2 = this.loss_c_1b;
+				this.loss_c_3 = this.loss_c_1b;
+				this.gain_c_2 = new EndlessAgony();
+				this.gain_c_3 = new Rebound();
 				this.thirdOption = true;
 				break;
 			}

@@ -10,7 +10,7 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
 
 ### Currently adds:
  * 42 Relics (4 ironclad, 4 silent, 4 defect, 30 shared)
- * 39 Cards (8 ironclad, 8 silent, 8 defect, 6 colorless, 9 curses)
+ * 40 Cards (8 ironclad, 8 silent, 8 defect, 7 colorless, 9 curses)
  * 4 Events
  * 9 Potions
  * 1 Boss
@@ -57,11 +57,11 @@ Pondfish Scales | All | Rare | Whenever you play a Skill that does not give **Bl
 Vampiric Spirits | Silent | Rare | During the first turn of combat, 25% of all unblocked attack damage you deal is retuned as health.
 Chemical X | All | Shop | Your cost X effects are increased by 2.
 GuideBook | All | Shop | On pickup, **Upgrade** 2 cards randomly. Prioritizes rarer cards.
-Abe's Treasure | All | Boss | Gain 1 more energy each turn. Start combat with **Drowning**.
+Abe's Treasure | All | Boss | Gain 1 more energy each turn. Start combat with **Drowning**. On Pickup, add the Abe's Revenge curse to your deck.
 Chewing Gum | All | Boss | Gain 1 more energy each turn. Each time you shuffle your deck, add 2 Slimed to your draw pile..
 Honey Jar | All | Boss | Draw 1 more card each turn. **Retain** up to 1 card each turn. Card rewards have 1 more option to chose from. You cannot skip rewards.
 Kintsugi | All | Boss | Remove 5 cards from your deck. Choose 2 **Curses** to obtain.
-Ooze Armor | Ironclad | Boss | Gain 1 energy at the start of each turn. At the start of combat, gain **Slow** (resets to -2) and **Malleable** (resets to 4).
+Ooze Armor | Ironclad | Boss | Gain 1 energy at the start of each turn. At the start of combat, gain **Slow** (resets to -3) and **Malleable** (resets to 4).
 Sweet Flower | All | Boss | Gain 1 more energy each turn. Map displays much less information.
 Electric Blood | Ironclad | Boss | Gain 2 energy at the start of each turn. When you spend energy, lose that much HP, excluding the first 2 energy spent each turn.
 Snecko Heart | All | Boss | Start combat **Confused**. **Confusion** will never increase the cost of a card by more than 1. The first card you draw each turn always costs 0.
@@ -73,11 +73,11 @@ Ring of Chaos | All | Boss | Some card rewards have randomly altered stats and e
 Name | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis)
 --- | --- | --- | --- | --- | ---
 Run Through | Red | Common | Attack | 1 | Target loses 9(11) HP and 4(7) Block.
-Abandon | Red | Uncommmon | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. **Ethereal**.
 Defy Death | Red | Uncommmon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat.
-Hemogenesis | Red | Uncommon | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2+X where X is the number of times previously upgraded in combat, or 3+X if the card has been upgraded outside of combat).
+Hemogenesis | Red | Uncommon | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2, or by 3 if the card has been upgraded outside of combat).
 Life Bind | Red | Uncommmon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
 Massacre | Red | Uncommmon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
+Abandon | Red | Rare | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. **Ethereal**.
 Demonic Infusion | Red | Rare | Skill | X | Upgrade a card X(+1) times. **Refund** 1. **Exhaust**.
 Eclipse | Red | Rare | Skill | 3 | **Exhaust** your hand. For each card, add a random card to your hand that costs 1 less than normal. (**Refund** 1.)
 Fluid Movement | Green | Commmon | Power | 1 | Keep up to 5(8) block between rounds.
@@ -86,15 +86,15 @@ Toxin Wave | Green | Uncommon | Skill | 1 | Apply 3(4) **Necrotic** **Poison** t
 Draining Mist | Green | Uncommon | Skill | 3 | Apply 3 **Necrotic** **Poison** to a random enemy 2(3) times. Apply -1(-2) **Strength** to ALL enemies. **Exhaust**.
 Scrap Shanks | Green | Uncommon | Power | 0 | When you discard a card during your turn, add 1 (**Upgraded**) **Shiv** to your hand.
 Sneak Up | Green | Uncommon | Skill | 1 | **Innate.** Discard 1 card (upgrade removes). Gain 1 **Intangible.** **Exhaust.** **Ethereal.**
-Atom Bomb | Green | Rare | Attack | 4 | Deal 60(80) damage. Apply 3(4) **Poison** to ALL enemies. **Exhaust**.
+Atom Bomb | Green | Rare | Attack | 4 | Deal 60(75) damage. Apply 4 **Poison** to ALL fighters. **Exhaust**.
 Poison Darts | Green | Rare | Skill | X | Apply 3(4) **Necrotic** **Poison** X times. Apply X Poison to ALL enemies.
 Reflective Lens | Blue | Uncommon | Power | 1(0) | **Channel** 1 **Glass.** Your **Glass** orbs have a passive effect that gives 1 **Reflection** at the end of each turn.
-Panic Button | Blue | Uncommon | Skill | 0 | **Evoke** all your orbs. Draw 2(4) cards. **Exhaust.** **Retain.**
-Crystal Conduit | Blue | Uncommon | Skill | 1 | **Channel** 1 **Crystal** (and 1 random orb).
+Panic Button | Blue | Common | Skill | 0 | **Evoke** all your orbs. Draw 2(4) cards. **Exhaust.** **Retain.**
+Crystal Conduit | Blue | Common | Skill | 1 | **Channel** 1 **Crystal** (and 1 random orb).
 FIFO Queue | Blue | Uncommmon | Power | 2(X) | Gain 4(2X+1) orb slots.
 Sort | Blue | Uncommmon | Skill | 1 | Shuffle all Rare cards in your discard pile into your draw pile. Draw 2 cards. (**Retain.**)
 Mirror Shield | Blue | Rare | Skill | 2 | **Channel** 1 **Crystal.** **Channel** 1 **Frost.** Gain 5(8) **Block.** Gain 1(2) **Reflection.**
-Time Bomb | Blue | Rare | Skill | 1 | Gain 2 orb slots. **Channel** 2 **Glass.** **Channel** 1 **Dark,** and trigger its passive 2(3) times. **Exhaust.**
+Time Bomb | Blue | Uncommmon | Skill | 1 | Gain 2 orb slots. **Channel** 2 **Glass.** **Channel** 1 **Dark,** and trigger its passive 2(3) times. **Exhaust.**
 RNG | Blue | Rare | Skill | X | **Channel** X(+1) random orbs.
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | Lose 1 Focus. All non-attack damage you deal is increased by 2. (**Innate.**)
@@ -102,6 +102,7 @@ Survey Options | Colorless | Uncommon | Skill | X | Draw X. **Refund** 1(2).
 Improvise | Colorless | Uncommon | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
 Awakened One Ritual | Colorless | Rare | Power | 0 | Add 6(8) Ritual Components to your discard pile. If you ever have 5 or more in your hand at once, replace them with Attacks that deal 42 damage.
 Midas Touch | Colorless | Rare | Skill | 0 | **Exhaust** any number of cards in your hand. Add a random Rare card to your hand for each.
+The Ultimate Defense | Colorless | Rare | Power | 4 | Gain 1(2) **Artifact**. Gain 1(2) **Dexterity**. (Gain 1 **Intangible**). Gain 5 **Plated** **Armor**. Gain 5(8) **Shielding**.
 Amnesia | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, **Exhaust** your hand. **Ethereal**.
 Faulty Equipment | Curse | Curse | Curse | - | **Unplayable**. Can only be **Exhausted** or removed from your deck by **Upgrading**.
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
@@ -116,6 +117,7 @@ Ghost Defend | Colorless | Special | Skill | 1 | Gain 5 block. **Exhaust**. **Et
 Ghost Fetch | Colorless | Special | Skill | 0 | Choose a basic card from your draw pile and add it to your hand. **Exhaust**. **Ethereal**.
 Grinning Jar | Colorless | Special | Skill | 0 | Draw 2 cards. You cannot play another Grinning Jar card this turn (upgrade removes).
 Ritual Component | Colorless | Special | Skill | 0 | Draw 1 card.
+Abe's Revenge | Curse | Special | Curse | - | **Unplayable**. At the end of your turn, gain 2 **Frail**. **Ethereal**.
 
 **Note:** The following items are currently under maintainence, and have been temporarily removed:
  * Rune of Simplicity
@@ -135,17 +137,17 @@ Necrotic Poison | Power (Debuff) | An alternate kind of Poison. Does double dama
 Reflection | Power (Buff) | Each time you completely block attack damage, that damage is reflected back at the attacker.
 
 # Potions
-Name | Rarity | Description (post-ascension-11 changes in parenthesis)
+Name | Rarity | Description
 --- | --- | ---
-Adrenaline Potion | Common | Draw 2(1) cards and gain 1 energy.
-Elixir | Common | Exhaust ALL your status and curse cards (in your hand).
-Venom Potion | Uncommon | Gain 1 Envenom (and -1 Strength).
-Toxic Potion | Uncommon | Apply 5(4) Necrotic Poison to all enemies.
-Milkshake | Uncommon | You can retain up to 5(2) unspent energy between rounds.
-Shield Potion | Uncommon | Gain 12(8) Shielding.
-Death Potion | Rare | Deal 60(40) damage and lose 12(15) HP.
-Doom Potion | Rare | Destroy an enemy after 10(13) turns.
-Cursed Concoction | Rare | Gain 3(2) Strength and 2(1) Dexterity. Add a random curse to your draw and discard piles.
+Adrenaline Potion | Common | Draw 2 cards and gain 1 energy.
+Elixir | Common | Exhaust ALL your status and curse cards.
+Venom Potion | Uncommon | Gain 1 Envenom and -1 Strength.
+Toxic Potion | Uncommon | Apply 5 Necrotic Poison to all enemies.
+Milkshake | Uncommon | You can retain up to 5 unspent energy between rounds.
+Shield Potion | Uncommon | Gain 12 Shielding.
+Death Potion | Rare | Deal 60 damage and lose 12 HP.
+Doom Potion | Rare | Destroy an enemy after 10 turns.
+Cursed Concoction | Rare | Gain 3 Strength and 2 Dexterity. Add a random curse to your draw and discard piles.
 
 
 
@@ -162,10 +164,18 @@ Character-specific options:
   * Burning Blood -> Self Repair+
  * **Silent:**
   * Ring of the Snake -> Sizzling Blood
-  * Survivor -> Leap, Neutralize -> Go For The Eyes
+  * Survivor -> Leap, Neutralize -> Beam Cell
  * **Defect:**
   * Dualcast -> Bash, Cracked Core -> Iron Core
   * Cracked Core -> Ring of the Snake
+ * [mod] **Mad** **Scientist:**
+  * Fuel Tank -> Chemical Blood, Powered Strike -> Hemokenisis
+  * Hide Behind Junk -> Survivor
+  * Powered Strike -> Scrape
+ * [mod] **Seeker:**
+  * Arcanosphere -> Arcane Blood, Astral Haze -> Reckless Charge
+  * Astral Haze -> Endless Agony
+  * Astral Haze -> Rebound
 If an upgraded card is traded for a different card using this event, the corresponding new card will be upgraded.
 
 ### Stuck
@@ -212,6 +222,7 @@ Ring of Fury | Dead Man's Rings | At the start of combat, gain 2 **Strength** an
 Ring of Peace | Dead Man's Rings | At the start of combat, apply 3 **Weak** to ALL fighters and gain 1 **Buffer.**
 Ring of Panic | Dead Man's Rings | At the start of combat, become **Confused** for 3 turns. Gain 2 energy on the first and second turns, and 1 energy on the third.
 Ring of Hypnosis | Dead Man's Rings | All enemies start with 5 **Confusion.**
+Ring of Misfortune | Dead Man's Rings | At the start of combat, add a random **Curse** to your discard pile. Each time you draw a curse, gain 1 energy and 3 **Shielding**. Each time you draw a **Status**, gain 3 **Block**.
 Ring of Searing | Dead Man's Rings (as Ironclad or modded) | At the start of your turn, ALL enemies above 50% max HP lose 10% of their HP, and you lose 5 HP if you are above 75% max HP.
 Ring of Fangs | Dead Man's Rings (as Silent or modded) | At the start of combat, lose 3 **Strength** and gain 1 **Envenom.**
 Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 3 **Focus** and lose 2 orb slots.
@@ -228,5 +239,5 @@ Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 
 ## Known Issues:
  * Cards altered by Ring of Chaos or Baseball return to the normal version if the run is saved and returned to later.
  * Honey Jar + Question Card doesn't stack (except in the case of busted crown).
- * Compile Driver doesn't count custom orbs.
+ * Crystal orbs and the Carrot relic may cause inconsistant focus values under certain circumstances.
  

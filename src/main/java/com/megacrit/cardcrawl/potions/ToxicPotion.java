@@ -38,11 +38,7 @@ public class ToxicPotion
   public ToxicPotion()
   {
     super(NAME, "Toxic Potion", PotionRarity.UNCOMMON, AbstractPotion.PotionSize.JAR, AbstractPotion.PotionColor.POISON);
-    if (AbstractDungeon.ascensionLevel >= 11) {
-	  this.secondPotency = 3;
-    } else {
-	  this.secondPotency = 2;
-    }
+	this.secondPotency = 2;
 	this.potency = this.getPotency();
     this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1]);// + DESCRIPTIONS[1] + (this.secondPotency - 1) + DESCRIPTIONS[2] + this.secondPotency + DESCRIPTIONS[3]
     this.isThrown = true;
@@ -50,7 +46,6 @@ public class ToxicPotion
     this.tips.add(new PowerTip(
       TipHelper.capitalize("necrotic poison"), 
       (String)GameDictionary.keywords.get("necrotic poison")));
-	//this.rarity = AbstractPotion.PotionRarity.RARE;
   }
   
   public void use(AbstractCreature target)
@@ -66,7 +61,7 @@ public class ToxicPotion
   }
   @Override
     public int getPotency(final int ascensionLevel) {
-        return (ascensionLevel < 11) ? 5 : 4;
+        return 5;//(ascensionLevel < 11) ? 5 : 4;
     }
   public AbstractPotion makeCopy()
   {

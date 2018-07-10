@@ -12,7 +12,7 @@ public class Funnel extends AbstractRelic
 	private int turnlimitmarker;
 	
     public Funnel() {
-        super("ReplayFunnel", "funnel.png", RelicTier.COMMON, LandingSound.SOLID);
+        super("ReplayFunnel", "replay_funnel.png", RelicTier.COMMON, LandingSound.SOLID);
 		this.turnlimitmarker = 3;
     }
     

@@ -33,6 +33,13 @@
 		      <scope>system</scope>
           <systemPath>${basedir}/../lib/MadScienceMod.jar</systemPath>
 	      </dependency>
+        <dependency>
+	        <groupId>fruitymod</groupId>
+		      <artifactId>FruityMod</artifactId>
+		      <version>0.1.8</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/FruityMod.jar</systemPath>
+	      </dependency>
     </dependencies>
   <build>
     <resources>

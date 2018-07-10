@@ -146,7 +146,7 @@
 	"NAME": "Abe's Treasure",
 	"FLAVOR": "Cursed?",
     "DESCRIPTIONS": [
-	"Gain [E] at the start of your turn. NL Start combat with #yDrowning. NL Each time you shuffle your deck, add a copy of #rAbe's #rRevenge to your draw pile."
+	"Gain [E] at the start of your turn. NL Start combat with #yDrowning. NL On pick up, add a copy of #rAbe's #rRevenge to your deck."
 	]
   },
   "Transient Totem": {
@@ -189,7 +189,7 @@
 	"NAME": "Ooze Armor",
 	"FLAVOR": "Armor with the flexibility and toughness of living slime.",
     "DESCRIPTIONS": [
-	" NL Gain 4 #yMalleable and -2 #ySlow at the start of combat",
+	" NL Gain #b4 #yMalleable and #b-3 #ySlow at the start of combat",
 	"Gain [R] at the start of each turn.", 
 	"Gain [G] at the start of each turn.",
 	"Gain [E] at the start of each turn."
@@ -241,6 +241,13 @@
 	"FLAVOR": "Delicious!",
     "DESCRIPTIONS": [
 	"Draw 1 more card each turn. NL #yRetain up to 1 card each turn. NL Extra choice on card reward screens. NL You cannot skip rewards."
+	]
+  },
+  "afgdgfd0hfjg": {
+	"NAME": "agfjhklkjghfd",
+	"FLAVOR": "---",
+    "DESCRIPTIONS": [
+	"Gain [E] at the start of each turn. NL All non-attack damage you deal is reduced by #b2."
 	]
   },
   "Replay_Grab Bag": {
@@ -583,6 +590,14 @@
 		"DESCRIPTIONS": [
 			"Whenever you take damage during your turn, gain #b1 #yFuel. NL At the end of combat, gain HP equal to your total fuel, up to #b",
 			" max. NL Certain Red cards can now be obtained."
+		]
+	},
+	"m_ArcaneBlood": {
+		"NAME": "Arcane Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the end of combat, gain #b",
+			" HP for each different debuff you have. NL Certain Red cards can now be obtained."
 		]
 	}
 	

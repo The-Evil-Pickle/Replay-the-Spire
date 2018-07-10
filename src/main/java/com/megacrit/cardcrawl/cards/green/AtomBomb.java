@@ -25,18 +25,20 @@ public class AtomBomb extends CustomCard
     private static final int POOL = 1;
     
     public AtomBomb() {
-        super("Atom Bomb", AtomBomb.NAME, "cards/replay/atomBomb.png", 4, AtomBomb.DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY, 1);
+        super("Atom Bomb", AtomBomb.NAME, "cards/replay/atomBomb.png", 4, AtomBomb.DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
         this.baseDamage = 60;
-        this.baseMagicNumber = 3;
+        this.baseMagicNumber = 4;
         this.magicNumber = this.baseMagicNumber;
         this.exhaust = true;
     }
     
     public void use(final AbstractPlayer abstractPlayer, final AbstractMonster abstractMonster) {
-        AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new DamageAction((AbstractCreature)abstractMonster, new DamageInfo((AbstractCreature)abstractPlayer, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abstractPlayer, abstractPlayer, new PoisonPower(abstractPlayer, abstractPlayer, this.magicNumber), this.magicNumber));
         for (final AbstractMonster abstractMonster2 : AbstractDungeon.getMonsters().monsters) {
-            AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new ApplyPowerAction((AbstractCreature)abstractMonster2, (AbstractCreature)abstractPlayer, (AbstractPower)new PoisonPower((AbstractCreature)abstractMonster2, (AbstractCreature)abstractPlayer, this.magicNumber), this.magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abstractMonster2, abstractPlayer, new PoisonPower(abstractMonster2, abstractPlayer, this.magicNumber), this.magicNumber));
         }
+        
     }
     
     public AbstractCard makeCopy() {
@@ -47,7 +49,6 @@ public class AtomBomb extends CustomCard
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(15);
-            this.upgradeMagicNumber(1);
         }
     }
     

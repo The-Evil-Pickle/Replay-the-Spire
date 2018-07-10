@@ -20,7 +20,7 @@ public class FluidMovement extends CustomCard
     public static final String DESCRIPTION;
     
     public FluidMovement() {
-        super("Fluid Movement", FluidMovement.NAME, "cards/replay/fluidMovement.png", 1, FluidMovement.DESCRIPTION, CardType.POWER, CardColor.GREEN, CardRarity.COMMON, CardTarget.SELF, 1);
+        super("Fluid Movement", FluidMovement.NAME, "cards/replay/fluidMovement.png", 1, FluidMovement.DESCRIPTION, CardType.POWER, CardColor.GREEN, CardRarity.COMMON, CardTarget.SELF);
         this.baseMagicNumber = 5;
         this.magicNumber = this.baseMagicNumber;
     }

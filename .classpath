@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="D:/Tobias/Documents/spire_mods/lib/desktop-1.0.jar"/>
 	<classpathentry kind="lib" path="D:/Tobias/Documents/spire_mods/lib/ModTheSpire.jar"/>
 	<classpathentry kind="lib" path="D:/Tobias/Documents/spire_mods/lib/MadScienceMod.jar"/>
+	<classpathentry kind="lib" path="D:/Tobias/Documents/spire_mods/lib/FruityMod.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

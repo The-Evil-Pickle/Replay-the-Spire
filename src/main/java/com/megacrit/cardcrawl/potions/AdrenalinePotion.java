@@ -39,7 +39,7 @@ public class AdrenalinePotion
   
 	@Override
 	public int getPotency(final int ascensionLevel) {
-		return (ascensionLevel < 11) ? 2 : 1;
+		return 2;//(ascensionLevel < 11) ? 2 : 1;
 	}
 
   public void use(AbstractCreature target)

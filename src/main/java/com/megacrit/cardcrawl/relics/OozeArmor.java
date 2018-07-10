@@ -47,7 +47,7 @@ public class OozeArmor extends AbstractRelic
     
 	@Override
     public void atTurnStart() {
-		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SlowPower(AbstractDungeon.player, -2), -2));
+		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SlowPower(AbstractDungeon.player, -3), -3));
     }
 	
     @Override

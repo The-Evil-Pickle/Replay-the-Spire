@@ -113,5 +113,20 @@
 			"Gain #b",
 			" #yShielding."
 	]
+  },
+  "Languid Potion": {
+	"NAME": "Languish Potion",
+    "DESCRIPTIONS": [
+			"Apply #b",
+			" #yLanguid."
+	]
+  },
+  "Reflective Coating": {
+	"NAME": "Reflective Coating",
+    "DESCRIPTIONS": [
+			"Gain #b",
+			" #yBlur. NL Gain #b",
+			" #yReflection."
+	]
   }
 }

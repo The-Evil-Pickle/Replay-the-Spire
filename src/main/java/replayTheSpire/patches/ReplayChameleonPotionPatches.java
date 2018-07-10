@@ -49,4 +49,32 @@ public class ReplayChameleonPotionPatches
 		}
 		
 	}
+
+	@SpirePatch(cls = "com.megacrit.cardcrawl.potions.AttackPotion", method = SpirePatch.CONSTRUCTOR)
+	public static class AttackPotionConstPatch {
+		@SpireInsertPatch(rloc = 4)
+		public static void Insert(AttackPotion __instance) {
+			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Chameleon Ring")) {
+				__instance.description = "Add a random #yUpgraded Attack card to your hand, it costs #b0 this turn";
+			}
+		}
+	}
+	@SpirePatch(cls = "com.megacrit.cardcrawl.potions.SkillPotion", method = SpirePatch.CONSTRUCTOR)
+	public static class SkillPotionConstPatch {
+		@SpireInsertPatch(rloc = 4)
+		public static void Insert(SkillPotion __instance) {
+			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Chameleon Ring")) {
+				__instance.description = "Add a random #yUpgraded Skill card to your hand, it costs #b0 this turn";
+			}
+		}
+	}
+	@SpirePatch(cls = "com.megacrit.cardcrawl.potions.PowerPotion", method = SpirePatch.CONSTRUCTOR)
+	public static class PowerPotionConstPatch {
+		@SpireInsertPatch(rloc = 4)
+		public static void Insert(PowerPotion __instance) {
+			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Chameleon Ring")) {
+				__instance.description = "Add a random #yUpgraded Power card to your hand, it costs #b0 this turn";
+			}
+		}
+	}
 }

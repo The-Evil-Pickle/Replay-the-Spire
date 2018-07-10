@@ -20,7 +20,8 @@ public class ShieldPotion extends AbstractPotion
         this.description = ShieldPotion.DESCRIPTIONS[0] + this.potency + ShieldPotion.DESCRIPTIONS[1];
         this.isThrown = false;
         this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip("Shielding", "An alternate form of #yBlock that can directly block HP loss. NL #yShielding is not lost at the end of each round."));
+        //this.tips.add(new PowerTip("Shielding", "An alternate form of #yBlock that can directly block HP loss. NL #yShielding is not lost at the end of each round."));
+        this.tips.add(new PowerTip(TipHelper.capitalize("shielding"), GameDictionary.keywords.get("shielding")));
     }
     
     @Override

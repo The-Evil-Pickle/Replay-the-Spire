@@ -1,7 +1,7 @@
 {
   "Atom Bomb": {
     "NAME": "Atom Bomb",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Poison to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Poison to ALL fighters. NL Exhaust."
   },
   "Poison Darts": {
     "NAME": "Poison Darts",
@@ -52,6 +52,10 @@
   "ReplayTheSpireMod:Shiv Toss": {
     "NAME": "Shiv Toss",
     "DESCRIPTION": "Discard all Shivs in your hand. NL Draw !M! card and deal !D! damage to a random enemy for each. NL Retain."
+  },
+  "ReplayTheSpireMod:The Works": {
+    "NAME": "The Works",
+    "DESCRIPTION": "For every 3 cards you draw this turn, gain [E] and deal !M! damage to a random enemy."
   },
   "Abandon": {
     "NAME": "Abandon",
@@ -108,6 +112,10 @@
     "NAME": "Eclipse",
     "DESCRIPTION": "Exhaust your hand, and replace it with random cards that costs 1 less than normal. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Exhaust your hand, and replace it with random cards that costs 1 less than normal. NL Refund !M!. NL Exhaust."
+  },
+  "ReplayTheSpireMod:Strike From Hell": {
+    "NAME": "Strike From Hell",
+    "DESCRIPTION": "Deal !D! damage. NL If this card is Exhausted, increase its damage by !M! and place it back into your hand."
   },
   "ReplayScrap": {
     "NAME": "Scrap",
@@ -323,31 +331,31 @@
   },
   "OrbOptionCard_Lightning": {
     "NAME": "Lightning",
-    "DESCRIPTION": "Channel !M! Lightning. NL Exhaust. NL Ethereal."
+    "DESCRIPTION": "Channel !M! Lightning. NL Exhaust."
   },
   "OrbOptionCard_Dark": {
     "NAME": "Dark",
-    "DESCRIPTION": "Channel !M! Dark. NL Exhaust. NL Ethereal."
+    "DESCRIPTION": "Channel !M! Dark. NL Exhaust."
   },
   "OrbOptionCard_Frost": {
     "NAME": "Frost",
-    "DESCRIPTION": "Channel !M! Frost. NL Exhaust. NL Ethereal."
+    "DESCRIPTION": "Channel !M! Frost. NL Exhaust."
   },
   "OrbOptionCard_Plasma": {
     "NAME": "Plasma",
-    "DESCRIPTION": "Channel !M! Plasma. NL Exhaust. NL Ethereal."
+    "DESCRIPTION": "Channel !M! Plasma. NL Exhaust."
   },
   "OrbOptionCard_Crystal": {
     "NAME": "Crystal",
-    "DESCRIPTION": "Channel !M! Crystal. NL Exhaust. NL Ethereal."
+    "DESCRIPTION": "Channel !M! Crystal. NL Exhaust."
   },
   "OrbOptionCard_Fire": {
     "NAME": "Hellfire",
-    "DESCRIPTION": "Channel !M! Hellfire. NL Exhaust. NL Ethereal."
+    "DESCRIPTION": "Channel !M! Hellfire. NL Exhaust."
   },
   "OrbOptionCard_Glass": {
     "NAME": "Glass",
-    "DESCRIPTION": "Gain !M! orb slot. NL Channel !M! Glass. NL Exhaust. NL Ethereal."
+    "DESCRIPTION": "Gain !M! orb slot. NL Channel !M! Glass. NL Exhaust."
   },
   "MimicStatus": {
     "NAME": "Mad Mimicry",

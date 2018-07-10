@@ -1,19 +1,14 @@
 package com.megacrit.cardcrawl.cards.colorless;
 
-import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardRarity;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardTarget;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
+import com.megacrit.cardcrawl.actions.*;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.LocalizedStrings;
+import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.actions.unique.ImprovAction;
+import com.megacrit.cardcrawl.actions.unique.*;
 
 public class Improvise
   extends AbstractCard

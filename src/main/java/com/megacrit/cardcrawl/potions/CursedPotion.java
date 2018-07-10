@@ -32,7 +32,7 @@ public class CursedPotion
   
     @Override
     public int getPotency(final int ascensionLevel) {
-        return (ascensionLevel < 11) ? 3 : 2;
+        return 3;//(ascensionLevel < 11) ? 3 : 2;
     }
   public void use(AbstractCreature target)
   {

@@ -31,27 +31,19 @@ public class LanguidPotion
 	this.potency = this.getPotency();
     this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1]);// + DESCRIPTIONS[1] + (this.secondPotency - 1) + DESCRIPTIONS[2] + this.secondPotency + DESCRIPTIONS[3]
     this.isThrown = true;
+    this.targetRequired = true;
     this.tips.add(new PowerTip(this.name, this.description));
-    /*this.tips.add(new PowerTip(
-      TipHelper.capitalize("necrotic poison"), 
-      (String)GameDictionary.keywords.get("necrotic poison")));*/
-	//this.rarity = AbstractPotion.PotionRarity.RARE;
+    this.tips.add(new PowerTip(TipHelper.capitalize("languid"), GameDictionary.keywords.get("languid")));
+    
   }
   
   public void use(AbstractCreature target)
   {
-    for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-      if (!m.isDeadOrEscaped()) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new LanguidPower(m, this.potency, false), this.potency));
-      }
-    }
-	
-	//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, this.secondPotency - 1, false), this.secondPotency - 1));
-	//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FrailPower(AbstractDungeon.player, this.secondPotency, false), this.secondPotency));
+	  AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new LanguidPower(target, this.potency, false), this.potency));
   }
   @Override
     public int getPotency(final int ascensionLevel) {
-        return (ascensionLevel < 11) ? 5 : 4;
+        return 4;//(ascensionLevel < 11) ? 4 : 3;
     }
   public AbstractPotion makeCopy()
   {
