@@ -3,6 +3,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.relics.GremlinFood;
 import com.megacrit.cardcrawl.rooms.*;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
@@ -42,6 +43,46 @@ public class ReplayCampButtonsPatch
 				//e.printStackTrace();
 			}
 		}
+		if (AbstractDungeon.player.hasRelic("ReplayTheSpireMod:Pickaxe")) {
+			final CampfireUI campfire = (CampfireUI)meObj;
+			try {
+				final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");
+				final PickMineOption button = new PickMineOption();
+				campfireButtons.add(button);
+				float x = 950.f;
+				float y = 990.0f - (270.0f * (float)((campfireButtons.size() + 1) / 2));
+				if (campfireButtons.size() % 2 == 0) {
+					x = 1110.0f;
+					campfireButtons.get(campfireButtons.size() - 2).setPosition(800.0f * Settings.scale, y * Settings.scale);
+				}
+				campfireButtons.get(campfireButtons.size() - 1).setPosition(x * Settings.scale, y * Settings.scale);
+			}
+			catch (SecurityException | IllegalArgumentException ex2) {
+				//final RuntimeException ex;
+				//final RuntimeException e = ex;
+				//e.printStackTrace();
+			}
+		}
+		if (AbstractDungeon.player.hasRelic("ReplayTheSpireMod:PocketPolymizer")) {
+			final CampfireUI campfire = (CampfireUI)meObj;
+			try {
+				final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");
+				final PolymerizeTransformOption button = new PolymerizeTransformOption();
+				campfireButtons.add(button);
+				float x = 950.f;
+				float y = 990.0f - (270.0f * (float)((campfireButtons.size() + 1) / 2));
+				if (campfireButtons.size() % 2 == 0) {
+					x = 1110.0f;
+					campfireButtons.get(campfireButtons.size() - 2).setPosition(800.0f * Settings.scale, y * Settings.scale);
+				}
+				campfireButtons.get(campfireButtons.size() - 1).setPosition(x * Settings.scale, y * Settings.scale);
+			}
+			catch (SecurityException | IllegalArgumentException ex2) {
+				//final RuntimeException ex;
+				//final RuntimeException e = ex;
+				//e.printStackTrace();
+			}
+		}
 		if (AbstractDungeon.currMapNode == BonfirePatches.bonfireNode) {
 			final CampfireUI campfire = (CampfireUI)meObj;
 			try {
@@ -63,13 +104,22 @@ public class ReplayCampButtonsPatch
 				if (!AbstractDungeon.player.hasRelic("Chameleon Ring")) {
 					optionsYo.add(new ChameleonBrewOption());
 				}
+				if (!AbstractDungeon.player.hasRelic("ReplayTheSpireMod:Pickaxe")) {
+					optionsYo.add(new PickMineOption());
+				}
+				if (!AbstractDungeon.player.hasRelic("ReplayTheSpireMod:PocketPolymizer")) {
+					optionsYo.add(new PolymerizeTransformOption());
+				}
+				if (!AbstractDungeon.player.hasRelic(GremlinFood.ID)) {
+					optionsYo.add(new BonfireMultitaskOption());
+				}
 				
 				Collections.shuffle(optionsYo);
 				boolean foundrest = false;
 				boolean foundsmith = false;
+				optionsYo.add(new BonfireMultitaskOption());
+				optionsYo.add(new SmithOption(AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 0));
 				optionsYo.add(new RestOption());
-				optionsYo.add(new SmithOption(AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 0));
-				optionsYo.add(new SmithOption(AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 0));
 				
 				for (AbstractCampfireOption o : campfireButtons) {
 					if (o instanceof RestOption) {

@@ -100,6 +100,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static Texture shieldingIcon;
 	public static Texture bonfireIcon;
 	public static Texture bonfireBG;
+	public static Texture multitaskButton;
+	public static Texture mineButton;
+	public static Texture polymerizeButton;
 	public static int playerShielding = 0;
 	public static ArrayList<Integer> monsterShielding = new ArrayList<Integer>();
 	public static boolean noSkipRewardsRoom;
@@ -708,6 +711,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.shieldingIcon = ImageMaster.loadImage("images/ui/replay/shielding.png");
 		ReplayTheSpireMod.bonfireIcon = ImageMaster.loadImage("images/ui/map/replay_bonfire.png");
 		ReplayTheSpireMod.bonfireBG = ImageMaster.loadImage("images/ui/map/replay_bonfireOutline.png");
+		ReplayTheSpireMod.mineButton = ImageMaster.loadImage("images/ui/campfire/replay/mine.png");
+		ReplayTheSpireMod.polymerizeButton = ImageMaster.loadImage("images/ui/campfire/replay/polymerize.png");
+		ReplayTheSpireMod.multitaskButton = ImageMaster.loadImage("images/ui/campfire/replay/multitask.png");
         // Mod badge
         Texture badgeTexture = new Texture(BADGE_IMG);
 		this.currentSettingsSubTab = 0;

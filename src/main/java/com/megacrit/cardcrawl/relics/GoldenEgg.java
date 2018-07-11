@@ -21,6 +21,7 @@ public class GoldenEgg extends AbstractRelic
     public void onObtainCard(final AbstractCard c) {
         if ((c.rarity == AbstractCard.CardRarity.RARE || AbstractDungeon.getCurrRoom() instanceof ShopRoom) && c.canUpgrade() && !c.upgraded) {
             c.upgrade();
+            this.flash();
         }
     }
     

@@ -1,0 +1,41 @@
+{
+  "Brew Option": {
+    "TEXT": [
+		"Brew",
+		"Brew 2 random potions.",
+		"Brew 1 random potion. Bypasses Sozu."
+	]
+  },
+  "Mine Option": {
+    "TEXT": [
+		"Mine",
+		"Gain 50-100 Gold."
+	]
+  },
+  "Polymerize Option": {
+    "TEXT": [
+		"Polymerize",
+		"Transform a card.",
+		"Choose a card to Transform."
+	]
+  },
+  "Multitask Option": {
+    "TEXT": [
+		"Multitask",
+		"Upgrade a random card. Heal 20% max HP (",
+		" hp)."
+	]
+  },
+  "Burn Branch Option": {
+    "TEXT": [
+		"Light Branch",
+		"Lose Dead Branch. Obtain a special relic. Free action."
+	]
+  },
+  "Claw Rake": {
+    "TEXT": [
+		"Select card to discard.",
+		"Select cards to discard."
+	]
+  }
+}

@@ -40,18 +40,18 @@ Carrot | Defect | Uncommon | Gain 3 **Focus** at the start of combat, then lose 
 Chameleon Ring | All | Uncommon | Potions are ~50% more potent. You may brew 2 random potions at rest sites.
 Divine Protection | All | Uncommon | Gain 8 **Shielding** at the start of combat.
 Garlic | All | Uncommon | Enemies lose 3 **Strength** at the start of combat, then gain 1 **Strength** on the next 3 turns.
-Golden Egg | All | Uncommon | Whenever you obtain a rare card, it is **Upgraded.**
+Golden Egg | All | Uncommon | Whenever you obtain a rare card, it is **Upgraded**. Whenever you buy a card from a shop, it is **Upgraded**.
 Iron Hammer | All | Uncommon | During the first turn, drawing a card upgrades it until the end of combat.
 Onion Ring | All | Uncommon | Gain 3 **Strength** at the start of combat, then lose 1 **Strength** on the next 3 turns.
 Raider's Mask | Defect | Uncommmon | After a **Dark** orb triggers its passive effect, if it has more stored damage than the HP of the lowest-health enemy, it is **Evoked.**
 Snack Pack | All | Uncommon | Every time you play 3 **Attacks** in a single turn, gain 2 HP.
 Solar Panel | Defect | Uncommon | At the end of combat, gain 2 HP for each of your active **Lightning** orbs.
-Quantum Egg | All | Uncommon | Whenever a card is created during combat, it is **Upgraded.**
+Quantum Egg | All | Uncommon | Whenever a card is created during combat, it is **Upgraded**.
 Another Sword | Ironclad | Rare | The first card containing "Strike" you play each turn is played twice. Takes 1 additional turn to recharge for each energy spent on the card.
 Arrowhead | All | Rare | You may **Upgrade** 2 cards whenever you smith.
 Byrd Skull | Silent | Rare | Your **Innate** cards have **Refund** 1 and draw 1 card.
 Counterbalance | All | Rare | During boss and elite fights all enemy **Strength** gain, **Block** gain, and healing is reduced by half.
-Durian | All | Rare | Gain 5 Max HP on pickup. Each time you gain a debuff, also gain that much **Shielding.** At the start of your turn, reduce your **Weakened,** **Frail,** and/or **Vulnerable** to 2 (if > 2).
+Durian | All | Rare | Gain 5 Max HP on pickup. Each time you gain a debuff, also gain that much **Shielding**. At the start of your turn, reduce your **Weakened,** **Frail,** and/or **Vulnerable** to 2 (if > 2).
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
 Pondfish Scales | All | Rare | Whenever you play a Skill that does not give **Block,** gain 2 **Block**.
 Vampiric Spirits | Silent | Rare | During the first turn of combat, 25% of all unblocked attack damage you deal is retuned as health.

@@ -78,8 +78,9 @@ public class PondfishBoss extends AbstractMonster
     private static final byte SPLASH = 5;
     private static final byte LIVING_LANTERN = 6;
     private static final byte STARTUP = 7;
-    
+
 	private boolean isFirstTurn;
+	private boolean isSecondTurn;
     public PondfishBoss(final float x, final float y) {
         super(PondfishBoss.NAME, PondfishBoss.ID, 999, 70.0f, -300.0f, 400.0f, 300.0f, "images/monsters/TheCity/pondfish.png", x, y);
 		ReplayTheSpireMod.logger.info("init Fish");
@@ -225,6 +226,7 @@ public class PondfishBoss extends AbstractMonster
 					}
 				}
 				this.isFirstTurn = false;
+				this.isSecondTurn = true;
 				this.halfDead = false;
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
 				UnlockTracker.markBossAsSeen("PONDFISH");
@@ -297,7 +299,7 @@ public class PondfishBoss extends AbstractMonster
 						AbstractDungeon.actionManager.addToBottom(new SFXAction("DARKLING_REGROW_1", MathUtils.random(-0.1f, 0.1f)));
 					}
 					abe.halfDead = false;
-					AbstractDungeon.actionManager.addToBottom(new HealAction(abe, this, (abe.maxHealth / 2) - 10));
+					AbstractDungeon.actionManager.addToBottom(new HealAction(abe, this, (abe.maxHealth / 2)));
 					//AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(abe, "REVIVE"));
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, abe, new AbePower(abe), 0));
 						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, this, new IntangiblePower(abe, 1), 1));
@@ -329,7 +331,7 @@ public class PondfishBoss extends AbstractMonster
 		//this.setMove(PondfishBoss.CHOMP, Intent.ATTACK, this.chompDmg, this.chompAmt);
 		switch (this.inslot) {
 			case 0:
-				if (this.lastMove(PondfishBoss.DRAG_TO_HELL)) {
+				if (this.lastMove(PondfishBoss.DRAG_TO_HELL) || this.isSecondTurn || !AbstractDungeon.player.hasPower("PondfishDrowning") || AbstractDungeon.player.getPower("PondfishDrowning").amount > 0) {
 					if (num < 50) {
 						this.setMoveNow(PondfishBoss.CHOMP);
 					} else {
@@ -346,21 +348,26 @@ public class PondfishBoss extends AbstractMonster
 				}
 				break;
 			case 1:
-				if (this.lastMove(PondfishBoss.TEETH_RAKE)) {
-					if (num < 50) {
-						this.setMoveNow(PondfishBoss.CHOMP);
-					} else {
-						this.setMoveNow(PondfishBoss.FEET_UNDER);
-					}
+				if (!AbstractDungeon.player.hasPower("PondfishDrowning") || (this.isSecondTurn && AbstractDungeon.player.getPower("PondfishDrowning").amount < 1)) {
+					this.setMoveNow(PondfishBoss.DRAG_TO_HELL);
 				} else {
-					if (num < 33) {
-						this.setMoveNow(PondfishBoss.CHOMP);
-					} else if (num < 67) {
-						this.setMoveNow(PondfishBoss.TEETH_RAKE);
+					if (this.lastMove(PondfishBoss.TEETH_RAKE)) {
+						if (num < 50) {
+							this.setMoveNow(PondfishBoss.CHOMP);
+						} else {
+							this.setMoveNow(PondfishBoss.FEET_UNDER);
+						}
 					} else {
-						this.setMoveNow(PondfishBoss.FEET_UNDER);
+						if (num < 33) {
+							this.setMoveNow(PondfishBoss.CHOMP);
+						} else if (num < 67) {
+							this.setMoveNow(PondfishBoss.TEETH_RAKE);
+						} else {
+							this.setMoveNow(PondfishBoss.FEET_UNDER);
+						}
 					}
 				}
+				this.isSecondTurn = false;
 				break;
 			case 2:
 				if (this.lastTwoMoves(PondfishBoss.CHOMP)) {

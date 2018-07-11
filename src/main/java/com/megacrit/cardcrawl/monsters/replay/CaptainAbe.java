@@ -80,7 +80,7 @@ public class CaptainAbe extends AbstractMonster
 	
 	private ArrayList<AbstractGameAction.AttackEffect> slashEffects;
     
-    public CaptainAbe(final float x, final float y) {
+    public CaptainAbe(final float x, final float y) { 
         super(CaptainAbe.NAME, "CaptainAbe", 80, -10.0f, 75.0f, 180.0f, 200.0f, "images/monsters/TheCity/abe.png", x, y);
 		ReplayTheSpireMod.logger.info("init Abe");
 		this.isFirstTurn = true;

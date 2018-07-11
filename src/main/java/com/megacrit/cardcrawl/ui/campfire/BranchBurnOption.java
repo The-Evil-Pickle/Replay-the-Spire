@@ -18,7 +18,7 @@ public class BranchBurnOption extends AbstractCampfireOption
     public BranchBurnOption() {
         this.label = BranchBurnOption.TEXT[0];
         this.description = BranchBurnOption.TEXT[1];
-        this.img = ImageMaster.CAMPFIRE_BREW_BUTTON;
+        this.img = ImageMaster.CAMPFIRE_RITUAL_BUTTON;
     }
     
     @Override

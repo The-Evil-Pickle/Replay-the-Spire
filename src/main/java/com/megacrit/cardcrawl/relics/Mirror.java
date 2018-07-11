@@ -14,7 +14,7 @@ public class Mirror extends AbstractRelic {
 
     public Mirror()
 	{
-        super("Mirror", "mirror.png", RelicTier.RARE, LandingSound.CLINK);
+        super("Mirror", "replay_mirror.png", RelicTier.RARE, LandingSound.CLINK);
     }
 /*
   public void atBattleStart()
