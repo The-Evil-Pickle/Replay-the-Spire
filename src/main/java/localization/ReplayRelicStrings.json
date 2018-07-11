@@ -309,7 +309,7 @@
     "NAME": "Golden Egg",
 	"FLAVOR": "Not approved by the FDA.",
     "DESCRIPTIONS": [
-		"Whenever you add a #yRare card to your deck, it is #yUpgraded."
+		"Whenever you add a #yRare card to your deck, it is #yUpgraded. NL Whenever you purchase a card from the merchant, it is #yUpgraded. "
 	]
   },
   "Quantum Egg": {

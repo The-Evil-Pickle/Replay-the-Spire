@@ -215,7 +215,7 @@
   },
   "Crow Ritual": {
     "NAME": "Awakened One Ritual",
-    "DESCRIPTION": "Add !M! Ritual Components to your discard pile. If 5 are ever in your hand at once, they become !D! damage Attacks."
+    "DESCRIPTION": "Add !M! Ritual Components to your draw and discard piles. If 5 are ever in your hand at once, they become !D! damage Attacks."
   },
   "Ritual Component": {
     "NAME": "Ritual Component",

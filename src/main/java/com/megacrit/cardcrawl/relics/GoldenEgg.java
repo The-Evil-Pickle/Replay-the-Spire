@@ -1,6 +1,8 @@
 package com.megacrit.cardcrawl.relics;
 
 import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.*;
 
 public class GoldenEgg extends AbstractRelic
 {
@@ -17,7 +19,7 @@ public class GoldenEgg extends AbstractRelic
     
     @Override
     public void onObtainCard(final AbstractCard c) {
-        if (c.rarity == AbstractCard.CardRarity.RARE && c.canUpgrade() && !c.upgraded) {
+        if ((c.rarity == AbstractCard.CardRarity.RARE || AbstractDungeon.getCurrRoom() instanceof ShopRoom) && c.canUpgrade() && !c.upgraded) {
             c.upgrade();
         }
     }

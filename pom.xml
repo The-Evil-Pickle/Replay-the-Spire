@@ -40,6 +40,13 @@
 		      <scope>system</scope>
           <systemPath>${basedir}/../lib/FruityMod.jar</systemPath>
 	      </dependency>
+        <dependency>
+	        <groupId>fetchmod</groupId>
+		      <artifactId>FetchMod</artifactId>
+		      <version>0.1.8</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/FetchMod.jar</systemPath>
+	      </dependency>
     </dependencies>
   <build>
     <resources>

@@ -45,11 +45,14 @@ public class DemonicInfusionAction extends AbstractGameAction
 			if (i < effect - 1 && !c.canUpgrade()) {
 				c.upgraded = false;
 			}
-			if (c.timesUpgraded > 1) {
+			if (c.timesUpgraded > 1 && c.name.lastIndexOf("+") > -1) {
 				c.name = c.name.substring(0, c.name.lastIndexOf("+"));
 			}
 		}
 		if (c.timesUpgraded > 1) {
+			if (c.name.lastIndexOf("+") < 0) {
+				c.name = c.name + "+";
+			}
 			c.name = c.name + c.timesUpgraded;
 		}
 		if (!this.freeToPlayOnce) {

@@ -148,5 +148,6 @@ public class RingOfGreed extends AbstractRelic
 		greedlist.add("Membership Card");
 		greedlist.add("Blue Doll");
 		greedlist.add("Bandana");
+		greedlist.add("Golden Egg");
 	}
 }

@@ -22,13 +22,14 @@ public class AwakenedRitual extends CustomCard
     public AwakenedRitual() {
         super("Crow Ritual", AwakenedRitual.NAME, "cards/replay/crow_ritual.png", 0, AwakenedRitual.DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.RARE, CardTarget.SELF, 1);
 		this.baseDamage = 42;
-        this.baseMagicNumber = 6;
+        this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
     }
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AwakenedRitualPower(p)));
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new RitualComponent(), this.magicNumber, true, false));
 		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new RitualComponent(), this.magicNumber));
     }
     
@@ -41,7 +42,7 @@ public class AwakenedRitual extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(2);
+            this.upgradeMagicNumber(1);
         }
     }
     

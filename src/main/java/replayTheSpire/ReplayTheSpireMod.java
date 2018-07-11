@@ -34,6 +34,7 @@ import com.megacrit.cardcrawl.vfx.*;
 import basemod.*;
 import basemod.helpers.*;
 import basemod.interfaces.*;
+import fetch.FetchMod;
 import fruitymod.FruityMod;
 import fruitymod.patches.*;
 import madsciencemod.MadScienceMod;
@@ -83,6 +84,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	protected static int shopPotionChance = 12;
 	
 	public static final ArrayList<ReplayUnlockAchieve> unlockAchievements = new ArrayList<ReplayUnlockAchieve>();
+	public static final HashMap<String, HashMap<String, String>> relicInteractionStrings = new HashMap<String, HashMap<String, String>>();
 	
 	public static final AbstractCard.CardColor IronCoreColor = AbstractCard.CardColor.RED;
 	
@@ -481,6 +483,17 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		logger.info("================================================================");
     }
 	
+	public static void initializeRelicInteractions() {
+		ReplayTheSpireMod.relicInteractionStrings.put(Bandana.ID, new HashMap<String, String>());
+		relicInteractionStrings.get(Bandana.ID).put(BloodyIdol.ID, "While active, #bBloody #bIdol gives #yShielding instead of HP.");
+		ReplayTheSpireMod.relicInteractionStrings.put(BloodyIdol.ID, new HashMap<String, String>());
+		relicInteractionStrings.get(BloodyIdol.ID).put(Bandana.ID, "While #bBandana is active, gives #yShielding instead of HP.");
+		ReplayTheSpireMod.relicInteractionStrings.put(ChameleonRing.ID, new HashMap<String, String>());
+		relicInteractionStrings.get(ChameleonRing.ID).put(Sozu.ID, "#yBrewing only gives #b1 potion, but bypasses the effect of #bSozu.");
+		ReplayTheSpireMod.relicInteractionStrings.put(Sozu.ID, new HashMap<String, String>());
+		relicInteractionStrings.get(Sozu.ID).put(ChameleonRing.ID, "Will not block potions gained from #yBrewing with #bChameleon #Ring, but reduces the number of potions gained to #b1.");
+	}
+	
 	public static void addPotionToSet(final Class potionClass, final Color liquidColor, final Color hybridColor, final Color spotsColor, final String potionID, final ReplayTheSpireMod.PotionRarity potionRarity) {
 		BaseMod.addPotion(potionClass, liquidColor, hybridColor, spotsColor, potionID);
 		ReplayTheSpireMod.potionsByRarity.get(potionRarity).add(potionID);
@@ -614,13 +627,21 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			ReplayTheSpireMod.PotionRarity.UNCOMMON
 		);
 		ReplayTheSpireMod.addPotionToSet(
-			ShieldPotion.class,
-			Color.ROYAL.cpy(),
-			null,
-			null,
-			"ReplayShieldPotion",
-			ReplayTheSpireMod.PotionRarity.UNCOMMON
-		);
+				ShieldPotion.class,
+				Color.ROYAL.cpy(),
+				null,
+				null,
+				"ReplayShieldPotion",
+				ReplayTheSpireMod.PotionRarity.UNCOMMON
+			);
+		ReplayTheSpireMod.addPotionToSet(
+				ReflectiveCoating.class,
+				Color.LIGHT_GRAY.cpy(),
+				Color.WHITE.cpy(),
+				null,
+				ReflectiveCoating.POTION_ID,
+				ReplayTheSpireMod.PotionRarity.UNCOMMON
+			);
 		ReplayTheSpireMod.addPotionToSet(
 			DeathPotion.class,
 			Color.DARK_GRAY.cpy(),
@@ -955,6 +976,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 
     public static boolean foundmod_science = false;
     public static boolean foundmod_seeker = false;
+    public static boolean foundmod_fetch = false;
     
 
     private static void initializeCrossoverRelics() {
@@ -969,7 +991,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			logger.info("Replay | FruityMod not detected");
 		}
     }
-    
+
 	private static void initializeScienceMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
 		Class<MadScienceMod> madScienceMod = MadScienceMod.class;
 		logger.info("ReplayTheSpireMod | Detected Mad Science Mod!");
@@ -982,6 +1004,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for MadScience...");
 		}
+	}
+	
+	private static void initializeFetchMod() throws ClassNotFoundException, NoClassDefFoundError {
+		Class<FetchMod> fetchMod = FetchMod.class;
+		logger.info("ReplayTheSpireMod | Detected Fetch Mod!");
+		foundmod_fetch = true;
 	}
 	
 
@@ -1078,6 +1106,16 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		logger.info("begin editting strings");
 		String jsonPath = "localization/";
 		editStringsByLang(jsonPath);
+        try {
+        	initializeFetchMod();
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Fetch not detected");
+		}
+        if (foundmod_fetch) {
+        	String cardStrings = Gdx.files.internal(jsonPath + "ReplayFetchOverrideStrings.json").readString(
+            		String.valueOf(StandardCharsets.UTF_8));
+            BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
+        }
 		if (Settings.language.toString().equals("SPA")) {
 			logger.info("Spanish detected!");
 			jsonPath = "localization/spa/";

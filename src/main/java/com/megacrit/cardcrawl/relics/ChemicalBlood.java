@@ -1,6 +1,7 @@
 package com.megacrit.cardcrawl.relics;
 
 import com.megacrit.cardcrawl.dungeons.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import madsciencemod.actions.common.*;
 import replayTheSpire.ReplayTheSpireMod;
@@ -50,6 +51,11 @@ public class ChemicalBlood extends AbstractRelic
     @Override
     public void onLoseHp(int damageAmount) {
 	  	if (isActive) {
+	  		if(AbstractDungeon.currMapNode == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
+	  			isActive = false;
+	  			this.pulse = false;
+	  			return;
+	  		}
 	  		if (isChecking && AbstractDungeon.actionManager.turnHasEnded) {
 	  			isActive = false;
 	  			this.pulse = false;

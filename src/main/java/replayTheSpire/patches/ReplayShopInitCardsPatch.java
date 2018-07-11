@@ -36,7 +36,9 @@ public class ReplayShopInitCardsPatch {
 		tagList.add(ReplayShopInitCardsPatch.NORMAL_TAG);
 		tagList.add(ReplayShopInitCardsPatch.NORMAL_TAG);
 		tagList.add(ReplayShopInitCardsPatch.DOUBLE_TAG);
-		tagList.add(ReplayShopInitCardsPatch.SPECIAL_TAG);
+		if (!ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("GoldenEgg") || ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Blue Doll")) {
+			tagList.add(ReplayShopInitCardsPatch.SPECIAL_TAG);
+		}
 		tagList.add(ReplayShopInitCardsPatch.NORMAL_TAG);
 		
 		String tagtype = tagList.get(AbstractDungeon.merchantRng.random(0, tagList.size() - 1));
