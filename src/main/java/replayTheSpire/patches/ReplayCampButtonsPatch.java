@@ -42,6 +42,84 @@ public class ReplayCampButtonsPatch
 				//e.printStackTrace();
 			}
 		}
+		if (AbstractDungeon.currMapNode == BonfirePatches.bonfireNode) {
+			final CampfireUI campfire = (CampfireUI)meObj;
+			try {
+				final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");
+				
+				final ArrayList<AbstractCampfireOption> optionsYo = new ArrayList<AbstractCampfireOption>();
+				if (!AbstractDungeon.player.hasRelic("Coffee Dripper")) {
+					optionsYo.add(new RestOption());
+				}
+				if (!DailyMods.negativeMods.get("Midas") && !AbstractDungeon.player.hasRelic("Fusion Hammer")) {
+					optionsYo.add(new SmithOption(AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 0));
+				}
+				if (!AbstractDungeon.player.hasRelic("Peace Pipe") ) {
+					optionsYo.add(new TokeOption());
+				}
+				if (!AbstractDungeon.player.hasRelic("Shovel")) {
+					optionsYo.add(new DigOption());
+				}
+				if (!AbstractDungeon.player.hasRelic("Chameleon Ring")) {
+					optionsYo.add(new ChameleonBrewOption());
+				}
+				
+				Collections.shuffle(optionsYo);
+				boolean foundrest = false;
+				boolean foundsmith = false;
+				optionsYo.add(new RestOption());
+				optionsYo.add(new SmithOption(AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 0));
+				optionsYo.add(new SmithOption(AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 0));
+				
+				for (AbstractCampfireOption o : campfireButtons) {
+					if (o instanceof RestOption) {
+						optionsYo.get(0).setPosition(o.hb.cX, o.hb.cY);
+						campfireButtons.set(campfireButtons.indexOf(o), optionsYo.get(0));
+						foundrest = true;
+					}
+					if (o instanceof SmithOption) {
+						optionsYo.get(1).setPosition(o.hb.cX, o.hb.cY);
+						campfireButtons.set(campfireButtons.indexOf(o), optionsYo.get(1));
+						foundsmith = true;
+					}
+				}
+				
+				if (!foundrest) {
+					campfireButtons.add(optionsYo.get(0));
+					float x = 950.f;
+					float y = 990.0f - (270.0f * (float)((campfireButtons.size() + 1) / 2));
+					if (campfireButtons.size() % 2 == 0) {
+						x = 1110.0f;
+						campfireButtons.get(campfireButtons.size() - 2).setPosition(800.0f * Settings.scale, y * Settings.scale);
+					}
+					campfireButtons.get(campfireButtons.size() - 1).setPosition(x * Settings.scale, y * Settings.scale);
+				}
+				if (!foundsmith) {
+					campfireButtons.add(optionsYo.get(1));
+					float x = 950.f;
+					float y = 990.0f - (270.0f * (float)((campfireButtons.size() + 1) / 2));
+					if (campfireButtons.size() % 2 == 0) {
+						x = 1110.0f;
+						campfireButtons.get(campfireButtons.size() - 2).setPosition(800.0f * Settings.scale, y * Settings.scale);
+					}
+					campfireButtons.get(campfireButtons.size() - 1).setPosition(x * Settings.scale, y * Settings.scale);
+				}
+				
+				campfireButtons.add(optionsYo.get(2));
+				float x = 950.f;
+				float y = 990.0f - (270.0f * (float)((campfireButtons.size() + 1) / 2));
+				if (campfireButtons.size() % 2 == 0) {
+					x = 1110.0f;
+					campfireButtons.get(campfireButtons.size() - 2).setPosition(800.0f * Settings.scale, y * Settings.scale);
+				}
+				campfireButtons.get(campfireButtons.size() - 1).setPosition(x * Settings.scale, y * Settings.scale);
+			}
+			catch (SecurityException | IllegalArgumentException ex2) {
+				//final RuntimeException ex;
+				//final RuntimeException e = ex;
+				//e.printStackTrace();
+			}
+		}
 		if (AbstractDungeon.player.hasRelic("Dead Branch")) {
 			final CampfireUI campfire = (CampfireUI)meObj;
 			try {
