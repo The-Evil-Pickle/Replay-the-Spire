@@ -9,10 +9,19 @@
 	],
     "OPTIONS": [
 			"[Continue]",
-			"[Take Off Pants] #rLose #ryour #rpants #rand #rLose ",
-			"[Tug] #gKeep #gyour #gpants #gand #gUpgrade ",
+			"[Take Off Pants] #rLose ",
+			"[Tug] #gUpgrade ",
 			"[Locked] Requires: Unupgraded Card",
 			"[Leave]"
+    ]
+  },
+  "ReplayTeleport": {
+	"NAME": "Portal",
+    "DESCRIPTIONS": [
+			"Space itself twists and turns before your very eyes!"
+	],
+    "OPTIONS": [
+			"[Enter Portal]"
     ]
   },
   "Mirror Mist": {

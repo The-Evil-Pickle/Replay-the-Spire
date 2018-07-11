@@ -99,10 +99,6 @@ public class Stuck extends AbstractImageEvent
         }
     }
     
-    public void logMetric(final String actionTaken) {
-        AbstractEvent.logMetric("Stuck", actionTaken);
-    }
-    
     static {
         eventStrings = CardCrawlGame.languagePack.getEventString("Stuck");
         NAME = Stuck.eventStrings.NAME;

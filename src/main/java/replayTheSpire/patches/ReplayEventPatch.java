@@ -1,6 +1,7 @@
 package replayTheSpire.patches;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import replayTheSpire.patches.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -26,6 +27,12 @@ public class ReplayEventPatch {
 	*/
 	public static AbstractEvent Postfix(AbstractEvent __result, String key)
 	{
+		if (AbstractDungeon.getCurrMapNode() == TeleporterPatches.teleporterLeft) {
+			return new TeleportEvent(TeleporterPatches.teleporterRight);
+		}
+		else if (AbstractDungeon.getCurrMapNode() == TeleporterPatches.teleporterRight) {
+			return new TeleportEvent(TeleporterPatches.teleporterLeft);
+		}
 		switch (key) {
             case "Stuck": {
                 return new Stuck();

@@ -22,6 +22,9 @@ public class ReplayMapImagePatch {
 				return ImageMaster.MAP_NODE_TREASURE;
 			}
 		}
+		if (__Instance.getMapSymbol() == "PTL") {
+			return ReplayTheSpireMod.portalIcon;
+		}
 		return __result;
 	}
 	

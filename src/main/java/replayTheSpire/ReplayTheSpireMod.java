@@ -100,6 +100,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static Texture shieldingIcon;
 	public static Texture bonfireIcon;
 	public static Texture bonfireBG;
+	public static Texture portalIcon;
+	public static Texture portalBG;
 	public static Texture multitaskButton;
 	public static Texture mineButton;
 	public static Texture polymerizeButton;
@@ -711,6 +713,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.shieldingIcon = ImageMaster.loadImage("images/ui/replay/shielding.png");
 		ReplayTheSpireMod.bonfireIcon = ImageMaster.loadImage("images/ui/map/replay_bonfire.png");
 		ReplayTheSpireMod.bonfireBG = ImageMaster.loadImage("images/ui/map/replay_bonfireOutline.png");
+		ReplayTheSpireMod.portalIcon = ImageMaster.loadImage("images/ui/map/replay_portal.png");
+		ReplayTheSpireMod.portalBG = ImageMaster.loadImage("images/ui/map/replay_portalOutline.png");
 		ReplayTheSpireMod.mineButton = ImageMaster.loadImage("images/ui/campfire/replay/mine.png");
 		ReplayTheSpireMod.polymerizeButton = ImageMaster.loadImage("images/ui/campfire/replay/polymerize.png");
 		ReplayTheSpireMod.multitaskButton = ImageMaster.loadImage("images/ui/campfire/replay/multitask.png");
