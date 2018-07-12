@@ -13,6 +13,7 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * 40 Cards (8 ironclad, 8 silent, 8 defect, 7 colorless, 9 curses)
  * 4 Events
  * 9 Potions
+ * 2 Rooms
  * 1 Boss
 
 Some content originally from this mod is now in the official release of the game!

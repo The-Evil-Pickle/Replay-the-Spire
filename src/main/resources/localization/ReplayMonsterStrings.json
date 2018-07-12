@@ -47,8 +47,11 @@
 		"The Forest Protects",
 		"The Forest Fades"
 	],
-    "NAME": "The Fading Forest",
-    "DIALOG": []
+    "NAME": "The Fable-Spinner",
+    "DIALOG": [
+		"Come, Come! NL I have a wonderful story to tell.",
+		""
+	]
   },
   "FF_ComboSlime_L": {
     "MOVES": [
