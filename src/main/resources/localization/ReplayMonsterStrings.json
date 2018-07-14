@@ -49,8 +49,26 @@
 	],
     "NAME": "The Fable-Spinner",
     "DIALOG": [
-		"Come, Come! NL I have a wonderful story to tell.",
-		""
+		"Come in, Come in! NL I have a wonderful story to tell.",
+		"Welcome, dearie. NL Have a moment to listen to an old woman's tale?",
+		"Oh, I do love company! Would you like to hear a story?",
+		"Hello there, wanderer. NL I've got a story I think you'd like. Care to listen?",
+		"It all began with a mysterious forest...",
+		"Once upon a time, in a magical grove...",
+		"Long ago, an adventurer became lost in the woods...",
+		"They say somewhere in the Spire, a forest of strange trees grew...",
+		"In the forest one could find all manner of ~strange~ ~and~ ~wonderful~ ~things...~",
+		"In the forest one could find all manner of ~strange~ ~and~ ~horrid~ ~things...~",
+		"But the forest carried with it a ~terrible~ ~curse...~",
+		"The creatures of the forest were familiar, yet ~strange...~",
+		"One is never alone in such a place...",
+		"The woods harbored many creatures, each one seeming ~not~ ~quite~ ~normal...~",
+		"Thank you for listening. Most leave before the story's end.",
+		"You're a kind adventurer. NL And a very good listener!",
+		"Thanks for keeping me company. I hope you enjoyed the story.",
+		"Thanks for humoring me. I do love to tell tales!",
+		"Come by any time, dearie. I've plenty more stories to tell!",
+		"Feel free to drop by again sometime, and I'll tell you a new tale."
 	]
   },
   "FF_ComboSlime_L": {
@@ -62,6 +80,45 @@
     "NAME": "False Combo Slime (L)",
     "DIALOG": [
       ""
+    ]
+  },
+  "J_louse_1": {
+    "MOVES": [
+      "Grow"
+    ],
+    "NAME": "Erik",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "J_louse_2": {
+    "MOVES": [
+      "Spit"
+    ],
+    "NAME": "Yu",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "J_louse_3": {
+    "MOVES": [
+      "Taunt",
+	  "Cry"
+    ],
+    "NAME": "Puro",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "R_Hoarder": {
+    "MOVES": [
+      "Overflow",
+	  "Relic Collector"
+    ],
+    "NAME": "Rhapsodic Hoarder",
+    "DIALOG": [
+      "My, your draw pile looks thin!",
+	  "Let's bump that up to, say, 50 cards?"
     ]
   },
   "ReplayMimic": {

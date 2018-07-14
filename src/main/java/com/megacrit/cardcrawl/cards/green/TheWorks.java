@@ -19,8 +19,8 @@ public class TheWorks extends CustomCard
     public static final String DESCRIPTION;
     
     public TheWorks() {
-        super(TheWorks.ID, TheWorks.NAME, "cards/replay/replayBetaSkill.png", 0, TheWorks.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.RARE, CardTarget.SELF);
-        this.baseMagicNumber = 2;
+        super(TheWorks.ID, TheWorks.NAME, "cards/replay/replayBetaSkill.png", 0, TheWorks.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF);
+        this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
     }
     
@@ -38,7 +38,7 @@ public class TheWorks extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(3);
+            this.upgradeMagicNumber(4);
         }
     }
     

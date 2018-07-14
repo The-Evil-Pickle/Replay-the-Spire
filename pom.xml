@@ -47,6 +47,13 @@
 		      <scope>system</scope>
           <systemPath>${basedir}/../lib/FetchMod.jar</systemPath>
 	      </dependency>
+        <dependency>
+	        <groupId>infinitespire</groupId>
+		      <artifactId>InfiniteSpire</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/Infinite_Spire.jar</systemPath>
+	      </dependency>
     </dependencies>
   <build>
     <plugins>
@@ -61,5 +68,5 @@
     </plugins>
 	<finalName>${project.artifactId}</finalName>
   </build>
-  <version>1.0.0</version>
+  <version>1.0.3</version>
 </project>

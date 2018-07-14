@@ -76,7 +76,7 @@
 	]
   },
   "Mirror": {
-	"NAME": "Mirror",
+	"NAME": "Hand Mirror",
 	"FLAVOR": "You can see yourself through the glass. The good and the bad.",
     "DESCRIPTIONS": [
 	"Whenever you gain #yVulnerable or #yWeakened, it is also applied to the enemy that sent it.",

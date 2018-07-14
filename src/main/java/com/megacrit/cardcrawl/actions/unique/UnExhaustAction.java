@@ -29,7 +29,7 @@ public class UnExhaustAction extends AbstractGameAction
             this.isDone = true;
             return;
         }
-        if (this.p.exhaustPile.size() == 1) {
+        if (this.p.exhaustPile.contains(c)) {
             c.unfadeOut();
             this.p.hand.addToHand(c);
             if (AbstractDungeon.player.hasPower("Corruption") && c.type == AbstractCard.CardType.SKILL) {

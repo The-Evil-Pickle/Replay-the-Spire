@@ -37,6 +37,7 @@ import basemod.interfaces.*;
 import fetch.FetchMod;
 import fruitymod.FruityMod;
 import fruitymod.patches.*;
+import infinitespire.InfiniteSpire;
 import madsciencemod.MadScienceMod;
 import madsciencemod.powers.*;
 
@@ -72,7 +73,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static TextureAtlas powerAtlas;
 	
 	private static final String MODNAME = "ReplayTheSpireMod";
-    private static final String AUTHOR = "The_Evil_Pickle, AstroPenguin642, Stewartisme, Slimer509";
+    private static final String AUTHOR = "The_Evil_Pickle, AstroPenguin642, Bakuhaku, Slimer509, Stewartisme";
     private static final String DESCRIPTION = "Content expansion mod";
 	
 	public static final String BADGE_IMG = "img/ModBadge.png";
@@ -928,6 +929,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new DefyDeath());
 		AddAndUnlockCard(new DemonicInfusion());
 		AddAndUnlockCard(new Eclipse());
+		AddAndUnlockCard(new StrikeFromHell());
 		logger.info("adding cards for Silent...");
 		AddAndUnlockCard(new AtomBomb());
 		AddAndUnlockCard(new DrainingMist());
@@ -937,6 +939,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new HiddenBlade());
 		AddAndUnlockCard(new SneakUp());
 		AddAndUnlockCard(new ScrapShanks());
+		AddAndUnlockCard(new TheWorks());
 		logger.info("adding cards for Defect...");
 		AddAndUnlockCard(new com.megacrit.cardcrawl.cards.blue.PanicButton());
 		AddAndUnlockCard(new MirrorShield());
@@ -991,6 +994,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static boolean foundmod_science = false;
     public static boolean foundmod_seeker = false;
     public static boolean foundmod_fetch = false;
+    public static boolean foundmod_infinite = false;
     
 
     private static void initializeCrossoverRelics() {
@@ -1020,12 +1024,17 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 	}
 	
+	private static void initializeInfiniteMod() throws ClassNotFoundException, NoClassDefFoundError {
+		Class<InfiniteSpire> infiniteMod = InfiniteSpire.class;
+		logger.info("ReplayTheSpireMod | Detected Infinite Spire!");
+		foundmod_infinite = true;
+	}
+
 	private static void initializeFetchMod() throws ClassNotFoundException, NoClassDefFoundError {
 		Class<FetchMod> fetchMod = FetchMod.class;
 		logger.info("ReplayTheSpireMod | Detected Fetch Mod!");
 		foundmod_fetch = true;
 	}
-	
 
 	private static void initializeFruityMod(LoadType type)throws ClassNotFoundException, NoClassDefFoundError {
 		Class<FruityMod> fruityMod = FruityMod.class;

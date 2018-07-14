@@ -21,7 +21,7 @@ public class BasicCrystalCard extends CustomCard
     private static final int COST = 1;
     
     public BasicCrystalCard() {
-        super("BasicCrystalCard", BasicCrystalCard.NAME, "cards/replay/replayBetaSkill.png", BasicCrystalCard.COST, BasicCrystalCard.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.COMMON, CardTarget.SELF);
+        super("BasicCrystalCard", BasicCrystalCard.NAME, "cards/replay/crystalConduit.png", BasicCrystalCard.COST, BasicCrystalCard.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.COMMON, CardTarget.SELF);
         this.showEvokeValue = true;
         this.showEvokeOrbCount = 1;
     }

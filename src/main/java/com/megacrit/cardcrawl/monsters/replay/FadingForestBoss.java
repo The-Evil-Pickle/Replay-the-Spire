@@ -144,6 +144,7 @@ public class FadingForestBoss extends AbstractMonster
 		if (AbstractDungeon.ascensionLevel >= 9) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new IntangiblePower(this, 5)));
 		}
+		AbstractDungeon.actionManager.addToBottom(new TalkAction(this, FadingForestBoss.DIALOG[(int)(Math.random() * (4))]));
     }
     
 	private void giveRelicEffect() {
@@ -229,16 +230,12 @@ public class FadingForestBoss extends AbstractMonster
 		ReflectionHacks.setPrivate((Object)this.imageEventText, (Class)GenericEventDialog.class, "title", (Object)this.eTitle());
         switch (this.nextMove) {
             case ENTER_FOREST: {
+            	AbstractDungeon.actionManager.addToBottom(new TalkAction(this, FadingForestBoss.DIALOG[4 + (int)(Math.random() * (4))]));
 				this.imageEventText.loadImage("images/events/fadingForest/fadingForest.jpg");
                 this.imageEventText.updateBodyText(this.eDesc(0));
 				this.imageEventText.setDialogOption(this.eOp(0));
 				AbstractDungeon.actionManager.addToBottom(new ForestEventAction());
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
-				/*if (AbstractDungeon.aiRng.randomBoolean()) {
-					this.setNextTurn(OPPR_SERPENT);
-				} else {
-					this.setNextTurn(OPPR_SLIME);
-				}*/
 				break;
             }
             case OPPR_SERPENT: {

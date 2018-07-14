@@ -23,7 +23,7 @@ import java.util.*;
 @SpirePatch(cls = "com.megacrit.cardcrawl.cards.red.PerfectedStrike", method = "isStrike")
 public class ReplayIsStrikePatch {
 	
-	public static boolean PostFix(boolean __result, final AbstractCard c) {
+	public static boolean Postfix(boolean __result, final AbstractCard c) {
 		if (!__result) {
 			return ((c instanceof PoisonedStrike) || (c instanceof StrikeFromHell));
 		}

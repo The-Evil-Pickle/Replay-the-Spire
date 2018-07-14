@@ -19,7 +19,7 @@ public class StrikeFromHell extends CustomCard
     public static final String NAME;
     public static final String DESCRIPTION;
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 6;
+    private static final int ATTACK_DMG = 8;
     private static final int DMG_INC = 2;
     
     public StrikeFromHell() {
@@ -31,7 +31,7 @@ public class StrikeFromHell extends CustomCard
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
     @Override
@@ -49,7 +49,7 @@ public class StrikeFromHell extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(2);
+            this.upgradeDamage(1);
             this.upgradeMagicNumber(1);
         }
     }
