@@ -22,8 +22,7 @@ public class Hemogenesis extends CustomCard
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
-    private static final int COST = 2;
-    private static final int POOL = 1;
+    private static final int COST = 3;
 	private int upgradeTick = 2;
     
     public Hemogenesis() {
@@ -33,7 +32,7 @@ public class Hemogenesis extends CustomCard
         this(upgrades, 2);
     }
     public Hemogenesis(final int upgrades, final int ticks) {
-        super("Hemogenesis", Hemogenesis.NAME, "cards/replay/hemogenesis.png", 2, Hemogenesis.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.UNCOMMON, CardTarget.ENEMY, 1);
+        super("Hemogenesis", Hemogenesis.NAME, "cards/replay/hemogenesis.png", COST, Hemogenesis.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.RARE, CardTarget.ENEMY);
         this.baseDamage = 5;
         this.baseBlock = 5;
         this.baseMagicNumber = 5;
@@ -66,15 +65,19 @@ public class Hemogenesis extends CustomCard
         this.upgradeDamage(this.upgradeTick);// + this.timesUpgraded
         this.upgradeBlock(this.upgradeTick);// + this.timesUpgraded
         this.upgradeMagicNumber(this.upgradeTick);// + this.timesUpgraded
-		if (!isSmithUpgrade) {
+		//if (!isSmithUpgrade) {
 			++this.timesUpgraded;
-		}
+		//}
         this.upgraded = true;
 		if (this.upgradeTick > 2) {
 			this.name += "+";
 		}
-		if (this.timesUpgraded > 1 || !isSmithUpgrade) {
-			this.name += "+" + this.timesUpgraded;
+		if (!isSmithUpgrade) {
+			int dispup = this.timesUpgraded;
+			if (this.upgradeTick > 2) {
+				dispup -= 1;
+			}
+			this.name += "+" + dispup;
 		}
         this.initializeTitle();
     }
@@ -84,7 +87,7 @@ public class Hemogenesis extends CustomCard
 		if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
 			return true;
         }
-		return (!this.upgraded);
+		return (this.upgradeTick < 3 && !this.upgraded);
     }
 	
     @Override

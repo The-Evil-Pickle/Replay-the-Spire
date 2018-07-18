@@ -21,6 +21,7 @@ Some content originally from this mod is now in the official release of the game
  * Liquid Bronze (originally "Thorns Potion")
  * Ghost in a Jar (originally "Spirit Potion")
  * Power Potion (originally "Inspiration Potion")
+ * Discovery (originally "Improvise")
 
 # Relics
 Name | Character | Rarity | Description
@@ -74,6 +75,7 @@ Ring of Chaos | All | Boss | Some card rewards have randomly altered stats and e
 Name | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis)
 --- | --- | --- | --- | --- | ---
 Run Through | Red | Common | Attack | 1 | Target loses 9(11) HP and 4(7) Block.
+Strike From Hell | Red | Common | Attack | 1 | Deal 7(8) damage. Each time this is **Exhausted**, increase its damage by 2(3) and return it to your hand.
 Defy Death | Red | Uncommmon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat.
 Hemogenesis | Red | Uncommon | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2, or by 3 if the card has been upgraded outside of combat).
 Life Bind | Red | Uncommmon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
@@ -85,10 +87,12 @@ Fluid Movement | Green | Commmon | Power | 1 | Keep up to 5(8) block between rou
 Hidden Blade | Green | Commmon | Skill | 1 | Add a Shiv to your hand and draw 2(3) cards.
 Toxin Wave | Green | Uncommon | Skill | 1 | Apply 3(4) **Necrotic** **Poison** to ALL enemies.
 Draining Mist | Green | Uncommon | Skill | 3 | Apply 3 **Necrotic** **Poison** to a random enemy 2(3) times. Apply -1(-2) **Strength** to ALL enemies. **Exhaust**.
+The Works | Green | Uncommon | Skill | 0 | For every 3 cards you draw this turn, gain 1 energy and deal 3(7) damage to a random enemy.
 Scrap Shanks | Green | Uncommon | Power | 0 | When you discard a card during your turn, add 1 (**Upgraded**) **Shiv** to your hand.
 Sneak Up | Green | Uncommon | Skill | 1 | **Innate.** Discard 1 card (upgrade removes). Gain 1 **Intangible.** **Exhaust.** **Ethereal.**
 Atom Bomb | Green | Rare | Attack | 4 | Deal 60(75) damage. Apply 4 **Poison** to ALL fighters. **Exhaust**.
 Poison Darts | Green | Rare | Skill | X | Apply 3(4) **Necrotic** **Poison** X times. Apply X Poison to ALL enemies.
+Necrosis | Green | Rare | Skill | 2 | Convert all **Poison** to **Necrotic** **Poison**. **Exhaust**.
 Reflective Lens | Blue | Uncommon | Power | 1(0) | **Channel** 1 **Glass.** Your **Glass** orbs have a passive effect that gives 1 **Reflection** at the end of each turn.
 Panic Button | Blue | Common | Skill | 0 | **Evoke** all your orbs. Draw 2(4) cards. **Exhaust.** **Retain.**
 Crystal Conduit | Blue | Common | Skill | 1 | **Channel** 1 **Crystal** (and 1 random orb).
@@ -100,7 +104,6 @@ RNG | Blue | Rare | Skill | X | **Channel** X(+1) random orbs.
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | Lose 1 Focus. All non-attack damage you deal is increased by 2. (**Innate.**)
 Survey Options | Colorless | Uncommon | Skill | X | Draw X. **Refund** 1(2).
-Improvise | Colorless | Uncommon | Skill | 1 | Choose 1 of 3 random cards to (upgrade and) add to your hand. It costs 1 less. **Exhaust**.
 Awakened One Ritual | Colorless | Rare | Power | 0 | Add 6(8) Ritual Components to your discard pile. If you ever have 5 or more in your hand at once, replace them with Attacks that deal 42 damage.
 Midas Touch | Colorless | Rare | Skill | 0 | **Exhaust** any number of cards in your hand. Add a random Rare card to your hand for each.
 The Ultimate Defense | Colorless | Rare | Power | 4 | Gain 1(2) **Artifact**. Gain 1(2) **Dexterity**. (Gain 1 **Intangible**). Gain 5 **Plated** **Armor**. Gain 5(8) **Shielding**.
@@ -232,7 +235,6 @@ Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 
 ## Changes to Existing Content:
  * Shops sometimes have a "2 for 1" tag or "special edition" tag instead of the normal sale tag.
  * Random orb channeling effects (e.g. Chaos) will now sometimes channel Crystal.
- * Corpse Explosion now exhausts and applies 1x Necrotic Poison rather than dealing 2x damage.
  * If you have Honey Jar and Singing Bowl at the same time, using Singing Bowl's max hp gain option also picks a reward card at random.
  * Burning Branch can now be exchanged for a different relic at rest sites.
 

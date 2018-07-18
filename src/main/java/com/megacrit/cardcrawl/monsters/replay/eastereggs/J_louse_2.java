@@ -91,7 +91,7 @@ public class J_louse_2 extends AbstractMonster
                     AbstractDungeon.actionManager.addToBottom(new WaitAction(0.9f));
                 }
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 2, true), 2));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAndDeckAction(new Burn()));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Burn(), 1));
                 break;
             }
         }

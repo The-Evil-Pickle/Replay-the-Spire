@@ -34,10 +34,13 @@
     "DESCRIPTION": "Gain !M! Intangible. NL Discard a random card. NL Innate. NL Exhaust. NL Ethereal.",
     "UPGRADE_DESCRIPTION": "Gain !M! Intangible. NL Innate. NL Exhaust. NL Ethereal."
   },
-  "ReplayNecrosis": {
+  "ReplayTheSpireMod:Necrosis": {
     "NAME": "Necrosis",
-    "DESCRIPTION": "Poison is applied as Necrotic Poison instead.",
-    "UPGRADE_DESCRIPTION": "Poison is applied as Necrotic Poison instead."
+    "DESCRIPTION": "Convert all Poison on all enemies to Necrotic Poison. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Enemy loses all Poison. Apply Necrotic Poison equal to the amount lost to ALL enemies. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "That enemy isn't Poisoned."
+    ]
   },
   "ReplayTheSpireMod:Extra Pockets": {
     "NAME": "Extra Pockets",

@@ -1,5 +1,7 @@
 package replayTheSpire.patches;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.map.*;
 import com.megacrit.cardcrawl.helpers.*;
@@ -11,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.thetop.*;
 import com.megacrit.cardcrawl.monsters.exordium.*;
 import com.megacrit.cardcrawl.monsters.city.*;
 import com.megacrit.cardcrawl.monsters.replay.*;
+import com.megacrit.cardcrawl.monsters.replay.eastereggs.*;
 import com.megacrit.cardcrawl.monsters.beyond.*;
 import com.megacrit.cardcrawl.metrics.*;
 import java.util.*;
@@ -22,10 +25,20 @@ public class ReplayMonsterEncounterPatches {
 		public static MonsterGroup Postfix(MonsterGroup __result, final String key) {
 			switch (key) {
 				case "Pondfish": {
-					return new MonsterGroup(new AbstractMonster[] {new CaptainAbe(170.0f, -55.0f), new PondfishBoss(0.0f, -650.0f)});
+					if (ReplayTheSpireMod.useBakuSkeleton) {
+						return new MonsterGroup(new AbstractMonster[] {new CaptainAbe(170.0f, -55.0f), new PondfishBoss(0.0f, -650.0f)});
+					} else {
+						return new MonsterGroup(new AbstractMonster[] {new CaptainAbe(170.0f, -55.0f), new PondfishBoss(0.0f, -650.0f)});
+					}
 				}
 				case "Fading Forest": {
 					return new MonsterGroup(new AbstractMonster[] {new FadingForestBoss()});
+				}
+				case "Erikyupuro Louse Elite": case "Erikyupuro": {
+					return new MonsterGroup(new AbstractMonster[] { new J_louse_1(-350.0f, 25.0f), new J_louse_2(-125.0f, 10.0f), new J_louse_3(80.0f, 30.0f) });
+				}
+				case "R_Hoarder": {
+					return new MonsterGroup(new AbstractMonster[] {new R_Hoarder(0, 10)});
 				}
 				default: {
 					return __result;
@@ -76,11 +89,31 @@ public class ReplayMonsterEncounterPatches {
 			}
 		}
 	}
-	
+
 	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.Exordium", method = "initializeBoss")
 	public static class ReplayExordiumBossListPatch {
 		public static void Prefix(Exordium __Instance) {
 			//Exordium.bossList.add("Fading Forest");
+		}
+	}
+	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.AbstractDungeon", method = "populateMonsterList")
+	public static class ReplayExordiumElitePatch {
+		public static void Prefix(AbstractDungeon __Instance, final ArrayList<MonsterInfo> monsters, final int numMonsters, final boolean elites) {
+			if (elites) {
+				if (__Instance instanceof Exordium) {
+					//ReplayTheSpireMod.logger.info("_SPIRITS");
+					//ReplayTheSpireMod.logger.info(CardCrawlGame.playerPref.getInteger(AbstractDungeon.player.chosenClass.name() + "_SPIRITS", 0));
+					if ((CardCrawlGame.playerPref.getInteger(AbstractDungeon.player.chosenClass.name() + "_SPIRITS", 0) > 2 && Settings.isStandardRun()) || AbstractDungeon.player.name.equals("Jrmiah")) {
+					monsters.add(new MonsterInfo("Erikyupuro", monsters.get(0).weight * ((float)(5 + AbstractDungeon.ascensionLevel) / 20f)));
+					MonsterInfo.normalizeWeights(monsters);
+					}
+				} else if (__Instance instanceof TheBeyond) {
+					if (AbstractDungeon.player.masterDeck.size() < Math.min((AbstractDungeon.player.relics.size() * 2), 40) || (AbstractDungeon.player.name.equals("Rhapsody") && AbstractDungeon.player.masterDeck.size() < 40)) {
+						monsters.add(new MonsterInfo("R_Hoarder", monsters.get(0).weight * (((float)(AbstractDungeon.player.relics.size())) / 12f)));
+						MonsterInfo.normalizeWeights(monsters);
+					}
+				}
+			}
 		}
 	}
 	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.TheCity", method = "initializeBoss")

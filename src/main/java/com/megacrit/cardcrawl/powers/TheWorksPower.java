@@ -61,7 +61,7 @@ public class TheWorksPower extends AbstractPower
             this.flash();
             this.amount = RESET_AMT;
             AbstractDungeon.actionManager.addToBottom(new SwordBoomerangAction(AbstractDungeon.getMonsters().getRandomMonster(true), new DamageInfo(this.owner, this.damage, DamageInfo.DamageType.THORNS), 1));
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.damage));
+            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.energy));
         }
         this.updateDescription();
     }

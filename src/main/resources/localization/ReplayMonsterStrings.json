@@ -118,7 +118,8 @@
     "NAME": "Rhapsodic Hoarder",
     "DIALOG": [
       "My, your draw pile looks thin!",
-	  "Let's bump that up to, say, 50 cards?"
+	  "Let's bump that up to, say, ",
+	  " cards?"
     ]
   },
   "ReplayMimic": {

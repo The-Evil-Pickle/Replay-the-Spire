@@ -43,7 +43,7 @@ public class GrinningJar extends AbstractRelic
     
     @Override
     public void onObtainCard(final AbstractCard c) {
-        if (c.cardID != "Pot Of Greed") {
+        if (!c.cardID.equals("Pot Of Greed")) {
             this.counter ++;
 			if (this.counter >= GrinningJar.SIZECOUNTER) {
 				this.flash();
@@ -54,7 +54,7 @@ public class GrinningJar extends AbstractRelic
 				AbstractDungeon.gridSelectScreen.openConfirmationGrid(group, this.DESCRIPTIONS[2]);
 				//AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new PotOfGreed(), Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
 				*/
-				AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(new PotOfGreed(), Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
+				AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(new PotOfGreed(), Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
 				this.counter = 0;
 			}
         }

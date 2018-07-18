@@ -11,9 +11,7 @@ import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.animations.*;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.powers.relicPowers.RP_GiryaPower;
-import com.megacrit.cardcrawl.powers.relicPowers.RP_HourglassPower;
-import com.megacrit.cardcrawl.powers.relicPowers.RP_KunaiPower;
-import com.megacrit.cardcrawl.powers.relicPowers.RP_LetterOpenerPower;
+import com.megacrit.cardcrawl.powers.relicPowers.RP_Mango;
 import com.megacrit.cardcrawl.powers.relicPowers.RP_OrichalcumPower;
 import com.megacrit.cardcrawl.powers.relicPowers.RP_SmoothStonePower;
 import com.megacrit.cardcrawl.powers.relicPowers.RP_ThreadPower;
@@ -48,22 +46,22 @@ public class R_Hoarder extends AbstractMonster
     private int turnCount;
     
     public R_Hoarder(final float x, final float y) {
-        super(R_Hoarder.NAME, R_Hoarder.ID, 300, 0.0f, -40.0f, 430.0f, 360.0f, "images/monsters/beyond/The_Collector.png", x, y);
+        super(R_Hoarder.NAME, R_Hoarder.ID, 300, 0.0f, -40.0f, 360.0f, 440.0f, "images/monsters/beyond/The_Collector.png", x, y);
         this.roared = false;
         this.turnCount = 1;
         this.type = EnemyType.ELITE;
         //this.loadAnimation("images/monsters/theForest/maw/skeleton.atlas", "images/monsters/theForest/maw/skeleton.json", 1.0f);
-        final AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
-        e.setTime(e.getEndTime() * MathUtils.random());
+        //final AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
+        //e.setTime(e.getEndTime() * MathUtils.random());
         this.dialogX = -160.0f * Settings.scale;
         this.dialogY = 40.0f * Settings.scale;
         if (AbstractDungeon.ascensionLevel >= 3) {
             this.slamDmg = 30;
-            this.nomDmg = 12;
+            this.nomDmg = 6;
         }
         else {
             this.slamDmg = 25;
-            this.nomDmg = 10;
+            this.nomDmg = 5;
         }
         this.damage.add(new DamageInfo(this, this.slamDmg));
         this.damage.add(new DamageInfo(this, this.nomDmg));
@@ -73,10 +71,17 @@ public class R_Hoarder extends AbstractMonster
     public void takeTurn() {
         switch (this.nextMove) {
             case 2: {
-                AbstractDungeon.actionManager.addToBottom(new SFXAction("MAW_DEATH", 0.1f));
+                int limiter = 40;
+                if (AbstractDungeon.player.drawPile.size() < 25) {
+                	limiter -= 10;
+                }
+                if (AbstractDungeon.player.drawPile.size() < 20) {
+                	limiter -= 5;
+                }
                 AbstractDungeon.actionManager.addToBottom(new ShoutAction(this, R_Hoarder.DIALOG[0], 1.0f, 2.0f));
-                AbstractDungeon.actionManager.addToBottom(new ShoutAction(this, R_Hoarder.DIALOG[1], 1.0f, 2.0f));
-                int deckcount = 50 - AbstractDungeon.player.drawPile.size();
+                AbstractDungeon.actionManager.addToBottom(new WaitAction(1.75f));
+                AbstractDungeon.actionManager.addToBottom(new ShoutAction(this, R_Hoarder.DIALOG[1] + limiter + R_Hoarder.DIALOG[2], 1.0f, 2.0f));
+                int deckcount = limiter - AbstractDungeon.player.drawPile.size();
                 for (int i = 0; i < deckcount; i++) {
                 	  AbstractCard.CardRarity rarity = AbstractCard.CardRarity.COMMON;
 	      			  int r = MathUtils.random(6);
@@ -100,7 +105,7 @@ public class R_Hoarder extends AbstractMonster
                 break;
             }
             case 4: {
-            	switch (AbstractDungeon.miscRng.random(0, 6)) {
+            	switch (AbstractDungeon.miscRng.random(0, 7)) {
 	    			case 0: case 5:
 	    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_VajraPower(this), 1));
 	    				break;
@@ -114,6 +119,11 @@ public class R_Hoarder extends AbstractMonster
 	    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_SmoothStonePower(this), 1));
 	    				break;
 	    			case 4:
+	    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_Mango(this, 14), 14));
+	    				this.maxHealth += 14;
+	    				AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, 14));
+	    				break;
+	    			case 7:
 	    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_GiryaPower(this), 3));
 	    				break;
 	    		}
@@ -121,11 +131,13 @@ public class R_Hoarder extends AbstractMonster
             }
             case 5: {
                 AbstractDungeon.actionManager.addToBottom(new AnimateSlowAttackAction(this));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 int amt = 5;
                 if (this.hasPower("Dexterity")) {
                 	amt += this.getPower("Dexterity").amount;
                 }
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, amt));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, amt));
                 break;
             }
@@ -141,7 +153,7 @@ public class R_Hoarder extends AbstractMonster
             return;
         }
         if (num < 50 && !this.lastMove((byte)5)) {
-        	this.setMove((byte)5, Intent.ATTACK_DEFEND, this.damage.get(1).base);
+        	this.setMove((byte)5, Intent.ATTACK_DEFEND, this.damage.get(1).base, 2, true);
             return;
         }
         if (this.lastMove((byte)3) || this.lastMove((byte)5)) {

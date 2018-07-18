@@ -321,5 +321,12 @@
       " damage to ALL enemies.",
       " more #ySkills this turn, deal #b"
     ]
+  },
+  "RP_Mango": {
+    "NAME": "Mango",
+	"DESCRIPTIONS": [
+      "Max HP increased by #b",
+      "."
+    ]
   }
 }

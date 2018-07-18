@@ -1,10 +1,3 @@
 {
-  "Corpse Explosion": {
-    "NAME": "Corpse Explosion",
-    "DESCRIPTION": "Convert all Poison on all enemies to Necrotic Poison. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Enemy loses all Poison. Apply Necrotic Poison equal to the amount lost to ALL enemies. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": [
-      "That enemy isn't Poisoned."
-    ]
-  }
+  
 }

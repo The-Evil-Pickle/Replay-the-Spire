@@ -30,11 +30,10 @@ public class PoisonDarts
   public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
   private static final int DEBUFF_AMOUNT = 3;
   private static final int COST = -1;
-  private static final int POOL = 1;
   
   public PoisonDarts()
   {
-    super("Poison Darts", NAME, "cards/replay/poisonDarts.png", -1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY, 1);
+    super("Poison Darts", NAME, "cards/replay/poisonDarts.png", -1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
     
 	this.baseMagicNumber = 3;
     this.magicNumber = this.baseMagicNumber;

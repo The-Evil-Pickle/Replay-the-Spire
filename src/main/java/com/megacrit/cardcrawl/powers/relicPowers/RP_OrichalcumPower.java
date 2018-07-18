@@ -35,9 +35,9 @@ public class RP_OrichalcumPower extends AbstractPower
     
     @Override
     public void atEndOfTurn(final boolean isPlayer) {
-        if (AbstractDungeon.player.currentBlock <= 0) {
+        if (this.owner.currentBlock <= 0) {
             this.flash();
-            AbstractDungeon.actionManager.addToTop(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.amount));
+            AbstractDungeon.actionManager.addToTop(new GainBlockAction(this.owner, this.owner, this.amount));
         }
     }
     

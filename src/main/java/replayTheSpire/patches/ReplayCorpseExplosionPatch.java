@@ -24,7 +24,7 @@ import com.megacrit.cardcrawl.vfx.*;
 import basemod.*;
 import java.util.*;
 
-@SpirePatch(cls = "com.megacrit.cardcrawl.cards.green.CorpseExplosion", method = "use")
+//@SpirePatch(cls = "com.megacrit.cardcrawl.cards.green.CorpseExplosion", method = "use")
 public class ReplayCorpseExplosionPatch {
 	
 	public static void Replace(CorpseExplosion __instance, final AbstractPlayer p, final AbstractMonster m) {

@@ -109,6 +109,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static int playerShielding = 0;
 	public static ArrayList<Integer> monsterShielding = new ArrayList<Integer>();
 	public static boolean noSkipRewardsRoom;
+	public static boolean useBakuSkeleton = true;
 	
 	public static int shieldingAmount(AbstractCreature creature) {
 		if (creature == null) {
@@ -935,6 +936,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new DrainingMist());
 		AddAndUnlockCard(new FluidMovement());
 		AddAndUnlockCard(new PoisonDarts());
+		AddAndUnlockCard(new Necrosis());
 		AddAndUnlockCard(new ToxinWave());
 		AddAndUnlockCard(new HiddenBlade());
 		AddAndUnlockCard(new SneakUp());
@@ -951,7 +953,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new FIFOQueue()); 
 		AddAndUnlockCard(new ReplaySort()); 
 		logger.info("adding colorless cards...");
-		AddAndUnlockCard(new Improvise());
+		//AddAndUnlockCard(new Improvise());
 		AddAndUnlockCard(new PoisonedStrike());
 		AddAndUnlockCard(new Specialist());
 		AddAndUnlockCard(new AwakenedRitual());
