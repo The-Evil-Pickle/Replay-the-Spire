@@ -93,6 +93,13 @@
 	" Necrotic Poison each time it deals unblocked damage."
     ]
   },
+  "GoodbyeWorld": {
+    "NAME": "Empty Bin",
+    "DESCRIPTIONS": [
+	"At the end of your turn, #yExhaust all #yCommon cards in your hand and gain #b",
+	" #yBlock for each."
+    ]
+  },
   "Firewall": {
     "NAME": "Firewall",
     "DESCRIPTIONS": [
@@ -269,7 +276,10 @@
     "NAME": "Mercury Hourglass",
     "DESCRIPTIONS": [
       "At the start of your turn, deal #b",
-	  " damage to ALL enemies."
+	  " damage to ALL enemies.",
+      "At the start of ",
+	  "'s turn, it deals #b",
+	  " damage to you."
     ]
   },
   "RP_ThreadPower": {
@@ -281,7 +291,7 @@
   "RP_OrichalcumPower": {
     "NAME": "Orichalcum",
     "DESCRIPTIONS": [
-      "If you have no #yBlock at the end of your turn, gain #b",
+      "Upon ending a turn with no #yBlock, gives #b",
 	  " #yBlock."
     ]
   },
@@ -327,6 +337,20 @@
 	"DESCRIPTIONS": [
       "Max HP increased by #b",
       "."
+    ]
+  },
+  "RP_BronzeScales": {
+    "NAME": "Bronze Scales",
+	"DESCRIPTIONS": [
+      "When receiving #yAttack damage, deals #b",
+      " damage back."
+    ]
+  },
+  "RP_SelfFormingClay": {
+    "NAME": "Self-Forming Clay",
+	"DESCRIPTIONS": [
+      "Upon taking unblocked #yAttack damage, gives #b",
+	  " #yBlock next round."
     ]
   }
 }

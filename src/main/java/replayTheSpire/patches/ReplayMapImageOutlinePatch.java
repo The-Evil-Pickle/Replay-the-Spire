@@ -14,7 +14,7 @@ import java.util.*;
 public class ReplayMapImageOutlinePatch {
 	
 	public static Texture Postfix(Texture __result, AbstractRoom __Instance) {
-		if (AbstractDungeon.player.hasRelic("Painkiller Herb")) {
+		if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("Painkiller Herb")) {
 			if (__Instance.getMapSymbol() == "?" || __Instance.getMapSymbol() == "M") {
 				return ImageMaster.MAP_NODE_EVENT_OUTLINE;
 			}

@@ -12,7 +12,7 @@ import java.util.*;
 public class ReplayMapSymbolPatch {
 	
 	public static String Postfix(String __result, AbstractRoom __Instance) {
-		if (AbstractDungeon.player.hasRelic("Painkiller Herb")) {
+		if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("Painkiller Herb")) {
 			if (__result == "M") {// || __result == "E"
 				return "?";
 			}

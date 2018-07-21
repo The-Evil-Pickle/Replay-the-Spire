@@ -10,12 +10,7 @@ import com.megacrit.cardcrawl.actions.utility.*;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.animations.*;
 import com.megacrit.cardcrawl.powers.*;
-import com.megacrit.cardcrawl.powers.relicPowers.RP_GiryaPower;
-import com.megacrit.cardcrawl.powers.relicPowers.RP_Mango;
-import com.megacrit.cardcrawl.powers.relicPowers.RP_OrichalcumPower;
-import com.megacrit.cardcrawl.powers.relicPowers.RP_SmoothStonePower;
-import com.megacrit.cardcrawl.powers.relicPowers.RP_ThreadPower;
-import com.megacrit.cardcrawl.powers.relicPowers.RP_VajraPower;
+import com.megacrit.cardcrawl.powers.relicPowers.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
 
@@ -79,8 +74,9 @@ public class R_Hoarder extends AbstractMonster
                 	limiter -= 5;
                 }
                 AbstractDungeon.actionManager.addToBottom(new ShoutAction(this, R_Hoarder.DIALOG[0], 1.0f, 2.0f));
-                AbstractDungeon.actionManager.addToBottom(new WaitAction(1.75f));
+                AbstractDungeon.actionManager.addToBottom(new WaitAction(3.5f));
                 AbstractDungeon.actionManager.addToBottom(new ShoutAction(this, R_Hoarder.DIALOG[1] + limiter + R_Hoarder.DIALOG[2], 1.0f, 2.0f));
+                AbstractDungeon.actionManager.addToBottom(new WaitAction(3.0f));
                 int deckcount = limiter - AbstractDungeon.player.drawPile.size();
                 for (int i = 0; i < deckcount; i++) {
                 	  AbstractCard.CardRarity rarity = AbstractCard.CardRarity.COMMON;
@@ -105,28 +101,37 @@ public class R_Hoarder extends AbstractMonster
                 break;
             }
             case 4: {
-            	switch (AbstractDungeon.miscRng.random(0, 7)) {
-	    			case 0: case 5:
-	    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_VajraPower(this), 1));
-	    				break;
-	    			case 1:
-	    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_ThreadPower(this), 1));
-	    				break;
-	    			case 2:
-	    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_OrichalcumPower(this), 6));
-	    				break;
-	    			case 3: case 6:
-	    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_SmoothStonePower(this), 1));
-	    				break;
-	    			case 4:
-	    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_Mango(this, 14), 14));
-	    				this.maxHealth += 14;
-	    				AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, 14));
-	    				break;
-	    			case 7:
-	    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_GiryaPower(this), 3));
-	    				break;
-	    		}
+            	for (int i = 0; i < 2; i++) {
+	            	switch (AbstractDungeon.miscRng.random(0, 10)) {
+		    			case 0: case 5:
+		    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_VajraPower(this), 1));
+		    				break;
+		    			case 1:
+		    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_ThreadPower(this), 1));
+		    				break;
+		    			case 2:
+		    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_OrichalcumPower(this), 6));
+		    				break;
+		    			case 3: case 6:
+		    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_SmoothStonePower(this), 1));
+		    				break;
+		    			case 4:
+		    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_Mango(this, 14), 14));
+		    				break;
+		    			case 7:
+		    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_BronzeScales(this), 3));
+		    				break;
+		    			case 8:
+		    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_HourglassPower(this), 3));
+		    				break;
+		    			case 9:
+		    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_SelfFormingClay(this), 3));
+		    				break;
+		    			case 10:
+		    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_GiryaPower(this), 3));
+		    				break;
+		    		}
+            	}
                 break;
             }
             case 5: {

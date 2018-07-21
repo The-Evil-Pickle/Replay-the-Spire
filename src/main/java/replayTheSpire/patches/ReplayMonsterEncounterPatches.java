@@ -26,7 +26,7 @@ public class ReplayMonsterEncounterPatches {
 			switch (key) {
 				case "Pondfish": {
 					if (ReplayTheSpireMod.useBakuSkeleton) {
-						return new MonsterGroup(new AbstractMonster[] {new CaptainAbe(170.0f, -55.0f), new PondfishBoss(0.0f, -650.0f)});
+						return new MonsterGroup(new AbstractMonster[] {new CaptainAbe(170.0f, -80.0f), new PondfishBoss(0.0f, -650.0f)});
 					} else {
 						return new MonsterGroup(new AbstractMonster[] {new CaptainAbe(170.0f, -55.0f), new PondfishBoss(0.0f, -650.0f)});
 					}
@@ -45,29 +45,6 @@ public class ReplayMonsterEncounterPatches {
 				}
 			}
 			
-		}
-	}
-	
-	@SpirePatch(cls = "com.megacrit.cardcrawl.helpers.MonsterHelper", method = "getMonster")
-	public static class ReplayGetMonsterPatch {
-		public static AbstractMonster Postfix(AbstractMonster __result, final String key) {
-			if (__result instanceof ApologySlime) {
-				switch (key) {
-					case "Pondfish": case "PondfishBoss": {
-						return new PondfishBoss(0.0f, -650.0f);
-					}
-					case "CaptainAbe": {
-						return new CaptainAbe(170.0f, -55.0f);
-					}
-					case "Fading Forest": case "FadingForest": {
-						return new FadingForestBoss();
-					}
-					default: {
-						return __result;
-					}
-				}
-			}
-			return __result;
 		}
 	}
 	
@@ -104,7 +81,7 @@ public class ReplayMonsterEncounterPatches {
 					//ReplayTheSpireMod.logger.info("_SPIRITS");
 					//ReplayTheSpireMod.logger.info(CardCrawlGame.playerPref.getInteger(AbstractDungeon.player.chosenClass.name() + "_SPIRITS", 0));
 					if ((CardCrawlGame.playerPref.getInteger(AbstractDungeon.player.chosenClass.name() + "_SPIRITS", 0) > 2 && Settings.isStandardRun()) || AbstractDungeon.player.name.equals("Jrmiah")) {
-					monsters.add(new MonsterInfo("Erikyupuro", monsters.get(0).weight * ((float)(5 + AbstractDungeon.ascensionLevel) / 20f)));
+					monsters.add(new MonsterInfo("Erikyupuro", monsters.get(0).weight * ((float)(5 + AbstractDungeon.ascensionLevel) / 30f)));
 					MonsterInfo.normalizeWeights(monsters);
 					}
 				} else if (__Instance instanceof TheBeyond) {

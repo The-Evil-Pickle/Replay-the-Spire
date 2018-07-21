@@ -947,7 +947,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new MirrorShield());
 		AddAndUnlockCard(new BasicCrystalCard());
 		AddAndUnlockCard(new TimeBomb());
-		AddAndUnlockCard(new ReflectiveLens());
+		AddAndUnlockCard(new ReplayRepulse());
+		AddAndUnlockCard(new ReplayGoodbyeWorld());
+		AddAndUnlockCard(new ReplayGash());
+		//AddAndUnlockCard(new ReflectiveLens());
 		//AddAndUnlockCard(new Crystallizer());
 		AddAndUnlockCard(new ReplayRNGCard());
 		AddAndUnlockCard(new FIFOQueue()); 

@@ -1,6 +1,7 @@
 package com.megacrit.cardcrawl.powers;
 
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.replay.CaptainAbe;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.*;
@@ -83,6 +84,9 @@ public class AbePower extends AbstractPower
 				this.loadRegion("inactivedw");
 				this.flash();
 			}
+		}
+		if (this.owner instanceof CaptainAbe) {
+			((CaptainAbe)this.owner).isWaterLogged = this.atActiveDepth;
 		}
 	}
 	/*

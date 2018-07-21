@@ -20,6 +20,9 @@ import com.megacrit.cardcrawl.actions.unique.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.vfx.*;
 import com.megacrit.cardcrawl.vfx.combat.*;
+
+import basemod.ReflectionHacks;
+
 import com.megacrit.cardcrawl.vfx.cardManip.*;
 import com.megacrit.cardcrawl.powers.*;
 import com.badlogic.gdx.*;
@@ -37,7 +40,7 @@ public class CaptainAbe extends AbstractMonster
     public static final String[] MOVES;
     public static final String[] DIALOG;
     public static final int HP = 80;
-    public static final int A_HP = 90;
+    public static final int A_HP = 100;
     private static final int COLLAPSE_DAMAGE = 4;
     private static final int COLLAPSE_COUNT = 3;
     private static final int BASH_DAMAGE = 12;
@@ -81,7 +84,7 @@ public class CaptainAbe extends AbstractMonster
 	private ArrayList<AbstractGameAction.AttackEffect> slashEffects;
     
     public CaptainAbe(final float x, final float y) {
-        super(CaptainAbe.NAME, "CaptainAbe", 80, -10.0f, 75.0f, 180.0f, 200.0f, "images/monsters/TheCity/abe.png", x, y);
+        super(CaptainAbe.NAME, "CaptainAbe", 80, 25.0f, 75.0f, 180.0f, 250.0f, "images/monsters/TheCity/abe_hd.png", x, y);
 		ReplayTheSpireMod.logger.info("init Abe");
 		this.isFirstTurn = true;
 		this.isFirstOrders = true;
@@ -160,6 +163,7 @@ public class CaptainAbe extends AbstractMonster
 				this.setMove(CaptainAbe.MOVES[4], CaptainAbe.FINALE_1, Intent.STRONG_DEBUFF);
 				this.createIntent();
 				AbstractDungeon.actionManager.addToBottom(new TextAboveCreatureAction(this, TextAboveCreatureAction.TextType.INTERRUPTED));
+				this.isWaterLogged = false;
 				this.setNextTurn(CaptainAbe.FINALE_1);
 			}
 		}
@@ -183,6 +187,7 @@ public class CaptainAbe extends AbstractMonster
                 r.onMonsterDeath(this);
             }
             this.powers.clear();
+            this.isWaterLogged = false;
             //Darkling.logger.info("This monster is now half dead.");
             boolean allDead = true;
             for (final AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
@@ -490,73 +495,20 @@ public class CaptainAbe extends AbstractMonster
 		this.setNextTurn(CaptainAbe.BASH);
         //this.setMove(CaptainAbe.BASH, Intent.ATTACK, this.damage.get(2).base);
     }
-    /*
+    
+    private float stunParticleTimer = 0.67f;
     @Override
-    public void changeState(final String key) {
-        switch (key) {
-            case "STAB": {
-                this.state.setAnimation(0, "Attack", false);
-                this.state.addAnimation(0, "Idle", true, 0.0f);
-                break;
+    public void update() {
+    	super.update();
+    	if (!this.isDying && !this.isEscaping && !this.halfDead && this.isWaterLogged) {
+    		this.stunParticleTimer -= Gdx.graphics.getDeltaTime();
+            if (this.stunParticleTimer < 0.0f) {
+                this.stunParticleTimer = 0.67f;
+                ArrayList<AbstractGameEffect> intentVfx = (ArrayList<AbstractGameEffect>)ReflectionHacks.getPrivate((Object)this, (Class)AbstractMonster.class, "intentVfx");
+                intentVfx.add(new StunStarEffect(this.intentHb.cX, this.intentHb.cY));
             }
-        }
+    	}
     }
-	*/
-	/*
-    @Override
-    public void render(final SpriteBatch sb) {
-        if (!this.isDead && !this.escaped) {
-            if (this.damageFlash) {
-                ShaderHelper.setShader(sb, ShaderHelper.Shader.WHITE_SILHOUETTE);
-            }
-            if (this.atlas == null) {
-                sb.setColor(this.tint.color);
-                sb.draw(this.img, this.drawX - this.img.getWidth() * Settings.scale / 2.0f + this.animX, this.drawY + this.animY + AbstractDungeon.sceneOffsetY, this.img.getWidth() * Settings.scale, this.img.getHeight() * Settings.scale, 0, 0, this.img.getWidth(), this.img.getHeight(), this.flipHorizontal, this.flipVertical);
-            }
-            else {
-                this.state.update(Gdx.graphics.getDeltaTime());
-                this.state.apply(this.skeleton);
-                this.skeleton.updateWorldTransform();
-                this.skeleton.setPosition(this.drawX + this.animX, this.drawY + this.animY + AbstractDungeon.sceneOffsetY);
-                this.skeleton.setColor(this.tint.color);
-                this.skeleton.setFlip(this.flipHorizontal, this.flipVertical);
-                sb.end();
-                CardCrawlGame.psb.begin();
-                AbstractMonster.sr.draw(CardCrawlGame.psb, this.skeleton);
-                CardCrawlGame.psb.end();
-                sb.begin();
-                sb.setBlendFunction(770, 771);
-            }
-            if (this == AbstractDungeon.getCurrRoom().monsters.hoveredMonster && this.atlas == null) {
-                sb.setBlendFunction(770, 1);
-                sb.setColor(new Color(1.0f, 1.0f, 1.0f, 0.1f));
-                sb.draw(this.img, this.drawX - this.img.getWidth() * Settings.scale / 2.0f + this.animX, this.drawY + this.animY + AbstractDungeon.sceneOffsetY, this.img.getWidth() * Settings.scale, this.img.getHeight() * Settings.scale, 0, 0, this.img.getWidth(), this.img.getHeight(), this.flipHorizontal, this.flipVertical);
-                sb.setBlendFunction(770, 771);
-            }
-            if (this.damageFlash) {
-                ShaderHelper.setShader(sb, ShaderHelper.Shader.DEFAULT);
-                --this.damageFlashFrames;
-                if (this.damageFlashFrames == 0) {
-                    this.damageFlash = false;
-                }
-            }
-            if (!this.isDying && !this.isEscaping && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.player.isDead && !AbstractDungeon.player.hasRelic("Runic Dome") && this.intent != Intent.NONE && !Settings.hideCombatElements) {
-                this.renderIntentVfxBehind(sb);
-                this.renderIntent(sb);
-                this.renderIntentVfxAfter(sb);
-                this.renderDamageRange(sb);
-            }
-            this.hb.render(sb);
-            this.intentHb.render(sb);
-            this.healthHb.render(sb);
-        }
-		/*
-        if (!AbstractDungeon.player.isDead) {
-            this.renderHealth(sb);
-            this.renderName(sb);
-        }
-		/
-    }*/
     
     static {
         monsterStrings = CardCrawlGame.languagePack.getMonsterStrings("Captain Abe");

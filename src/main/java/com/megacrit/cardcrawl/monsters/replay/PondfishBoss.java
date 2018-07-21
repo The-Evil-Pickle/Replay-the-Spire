@@ -82,7 +82,7 @@ public class PondfishBoss extends AbstractMonster
 	private boolean isFirstTurn;
 	private boolean isSecondTurn;
     public PondfishBoss(final float x, final float y) {
-        super(PondfishBoss.NAME, PondfishBoss.ID, 999, 70.0f, -300.0f, 400.0f, 300.0f, "images/monsters/TheCity/pondfish.png", x, y);
+        super(PondfishBoss.NAME, PondfishBoss.ID, 999, 70.0f, -300.0f, 400.0f, 300.0f, "images/monsters/TheCity/Pondfish_hd.png", x, y);
 		ReplayTheSpireMod.logger.info("init Fish");
         this.isFirstTurn = true;
 		//this.animX = 0f;
@@ -216,18 +216,22 @@ public class PondfishBoss extends AbstractMonster
 				}*/
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new PondfishDrowning(AbstractDungeon.player), 0));
 				this.setNextTurnAction(PondfishBoss.CHOMP);
+				this.isFirstTurn = false;
+				this.isSecondTurn = true;
+				this.halfDead = false;
 				for (final AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
 					if (m instanceof CaptainAbe) {
 						if (!m.halfDead) {
 							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new AbePower(m), 0));
 						} else {
-							this.setNextTurnAction(PondfishBoss.LIVING_LANTERN);
+							m.halfDead = false;
+							AbstractDungeon.actionManager.addToBottom(new HealAction(m, this, (m.maxHealth / 4)));
+							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new AbePower(m), 0));
+								AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new IntangiblePower(m, 1), 1));
+							AbstractDungeon.actionManager.addToBottom(new TalkAction(m, CaptainAbe.DIALOG[(int)(Math.random() * (3)) + 6]));
 						}
 					}
 				}
-				this.isFirstTurn = false;
-				this.isSecondTurn = true;
-				this.halfDead = false;
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
 				UnlockTracker.markBossAsSeen("PONDFISH");
 				break;

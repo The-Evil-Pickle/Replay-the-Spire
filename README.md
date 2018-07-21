@@ -10,10 +10,11 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
 
 ### Currently adds:
  * 42 Relics (4 ironclad, 4 silent, 4 defect, 30 shared)
- * 40 Cards (8 ironclad, 8 silent, 8 defect, 7 colorless, 9 curses)
+ * 45 Cards (9 ironclad, 10 silent, 10 defect, 7 colorless, 9 curses)
  * 4 Events
  * 9 Potions
  * 2 Rooms
+ * 2 Elites
  * 1 Boss
 
 Some content originally from this mod is now in the official release of the game!
@@ -93,13 +94,15 @@ Sneak Up | Green | Uncommon | Skill | 1 | **Innate.** Discard 1 card (upgrade re
 Atom Bomb | Green | Rare | Attack | 4 | Deal 60(75) damage. Apply 4 **Poison** to ALL fighters. **Exhaust**.
 Poison Darts | Green | Rare | Skill | X | Apply 3(4) **Necrotic** **Poison** X times. Apply X Poison to ALL enemies.
 Necrosis | Green | Rare | Skill | 2 | Convert all **Poison** to **Necrotic** **Poison**. **Exhaust**.
-Reflective Lens | Blue | Uncommon | Power | 1(0) | **Channel** 1 **Glass.** Your **Glass** orbs have a passive effect that gives 1 **Reflection** at the end of each turn.
 Panic Button | Blue | Common | Skill | 0 | **Evoke** all your orbs. Draw 2(4) cards. **Exhaust.** **Retain.**
-Crystal Conduit | Blue | Common | Skill | 1 | **Channel** 1 **Crystal** (and 1 random orb).
+Repulse | Blue | Common | Skill | 0 | Gain 1(2) **Reflection**.
+Crystal Conduit | Blue | Uncommon | Skill | 1 | **Channel** 1 **Crystal** (and 1 random orb).
+Claw Rake | Blue | Uncommmon | Attack | 2 | Deal 3(5) damage. Deal 3(5) damage to ALL enemies. Damage is upgraded by Claw cards.
 FIFO Queue | Blue | Uncommmon | Power | 2(X) | Gain 4(2X+1) orb slots.
 Sort | Blue | Uncommmon | Skill | 1 | Shuffle all Rare cards in your discard pile into your draw pile. Draw 2 cards. (**Retain.**)
-Mirror Shield | Blue | Rare | Skill | 2 | **Channel** 1 **Crystal.** **Channel** 1 **Frost.** Gain 5(8) **Block.** Gain 1(2) **Reflection.**
+Empty Bin | Blue | Uncommon | Power | 1 | (**Innate**.) At the end of your turn, **Exhaust** all Common cards in your hand and gain 4(5) **Block** for each.
 Time Bomb | Blue | Uncommmon | Skill | 1 | Gain 2 orb slots. **Channel** 2 **Glass.** **Channel** 1 **Dark,** and trigger its passive 2(3) times. **Exhaust.**
+Mirror Shield | Blue | Rare | Skill | 2 | **Channel** 1 **Crystal.** **Channel** 1 **Frost.** Gain 5(8) **Block.** Gain 1(2) **Reflection.**
 RNG | Blue | Rare | Skill | X | **Channel** X(+1) random orbs.
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | Lose 1 Focus. All non-attack damage you deal is increased by 2. (**Innate.**)

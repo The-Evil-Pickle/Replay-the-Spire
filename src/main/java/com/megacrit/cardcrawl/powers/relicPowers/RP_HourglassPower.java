@@ -31,14 +31,22 @@ public class RP_HourglassPower extends AbstractPower
     
     @Override
     public void updateDescription() {
-        this.description = RP_HourglassPower.DESCRIPTIONS[0] + this.amount + RP_HourglassPower.DESCRIPTIONS[1];
+    	if (this.owner.isPlayer) {
+    		this.description = RP_HourglassPower.DESCRIPTIONS[0] + this.amount + RP_HourglassPower.DESCRIPTIONS[1];
+    	} else {
+    		this.description = RP_HourglassPower.DESCRIPTIONS[2] + this.owner.name + RP_HourglassPower.DESCRIPTIONS[3] + this.amount + RP_HourglassPower.DESCRIPTIONS[4];
+    	}
     }
-    
+
     @Override
     public void atStartOfTurn() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+            if (this.owner.isPlayer) {
+            	AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+            } else {
+            	AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            }
         }
     }
     
