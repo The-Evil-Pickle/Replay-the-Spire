@@ -44,9 +44,17 @@ public class RingOfChaos
 	}
   }
   */
-  
-  
+
   public boolean chaosUpgradeCard(AbstractCard c)
+  {
+	  boolean r = ChaosScrambleCard(c);
+	  if (r) {
+		  this.flash();
+	  }
+	  return r;
+  }
+  
+  public static boolean ChaosScrambleCard(AbstractCard c)
   {
 	if (c.type == AbstractCard.CardType.CURSE || c.type == AbstractCard.CardType.STATUS) {
 		return false;
@@ -268,7 +276,6 @@ public class RingOfChaos
 						break;
 				}
 			}
-			flash();
 			c.name = c.name + "?";
 			return true;
 		}

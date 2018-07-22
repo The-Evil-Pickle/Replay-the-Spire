@@ -28,17 +28,10 @@ public class ReplayOrbIntPatch {
 					__Instance.evokeAmount = Math.max(0, baseEvokeAmount);
 				}
 	        }
-			//ReplayTheSpireMod.logger.info(__Instance.ID);
 			int mypos = AbstractDungeon.player.orbs.indexOf(__Instance);
-			//ReplayTheSpireMod.logger.info(mypos);
 			if (mypos > -1 && !__Instance.ID.equals("Plasma")) {
-				//ReplayTheSpireMod.logger.info("CP0");
 				if (mypos > 0) {
-					//ReplayTheSpireMod.logger.info("CP1");
 					AbstractOrb adorb = AbstractDungeon.player.orbs.get(mypos - 1);
-					/*if (adorb != null && adorb.ID != null) {
-						ReplayTheSpireMod.logger.info(adorb.ID);
-					}*/
 					if (adorb != null && adorb.ID != null && adorb.ID.equals("Crystal")) {
 						if (!__Instance.ID.equals("Crystal")) {
 							__Instance.passiveAmount += adorb.passiveAmount;
@@ -49,11 +42,7 @@ public class ReplayOrbIntPatch {
 					}
 				}
 				if (mypos < AbstractDungeon.player.orbs.size() - 1) {
-					//ReplayTheSpireMod.logger.info("CP2");
 					AbstractOrb adorb = AbstractDungeon.player.orbs.get(mypos + 1);
-					/*if (adorb != null && adorb.ID != null) {
-						ReplayTheSpireMod.logger.info(adorb.ID);
-					}*/
 					if (adorb != null && adorb.ID != null && adorb.ID.equals("Crystal")) {
 						if (!__Instance.ID.equals("Crystal")) {
 							__Instance.passiveAmount += adorb.passiveAmount;

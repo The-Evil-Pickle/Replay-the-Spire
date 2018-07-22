@@ -110,6 +110,16 @@
       ""
     ]
   },
+  "J_louse_4": {
+    "MOVES": [
+      "Steal Pants",
+	  "Cry"
+    ],
+    "NAME": "Jer the Pantsless",
+    "DIALOG": [
+      ""
+    ]
+  },
   "R_Hoarder": {
     "MOVES": [
       "Overflow",
@@ -132,6 +142,18 @@
     "NAME": "Mimic",
     "DIALOG": [
       "Off-guard"
+    ]
+  },
+  "GremlinCook": {
+    "MOVES": [
+      "Serve",
+      "Overcook"
+    ],
+    "NAME": "Gremlin Cook",
+    "DIALOG": [
+      "",
+      "Come and get it!",
+      "Eep!"
     ]
   }
 }

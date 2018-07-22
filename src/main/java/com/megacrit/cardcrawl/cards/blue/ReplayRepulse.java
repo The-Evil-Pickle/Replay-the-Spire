@@ -1,17 +1,13 @@
 package com.megacrit.cardcrawl.cards.blue;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardRarity;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardTarget;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.cards.status.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.GoodbyeWorldPower;
 import com.megacrit.cardcrawl.powers.ReflectionPower;
 
 import basemod.abstracts.CustomCard;
@@ -25,7 +21,7 @@ public class ReplayRepulse extends CustomCard
     private static final int COST = 0;
     
     public ReplayRepulse() {
-        super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
 		this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
     }
@@ -33,6 +29,7 @@ public class ReplayRepulse extends CustomCard
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
     	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ReflectionPower(p, this.magicNumber), this.magicNumber));
+    	AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new BackFire(), 2));
     }
     
     @Override

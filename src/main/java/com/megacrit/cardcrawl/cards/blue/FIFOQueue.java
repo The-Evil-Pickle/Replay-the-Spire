@@ -28,7 +28,7 @@ public class FIFOQueue extends CustomCard
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
 		if (this.upgraded) {
-			AbstractDungeon.actionManager.addToBottom(new FIFOQ_Action(p, 2, 1, this.freeToPlayOnce, this.energyOnUse));
+			AbstractDungeon.actionManager.addToBottom(new FIFOQ_Action(p, 2, 0, this.freeToPlayOnce, this.energyOnUse));
 		} else {
 			AbstractDungeon.actionManager.addToBottom(new IncreaseMaxOrbAction(this.magicNumber));
 		}
@@ -43,8 +43,6 @@ public class FIFOQueue extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            //this.upgradeMagicNumber(1);
-            //this.isInnate = true; final int diff = this.cost - this.costForTurn;
 			this.cost = -1;
 			this.costForTurn = -1;
 			this.upgradedCost = true;

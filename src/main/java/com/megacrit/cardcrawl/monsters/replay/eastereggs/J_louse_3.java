@@ -44,10 +44,10 @@ public class J_louse_3 extends AbstractMonster
         final AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         if (AbstractDungeon.ascensionLevel >= 8) {
-            this.setHp(33);
+            this.setHp(33, 36);
         }
         else {
-            this.setHp(28, 33);
+            this.setHp(33);
         }
         if (AbstractDungeon.ascensionLevel >= 3) {
             this.biteDamage = 6;
@@ -62,11 +62,13 @@ public class J_louse_3 extends AbstractMonster
     public void usePreBattleAction() {
         if (AbstractDungeon.ascensionLevel >= 8) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new CurlUpPower(this, AbstractDungeon.monsterHpRng.random(4, 8))));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PlatedArmorPower(this, AbstractDungeon.monsterHpRng.random(5, 7))));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PlatedArmorPower(this, 8)));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, 8));
         }
         else {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new CurlUpPower(this, AbstractDungeon.monsterHpRng.random(4, 7))));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PlatedArmorPower(this, AbstractDungeon.monsterHpRng.random(4, 6))));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PlatedArmorPower(this, 6)));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, 6));
         }
     }
     
@@ -93,7 +95,7 @@ public class J_louse_3 extends AbstractMonster
                 }
                 if (this.specialLeft > 0) {
                 	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new SpecialistPower(AbstractDungeon.player, -1), -1));
-                	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new StrengthPower(AbstractDungeon.player, 1), 1));
+                	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new ChaosPower(AbstractDungeon.player, 2), 1));
                 	this.specialLeft--;
                 } else {
                 	for (final AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
@@ -135,7 +137,7 @@ public class J_louse_3 extends AbstractMonster
     
     @Override
     protected void getMove(final int num) {
-        if (num < 33) {
+        if (num < 33 || (num < 75 && this.specialLeft > 1)) {
             if (this.lastTwoMoves((byte)4)) {
                 this.setMove((byte)3, Intent.ATTACK, this.damage.get(0).base);
             }

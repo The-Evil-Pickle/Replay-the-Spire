@@ -13,6 +13,7 @@ import org.apache.logging.log4j.Logger;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -46,6 +47,8 @@ import java.io.*;
 
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.*;
+import com.megacrit.cardcrawl.relics.RingOfChaos.ChaosUpgradeType;
+
 import java.util.*;
 import java.util.function.*;
 //SetUnlocksSubscriber, 
@@ -830,6 +833,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addKeyword(shieldNames, "An alternate form of #yBlock that can directly block HP loss. NL #yShielding is not lost at the end of each round.");
 		final String[] langNames = { "languid", "Languid", "Languid."};
 		BaseMod.addKeyword(langNames, "Fighters with #yLanguid deal #b1 less #yAttack damage per stack. NL Is reduced by #b1 at the end of each round.");
+		final String[] bfNames = { "backfire", "Backfire", "Backfires"};
+		BaseMod.addKeyword(bfNames, "#yStatus: Gives #b1 #yVulnerable when drawn. NL Deals #b6 damage and #yExhausts at the end of your turn.");
 		/*
 		final String[] specNames = { "spectral", "Spectral", "Spectral."};
 		BaseMod.addKeyword(specNames, "Is #yEthereal. NL #yExhausts when played or discarded. NL When drawn, you draw an additional card. NL If your hand is full and you draw a card, this card is #yExhausted from your hand to make room.");
@@ -950,11 +955,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new ReplayRepulse());
 		AddAndUnlockCard(new ReplayGoodbyeWorld());
 		AddAndUnlockCard(new ReplayGash());
-		//AddAndUnlockCard(new ReflectiveLens());
-		//AddAndUnlockCard(new Crystallizer());
+		AddAndUnlockCard(new ReplayOmegaCannon());
 		AddAndUnlockCard(new ReplayRNGCard());
 		AddAndUnlockCard(new FIFOQueue()); 
 		AddAndUnlockCard(new ReplaySort()); 
+		//AddAndUnlockCard(new ReflectiveLens());
+		//AddAndUnlockCard(new Crystallizer());
 		logger.info("adding colorless cards...");
 		//AddAndUnlockCard(new Improvise());
 		AddAndUnlockCard(new PoisonedStrike());
@@ -1154,6 +1160,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	}
 	
 	public void receivePostDraw(AbstractCard c) {
+		if (AbstractDungeon.player.hasPower("ReplayChaosPower") && AbstractDungeon.player.getPower("ReplayChaosPower").amount > 0) {
+			if (RingOfChaos.ChaosScrambleCard(c)) {
+				AbstractDungeon.player.getPower("ReplayChaosPower").amount--;
+				AbstractDungeon.player.getPower("ReplayChaosPower").updateDescription();
+			}
+		}
 		if (AbstractDungeon.player.hasPower("TPH_Confusion") && c.cost > -1 && c.color != AbstractCard.CardColor.CURSE && c.type != AbstractCard.CardType.STATUS) {
 			if (BypassStupidBasemodRelicRenaming_hasRelic("Snecko Heart")) {
 				SneckoHeart snek = (SneckoHeart)BypassStupidBasemodRelicRenaming_getRelic("Snecko Heart");

@@ -73,6 +73,13 @@ public class CrystalOrb extends AbstractOrb
 		AbstractDungeon.actionManager.addToTop(new CrystalOrbUpdateAction());
 		AbstractDungeon.actionManager.addToBottom(new CrystalOrbUpdateAction());
     }
+    
+    @Override
+    public void applyFocus() {
+        super.applyFocus();
+        this.passiveAmount = this.basePassiveAmount;
+    }
+    
     /*
     @Override
     public void onEndOfTurn() {

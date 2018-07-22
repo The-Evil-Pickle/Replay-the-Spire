@@ -43,10 +43,10 @@ public class J_louse_1 extends AbstractMonster
 	        final AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
 	        e.setTime(e.getEndTime() * MathUtils.random());
 	        if (AbstractDungeon.ascensionLevel >= 8) {
-	            this.setHp(33);
+	            this.setHp(33, 36);
 	        }
 	        else {
-	            this.setHp(26, 33);
+	            this.setHp(33);
 	        }
 	        if (AbstractDungeon.ascensionLevel >= 3) {
 	            this.biteDamage = 6;
@@ -90,6 +90,7 @@ public class J_louse_1 extends AbstractMonster
                         	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(this, 1), 1));
                         }
                     }
+	                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new AngryPower(this, 1), 1));
 	                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new CurlUpPower(this, 33), 0));
 	                break;
 	            }

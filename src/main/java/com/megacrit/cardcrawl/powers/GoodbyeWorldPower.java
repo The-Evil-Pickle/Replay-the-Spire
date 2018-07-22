@@ -31,7 +31,7 @@ public class GoodbyeWorldPower extends AbstractPower
     @Override
     public void atEndOfTurn(final boolean isPlayer) {
     	for (final AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c.rarity == AbstractCard.CardRarity.COMMON) {
+            if (c.rarity == AbstractCard.CardRarity.COMMON && c.type != AbstractCard.CardType.STATUS && c.type != AbstractCard.CardType.CURSE) {
                 AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.amount));
             }

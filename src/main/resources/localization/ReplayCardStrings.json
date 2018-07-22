@@ -160,7 +160,11 @@
   },
   "ReplayTheSpireMod:Repulse": {
     "NAME": "Repulse",
-    "DESCRIPTION": "Gain !M! Reflection."
+    "DESCRIPTION": "Gain !M! Reflection. NL Shuffle 2 Backfires into your discard pile."
+  },
+  "ReplayTheSpireMod:Omega Cannon": {
+    "NAME": "Omega Cannon",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times. NL Add a Backfire to your draw & discard piles. NL Focus increases damage."
   },
   "Reflective Lens": {
     "NAME": "Reflective Lens",
@@ -205,7 +209,7 @@
   "FIFO Queue": { 
     "NAME": "FIFO Queue", 
     "DESCRIPTION": "Gain !M! Orb Slots.", 
-    "UPGRADE_DESCRIPTION": "Gain 2X + 1 Orb Slots." 
+    "UPGRADE_DESCRIPTION": "Gain 2X Orb Slots." 
   },
   "Improvise": {
     "NAME": "Improvise",
@@ -385,6 +389,11 @@
   "OrbOptionCard_Glass": {
     "NAME": "Glass",
     "DESCRIPTION": "Gain !M! orb slot. NL Channel !M! Glass. NL Exhaust."
+  },
+  "BackFire": {
+    "NAME": "Backfire",
+    "DESCRIPTION": "Unplayable. NL When drawn, gain 1 Vulnerable. NL At the end of your turn, take 6 damage. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, gain 1 Vulnerable. NL At the end of your turn, take 8 damage. NL Exhaust."
   },
   "MimicStatus": {
     "NAME": "Mad Mimicry",

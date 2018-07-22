@@ -11,7 +11,7 @@
     "DESCRIPTION": [
       "#yPassive: Adjacent orbs have #b+",
       " #yFocus. NL #yEvoke: If you have less than #b",
-      " orb slots, gain an orb slot. NL #yPassive effect is not affected by other Crystal orbs."
+      " orb slots, gain an orb slot. NL #yPassive effect is not affected by #yFocus."
     ],
     "NAME": "Crystal"
   },

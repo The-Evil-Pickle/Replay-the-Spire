@@ -123,6 +123,14 @@
 	" more turns."
     ]
   },
+  "ReplayChaosPower": {
+    "NAME": "CHAOS!",
+    "DESCRIPTIONS": [
+	"Each round, #b",
+	" of the cards you draw have their stats and effects scrambled until the end of combat. NL #b",
+	" remaining this round."
+    ]
+  },
   "Friendly": {
     "NAME": "Friendly",
     "DESCRIPTIONS": [

@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.localization.*;
 import com.badlogic.gdx.math.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.cards.curses.Delirium;
 import com.megacrit.cardcrawl.cards.status.Burn;
 import com.esotericsoftware.spine.*;
 import com.megacrit.cardcrawl.actions.*;
@@ -43,7 +44,7 @@ public class J_louse_2 extends AbstractMonster
         final AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         if (AbstractDungeon.ascensionLevel >= 8) {
-            this.setHp(33);
+            this.setHp(33, 36);
         }
         else {
             this.setHp(33);
@@ -68,7 +69,7 @@ public class J_louse_2 extends AbstractMonster
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new MalleablePower(this, AbstractDungeon.monsterHpRng.random(5, 7))));
         }
     }
-    
+    boolean hasDoneDilirium = false;
     @Override
     public void takeTurn() {
         switch (this.nextMove) {
@@ -90,8 +91,14 @@ public class J_louse_2 extends AbstractMonster
                     AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "REAR_IDLE"));
                     AbstractDungeon.actionManager.addToBottom(new WaitAction(0.9f));
                 }
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 2, true), 2));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Burn(), 1));
+                if (hasDoneDilirium) {
+                	AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Burn(), 1));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 2, true), 2));
+                } else {
+                	AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Delirium(), 1));
+                	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new EntanglePower(AbstractDungeon.player)));
+                	hasDoneDilirium = true;
+                }
                 break;
             }
         }
@@ -130,11 +137,19 @@ public class J_louse_2 extends AbstractMonster
                 this.setMove((byte)3, Intent.ATTACK, this.damage.get(0).base);
             }
             else {
-                this.setMove(J_louse_2.MOVES[0], (byte)4, Intent.DEBUFF);
+            	if (hasDoneDilirium) {
+            		this.setMove(J_louse_2.MOVES[0], (byte)4, Intent.DEBUFF);
+            	} else {
+            		this.setMove(J_louse_2.MOVES[0], (byte)4, Intent.STRONG_DEBUFF);
+            	}
             }
         }
         else if (this.lastTwoMoves((byte)3)) {
-            this.setMove(J_louse_2.MOVES[0], (byte)4, Intent.DEBUFF);
+        	if (hasDoneDilirium) {
+        		this.setMove(J_louse_2.MOVES[0], (byte)4, Intent.DEBUFF);
+        	} else {
+        		this.setMove(J_louse_2.MOVES[0], (byte)4, Intent.STRONG_DEBUFF);
+        	}
         }
         else {
             this.setMove((byte)3, Intent.ATTACK, this.damage.get(0).base);

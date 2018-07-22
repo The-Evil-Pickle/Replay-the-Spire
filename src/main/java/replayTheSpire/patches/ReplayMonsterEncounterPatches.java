@@ -1,4 +1,5 @@
 package replayTheSpire.patches;
+import com.megacrit.cardcrawl.actions.unique.SummonGremlinAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -80,8 +81,8 @@ public class ReplayMonsterEncounterPatches {
 				if (__Instance instanceof Exordium) {
 					//ReplayTheSpireMod.logger.info("_SPIRITS");
 					//ReplayTheSpireMod.logger.info(CardCrawlGame.playerPref.getInteger(AbstractDungeon.player.chosenClass.name() + "_SPIRITS", 0));
-					if ((CardCrawlGame.playerPref.getInteger(AbstractDungeon.player.chosenClass.name() + "_SPIRITS", 0) > 2 && Settings.isStandardRun()) || AbstractDungeon.player.name.equals("Jrmiah")) {
-					monsters.add(new MonsterInfo("Erikyupuro", monsters.get(0).weight * ((float)(5 + AbstractDungeon.ascensionLevel) / 30f)));
+					if ((CardCrawlGame.playerPref.getInteger(AbstractDungeon.player.chosenClass.name() + "_SPIRITS", 0) > 1 && Settings.isStandardRun()) || AbstractDungeon.player.name.equals("Jrmiah")) {
+					monsters.add(new MonsterInfo("Erikyupuro", monsters.get(0).weight * ((float)(5 + AbstractDungeon.ascensionLevel) / 25f)));
 					MonsterInfo.normalizeWeights(monsters);
 					}
 				} else if (__Instance instanceof TheBeyond) {
@@ -97,6 +98,31 @@ public class ReplayMonsterEncounterPatches {
 	public static class ReplayCityBossListPatch {
 		public static void Prefix(TheCity __Instance) {
 			TheCity.bossList.add("Pondfish");
+		}
+	}
+	@SpirePatch(cls = "com.megacrit.cardcrawl.actions.unique.SummonGremlinAction", method = "getRandomGremlin")
+	public static class SummonRandomGremlinPatch {
+		@SpireInsertPatch(rloc=4, localvars={"pool"})
+		public static void Insert(SummonGremlinAction __Instance, int slot, ArrayList<String> pool) {
+			pool.add("GremlinCook");
+		}
+	}
+	@SpirePatch(cls = "com.megacrit.cardcrawl.helpers.MonsterHelper", method = "spawnGremlin")
+	public static class SpawnGremlinPatch {
+		@SpireInsertPatch(rloc=4, localvars={"gremlinPool"})
+		public static void Insert(final float x, final float y, ArrayList<String> gremlinPool) {
+			gremlinPool.add("GremlinCook");
+		}
+	}
+	@SpirePatch(cls = "com.megacrit.cardcrawl.helpers.MonsterHelper", method = "getGremlin")
+	public static class GetGremlinPatch {
+		public static AbstractMonster Postfix(AbstractMonster __Result, final String key, final float xPos, final float yPos) {
+			if (__Result == null) {
+				if (key.equals("GremlinCook")) {
+					return new GremlinCook(xPos, yPos);
+				}
+			}
+			return __Result;
 		}
 	}
 	
