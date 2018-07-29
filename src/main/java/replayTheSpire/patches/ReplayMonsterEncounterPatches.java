@@ -81,12 +81,12 @@ public class ReplayMonsterEncounterPatches {
 				if (__Instance instanceof Exordium) {
 					//ReplayTheSpireMod.logger.info("_SPIRITS");
 					//ReplayTheSpireMod.logger.info(CardCrawlGame.playerPref.getInteger(AbstractDungeon.player.chosenClass.name() + "_SPIRITS", 0));
-					if ((CardCrawlGame.playerPref.getInteger(AbstractDungeon.player.chosenClass.name() + "_SPIRITS", 0) > 1 && Settings.isStandardRun()) || AbstractDungeon.player.name.equals("Jrmiah")) {
+					if ((CardCrawlGame.playerPref.getInteger(AbstractDungeon.player.chosenClass.name() + "_SPIRITS", 0) > 0 && Settings.isStandardRun()) || AbstractDungeon.player.name.equals("Jrmiah")) {
 					monsters.add(new MonsterInfo("Erikyupuro", monsters.get(0).weight * ((float)(5 + AbstractDungeon.ascensionLevel) / 25f)));
 					MonsterInfo.normalizeWeights(monsters);
 					}
 				} else if (__Instance instanceof TheBeyond) {
-					if (AbstractDungeon.player.masterDeck.size() < Math.min((AbstractDungeon.player.relics.size() * 2), 40) || (AbstractDungeon.player.name.equals("Rhapsody") && AbstractDungeon.player.masterDeck.size() < 40)) {
+					if (AbstractDungeon.player.masterDeck.size() < Math.min((AbstractDungeon.player.relics.size() * 2) + 5, 40) || (AbstractDungeon.player.name.equals("Rhapsody") && AbstractDungeon.player.masterDeck.size() < 40)) {
 						monsters.add(new MonsterInfo("R_Hoarder", monsters.get(0).weight * (((float)(AbstractDungeon.player.relics.size())) / 12f)));
 						MonsterInfo.normalizeWeights(monsters);
 					}

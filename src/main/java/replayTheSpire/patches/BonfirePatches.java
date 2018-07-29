@@ -27,11 +27,13 @@ public class BonfirePatches {
 				if (node != null && node.room != null && node.hasEdges()) {
 					finalFires.add(node);
 				}
-				
 			}
 			bonfireNode = finalFires.get(AbstractDungeon.mapRng.random(0, finalFires.size() - 1));
 			if (!AbstractDungeon.player.hasRelic("Painkiller Herb")) {
 				bonfireNode.room.setMapImg(ReplayTheSpireMod.bonfireIcon, ReplayTheSpireMod.bonfireBG);
+				if (ReplayTheSpireMod.foundmod_colormap) {
+					bonfireNode.room.setMapSymbol("R_BF");
+				}
 			}
 		}
 	}

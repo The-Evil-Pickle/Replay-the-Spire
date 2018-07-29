@@ -35,6 +35,8 @@ import com.megacrit.cardcrawl.vfx.*;
 import basemod.*;
 import basemod.helpers.*;
 import basemod.interfaces.*;
+import blackrusemod.BlackRuseMod;
+import coloredmap.ColoredMap;
 import fetch.FetchMod;
 import fruitymod.FruityMod;
 import fruitymod.patches.*;
@@ -655,6 +657,14 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				ReplayTheSpireMod.PotionRarity.UNCOMMON
 			);
 		ReplayTheSpireMod.addPotionToSet(
+				LanguidPotion.class,
+				Color.DARK_GRAY.cpy(),
+				null,
+				null,
+				LanguidPotion.POTION_ID,
+				ReplayTheSpireMod.PotionRarity.UNCOMMON
+			);
+		ReplayTheSpireMod.addPotionToSet(
 			DeathPotion.class,
 			Color.DARK_GRAY.cpy(),
 			Color.FIREBRICK.cpy(),
@@ -947,6 +957,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new SneakUp());
 		AddAndUnlockCard(new ScrapShanks());
 		AddAndUnlockCard(new TheWorks());
+		AddAndUnlockCard(new FromAllSides());
+		AddAndUnlockCard(new ExploitWeakness());
 		logger.info("adding cards for Defect...");
 		AddAndUnlockCard(new com.megacrit.cardcrawl.cards.blue.PanicButton());
 		AddAndUnlockCard(new MirrorShield());
@@ -1004,8 +1016,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 
     public static boolean foundmod_science = false;
     public static boolean foundmod_seeker = false;
+    public static boolean foundmod_servant = false;
     public static boolean foundmod_fetch = false;
     public static boolean foundmod_infinite = false;
+    public static boolean foundmod_colormap = false;
     
 
     private static void initializeCrossoverRelics() {
@@ -1018,6 +1032,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			initializeFruityMod(LoadType.RELIC);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | FruityMod not detected");
+		}
+    	try {
+    		initializeServantMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Servant mod not detected");
 		}
     }
 
@@ -1045,6 +1064,30 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		Class<FetchMod> fetchMod = FetchMod.class;
 		logger.info("ReplayTheSpireMod | Detected Fetch Mod!");
 		foundmod_fetch = true;
+	}
+	private static void initializeColorMapMod() throws ClassNotFoundException, NoClassDefFoundError {
+		Class<ColoredMap> cmMod = ColoredMap.class;
+		logger.info("ReplayTheSpireMod | Detected Colored Map Mod!");
+		foundmod_colormap = true;
+	}
+	private static void initializeServantMod() throws ClassNotFoundException, NoClassDefFoundError {
+		Class<BlackRuseMod> servMod = BlackRuseMod.class;
+		logger.info("ReplayTheSpireMod | Detected Servant Mod!");
+		foundmod_servant = true;
+	}
+	private static void initializeServantMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
+		Class<BlackRuseMod> servMod = BlackRuseMod.class;
+		logger.info("ReplayTheSpireMod | Detected Servant Mod!");
+		foundmod_servant = true;
+
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Servant...");
+			BaseMod.addRelicToCustomPool((AbstractRelic)new m_ScarletBlood(), blackrusemod.patches.AbstractCardEnum.SILVER.toString());
+			BaseMod.addRelicToCustomPool((AbstractRelic)new m_SnakeCloak(), blackrusemod.patches.AbstractCardEnum.SILVER.toString());
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for Servant...");
+		}
 	}
 
 	private static void initializeFruityMod(LoadType type)throws ClassNotFoundException, NoClassDefFoundError {
@@ -1144,6 +1187,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         	initializeFetchMod();
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Fetch not detected");
+		}
+        try {
+        	initializeColorMapMod();
+        } catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Colored Map not detected");
 		}
         if (foundmod_fetch) {
         	String cardStrings = Gdx.files.internal(jsonPath + "ReplayFetchOverrideStrings.json").readString(

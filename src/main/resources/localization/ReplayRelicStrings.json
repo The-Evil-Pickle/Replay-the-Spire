@@ -599,6 +599,20 @@
 			"At the end of combat, gain #b",
 			" HP for each different debuff you have. NL Certain Red cards can now be obtained."
 		]
+	},
+	"m_ScarletBlood": {
+		"NAME": "Scarlet Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"Each time you gain #yStrength, gain twice that many #yKnives. NL Certain Red cards can now be obtained.",
+		]
+	},
+	"m_SnakeCloak": {
+		"NAME": "Cloak of the Snake",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"Draw #b2 additional cards on the first turn of combat. NL Certain Green cards can now be obtained.",
+		]
 	}
 	
 }

@@ -64,13 +64,17 @@
     "NAME": "Spot Opening",
     "DESCRIPTION": "For each enemy with Weakness, gain !B! Block and !M! Reflection."
   },
+  "ReplayTheSpireMod:Exploit Weakness": {
+    "NAME": "Exploit Weakness",
+    "DESCRIPTION": "Apply Languid equal to target's Weak.",
+    "UPGRADE_DESCRIPTION": "Apply Languid to ALL emenies equal to target's Weak.",
+    "EXTENDED_DESCRIPTION": [
+      "That enemy isn't Weakened."
+    ]
+  },
   "ReplayTheSpireMod:From All Sides": {
     "NAME": "From All Sides",
-    "DESCRIPTION": "ALL enemies lose Strength this round equal to their Weak. NL Apply !M! Weak to target enemy, and deal !D! damage to others."
-  },
-  "ReplayTheSpireMod:From All Sides2": {
-    "NAME": "From All Sides",
-    "DESCRIPTION": "Apply 1 Weak and deal !D! damage to a random enemy X + !M! times."
+    "DESCRIPTION": "Apply 1 Weak and deal !D! damage to a random enemy 2X + !M! times."
   },
   "Abandon": {
     "NAME": "Abandon",

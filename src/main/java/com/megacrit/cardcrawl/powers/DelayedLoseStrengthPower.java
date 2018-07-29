@@ -24,6 +24,17 @@ public class DelayedLoseStrengthPower extends AbstractPower
         this.loadRegion("flex");
         this.delay = 1;
     }
+    public void stackPower(final int stackAmount) {
+    	if (this.delay > 0) {
+            this.fontScale = 8.0f;
+            this.amount += stackAmount;
+    	} else {
+    		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -this.amount), -this.amount));
+    		this.fontScale = 8.0f;
+            this.amount = stackAmount;
+            this.delay = 1;
+    	}
+    }
     
     @Override
     public void updateDescription() {

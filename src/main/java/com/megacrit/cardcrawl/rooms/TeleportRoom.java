@@ -7,12 +7,17 @@ import com.megacrit.cardcrawl.events.TeleportEvent;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.map.MapRoomNode;
 
+import coloredmap.ColoredRoom;
 import replayTheSpire.ReplayTheSpireMod;
 
+@ColoredRoom
 public class TeleportRoom extends EventRoom {
 
     private MapRoomNode teleDest;
 
+	public TeleportRoom() {
+		this(null);
+	}
 	public TeleportRoom(MapRoomNode teleDest) {
     	super();
     	this.teleDest = teleDest;

@@ -36,7 +36,7 @@ public class GremlinCook extends AbstractMonster
     private static final AbstractCard burnCard;
     
     public GremlinCook(final float x, final float y) {
-        super(NAME, ID, 16, 0.0f, -25.0f, 120.0f, 200.0f, "images/monsters/exord/cook.png", x, y);
+        super(NAME, ID, 16, 0.0f, 0.0f, 120.0f, 210.0f, "images/monsters/exord/cook.png", x, y);
         this.dialogY = 60.0f * Settings.scale;
         if (AbstractDungeon.ascensionLevel >= 7) {
             this.setHp(14, 18);

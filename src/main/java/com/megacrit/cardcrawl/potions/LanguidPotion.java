@@ -23,8 +23,6 @@ public class LanguidPotion
   public static final String NAME = potionStrings.NAME;
   public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
   
-  private int secondPotency = 2;
-  
   public LanguidPotion()
   {
     super(NAME, "Languid Potion", PotionRarity.UNCOMMON, AbstractPotion.PotionSize.JAR, AbstractPotion.PotionColor.POISON);
@@ -43,7 +41,7 @@ public class LanguidPotion
   }
   @Override
     public int getPotency(final int ascensionLevel) {
-        return 4;//(ascensionLevel < 11) ? 4 : 3;
+        return 3;
     }
   public AbstractPotion makeCopy()
   {

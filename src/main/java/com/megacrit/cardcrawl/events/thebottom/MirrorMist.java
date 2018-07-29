@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.screens.select.*;
 import com.megacrit.cardcrawl.vfx.*;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
 
+import blackrusemod.characters.*;
 import fruitymod.characters.*;
 
 import com.megacrit.cardcrawl.helpers.*;
@@ -263,7 +264,6 @@ public class MirrorMist
 				this.has_2 = this.has_1b;
 				this.has_3 = this.has_2;
 				this.loss_r_1 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Arcanosphere");
-				//this.loss_r_1 = new Arcanosphere();
 				this.gain_r_1 = new m_ArcaneBlood();
 				if (this.has_1b) {
 					for (final AbstractCard c : AbstractDungeon.player.masterDeck.group) {
@@ -278,6 +278,45 @@ public class MirrorMist
 				this.loss_c_3 = this.loss_c_1b;
 				this.gain_c_2 = new EndlessAgony();
 				this.gain_c_3 = new Rebound();
+				this.thirdOption = true;
+				break;
+			}
+			if (ReplayTheSpireMod.foundmod_servant && AbstractDungeon.player instanceof TheServant) {
+				this.has_1 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Uniform");
+				this.has_1b = this.has_1;
+				this.loss_r_1 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Uniform");
+				this.gain_r_1 = new m_ScarletBlood();
+				this.gain_c_1b = new Inflame();
+				this.has_2 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Uniform");
+				this.has_2b = CardHelper.hasCardWithID("KidneyShot");
+				this.loss_r_2 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Uniform");
+				this.gain_r_2 = new m_SnakeCloak();
+				if (this.has_2b) {
+					for (final AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+						if (c.cardID.equals("KidneyShot")) {
+							this.loss_c_2b = c.makeCopy();
+						}
+					}
+					this.gain_c_2b = new Survivor();
+				}
+				this.has_3 = CardHelper.hasCardWithID("HouseCleaning");
+				if (this.has_3) {
+					for (final AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+						if (c.cardID.equals("HouseCleaning")) {
+							this.loss_c_3 = c.makeCopy();
+						}
+					}
+					this.gain_c_3 = new Reprogram();
+				}
+				this.has_3b = CardHelper.hasCardWithID("KidneyShot");
+				if (this.has_3b) {
+					for (final AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+						if (c.cardID.equals("KidneyShot")) {
+							this.loss_c_3b = c.makeCopy();
+						}
+					}
+					this.gain_c_3b = new Reboot();
+				}
 				this.thirdOption = true;
 				break;
 			}

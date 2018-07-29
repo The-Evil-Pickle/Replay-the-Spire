@@ -18,9 +18,12 @@ public class ReplayMapImageOutlinePatch {
 			if (__Instance.getMapSymbol() == "?" || __Instance.getMapSymbol() == "M") {
 				return ImageMaster.MAP_NODE_EVENT_OUTLINE;
 			}
-			if (__Instance.getMapSymbol() == "T" || __Instance.getMapSymbol() == "$" || __Instance.getMapSymbol() == "R") {
+			if (__Instance.getMapSymbol() == "T" || __Instance.getMapSymbol() == "$" || __Instance.getMapSymbol() == "R" || __Instance.getMapSymbol() == "R_BF") {
 				return ImageMaster.MAP_NODE_TREASURE_OUTLINE;
 			}
+		}
+		if (__Instance.getMapSymbol() == "R_BF") {
+			return ReplayTheSpireMod.bonfireBG;
 		}
 		if (__Instance.getMapSymbol() == "PTL") {
 			return ReplayTheSpireMod.portalBG;

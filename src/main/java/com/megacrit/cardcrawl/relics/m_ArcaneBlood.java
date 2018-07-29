@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 import madsciencemod.actions.common.GainFuelAction;
 import replayTheSpire.ReplayTheSpireMod;
 
-public class m_ArcaneBlood  extends AbstractRelic
+public class m_ArcaneBlood extends AbstractRelic
 {
     public static final String ID = "m_ArcaneBlood";
     private static final int HEALTH_AMT = 3;

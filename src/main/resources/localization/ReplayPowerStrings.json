@@ -154,6 +154,13 @@
 	" or higher). NL NL What kind of pirate can't swim?"
     ]
   },
+  "TimeCollector": {
+    "NAME": "Time Collector",
+    "DESCRIPTIONS": [
+	"If you play #b",
+	" cards in a single turn, your turn ends. NL #yTime #yCollector can activate only once per combat."
+    ]
+  },
   "Eggshell": {
     "NAME": "Eggshell",
     "DESCRIPTIONS": [
@@ -359,6 +366,14 @@
 	"DESCRIPTIONS": [
       "Upon taking unblocked #yAttack damage, gives #b",
 	  " #yBlock next round."
+    ]
+  },
+  "Fire Breathing": {
+    "NAME": "Fire Breathing",
+    "DESCRIPTIONS": [
+      "At the end of your turn, for each #yAttack played this turn deal #b",
+      " damage to ALL enemies, increasing damage by #b",
+	  " each time."
     ]
   }
 }

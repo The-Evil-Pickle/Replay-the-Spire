@@ -33,6 +33,11 @@ public class ReplayApplyPowerPatch {
 				AbstractDungeon.actionManager.addToTop(new ReplayGainShieldingAction(__instance.target, __instance.target, Math.abs(__instance.amount)));
 				AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(__instance.target, ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Durian")));
 			}
+			if (ReplayTheSpireMod.foundmod_servant && ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("m_ScarletBlood") && __instance.target.isPlayer && powerToApply instanceof StrengthPower) {
+				((m_ScarletBlood)ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("m_ScarletBlood")).onGainStrength(__instance);
+				//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(__instance.target, __instance.source, new KnivesPower(__instance.target, __instance.amount * 2), __instance.amount * 2));
+				//AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(__instance.target, ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("m_ScarletBlood")));
+			}
 			
 			if (!__instance.target.isPlayer && powerToApply.ID.equals("Strength") && ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Counterbalance")) {
 				AbstractRelic cbr = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Counterbalance");

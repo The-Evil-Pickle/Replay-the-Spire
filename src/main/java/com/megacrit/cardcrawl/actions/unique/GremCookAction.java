@@ -31,7 +31,17 @@ public class GremCookAction extends AbstractGameAction
                 this.target = validMonsters.get(AbstractDungeon.aiRng.random(validMonsters.size() - 1));
             }
             else {
-                this.target = this.source;
+            	for (final AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+                    if (m != this.source && m.intent != AbstractMonster.Intent.ESCAPE && !m.isDying) {
+                        validMonsters.add(m);
+                    }
+                }
+            	if (!validMonsters.isEmpty()) {
+                    this.target = validMonsters.get(AbstractDungeon.aiRng.random(validMonsters.size() - 1));
+                }
+                else {
+                	this.target = this.source;
+                }
             }
             if (this.target != null) {
                 this.target.heal(this.amount);
