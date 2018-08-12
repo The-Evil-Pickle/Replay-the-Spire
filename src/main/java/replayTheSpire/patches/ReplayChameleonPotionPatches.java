@@ -6,6 +6,7 @@ import replayTheSpire.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.unique.DiscoveryUpgradedAction;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.core.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -15,39 +16,36 @@ public class ReplayChameleonPotionPatches
 	
 	@SpirePatch(cls = "com.megacrit.cardcrawl.potions.AttackPotion", method = "use")
 	public static class ReplayAttackPotionPatch {
-		public static void Replace(AttackPotion __instance, final AbstractCreature target) {
-			final AbstractCard c = AbstractDungeon.returnTrulyRandomCard(AbstractCard.CardType.ATTACK, AbstractDungeon.cardRandomRng).makeCopy();
+		public static SpireReturn Prefix(AttackPotion __instance, final AbstractCreature target)
+		{
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Chameleon Ring")) {
-				c.upgrade();
+				AbstractDungeon.actionManager.addToBottom(new DiscoveryUpgradedAction(AbstractCard.CardType.ATTACK));
+				return SpireReturn.Return(null);
 			}
-			c.setCostForTurn(-99);
-			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));
+		    return SpireReturn.Continue();
 		}
-		
 	}
 	@SpirePatch(cls = "com.megacrit.cardcrawl.potions.SkillPotion", method = "use")
 	public static class ReplaySkillPotionPatch {
-		public static void Replace(SkillPotion __instance, final AbstractCreature target) {
-			final AbstractCard c = AbstractDungeon.returnTrulyRandomCard(AbstractCard.CardType.SKILL, AbstractDungeon.cardRandomRng).makeCopy();
+		public static SpireReturn Prefix(SkillPotion __instance, final AbstractCreature target)
+		{
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Chameleon Ring")) {
-				c.upgrade();
+				AbstractDungeon.actionManager.addToBottom(new DiscoveryUpgradedAction(AbstractCard.CardType.SKILL));
+				return SpireReturn.Return(null);
 			}
-			c.setCostForTurn(-99);
-			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));
+		    return SpireReturn.Continue();
 		}
-		
 	}
 	@SpirePatch(cls = "com.megacrit.cardcrawl.potions.PowerPotion", method = "use")
 	public static class ReplayPowerPotionPatch {
-		public static void Replace(PowerPotion __instance, final AbstractCreature target) {
-			final AbstractCard c = AbstractDungeon.returnTrulyRandomCard(AbstractCard.CardType.POWER, AbstractDungeon.cardRandomRng).makeCopy();
+		public static SpireReturn Prefix(PowerPotion __instance, final AbstractCreature target)
+		{
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Chameleon Ring")) {
-				c.upgrade();
+				AbstractDungeon.actionManager.addToBottom(new DiscoveryUpgradedAction(AbstractCard.CardType.POWER));
+				return SpireReturn.Return(null);
 			}
-			c.setCostForTurn(-99);
-			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));
+		    return SpireReturn.Continue();
 		}
-		
 	}
 
 	@SpirePatch(cls = "com.megacrit.cardcrawl.potions.AttackPotion", method = SpirePatch.CONSTRUCTOR)
@@ -55,7 +53,7 @@ public class ReplayChameleonPotionPatches
 		@SpireInsertPatch(rloc = 4)
 		public static void Insert(AttackPotion __instance) {
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Chameleon Ring")) {
-				__instance.description = "Add a random #yUpgraded Attack card to your hand, it costs #b0 this turn";
+				__instance.description = "Choose #b1 of #b3 random #yAttack cards to #yUpgrade and add to your hand, it costs #b0 this turn.";
 			}
 		}
 	}
@@ -64,7 +62,7 @@ public class ReplayChameleonPotionPatches
 		@SpireInsertPatch(rloc = 4)
 		public static void Insert(SkillPotion __instance) {
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Chameleon Ring")) {
-				__instance.description = "Add a random #yUpgraded Skill card to your hand, it costs #b0 this turn";
+				__instance.description = "Choose #b1 of #b3 random #ySkill cards to #yUpgrade and add to your hand, it costs #b0 this turn.";
 			}
 		}
 	}
@@ -73,7 +71,7 @@ public class ReplayChameleonPotionPatches
 		@SpireInsertPatch(rloc = 4)
 		public static void Insert(PowerPotion __instance) {
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Chameleon Ring")) {
-				__instance.description = "Add a random #yUpgraded Power card to your hand, it costs #b0 this turn";
+				__instance.description = "Choose #b1 of #b3 random #yPower cards to #yUpgrade and add to your hand, it costs #b0 this turn.";
 			}
 		}
 	}

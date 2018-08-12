@@ -26,6 +26,18 @@
 		" hp)."
 	]
   },
+  "Prepare Option": {
+    "TEXT": [
+		"Prepare",
+		"Start next combat with 2 Strength and Dexterity."
+	]
+  },
+  "Explore Option": {
+    "TEXT": [
+		"Explore",
+		"Encounter a random event."
+	]
+  },
   "Burn Branch Option": {
     "TEXT": [
 		"Light Branch",

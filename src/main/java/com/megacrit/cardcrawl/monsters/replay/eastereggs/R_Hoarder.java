@@ -63,12 +63,20 @@ public class R_Hoarder extends AbstractMonster
     }
     
     @Override
+    public void usePreBattleAction() {
+         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new TimeCollectorPower(this, 12)));
+    }
+    
+    @Override
     public void takeTurn() {
         switch (this.nextMove) {
             case 2: {
                 int limiter = 40;
-                if (AbstractDungeon.player.drawPile.size() < 25) {
-                	limiter -= 10;
+                if (AbstractDungeon.player.drawPile.size() < 30) {
+                	limiter -= 5;
+                }
+                if (AbstractDungeon.player.drawPile.size() <= 25) {
+                	limiter -= 5;
                 }
                 if (AbstractDungeon.player.drawPile.size() < 20) {
                 	limiter -= 5;

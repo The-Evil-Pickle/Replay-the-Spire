@@ -23,7 +23,7 @@ public class StrikeFromHell extends CustomCard
     private static final int DMG_INC = 2;
     
     public StrikeFromHell() {
-        super(StrikeFromHell.ID, StrikeFromHell.NAME, "cards/replay/replayBetaAttack.png", StrikeFromHell.COST, StrikeFromHell.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.COMMON, CardTarget.ENEMY);
+        super(StrikeFromHell.ID, StrikeFromHell.NAME, "cards/replay/strikeFromHell.png", StrikeFromHell.COST, StrikeFromHell.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.COMMON, CardTarget.ENEMY);
         this.baseDamage = StrikeFromHell.ATTACK_DMG;
         this.baseMagicNumber = StrikeFromHell.DMG_INC;
         this.magicNumber = this.baseMagicNumber;

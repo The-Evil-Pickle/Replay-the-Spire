@@ -66,7 +66,7 @@
   },
   "ReplayTheSpireMod:Exploit Weakness": {
     "NAME": "Exploit Weakness",
-    "DESCRIPTION": "Apply Languid equal to target's Weak.",
+    "DESCRIPTION": "Apply Languid equal to target's Weak. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Apply Languid to ALL emenies equal to target's Weak.",
     "EXTENDED_DESCRIPTION": [
       "That enemy isn't Weakened."

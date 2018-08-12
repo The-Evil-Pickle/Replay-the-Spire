@@ -5,7 +5,7 @@ public class GremlinFood extends AbstractRelic
     public static final String ID = "Gremlin Food";
     
     public GremlinFood() {
-        super("Gremlin Food", "betaRelic.png", RelicTier.COMMON, LandingSound.FLAT);
+        super("Gremlin Food", "gremlinmeat.png", RelicTier.COMMON, LandingSound.FLAT);
     }
     
     @Override

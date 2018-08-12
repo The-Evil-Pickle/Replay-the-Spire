@@ -11,7 +11,7 @@ import replayTheSpire.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import java.util.*;
 
-@SpirePatch(cls = "com.megacrit.cardcrawl.helpers.CardLibrary", method = "getCurse")
+@SpirePatch(cls = "com.megacrit.cardcrawl.helpers.CardLibrary", method = "getCurse", paramtypes={})
 public class GetCursePatch {
 	
 	public static AbstractCard Postfix(AbstractCard __result) {

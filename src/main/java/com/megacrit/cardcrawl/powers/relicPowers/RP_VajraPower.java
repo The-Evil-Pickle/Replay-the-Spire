@@ -29,10 +29,19 @@ public class RP_VajraPower extends AbstractPower
     public void updateDescription() {
         this.description = RP_VajraPower.DESCRIPTIONS[0];
     }
+
+    @Override
+    public void atEndOfTurn(final boolean isPlayer) {
+        if (!this.owner.isPlayer) {
+        	this.flash();
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 1), 1));
+			this.amount--;
+        }
+    }
     
     @Override
     public void atStartOfTurn() {
-        if (this.amount > 0 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+        if (this.owner.isPlayer && this.amount > 0 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 1), 1));
 			this.amount--;

@@ -24,7 +24,7 @@ public class DefyDeath extends CustomCard
     private static final int POOL = 1;
     
     public DefyDeath() {
-        super("Defy Death", DefyDeath.NAME, "cards/replay/defyDeath.png", DefyDeath.COST, DefyDeath.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.UNCOMMON, CardTarget.SELF, 1);
+        super("Defy Death", DefyDeath.NAME, "cards/replay/defyDeath.png", DefyDeath.COST, DefyDeath.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseBlock = DefyDeath.DEFENSE_GAINED;
     }
     

@@ -4,13 +4,16 @@ import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.monsters.*;
+
+import basemod.abstracts.CustomCard;
+
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.unique.*;
 import com.megacrit.cardcrawl.core.*;
 
-public class DemonicInfusion extends AbstractCard
+public class DemonicInfusion extends CustomCard
 {
     public static final String ID = "Demonic Infusion";
     private static final CardStrings cardStrings;
@@ -20,7 +23,7 @@ public class DemonicInfusion extends AbstractCard
     private static final int COST = -1;
     
     public DemonicInfusion() {
-        super("Demonic Infusion", DemonicInfusion.NAME, "red/skill/armaments", "red/skill/armaments", -1, DemonicInfusion.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.RARE, CardTarget.SELF);
+        super("Demonic Infusion", DemonicInfusion.NAME, "cards/replay/demonicInfusion.png", -1, DemonicInfusion.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.RARE, CardTarget.SELF);
 		
 		this.exhaust = true;
         this.baseMagicNumber = 0;
