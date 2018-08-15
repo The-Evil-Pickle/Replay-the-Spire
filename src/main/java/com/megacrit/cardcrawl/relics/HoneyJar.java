@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.potions.PotionSlot;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -40,6 +41,8 @@ public class HoneyJar extends AbstractRelic
     public void onEquip() {
         final AbstractPlayer player = AbstractDungeon.player;
         player.masterHandSize += 1;
+        player.potionSlots += 2;
+        AbstractDungeon.player.potions.add(new PotionSlot(AbstractDungeon.player.potionSlots - 1));
     }
     
     @Override

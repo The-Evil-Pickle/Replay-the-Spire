@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.core.*;
 public class ReplayCampButtonsPatch
 {
     public static void Postfix(final Object meObj) {
+
 		if (AbstractDungeon.player.hasRelic("Chameleon Ring")) {
 			final CampfireUI campfire = (CampfireUI)meObj;
 			try {
@@ -112,6 +113,9 @@ public class ReplayCampButtonsPatch
 				}
 				if (!AbstractDungeon.player.hasRelic(GremlinFood.ID)) {
 					optionsYo.add(new BonfireMultitaskOption());
+				}
+				if (!AbstractDungeon.eventList.isEmpty()) {
+					optionsYo.add(new BonfireExploreOption());
 				}
 				
 				Collections.shuffle(optionsYo);

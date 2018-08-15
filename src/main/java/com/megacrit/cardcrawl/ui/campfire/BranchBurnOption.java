@@ -25,10 +25,20 @@ public class BranchBurnOption extends AbstractCampfireOption
     public void useOption() {
 		ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_loseRelic("Dead Branch");
 		AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, new BranchBurnRelic());
+    	AbstractDungeon.effectList.add(new CampfireBurnResetEffect(this));
 		this.usable = false;
 		//((RestRoom)AbstractDungeon.getCurrRoom()).campfireUI.reopen();
 		//((RestRoom)AbstractDungeon.getCurrRoom()).phase = AbstractRoom.RoomPhase.INCOMPLETE;
-		AbstractDungeon.effectList.add(new CampfireSmithEffect());
+		/*AbstractDungeon.effectList.add(new CampfireSmithEffect());
+		if (!AbstractDungeon.gridSelectScreen.confirmScreenUp) {
+            AbstractDungeon.closeCurrentScreen();
+            if (AbstractDungeon.getCurrRoom() instanceof RestRoom) {
+                final RestRoom r = (RestRoom)AbstractDungeon.getCurrRoom();
+                r.campfireUI.reopen();
+            }
+            return;
+        }
+        AbstractDungeon.gridSelectScreen.cancelUpgrade();*/
     }
     
     static {

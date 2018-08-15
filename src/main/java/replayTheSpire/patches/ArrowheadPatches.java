@@ -15,7 +15,7 @@ public class ArrowheadPatches {
 	@SpirePatch(cls = "com.megacrit.cardcrawl.vfx.campfire.CampfireSmithEffect", method = "update")
 	public static class VfxUpdatePatch {
 		
-		@SpireInsertPatch(rloc = 18)
+		@SpireInsertPatch(rloc = 16)
 		public static void Insert(CampfireSmithEffect __Instance) {
 			//ReplayTheSpireMod.logger.info((boolean)ReflectionHacks.getPrivate((Object)__Instance, (Class)CampfireSmithEffect.class, "selectedCard"));
 			if (ArrowheadPatches.hasSecondUpgrade) {// && (boolean)ReflectionHacks.getPrivate((Object)__Instance, (Class)CampfireSmithEffect.class, "selectedCard")

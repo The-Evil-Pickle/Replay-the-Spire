@@ -240,7 +240,7 @@
 	"NAME": "Honey Jar",
 	"FLAVOR": "Delicious!",
     "DESCRIPTIONS": [
-	"Draw 1 more card each turn. NL #yRetain up to 1 card each turn. NL Extra choice on card reward screens. NL You cannot skip rewards."
+	"Draw 1 more card each turn. NL #yRetain up to 1 card each turn. NL Extra choice on card reward screens. NL Extra potion slot. NL You cannot skip rewards."
 	]
   },
   "afgdgfd0hfjg": {
@@ -357,6 +357,13 @@
 		" #yCurses to obtain. NL (Attempting to remove Curses with the first effect #yTransforms them instead).",
 		"Choose cards to remove",
 		"Choose curses to obtain"
+	]
+  },
+  "Blightstone": {
+    "NAME": "Blightstone",
+	"FLAVOR": "Ew",
+    "DESCRIPTIONS": [
+		"Gain [E] at the start of each round. NL On pick up, choose a #rBlight to obtain."
 	]
   },
   "BargainBundle": {

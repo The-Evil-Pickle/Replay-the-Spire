@@ -113,6 +113,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static Texture multitaskButton;
 	public static Texture mineButton;
 	public static Texture polymerizeButton;
+	public static Texture exploreButton;
 	public static int playerShielding = 0;
 	public static ArrayList<Integer> monsterShielding = new ArrayList<Integer>();
 	public static boolean noSkipRewardsRoom;
@@ -504,6 +505,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.mineButton = ImageMaster.loadImage("images/ui/campfire/replay/mine.png");
 		ReplayTheSpireMod.polymerizeButton = ImageMaster.loadImage("images/ui/campfire/replay/polymerize.png");
 		ReplayTheSpireMod.multitaskButton = ImageMaster.loadImage("images/ui/campfire/replay/multitask.png");
+		ReplayTheSpireMod.exploreButton = ImageMaster.loadImage("images/ui/campfire/replay/explore.png");
 
 		logger.info("================================================================");
     }
@@ -740,6 +742,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.mineButton = ImageMaster.loadImage("images/ui/campfire/replay/mine.png");
 		ReplayTheSpireMod.polymerizeButton = ImageMaster.loadImage("images/ui/campfire/replay/polymerize.png");
 		ReplayTheSpireMod.multitaskButton = ImageMaster.loadImage("images/ui/campfire/replay/multitask.png");
+		ReplayTheSpireMod.exploreButton = ImageMaster.loadImage("images/ui/campfire/replay/explore.png");
 		ReplayTheSpireMod.renderFishFG = false;
 		ReplayTheSpireMod.fishAtlas = new TextureAtlas(Gdx.files.internal("images/replayScenes/fishfight.atlas"));
 		ReplayTheSpireMod.fishFG = ReplayTheSpireMod.fishAtlas.findRegion("mod/fg");
@@ -887,7 +890,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		RelicLibrary.addBlue(new Carrot());
 		RelicLibrary.addBlue(new Geode());
 		//RelicLibrary.addBlue(new RaidersMask());
-		//BaseMod.addRelic(new Arrowhead(), RelicType.SHARED);
+		BaseMod.addRelic(new Arrowhead(), RelicType.SHARED);
 		BaseMod.addRelic(new AbesTreasure(), RelicType.SHARED);
 		BaseMod.addRelic(new Bandana(), RelicType.SHARED);
 		BaseMod.addRelic(new BargainBundle(), RelicType.SHARED);
