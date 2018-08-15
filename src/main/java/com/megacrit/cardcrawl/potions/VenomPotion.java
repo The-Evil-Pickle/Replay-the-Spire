@@ -28,11 +28,7 @@ public class VenomPotion
   {
     super(NAME, "Venom Potion", PotionRarity.UNCOMMON, AbstractPotion.PotionSize.S, AbstractPotion.PotionColor.POISON);
 	this.potency = this.getPotency();
-    if (AbstractDungeon.ascensionLevel >= 11) {
       this.description = (DESCRIPTIONS[0] + 1 + DESCRIPTIONS[1] + DESCRIPTIONS[2] + this.potency + DESCRIPTIONS[3]);
-    } else {
-	  this.description = (DESCRIPTIONS[0] + 1 + DESCRIPTIONS[1]);
-    }
     this.isThrown = false;
     this.tips.add(new PowerTip(this.name, this.description));
     this.tips.add(new PowerTip(

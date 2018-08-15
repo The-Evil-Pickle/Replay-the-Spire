@@ -359,6 +359,14 @@
 		"Choose curses to obtain"
 	]
   },
+  "BargainBundle": {
+    "NAME": "Bargain Bundle",
+	"FLAVOR": "What a deal!",
+    "DESCRIPTIONS": [
+		"When you purchase this relic, the cost of the cards, potions, and card removal service in the same shop are reduced by #b",
+		" gold."
+	]
+  },
   "Bottled Flurry": {
     "NAME": "Bottled Flurry",
 	"FLAVOR": "",

@@ -887,13 +887,14 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		RelicLibrary.addBlue(new Carrot());
 		RelicLibrary.addBlue(new Geode());
 		//RelicLibrary.addBlue(new RaidersMask());
-		BaseMod.addRelic(new Arrowhead(), RelicType.SHARED);
+		//BaseMod.addRelic(new Arrowhead(), RelicType.SHARED);
 		BaseMod.addRelic(new AbesTreasure(), RelicType.SHARED);
 		BaseMod.addRelic(new Bandana(), RelicType.SHARED);
+		BaseMod.addRelic(new BargainBundle(), RelicType.SHARED);
 		BaseMod.addRelic(new Baseball(), RelicType.SHARED);
 		BaseMod.addRelic(new ByrdSkull(), RelicType.GREEN);
 		BaseMod.addRelic(new ChameleonRing(), RelicType.SHARED);
-		BaseMod.addRelic(new ChemicalX(), RelicType.SHARED);
+		//BaseMod.addRelic(new ChemicalX(), RelicType.SHARED);
 		BaseMod.addRelic(new ChewingGum(), RelicType.SHARED);
 		BaseMod.addRelic(new CounterBalance(), RelicType.SHARED);
 		BaseMod.addRelic(new Durian(), RelicType.SHARED);
