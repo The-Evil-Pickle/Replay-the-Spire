@@ -29,7 +29,7 @@ public class ReplayRepulse extends CustomCard
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
     	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ReflectionPower(p, this.magicNumber), this.magicNumber));
-    	AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new BackFire(), 2));
+    	AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new BackFire(), 1));
     }
     
     @Override

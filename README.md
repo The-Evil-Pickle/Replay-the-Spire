@@ -1,5 +1,5 @@
 # Replay the Spire
-#### Expansion mod for Slay the Spire by AstroPenguin642, The_Evil_Pickle, and Stewartisme.
+#### Expansion mod for Slay the Spire by The_Evil_Pickle, AstroPenguin642, Bakuhaku, Stewartisme, and Slimer509.
 ###### (Currently maintained by The_Evil_Pickle)
 
 This mod aims to expand upon the base game by adding lots of content. It is currently a work in progress, but you can download the [latest release](https://github.com/AstroPenguin642/Replay-the-Spire/releases) to help us improve it.
@@ -9,10 +9,10 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
 ### Currently adds:
- * 42 Relics (4 ironclad, 4 silent, 4 defect, 30 shared)
- * 45 Cards (9 ironclad, 10 silent, 10 defect, 7 colorless, 9 curses)
+ * 43 Relics (4 ironclad, 4 silent, 4 defect, 31 shared)
+ * 47 Cards (9 ironclad, 12 silent, 11 defect, 6 colorless, 9 curses)
  * 4 Events
- * 9 Potions
+ * 10 Potions
  * 2 Rooms
  * 2 Elites
  * 1 Boss
@@ -58,7 +58,7 @@ Durian | All | Rare | Gain 5 Max HP on pickup. Each time you gain a debuff, also
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
 Pondfish Scales | All | Rare | Whenever you play a Skill that does not give **Block,** gain 2 **Block**.
 Vampiric Spirits | Silent | Rare | During the first turn of combat, 25% of all unblocked attack damage you deal is retuned as health.
-Chemical X | All | Shop | Your cost X effects are increased by 2.
+Bargain Bundle | All | Shop | When purchased, decreases the cost of potions, cards, and card removal service in the same shop by 100 gold.
 GuideBook | All | Shop | On pickup, **Upgrade** 2 cards randomly. Prioritizes rarer cards.
 Abe's Treasure | All | Boss | Gain 1 more energy each turn. Start combat with **Drowning**. On Pickup, add the Abe's Revenge curse to your deck.
 Chewing Gum | All | Boss | Gain 1 more energy each turn. Each time you shuffle your deck, add 2 Slimed to your draw pile..
@@ -88,14 +88,16 @@ Fluid Movement | Green | Commmon | Power | 1 | Keep up to 5(8) block between rou
 Hidden Blade | Green | Commmon | Skill | 1 | Add a Shiv to your hand and draw 2(3) cards.
 Toxin Wave | Green | Uncommon | Skill | 1 | Apply 3(4) **Necrotic** **Poison** to ALL enemies.
 Draining Mist | Green | Uncommon | Skill | 3 | Apply 3 **Necrotic** **Poison** to a random enemy 2(3) times. Apply -1(-2) **Strength** to ALL enemies. **Exhaust**.
-The Works | Green | Uncommon | Skill | 0 | For every 3 cards you draw this turn, gain 1 energy and deal 3(7) damage to a random enemy.
+Exploit Weakness | Green | Uncommon | Skill | 1(0) | Apply **Languid** equal to target's **Weak**. **Exhaust**.
+The Works | Green | Uncommon | Skill | 0 | For every 3 cards you draw this turn, gain 1 energy and deal 4(9) damage to a random enemy. Playable once per round.
 Scrap Shanks | Green | Uncommon | Power | 0 | When you discard a card during your turn, add 1 (**Upgraded**) **Shiv** to your hand.
 Sneak Up | Green | Uncommon | Skill | 1 | **Innate.** Discard 1 card (upgrade removes). Gain 1 **Intangible.** **Exhaust.** **Ethereal.**
 Atom Bomb | Green | Rare | Attack | 4 | Deal 60(75) damage. Apply 4 **Poison** to ALL fighters. **Exhaust**.
+From All Sides | Green | Rare | Attack | X | Apply 1 Weak and deal 3 damage to a random enemy 2X + 1(2) times.
 Poison Darts | Green | Rare | Skill | X | Apply 3(4) **Necrotic** **Poison** X times. Apply X Poison to ALL enemies.
 Necrosis | Green | Rare | Skill | 2 | Convert all **Poison** to **Necrotic** **Poison**. **Exhaust**.
 Panic Button | Blue | Common | Skill | 0 | **Evoke** all your orbs. Draw 2(4) cards. **Exhaust.** **Retain.**
-Repulse | Blue | Common | Skill | 0 | Gain 1(2) **Reflection**.
+Repulse | Blue | Common | Skill | 0 | Gain 1(2) **Reflection**. Add 1 **Backfire** to your discard pile.
 Crystal Conduit | Blue | Uncommon | Skill | 1 | **Channel** 1 **Crystal** (and 1 random orb).
 Claw Rake | Blue | Uncommmon | Attack | 2 | Deal 3(5) damage. Deal 3(5) damage to ALL enemies. Damage is upgraded by Claw cards.
 FIFO Queue | Blue | Uncommmon | Power | 2(X) | Gain 4(2X+1) orb slots.
@@ -104,6 +106,7 @@ Empty Bin | Blue | Uncommon | Power | 1 | (**Innate**.) At the end of your turn,
 Time Bomb | Blue | Uncommmon | Skill | 1 | Gain 2 orb slots. **Channel** 2 **Glass.** **Channel** 1 **Dark,** and trigger its passive 2(3) times. **Exhaust.**
 Mirror Shield | Blue | Rare | Skill | 2 | **Channel** 1 **Crystal.** **Channel** 1 **Frost.** Gain 5(8) **Block.** Gain 1(2) **Reflection.**
 RNG | Blue | Rare | Skill | X | **Channel** X(+1) random orbs.
+Omega Cannon | Blue | Rare | Attack | 2 | Deal 7(6) damage to ALL enemies 4(5) times. Add 1 **Backfire** to your draw and discard piles. **Focus** increases damage."
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | Lose 1 Focus. All non-attack damage you deal is increased by 2. (**Innate.**)
 Survey Options | Colorless | Uncommon | Skill | X | Draw X. **Refund** 1(2).
@@ -115,7 +118,7 @@ Faulty Equipment | Curse | Curse | Curse | - | **Unplayable**. Can only be **Exh
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
 Sickly | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, lose 3 **Block**.
 Spreading Infection | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a copy of all other status and curse cards in your hand to your discard pile.
-Languid | Curse | Curse | Curse | - | **Unplayable**. If this is in your hand at the end of your turn, start next turn with 1 less Energy.
+Depression | Curse | Curse | Curse | - | **Unplayable**. When drawn, gain 2 **Languid** and draw a card. **Ethereal**.
 Delirium | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, gain **Confusion** for 1 round.
 Voices | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, shuffle 2 Dazed into your discard pile. **Ethereal**.
 Looming Evil | Curse | Curse | Curse | 3 | Can be played for 3 Energy to **Exhaust**. At the end of your turn, shuffle a random curse into your draw pile and reduce the cost to play this card by 1.
@@ -142,6 +145,7 @@ Glass | Orb | No **Passive** effect. When **Evoked**, if you have more than 3 or
 Hellfire | Orb | **Passive:** Gives +2 **Strength** at the start of your turn that is removed at the end of your turn. **Evoke:** Apply 1 **Vulnerable** to a random enemy.
 Necrotic Poison | Power (Debuff) | An alternate kind of Poison. Does double damage, but is reduced by half each turn (rounding down). Normal Poison does not count down while Necrotic Poison is applied.
 Reflection | Power (Buff) | Each time you completely block attack damage, that damage is reflected back at the attacker.
+Languid | Power (Debuff) | Reduces damage dealt by stack number. Decreases by 1 each round.
 
 # Potions
 Name | Rarity | Description
@@ -152,6 +156,7 @@ Venom Potion | Uncommon | Gain 1 Envenom and -1 Strength.
 Toxic Potion | Uncommon | Apply 5 Necrotic Poison to all enemies.
 Milkshake | Uncommon | You can retain up to 5 unspent energy between rounds.
 Shield Potion | Uncommon | Gain 12 Shielding.
+Languish Potion | Uncommon | Apply 3 Languid.
 Death Potion | Rare | Deal 60 damage and lose 12 HP.
 Doom Potion | Rare | Destroy an enemy after 10 turns.
 Cursed Concoction | Rare | Gain 3 Strength and 2 Dexterity. Add a random curse to your draw and discard piles.

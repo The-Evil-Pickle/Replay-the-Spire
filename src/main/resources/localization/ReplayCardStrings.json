@@ -58,7 +58,7 @@
   },
   "ReplayTheSpireMod:The Works": {
     "NAME": "The Works",
-    "DESCRIPTION": "For every 3 cards you draw this turn, gain [E] and deal !M! damage to a random enemy."
+    "DESCRIPTION": "For every 3 cards you draw this turn, gain [E] and deal !M! damage to a random enemy. NL Becomes Unplayable until end of round."
   },
   "ReplayTheSpireMod:Spot Opening": {
     "NAME": "Spot Opening",
@@ -164,7 +164,7 @@
   },
   "ReplayTheSpireMod:Repulse": {
     "NAME": "Repulse",
-    "DESCRIPTION": "Gain !M! Reflection. NL Shuffle 2 Backfires into your discard pile."
+    "DESCRIPTION": "Gain !M! Reflection. NL Shuffle 1 Backfire into your discard pile."
   },
   "ReplayTheSpireMod:Omega Cannon": {
     "NAME": "Omega Cannon",

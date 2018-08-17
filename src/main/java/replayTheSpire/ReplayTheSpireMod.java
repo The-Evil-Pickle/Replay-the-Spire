@@ -861,7 +861,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addKeyword(shieldNames, "An alternate form of #yBlock that can directly block HP loss. NL #yShielding is not lost at the end of each round.");
 		final String[] langNames = { "languid", "Languid", "Languid."};
 		BaseMod.addKeyword(langNames, "Fighters with #yLanguid deal #b1 less #yAttack damage per stack. NL Is reduced by #b1 at the end of each round.");
-		final String[] bfNames = { "backfire", "Backfire", "Backfires"};
+		final String[] bfNames = { "backfire", "Backfire", "Backfires", "backfires"};
 		BaseMod.addKeyword(bfNames, "#yStatus: Gives #b1 #yVulnerable when drawn. NL Deals #b6 damage and #yExhausts at the end of your turn.");
 		/*
 		final String[] specNames = { "spectral", "Spectral", "Spectral."};

@@ -97,7 +97,7 @@ public class ReplayCampButtonsPatch
 					optionsYo.add(new SmithOption(AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 0));
 				}
 				if (!AbstractDungeon.player.hasRelic("Peace Pipe") ) {
-					optionsYo.add(new TokeOption());
+					optionsYo.add(new TokeOption(true));
 				}
 				if (!AbstractDungeon.player.hasRelic("Shovel")) {
 					optionsYo.add(new DigOption());

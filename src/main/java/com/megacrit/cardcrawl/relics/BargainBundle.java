@@ -16,7 +16,7 @@ public class BargainBundle extends AbstractRelic
     public static final int DISCOUNT = 100;
     
     public BargainBundle() {
-        super(ID, "betaRelic.png", RelicTier.SHOP, LandingSound.FLAT);
+        super(ID, "bargainBundle.png", RelicTier.SHOP, LandingSound.FLAT);
     }
     
     @Override

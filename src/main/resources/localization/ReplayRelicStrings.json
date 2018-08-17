@@ -341,6 +341,14 @@
 		"% of all unblocked Attack damage you deal is returned as health."
 	]
   },
+  "ReplayTheSpireMod:GhostHeart": {
+    "NAME": "Ghost Heart",
+	"FLAVOR": "The lingering gratitude of a certain spirit.",
+    "DESCRIPTIONS": [
+		"Once per combat, when you die, revive with #yShielding equal to #b10% of your Max HP and #b",
+		" #yIntangible. NL If you have only 1 HP at the start of combat, triggers immediately."
+	]
+  },
   "Another Sword": {
     "NAME": "Another Sword",
 	"FLAVOR": "A second sword. You have two now.",

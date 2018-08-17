@@ -32,7 +32,7 @@ public class GhostDefend
   
   public GhostDefend()
   {
-    super("Ghost Defend", NAME, "cards/replay/defend.png", 1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.SELF, 0);
+    super("Ghost Defend", NAME, "cards/replay/defend.png", 1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.SELF);
     
     this.baseBlock = 5;
     this.exhaust = true;

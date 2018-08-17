@@ -36,7 +36,7 @@ public class TheWorksPower extends AbstractPower
     
     @Override
     public void updateDescription() {
-        this.description = TheWorksPower.DESCRIPTIONS[0] + this.amount + TheWorksPower.DESCRIPTIONS[1];
+        this.description = TheWorksPower.DESCRIPTIONS[0] + RESET_AMT + TheWorksPower.DESCRIPTIONS[1];
         for (int i = 0; i < this.energy; i++) {
         	this.description += "[E]";
         }
@@ -52,6 +52,7 @@ public class TheWorksPower extends AbstractPower
     public void stackPower(final int stackAmount) {
         this.fontScale = 8.0f;
         this.damage += stackAmount;
+        this.energy++;
     }
     
     @Override
