@@ -82,5 +82,5 @@
     </plugins>
 	<finalName>${project.artifactId}</finalName>
   </build>
-  <version>1.0.11</version>
+  <version>1.0.12</version>
 </project>

@@ -24,7 +24,7 @@ public class Voices extends CustomCard
     private static final int WEAK_AMT = 1;
     
     public Voices() {
-        super("Voices", Voices.NAME, "cards/replay/voices.png", -2, Voices.DESCRIPTION, CardType.CURSE, CardColor.CURSE, CardRarity.CURSE, CardTarget.NONE, 1);
+        super("Voices", Voices.NAME, "cards/replay/voices.png", -2, Voices.DESCRIPTION, CardType.CURSE, CardColor.CURSE, CardRarity.CURSE, CardTarget.NONE);
 		this.exhaust = true;
 		this.baseMagicNumber = 2;
 		this.magicNumber = this.baseMagicNumber;

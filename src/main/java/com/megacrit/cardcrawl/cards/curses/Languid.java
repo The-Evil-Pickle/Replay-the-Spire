@@ -34,6 +34,9 @@ public class Languid
   public Languid()
   {
     super("Languid", NAME, "cards/replay/betaCurse.png", -2, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE);
+    this.baseMagicNumber = 2;
+    this.magicNumber = this.baseMagicNumber;
+    this.isEthereal = true;
   }
   
   public void use(AbstractPlayer p, AbstractMonster m)
@@ -52,14 +55,7 @@ public class Languid
   
     @Override
     public void triggerWhenDrawn() {
-        AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
-    }
-    
-    @Override
-    public void triggerOnEndOfTurnForPlayingCard() {
-        this.dontTriggerOnUseCard = true;
-        //AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
-		AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LanguidPower(AbstractDungeon.player, this.magicNumber, false), this.magicNumber));
     }
   
   public AbstractCard makeCopy()

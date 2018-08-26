@@ -24,7 +24,7 @@ public class RunThrough extends CustomCard
     private static final int POOL = 1;
     
     public RunThrough() {
-        super("Run Through", RunThrough.NAME, "cards/replay/runThrough.png", 1, RunThrough.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.COMMON, CardTarget.ENEMY, 1);
+        super("Run Through", RunThrough.NAME, "cards/replay/runThrough.png", 1, RunThrough.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.COMMON, CardTarget.ENEMY);
         this.baseDamage = RunThrough.ATTACK_DMG;
         this.baseMagicNumber = 4;
         this.magicNumber = this.baseMagicNumber;

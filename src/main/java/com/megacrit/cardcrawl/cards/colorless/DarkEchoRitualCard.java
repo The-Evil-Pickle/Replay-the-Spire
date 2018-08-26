@@ -26,7 +26,7 @@ public class DarkEchoRitualCard extends CustomCard
     private static final int POOL = 1;
     
     public DarkEchoRitualCard() {
-        super("Dark Echo", DarkEchoRitualCard.NAME, "cards/replay/dark_echo.png", 1, DarkEchoRitualCard.DESCRIPTION, CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY, 1);
+        super("Dark Echo", DarkEchoRitualCard.NAME, "cards/replay/dark_echo.png", 1, DarkEchoRitualCard.DESCRIPTION, CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
         this.baseDamage = 42;
         this.isMultiDamage = true;
     }

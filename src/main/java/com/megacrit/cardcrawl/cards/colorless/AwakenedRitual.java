@@ -20,7 +20,7 @@ public class AwakenedRitual extends CustomCard
     public static final String DESCRIPTION;
     
     public AwakenedRitual() {
-        super("Crow Ritual", AwakenedRitual.NAME, "cards/replay/crow_ritual.png", 0, AwakenedRitual.DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.RARE, CardTarget.SELF, 1);
+        super("Crow Ritual", AwakenedRitual.NAME, "cards/replay/crow_ritual.png", 0, AwakenedRitual.DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.RARE, CardTarget.SELF);
 		this.baseDamage = 42;
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;

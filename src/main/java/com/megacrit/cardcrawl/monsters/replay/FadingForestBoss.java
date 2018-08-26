@@ -6,12 +6,19 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.events.*;
 import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.cards.blue.Strike_Blue;
+import com.megacrit.cardcrawl.cards.colorless.Bite;
 import com.megacrit.cardcrawl.cards.curses.*;
+import com.megacrit.cardcrawl.cards.green.Strike_Green;
+import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.cards.status.*;
+import com.megacrit.cardcrawl.characters.Ironclad;
+import com.megacrit.cardcrawl.characters.TheSilent;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.utility.*;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.powers.relicPowers.*;
+import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import com.megacrit.cardcrawl.actions.animations.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.*;
@@ -22,6 +29,7 @@ import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
 import java.util.*;
 import basemod.*;
+import basemod.abstracts.CustomCard;
 
 public class FadingForestBoss extends AbstractMonster
 {
@@ -318,6 +326,32 @@ public class FadingForestBoss extends AbstractMonster
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
 				break;
             }
+            case ATTACK_VAMPIRES: {
+				this.imageEventText.loadImage("images/events/fadingForest/fadingForest.jpg");
+				this.savedDamage = this.damage.get(5).base;
+				this.savedDamage2 = this.damage.get(4).base;
+				if (AbstractDungeon.player instanceof Ironclad) {
+					this.imageEventText.updateBodyText(this.eDesc(0));
+				} else if (AbstractDungeon.player instanceof TheSilent) {
+					this.imageEventText.updateBodyText(this.eDesc(1));
+				} else {
+					this.imageEventText.updateBodyText(this.eDesc(2));
+				}
+				this.imageEventText.setDialogOption(this.eOp(0) + this.savedDamage + this.eOp(1));
+				this.imageEventText.setDialogOption(this.eOp(2) + this.savedDamage2 + this.eOp(3));
+				AbstractDungeon.actionManager.addToBottom(new ForestEventAction());
+				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+				break;
+            }
+            case ATTACK_TESSERACT: {
+				this.imageEventText.loadImage("images/events/fadingForest/sensoryStone.jpg");
+				this.savedDamage = this.damage.get(3).base;
+				this.imageEventText.updateBodyText(this.eDesc(0));
+				this.imageEventText.setDialogOption(this.eOp(6));
+				AbstractDungeon.actionManager.addToBottom(new ForestEventAction());
+				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+				break;
+            }
         }
     }
     
@@ -355,6 +389,13 @@ public class FadingForestBoss extends AbstractMonster
 					this.setNextTurn(FORK_PATHS);
 				}
 				return;
+			case 6:
+				if (num > 50) {
+					this.setNextTurn(ATTACK_VAMPIRES);
+				} else {
+					this.setNextTurn(ATTACK_TESSERACT);
+				}
+				return;
 		}
     }
 	
@@ -376,22 +417,22 @@ public class FadingForestBoss extends AbstractMonster
 							case 0:
 								this.imageEventText.updateBodyText(this.eDesc(2));
 								m = new FF_GremlinNob();
-								AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
+								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 								break;
 							case 1:
 								this.imageEventText.updateBodyText(this.eDesc(3));
 								m = new FF_Lagavulin(true);
-								AbstractDungeon.actionManager.addToTop(new GainBlockAction(m, m, 8));
-								AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
+								//AbstractDungeon.actionManager.addToTop(new GainBlockAction(m, m, 8));
+								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 								break;
 							default:
 								this.imageEventText.updateBodyText(this.eDesc(4));
 								m = new FF_Sentry(0, 30, false);
-								AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new ArtifactPower(m, 1), 1));
-								AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
+								//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new ArtifactPower(m, 1), 1));
+								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 								m = new FF_Sentry(-200, 30, true);
-								AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new ArtifactPower(m, 1), 1));
-								AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
+								//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new ArtifactPower(m, 1), 1));
+								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 								break;
 						}
 						this.imageEventText.updateDialogOption(0, this.eOp(4));
@@ -468,9 +509,9 @@ public class FadingForestBoss extends AbstractMonster
 				switch(p0) {
 					case 0:
 						AbstractMonster m = new FF_FungiBeast(-350f, 0f);
-						AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new FadingPower(m, 3), 3));
-						AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new SporeCloudPower(m, 1), 1));
-						AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
+						//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new FadingPower(m, 3), 3));
+						//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new SporeCloudPower(m, 1), 1));
+						AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 						break;
 					default:
 						AbstractDungeon.actionManager.addToTop(new MakeTempCardInDiscardAction(new SpreadingInfection(), 1));
@@ -594,28 +635,122 @@ public class FadingForestBoss extends AbstractMonster
 							case 0:
 								this.imageEventText.updateBodyText(this.eDesc(2));
 								m = new FF_ComboSlime_L(-250, 0);
-								AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
+								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 								break;
 							case 1:
 								this.imageEventText.updateBodyText(this.eDesc(3));
 								m = new FF_JawWorm(-400, 0);
-								AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
+								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 								m = new FF_LouseNormal(-325, 0);
-								AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
+								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 								m = new FF_LouseDefensive(-250, 0);
-								AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
+								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 								break;
 							default:
 								this.imageEventText.updateBodyText(this.eDesc(4));
 								m = new FF_Sentry(0, 30, false);
-								AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new ArtifactPower(m, 1), 1));
-								AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
+								//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new ArtifactPower(m, 1), 1));
+								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 								m = new FF_Sentry(-200, 30, true);
-								AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new ArtifactPower(m, 1), 1));
-								AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
+								//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new ArtifactPower(m, 1), 1));
+								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 								break;
 						}
 						this.imageEventText.updateDialogOption(0, this.eOp(4));
+						this.imageEventText.clearRemainingOptions();
+						AbstractDungeon.actionManager.addToTop(new ForestEventAction());
+						this.c_part++;
+						break;
+					default:
+						this.imageEventText.clear();
+						break;
+				}
+				break;
+			}
+			case ATTACK_VAMPIRES: {
+				switch (this.c_part) {
+					case 0:
+						switch(p0) {
+							case 0:
+								AbstractCard b = new Bite();
+								AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(b, 5, true, true));
+								ArrayList<AbstractCard> handCopy = new ArrayList<AbstractCard>();
+								for (AbstractCard c : AbstractDungeon.player.hand.group) {
+								  if (c instanceof Strike_Red || c instanceof Strike_Green || c instanceof Strike_Blue || (c instanceof CustomCard && ((CustomCard)c).isStrike())) {
+									handCopy.add(c);
+								  }
+								}
+								ArrayList<AbstractCard> deckCopy = new ArrayList<AbstractCard>();
+								for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+								  if (c instanceof Strike_Red || c instanceof Strike_Green || c instanceof Strike_Blue || (c instanceof CustomCard && ((CustomCard)c).isStrike())) {
+									deckCopy.add(c);
+								  }
+								}
+								ArrayList<AbstractCard> discardCopy = new ArrayList<AbstractCard>();
+								for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
+								  if (c instanceof Strike_Red || c instanceof Strike_Green || c instanceof Strike_Blue || (c instanceof CustomCard && ((CustomCard)c).isStrike())) {
+									discardCopy.add(c);
+								  }
+								}
+								if (handCopy.isEmpty() && deckCopy.isEmpty() && discardCopy.isEmpty()) {
+								  //AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, DESCRIPTIONS[3], true));
+								}
+								else
+								{
+								  for (AbstractCard c : handCopy) {
+									AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
+								  }
+								  handCopy.clear();
+								  for (AbstractCard c : deckCopy) {
+									AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.drawPile));
+								  }
+								  deckCopy.clear();
+								  for (AbstractCard c : discardCopy) {
+									AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.discardPile));
+								  }
+								  discardCopy.clear();
+								}
+								AbstractDungeon.actionManager.addToTop(new LoseHPAction(AbstractDungeon.player, this, this.savedDamage, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+								this.imageEventText.updateBodyText(this.eDesc(3));
+								this.imageEventText.updateDialogOption(0, this.eOp(4));
+								this.imageEventText.clearRemainingOptions();
+								AbstractDungeon.actionManager.addToTop(new ForestEventAction());
+								this.c_part++;
+								break;
+							default:
+								AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.player, new DamageInfo(this, this.savedDamage2), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+								this.imageEventText.updateBodyText(this.eDesc(4));
+								this.imageEventText.updateDialogOption(0, this.eOp(4));
+								this.imageEventText.clearRemainingOptions();
+								AbstractDungeon.actionManager.addToTop(new ForestEventAction());
+								this.c_part++;
+								break;
+						}
+						break;
+					default:
+						this.imageEventText.clear();
+						break;
+				}
+			}
+			case ATTACK_TESSERACT: {
+				switch(c_part) {
+					case 0:
+						this.imageEventText.updateBodyText(this.eDesc(1));
+						this.imageEventText.setDialogOption(this.eOp(0) + this.savedDamage + this.eOp(3) + 2 + this.eOp(4));
+						this.imageEventText.setDialogOption(this.eOp(1) + this.savedDamage + this.eOp(3) + 3 + this.eOp(4));
+						this.imageEventText.setDialogOption(this.eOp(2) + this.savedDamage + this.eOp(3) + 4 + this.eOp(4));
+						AbstractDungeon.actionManager.addToTop(new ForestEventAction());
+						this.c_part++;
+						break;
+					case 1:
+						for (int i = 0; i < p0 + 1; ++i) {
+			                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(AbstractDungeon.returnTrulyRandomColorlessCard().makeCopy(), 1, false));
+			            }
+						for (int i = 0; i < p0 + 2; ++i) {
+							AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.player, new DamageInfo(this, this.savedDamage), AbstractGameAction.AttackEffect.FIRE));
+			            }
+						this.imageEventText.updateBodyText(this.eDesc(p0 + 2));
+						this.imageEventText.updateDialogOption(0, this.eOp(5));
 						this.imageEventText.clearRemainingOptions();
 						AbstractDungeon.actionManager.addToTop(new ForestEventAction());
 						this.c_part++;
@@ -635,11 +770,12 @@ public class FadingForestBoss extends AbstractMonster
 		if (!AbstractDungeon.id.equals("Exordium")) {
 			this.imageEventText.render(sb);
 		}
+		/*
 		if (this.tint.color.a <= 0.751f) {
 			this.tint.changeColor(new Color(1.0f, 1.0f, 1.0f, 1.0f));
 		} else if (this.tint.color.a >= 0.99f) {
 			this.tint.changeColor(new Color(1.0f, 1.0f, 1.0f, 0.75f));
-		}
+		}*/
 		
     }
     

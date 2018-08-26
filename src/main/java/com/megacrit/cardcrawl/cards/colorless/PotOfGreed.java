@@ -26,7 +26,7 @@ public class PotOfGreed extends CustomCard
 	public boolean copyPlayedThisTurn = false;
     
     public PotOfGreed() {
-        super("Pot Of Greed", PotOfGreed.NAME, "cards/replay/greed.png", 0, PotOfGreed.DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF, 1);
+        super("Pot Of Greed", PotOfGreed.NAME, "cards/replay/greed.png", 0, PotOfGreed.DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }

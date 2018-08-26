@@ -30,7 +30,7 @@ public class LifeLink
   
   public LifeLink()
   {
-    super("Life Link", NAME, "cards/replay/lifeBind.png", 1, DESCRIPTION, AbstractCard.CardType.POWER, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, 1);
+    super("Life Link", NAME, "cards/replay/lifeBind.png", 1, DESCRIPTION, AbstractCard.CardType.POWER, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
     
     //this.exhaust = true;
   }

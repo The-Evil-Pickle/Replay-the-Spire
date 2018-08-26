@@ -453,7 +453,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static ChaosMagicSetting RingOfChaos_CompatibilityMode = ChaosMagicSetting.COST_ONLY;
 	
 	public ReplayTheSpireMod() {
-		
+		/*
 		logger.info("subscribing to postInitialize event");
         BaseMod.subscribeToPostInitialize(this);
 		
@@ -471,7 +471,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		
 		logger.info("subscribing to getPotions event");
         BaseMod.subscribeToPotionGet(this);
-        
+        */
+		BaseMod.subscribe(this);
 		initializePotions();
 		
 		
@@ -725,7 +726,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public ModToggleButton chaos_button_4;
 	
 	private ModToggleButton makeLabeledButton(final String labelText, final float xPos, final float yPos, final Color color, final BitmapFont font, final boolean enabled, final ModPanel p, final Consumer<ModLabel> labelUpdate, final Consumer<ModToggleButton> c) {
-		p.addLabel(labelText, xPos + 40.0f, yPos + 8.0f, (me) -> {});
+		//p.addLabel(labelText, xPos + 40.0f, yPos + 8.0f, (me) -> {});
 		return new ModToggleButton(xPos, yPos, enabled, false, p, c);
 	}
 	
@@ -751,8 +752,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		this.currentSettingsSubTab = 0;
         this.settingsPanel = new ModPanel();
 		loadSettingsData();
-		settingsPanel.addLabel("Avoid Ring Of Chaos magic number changes?", 350.0f, 750.0f, (me) -> {});
-		settingsPanel.addLabel("(Avoiding these changes makes RoC less buggy, but also have less interesting effect variety)", 350.0f, 700.0f, (me) -> {});
+		//settingsPanel.addLabel("Avoid Ring Of Chaos magic number changes?", 350.0f, 750.0f, (me) -> {});
+		//settingsPanel.addLabel("(Avoiding these changes makes RoC less buggy, but also have less interesting effect variety)", 350.0f, 700.0f, (me) -> {});
 		chaos_button_1 = makeLabeledButton("Don't avoid changes including magic number (more variety, more bugs)", 350.0f, 650.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.ALWAYS, this.settingsPanel, (me) -> {}, me -> {
             if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
 				me.enabled = true;
@@ -1066,7 +1067,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for MadScience...");
-			BaseMod.addRelicToCustomPool((AbstractRelic)new ChemicalBlood(), madsciencemod.patches.CardColorEnum.BRONZE.toString());
+			BaseMod.addRelicToCustomPool((AbstractRelic)new ChemicalBlood(), madsciencemod.patches.CardColorEnum.BRONZE);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for MadScience...");
@@ -1101,8 +1102,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for Servant...");
-			BaseMod.addRelicToCustomPool((AbstractRelic)new m_ScarletBlood(), blackrusemod.patches.AbstractCardEnum.SILVER.toString());
-			BaseMod.addRelicToCustomPool((AbstractRelic)new m_SnakeCloak(), blackrusemod.patches.AbstractCardEnum.SILVER.toString());
+			BaseMod.addRelicToCustomPool((AbstractRelic)new m_ScarletBlood(), blackrusemod.patches.AbstractCardEnum.SILVER);
+			BaseMod.addRelicToCustomPool((AbstractRelic)new m_SnakeCloak(), blackrusemod.patches.AbstractCardEnum.SILVER);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Servant...");
@@ -1115,7 +1116,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		foundmod_seeker = true;
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for FruityMod...");
-			BaseMod.addRelicToCustomPool(new m_ArcaneBlood(), AbstractCardEnum.SEEKER_PURPLE.toString());
+			BaseMod.addRelicToCustomPool(new m_ArcaneBlood(), AbstractCardEnum.SEEKER_PURPLE);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for FruityMod...");

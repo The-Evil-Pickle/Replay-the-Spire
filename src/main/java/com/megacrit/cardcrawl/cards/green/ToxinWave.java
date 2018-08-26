@@ -40,7 +40,7 @@ public class ToxinWave
   
   public ToxinWave()
   {
-    super("Toxin Wave", NAME, "cards/replay/toxinWave.png", ToxinWave.COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, 1);
+    super("Toxin Wave", NAME, "cards/replay/toxinWave.png", ToxinWave.COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY);
     
     this.baseMagicNumber = 3;
     this.magicNumber = this.baseMagicNumber;

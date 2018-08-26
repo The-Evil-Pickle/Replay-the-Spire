@@ -39,7 +39,7 @@ public class DrainingMist
   
   public DrainingMist()
   {
-    super("Draining Mist", NAME, "cards/replay/drainingMist.png", DrainingMist.COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, 1);
+    super("Draining Mist", NAME, "cards/replay/drainingMist.png", DrainingMist.COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY);
     
     this.exhaust = true;
     this.baseMagicNumber = 2;
