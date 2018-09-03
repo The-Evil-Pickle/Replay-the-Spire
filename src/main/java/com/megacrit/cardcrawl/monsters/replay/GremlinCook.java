@@ -31,6 +31,7 @@ public class GremlinCook extends AbstractMonster
     private static final int A_2_BASH_DAMAGE = 8;
     private int blockAmt;
     private int bashDmg;
+    private int flexAmt;
     private static final byte PROTECT = 1;
     private static final byte BASH = 2;
     private static final AbstractCard burnCard;
@@ -52,6 +53,12 @@ public class GremlinCook extends AbstractMonster
         else {
             this.bashDmg = 2;
         }
+        if (AbstractDungeon.ascensionLevel >= 16) {
+            this.flexAmt = 3;
+        }
+        else {
+            this.flexAmt = 2;
+        }
         this.damage.add(new DamageInfo(this, this.bashDmg));
         //this.loadAnimation("images/monsters/theBottom/femaleGremlin/skeleton.atlas", "images/monsters/theBottom/femaleGremlin/skeleton.json", 1.0f);
         //final AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
@@ -62,7 +69,7 @@ public class GremlinCook extends AbstractMonster
     public void takeTurn() {
         switch (this.nextMove) {
             case 1: {
-                AbstractDungeon.actionManager.addToBottom(new GremCookAction(this, this.blockAmt));
+                AbstractDungeon.actionManager.addToBottom(new GremCookAction(this, this.blockAmt, this.flexAmt));
                 int aliveCount = 0;
                 for (final AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                     if (!m.isDying && !m.isEscaping) {

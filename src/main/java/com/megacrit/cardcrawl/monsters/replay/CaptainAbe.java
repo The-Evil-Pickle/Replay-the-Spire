@@ -172,7 +172,11 @@ public class CaptainAbe extends AbstractMonster
     @Override
     public void usePreBattleAction() {
         AbstractDungeon.getCurrRoom().cannotLose = true;
-		if (AbstractDungeon.ascensionLevel >= 9) {
+		if (AbstractDungeon.ascensionLevel >= 19) {
+			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, 5));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new IntangiblePower(this, 1), 1));
+		}
+		else if (AbstractDungeon.ascensionLevel >= 9) {
 			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, 20));
 		}
         //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RegrowPower(this)));

@@ -18,7 +18,7 @@ import basemod.*;
 import java.util.*;
 
 import replayTheSpire.ReplayTheSpireMod;
-import replayTheSpire.patches.ReplayRewardSkipPositionPatch;
+import replayTheSpire.patches.ReplayRewardSkipPatches.ReplayRewardSkipPositionPatch;
 
 @SpirePatch(cls = "com.megacrit.cardcrawl.ui.buttons.SingingBowlButton", method = "onClick")
 public class HoneyBowlPostPatch {

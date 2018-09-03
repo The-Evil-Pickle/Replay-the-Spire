@@ -1,6 +1,7 @@
 package com.megacrit.cardcrawl.cards.curses;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -17,50 +18,49 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.powers.*;
 import java.util.ArrayList;
 import basemod.*;
 import basemod.abstracts.*;
 
-public class Languid
+public class CommonCold
   extends CustomCard
 {
-  public static final String ID = "Languid";
-  private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Languid");
+  public static final String ID = "CommonCold";
+  private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
   public static final String NAME = cardStrings.NAME;
   public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-  private static final int COST = -2;
+  private static final int COST = 0;
   
-  public Languid()
+  public CommonCold()
   {
-    super("Languid", NAME, "cards/replay/betaCurse.png", -2, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE);
-    this.baseMagicNumber = 2;
-    this.magicNumber = this.baseMagicNumber;
+    super(ID, NAME, "cards/replay/betaCurse.png", COST, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE);
   }
   
   public void use(AbstractPlayer p, AbstractMonster m)
   {
-    if ((!this.dontTriggerOnUseCard) && (p.hasRelic("Blue Candle")))
-    {
-      useBlueCandle(p);
-    }
-    else
-    {
-      //AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DarknessPower(1), 1));
-      
-      //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
-    }
+	if (p.hasRelic("Medical Kit")) {
+	    this.useMedicalKit(p);
+	}
+	else
+	{
+		AbstractDungeon.actionManager.addToBottom(new TalkAction(p, "ah- @CHOO!@"));
+	}
   }
-  
-    @Override
-    public void triggerWhenDrawn() {
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LanguidPower(AbstractDungeon.player, this.magicNumber, false), this.magicNumber));
-        AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
-    }
-  
+
+  /*
+  @Override
+  public void triggerWhenDrawn() {
+      if (AbstractDungeon.player.hasPower("Evolve") && !AbstractDungeon.player.hasPower("No Draw")) {
+          AbstractDungeon.player.getPower("Evolve").flash();
+          AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, AbstractDungeon.player.getPower("Evolve").amount));
+      }
+  }
+  */
   public AbstractCard makeCopy()
   {
-    return new Languid();
+    return new CommonCold();
   }
   
   public void upgrade() {}

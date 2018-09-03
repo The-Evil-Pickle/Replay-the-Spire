@@ -62,77 +62,72 @@ public class RingOfGreed extends AbstractRelic
 				this.greedpool.add(key);
 			}
 		}
-		if (!AbstractDungeon.id.equals("Exordium") && !AbstractDungeon.player.hasRelic("Golden Idol")) {
-			this.greedpool.add("Golden Idol");
+		if (!AbstractDungeon.id.equals("Exordium") && !AbstractDungeon.player.hasRelic(GoldenIdol.ID)) {
+			this.greedpool.add(GoldenIdol.ID);
 		}
 		Collections.shuffle(this.greedpool);
+		this.greedpool.add(TinyHouse.ID);
+		this.greedpool.add(RedCirclet.ID);
 		this.relicsLeft = GAIN_RELICS;
-		for (Iterator<String> iterator = this.greedpool.iterator(); iterator.hasNext(); ) {
-			String gimme = iterator.next();
-			if (this.relicsLeft > 0) {
-				this.relicsLeft--;
-				/*if (AbstractDungeon.commonRelicPool.contains(gimme)) {
-					AbstractDungeon.commonRelicPool.remove(gimme);
-				}
-				if (AbstractDungeon.uncommonRelicPool.contains(gimme)) {
-					AbstractDungeon.uncommonRelicPool.remove(gimme);
-				}
-				if (AbstractDungeon.rareRelicPool.contains(gimme)) {
-					AbstractDungeon.rareRelicPool.remove(gimme);
-				}
-				if (AbstractDungeon.shopRelicPool.contains(gimme)) {
-					AbstractDungeon.shopRelicPool.remove(gimme);
-				}*/
-				AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, RelicLibrary.getRelic(gimme).makeCopy());
-				iterator.remove();
-			}
-		}
-		/*for (int i=0; i < GAIN_RELICS; i++) {
-			String gimme = greedpool.remove(0);
-			if (AbstractDungeon.commonRelicPool.contains(gimme)) {
-				AbstractDungeon.commonRelicPool.remove(gimme);
-			}
-			if (AbstractDungeon.uncommonRelicPool.contains(gimme)) {
-				AbstractDungeon.uncommonRelicPool.remove(gimme);
-			}
-			if (AbstractDungeon.rareRelicPool.contains(gimme)) {
-				AbstractDungeon.rareRelicPool.remove(gimme);
-			}
-			if (AbstractDungeon.shopRelicPool.contains(gimme)) {
-				AbstractDungeon.shopRelicPool.remove(gimme);
-			}
-			AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, RelicLibrary.getRelic(gimme).makeCopy());
-		}*/
-	}
-	
-	
-	/*@Override
-	public void update() {
+    }
+    
+
+    @Override
+    public void update() {
         super.update();
-		if (this.relicsLeft > 0 && !AbstractDungeon.isScreenUp) {
-            AbstractDungeon.combatRewardScreen.rewards.clear();
+        if (this.relicsLeft > 0 && !AbstractDungeon.isScreenUp) {
             AbstractDungeon.combatRewardScreen.open();
-			while (this.relicsLeft > 0) {
-				String gimme = this.greedpool.remove(0);
-				AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(RelicLibrary.getRelic(gimme).makeCopy()));
-				if (AbstractDungeon.commonRelicPool.contains(gimme)) {
-					AbstractDungeon.commonRelicPool.remove(gimme);
-				}
-				if (AbstractDungeon.uncommonRelicPool.contains(gimme)) {
-					AbstractDungeon.uncommonRelicPool.remove(gimme);
-				}
-				if (AbstractDungeon.rareRelicPool.contains(gimme)) {
-					AbstractDungeon.rareRelicPool.remove(gimme);
-				}
-				if (AbstractDungeon.shopRelicPool.contains(gimme)) {
-					AbstractDungeon.shopRelicPool.remove(gimme);
-				}
-				this.relicsLeft--;
-			}
+            AbstractDungeon.combatRewardScreen.rewards.clear();
+            while (this.relicsLeft > 0) {
+            	String gimme = this.greedpool.remove(0);
+            	AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(RelicLibrary.getRelic(gimme).makeCopy()));
+            	this.relicsLeft--;
+            	Iterator<String> s = AbstractDungeon.commonRelicPool.iterator();
+                while (s.hasNext()) {
+                    final String derp = s.next();
+                    if (derp.equals(gimme)) {
+                        s.remove();
+                        break;
+                    }
+                }
+                s = AbstractDungeon.uncommonRelicPool.iterator();
+                while (s.hasNext()) {
+                    final String derp = s.next();
+                    if (derp.equals(gimme)) {
+                        s.remove();
+                        break;
+                    }
+                }
+                s = AbstractDungeon.rareRelicPool.iterator();
+                while (s.hasNext()) {
+                    final String derp = s.next();
+                    if (derp.equals(gimme)) {
+                        s.remove();
+                        break;
+                    }
+                }
+                s = AbstractDungeon.bossRelicPool.iterator();
+                while (s.hasNext()) {
+                    final String derp = s.next();
+                    if (derp.equals(gimme)) {
+                        s.remove();
+                        break;
+                    }
+                }
+                s = AbstractDungeon.shopRelicPool.iterator();
+                while (s.hasNext()) {
+                    final String derp = s.next();
+                    if (derp.equals(gimme)) {
+                        s.remove();
+                        break;
+                    }
+                }
+            }
+            AbstractDungeon.combatRewardScreen.positionRewards();
+            AbstractDungeon.overlayMenu.proceedButton.setLabel(this.DESCRIPTIONS[2]);
             AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25f;
-		}
-		
-	}*/
+        }
+    }
     
     @Override
     public AbstractRelic makeCopy() {
@@ -141,13 +136,16 @@ public class RingOfGreed extends AbstractRelic
 	
     static {
 		greedlist = new ArrayList<String>();
-		greedlist.add("Tiny Chest");
-		greedlist.add("Smiling Mask");
-		greedlist.add("The Courier");
-		greedlist.add("Old Coin");
-		greedlist.add("Membership Card");
-		greedlist.add("Blue Doll");
-		greedlist.add("Bandana");
-		greedlist.add("Golden Egg");
+		greedlist.add(TinyChest.ID);
+		greedlist.add(SmilingMask.ID);
+		greedlist.add(Courier.ID);
+		greedlist.add(OldCoin.ID);
+		greedlist.add(MembershipCard.ID);
+		greedlist.add(MealTicket.ID);
+		greedlist.add(MawBank.ID);
+		greedlist.add(SsserpentHead.ID);
+		greedlist.add(TagBag.ID);
+		greedlist.add(Bandana.ID);
+		greedlist.add(GoldenEgg.ID);
 	}
 }

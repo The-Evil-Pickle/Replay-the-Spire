@@ -221,12 +221,16 @@ public class PondfishBoss extends AbstractMonster
 				this.halfDead = false;
 				for (final AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
 					if (m instanceof CaptainAbe) {
-						if (!m.halfDead) {
+						if (!m.halfDead) { 
+							if (AbstractDungeon.ascensionLevel < 19) {
 							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new AbePower(m), 0));
+							}
 						} else {
 							m.halfDead = false;
 							AbstractDungeon.actionManager.addToBottom(new HealAction(m, this, (m.maxHealth / 4)));
-							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new AbePower(m), 0));
+							if (AbstractDungeon.ascensionLevel < 19) {
+								AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new AbePower(m), 0));
+								}
 								AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new IntangiblePower(m, 1), 1));
 							AbstractDungeon.actionManager.addToBottom(new TalkAction(m, CaptainAbe.DIALOG[(int)(Math.random() * (3)) + 6]));
 						}
@@ -305,7 +309,9 @@ public class PondfishBoss extends AbstractMonster
 					abe.halfDead = false;
 					AbstractDungeon.actionManager.addToBottom(new HealAction(abe, this, (abe.maxHealth / 2)));
 					//AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(abe, "REVIVE"));
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, abe, new AbePower(abe), 0));
+					if (AbstractDungeon.ascensionLevel < 19) {
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, abe, new AbePower(abe), 0));
+						}
 						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, this, new IntangiblePower(abe, 1), 1));
 					AbstractDungeon.actionManager.addToBottom(new TalkAction(abe, CaptainAbe.DIALOG[(int)(Math.random() * (3)) + 6]));
 					/*if (AbstractDungeon.player.hasRelic("Philosopher's Stone")) {

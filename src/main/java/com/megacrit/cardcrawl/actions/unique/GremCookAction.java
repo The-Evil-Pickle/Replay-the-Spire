@@ -11,10 +11,13 @@ import com.megacrit.cardcrawl.powers.*;
 
 public class GremCookAction extends AbstractGameAction
 {
-    public GremCookAction(final AbstractCreature source, final int amount) {
+	
+	int flexAmt;
+    public GremCookAction(final AbstractCreature source, final int amount, final int flexAmt) {
         this.duration = 0.5f;
         this.source = source;
         this.amount = amount;
+        this.flexAmt = flexAmt;
         this.actionType = ActionType.HEAL;
     }
     
@@ -45,8 +48,8 @@ public class GremCookAction extends AbstractGameAction
             }
             if (this.target != null) {
                 this.target.heal(this.amount);
-                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.target, this.source, new StrengthPower(this.target, 2), 2));
-                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.target, this.source, new DelayedLoseStrengthPower(this.target, 2), 2));
+                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.target, this.source, new StrengthPower(this.target, this.flexAmt), this.flexAmt));
+                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.target, this.source, new DelayedLoseStrengthPower(this.target, this.flexAmt), this.flexAmt));
             }
         }
         this.tickDuration();

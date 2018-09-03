@@ -11,6 +11,7 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.monsters.*;
 import com.badlogic.gdx.math.*;
 import com.megacrit.cardcrawl.monsters.thetop.*;
+import com.megacrit.cardcrawl.relics.AbesTreasure;
 import com.megacrit.cardcrawl.monsters.exordium.*;
 import com.megacrit.cardcrawl.monsters.city.*;
 import com.megacrit.cardcrawl.monsters.replay.*;
@@ -87,7 +88,7 @@ public class ReplayMonsterEncounterPatches {
 					}
 				} else if (__Instance instanceof TheBeyond) {
 					if (AbstractDungeon.player.masterDeck.size() < Math.min((AbstractDungeon.player.relics.size() * 2) + 5, 40) || (AbstractDungeon.player.name.equals("Rhapsody") && AbstractDungeon.player.masterDeck.size() < 40)) {
-						monsters.add(new MonsterInfo("R_Hoarder", monsters.get(0).weight * (((float)(AbstractDungeon.player.relics.size())) / 12f)));
+						monsters.add(new MonsterInfo("R_Hoarder", monsters.get(0).weight * (((float)(AbstractDungeon.player.relics.size())) / Math.min((float)AbstractDungeon.player.masterDeck.size() / 2f, 12f))));
 						MonsterInfo.normalizeWeights(monsters);
 					}
 				}
@@ -97,7 +98,9 @@ public class ReplayMonsterEncounterPatches {
 	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.TheCity", method = "initializeBoss")
 	public static class ReplayCityBossListPatch {
 		public static void Prefix(TheCity __Instance) {
-			TheCity.bossList.add("Pondfish");
+			if (!ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(AbesTreasure.ID)) {
+				TheCity.bossList.add("Pondfish");
+			}
 		}
 	}
 	@SpirePatch(cls = "com.megacrit.cardcrawl.actions.unique.SummonGremlinAction", method = "getRandomGremlin")

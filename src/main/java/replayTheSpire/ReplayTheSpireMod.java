@@ -867,6 +867,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		/*
 		final String[] specNames = { "spectral", "Spectral", "Spectral."};
 		BaseMod.addKeyword(specNames, "Is #yEthereal. NL #yExhausts when played or discarded. NL When drawn, you draw an additional card. NL If your hand is full and you draw a card, this card is #yExhausted from your hand to make room.");
+		final String[] medNames = { "medicurse", "Medicurse", "Medicurse."};
+		BaseMod.addKeyword(specNames, "During combat, this #yCurse is treated as a #yStatus instead.");
 		*/
 		
 		logger.info("end post init");
@@ -907,6 +909,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new Funnel(), RelicType.SHARED);
 		BaseMod.addRelic(new Garlic(), RelicType.SHARED);
 		BaseMod.addRelic(new GoldenEgg(), RelicType.SHARED);
+		BaseMod.addRelic(new GrabBag(), RelicType.SHARED);
 		BaseMod.addRelic(new GremlinFood(), RelicType.SHARED);
 		BaseMod.addRelic(new GrinningJar(), RelicType.SHARED);
 		BaseMod.addRelic(new GuideBook(), RelicType.SHARED);
@@ -930,7 +933,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new RingOfSearing(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfShattering(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfHypnosis(), RelicType.SHARED);
-		//BaseMod.addRelic(new RingOfGreed(), RelicType.SHARED);
+		BaseMod.addRelic(new RingOfGreed(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfMisfortune(), RelicType.SHARED);
 		BaseMod.addRelic(new SecondSwordRelic(), RelicType.RED);
 		//BaseMod.addRelic(new SimpleRune(), RelicType.SHARED);
@@ -960,6 +963,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Abandon());
 		AddAndUnlockCard(new Hemogenesis());
 		AddAndUnlockCard(new LifeLink());
+		AddAndUnlockCard(new LimbFromLimb());
 		AddAndUnlockCard(new Massacre());
 		AddAndUnlockCard(new RunThrough());
 		AddAndUnlockCard(new DefyDeath());
@@ -996,14 +1000,16 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		logger.info("adding colorless cards...");
 		//AddAndUnlockCard(new Improvise());
 		AddAndUnlockCard(new PoisonedStrike());
+		AddAndUnlockCard(new PrivateReserves());
 		AddAndUnlockCard(new Specialist());
 		AddAndUnlockCard(new AwakenedRitual());
 		AddAndUnlockCard(new SurveyOptions());
 		AddAndUnlockCard(new ReplayUltimateDefense());
 		AddAndUnlockCard(new MidasTouch());
 		logger.info("adding curses...");
+		AddAndUnlockCard(new CommonCold());
 		AddAndUnlockCard(new Hallucinations());
-		//AddAndUnlockCard(new Languid());
+		AddAndUnlockCard(new Languid());
 		AddAndUnlockCard(new Sickly());
 		AddAndUnlockCard(new Delirium());
 		AddAndUnlockCard(new Voices());

@@ -10,12 +10,41 @@ import com.megacrit.cardcrawl.cards.blue.*;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.neow.*;
 import com.megacrit.cardcrawl.neow.NeowReward.*;
+import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import basemod.abstracts.CustomCard;
 import replayTheSpire.ReplayTheSpireMod;
 
 public class NeowRewardPatches {
+	
+	////////////BANNED STARTING RELICS/////
+	
+	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.AbstractDungeon", method = "returnRandomRelicKey")
+	public static class BannedStartingRelics {
+		
+		static ArrayList<String> startingRelicBlacklist = new ArrayList<String>();
+		static {
+			startingRelicBlacklist.add(Ectoplasm.ID);
+			startingRelicBlacklist.add(GrabBag.ID);
+			startingRelicBlacklist.add(BargainBundle.ID);
+			startingRelicBlacklist.add(BottledFlame.ID);
+			startingRelicBlacklist.add(BottledLightning.ID);
+			startingRelicBlacklist.add(BottledTornado.ID);
+		}
+		
+		public static String Postfix(String __Result, final AbstractRelic.RelicTier tier) {
+			if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof NeowRoom) {
+				if (startingRelicBlacklist.contains(__Result)) {
+					return AbstractDungeon.returnRandomRelicKey(tier);
+				}
+			}
+			return __Result;
+		}
+	}
+	
+	////////////NEW OPTIONS////////////////
+	
 	@SpireEnum
     public static NeowReward.NeowRewardDrawback BASIC_CARDS;
 	

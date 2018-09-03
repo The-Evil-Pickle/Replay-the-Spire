@@ -31,7 +31,7 @@ public class TeleporterPatches {
 			
 			if (AbstractDungeon.mapRng.random(0, 100) > 33) {
 				
-				int overRow = AbstractDungeon.mapRng.random(1, AbstractDungeon.map.size() - 1);
+				int overRow = AbstractDungeon.mapRng.random(2, AbstractDungeon.map.size() - 1);
 				
 				ArrayList<MapRoomNode> teleporterRow = new ArrayList<MapRoomNode>();
 				for (MapRoomNode node : AbstractDungeon.map.get(overRow)) {

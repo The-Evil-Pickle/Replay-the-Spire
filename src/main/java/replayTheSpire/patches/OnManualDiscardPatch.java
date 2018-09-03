@@ -21,7 +21,6 @@ import basemod.*;
 import java.util.*;
 
 import replayTheSpire.ReplayTheSpireMod;
-import replayTheSpire.patches.ReplayRewardSkipPositionPatch;
 
 @SpirePatch(cls = "com.megacrit.cardcrawl.actions.GameActionManager", method = "incrementDiscard")
 public class OnManualDiscardPatch {

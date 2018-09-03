@@ -8,8 +8,6 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.helpers.EventHelper;
 import com.megacrit.cardcrawl.events.*;
 import com.megacrit.cardcrawl.events.thebottom.*;
-import com.megacrit.cardcrawl.events.thecity.*;
-import com.megacrit.cardcrawl.events.thebeyond.*;
 import com.megacrit.cardcrawl.events.shrines.*;
 
 @SpirePatch(cls = "com.megacrit.cardcrawl.helpers.EventHelper", method = "getEvent")

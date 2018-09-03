@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
 import basemod.*;
 import replayTheSpire.ReplayTheSpireMod;
-
+import replayTheSpire.patches.ReplayRewardSkipPatches.ReplayRewardSkipPositionPatch;
 import java.util.*;
 
 @SpirePatch(cls = "com.megacrit.cardcrawl.ui.buttons.SingingBowlButton", method = "onClick")

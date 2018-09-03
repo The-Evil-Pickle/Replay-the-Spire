@@ -9,8 +9,8 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
 ### Currently adds:
- * 43 Relics (4 ironclad, 4 silent, 4 defect, 31 shared)
- * 47 Cards (9 ironclad, 12 silent, 11 defect, 6 colorless, 9 curses)
+ * 44 Relics (4 ironclad, 4 silent, 4 defect, 32 shared)
+ * 50 Cards (10 ironclad, 12 silent, 11 defect, 7 colorless, 10 curses)
  * 4 Events
  * 10 Potions
  * 2 Rooms
@@ -61,7 +61,8 @@ Vampiric Spirits | Silent | Rare | During the first turn of combat, 25% of all u
 Bargain Bundle | All | Shop | When purchased, decreases the cost of potions, cards, and card removal service in the same shop by 100 gold.
 GuideBook | All | Shop | On pickup, **Upgrade** 2 cards randomly. Prioritizes rarer cards.
 Abe's Treasure | All | Boss | Gain 1 more energy each turn. Start combat with **Drowning**. On Pickup, add the Abe's Revenge curse to your deck.
-Chewing Gum | All | Boss | Gain 1 more energy each turn. Each time you shuffle your deck, add 2 Slimed to your draw pile..
+Chewing Gum | All | Boss | Gain 1 more energy each turn. Each time you shuffle your deck, add 2 Slimed to your draw pile.
+Grab Bag | All | Boss | Choose 1 energy boss relic and 1 non-energy boss relic to obtain. Choices are out of 3, and cannot be skipped.
 Honey Jar | All | Boss | Draw 1 more card each turn. **Retain** up to 1 card each turn. Card rewards have 1 more option to chose from. You cannot skip rewards.
 Kintsugi | All | Boss | Remove 5 cards from your deck. Choose 2 **Curses** to obtain.
 Ooze Armor | Ironclad | Boss | Gain 1 energy at the start of each turn. At the start of combat, gain **Slow** (resets to -3) and **Malleable** (resets to 4).
@@ -81,6 +82,7 @@ Defy Death | Red | Uncommmon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less fo
 Hemogenesis | Red | Uncommon | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2, or by 3 if the card has been upgraded outside of combat).
 Life Bind | Red | Uncommmon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
 Massacre | Red | Uncommmon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
+Limb From Limb | Red | Uncommmon | Attack | 3 | Deal 24(28) damage. If this deals at least 30(32) unblocked damage, **Refund** 2 and draw 2 cards.
 Abandon | Red | Rare | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. **Ethereal**.
 Demonic Infusion | Red | Rare | Skill | X | Upgrade a card X(+1) times. **Refund** 1. **Exhaust**.
 Eclipse | Red | Rare | Skill | 3 | **Exhaust** your hand. For each card, add a random card to your hand that costs 1 less than normal. (**Refund** 1.)
@@ -110,15 +112,18 @@ Omega Cannon | Blue | Rare | Attack | 2 | Deal 7(6) damage to ALL enemies 4(5) t
 Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | Lose 1 Focus. All non-attack damage you deal is increased by 2. (**Innate.**)
 Survey Options | Colorless | Uncommon | Skill | X | Draw X. **Refund** 1(2).
+Private Reserves | Colorless | Uncommon | Skill | 0 | Gain 1 energy (and draw 1 card). **Exhaust.** **Retain.**
 Awakened One Ritual | Colorless | Rare | Power | 0 | Add 6(8) Ritual Components to your discard pile. If you ever have 5 or more in your hand at once, replace them with Attacks that deal 42 damage.
 Midas Touch | Colorless | Rare | Skill | 0 | **Exhaust** any number of cards in your hand. Add a random Rare card to your hand for each.
 The Ultimate Defense | Colorless | Rare | Power | 4 | Gain 1(2) **Artifact**. Gain 1(2) **Dexterity**. (Gain 1 **Intangible**). Gain 5 **Plated** **Armor**. Gain 5(8) **Shielding**.
 Amnesia | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, **Exhaust** your hand. **Ethereal**.
+Over-Encumbered | Curse | Curse | Curse | - | **Unplayable**. When drawn, add 3 **Dazed** to your hand and draw a card.
 Faulty Equipment | Curse | Curse | Curse | - | **Unplayable**. Can only be **Exhausted** or removed from your deck by **Upgrading**.
+Common Cold | Curse | Curse | Curse | 0 | Sneeze!
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
 Sickly | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, lose 3 **Block**.
 Spreading Infection | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a copy of all other status and curse cards in your hand to your discard pile.
-Depression | Curse | Curse | Curse | - | **Unplayable**. When drawn, gain 2 **Languid** and draw a card. **Ethereal**.
+Depression | Curse | Curse | Curse | - | **Unplayable**. When drawn, gain 2 **Languid** and draw a card.
 Delirium | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, gain **Confusion** for 1 round.
 Voices | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, shuffle 2 Dazed into your discard pile. **Ethereal**.
 Looming Evil | Curse | Curse | Curse | 3 | Can be played for 3 Energy to **Exhaust**. At the end of your turn, shuffle a random curse into your draw pile and reduce the cost to play this card by 1.
@@ -161,7 +166,23 @@ Death Potion | Rare | Deal 60 damage and lose 12 HP.
 Doom Potion | Rare | Destroy an enemy after 10 turns.
 Cursed Concoction | Rare | Gain 3 Strength and 2 Dexterity. Add a random curse to your draw and discard piles.
 
+# Rooms
+### Portal
+Each area has a chance to spawn with a pair of portal rooms. 
+These rooms are in the same row, with one on the far left and one on the far right.
+Going through one teleports you to the other.
 
+###Bonfire
+Bonfires are an alternative Rest Site. One always appears on each stage as one of the Rest Sites before the boss.
+Instead of the normal Rest/Smith options, Bonfires have three options to choose from, chosen at random from a pool:
+* Smith: Upgrade a card.
+* Rest (Vanilla): Heal for 30% Max HP.
+* Rest (Multitask): Heal for 20% Max HP and Upgrade a random card.
+* Toke: Remove a card from your deck.
+* Dig: Obtain a random Relic.
+* Mine: Gain 50-100 Gold.
+* Polymerize: Transform a card.
+* Explore: Encounter a random event.
 
 # Events
 ### Mirror Mist
@@ -245,6 +266,8 @@ Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 
  * Random orb channeling effects (e.g. Chaos) will now sometimes channel Crystal.
  * If you have Honey Jar and Singing Bowl at the same time, using Singing Bowl's max hp gain option also picks a reward card at random.
  * Burning Branch can now be exchanged for a different relic at rest sites.
+ * Fire Breathing now increases damage based on number of attacks played.
+ * You can never get Ectoplasm from Neow.
 
 
 ## Known Issues:

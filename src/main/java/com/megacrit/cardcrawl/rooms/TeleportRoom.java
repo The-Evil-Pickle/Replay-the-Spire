@@ -11,25 +11,55 @@ import coloredmap.ColoredRoom;
 import replayTheSpire.ReplayTheSpireMod;
 
 @ColoredRoom
-public class TeleportRoom extends EventRoom {
-
+public class TeleportRoom extends AbstractRoom
+{
+    private EventRoom fakeRoom;
     private MapRoomNode teleDest;
-
-	public TeleportRoom() {
+    
+    public TeleportRoom() {
 		this(null);
 	}
-	public TeleportRoom(MapRoomNode teleDest) {
+    public TeleportRoom(MapRoomNode teleDest)
+    {
     	super();
     	this.teleDest = teleDest;
         this.phase = RoomPhase.EVENT;
         this.mapSymbol = "PTL";
         this.mapImg = ReplayTheSpireMod.portalIcon;
         this.mapImgOutline = ReplayTheSpireMod.portalBG;
+        fakeRoom = new EventRoom();
     }
 
     @Override
-    public void onPlayerEntry() {
+    public void onPlayerEntry()
+    {
         AbstractDungeon.overlayMenu.proceedButton.hide();
-        this.event = new TeleportEvent(teleDest);
+        event = fakeRoom.event = new TeleportEvent(teleDest);
+        fakeRoom.event.onEnterRoom();
+    }
+
+    @Override
+    public AbstractCard.CardRarity getCardRarity(int roll)
+    {
+        return fakeRoom.getCardRarity(roll);
+    }
+
+    @Override
+    public void update()
+    {
+        fakeRoom.update();
+    }
+
+    @Override
+    public void render(SpriteBatch sb)
+    {
+        fakeRoom.render(sb);
+        fakeRoom.renderEventTexts(sb);
+    }
+
+    @Override
+    public void renderAboveTopPanel(SpriteBatch sb)
+    {
+        fakeRoom.renderAboveTopPanel(sb);
     }
 }

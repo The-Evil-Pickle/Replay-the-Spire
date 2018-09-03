@@ -140,6 +140,10 @@
     "NAME": "Strike From Hell",
     "DESCRIPTION": "Deal !D! damage. NL If this card is Exhausted, increase its damage by !M! and place it back into your hand."
   },
+  "ReplayTheSpireMod:Limb From Limb": {
+    "NAME": "Limb From Limb",
+    "DESCRIPTION": "Deal !D! damage. NL If this deals at least !M! unblocked damage, Refund 2 and draw 2 cards."
+  },
   "ReplayScrap": {
     "NAME": "Scrap",
     "DESCRIPTION": "Deal !D! damage. NL If this kills a (non-minion) enemy, heal 6 HP and permanently increase this card's Damage by !M!."
@@ -229,6 +233,11 @@
     "NAME": "Survey Options",
     "DESCRIPTION": "Draw X. NL Refund !M!. "
   },
+  "ReplayTheSpireMod:Private Reserves": {
+    "NAME": "Private Reserves",
+    "DESCRIPTION": "Gain [E]. NL Exhaust. NL Retain.",
+    "UPGRADE_DESCRIPTION": "Gain [E]. NL Draw 1 card. NL Exhaust. NL Retain."
+  },
   "Poisoned Strike": {
     "NAME": "Poisoned Strike",
     "DESCRIPTION": "Apply !D! Poison. NL Affected by damage modifiers."
@@ -280,8 +289,15 @@
 	"DESCRIPTION": "Unplayable. NL At the end of your turn, lose !M! Block."
   },
   "Languid": {
-	"NAME": "Languid",
-	"DESCRIPTION": "Unplayable. NL If this is in your hand at the end of your turn, start next turn with 1 less Energy."
+	"NAME": "Depression",
+	"DESCRIPTION": "Unplayable. NL When drawn, gain !M! Languid and draw a card."
+  },
+  "CommonCold": {
+	"NAME": "Common Cold",
+	"DESCRIPTION": "Sneeze!",
+	"EXTENDED_DESCRIPTION": [
+		" NL Is Exhausted by Medical Kit rather than Blue Candle."
+	]
   },
   "Delirium": {
 	"NAME": "Delirium",
