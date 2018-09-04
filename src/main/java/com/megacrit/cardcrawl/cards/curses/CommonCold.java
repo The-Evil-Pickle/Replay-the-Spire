@@ -49,15 +49,9 @@ public class CommonCold
 	}
   }
 
-  /*
-  @Override
-  public void triggerWhenDrawn() {
-      if (AbstractDungeon.player.hasPower("Evolve") && !AbstractDungeon.player.hasPower("No Draw")) {
-          AbstractDungeon.player.getPower("Evolve").flash();
-          AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, AbstractDungeon.player.getPower("Evolve").amount));
-      }
+  public boolean canUse(final AbstractPlayer p, final AbstractMonster m) {
+      return this.cardPlayable(m) && this.hasEnoughEnergy();
   }
-  */
   public AbstractCard makeCopy()
   {
     return new CommonCold();

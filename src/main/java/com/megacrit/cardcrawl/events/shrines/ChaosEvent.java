@@ -40,7 +40,7 @@ public class ChaosEvent
   }
   
   private AbstractCard getRandoCurse() {
-	switch (AbstractDungeon.miscRng.random(0, 13)) {
+	switch (AbstractDungeon.miscRng.random(0, 15)) {
 		case 0: case 1: {
 			return new Delirium();
 		}
@@ -64,6 +64,12 @@ public class ChaosEvent
 		}
 		case 12: {
 			return new Sickly();
+		}
+		case 13: {
+			return new Languid();
+		}
+		case 14: {
+			return new CommonCold();
 		}
 		default: {
 			return new SpreadingInfection();
@@ -113,7 +119,7 @@ public class ChaosEvent
 		}
 	} else {
 		if (!AbstractDungeon.player.hasRelic("Ectoplasm")) {
-			//rings.add(new RingOfGreed());
+			rings.add(new RingOfGreed());
 		}
 	}
 	

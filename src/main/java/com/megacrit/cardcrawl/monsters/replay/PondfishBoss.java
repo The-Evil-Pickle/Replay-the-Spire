@@ -125,7 +125,7 @@ public class PondfishBoss extends AbstractMonster
     
     @Override
     public void usePreBattleAction() {
-		AbstractDungeon.getCurrRoom().playBgmInstantly("PIRATE_JOKE");
+		AbstractDungeon.getCurrRoom().playBgmInstantly("replay/Shanty_for_a_Poorly_Drawn_Pirate.ogg");
 	}
 	
 	private SetMoveAction setNextTurnAction(byte nextTurn) {
@@ -422,13 +422,13 @@ public class PondfishBoss extends AbstractMonster
             case "Activate": {
                 AbstractDungeon.scene.fadeOutAmbiance();
 				CardCrawlGame.music.fadeOutTempBGM();
-                AbstractDungeon.getCurrRoom().playBGM("PONDFISH_THEME");
+                AbstractDungeon.getCurrRoom().playBGM("replay/NRG_Stratosphere_Smackdown.ogg");
                 
                 break;
             }
             case "Deactivate": {
                 AbstractDungeon.scene.fadeOutAmbiance();
-                AbstractDungeon.getCurrRoom().playBGM("PONDFISH_THEME");
+                AbstractDungeon.getCurrRoom().playBGM("replay/NRG_Stratosphere_Smackdown.ogg");
                 
                 break;
             }

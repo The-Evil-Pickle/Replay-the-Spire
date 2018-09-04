@@ -4,6 +4,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.vfx.*;
+
+import replayTheSpire.ReplayTheSpireMod;
+
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.*;
@@ -96,6 +99,10 @@ public class TPH_ConfusionPower extends AbstractPower
 				AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "TPH_Confusion", 1));
 			}
 			
+		} else {
+			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Chronometer")) {
+				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "TPH_Confusion"));
+			}
 		}
     }
 	
@@ -107,6 +114,10 @@ public class TPH_ConfusionPower extends AbstractPower
 				//this.strengthMod = AbstractDungeon.miscRng.random(this.upperStrengthLimit - this.lowerStrengthLimit) + this.lowerStrengthLimit;
 				//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.strengthMod), this.strengthMod, true, AbstractGameAction.AttackEffect.NONE));
 			} else {
+				if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Chronometer")) {
+					AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "TPH_Confusion"));
+					return;
+				}
 				if (!this.isTurnBased) {
 					return;
 				}

@@ -3,6 +3,7 @@ package com.megacrit.cardcrawl.relics;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.monsters.*;
 import com.megacrit.cardcrawl.rewards.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.actions.*;
@@ -23,16 +24,39 @@ public class RingOfGreed extends AbstractRelic
 	public static final ArrayList<String> greedlist;
 	private int relicsLeft;
 	private ArrayList<String> greedpool;
+	private int goldcount;
 	
     public RingOfGreed() {
         super("Ring of Greed", "cring_greed.png", RelicTier.SPECIAL, LandingSound.FLAT);
 		this.counter = GOLD_TRIGGER;
 		this.relicsLeft = 0;
+		this.goldcount = 0;
     }
     
     @Override
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0] + GAIN_GOLD + this.DESCRIPTIONS[1] + GAIN_RELICS + this.DESCRIPTIONS[2] + GOLD_TRIGGER + this.DESCRIPTIONS[3];
+    }
+
+    @Override
+    public void onSpendGold() {
+    	this.goldcount = AbstractDungeon.player.gold;
+    }
+    @Override
+    public void onEnterRoom(final AbstractRoom room) {
+    	if (this.goldcount > AbstractDungeon.player.gold) {
+    		this.goldcount = AbstractDungeon.player.gold;
+    	}
+    }
+    
+    @Override
+    public void onGainGold() {
+    	if (this.goldcount > AbstractDungeon.player.gold) {
+    		this.goldcount = AbstractDungeon.player.gold;
+    		return;
+    	}
+        this.onPlayerGainGold(AbstractDungeon.player.gold - this.goldcount);
+        this.goldcount = AbstractDungeon.player.gold;
     }
     
     public void onPlayerGainGold(int amount) {
@@ -41,17 +65,20 @@ public class RingOfGreed extends AbstractRelic
 		}
         this.flash();
         this.counter -= amount;
-		while (this.counter <= 0) {
-			this.counter += GOLD_TRIGGER;
-			final AbstractCard greedCurse = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE);
-			UnlockTracker.markCardAsSeen(greedCurse.cardID);
-			AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(greedCurse, Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, false));
-		}
+        if (this.counter <= 0) {
+        	while (this.counter <= 0) {
+    			this.counter += GOLD_TRIGGER;
+    			final AbstractCard greedCurse = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE);
+    			UnlockTracker.markCardAsSeen(greedCurse.cardID);
+    			AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(greedCurse, Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, false));
+    		}
+        }
     }
 	
     @Override
     public void onEquip() {
 		this.counter = GOLD_TRIGGER;
+		this.goldcount = AbstractDungeon.player.gold;
 		AbstractDungeon.player.gainGold(GAIN_GOLD);
 		this.greedpool = new ArrayList<String>();
 		for (String key : RingOfGreed.greedlist) {
@@ -75,9 +102,11 @@ public class RingOfGreed extends AbstractRelic
     @Override
     public void update() {
         super.update();
-        if (this.relicsLeft > 0 && !AbstractDungeon.isScreenUp) {
-            AbstractDungeon.combatRewardScreen.open();
-            AbstractDungeon.combatRewardScreen.rewards.clear();
+        if (this.relicsLeft > 0 && (!AbstractDungeon.isScreenUp || (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.COMBAT_REWARD))) {// && AbstractDungeon.combatRewardScreen != null && AbstractDungeon.combatRewardScreen.rewards.isEmpty()
+        	if (!AbstractDungeon.isScreenUp) {
+        		AbstractDungeon.combatRewardScreen.open();
+                AbstractDungeon.combatRewardScreen.rewards.clear();
+        	}
             while (this.relicsLeft > 0) {
             	String gimme = this.greedpool.remove(0);
             	AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(RelicLibrary.getRelic(gimme).makeCopy()));

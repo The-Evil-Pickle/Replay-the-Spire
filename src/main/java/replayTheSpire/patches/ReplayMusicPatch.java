@@ -22,11 +22,11 @@ public class ReplayMusicPatch {
 	
 	public static Music Postfix(Music __result, TempMusic __instance, final String key) {
 		switch (key) {
-            case "PONDFISH_THEME": {
-                return Gdx.audio.newMusic(Gdx.files.internal("audio/replay/NRG_Stratosphere_Smackdown.ogg"));
+            case "replay/NRG_Stratosphere_Smackdown.ogg": {
+                return MainMusic.newMusic("audio/music/replay/NRG_Stratosphere_Smackdown.ogg");
             }
-            case "PIRATE_JOKE": {
-                return Gdx.audio.newMusic(Gdx.files.internal("audio/replay/Shanty_for_a_Poorly_Drawn_Pirate.ogg"));
+            case "replay/Shanty_for_a_Poorly_Drawn_Pirate.ogg": {
+                return MainMusic.newMusic("audio/music/replay/Shanty_for_a_Poorly_Drawn_Pirate.ogg");
             }
 			default: {
 				return __result;
