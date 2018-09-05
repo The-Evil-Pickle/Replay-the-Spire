@@ -898,6 +898,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new Bandana(), RelicType.SHARED);
 		BaseMod.addRelic(new BargainBundle(), RelicType.SHARED);
 		BaseMod.addRelic(new Baseball(), RelicType.SHARED);
+		BaseMod.addRelic(new BottledFlurry(), RelicType.SHARED);
+		BaseMod.addRelic(new BottledSteam(), RelicType.SHARED);
 		BaseMod.addRelic(new ByrdSkull(), RelicType.GREEN);
 		BaseMod.addRelic(new ChameleonRing(), RelicType.SHARED);
 		//BaseMod.addRelic(new ChemicalX(), RelicType.SHARED);

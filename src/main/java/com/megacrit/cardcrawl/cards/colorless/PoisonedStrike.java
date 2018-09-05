@@ -18,6 +18,9 @@ import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 
+import basemod.helpers.BaseModTags;
+import basemod.helpers.CardTags;
+
 public class PoisonedStrike
   extends AbstractCard
 {
@@ -29,7 +32,7 @@ public class PoisonedStrike
   public PoisonedStrike()
   {
     super("Poisoned Strike", NAME, "status/beta", "status/beta", 0, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
-    
+    CardTags.addTags(this, BaseModTags.STRIKE);
     this.baseDamage = 3;
   }
   

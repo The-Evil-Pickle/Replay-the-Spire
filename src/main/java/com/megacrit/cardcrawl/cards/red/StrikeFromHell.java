@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
+import basemod.helpers.BaseModTags;
+import basemod.helpers.CardTags;
 
 public class StrikeFromHell extends CustomCard
 {
@@ -24,6 +26,7 @@ public class StrikeFromHell extends CustomCard
     
     public StrikeFromHell() {
         super(StrikeFromHell.ID, StrikeFromHell.NAME, "cards/replay/strikeFromHell.png", StrikeFromHell.COST, StrikeFromHell.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.COMMON, CardTarget.ENEMY);
+        CardTags.addTags(this, BaseModTags.STRIKE);
         this.baseDamage = StrikeFromHell.ATTACK_DMG;
         this.baseMagicNumber = StrikeFromHell.DMG_INC;
         this.magicNumber = this.baseMagicNumber;
