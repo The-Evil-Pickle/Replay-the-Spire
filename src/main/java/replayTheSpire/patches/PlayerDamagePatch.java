@@ -46,7 +46,7 @@ public class PlayerDamagePatch {
 		}
 	}
 	public static void Postfix(AbstractPlayer player, DamageInfo info) {
-		if (player != null && info.type != DamageInfo.DamageType.NORMAL && ((info.owner != AbstractDungeon.player && info.owner.hasPower("Specialist")) || ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(DimensionalGlitch.ID))) {
+		if (player != null && info.type != DamageInfo.DamageType.NORMAL && ((info.owner != null && info.owner != AbstractDungeon.player && info.owner.hasPower("Specialist")) || ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(DimensionalGlitch.ID))) {
 			info.output = PlayerDamagePatch.initialDamage;
 		}
 	}

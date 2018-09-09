@@ -62,6 +62,9 @@ public class Trickstab
       this.block = MathUtils.floor(tmp);
       this.baseDamage = this.block;
       super.applyPowers();
+      if (this.isBlockModified) {
+    	  this.isDamageModified = true;
+      }
   }
   @Override
   public void calculateCardDamage(final AbstractMonster mo) {
