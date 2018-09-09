@@ -68,6 +68,13 @@
 		      <scope>system</scope>
           <systemPath>${basedir}/../lib/BlackRuseMod.jar</systemPath>
 	      </dependency>
+        <dependency>
+	        <groupId>friendlyminions</groupId>
+		      <artifactId>FriendlyMinions</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/FriendlyMinions.jar</systemPath>
+	      </dependency>
     </dependencies>
   <build>
     <plugins>
@@ -82,5 +89,5 @@
     </plugins>
 	<finalName>${project.artifactId}</finalName>
   </build>
-  <version>1.1.1</version>
+  <version>1.1.2</version>
 </project>

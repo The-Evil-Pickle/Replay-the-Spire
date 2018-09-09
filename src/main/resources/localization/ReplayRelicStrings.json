@@ -108,7 +108,7 @@
 	"NAME": "Rune of Simplicity",
 	"FLAVOR": "Sometimes, things aren't as complicated as they appear.",
 	"DESCRIPTIONS": [
-		"Strikes and Defends can be #yUpgraded any number of times. On pickup, #yUpgrade #b",
+		"Strikes and Defends can be #yUpgraded any number of times. NL On pick up, #yUpgrade #b",
 		" randomly."
 	]
   },
@@ -243,11 +243,11 @@
 	"Draw 1 more card each turn. NL #yRetain up to 1 card each turn. NL Extra choice on card reward screens. NL Extra potion slot. NL You cannot skip rewards."
 	]
   },
-  "afgdgfd0hfjg": {
-	"NAME": "agfjhklkjghfd",
-	"FLAVOR": "---",
+  "ReplayTheSpireMod:DimensionalGlitch": {
+	"NAME": "Dimensional Glitch",
+	"FLAVOR": "[ReplayTheSpireMod] ERROR: No FLAVOR field for relic id DimensionalGlitch",
     "DESCRIPTIONS": [
-	"Gain [E] at the start of each turn. NL All non-attack damage you deal is reduced by #b2."
+	"Gain [E] at the start of each turn. NL All non-attack damage you deal is reduced by #b2. NL All non-attack damage you take is increased by #b2."
 	]
   },
   "Replay_Grab Bag": {
@@ -349,6 +349,13 @@
 		" #yIntangible. NL If you have only 1 HP at the start of combat, triggers immediately."
 	]
   },
+  "ReplayTheSpireMod:Lightbulb": {
+	"NAME": "Lightbulb",
+	"FLAVOR": "How long has it been since you've seen the sun?",
+    "DESCRIPTIONS": [
+	"If you have any unspent [E] at the end of your turn, draw that many cards at the start of your next turn."
+	]
+  },
   "Another Sword": {
     "NAME": "Another Sword",
 	"FLAVOR": "A second sword. You have two now.",
@@ -407,7 +414,9 @@
 	"FLAVOR": "",
     "DESCRIPTIONS": [
 		"On pick up, choose a card. NL Each time you draw that card, it is played immediately and you draw another card. NL The cost of the card is still paid; if you have less [e] than the cost, all your [e] is spent.",
-		"Choose card to Cycle"
+		"Choose card to auto-play",
+		"Each time you draw ",
+		" it is played immediately, and you draw another card."
 	]
   },
   "ReplayTheSpireMod:Bottled Firefly": {
@@ -415,7 +424,9 @@
 	"FLAVOR": "",
     "DESCRIPTIONS": [
 		"On pick up, choose a card. NL It gains #yRefund #b1.",
-		"Choose card to give Refund"
+		"Choose card to give Refund",
+		"",
+		" has #yRefund #b1."
 	]
   },
   "ReplayTheSpireMod:Multitool": {

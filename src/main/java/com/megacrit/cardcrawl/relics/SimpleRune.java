@@ -13,7 +13,6 @@ public class SimpleRune
   extends AbstractRelic
 {
   public static final String ID = "Simple Rune";
-  private static final int CARD_AMT = 2;
   
   public SimpleRune()
   {

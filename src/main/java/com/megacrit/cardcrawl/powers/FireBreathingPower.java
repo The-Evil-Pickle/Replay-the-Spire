@@ -40,7 +40,7 @@ public class FireBreathingPower extends AbstractPower
         if (count > 0) {
             this.flash();
             for (int i = 0; i < count; ++i) {
-                AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount + (i * this.amount), true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
+                AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(this.amount + (i * this.amount), true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
             }
         }
     }

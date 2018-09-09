@@ -1,5 +1,7 @@
 package com.megacrit.cardcrawl.relics;
 
+import java.util.function.Predicate;
+
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -7,9 +9,10 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.rooms.*;
 
+import basemod.abstracts.CustomBottleRelic;
 import replayTheSpire.patches.BottlePatches;
 
-public class BottledSteam extends AbstractRelic
+public class BottledSteam extends AbstractRelic implements CustomBottleRelic
 {
     public static final String ID = "ReplayTheSpireMod:Bottled Steam";
     private boolean cardSelected;
@@ -96,4 +99,9 @@ public class BottledSteam extends AbstractRelic
     public AbstractRelic makeCopy() {
         return new BottledSteam();
     }
+    
+	@Override
+	public Predicate<AbstractCard> isOnCard() {
+		return BottlePatches.BottleFields.inBottleSteam::get;
+	}
 }

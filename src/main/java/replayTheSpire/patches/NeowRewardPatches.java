@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.neow.*;
 import com.megacrit.cardcrawl.neow.NeowReward.*;
 import com.megacrit.cardcrawl.relics.*;
+import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import basemod.abstracts.CustomCard;
@@ -23,22 +24,46 @@ public class NeowRewardPatches {
 	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.AbstractDungeon", method = "returnRandomRelicKey")
 	public static class BannedStartingRelics {
 		
-		static ArrayList<String> startingRelicBlacklist = new ArrayList<String>();
+		static ArrayList<String> startingRelicBlacklist = new ArrayList<String>();//you can't get these relics from neow
+		static ArrayList<String> outOfPlaceRelicBlacklist = new ArrayList<String>();//you can't get these boss/shop relics outside the correct rooms for any reason
 		static {
 			startingRelicBlacklist.add(Ectoplasm.ID);
-			startingRelicBlacklist.add(GrabBag.ID);
-			startingRelicBlacklist.add(BargainBundle.ID);
 			startingRelicBlacklist.add(BottledFlame.ID);
 			startingRelicBlacklist.add(BottledLightning.ID);
 			startingRelicBlacklist.add(BottledTornado.ID);
+			startingRelicBlacklist.add(BottledSteam.ID);
+			startingRelicBlacklist.add(BottledFlurry.ID);
+			outOfPlaceRelicBlacklist.add(GrabBag.ID);//uses the boss chest, so doesn't work outside boss treasure rooms
+			outOfPlaceRelicBlacklist.add(BargainBundle.ID);//directly impacts shop purchased from, so won't work if obtained outside a shop
 		}
 		
 		public static String Postfix(String __Result, final AbstractRelic.RelicTier tier) {
-			if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof NeowRoom) {
-				if (startingRelicBlacklist.contains(__Result)) {
-					return AbstractDungeon.returnRandomRelicKey(tier);
+			AbstractRoom room = AbstractDungeon.getCurrRoom();
+			if (room != null) {
+				if (room instanceof NeowRoom) {
+					if (startingRelicBlacklist.contains(__Result) || outOfPlaceRelicBlacklist.contains(__Result)) {
+						return AbstractDungeon.returnRandomRelicKey(tier);
+					}
+				} else {
+					switch (tier) {
+						case SHOP:
+							if (!(room instanceof ShopRoom)) {
+								if (outOfPlaceRelicBlacklist.contains(__Result)) {
+									return AbstractDungeon.returnRandomRelicKey(tier);
+								}
+							}
+							break;
+						case BOSS:
+							if (!(room instanceof TreasureRoomBoss)) {
+								if (outOfPlaceRelicBlacklist.contains(__Result)) {
+									return AbstractDungeon.returnRandomRelicKey(tier);
+								}
+							}
+							break;
+					}
 				}
 			}
+			
 			return __Result;
 		}
 	}
@@ -66,7 +91,7 @@ public class NeowRewardPatches {
 	public static class RewardsPatch {
 		
 		public static ArrayList<NeowRewardDef> Postfix(ArrayList<NeowRewardDef> __result, NeowReward __instance, final int category) {
-			
+
 			if (category == 0) {
 				__result.add(new NeowRewardDef(COLORLESS_CARD, "[ #gObtain #ga #grandom #gcolorless #gCard ]"));
 			}

@@ -14,6 +14,7 @@ import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -27,6 +28,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.TheWorksPower;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.events.thebottom.*;
+import com.megacrit.cardcrawl.events.thecity.GremboTheGreat;
 import com.megacrit.cardcrawl.events.shrines.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.*;
@@ -45,6 +47,8 @@ import fruitymod.patches.*;
 import infinitespire.InfiniteSpire;
 import madsciencemod.MadScienceMod;
 import madsciencemod.powers.*;
+import replayTheSpire.panelUI.*;
+import replayTheSpire.patches.SimplicityRunePatches;
 
 import java.lang.reflect.*;
 import java.io.*;
@@ -453,39 +457,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static ChaosMagicSetting RingOfChaos_CompatibilityMode = ChaosMagicSetting.COST_ONLY;
 	
 	public ReplayTheSpireMod() {
-		/*
-		logger.info("subscribing to postInitialize event");
-        BaseMod.subscribeToPostInitialize(this);
-		
-		logger.info("subscribing to editRelics event");
-        BaseMod.subscribeToEditRelics(this);
-        
-        logger.info("subscribing to editCards event");
-        BaseMod.subscribeToEditCards(this);
-		
-		logger.info("subscribing to editStrings event");
-        BaseMod.subscribeToEditStrings(this);
-		
-		logger.info("subscribing to postDraw event");
-        BaseMod.subscribeToPostDraw(this);
-		
-		logger.info("subscribing to getPotions event");
-        BaseMod.subscribeToPotionGet(this);
-        */
 		BaseMod.subscribe(this);
 		initializePotions();
-		
-		
-        // logger.info("subscribing to setUnlocks event");
-        // BaseMod.subscribeToSetUnlocks(this);
-        
-        //BaseMod.subscribeToOnPowersModified(this);
-        //BaseMod.subscribeToPostExhaust(this);
-        //BaseMod.subscribeToPostBattle(this);
-        //BaseMod.subscribeToPostDraw(this);
-		
-		
-		
 	}
 	
 	public static void initialize() {
@@ -725,9 +698,16 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public ModToggleButton chaos_button_3;
 	public ModToggleButton chaos_button_4;
 	
-	private ModToggleButton makeLabeledButton(final String labelText, final float xPos, final float yPos, final Color color, final BitmapFont font, final boolean enabled, final ModPanel p, final Consumer<ModLabel> labelUpdate, final Consumer<ModToggleButton> c) {
-		//p.addLabel(labelText, xPos + 40.0f, yPos + 8.0f, (me) -> {});
-		return new ModToggleButton(xPos, yPos, enabled, false, p, c);
+	public static int SETTINGS_normalTagChance = 3;
+	public static int SETTINGS_doubleTagChance = 1;
+	public static int SETTINGS_specialTagChance = 1;
+	public static float SETTINGS_warpRoomChance = 0.33f;
+	
+	private ModToggleButton makeLabeledButton(final ArrayList<IUIElement> settingElements, final String labelText, final float xPos, final float yPos, final Color color, final BitmapFont font, final boolean enabled, final ModPanel p, final Consumer<ModLabel> labelUpdate, final Consumer<ModToggleButton> c) {
+		settingElements.add(new ModLabel(labelText, xPos + 40.0f, yPos + 8.0f, color, font, p, labelUpdate));
+		ModToggleButton b = new ModToggleButton(xPos, yPos, enabled, false, p, c);
+		settingElements.add(b);
+		return b;
 	}
 	
 	@Override
@@ -751,10 +731,13 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         Texture badgeTexture = new Texture(BADGE_IMG);
 		this.currentSettingsSubTab = 0;
         this.settingsPanel = new ModPanel();
+		final List<RelicSettingsButton> settingsButtons = new ArrayList<RelicSettingsButton>();
+		ArrayList<IUIElement> settingElements = new ArrayList<IUIElement>();
 		loadSettingsData();
 		//settingsPanel.addLabel("Avoid Ring Of Chaos magic number changes?", 350.0f, 750.0f, (me) -> {});
 		//settingsPanel.addLabel("(Avoiding these changes makes RoC less buggy, but also have less interesting effect variety)", 350.0f, 700.0f, (me) -> {});
-		chaos_button_1 = makeLabeledButton("Don't avoid changes including magic number (more variety, more bugs)", 350.0f, 650.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.ALWAYS, this.settingsPanel, (me) -> {}, me -> {
+		
+		chaos_button_1 = makeLabeledButton(settingElements, "Don't avoid changes including magic number (more variety, more bugs)", 350.0f, 550.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.ALWAYS, this.settingsPanel, (me) -> {}, me -> {
             if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
 				me.enabled = true;
 			} else {
@@ -766,8 +749,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				saveSettingsData();
 			}
 		});
-		settingsPanel.addUIElement(chaos_button_1);
-		chaos_button_2 = makeLabeledButton("Avoid changes including only magic number (compromise option)", 350.0f, 600.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.COST_ONLY, this.settingsPanel, (me) -> {}, me -> {
+		chaos_button_2 = makeLabeledButton(settingElements, "Avoid changes including only magic number (compromise option)", 350.0f, 500.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.COST_ONLY, this.settingsPanel, (me) -> {}, me -> {
             if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
 				me.enabled = true;
 			} else {
@@ -779,8 +761,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				saveSettingsData();
 			}
 		});
-		settingsPanel.addUIElement(chaos_button_2);
-		chaos_button_3 = makeLabeledButton("Avoid all magic number changes (less variety, full stability)", 350.0f, 550.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.NEVER, this.settingsPanel, (me) -> {}, me -> {
+		chaos_button_3 = makeLabeledButton(settingElements, "Avoid all magic number changes (less variety, full stability)", 350.0f, 450.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.NEVER, this.settingsPanel, (me) -> {}, me -> {
             if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
 				me.enabled = true;
 			} else {
@@ -792,8 +773,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				saveSettingsData();
 			}
 		});
-		settingsPanel.addUIElement(chaos_button_3);
-		chaos_button_4 = makeLabeledButton("Never change any values on cards with magic number (for the extremely paranoid)", 350.0f, 500.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.STRICT, this.settingsPanel, (me) -> {}, me -> {
+		chaos_button_4 = makeLabeledButton(settingElements, "Never change any values on cards with magic number (for the extremely paranoid)", 350.0f, 400.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.STRICT, this.settingsPanel, (me) -> {}, me -> {
             if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
 				me.enabled = true;
 			} else {
@@ -805,45 +785,24 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				saveSettingsData();
 			}
 		});
-		settingsPanel.addUIElement(chaos_button_4);
-		/*
-        settingsPanel.addLabel("Potion Rarities", 1000.0f, 700.0f, (me) -> {});
+		settingsButtons.add(new RelicSettingsButton(new RingOfChaos(), settingElements));
+		settingElements = new ArrayList<IUIElement>();
 		
-		ModSlider potionSliderC = new ModSlider("Common", 1000.0f, 650.0f, 10.0f, "", settingsPanel, (me) -> {
-			//logger.info((int)Math.round(me.value * me.multiplier));
-			ReplayTheSpireMod.commonPotionChance = (int)Math.round(me.value * me.multiplier);
-		});
-		potionSliderC.setValue((float)ReplayTheSpireMod.commonPotionChance / potionSliderC.multiplier);
-		settingsPanel.addUIElement(potionSliderC);
+		final Pagination pager = new Pagination(new ImageButton("img/tinyRightArrow.png", 915, 550, 100, 100, b -> {}), new ImageButton("img/tinyLeftArrow.png", 350, 550, 100, 100, b -> {}), 2, 3, 50, 50, settingsButtons);
+        settingsPanel.addUIElement((IUIElement)pager);
 		
-		ModSlider potionSliderUC = new ModSlider("Uncommon", 1000.0f, 600.0f, 10.0f, "", settingsPanel, (me) -> {
-			ReplayTheSpireMod.uncommonPotionChance = (int)Math.round(me.value * me.multiplier);
-		});
-		potionSliderUC.setValue((float)ReplayTheSpireMod.uncommonPotionChance / potionSliderUC.multiplier);
-		settingsPanel.addUIElement(potionSliderUC);
-		
-		ModSlider potionSliderR = new ModSlider("Rare", 1000.0f, 550.0f, 10.0f, "", settingsPanel, (me) -> {
-			ReplayTheSpireMod.rarePotionChance = (int)Math.round(me.value * me.multiplier);
-		});
-		potionSliderR.setValue((float)ReplayTheSpireMod.rarePotionChance / potionSliderR.multiplier);
-		settingsPanel.addUIElement(potionSliderR);
-		
-		ModSlider potionSliderUR = new ModSlider("Ultra Rare", 1000.0f, 500.0f, 10.0f, "", settingsPanel, (me) -> {
-			ReplayTheSpireMod.ultraPotionChance = (int)Math.round(me.value * me.multiplier);
-		});
-		potionSliderUR.setValue((float)ReplayTheSpireMod.ultraPotionChance / potionSliderUR.multiplier);
-		settingsPanel.addUIElement(potionSliderUR);
-		logger.info("end editting json");
-		*/
 		
 		logger.info("badge");
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         
 		logger.info("Events");
-		BaseMod.addEvent(MirrorMist.ID, MirrorMist.class, BaseMod.EventPool.THE_EXORDIUM);
-		BaseMod.addEvent(Stuck.ID, Stuck.class, BaseMod.EventPool.THE_EXORDIUM);
-		BaseMod.addEvent(TrappedChest.ID, TrappedChest.class, BaseMod.EventPool.ANY);
-		BaseMod.addEvent(ChaosEvent.ID, ChaosEvent.class, BaseMod.EventPool.ANY);
+		BaseMod.addEvent(MirrorMist.ID, MirrorMist.class, "Exordium");
+		BaseMod.addEvent(Stuck.ID, Stuck.class, "Exordium");
+		BaseMod.addEvent(TrappedChest.ID, TrappedChest.class);
+		BaseMod.addEvent(ChaosEvent.ID, ChaosEvent.class);
+		/*if (Loader.isModLoaded("Friendly_Minions_0987678")) {
+			BaseMod.addEvent(GremboTheGreat.ID, GremboTheGreat.class, "TheCity");
+		}*/
 
 		logger.info("keywords");
         final String[] necroNames = { "necrotic", "necrotic poison", "Necrotic" };
@@ -867,9 +826,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		/*
 		final String[] specNames = { "spectral", "Spectral", "Spectral."};
 		BaseMod.addKeyword(specNames, "Is #yEthereal. NL #yExhausts when played or discarded. NL When drawn, you draw an additional card. NL If your hand is full and you draw a card, this card is #yExhausted from your hand to make room.");
-		final String[] medNames = { "medicurse", "Medicurse", "Medicurse."};
-		BaseMod.addKeyword(specNames, "During combat, this #yCurse is treated as a #yStatus instead.");
 		*/
+		
 		
 		logger.info("end post init");
         Settings.isDailyRun = false;
@@ -906,6 +864,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new ChewingGum(), RelicType.SHARED);
 		BaseMod.addRelic(new CounterBalance(), RelicType.SHARED);
 		BaseMod.addRelic(new Durian(), RelicType.SHARED);
+		BaseMod.addRelic(new DimensionalGlitch(), RelicType.SHARED);
 		BaseMod.addRelic(new DivineProtection(), RelicType.SHARED);
 		BaseMod.addRelic(new ElectricBlood(), RelicType.RED);
 		BaseMod.addRelic(new Funnel(), RelicType.SHARED);
@@ -920,7 +879,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new IronCore(), RelicType.SHARED);
 		BaseMod.addRelic(new KingOfHearts(), RelicType.RED);
 		BaseMod.addRelic(new Kintsugi(), RelicType.SHARED);
+		BaseMod.addRelic(new LightBulb(), RelicType.SHARED);
 		BaseMod.addRelic(new Mirror(), RelicType.SHARED);
+		BaseMod.addRelic(new Multitool(), RelicType.SHARED);
 		BaseMod.addRelic(new OnionRing(), RelicType.SHARED);
 		BaseMod.addRelic(new OozeArmor(), RelicType.RED);
 		BaseMod.addRelic(new PainkillerHerb(), RelicType.SHARED);
@@ -938,7 +899,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new RingOfGreed(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfMisfortune(), RelicType.SHARED);
 		BaseMod.addRelic(new SecondSwordRelic(), RelicType.RED);
-		//BaseMod.addRelic(new SimpleRune(), RelicType.SHARED);
+		BaseMod.addRelic(new SimpleRune(), RelicType.SHARED);
 		BaseMod.addRelic(new SizzlingBlood(), RelicType.SHARED);
 		BaseMod.addRelic(new SnackPack(), RelicType.SHARED);
 		BaseMod.addRelic(new SnakeBasket(), RelicType.GREEN);
@@ -1008,6 +969,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new SurveyOptions());
 		AddAndUnlockCard(new ReplayUltimateDefense());
 		AddAndUnlockCard(new MidasTouch());
+		AddAndUnlockCard(new Trickstab());
+		/*if (Loader.isModLoaded("Friendly_Minions_0987678")) {
+			AddAndUnlockCard(new GrembosGang());
+		}*/
 		logger.info("adding curses...");
 		AddAndUnlockCard(new CommonCold());
 		AddAndUnlockCard(new Hallucinations());

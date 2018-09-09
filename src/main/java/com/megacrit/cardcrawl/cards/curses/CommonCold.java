@@ -45,7 +45,7 @@ public class CommonCold
 	}
 	else
 	{
-		AbstractDungeon.actionManager.addToBottom(new TalkAction(p, "ah- @CHOO!@"));
+		AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "ah- @CHOO!@", 2.0f, 2.0f));
 	}
   }
 

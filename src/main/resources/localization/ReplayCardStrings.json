@@ -242,9 +242,9 @@
     "NAME": "Poisoned Strike",
     "DESCRIPTION": "Apply !D! Poison. NL Affected by damage modifiers."
   },
-  "Trickstab": {
+  "ReplayTheSpireMod:Trickstab": {
     "NAME": "Trickstab",
-    "DESCRIPTION": "Deal !D! damage 2 times. NL Affected by block modifiers."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Affected by block modifiers."
   },
   "Specialist": {
     "NAME": "Specialist",
@@ -356,10 +356,9 @@
     "NAME": "Counter",
     "DESCRIPTION": "Gain !M! Intangible. NL Exhaust. NL Retain."
   },
-  "Grembo's Gang": {
+  "GremboGang": {
     "NAME": "Grembo's Gang",
-    "DESCRIPTION": "Summon X random gremlins that last !M! rounds. NL Maximum of 3.",
-    "UPGRADE_DESCRIPTION": "Summon X random gremlins. NL Maximum of 3."
+    "DESCRIPTION": "Summon !M! random gremlins that last 2X rounds."
   },
   "AutogenPotionCard": {
     "NAME": "AutogenPotionCard",

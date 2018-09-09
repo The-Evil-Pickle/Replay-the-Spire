@@ -44,6 +44,14 @@
 		"Lose Dead Branch. Obtain a special relic. Free action."
 	]
   },
+  "Re-Bottle Option": {
+    "TEXT": [
+		"Re-Bottle (",
+		")",
+		"Change which card this bottle relic targets.",
+		" Free action."
+	]
+  },
   "Claw Rake": {
     "TEXT": [
 		"Select card to discard.",
