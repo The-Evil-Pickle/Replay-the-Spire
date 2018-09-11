@@ -356,6 +356,23 @@
 	"If you have any unspent [E] at the end of your turn, draw that many cards at the start of your next turn."
 	]
   },
+  "ReplayTheSpireMod:Ninjato": {
+	"NAME": "Ninjato",
+	"FLAVOR": "Stab stab stab",
+    "DESCRIPTIONS": [
+		"The third #yAttack you play each turn has #yRefund #b",
+		"Every time you play #b",
+		" #yAttacks in a single turn, draw #b",
+		" cards."
+	]
+  },
+  "ReplayTheSpireMod:TigerMarble": {
+	"NAME": "Tiger Marble",
+	"FLAVOR": "Eye of the Tiger",
+    "DESCRIPTIONS": [
+		"At the start of combat, add a random card which #yExhausts to your hand. NL It costs #b0 until played."
+	]
+  },
   "Another Sword": {
     "NAME": "Another Sword",
 	"FLAVOR": "A second sword. You have two now.",

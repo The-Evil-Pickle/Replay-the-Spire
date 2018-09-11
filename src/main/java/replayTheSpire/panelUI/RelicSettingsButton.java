@@ -32,6 +32,8 @@ public class RelicSettingsButton implements IUIElement
     public RelicSettingsButton(final AbstractRelic relic, final float x, final float y, final float width, final float height, final List<IUIElement> elements) {
         this(relic.img, relic.outlineImg, x, y, width, height, elements);
         this.relic = relic;
+        this.w *= 1.5f;
+        this.h *= 1.5f;
     }
     public RelicSettingsButton(final Texture image, final Texture outline, final float x, final float y, final float width, final float height, final List<IUIElement> elements) {
     	this.relic = null;

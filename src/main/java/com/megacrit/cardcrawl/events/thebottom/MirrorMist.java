@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.*;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
 
 import blackrusemod.characters.*;
-import fruitymod.characters.*;
+import fruitymod.seeker.characters.*;
 
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.relics.*;
