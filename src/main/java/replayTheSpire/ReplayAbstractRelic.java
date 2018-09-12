@@ -21,7 +21,12 @@ public abstract class ReplayAbstractRelic extends AbstractRelic {
 	public ReplayAbstractRelic(String setId, String imgName, RelicTier tier, LandingSound sfx) {
 		super(setId, imgName, tier, sfx);
 	}
-	
+
+	public ArrayList<String> GetSettingStrings() {
+		ArrayList<String> s = new ArrayList<String>();
+		s.add(this.name);
+		return s;
+	}
 	public ArrayList<ReplayRelicSetting> BuildRelicSettings() {
 		return new ArrayList<ReplayRelicSetting>();
 	}

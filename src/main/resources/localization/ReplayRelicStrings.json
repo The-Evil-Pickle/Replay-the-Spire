@@ -245,7 +245,7 @@
   },
   "ReplayTheSpireMod:DimensionalGlitch": {
 	"NAME": "Dimensional Glitch",
-	"FLAVOR": "[ReplayTheSpireMod] ERROR: No FLAVOR field for relic id DimensionalGlitch",
+	"FLAVOR": "UPDATE BODY TEXT",
     "DESCRIPTIONS": [
 	"Gain [E] at the start of each turn. NL All non-attack damage you deal is reduced by #b2. NL All non-attack damage you take is increased by #b2."
 	]
@@ -364,6 +364,14 @@
 		"Every time you play #b",
 		" #yAttacks in a single turn, draw #b",
 		" cards."
+	]
+  },
+  "ReplayTheSpireMod:EnergyBall": {
+	"NAME": "Energy Ball",
+	"FLAVOR": "Smashing!",
+    "DESCRIPTIONS": [
+		"In each combat, when the total amount of leftover [E] you've had at the end of turns reaches #b",
+		", add your character's Form Power to your hand. NL It costs #b0 until played, and is #yRetained at the end of your turn."
 	]
   },
   "ReplayTheSpireMod:TigerMarble": {
@@ -542,18 +550,6 @@
 	"FLAVOR": "idk",
     "DESCRIPTIONS": [
 		"Each time you #yEvoke #yFrost, gain #b1 #yReflection."
-	]
-  },
-  "Solidified Core": {
-    "NAME": "Solidified Core",
-	"FLAVOR": "Hard as a rock. Or maybe a geode.",
-    "DESCRIPTIONS": [
-		"At the start of combat, Channel #b",
-		" Frost and #b",
-		" Crystal.",
-		" NL Replaces Cracked Core.",
-		" NL Replaces Iron Core."
-		
 	]
   },
   "Ring of Fury": {

@@ -9,21 +9,40 @@ import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.CardGroup.CardGroupType;
-import java.util.ArrayList;
+import java.util.*;
 import java.lang.*;
 import replayTheSpire.*;
+import replayTheSpire.panelUI.*;
 
 public class RingOfChaos
-  extends AbstractRelic
+  extends ReplayAbstractRelic
 {
   public static final String ID = "Ring of Chaos";
   private boolean calledTransform = true;
-  
+  static final List<String> settingStrings = new ArrayList<String>();
+  public static final ReplayOptionsSetting SETTING_MODE;
+  static {
+	  settingStrings.add("Don't avoid changes including magic number (more variety, more bugs)");
+	  settingStrings.add("Avoid changes including only magic number (compromise option)");
+	  settingStrings.add("Avoid all magic number changes (less variety, full stability)");
+	  settingStrings.add("Never change any values on cards with magic number (for the extremely paranoid)");
+	  SETTING_MODE = new ReplayOptionsSetting("chaos_mode", "(Avoiding these changes makes RoC less buggy, but also have less interesting effect variety)", 1, settingStrings);
+  }
   public RingOfChaos()
   {
     super("Ring of Chaos", "cursedBlood.png", AbstractRelic.RelicTier.BOSS, AbstractRelic.LandingSound.FLAT);
   }
-  
+  public ArrayList<String> GetSettingStrings() {
+		ArrayList<String> s = new ArrayList<String>();
+		s.add(this.name);
+		s.add("Avoid Ring Of Chaos magic number changes?");
+		return s;
+	}
+  public ArrayList<ReplayRelicSetting> BuildRelicSettings() {
+	  ArrayList<ReplayRelicSetting> r = new ArrayList<ReplayRelicSetting>();
+	  r.add(SETTING_MODE);
+		return r;
+	}
   public static enum ChaosUpgradeType
   {
     MAGIC, DAMAGE, BLOCK, COST;
@@ -60,7 +79,7 @@ public class RingOfChaos
 		return false;
 	}
 	
-	if (c.type == AbstractCard.CardType.POWER && ReplayTheSpireMod.RingOfChaos_CompatibilityMode != ReplayTheSpireMod.ChaosMagicSetting.ALWAYS) {
+	if (c.type == AbstractCard.CardType.POWER && SETTING_MODE.value != 0) {//ReplayTheSpireMod.RingOfChaos_CompatibilityMode != ReplayTheSpireMod.ChaosMagicSetting.ALWAYS
 		return false;
 	}
 	
@@ -68,10 +87,10 @@ public class RingOfChaos
 	ArrayList<ChaosUpgradeType> dwnOp = new ArrayList<ChaosUpgradeType>();
 	
 	if (c.baseMagicNumber > 0 && c.rawDescription.contains("!M")) {
-		if (ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.STRICT) {
+		if (SETTING_MODE.value == 2) {//if (ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.STRICT) {
 			return false;
 		}
-		if (ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.ALWAYS) {
+		if (SETTING_MODE.value == 0) {//if (ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.ALWAYS) {
 			upOp.add(ChaosUpgradeType.MAGIC);
 			if (c.baseMagicNumber > 1) {
 				dwnOp.add(ChaosUpgradeType.MAGIC);
@@ -118,7 +137,7 @@ public class RingOfChaos
 			}
 			if (downside == ChaosUpgradeType.COST) {
 				if (c.baseMagicNumber > 0 && c.rawDescription.contains("!M") && 
-				(ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.COST_ONLY)) {
+				(SETTING_MODE.value == 1)) {//(ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.COST_ONLY)) {
 					upOp.add(ChaosUpgradeType.MAGIC);
 					if (c.baseMagicNumber > 1) {
 						dwnOp.add(ChaosUpgradeType.MAGIC);
@@ -131,7 +150,7 @@ public class RingOfChaos
 			}
 			if (upside == ChaosUpgradeType.COST) {
 				if (c.baseMagicNumber > 0 && c.rawDescription.contains("!M") && 
-				(ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.COST_ONLY)) {
+				(SETTING_MODE.value == 1)) {//(ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.COST_ONLY)) {
 					upOp.add(ChaosUpgradeType.MAGIC);
 					if (c.baseMagicNumber > 1) {
 						dwnOp.add(ChaosUpgradeType.MAGIC);

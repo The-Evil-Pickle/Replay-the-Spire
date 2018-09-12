@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.Prefs;
 
 import basemod.IUIElement;
 import basemod.ModLabel;
@@ -44,6 +45,19 @@ public class ReplayBooleanSetting extends ReplayRelicSetting {
 		this.button.enabled = this.value;
 		this.elements.add(this.button);
 		return this.elements;
+	}
+
+	@Override
+	public void LoadFromData(Prefs config) {
+		this.value = config.getBoolean(this.settingsId, Boolean.parseBoolean(this.defaultProperty));
+		if (this.button != null) {
+			this.button.enabled = this.value;
+		}
+	}
+
+	@Override
+	public void SaveToData(Prefs config) {
+		config.putBoolean(this.settingsId, this.value);
 	}
 	
 }

@@ -5,6 +5,7 @@ import java.util.*;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.Prefs;
 
 import basemod.IUIElement;
 import basemod.ModLabel;
@@ -13,7 +14,7 @@ import replayTheSpire.ReplayTheSpireMod;
 
 public class ReplayOptionsSetting extends ReplayRelicSetting {
 
-	int value;
+	public int value;
 	List<String> optionStrings;
 	ArrayList<ModToggleButton> buttons;
 	
@@ -27,8 +28,10 @@ public class ReplayOptionsSetting extends ReplayRelicSetting {
 	@Override
 	public void LoadFromData(SpireConfig config) {
 		this.value = config.getInt(this.settingsId);
-		for (int i=0; i < this.buttons.size(); i++) {
-			this.buttons.get(i).enabled = (i == this.value);
+		if (this.buttons != null) {
+			for (int i=0; i < this.buttons.size(); i++) {
+				this.buttons.get(i).enabled = (i == this.value);
+			}
 		}
 	}
 
@@ -38,7 +41,22 @@ public class ReplayOptionsSetting extends ReplayRelicSetting {
 	}
 
 	@Override
+	public void LoadFromData(Prefs config) {
+		this.value = config.getInteger(this.settingsId, Integer.parseInt(this.defaultProperty));
+		if (this.buttons != null) {
+			for (int i=0; i < this.buttons.size(); i++) {
+				this.buttons.get(i).enabled = (i == this.value);
+			}
+		}
+	}
+
+	@Override
+	public void SaveToData(Prefs config) {
+		config.putInteger(this.settingsId, this.value);
+	}
+	@Override
 	public ArrayList<IUIElement> GenerateElements(float x, float y) {
+		this.buttons = new ArrayList<ModToggleButton>();
 		this.elements.add(new ModLabel(this.name, x, y, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.settingsPanel, (me) -> {}));
 		for (int i=0; i < this.optionStrings.size(); i++) {
 			y -= 50.0f;
@@ -64,9 +82,11 @@ public class ReplayOptionsSetting extends ReplayRelicSetting {
 				}
 				ReplayTheSpireMod.saveSettingsData();
 			});
+			this.buttons.add(button);
 			this.elements.add(button);
 		}
 		return this.elements;
 	}
+
 	
 }

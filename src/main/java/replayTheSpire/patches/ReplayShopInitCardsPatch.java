@@ -33,14 +33,17 @@ public class ReplayShopInitCardsPatch {
 		ReplayShopInitCardsPatch.dollTags = new ArrayList<OnSaleTag>();
 		ReplayShopInitCardsPatch.dollTagImgs = new ArrayList<Texture>();
 		ArrayList<String> tagList = new ArrayList<String>();
-		tagList.add(ReplayShopInitCardsPatch.NORMAL_TAG);
-		tagList.add(ReplayShopInitCardsPatch.NORMAL_TAG);
-		tagList.add(ReplayShopInitCardsPatch.DOUBLE_TAG);
-		if (!ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("GoldenEgg") || ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Blue Doll")) {
-			tagList.add(ReplayShopInitCardsPatch.SPECIAL_TAG);
+		for (int i=0; i < ReplayTheSpireMod.SETTING_TAG_NORMAL_CHANCE.value; i++) {
+			tagList.add(ReplayShopInitCardsPatch.NORMAL_TAG);
 		}
-		tagList.add(ReplayShopInitCardsPatch.NORMAL_TAG);
-		
+		for (int i=0; i < ReplayTheSpireMod.SETTING_TAG_DOUBLE_CHANCE.value; i++) {
+			tagList.add(ReplayShopInitCardsPatch.DOUBLE_TAG);
+		}
+		if (!ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("GoldenEgg") || ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Blue Doll")) {
+			for (int i=0; i < ReplayTheSpireMod.SETTING_TAG_SPECIAL_CHANCE.value; i++) {
+				tagList.add(ReplayShopInitCardsPatch.SPECIAL_TAG);
+			}
+		}
 		String tagtype = tagList.get(AbstractDungeon.merchantRng.random(0, tagList.size() - 1));
 		OnSaleTag.img = ImageMaster.loadImage(tagtype);
 		

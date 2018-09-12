@@ -697,6 +697,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public ModToggleButton chaos_button_2;
 	public ModToggleButton chaos_button_3;
 	public ModToggleButton chaos_button_4;
+	public static final ReplayIntSliderSetting SETTING_TAG_NORMAL_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Normal", "Normal Sale Tag Chance", 3, 1, 5);
+	public static final ReplayIntSliderSetting SETTING_TAG_SPECIAL_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Special", "Special Edition Tag Chance", 1, 0, 5);
+	public static final ReplayIntSliderSetting SETTING_TAG_DOUBLE_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Double", "2 For 1 Tag Chance", 1, 0, 5);
 
 	public static HashMap<String, ReplayRelicSetting> ConfigSettings = new HashMap<String, ReplayRelicSetting>();
 	public static HashMap<ReplayAbstractRelic, ArrayList<ReplayRelicSetting>> RelicSettings = new HashMap<ReplayAbstractRelic, ArrayList<ReplayRelicSetting>>();
@@ -711,6 +714,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ArrayList<IUIElement> settingElements = new ArrayList<IUIElement>();
 		float x = 300.0f;
 		float y = 550.0f;
+		for (String s : relic.GetSettingStrings()) {
+			settingElements.add(new ModLabel(s, x + ((y == 550.0f) ? 150.0f : 0.0f), y, settingsPanel, (me) -> {}));
+			y -= 40.0f;
+		}
 		for (ReplayRelicSetting setting : ReplayTheSpireMod.RelicSettings.get(relic)) {
 			settingElements.addAll(setting.GenerateElements(x, y));
 			y -= setting.elementHeight;
@@ -724,7 +731,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		settingElements.add(b);
 		return b;
 	}
-	
+
+	static SpireConfig config;
 	@Override
     public void receivePostInitialize() {
 		ReplayTheSpireMod.powerAtlas = new com.badlogic.gdx.graphics.g2d.TextureAtlas(Gdx.files.internal("powers/replayPowers.atlas"));
@@ -743,18 +751,26 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.fishAtlas = new TextureAtlas(Gdx.files.internal("images/replayScenes/fishfight.atlas"));
 		ReplayTheSpireMod.fishFG = ReplayTheSpireMod.fishAtlas.findRegion("mod/fg");
         // Mod badge
+		try {
+			config = new SpireConfig("ReplayTheSpireMod", "replaySettingsData");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         Texture badgeTexture = new Texture(BADGE_IMG);
 		this.currentSettingsSubTab = 0;
         settingsPanel = new ModPanel();
 		final List<RelicSettingsButton> settingsButtons = new ArrayList<RelicSettingsButton>();
 		ArrayList<IUIElement> settingElements = new ArrayList<IUIElement>();
-		
+
+		BuildSettings(new RingOfChaos());
 		BuildSettings(new Ninjato());
+		BuildSettings(new TagBag());
 		
 		loadSettingsData();
 		//settingsPanel.addLabel("Avoid Ring Of Chaos magic number changes?", 350.0f, 750.0f, (me) -> {});
 		//settingsPanel.addLabel("(Avoiding these changes makes RoC less buggy, but also have less interesting effect variety)", 350.0f, 700.0f, (me) -> {});
-		
+		/*
 		chaos_button_1 = makeLabeledButton(settingElements, "Don't avoid changes including magic number (more variety, more bugs)", 350.0f, 550.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.ALWAYS, settingsPanel, (me) -> {}, me -> {
             if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
 				me.enabled = true;
@@ -805,7 +821,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		});
 		settingsButtons.add(new RelicSettingsButton(new RingOfChaos(), settingElements));
 		settingElements = new ArrayList<IUIElement>();
-		
+		*/
 		for (ReplayAbstractRelic relic : RelicSettings.keySet()) {
 			settingsButtons.add(BuildSettingsButton(relic));
 		}
@@ -1300,20 +1316,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				ReplayRelicSetting setting = ConfigSettings.get(key);
 				setting.SaveToData(config);
 			}
-			switch(ReplayTheSpireMod.RingOfChaos_CompatibilityMode) {
-				case ALWAYS: 
-					config.setInt("chaos_mode", 0);
-					break;
-				case COST_ONLY: 
-					config.setInt("chaos_mode", 1);
-					break;
-				case NEVER: 
-					config.setInt("chaos_mode", 2);
-					break;
-				case STRICT: 
-					config.setInt("chaos_mode", 3);
-					break;
-			}
 			config.save();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -1322,13 +1324,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static void loadSettingsData() {
     	logger.info("ReplayTheSpireMod | Loading Data...");
     	try {
-			Properties defaultProperties = new Properties();
+			/*Properties defaultProperties = new Properties();
 			for (String key : ConfigSettings.keySet()) {
 				ReplayRelicSetting setting = ConfigSettings.get(key);
 				defaultProperties.setProperty(setting.settingsId, setting.defaultProperty);
 			}
-			defaultProperties.setProperty("chaos_mode", "1");
-			SpireConfig config = new SpireConfig("ReplayTheSpireMod", "replaySettingsData");
+			defaultProperties.setProperty("chaos_mode", "1");*/
 			config.load();
 			for (String key : ConfigSettings.keySet()) {
 				ReplayRelicSetting setting = ConfigSettings.get(key);
@@ -1337,7 +1338,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				}
 				setting.LoadFromData(config);
 			}
-			try {
+			/*try {
 				switch(config.getInt("chaos_mode")) {
 					case 0:
 						ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.ALWAYS;
@@ -1354,7 +1355,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				}
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
-			}
+			}*/
 			
 			
 		} catch (IOException e) {

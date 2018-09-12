@@ -3,6 +3,7 @@ package replayTheSpire.panelUI;
 import java.util.ArrayList;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
+import com.megacrit.cardcrawl.helpers.Prefs;
 
 import basemod.IUIElement;
 
@@ -22,8 +23,10 @@ public abstract class ReplayRelicSetting {
 	}
 	
 	public abstract void LoadFromData(SpireConfig config);
-	
+	public abstract void LoadFromData(Prefs config);
+
 	public abstract void SaveToData(SpireConfig config);
+	public abstract void SaveToData(Prefs config);
 	
 	public abstract ArrayList<IUIElement> GenerateElements(float x, float y);
 }
