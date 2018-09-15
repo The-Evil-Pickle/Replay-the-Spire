@@ -19,7 +19,6 @@ public class ReplayBooleanSetting extends ReplayRelicSetting {
 	
 	public ReplayBooleanSetting(String id, String name, Boolean defaultProperty) {
 		super(id, name, Boolean.toString(defaultProperty));
-		this.value = defaultProperty;
 	}
 
 	@Override
@@ -58,6 +57,15 @@ public class ReplayBooleanSetting extends ReplayRelicSetting {
 	@Override
 	public void SaveToData(Prefs config) {
 		config.putBoolean(this.settingsId, this.value);
+	}
+
+	@Override
+	public void ResetToDefault() {
+		this.value = Boolean.parseBoolean(defaultProperty);
+		if (this.button != null) {
+			this.button.enabled = this.value;
+		}
+		ReplayTheSpireMod.saveSettingsData();
 	}
 	
 }

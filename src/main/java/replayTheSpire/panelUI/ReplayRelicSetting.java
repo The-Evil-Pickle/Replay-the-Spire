@@ -28,5 +28,7 @@ public abstract class ReplayRelicSetting {
 	public abstract void SaveToData(SpireConfig config);
 	public abstract void SaveToData(Prefs config);
 	
+	public abstract void ResetToDefault();
+	
 	public abstract ArrayList<IUIElement> GenerateElements(float x, float y);
 }

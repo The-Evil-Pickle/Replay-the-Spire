@@ -35,6 +35,8 @@ public class ReplayFloatSliderSetting extends ReplayRelicSetting {
 		super(id, name, Float.toString(defaultProperty));
 		this.multi = multi;
 		this.min = min;
+		this.value = defaultProperty;
+		this.suf = suf;
 	}
 
 	@Override
@@ -70,6 +72,14 @@ public class ReplayFloatSliderSetting extends ReplayRelicSetting {
 		this.slider.setValue(this.value);
 		this.elements.add(this.slider);
 		return this.elements;
+	}
+	@Override
+	public void ResetToDefault() {
+		this.value = Float.parseFloat(defaultProperty);
+		if (this.slider != null) {
+			this.slider.value = this.value;
+		}
+		ReplayTheSpireMod.saveSettingsData();
 	}
 
 }

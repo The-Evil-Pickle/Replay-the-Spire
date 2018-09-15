@@ -9,10 +9,15 @@ import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.*;
 import com.megacrit.cardcrawl.helpers.input.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.core.*;
 
 public class RelicSettingsButton implements IUIElement
 {
+	public static final float DEFAULT_X = 450.0f;
+	public static final float DEFAULT_Y = 625.0f;
+	public static final float DEFAULT_W = 100.0f;
+	public static final float DEFAULT_H = 100.0f;
 	public static RelicSettingsButton activeButton;
 	public Texture image;
     public Texture outline;
@@ -24,6 +29,7 @@ public class RelicSettingsButton implements IUIElement
     public AbstractRelic relic;
     public List<IUIElement> elements;
     public boolean isSelected;
+    private Color rendColor;
 
     public RelicSettingsButton(final AbstractRelic relic, final List<IUIElement> elements) {
     	this(relic, 450.0f, 625.0f, 100.0f, 100.0f, elements);
@@ -34,6 +40,9 @@ public class RelicSettingsButton implements IUIElement
         this.relic = relic;
         this.w *= 1.5f;
         this.h *= 1.5f;
+        if (!UnlockTracker.isRelicSeen(relic.relicId)) {
+        	this.rendColor = Color.BLACK;
+		}
     }
     public RelicSettingsButton(final Texture image, final Texture outline, final float x, final float y, final float width, final float height, final List<IUIElement> elements) {
     	this.relic = null;
@@ -46,6 +55,7 @@ public class RelicSettingsButton implements IUIElement
         this.elements = elements;
         this.isSelected = false;
         this.hitbox = new Hitbox((float)this.x, (float)this.y, (float)this.w, (float)this.h);
+        this.rendColor = Color.WHITE;
     }
     
     public void render(final SpriteBatch sb) {
@@ -53,7 +63,7 @@ public class RelicSettingsButton implements IUIElement
             sb.setColor(new Color(0.0f, 0.0f, 0.0f, 1.0f));
             sb.draw(this.outline, this.x * Settings.scale, this.y * Settings.scale, this.w * Settings.scale, this.h * Settings.scale);
         }
-        sb.setColor(Color.WHITE);
+        sb.setColor(this.rendColor);
         sb.draw(this.image, this.x * Settings.scale, this.y * Settings.scale, this.w * Settings.scale, this.h * Settings.scale);
         this.hitbox.render(sb);
         if (this.isSelected) {

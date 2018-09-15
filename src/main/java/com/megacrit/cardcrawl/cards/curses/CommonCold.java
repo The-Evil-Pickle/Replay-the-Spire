@@ -35,7 +35,7 @@ public class CommonCold
   
   public CommonCold()
   {
-    super(ID, NAME, "cards/replay/betaCurse.png", COST, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE);
+    super(ID, NAME, "cards/replay/CommonCold.png", COST, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE);
   }
   
   public void use(AbstractPlayer p, AbstractMonster m)

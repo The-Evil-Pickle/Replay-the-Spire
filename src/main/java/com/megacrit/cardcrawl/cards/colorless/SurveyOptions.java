@@ -20,7 +20,7 @@ public class SurveyOptions extends CustomCard
     private static final int BASE_BLOCK = 7;
     
     public SurveyOptions() {
-        super("Survey Options", SurveyOptions.NAME, "cards/replay/replayBetaSkill.png", -1, SurveyOptions.DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.UNCOMMON, CardTarget.SELF);
+        super("Survey Options", SurveyOptions.NAME, "cards/replay/Survey_Options.png", -1, SurveyOptions.DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
     }

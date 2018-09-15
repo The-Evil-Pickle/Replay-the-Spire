@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.megacrit.cardcrawl.helpers.Prefs;
+import com.megacrit.cardcrawl.random.Random;
 
 import basemod.IUIElement;
 import basemod.ModSlider;
@@ -14,14 +15,20 @@ public class ReplayIntSliderSetting extends ReplayRelicSetting {
 	public int value;
 	public float multi;
 	public int min;
+	public String suf;
 
 	public ReplayIntSliderSetting(String id, String name, int defaultProperty, final int multi) {
 		this(id, name, defaultProperty, 0, multi);
 	}
 	public ReplayIntSliderSetting(String id, String name, int defaultProperty, final int min, final int multi) {
+		this(id, name, defaultProperty, min, multi, "");
+	}
+	public ReplayIntSliderSetting(String id, String name, int defaultProperty, final int min, final int multi, final String suf) {
 		super(id, name, Integer.toString(defaultProperty));
 		this.multi = multi;
 		this.min = min;
+		this.suf = suf;
+		this.value = defaultProperty;
 	}
 
 	@Override
@@ -50,13 +57,25 @@ public class ReplayIntSliderSetting extends ReplayRelicSetting {
 
 	@Override
 	public ArrayList<IUIElement> GenerateElements(float x, float y) {
-		this.slider = new AdvModSlider(this.name, x, y, this.min, this.multi, "", ReplayTheSpireMod.settingsPanel, (me) -> {
+		this.slider = new AdvModSlider(this.name, x, y, this.min, this.multi, this.suf, ReplayTheSpireMod.settingsPanel, (me) -> {
 			this.value = Math.round(me.value * me.multiplier + this.min);
 			ReplayTheSpireMod.saveSettingsData();
 		});
 		this.slider.setValue(this.value);
 		this.elements.add(this.slider);
 		return this.elements;
+	}
+	
+	public boolean testChance(Random rng) {
+		return rng.random(100) < this.value;
+	}
+	@Override
+	public void ResetToDefault() {
+		this.value = Integer.parseInt(defaultProperty);
+		if (this.slider != null) {
+			this.slider.setValue(this.value);
+		}
+		ReplayTheSpireMod.saveSettingsData();
 	}
 
 }

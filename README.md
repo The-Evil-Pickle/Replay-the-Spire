@@ -39,6 +39,8 @@ Rune of Simplicity | All | Common | Strikes and Defends can be **Upgraded** any 
 Tag Bag | All | Common | Shops have all 3 kinds of sale tags. Sale tags can appear on colorless cards. On-sale cards are slightly cheaper
 Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe, Ghost Defend, or Ghost Fetch to your hand (chosen randomly).
 Basket of Snakes | Silent | Uncommon | Every 5th **Attack** you play applies 2 **Necrotic** **Poison** upon dealing unblocked damage.
+Bottled Flurry | All | Uncommon | On pick up, choose a card. You **Retain** that card at the end of your turn, or Discard it if it is **Ethereal.**
+Bottled Geyser | All | Uncommon | On pick up, choose a card. Each time you shuffle your deck, that card is placed on top.
 Carrot | Defect | Uncommon | Gain 3 **Focus** at the start of combat, then lose 1 **Focus** on the next 3 turns.
 Chameleon Ring | All | Uncommon | Potions are ~50% more potent. You may brew 2 random potions at rest sites.
 Divine Protection | All | Uncommon | Gain 8 **Shielding** at the start of combat.
@@ -46,7 +48,7 @@ Garlic | All | Uncommon | Enemies lose 3 **Strength** at the start of combat, th
 Golden Egg | All | Uncommon | Whenever you obtain a rare card, it is **Upgraded**. Whenever you buy a card from a shop, it is **Upgraded**.
 Iron Hammer | All | Uncommon | During the first turn, drawing a card upgrades it until the end of combat.
 Onion Ring | All | Uncommon | Gain 3 **Strength** at the start of combat, then lose 1 **Strength** on the next 3 turns.
-Raider's Mask | Defect | Uncommmon | After a **Dark** orb triggers its passive effect, if it has more stored damage than the HP of the lowest-health enemy, it is **Evoked.**
+Raider's Mask | Defect | Uncommon | After a **Dark** orb triggers its passive effect, if it has more stored damage than the HP of the lowest-health enemy, it is **Evoked.**
 Snack Pack | All | Uncommon | Every time you play 3 **Attacks** in a single turn, gain 2 HP.
 Solar Panel | Defect | Uncommon | At the end of combat, gain 2 HP for each of your active **Lightning** orbs.
 Quantum Egg | All | Uncommon | Whenever a card is created during combat, it is **Upgraded**.
@@ -60,10 +62,12 @@ Pondfish Scales | All | Rare | Whenever you play a Skill that does not give **Bl
 Vampiric Spirits | Silent | Rare | During the first turn of combat, 25% of all unblocked attack damage you deal is retuned as health.
 Bargain Bundle | All | Shop | When purchased, decreases the cost of potions, cards, and card removal service in the same shop by 100 gold.
 GuideBook | All | Shop | On pickup, **Upgrade** 2 cards randomly. Prioritizes rarer cards.
+Lightbulb | All | Shop | If you have leftover energy at the end of your turn, draw that many cards at the start of your next turn.
 Abe's Treasure | All | Boss | Gain 1 more energy each turn. Start combat with **Drowning**. On Pickup, add the Abe's Revenge curse to your deck.
 Chewing Gum | All | Boss | Gain 1 more energy each turn. Each time you shuffle your deck, add 2 Slimed to your draw pile.
+Dimensional Glitch | All | Boss | Gain 1 more energy each turn. All non-attack damage you deal is reduced by 2. All non-attack damage you take is increased by 2.
 Grab Bag | All | Boss | Choose 1 energy boss relic and 1 non-energy boss relic to obtain. Choices are out of 3, and cannot be skipped.
-Honey Jar | All | Boss | Draw 1 more card each turn. **Retain** up to 1 card each turn. Card rewards have 1 more option to chose from. You cannot skip rewards.
+Honey Jar | All | Boss | Draw 1 more card each turn. **Retain** up to 1 card each turn. Gain 1 potion slot on pick up. Card rewards have 1 more option to chose from. You cannot skip rewards.
 Kintsugi | All | Boss | Remove 5 cards from your deck. Choose 2 **Curses** to obtain.
 Ooze Armor | Ironclad | Boss | Gain 1 energy at the start of each turn. At the start of combat, gain **Slow** (resets to -3) and **Malleable** (resets to 4).
 Sweet Flower | All | Boss | Gain 1 more energy each turn. Map displays much less information.
@@ -78,11 +82,11 @@ Name | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis
 --- | --- | --- | --- | --- | ---
 Run Through | Red | Common | Attack | 1 | Target loses 9(11) HP and 4(7) Block.
 Strike From Hell | Red | Common | Attack | 1 | Deal 7(8) damage. Each time this is **Exhausted**, increase its damage by 2(3) and return it to your hand.
-Defy Death | Red | Uncommmon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat.
+Defy Death | Red | Uncommon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat.
 Hemogenesis | Red | Uncommon | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2, or by 3 if the card has been upgraded outside of combat).
-Life Bind | Red | Uncommmon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
-Massacre | Red | Uncommmon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
-Limb From Limb | Red | Uncommmon | Attack | 3 | Deal 24(28) damage. If this deals at least 30(32) unblocked damage, **Refund** 2 and draw 2 cards.
+Life Bind | Red | Uncommon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
+Massacre | Red | Uncommon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
+Limb From Limb | Red | Uncommon | Attack | 3 | Deal 24(28) damage. If this deals at least 30(32) unblocked damage, **Refund** 2 and draw 2 cards.
 Abandon | Red | Rare | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. **Ethereal**.
 Demonic Infusion | Red | Rare | Skill | X | Upgrade a card X(+1) times. **Refund** 1. **Exhaust**.
 Eclipse | Red | Rare | Skill | 3 | **Exhaust** your hand. For each card, add a random card to your hand that costs 1 less than normal. (**Refund** 1.)
@@ -101,15 +105,15 @@ Necrosis | Green | Rare | Skill | 2 | Convert all **Poison** to **Necrotic** **P
 Panic Button | Blue | Common | Skill | 0 | **Evoke** all your orbs. Draw 2(4) cards. **Exhaust.** **Retain.**
 Repulse | Blue | Common | Skill | 0 | Gain 1(2) **Reflection**. Add 1 **Backfire** to your discard pile.
 Crystal Conduit | Blue | Uncommon | Skill | 1 | **Channel** 1 **Crystal** (and 1 random orb).
-Claw Rake | Blue | Uncommmon | Attack | 2 | Deal 3(5) damage. Deal 3(5) damage to ALL enemies. Damage is upgraded by Claw cards.
-FIFO Queue | Blue | Uncommmon | Power | 2(X) | Gain 4(2X+1) orb slots.
-Sort | Blue | Uncommmon | Skill | 1 | Shuffle all Rare cards in your discard pile into your draw pile. Draw 2 cards. (**Retain.**)
+Claw Rake | Blue | Uncommon | Attack | 2 | Deal 3(5) damage. Deal 3(5) damage to ALL enemies. Damage is upgraded by Claw cards.
+FIFO Queue | Blue | Uncommon | Power | 2(X) | Gain 4(2X+1) orb slots.
+Sort | Blue | Uncommon | Skill | 1 | Shuffle all Rare cards in your discard pile into your draw pile. Draw 2 cards. (**Retain.**)
 Empty Bin | Blue | Uncommon | Power | 1 | (**Innate**.) At the end of your turn, **Exhaust** all Common cards in your hand and gain 4(5) **Block** for each.
-Time Bomb | Blue | Uncommmon | Skill | 1 | Gain 2 orb slots. **Channel** 2 **Glass.** **Channel** 1 **Dark,** and trigger its passive 2(3) times. **Exhaust.**
+Time Bomb | Blue | Uncommon | Skill | 1 | Gain 2 orb slots. **Channel** 2 **Glass.** **Channel** 1 **Dark,** and trigger its passive 2(3) times. **Exhaust.**
 Mirror Shield | Blue | Rare | Skill | 2 | **Channel** 1 **Crystal.** **Channel** 1 **Frost.** Gain 5(8) **Block.** Gain 1(2) **Reflection.**
 RNG | Blue | Rare | Skill | X | **Channel** X(+1) random orbs.
 Omega Cannon | Blue | Rare | Attack | 2 | Deal 7(6) damage to ALL enemies 4(5) times. Add 1 **Backfire** to your draw and discard piles. **Focus** increases damage."
-Poisoned Strike | Colorless | Uncommmon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
+Poisoned Strike | Colorless | Uncommon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | Lose 1 Focus. All non-attack damage you deal is increased by 2. (**Innate.**)
 Survey Options | Colorless | Uncommon | Skill | X | Draw X. **Refund** 1(2).
 Private Reserves | Colorless | Uncommon | Skill | 0 | Gain 1 energy (and draw 1 card). **Exhaust.** **Retain.**

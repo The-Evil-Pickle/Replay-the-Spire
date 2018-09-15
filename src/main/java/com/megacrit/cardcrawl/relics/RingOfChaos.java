@@ -31,6 +31,7 @@ public class RingOfChaos
   public RingOfChaos()
   {
     super("Ring of Chaos", "cursedBlood.png", AbstractRelic.RelicTier.BOSS, AbstractRelic.LandingSound.FLAT);
+    this.SettingsPriorety--;
   }
   public ArrayList<String> GetSettingStrings() {
 		ArrayList<String> s = new ArrayList<String>();

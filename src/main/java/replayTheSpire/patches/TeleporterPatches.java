@@ -29,7 +29,7 @@ public class TeleporterPatches {
 		
 		public static void Postfix() {
 			
-			if (AbstractDungeon.mapRng.random(0, 100) > 33) {
+			if (ReplayTheSpireMod.SETTING_ROOMS_PORTAL.testChance(AbstractDungeon.mapRng)) {
 				
 				int overRow = AbstractDungeon.mapRng.random(2, AbstractDungeon.map.size() - 1);
 				

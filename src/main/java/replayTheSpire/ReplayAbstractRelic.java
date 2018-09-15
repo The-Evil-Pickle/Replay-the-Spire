@@ -20,6 +20,13 @@ public abstract class ReplayAbstractRelic extends AbstractRelic {
 	
 	public ReplayAbstractRelic(String setId, String imgName, RelicTier tier, LandingSound sfx) {
 		super(setId, imgName, tier, sfx);
+		this.SettingsPriorety = 2;
+		if (UnlockTracker.isRelicLocked(this.relicId)) {
+			this.SettingsPriorety++;
+		}
+		if (!UnlockTracker.isRelicSeen(this.relicId)) {
+			this.SettingsPriorety++;
+		}
 	}
 
 	public ArrayList<String> GetSettingStrings() {
@@ -30,6 +37,7 @@ public abstract class ReplayAbstractRelic extends AbstractRelic {
 	public ArrayList<ReplayRelicSetting> BuildRelicSettings() {
 		return new ArrayList<ReplayRelicSetting>();
 	}
+	public int SettingsPriorety;
 	
 	//unlock stuff
 	public boolean CanDropHere() {

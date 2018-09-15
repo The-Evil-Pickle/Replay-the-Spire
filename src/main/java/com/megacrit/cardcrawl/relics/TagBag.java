@@ -12,6 +12,7 @@ public class TagBag extends ReplayAbstractRelic
     
     public TagBag() {
         super("Blue Doll", "blueDoll.png", RelicTier.COMMON, LandingSound.FLAT);
+        this.SettingsPriorety = 0;
     }
     
     public ArrayList<String> GetSettingStrings() {

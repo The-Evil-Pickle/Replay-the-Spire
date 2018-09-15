@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.neow.*;
 import com.megacrit.cardcrawl.neow.NeowReward.*;
 import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.rooms.*;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import basemod.abstracts.CustomCard;
@@ -38,6 +39,9 @@ public class NeowRewardPatches {
 		}
 		
 		public static String Postfix(String __Result, final AbstractRelic.RelicTier tier) {
+			if (UnlockTracker.isRelicLocked(__Result) && !Settings.treatEverythingAsUnlocked()) {
+				return AbstractDungeon.returnRandomRelicKey(tier);
+			}
 			AbstractRoom room = AbstractDungeon.getCurrRoom();
 			if (room != null) {
 				if (room instanceof NeowRoom) {

@@ -87,7 +87,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     private static final String AUTHOR = "The_Evil_Pickle, AstroPenguin642, Bakuhaku, Slimer509, Stewartisme";
     private static final String DESCRIPTION = "Content expansion mod";
 	
-	public static final String BADGE_IMG = "img/ModBadge.png";
+	public static final String BADGE_IMG = "img/replay/ModBadge.png";
 	
 	protected static int commonPotionChance = 9;
 	protected static int uncommonPotionChance = 7;
@@ -118,6 +118,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static Texture mineButton;
 	public static Texture polymerizeButton;
 	public static Texture exploreButton;
+	public static Texture rebottleButton;
 	public static int playerShielding = 0;
 	public static ArrayList<Integer> monsterShielding = new ArrayList<Integer>();
 	public static boolean noSkipRewardsRoom;
@@ -700,10 +701,14 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static final ReplayIntSliderSetting SETTING_TAG_NORMAL_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Normal", "Normal Sale Tag Chance", 3, 1, 5);
 	public static final ReplayIntSliderSetting SETTING_TAG_SPECIAL_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Special", "Special Edition Tag Chance", 1, 0, 5);
 	public static final ReplayIntSliderSetting SETTING_TAG_DOUBLE_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Double", "2 For 1 Tag Chance", 1, 0, 5);
-
+	public static final ReplayIntSliderSetting SETTING_ROOMS_BONFIRE = new ReplayIntSliderSetting("Bonfire_Chance", "Bonfire Chance", 100, 0, 100, "%");
+	public static final ReplayIntSliderSetting SETTING_ROOMS_PORTAL = new ReplayIntSliderSetting("Portal_Chance", "Portal Chance", 66, 0, 100, "%");
+	
+	
 	public static HashMap<String, ReplayRelicSetting> ConfigSettings = new HashMap<String, ReplayRelicSetting>();
 	public static HashMap<ReplayAbstractRelic, ArrayList<ReplayRelicSetting>> RelicSettings = new HashMap<ReplayAbstractRelic, ArrayList<ReplayRelicSetting>>();
-
+	static final float setting_start_x = 300.0f;
+	static final float setting_start_y = 550.0f;
 	public static void BuildSettings(ReplayAbstractRelic relic) {
 		ReplayTheSpireMod.RelicSettings.put(relic, relic.BuildRelicSettings());
 		for (ReplayRelicSetting setting : ReplayTheSpireMod.RelicSettings.get(relic)) {
@@ -712,10 +717,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	}
 	public static RelicSettingsButton BuildSettingsButton(ReplayAbstractRelic relic) {
 		ArrayList<IUIElement> settingElements = new ArrayList<IUIElement>();
-		float x = 300.0f;
-		float y = 550.0f;
+		float x = setting_start_x;
+		float y = setting_start_y;
 		for (String s : relic.GetSettingStrings()) {
-			settingElements.add(new ModLabel(s, x + ((y == 550.0f) ? 150.0f : 0.0f), y, settingsPanel, (me) -> {}));
+			settingElements.add(new ModLabel(s, x + ((y == setting_start_y) ? 150.0f : 0.0f), y, settingsPanel, (me) -> {}));
 			y -= 40.0f;
 		}
 		for (ReplayRelicSetting setting : ReplayTheSpireMod.RelicSettings.get(relic)) {
@@ -747,6 +752,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.polymerizeButton = ImageMaster.loadImage("images/ui/campfire/replay/polymerize.png");
 		ReplayTheSpireMod.multitaskButton = ImageMaster.loadImage("images/ui/campfire/replay/multitask.png");
 		ReplayTheSpireMod.exploreButton = ImageMaster.loadImage("images/ui/campfire/replay/explore.png");
+		ReplayTheSpireMod.rebottleButton = ImageMaster.loadImage("images/ui/campfire/replay/rebottle.png");
 		ReplayTheSpireMod.renderFishFG = false;
 		ReplayTheSpireMod.fishAtlas = new TextureAtlas(Gdx.files.internal("images/replayScenes/fishfight.atlas"));
 		ReplayTheSpireMod.fishFG = ReplayTheSpireMod.fishAtlas.findRegion("mod/fg");
@@ -762,71 +768,36 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         settingsPanel = new ModPanel();
 		final List<RelicSettingsButton> settingsButtons = new ArrayList<RelicSettingsButton>();
 		ArrayList<IUIElement> settingElements = new ArrayList<IUIElement>();
-
+		
+		
+		settingElements.add(new ModLabel("Custom Room Settings", setting_start_x + 150.0f, setting_start_y, settingsPanel, (me) -> {}));
+		settingElements.addAll(SETTING_ROOMS_BONFIRE.GenerateElements(setting_start_x, setting_start_y + 50.0f));
+		settingElements.addAll(SETTING_ROOMS_PORTAL.GenerateElements(setting_start_x, setting_start_y + 100.0f));
+		settingsButtons.add(new RelicSettingsButton(ImageMaster.loadImage("images/ui/map/replay_bonfire.png"), ImageMaster.loadImage("images/ui/map/replay_bonfire.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements));
+		ReplayTheSpireMod.ConfigSettings.put(SETTING_ROOMS_BONFIRE.settingsId, SETTING_ROOMS_BONFIRE);
+		ReplayTheSpireMod.ConfigSettings.put(SETTING_ROOMS_PORTAL.settingsId, SETTING_ROOMS_PORTAL);
+		//settingElements = new ArrayList<IUIElement>();
+		
 		BuildSettings(new RingOfChaos());
 		BuildSettings(new Ninjato());
 		BuildSettings(new TagBag());
+		//BuildSettings(new EnergyBall());
 		
 		loadSettingsData();
-		//settingsPanel.addLabel("Avoid Ring Of Chaos magic number changes?", 350.0f, 750.0f, (me) -> {});
-		//settingsPanel.addLabel("(Avoiding these changes makes RoC less buggy, but also have less interesting effect variety)", 350.0f, 700.0f, (me) -> {});
 		/*
-		chaos_button_1 = makeLabeledButton(settingElements, "Don't avoid changes including magic number (more variety, more bugs)", 350.0f, 550.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.ALWAYS, settingsPanel, (me) -> {}, me -> {
-            if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
-				me.enabled = true;
-			} else {
-				ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.ALWAYS;
-				this.chaos_button_1.enabled = true;
-				this.chaos_button_2.enabled = false;
-				this.chaos_button_3.enabled = false;
-				this.chaos_button_4.enabled = false;
-				saveSettingsData();
-			}
-		});
-		chaos_button_2 = makeLabeledButton(settingElements, "Avoid changes including only magic number (compromise option)", 350.0f, 500.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.COST_ONLY, settingsPanel, (me) -> {}, me -> {
-            if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
-				me.enabled = true;
-			} else {
-				ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.COST_ONLY;
-				this.chaos_button_1.enabled = false;
-				this.chaos_button_2.enabled = true;
-				this.chaos_button_3.enabled = false;
-				this.chaos_button_4.enabled = false;
-				saveSettingsData();
-			}
-		});
-		chaos_button_3 = makeLabeledButton(settingElements, "Avoid all magic number changes (less variety, full stability)", 350.0f, 450.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.NEVER, settingsPanel, (me) -> {}, me -> {
-            if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
-				me.enabled = true;
-			} else {
-				ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.NEVER;
-				this.chaos_button_1.enabled = false;
-				this.chaos_button_2.enabled = false;
-				this.chaos_button_3.enabled = true;
-				this.chaos_button_4.enabled = false;
-				saveSettingsData();
-			}
-		});
-		chaos_button_4 = makeLabeledButton(settingElements, "Never change any values on cards with magic number (for the extremely paranoid)", 350.0f, 400.0f, Color.WHITE, FontHelper.buttonLabelFont, ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ChaosMagicSetting.STRICT, settingsPanel, (me) -> {}, me -> {
-            if (!(this.chaos_button_1.enabled || this.chaos_button_2.enabled || this.chaos_button_3.enabled || this.chaos_button_4.enabled)) {
-				me.enabled = true;
-			} else {
-				ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.STRICT;
-				this.chaos_button_1.enabled = false;
-				this.chaos_button_2.enabled = false;
-				this.chaos_button_3.enabled = false;
-				this.chaos_button_4.enabled = true;
-				saveSettingsData();
-			}
-		});
 		settingsButtons.add(new RelicSettingsButton(new RingOfChaos(), settingElements));
 		settingElements = new ArrayList<IUIElement>();
 		*/
-		for (ReplayAbstractRelic relic : RelicSettings.keySet()) {
-			settingsButtons.add(BuildSettingsButton(relic));
+		for (int s = 0; s <= 5; s++) {
+			for (ReplayAbstractRelic relic : RelicSettings.keySet()) {
+				if (relic.SettingsPriorety == s) {
+					settingsButtons.add(BuildSettingsButton(relic));
+				}
+			}
 		}
 		
-		final Pagination pager = new Pagination(new ImageButton("img/tinyRightArrow.png", 915, 550, 100, 100, b -> {}), new ImageButton("img/tinyLeftArrow.png", 350, 550, 100, 100, b -> {}), 2, 3, 50, 50, settingsButtons);
+		
+		final Pagination pager = new Pagination(new ImageButton("img/replay/tinyRightArrow.png", 615, 550, 100, 100, b -> {}), new ImageButton("img/replay/tinyLeftArrow.png", 350, 550, 100, 100, b -> {}), 2, 3, 50, 50, settingsButtons);
         settingsPanel.addUIElement((IUIElement)pager);
 		
 		
@@ -905,6 +876,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new DimensionalGlitch(), RelicType.SHARED);
 		BaseMod.addRelic(new DivineProtection(), RelicType.SHARED);
 		BaseMod.addRelic(new ElectricBlood(), RelicType.RED);
+		//BaseMod.addRelic(new EnergyBall(), RelicType.SHARED);
 		BaseMod.addRelic(new Funnel(), RelicType.SHARED);
 		BaseMod.addRelic(new Garlic(), RelicType.SHARED);
 		BaseMod.addRelic(new GoldenEgg(), RelicType.SHARED);
