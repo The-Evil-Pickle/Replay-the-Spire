@@ -54,7 +54,7 @@ public class RelicSettingsButton implements IUIElement
         this.h = height;
         this.elements = elements;
         this.isSelected = false;
-        this.hitbox = new Hitbox((float)this.x, (float)this.y, (float)this.w, (float)this.h);
+        this.hitbox = new Hitbox((float)this.x * Settings.scale, (float)this.y * Settings.scale, (float)this.w * Settings.scale, (float)this.h * Settings.scale);
         this.rendColor = Color.WHITE;
     }
     

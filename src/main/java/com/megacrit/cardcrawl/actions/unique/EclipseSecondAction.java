@@ -43,7 +43,8 @@ public class EclipseSecondAction extends AbstractGameAction
 	  			c.isCostModified = true;
 	  			}
 	  			c.current_x = (-1000.0F * Settings.scale);
-	  	        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+	  	        AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(c));
+	  			//AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
             }
             /*
             if (this.refund > 0 ) {

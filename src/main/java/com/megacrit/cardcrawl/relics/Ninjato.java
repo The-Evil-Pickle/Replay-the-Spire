@@ -66,8 +66,8 @@ public class Ninjato extends ReplayAbstractRelic
                 this.flash();
                 AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
                 AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, SETTING_DRAW.value));
-                if (!this.triggeredThisTurn ) {
-                	AbstractDungeon.actionManager.addToTop(new ReplayRefundAction(card, 1));
+                if (!this.triggeredThisTurn && SETTING_REFUND.value > 0) {
+                	AbstractDungeon.actionManager.addToTop(new ReplayRefundAction(card, SETTING_REFUND.value));
                     this.triggeredThisTurn = true;
                 }
             }

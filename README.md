@@ -9,7 +9,7 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
 
 ### Currently adds:
- * 44 Relics (4 ironclad, 4 silent, 4 defect, 32 shared)
+ * 50 Relics (4 ironclad, 4 silent, 4 defect, 38 shared)
  * 50 Cards (10 ironclad, 12 silent, 11 defect, 7 colorless, 10 curses)
  * 4 Events
  * 10 Potions
@@ -37,6 +37,7 @@ Grinning Jar | All | Common | On pickup, add a Grinning Jar card to your deck. O
 King of Hearts | Ironclad | Common | When you lose HP during your turn, gain twice that much block.
 Rune of Simplicity | All | Common | Strikes and Defends can be **Upgraded** any number of times. On pickup, **Upgrade** 2 randomly.
 Tag Bag | All | Common | Shops have all 3 kinds of sale tags. Sale tags can appear on colorless cards. On-sale cards are slightly cheaper
+Tiger Marble | All | Common | At the start of combat, add a random card that **Exhausts** to your hand. It costs 0 this turn.
 Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe, Ghost Defend, or Ghost Fetch to your hand (chosen randomly).
 Basket of Snakes | Silent | Uncommon | Every 5th **Attack** you play applies 2 **Necrotic** **Poison** upon dealing unblocked damage.
 Bottled Flurry | All | Uncommon | On pick up, choose a card. You **Retain** that card at the end of your turn, or Discard it if it is **Ethereal.**
@@ -47,6 +48,7 @@ Divine Protection | All | Uncommon | Gain 8 **Shielding** at the start of combat
 Garlic | All | Uncommon | Enemies lose 3 **Strength** at the start of combat, then gain 1 **Strength** on the next 3 turns.
 Golden Egg | All | Uncommon | Whenever you obtain a rare card, it is **Upgraded**. Whenever you buy a card from a shop, it is **Upgraded**.
 Iron Hammer | All | Uncommon | During the first turn, drawing a card upgrades it until the end of combat.
+Ninjato | All | Uncommon | When you play 3 **Attacks** in a single turn, draw 2 cards.
 Onion Ring | All | Uncommon | Gain 3 **Strength** at the start of combat, then lose 1 **Strength** on the next 3 turns.
 Raider's Mask | Defect | Uncommon | After a **Dark** orb triggers its passive effect, if it has more stored damage than the HP of the lowest-health enemy, it is **Evoked.**
 Snack Pack | All | Uncommon | Every time you play 3 **Attacks** in a single turn, gain 2 HP.
