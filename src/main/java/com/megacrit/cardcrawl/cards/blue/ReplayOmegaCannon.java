@@ -44,7 +44,7 @@ public ReplayOmegaCannon()
 
 @Override
 public void use(final AbstractPlayer p, final AbstractMonster m) {
-    AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new MindblastEffect(p.dialogX, p.dialogY), 0.1f));
+    AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1f));
     for (int i=0; i < this.magicNumber; i++) {
     	AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
     }

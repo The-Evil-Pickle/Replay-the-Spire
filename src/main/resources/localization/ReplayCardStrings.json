@@ -199,8 +199,17 @@
   },
   "ReplaySort": {
     "NAME": "Sort",
-    "DESCRIPTION": "Shuffle all Rare cards in your discard pile back into your draw pile. Draw !M! cards.",
-    "UPGRADE_DESCRIPTION": "Shuffle all Rare cards in your discard pile back into your draw pile. Draw !M! cards. NL Retain."
+    "DESCRIPTION": "Shuffle all Rare OR non-Status cards in your discard pile back into your draw pile. Draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "Shuffle all Rare OR non-Status cards in your discard pile back into your draw pile. Draw !M! cards. NL Retain.",
+	"EXTENDED_DESCRIPTION": [
+		"Sort By...",
+		"Rarity",
+		"Shuffle all Rare cards from your discard pile into your deck. NL Draw !M! cards.",
+		"Type",
+		"Shuffle all non-Status cards from your discard pile into your deck. NL Draw !M! cards.",
+		"Cost",
+		"Shuffle all 0-cost cards from your discard pile into your deck. NL Draw !M! cards."
+	]
   },
   "ReplaySolidLightProjector": {
     "NAME": "Solid Light Projector",
@@ -351,10 +360,6 @@
 		"I've already played a Grinning Jar this turn!",
 		"I've already played this card once this turn!"
 	]
-  },
-  "CounterbalanceIntang": {
-    "NAME": "Counter",
-    "DESCRIPTION": "Gain !M! Intangible. NL Exhaust. NL Retain."
   },
   "GremboGang": {
     "NAME": "Grembo's Gang",

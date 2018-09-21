@@ -18,10 +18,11 @@ public class ReplaySort extends CustomCard
     public static final String NAME;
     public static final String DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION;
     private static final int COST = 1;
     
     public ReplaySort() {
-        super("ReplaySort", ReplaySort.NAME, "cards/replay/panicButton.png", ReplaySort.COST, ReplaySort.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.NONE);
+        super("ReplaySort", ReplaySort.NAME, "cards/replay/replayBetaSkill.png", ReplaySort.COST, ReplaySort.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.NONE);
 		this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }
@@ -36,8 +37,18 @@ public class ReplaySort extends CustomCard
 	
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-    	AbstractDungeon.actionManager.addToBottom(new ShuffleRareAction());
-		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
+    	final ChooseAction choice = new ChooseAction((AbstractCard)this, m, EXTENDED_DESCRIPTION[0]);
+    	choice.add(EXTENDED_DESCRIPTION[1], EXTENDED_DESCRIPTION[2], () -> {
+    		AbstractDungeon.actionManager.addToBottom(new ShuffleRareAction());
+    		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
+            return;
+        });
+    	choice.add(EXTENDED_DESCRIPTION[3], EXTENDED_DESCRIPTION[4], () -> {
+    		AbstractDungeon.actionManager.addToBottom(new ShuffleNonStatusAction());
+    		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
+            return;
+        });
+    	AbstractDungeon.actionManager.addToBottom(choice);
     }
     
     @Override
@@ -61,5 +72,6 @@ public class ReplaySort extends CustomCard
         NAME = ReplaySort.cardStrings.NAME;
         DESCRIPTION = ReplaySort.cardStrings.DESCRIPTION;
         UPGRADE_DESCRIPTION = ReplaySort.cardStrings.UPGRADE_DESCRIPTION;
+        EXTENDED_DESCRIPTION = ReplaySort.cardStrings.EXTENDED_DESCRIPTION;
     }
 }

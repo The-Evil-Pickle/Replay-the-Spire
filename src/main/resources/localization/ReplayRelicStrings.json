@@ -381,6 +381,20 @@
 		"At the start of combat, add a random card which #yExhausts to your hand. NL It costs #b0 until played."
 	]
   },
+  "ReplayTheSpireMod:asdfghhj": {
+	"NAME": "sdadgkfgjrtdf",
+	"FLAVOR": "---",
+    "DESCRIPTIONS": [
+		"On pickup, choose a #yPower that costs #b1 or less. NL You start combat with the chosen #yPower."
+	]
+  },
+  "ReplayTheSpireMod:TinkerService": {
+	"NAME": "Tinker Service",
+	"FLAVOR": "The merchant is a strange man, but one of many skills.",
+    "DESCRIPTIONS": [
+		"#rDowngrade a card. NL #yUpgrade a card."
+	]
+  },
   "Another Sword": {
     "NAME": "Another Sword",
 	"FLAVOR": "A second sword. You have two now.",
@@ -399,7 +413,7 @@
 		"Choose curses to obtain"
 	]
   },
-  "Blightstone": {
+  "ReplayTheSpireMod:Blightstone": {
     "NAME": "Blightstone",
 	"FLAVOR": "Ew",
     "DESCRIPTIONS": [
@@ -639,6 +653,14 @@
 	" gold and #b",
 	" random relics with effects related to gold or shops. NL For every #b",
 	" gold you obtain, add #b1 random #rCurse to your deck."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Comfort": {
+	"NAME": "Ring of Comfort",
+	"FLAVOR": "Comfort protects. Comfort shelters. Comfort blinds.",
+	"DESCRIPTIONS": [
+	"All healing you recieve is doubled. NL When at less than #b",
+	"% Max HP, you must #yRest at rest sites."
 	]
   },
   "Iron Core": {

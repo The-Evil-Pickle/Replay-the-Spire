@@ -26,6 +26,9 @@ public class TigerMarble extends AbstractRelic
     @Override
     public void atBattleStart() {
         this.flash();
+        if (this.possibleCards == null || this.possibleCards.isEmpty()) {
+        	this.onEquip();
+        }
         final AbstractCard c = this.possibleCards.get(AbstractDungeon.cardRandomRng.random(this.possibleCards.size() - 1)).makeCopy();
         if (c.cost != -1) {
             c.setCostForTurn(0);

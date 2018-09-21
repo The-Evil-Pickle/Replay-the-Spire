@@ -28,7 +28,8 @@ public class SlowPower extends AbstractPower
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
-        this.img = ImageMaster.loadImage("images/powers/32/slow.png");
+        this.loadRegion("slow");
+        //this.img = ImageMaster.loadImage("images/powers/32/slow.png");
         this.type = PowerType.DEBUFF;
         this.canGoNegative = true;
     }
