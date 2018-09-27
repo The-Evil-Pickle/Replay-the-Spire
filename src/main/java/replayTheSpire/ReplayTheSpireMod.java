@@ -14,6 +14,8 @@ import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.mod.hubris.HubrisMod;
+import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.*;
@@ -703,7 +705,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static final ReplayIntSliderSetting SETTING_TAG_DOUBLE_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Double", "2 For 1 Tag Chance", 1, 0, 5);
 	public static final ReplayIntSliderSetting SETTING_ROOMS_BONFIRE = new ReplayIntSliderSetting("Bonfire_Chance", "Bonfire Chance", 100, 0, 100, "%");
 	public static final ReplayIntSliderSetting SETTING_ROOMS_PORTAL = new ReplayIntSliderSetting("Portal_Chance", "Portal Chance", 66, 0, 100, "%");
-	
+	public static final ReplayBooleanSetting SETTING_REBOTTLE_V_ENABLE = new ReplayBooleanSetting("Rebottle_V_Enable", "Enabled for Vanilla's Bottles", true);
+	public static final ReplayBooleanSetting SETTING_REBOTTLE_V_FREE = new ReplayBooleanSetting("Rebottle_V_Free", "Free Action for Vanilla's Bottles", false);
+	public static final ReplayBooleanSetting SETTING_REBOTTLE_R_ENABLE = new ReplayBooleanSetting("Rebottle_R_Enable", "Enabled for Replay's Bottles", true);
+	public static final ReplayBooleanSetting SETTING_REBOTTLE_R_FREE = new ReplayBooleanSetting("Rebottle_R_Free", "Free Action for Replay's Bottles", true);
+	public static final ReplayBooleanSetting SETTING_REBOTTLE_M_ENABLE = new ReplayBooleanSetting("Rebottle_M_Enable", "Enabled for Other Mods' Bottles", true);
+	public static final ReplayBooleanSetting SETTING_REBOTTLE_M_FREE = new ReplayBooleanSetting("Rebottle_M_Free", "Free Action for Other Mods' Bottles", false);
 	
 	public static HashMap<String, ReplayRelicSetting> ConfigSettings = new HashMap<String, ReplayRelicSetting>();
 	public static HashMap<ReplayAbstractRelic, ArrayList<ReplayRelicSetting>> RelicSettings = new HashMap<ReplayAbstractRelic, ArrayList<ReplayRelicSetting>>();
@@ -852,9 +859,29 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public void receiveEditRelics() {
 		logger.info("begin editting relics");
 		ReplayTheSpireMod.receiveEditUnlocks();
-        
+
+        try {
+        	initializeHubrisMod();
+        } catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Hubris not detected");
+		}
+        try {
+        	initializeStsLibMod();
+        } catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | StSLib not detected");
+		}
+		if (ReplayTheSpireMod.foundmod_stslib) {
+			//if StSLib is installed, use Temporary HP instead of Shielding for certain relics.
+			BaseMod.addRelic(new Durian_stslib(), RelicType.SHARED);
+			//Hubris adds a relic that does the same thing as Divine Protection, so don't bother adding Divine Protection if Hubris is installed.
+			if (!ReplayTheSpireMod.foundmod_hubris) {
+				BaseMod.addRelic(new DivineProtection_stslib(), RelicType.SHARED);
+			}
+		} else {
+			BaseMod.addRelic(new Durian(), RelicType.SHARED);
+			BaseMod.addRelic(new DivineProtection(), RelicType.SHARED);
+		}
         // Add relics
-		//BaseMod.addRelic(new AncientBracer(), RelicType.GREEN);
 		RelicLibrary.addBlue(new AncientBracer());
 		RelicLibrary.addBlue(new SolarPanel());
 		RelicLibrary.addBlue(new Carrot());
@@ -872,9 +899,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		//BaseMod.addRelic(new ChemicalX(), RelicType.SHARED);
 		BaseMod.addRelic(new ChewingGum(), RelicType.SHARED);
 		BaseMod.addRelic(new CounterBalance(), RelicType.SHARED);
-		BaseMod.addRelic(new Durian(), RelicType.SHARED);
 		BaseMod.addRelic(new DimensionalGlitch(), RelicType.SHARED);
-		BaseMod.addRelic(new DivineProtection(), RelicType.SHARED);
 		BaseMod.addRelic(new ElectricBlood(), RelicType.RED);
 		//BaseMod.addRelic(new EnergyBall(), RelicType.SHARED);
 		BaseMod.addRelic(new Funnel(), RelicType.SHARED);
@@ -1025,6 +1050,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static boolean foundmod_fetch = false;
     public static boolean foundmod_infinite = false;
     public static boolean foundmod_colormap = false;
+    public static boolean foundmod_hubris = false;
+    public static boolean foundmod_stslib = false;
     
 
     private static void initializeCrossoverRelics() {
@@ -1079,6 +1106,16 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		Class<BlackRuseMod> servMod = BlackRuseMod.class;
 		logger.info("ReplayTheSpireMod | Detected Servant Mod!");
 		foundmod_servant = true;
+	}
+	private static void initializeHubrisMod() throws ClassNotFoundException, NoClassDefFoundError {
+		Class<HubrisMod> servMod = HubrisMod.class;
+		logger.info("ReplayTheSpireMod | Detected Hubris Mod!");
+		foundmod_hubris = true;
+	}
+	private static void initializeStsLibMod() throws ClassNotFoundException, NoClassDefFoundError {
+		Class<StSLib> servMod = StSLib.class;
+		logger.info("ReplayTheSpireMod | Detected StSLib Mod!");
+		foundmod_stslib = true;
 	}
 	private static void initializeServantMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
 		Class<BlackRuseMod> servMod = BlackRuseMod.class;

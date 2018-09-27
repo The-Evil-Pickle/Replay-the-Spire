@@ -90,18 +90,18 @@
   "ReplayMapScout": {
 	"NAME": "Map Scout",
 	"DESCRIPTIONS": [
-		"A yound man with a wild look in his eyes approaches you, rattling on about the dangers of the Spire. NL \"Monsters beyond imagination lie ahead! ~Ah,~ ~but~ ~I,~ @I@ @know@ @this@ @place!@ I have seen where these ~#rdangers~ reside, and how to avoid them! You are interested, yes?\" NL It seems he knows how to avoid certain threats, and is willing to share his knowlegde - for a bit of gold, anyway.",
-		"Done."
+		"A young man with a wild look in his eyes approaches you, rattling on about the dangers of the Spire. NL \"Monsters beyond imagination lie ahead! ~Ah,~ ~but~ ~I,~ @I@ @know@ @this@ @place!@ I have seen where these ~#rdangers~ reside, and how to avoid them! You are interested, yes?\" NL It seems he knows how to avoid certain threats, and is willing to share his knowlegde - for a bit of gold, anyway.",
+		"You decide it's best to simply continue forward.",
+		"The man eagerly tells you what you wanted to know, along with quite a few extra things you couldn't care less about. NL You adjust your route into the next area based on this new information."
 	],
 	"OPTIONS": [
-		"[Locked] You already have a scout info relic.",
 		"[Locked] Requires: ",
 		" gold",
 		"[Lose ",
-		"] You will no longer be able to encounter #yThe #yAwakened #yOne.",
-		"] You will no longer be able to encounter #yDeca #yand #yDonu.",
-		"] You will no longer be able to encounter #yTime #yEater.",
-		"] Obtain ",
+		"] You will not encounter #yThe #yAwakened #yOne in the next area.",
+		"] You will not encounter #yDeca #yand #yDonu in the next area.",
+		"] You will not encounter #yTime #yEater in the next area.",
+		"[Ignore]",
 		"[Leave]"
 	]
   },

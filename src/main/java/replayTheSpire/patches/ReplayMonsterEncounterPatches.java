@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.*;
+import com.megacrit.cardcrawl.events.thecity.ReplayMapScoutEvent;
 import com.megacrit.cardcrawl.map.*;
 import com.megacrit.cardcrawl.helpers.*;
 import replayTheSpire.*;
@@ -100,6 +101,15 @@ public class ReplayMonsterEncounterPatches {
 		public static void Prefix(TheCity __Instance) {
 			if (!ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(AbesTreasure.ID)) {
 				TheCity.bossList.add("Pondfish");
+			}
+		}
+	}
+	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.TheBeyond", method = "initializeBoss")
+	public static class ReplayBeyondBossListPatch {
+		public static void Prefix(TheBeyond __Instance) {
+			if (TheBeyond.bossList.contains(ReplayMapScoutEvent.bannedBoss)) {
+				TheBeyond.bossList.remove(ReplayMapScoutEvent.bannedBoss);
+				ReplayMapScoutEvent.bannedBoss = "none lol";
 			}
 		}
 	}

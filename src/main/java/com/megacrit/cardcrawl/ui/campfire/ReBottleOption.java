@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -27,6 +28,8 @@ public class ReBottleOption extends AbstractCampfireOption
     public static final String[] TEXT;
     private AbstractRelic bottle;
     private boolean makeFree;
+    private static final float NORM_SCALE;
+    private static final float HOVER_SCALE;
     
     public ReBottleOption(AbstractRelic bottle, boolean makeFree) {
     	this.bottle = bottle;
@@ -55,11 +58,15 @@ public class ReBottleOption extends AbstractCampfireOption
     public void render(final SpriteBatch sb) {
     	super.render(sb);
     	float scale = (float)ReflectionHacks.getPrivate(this, AbstractCampfireOption.class, "scale");
-    	sb.draw(this.bottle.img, this.hb.cX - 166.0f * (scale/2.0f + 0.5f * Settings.scale), this.hb.cY - 6.0f + 6.0f * ((scale-0.9f)*10.0f), 64.0f, 64.0f, 128.0f, 128.0f, scale, scale, 0.0f, 0, 0, 128, 128, false, false);
+    	final Vector2 tmp = new Vector2(-105.0f, 64);
+        tmp.scl(scale);
+        sb.draw(this.bottle.img, this.hb.cX + tmp.x - 64.0f, this.hb.cY + tmp.y - 64.0f, 64.0f, 64.0f, 128.0f, 128.0f, scale, scale, 0.0f, 0, 0, 128, 128, false, false);
     }
     
     static {
         uiStrings = CardCrawlGame.languagePack.getUIString("Re-Bottle Option");
         TEXT = ReBottleOption.uiStrings.TEXT;
+        NORM_SCALE = 0.9f * Settings.scale;
+        HOVER_SCALE = Settings.scale;
     }
 }

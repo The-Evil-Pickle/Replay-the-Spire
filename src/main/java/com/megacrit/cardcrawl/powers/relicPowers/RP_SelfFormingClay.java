@@ -37,7 +37,7 @@ public class RP_SelfFormingClay extends AbstractPower
     public int onAttacked(final DamageInfo info, final int damageAmount) {
         if (damageAmount < this.owner.currentHealth && damageAmount > 0 && info.owner != null) {
             this.flash();
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new NextTurnBlockPower(AbstractDungeon.player, 3, this.name), 3));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new NextTurnBlockPower(this.owner, 3, this.name), 3));
             this.updateDescription();
         }
         return damageAmount;

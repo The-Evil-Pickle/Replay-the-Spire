@@ -383,7 +383,7 @@
   },
   "WeaponsOverheat": {
     "NAME": "Overheat Weapons",
-    "DESCRIPTION": "Gain 1 Focus if you have <0, Lose 1 Focus if you have >0. NL Channel 1 Hellfire. NL Channel 1 Glass. NL Ethereal.",
+    "DESCRIPTION": "Gain 1 Focus if you have <0, Lose 1 Focus if you have >0. NL Channel 1 Hellfire. NL Add 1 Backfire to your discard pile. NL Ethereal.",
     "UPGRADE_DESCRIPTION": "Gain 1 Focus if you have <0, Lose 1 Focus if you have >0. NL Channel 1 Hellfire. NL Ethereal."
   },
   "OrbOptionCard_Lightning": {

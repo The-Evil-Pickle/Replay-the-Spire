@@ -1,6 +1,7 @@
 package com.megacrit.cardcrawl.cards.red;
 
 import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardRarity;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.monsters.*;
@@ -13,8 +14,10 @@ import com.megacrit.cardcrawl.orbs.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.defect.*;
 import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.relics.IronCore;
 import com.megacrit.cardcrawl.core.*;
 import basemod.abstracts.*;
+import replayTheSpire.ReplayTheSpireMod;
 
 public class IC_BasicHellfireCard extends CustomCard
 {
@@ -27,7 +30,7 @@ public class IC_BasicHellfireCard extends CustomCard
     private static final int FLAME_DAMAGE = 4;
     
     public IC_BasicHellfireCard() {
-        super("IC_BasicHellfireCard", IC_BasicHellfireCard.NAME, "cards/replay/replayBetaSkill.png", 1, IC_BasicHellfireCard.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.SPECIAL, CardTarget.SELF);
+        super("IC_BasicHellfireCard", IC_BasicHellfireCard.NAME, "cards/replay/replayBetaSkill.png", 1, IC_BasicHellfireCard.DESCRIPTION, CardType.SKILL, (AbstractDungeon.player == null) ? AbstractCard.CardColor.COLORLESS : ((AbstractDungeon.player instanceof Defect) ? AbstractCard.CardColor.RED : AbstractCard.CardColor.BLUE), (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(IronCore.ID)) ? CardRarity.COMMON : CardRarity.SPECIAL, CardTarget.SELF);
 		this.exhaust = true;
     }
     

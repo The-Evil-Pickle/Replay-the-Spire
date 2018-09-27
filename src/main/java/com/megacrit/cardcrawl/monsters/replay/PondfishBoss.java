@@ -1,6 +1,7 @@
 package com.megacrit.cardcrawl.monsters.replay;
 
 import com.megacrit.cardcrawl.monsters.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster.EnemyType;
 import com.megacrit.cardcrawl.monsters.replay.*;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.dungeons.*;
@@ -89,6 +90,7 @@ public class PondfishBoss extends AbstractMonster
 		//this.animY = 0f;
 		this.inslot = 0;
 		this.nextPlannedMove = PondfishBoss.TEETH_RAKE;
+        this.type = EnemyType.BOSS;
 		//this.halfDead = true;
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(A_2_HP);

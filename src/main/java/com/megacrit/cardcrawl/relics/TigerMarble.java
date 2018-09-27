@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.unlock.*;
 import com.megacrit.cardcrawl.actions.common.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import com.megacrit.cardcrawl.actions.*;
 
@@ -32,9 +33,11 @@ public class TigerMarble extends AbstractRelic
         final AbstractCard c = this.possibleCards.get(AbstractDungeon.cardRandomRng.random(this.possibleCards.size() - 1)).makeCopy();
         if (c.cost != -1) {
             c.setCostForTurn(0);
+            c.freeToPlayOnce = true;
         }
         UnlockTracker.markCardAsSeen(c.cardID);
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c));
+        Collections.shuffle(this.possibleCards);
     }
     
     @Override

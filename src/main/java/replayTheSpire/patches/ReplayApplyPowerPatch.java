@@ -30,8 +30,9 @@ public class ReplayApplyPowerPatch {
 				}
 			}
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Durian") && __instance.target.isPlayer && powerToApply.type == AbstractPower.PowerType.DEBUFF) {
-				AbstractDungeon.actionManager.addToTop(new ReplayGainShieldingAction(__instance.target, __instance.target, Math.abs(__instance.amount)));
-				AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(__instance.target, ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Durian")));
+				Durian durian = (Durian)ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Durian");
+				durian.onDebuffRecieved(__instance);
+				AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(__instance.target, durian));
 			}
 			if (ReplayTheSpireMod.foundmod_servant && ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("m_ScarletBlood") && __instance.target.isPlayer && powerToApply instanceof StrengthPower) {
 				((m_ScarletBlood)ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("m_ScarletBlood")).onGainStrength(__instance);

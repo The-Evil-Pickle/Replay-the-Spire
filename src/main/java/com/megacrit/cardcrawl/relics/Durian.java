@@ -1,14 +1,8 @@
 package com.megacrit.cardcrawl.relics;
 
-import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.helpers.*;
-import com.megacrit.cardcrawl.core.*;
-import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.powers.*;
-import com.megacrit.cardcrawl.actions.utility.*;
 
 public class Durian extends AbstractRelic
 {
@@ -17,16 +11,16 @@ public class Durian extends AbstractRelic
 	
 	
     public Durian() {
-        this(null);
-    }
-    
-    public Durian(final AbstractPlayer.PlayerClass c) {
-        super("Durian", "durian.png", RelicTier.RARE, LandingSound.FLAT);
+    	super("Durian", "durian.png", RelicTier.RARE, LandingSound.FLAT);
     }
     
     @Override
     public void onEquip() {
         AbstractDungeon.player.increaseMaxHp(Durian.HP_BOOST, true);
+    }
+    
+    public void onDebuffRecieved(ApplyPowerAction __instance) {
+    	AbstractDungeon.actionManager.addToTop(new ReplayGainShieldingAction(__instance.target, __instance.target, Math.abs(__instance.amount)));
     }
 	
     @Override

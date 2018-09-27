@@ -26,7 +26,7 @@ public class PetGhost
     return this.DESCRIPTIONS[0];
   }
   
-  public void atTurnStart() 
+  public void onEnergyRecharge() 
   {
 	AbstractCard c;
 	switch (AbstractDungeon.cardRandomRng.random(0, 2)) {

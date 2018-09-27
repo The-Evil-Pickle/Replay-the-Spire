@@ -187,6 +187,7 @@ public class MirrorMist
 			this.loss_r_2 = new BurningBlood();
 			this.gain_c_2 = new SelfRepair();
 			this.gain_c_2.upgrade();
+			this.gain_r_2 = new IronCore();
 			break;
 		}
 		case THE_SILENT: {

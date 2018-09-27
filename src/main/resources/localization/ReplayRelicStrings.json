@@ -42,8 +42,7 @@
 	"DESCRIPTIONS": [
 		"Gain #b",
 		" #yShielding at the start of combat.",
-		" NL (You will lose #r",
-		" HP at the end of this fight)."
+		" #yTemporary #yHP at the start of combat."
 	]
   },
   "Electric Blood": {
@@ -231,9 +230,10 @@
 	"FLAVOR": "The sickly sweet scent of this flower makes you feel dizzy...",
     "DESCRIPTIONS": [
 	" NL Less map information.",
-	"Gain [R] at the start of each turn.", 
-	"Gain [G] at the start of each turn.",
-	"Gain [E] at the start of each turn."
+	"Gain [E] at the start of each turn.",
+	" NL #ySynergy - ",
+	" Each time you climb a floor, heal #b",
+	" HP."
 	]
   },
   "Honey Jar": {
@@ -286,7 +286,8 @@
     "NAME": "Durian",
 	"FLAVOR": "Smells awful, tastes great.",
     "DESCRIPTIONS": [
-		"Whenever you gain a #rDebuff, gain #yShielding equal to the amount. NL At the start of your turn, reduce your #yWeak, #yVulnerable, and #yFrail to #b2. NL On pickup, increase your max HP by #b"
+		"Whenever you gain a #rDebuff, gain #yShielding equal to the amount. NL At the start of your turn, reduce your #yWeak, #yVulnerable, and #yFrail to #b2. NL On pickup, increase your max HP by #b",
+		"Whenever you gain a #rDebuff, gain #yTemporary #yHP equal to the amount. NL At the start of your turn, reduce your #yWeak, #yVulnerable, and #yFrail to #b2. NL On pickup, increase your max HP by #b"
 	]
   },
   "Basket Of Snakes": {
@@ -356,6 +357,14 @@
 	"If you have any unspent [E] at the end of your turn, draw that many cards at the start of your next turn."
 	]
   },
+  "ReplayTheSpireMod:CursedCoin": {
+	"NAME": "Cursed Coin",
+	"FLAVOR": "A cursed coin that brings misfortune to its owner. The only way to get rid of it is to sell it.",
+    "DESCRIPTIONS": [
+	"On pickup, obtain #b",
+	" gold and a random #rCurse."
+	]
+  },
   "ReplayTheSpireMod:Ninjato": {
 	"NAME": "Ninjato",
 	"FLAVOR": "Stab stab stab",
@@ -388,6 +397,13 @@
 		"On pickup, choose a #yPower that costs #b1 or less. NL You start combat with the chosen #yPower."
 	]
   },
+  "ReplayTheSpireMod:Spearhead": {
+	"NAME": "Spearhead",
+	"FLAVOR": "---",
+    "DESCRIPTIONS": [
+		"At the end of your turn, all enemies lose HP equal to their #yVulnerable."
+	]
+  }
   "ReplayTheSpireMod:TinkerService": {
 	"NAME": "Tinker Service",
 	"FLAVOR": "The merchant is a strange man, but one of many skills.",
@@ -667,7 +683,11 @@
     "NAME": "Iron Core",
 	"FLAVOR": "Powered by unceasing flames and rage.",
     "DESCRIPTIONS": [
-		"At the start of combat, Channel #b1 #yHellfire. NL Certain Red cards can appear in futre card reward screens."
+		"At the start of combat, Channel #b1 #yHellfire.",
+		"At the start of combat, gain #b2 orb slots.",
+		" NL Certain Red cards can appear in future card reward screens.",
+		" NL Certain Blue cards can appear in future card reward screens.",
+		"At the start of combat, gain #b2 orb slots if you have none, or #yChannel #b1 #yHellfire otherwise. NL Certain Red and Blue cards can appear in futrure card reward screens."
 	]
   },
   "m_BlackCat":{

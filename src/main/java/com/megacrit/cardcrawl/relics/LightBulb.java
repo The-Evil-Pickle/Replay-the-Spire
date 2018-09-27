@@ -12,7 +12,7 @@ public class LightBulb extends AbstractRelic
     public static final String ID = "ReplayTheSpireMod:Lightbulb";
 	
     public LightBulb() {
-        super(ID, "replay_lightbulb.png", RelicTier.SHOP, LandingSound.CLINK);
+        super(ID, "replay_lightbulb.png", RelicTier.COMMON, LandingSound.CLINK);
     }
     
     @Override

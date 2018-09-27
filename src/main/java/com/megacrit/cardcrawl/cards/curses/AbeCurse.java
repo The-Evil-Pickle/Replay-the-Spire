@@ -21,7 +21,7 @@ public class AbeCurse extends CustomCard
     
     public AbeCurse() {
         super("AbeCurse", AbeCurse.NAME, "cards/replay/abeCurse.png", -2, AbeCurse.DESCRIPTION, CardType.CURSE, CardColor.CURSE, CardRarity.SPECIAL, CardTarget.NONE);
-		this.baseMagicNumber = 2;
+		this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
         this.exhaust = true;
     }

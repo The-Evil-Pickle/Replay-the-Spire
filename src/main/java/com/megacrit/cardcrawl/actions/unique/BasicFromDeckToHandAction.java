@@ -33,6 +33,9 @@ public class BasicFromDeckToHandAction extends AbstractGameAction
                     else {
                         this.p.drawPile.removeCard(c);
                         this.p.hand.addToTop(c);
+        				if (this.isUpgraded) {
+        					c.setCostForTurn(-99);
+        				}
                     }
                     this.p.hand.refreshHandLayout();
                     this.p.hand.applyPowers();

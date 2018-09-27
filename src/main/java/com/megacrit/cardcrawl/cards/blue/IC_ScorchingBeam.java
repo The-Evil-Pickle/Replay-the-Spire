@@ -1,6 +1,7 @@
 package com.megacrit.cardcrawl.cards.blue;
 
 import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardRarity;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.monsters.*;
@@ -14,7 +15,10 @@ import com.megacrit.cardcrawl.vfx.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.orbs.*;
+import com.megacrit.cardcrawl.relics.IronCore;
+
 import basemod.abstracts.*;
+import replayTheSpire.ReplayTheSpireMod;
 
 public class IC_ScorchingBeam extends CustomCard
 {
@@ -25,7 +29,7 @@ public class IC_ScorchingBeam extends CustomCard
     private static final int COST = 2;
     
     public IC_ScorchingBeam() {
-        super("Scorching Beam", IC_ScorchingBeam.NAME, "cards/replay/replayBetaAttack.png", IC_ScorchingBeam.COST, IC_ScorchingBeam.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
+        super("Scorching Beam", IC_ScorchingBeam.NAME, "cards/replay/replayBetaAttack.png", IC_ScorchingBeam.COST, IC_ScorchingBeam.DESCRIPTION, CardType.ATTACK, (AbstractDungeon.player == null) ? AbstractCard.CardColor.COLORLESS : ((AbstractDungeon.player instanceof Defect) ? AbstractCard.CardColor.RED : AbstractCard.CardColor.BLUE), (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(IronCore.ID)) ? CardRarity.UNCOMMON : CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
         this.baseDamage = 8;
         this.isMultiDamage = true;
         this.baseMagicNumber = 1;
