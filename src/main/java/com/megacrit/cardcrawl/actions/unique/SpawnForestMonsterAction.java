@@ -4,8 +4,7 @@ import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.monsters.*;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.core.*;
-import com.megacrit.cardcrawl.daily.*;
+import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.powers.*;
 
 public class SpawnForestMonsterAction extends AbstractGameAction
@@ -44,10 +43,10 @@ public class SpawnForestMonsterAction extends AbstractGameAction
                 AbstractDungeon.getCurrRoom().monsters.addMonster(this.targetSlot, this.m);
             }
             this.m.showHealthBar();
-            if (DailyMods.negativeMods.get("Lethality")) {
+            if (ModHelper.isModEnabled("Lethality")) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.m, this.m, new StrengthPower(this.m, 3), 3));
             }
-            if (DailyMods.negativeMods.get("Time Dilation")) {
+            if (ModHelper.isModEnabled("Time Dilation")) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.m, this.m, new SlowPower(this.m, 0)));
             }
             if (this.minion) {

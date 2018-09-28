@@ -1,21 +1,7 @@
 package replayTheSpire.patches;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.audio.*;
-import com.megacrit.cardcrawl.helpers.*;
-import replayTheSpire.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.monsters.*;
-import com.badlogic.gdx.math.*;
-import com.megacrit.cardcrawl.monsters.thetop.*;
-import com.megacrit.cardcrawl.monsters.exordium.*;
-import com.megacrit.cardcrawl.monsters.city.*;
-import com.megacrit.cardcrawl.monsters.replay.*;
-import com.megacrit.cardcrawl.monsters.beyond.*;
-import com.megacrit.cardcrawl.metrics.*;
 import com.badlogic.gdx.audio.*;
-import com.badlogic.gdx.*;
-import java.util.*;
 
 @SpirePatch(cls = "com.megacrit.cardcrawl.audio.TempMusic", method = "getSong")
 public class ReplayMusicPatch {

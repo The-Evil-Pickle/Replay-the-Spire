@@ -27,10 +27,10 @@ public class ReplayCampButtonsPatch
 {
 	public static ArrayList<AbstractCampfireOption> GetBonfireOptions() {
 		final ArrayList<AbstractCampfireOption> optionsYo = new ArrayList<AbstractCampfireOption>();
-		if (!AbstractDungeon.player.hasRelic("Coffee Dripper")) {
+		if ((!AbstractDungeon.player.hasRelic("Coffee Dripper") && AbstractDungeon.currMapNode == BonfirePatches.bonfireNode) || (AbstractDungeon.player.hasRelic("Coffee Dripper") && AbstractDungeon.player.hasRelic(Multitool.ID))) {
 			optionsYo.add(new RestOption());
 		}
-		if (!DailyMods.negativeMods.get("Midas") && !AbstractDungeon.player.hasRelic("Fusion Hammer")) {
+		if ((!ModHelper.isModEnabled("Midas") && !AbstractDungeon.player.hasRelic("Fusion Hammer")  && AbstractDungeon.currMapNode == BonfirePatches.bonfireNode) || ((ModHelper.isModEnabled("Midas") || AbstractDungeon.player.hasRelic("Fusion Hammer")) && AbstractDungeon.player.hasRelic(Multitool.ID))) {
 			optionsYo.add(new SmithOption(AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 0));
 		}
 		if (!AbstractDungeon.player.hasRelic("Peace Pipe") ) {

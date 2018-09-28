@@ -174,7 +174,7 @@
 	"#yTiny #yHouse: No negative effect. Lucky!",
 	"#yCalling #yBell: #b3 random #rCurses have been shuffled into your deck.",
 	"#yKintsugi: #b2 random #rCurses have been shuffled into your deck.",
-	"#yBlack #yBlood: Burning Blood will not trigger at the end of this combat.",
+	"#yBlack #yBlood: Burning Blood will not trigger at the end of this combat."
 	]
   },
   "King of Hearts": {
@@ -403,7 +403,7 @@
     "DESCRIPTIONS": [
 		"At the end of your turn, all enemies lose HP equal to their #yVulnerable."
 	]
-  }
+  },
   "ReplayTheSpireMod:TinkerService": {
 	"NAME": "Tinker Service",
 	"FLAVOR": "The merchant is a strange man, but one of many skills.",

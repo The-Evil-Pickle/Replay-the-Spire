@@ -13,7 +13,7 @@ public class ReplaySpearhead extends AbstractRelic
     public static final String ID = "ReplayTheSpireMod:Spearhead";
     
     public ReplaySpearhead() {
-        super(ID, "betaRelic.png", RelicTier.UNCOMMON, LandingSound.HEAVY);
+        super(ID, "betaRelic.png", RelicTier.COMMON, LandingSound.HEAVY);
     }
     
     @Override

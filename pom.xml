@@ -75,6 +75,20 @@
 		      <scope>system</scope>
           <systemPath>${basedir}/../lib/FriendlyMinions.jar</systemPath>
 	      </dependency>
+        <dependency>
+	        <groupId>hubris</groupId>
+		      <artifactId>Hubris</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/Hubris.jar</systemPath>
+	      </dependency>
+        <dependency>
+	        <groupId>stslib</groupId>
+		      <artifactId>StSLib</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/StSLib.jar</systemPath>
+	      </dependency>
     </dependencies>
   <build>
     <plugins>
@@ -89,5 +103,5 @@
     </plugins>
 	<finalName>${project.artifactId}</finalName>
   </build>
-  <version>1.1.6</version>
+  <version>1.1.7</version>
 </project>

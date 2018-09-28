@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 public class CursedCoin extends AbstractRelic
 {
     public static final String ID = "Cursed Coin";
-    private static final int GOLD_AMT = 200;
+    private static final int GOLD_AMT = 150;
     
     public CursedCoin() {
         super(ID, "oldCoin.png", RelicTier.SHOP, LandingSound.CLINK);
@@ -31,7 +31,7 @@ public class CursedCoin extends AbstractRelic
 
 	@Override
 	public int getPrice() {
-		return 20;
+		return 0;
 	}
 	
     @Override
