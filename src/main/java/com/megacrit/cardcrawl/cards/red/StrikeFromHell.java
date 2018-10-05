@@ -26,7 +26,7 @@ public class StrikeFromHell extends CustomCard
     
     public StrikeFromHell() {
         super(StrikeFromHell.ID, StrikeFromHell.NAME, "cards/replay/strikeFromHell.png", StrikeFromHell.COST, StrikeFromHell.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.COMMON, CardTarget.ENEMY);
-        CardTags.addTags(this, BaseModTags.STRIKE);
+        this.tags.add(AbstractCard.CardTags.STRIKE);
         this.baseDamage = StrikeFromHell.ATTACK_DMG;
         this.baseMagicNumber = StrikeFromHell.DMG_INC;
         this.magicNumber = this.baseMagicNumber;

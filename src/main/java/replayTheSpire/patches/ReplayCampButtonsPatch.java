@@ -204,6 +204,7 @@ public class ReplayCampButtonsPatch
 				//e.printStackTrace();
 			}
 		}
+		/*
 		for (AbstractRelic r : AbstractDungeon.player.relics) {
 			if (r instanceof BottledFlame || r instanceof BottledLightning || r instanceof BottledTornado || r instanceof CustomBottleRelic) {
 				boolean makeFree = false;
@@ -229,6 +230,6 @@ public class ReplayCampButtonsPatch
 					//e.printStackTrace();
 				}
 			}
-		}
+		}*/
     }
 }

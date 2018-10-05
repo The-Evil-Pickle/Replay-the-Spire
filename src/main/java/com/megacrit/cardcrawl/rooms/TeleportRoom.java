@@ -17,7 +17,14 @@ public class TeleportRoom extends AbstractRoom
     private MapRoomNode teleDest;
     
     public TeleportRoom() {
-		this(null);
+    	super();
+		ReplayTheSpireMod.portalIcon = ImageMaster.loadImage("images/ui/map/replay_portal.png");
+		ReplayTheSpireMod.portalBG = ImageMaster.loadImage("images/ui/map/replay_portalOutline.png");
+        this.phase = RoomPhase.EVENT;
+        this.mapSymbol = "PTL";
+        this.mapImg = ReplayTheSpireMod.portalIcon;
+        this.mapImgOutline = ReplayTheSpireMod.portalBG;
+        fakeRoom = new EventRoom();
 	}
     public TeleportRoom(MapRoomNode teleDest)
     {

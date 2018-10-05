@@ -6,6 +6,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
+
+import basemod.helpers.BaseModCardTags;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -29,7 +32,7 @@ public class SimpleRune
     ArrayList<AbstractCard> upgradableCards = new ArrayList();
     for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
 	  //(c.cardID == "Strike_R" || c.cardID == "Strike_G" || c.cardID == "Strike_B" || c.cardID == "Defend_R" || c.cardID == "Defend_G" || c.cardID == "Defend_B" || 
-      if ((c.cardID.toLowerCase().contains("strike") || c.cardID.toLowerCase().contains("defend")) && c.rarity == AbstractCard.CardRarity.BASIC){
+      if ((c.cardID.toLowerCase().contains("strike") || c.cardID.toLowerCase().contains("defend") || c.hasTag(BaseModCardTags.BASIC_STRIKE) || c.hasTag(BaseModCardTags.BASIC_DEFEND)) && c.rarity == AbstractCard.CardRarity.BASIC){
         upgradableCards.add(c);
       }
     }

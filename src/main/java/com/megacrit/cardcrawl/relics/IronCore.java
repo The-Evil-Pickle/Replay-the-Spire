@@ -52,7 +52,7 @@ public class IronCore extends AbstractRelic
     	if (this.hasBlues == false && this.hasReds == false) {
     		this.onEquip();
     	}
-    	if ((this.hasBlues && !this.hasReds) || (this.hasReds == this.hasBlues && AbstractDungeon.player.maxOrbs > 0)) {
+    	if ((!this.hasBlues && this.hasReds) || (this.hasReds == this.hasBlues && AbstractDungeon.player.maxOrbs > 0)) {
     		AbstractDungeon.player.channelOrb(new HellFireOrb());
             AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     		this.firstTurn = false;

@@ -49,8 +49,8 @@ public class FromAllSides
 	  if (!this.upgraded)
 	  {
 	    upgradeName();
-	    upgradeMagicNumber(1);
-	    //upgradeDamage(1);
+	    //upgradeMagicNumber(1);
+	    upgradeDamage(1);
 	  }
 	}
 }

@@ -44,7 +44,7 @@ public class SimplicityRunePatches {
 				if (card instanceof Strike_Red || card instanceof Strike_Green || card instanceof Strike_Blue || card instanceof Defend_Red || card instanceof Defend_Green || card instanceof Defend_Blue) {
 					return true;
 				}
-				if ((CardTags.hasTag(card, BaseModTags.BASIC_STRIKE) || CardTags.hasTag(card, BaseModTags.BASIC_DEFEND))) {
+				if ((CardTags.hasTag(card, BaseModTags.BASIC_STRIKE) || CardTags.hasTag(card, BaseModTags.BASIC_DEFEND)) || (card.hasTag(BaseModCardTags.BASIC_STRIKE) || card.hasTag(BaseModCardTags.BASIC_DEFEND))) {
 					card.upgraded = false;
 					return true;
 				}
@@ -58,13 +58,13 @@ public class SimplicityRunePatches {
 		@SpireInsertPatch(rloc=4)
 		public static void Insert(AbstractCard c) {
 			if (AbstractDungeon.player != null && c.rarity == AbstractCard.CardRarity.BASIC && AbstractDungeon.player.hasRelic("Simple Rune")) {
-				if(CardTags.hasTag(c, BaseModTags.BASIC_STRIKE)) {//if (c.type == AbstractCard.CardType.ATTACK && c.cardID.toLowerCase().contains("strike")) {
+				if(CardTags.hasTag(c, BaseModTags.BASIC_STRIKE) || c.hasTag(BaseModCardTags.BASIC_STRIKE)) {//if (c.type == AbstractCard.CardType.ATTACK && c.cardID.toLowerCase().contains("strike")) {
 					c.name = c.makeCopy().name + "+" + c.timesUpgraded;
 					if (c.baseDamage > 0) {
 						c.baseDamage += (c.timesUpgraded - 1);
 					}
 				} else {
-					if(CardTags.hasTag(c, BaseModTags.BASIC_DEFEND)) {//if (c.type == AbstractCard.CardType.SKILL && c.cardID.toLowerCase().contains("defend")) {
+					if(CardTags.hasTag(c, BaseModTags.BASIC_DEFEND) || c.hasTag(BaseModCardTags.BASIC_DEFEND)) {//if (c.type == AbstractCard.CardType.SKILL && c.cardID.toLowerCase().contains("defend")) {
 						c.name = c.makeCopy().name + "+" + c.timesUpgraded;
 						if (c.baseBlock > 0) {
 							c.baseBlock += (c.timesUpgraded - 1);
@@ -76,7 +76,7 @@ public class SimplicityRunePatches {
 		
 		public static void PostFix(AbstractCard c) {
 			if (AbstractDungeon.player != null && c.rarity == AbstractCard.CardRarity.BASIC && AbstractDungeon.player.hasRelic("Simple Rune")) {
-				if (CardTags.hasTag(c, BaseModTags.BASIC_STRIKE) || CardTags.hasTag(c, BaseModTags.BASIC_DEFEND)) {
+				if (CardTags.hasTag(c, BaseModTags.BASIC_STRIKE) || CardTags.hasTag(c, BaseModTags.BASIC_DEFEND) || c.hasTag(BaseModCardTags.BASIC_STRIKE) || c.hasTag(BaseModCardTags.BASIC_DEFEND)) {
 					c.upgraded = false;
 				}
 			}
@@ -170,102 +170,4 @@ public class SimplicityRunePatches {
 			return SpireReturn.Continue();
 		}
 	}
-	/*
-	public static void TryPatchingShit() {
-		try {
-			TryPatchingCard(new Strike_Red());
-			TryPatchingCard(new Strike_Green());
-			TryPatchingCard(new Strike_Blue());
-			TryPatchingCard(new Defend_Red());
-			TryPatchingCard(new Defend_Green());
-			TryPatchingCard(new Defend_Blue());
-		} catch (NotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	@SpirePatch(
-	        cls="basemod.BaseMod",
-	        method="addCard"
-	)
-	public static class PatchBasemodAddCard {
-		public static void Postfix(AbstractCard c) {
-			try {
-				if(CardTags.hasTag(c, BaseModTags.BASIC_STRIKE) || CardTags.hasTag(c, BaseModTags.BASIC_DEFEND)) {
-					TryPatchingCard(c);
-				}
-			} catch (NotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-	}
-	public static CtMethod ctMethodPrefix;
-	private static URL[] buildUrlArray(final ModInfo[] modInfos) throws MalformedURLException {
-        final URL[] urls = new URL[modInfos.length + 1];
-        for (int i = 0; i < modInfos.length; ++i) {
-            urls[i] = modInfos[i].jarURL;
-        }
-        urls[modInfos.length] = new File(Loader.STS_JAR).toURI().toURL();
-        return urls;
-    }
-	@SuppressWarnings("deprecation")
-	public static void TryPatchingCard(AbstractCard c) throws NotFoundException {
-		ReplayTheSpireMod.logger.debug(c.getClass().getName());
-		//ClassPool pool = new ClassPool(ClassPool.getDefault());
-		CtClass ctClsToPatch = Loader.getClassPool().get(c.getClass().getName());
-		CtMethod ctMethodToPatch = ctClsToPatch.getDeclaredMethod("upgrade");
-        PrefixPatchInfo patch = new PrefixPatchInfo(ctMethodToPatch, ctMethodPrefix);
-        if (Loader.DEBUG) {
-        	patch.debugPrint();
-        }
-		try {
-			patch.doPatch();
-			ctClsToPatch.toClass(new MTSClassLoader(Loader.class.getResourceAsStream(Loader.COREPATCHES_JAR), buildUrlArray(Loader.MODINFOS), Loader.class.getClassLoader()));
-		} catch (PatchingException | CannotCompileException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	public static SpireReturn Prefix(AbstractCard card) {
-		if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(SimpleRune.ID)) {
-			ReplayTheSpireMod.logger.debug("HAVE_RUNE");
-			if (CardTags.hasTag(card, BaseModTags.BASIC_STRIKE) || card instanceof Strike_Red) {
-				ReplayTheSpireMod.logger.debug("STRIKE");
-				card.baseDamage += 3 + card.timesUpgraded;
-		        card.upgradedDamage = true;
-			} else if (CardTags.hasTag(card, BaseModTags.BASIC_DEFEND)) {
-				ReplayTheSpireMod.logger.debug("DEFEND");
-				card.baseBlock += 3 + card.timesUpgraded;
-		        card.upgradedBlock = true;
-			}
-			card.upgraded = true;
-	        card.timesUpgraded++;
-	        card.name = Strike_Red.NAME + "+" + card.timesUpgraded;
-			return SpireReturn.Return(null);
-		}
-		
-		return SpireReturn.Continue();
-	}
-	static {
-		
-		//CtClass[] cArg = new CtClass[1];
-        //cArg[0] = ClassPool.getDefault().makeClass(AbstractCard.class.getName());
-        try {
-			ctMethodPrefix = Loader.getClassPool().get(SimplicityRunePatches.class.getName()).getDeclaredMethod("Prefix");
-		} catch (NotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (RuntimeException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	*/
 }

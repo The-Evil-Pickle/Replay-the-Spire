@@ -125,7 +125,7 @@ public class NeowRewardPatches {
 		public static void Postfix(NeowReward __instance) {
 			
 			if (__instance.type == COLORLESS_CARD) {
-				AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(AbstractDungeon.returnTrulyRandomColorlessCard(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F)); 
+				AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(AbstractDungeon.returnColorlessCard(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F)); 
 			}
 			
 			if (__instance.drawback == NeowRewardPatches.BASIC_CARDS) {

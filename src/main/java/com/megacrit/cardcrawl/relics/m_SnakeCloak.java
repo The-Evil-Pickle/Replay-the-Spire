@@ -45,7 +45,7 @@ public class m_SnakeCloak extends AbstractRelic
         tmpPool.add(new StormOfSteel());
         tmpPool.add(new Tactician());
         tmpPool.add(new ToolsOfTheTrade());
-        tmpPool.add(new UnderhandedStrike());
+        //tmpPool.add(new UnderhandedStrike());
         tmpPool.add(new Unload());
         for (final AbstractCard c : tmpPool) {
 			switch (c.rarity) {

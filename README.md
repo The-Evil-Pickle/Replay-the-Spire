@@ -5,13 +5,14 @@
 This mod aims to expand upon the base game by adding lots of content. It is currently a work in progress, but you can download the [latest release](https://github.com/AstroPenguin642/Replay-the-Spire/releases) to help us improve it.
 
 ### Requires:
- * BaseMod (https://github.com/daviscook477/BaseMod/releases)
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
+ * BaseMod (https://github.com/daviscook477/BaseMod/releases)
+ * [Recommended] StSLib (https://github.com/kiooeht/StSLib/releases)
 
 ### Currently adds:
  * 50 Relics (4 ironclad, 4 silent, 4 defect, 38 shared)
- * 50 Cards (10 ironclad, 12 silent, 11 defect, 7 colorless, 10 curses)
- * 4 Events
+ * 53 Cards (10 ironclad, 12 silent, 11 defect, 9 colorless, 11 curses)
+ * 5 Events
  * 10 Potions
  * 2 Rooms
  * 2 Elites
@@ -89,7 +90,7 @@ Hemogenesis | Red | Uncommon | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 
 Life Bind | Red | Uncommon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
 Massacre | Red | Uncommon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
 Limb From Limb | Red | Uncommon | Attack | 3 | Deal 24(28) damage. If this deals at least 30(32) unblocked damage, **Refund** 2 and draw 2 cards.
-Abandon | Red | Rare | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. **Ethereal**.
+Abandon | Red | Rare | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. Add a **Void** to your discard pile. **Ethereal**.
 Demonic Infusion | Red | Rare | Skill | X | Upgrade a card X(+1) times. **Refund** 1. **Exhaust**.
 Eclipse | Red | Rare | Skill | 3 | **Exhaust** your hand. For each card, add a random card to your hand that costs 1 less than normal. (**Refund** 1.)
 Fluid Movement | Green | Commmon | Power | 1 | Keep up to 5(8) block between rounds.
@@ -117,14 +118,16 @@ RNG | Blue | Rare | Skill | X | **Channel** X(+1) random orbs.
 Omega Cannon | Blue | Rare | Attack | 2 | Deal 7(6) damage to ALL enemies 4(5) times. Add 1 **Backfire** to your draw and discard piles. **Focus** increases damage."
 Poisoned Strike | Colorless | Uncommon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | Lose 1 Focus. All non-attack damage you deal is increased by 2. (**Innate.**)
+Ssssstrike | Colorless | Uncommon | Attack | ? | Deal 3(4) damage, plus an additional 3(4) for each energy this cost. **Snecko.** **Refund** 1.
 Survey Options | Colorless | Uncommon | Skill | X | Draw X. **Refund** 1(2).
+Trickstab | Colorless | Uncommon | Attack | 1 | Deal 4 damage 2(3) times. Damage is affected by block modifiers.
 Private Reserves | Colorless | Uncommon | Skill | 0 | Gain 1 energy (and draw 1 card). **Exhaust.** **Retain.**
 Awakened One Ritual | Colorless | Rare | Power | 0 | Add 6(8) Ritual Components to your discard pile. If you ever have 5 or more in your hand at once, replace them with Attacks that deal 42 damage.
 Midas Touch | Colorless | Rare | Skill | 0 | **Exhaust** any number of cards in your hand. Add a random Rare card to your hand for each.
 The Ultimate Defense | Colorless | Rare | Power | 4 | Gain 1(2) **Artifact**. Gain 1(2) **Dexterity**. (Gain 1 **Intangible**). Gain 5 **Plated** **Armor**. Gain 5(8) **Shielding**.
 Amnesia | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, **Exhaust** your hand. **Ethereal**.
 Over-Encumbered | Curse | Curse | Curse | - | **Unplayable**. When drawn, add 3 **Dazed** to your hand and draw a card.
-Faulty Equipment | Curse | Curse | Curse | - | **Unplayable**. Can only be **Exhausted** or removed from your deck by **Upgrading**.
+Faulty Equipment | Curse | Curse | Curse | - | **Unplayable**. **Soulbound**. Can be **Upgraded** outside of combat to remove from deck.
 Common Cold | Curse | Curse | Curse | 0 | Sneeze!
 Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
 Sickly | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, lose 3 **Block**.
@@ -133,6 +136,10 @@ Depression | Curse | Curse | Curse | - | **Unplayable**. When drawn, gain 2 **La
 Delirium | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, gain **Confusion** for 1 round.
 Voices | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, shuffle 2 Dazed into your discard pile. **Ethereal**.
 Looming Evil | Curse | Curse | Curse | 3 | Can be played for 3 Energy to **Exhaust**. At the end of your turn, shuffle a random curse into your draw pile and reduce the cost to play this card by 1.
+Chaos Vortex | Black | Power | Black | 0 | Gain 10(15) **Shielding.** 1 card you draw each turn has its stats and effects scrambled.
+Dark Transmutation | Black | Skill | Black | X | Add X random Black cards to your hand. They cost 1 less this turn. (**Refund** 1.) **Exhaust.**
+Echoes of Time | Black | Skill | Black | 1 | **Fetch** up to 3(8) cards you've **Exhausted** this combat. **Grave.** **Purge.**
+Haul | Black | Skill | Black | 0 | Draw your draw pile. You can't draw any more cards this turn (upgrade removes). **Exhaust.**
 Ghost Swipe | Colorless | Special | Attack | 1 | Deal 6 damage. **Exhaust**. **Ethereal**.
 Ghost Defend | Colorless | Special | Skill | 1 | Gain 5 block. **Exhaust**. **Ethereal**.
 Ghost Fetch | Colorless | Special | Skill | 0 | Choose a basic card from your draw pile and add it to your hand. **Exhaust**. **Ethereal**.
@@ -141,10 +148,8 @@ Ritual Component | Colorless | Special | Skill | 0 | Draw 1 card.
 Abe's Revenge | Curse | Special | Curse | - | **Unplayable**. At the end of your turn, gain 2 **Frail**. **Ethereal**.
 
 **Note:** The following items are currently under maintainence, and have been temporarily removed:
- * Rune of Simplicity
  * Raider's Mask
- * Languid (curse)
- * Faulty Equipment
+ * Re-Bottling Rest Site Option
 
 # Keywords
 Name | Type | Description
@@ -200,7 +205,7 @@ The first two change based on the player's character. The third is always "Trans
 Character-specific options:
  * **Ironclad:**
   * Bash -> Survivor & Neutralize
-  * Burning Blood -> Self Repair+
+  * Burning Blood -> Iron Core & Self Repair+
  * **Silent:**
   * Ring of the Snake -> Sizzling Blood
   * Survivor -> Leap, Neutralize -> Beam Cell
@@ -215,6 +220,17 @@ Character-specific options:
   * Arcanosphere -> Arcane Blood, Astral Haze -> Reckless Charge
   * Astral Haze -> Endless Agony
   * Astral Haze -> Rebound
+ * [mod] **Servant:**
+  * Uniform -> Scarlet Blood & Inflame
+  * Uniform -> Snake Cloak, Kidney Shot -> Survivor
+  * House Cleaning -> Reprogram, Kidney Shot -> Reboot
+ * [mod] **Mystic:**
+  * Shocking Grasp -> Bash, Arcane Dodge -> Leap
+  * Spellbook -> Book of Snakes
+ * [mod] **Deciple:**
+  * Pattern Shift -> Stunning Strike, Second Hand -> Readied Action
+  * Pattern Shift -> Infinite Blades, Second Hand -> Well Laid Plans
+  * Chronometer -> Mercury Core, Second Hand -> White Noise
 If an upgraded card is traded for a different card using this event, the corresponding new card will be upgraded.
 
 ### Stuck
@@ -251,17 +267,31 @@ The third option gives 2 relics, and has a 75% chance to recieve a random curse.
 
 Only certain relics can be recieved from this event (see Event Relics). 
 
+### Map Scout
+City event.
+
+Player can pay gold to remove a vanilla Beyond boss of their choice from the pool.
+
+If Infinite Spire is installed, player can force the Lord of Annihilation to appear.
 
 ## Event Relics
 Name | Event | Description
 --- | --- | ---
 Sizzling Blood | Mirror Mist (as Silent) | Restore 4 HP at the end of combat. Gain 4 MAx HP on pick up.
-Iron Core | Mirror Mist (as Defect) | At the start of combat, **Channel** 1 **Hellfire.** Certain red cards can appear in future card rewards. Random orb effects (e.g. Chaos) have a chance to **Channel** **Hellfire.**
+Iron Core | Mirror Mist (as Defect) | At the start of combat, **Channel** 1 **Hellfire.** Certain red cards can now be obtained. Random orb effects (e.g. Chaos) have a chance to **Channel** **Hellfire.**
+Iron Core | Mirror Mist (as Ironclad) | At the start of combat, gain 2 orb slots. Certain blue cards can now be obtained. Random orb effects (e.g. Chaos) have a chance to **Channel** **Hellfire.**
+Arcane Blood | Mirror Mist (as Seeker) | At the end of combat, heal 3 HP for each different Debuff you have. Certain red cards can now be obtained.
+Chemical Blood | Mirror Mist (as Mad Scientist) | Whenever you take damage during your turn, gain 1 Fuel. At the end of combat, gain HP equal to your total fuel, up to 6 max. NL Certain #rRed cards can now be obtained.
+Scarlet Blood | Mirror Mist (as Servant) | Each time you gain **Strength**, gain twice that many **Knives.** Certain red cards can now be obtained.
+Cloak of the Snake | Mirror Mist (as Servant) | Draw 2 additional cards on the first turn of combat. Certain green cards can now be obtained.
+Book of the Snake | Mirror Mist (as Mystic) | At the start of combat, 2 random **Cantrips** are shuffled into your draw pile. Certain green cards can now be obtained.
+Mercury Core | Mirror Mist (as Deciple) | At the start of combat, **Replicate** 1 **Mercury.** Certain blue cards can now be obtained.
 Ring of Fury | Dead Man's Rings | At the start of combat, gain 2 **Strength** and lose 1 **Dexterity.**
 Ring of Peace | Dead Man's Rings | At the start of combat, apply 3 **Weak** to ALL fighters and gain 1 **Buffer.**
 Ring of Panic | Dead Man's Rings | At the start of combat, become **Confused** for 3 turns. Gain 2 energy on the first and second turns, and 1 energy on the third.
 Ring of Hypnosis | Dead Man's Rings | All enemies start with 5 **Confusion.**
 Ring of Misfortune | Dead Man's Rings | At the start of combat, add a random **Curse** to your discard pile. Each time you draw a curse, gain 1 energy and 3 **Shielding**. Each time you draw a **Status**, gain 3 **Block**.
+Ring of Greed | Dead Man's Rings | For every 150 gold you gain, obtain a random **Curse.** On pickup, gain 50 gold and 2 random relics related to gold or shops.
 Ring of Searing | Dead Man's Rings (as Ironclad or modded) | At the start of your turn, ALL enemies above 50% max HP lose 10% of their HP, and you lose 5 HP if you are above 75% max HP.
 Ring of Fangs | Dead Man's Rings (as Silent or modded) | At the start of combat, lose 3 **Strength** and gain 1 **Envenom.**
 Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 3 **Focus** and lose 2 orb slots.

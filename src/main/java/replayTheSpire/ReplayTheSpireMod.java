@@ -31,9 +31,20 @@ import com.megacrit.cardcrawl.powers.TheWorksPower;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.events.thebottom.*;
 import com.megacrit.cardcrawl.events.thecity.GremboTheGreat;
+import com.megacrit.cardcrawl.events.thecity.ReplayMapScoutEvent;
 import com.megacrit.cardcrawl.events.shrines.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.monsters.MonsterInfo;
+import com.megacrit.cardcrawl.monsters.replay.CaptainAbe;
+import com.megacrit.cardcrawl.monsters.replay.FadingForestBoss;
+import com.megacrit.cardcrawl.monsters.replay.PondfishBoss;
+import com.megacrit.cardcrawl.monsters.replay.eastereggs.J_louse_1;
+import com.megacrit.cardcrawl.monsters.replay.eastereggs.J_louse_2;
+import com.megacrit.cardcrawl.monsters.replay.eastereggs.J_louse_3;
+import com.megacrit.cardcrawl.monsters.replay.eastereggs.R_Hoarder;
 import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.unlock.*;
 import com.megacrit.cardcrawl.vfx.*;
@@ -42,6 +53,7 @@ import basemod.*;
 import basemod.helpers.*;
 import basemod.interfaces.*;
 import blackrusemod.BlackRuseMod;
+import chronomuncher.ChronoMod;
 import coloredmap.ColoredMap;
 import fetch.FetchMod;
 import fruitymod.FruityMod;
@@ -49,6 +61,7 @@ import fruitymod.seeker.patches.*;
 import infinitespire.InfiniteSpire;
 import madsciencemod.MadScienceMod;
 import madsciencemod.powers.*;
+import mysticmod.MysticMod;
 import replayTheSpire.panelUI.*;
 import replayTheSpire.patches.SimplicityRunePatches;
 
@@ -65,7 +78,7 @@ import java.util.function.*;
 
 @SpireInitializer
 public class ReplayTheSpireMod implements PostInitializeSubscriber,
-EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscriber, PotionGetSubscriber
+EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscriber, PotionGetSubscriber, StartGameSubscriber
 {
 	public static void InitCardTitle(AbstractCard c) {
 		FontHelper.cardTitleFont_L.getData().setScale(1.0f);
@@ -814,6 +827,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		logger.info("Events");
 		BaseMod.addEvent(MirrorMist.ID, MirrorMist.class, "Exordium");
 		BaseMod.addEvent(Stuck.ID, Stuck.class, "Exordium");
+		BaseMod.addEvent(ReplayMapScoutEvent.ID, ReplayMapScoutEvent.class, "TheCity");
 		BaseMod.addEvent(TrappedChest.ID, TrappedChest.class);
 		BaseMod.addEvent(ChaosEvent.ID, ChaosEvent.class);
 		/*if (Loader.isModLoaded("Friendly_Minions_0987678")) {
@@ -844,7 +858,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addKeyword(specNames, "Is #yEthereal. NL #yExhausts when played or discarded. NL When drawn, you draw an additional card. NL If your hand is full and you draw a card, this card is #yExhausted from your hand to make room.");
 		*/
 		
-		
+		InitializeMonsters();
 		logger.info("end post init");
         Settings.isDailyRun = false;
         Settings.isTrial = false;
@@ -862,6 +876,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 
         try {
         	initializeHubrisMod();
+        } catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Hubris not detected");
+		}
+        try {
+        	initializeInfiniteMod();
         } catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Hubris not detected");
 		}
@@ -899,6 +918,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		//BaseMod.addRelic(new ChemicalX(), RelicType.SHARED);
 		BaseMod.addRelic(new ChewingGum(), RelicType.SHARED);
 		BaseMod.addRelic(new CounterBalance(), RelicType.SHARED);
+		BaseMod.addRelic(new CursedCoin(), RelicType.SHARED);
 		BaseMod.addRelic(new DimensionalGlitch(), RelicType.SHARED);
 		BaseMod.addRelic(new ElectricBlood(), RelicType.RED);
 		//BaseMod.addRelic(new EnergyBall(), RelicType.SHARED);
@@ -946,6 +966,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new VampiricSpirits(), RelicType.GREEN);
         
 		initializeCrossoverRelics();
+		if (foundmod_stslib && foundmod_infinite) {
+			BaseMod.addRelic(new SealedPack(), RelicType.SHARED);
+		}
 		
         logger.info("done editting relics");
 	}
@@ -958,6 +981,16 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	
 	@Override
 	public void receiveEditCards() {
+        try {
+        	initializeStsLibMod();
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | StSLib not detected");
+		}
+        try {
+        	initializeInfiniteMod(LoadType.CARD);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Infinite not detected");
+		}
 		logger.info("[RtS] begin editting cards");
 		logger.info("adding cards for Ironclad...");
 		AddAndUnlockCard(new Abandon());
@@ -1019,10 +1052,13 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Voices());
 		AddAndUnlockCard(new LoomingEvil());
 		AddAndUnlockCard(new Amnesia());
-		//AddAndUnlockCard(new FaultyEquipment());
 		AddAndUnlockCard(new SpreadingInfection());
 		AddAndUnlockCard(new AbeCurse());
 		AddAndUnlockCard(new Overencumbered());
+		if (foundmod_stslib) {
+			AddAndUnlockCard(new FaultyEquipment());
+			AddAndUnlockCard(new Sssssssssstrike());
+		}
 		logger.info("adding unobtainable cards...");
 		AddAndUnlockCard(new PotOfGreed());
 		AddAndUnlockCard(new GhostDefend());
@@ -1037,6 +1073,14 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		logger.info("done editting cards");
 	}
 	
+	private void InitializeMonsters() {
+        BaseMod.addMonster("Pondfish", () -> new MonsterGroup(new AbstractMonster[] {new CaptainAbe(170.0f, -80.0f), new PondfishBoss(0.0f, -650.0f)}));
+        BaseMod.addBoss("TheCity", "Pondfish", "images/ui/map/boss/pondfish.png", "images/ui/map/bossOutline/pondfish.png");
+        BaseMod.addMonster("R_Hoarder", () -> new MonsterGroup(new AbstractMonster[] {new R_Hoarder(0, 10)}));
+        BaseMod.addMonster("Erikyupuro", () -> new MonsterGroup(new AbstractMonster[] { new J_louse_1(-350.0f, 25.0f), new J_louse_2(-125.0f, 10.0f), new J_louse_3(80.0f, 30.0f) }));
+        BaseMod.addMonster("Fading Forest", () -> new MonsterGroup(new AbstractMonster[] {new FadingForestBoss()}));
+        
+	}
 
     private enum LoadType {
     	RELIC,
@@ -1052,6 +1096,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static boolean foundmod_colormap = false;
     public static boolean foundmod_hubris = false;
     public static boolean foundmod_stslib = false;
+    public static boolean foundmod_mystic = false;
+    public static boolean foundmod_beaked = false;
+    public static boolean foundmod_deciple = false;
     
 
     private static void initializeCrossoverRelics() {
@@ -1070,6 +1117,16 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Servant mod not detected");
 		}
+    	try {
+    		initializeMysticMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Servant mod not detected");
+		}
+    	try {
+    		initializeDecipleMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Servant mod not detected");
+		}
     }
 
 	private static void initializeScienceMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
@@ -1085,7 +1142,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			logger.info("ReplayTheSpireMod | Initializing Cards for MadScience...");
 		}
 	}
-	
+
 	private static void initializeInfiniteMod() throws ClassNotFoundException, NoClassDefFoundError {
 		Class<InfiniteSpire> infiniteMod = InfiniteSpire.class;
 		logger.info("ReplayTheSpireMod | Detected Infinite Spire!");
@@ -1113,9 +1170,45 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		foundmod_hubris = true;
 	}
 	private static void initializeStsLibMod() throws ClassNotFoundException, NoClassDefFoundError {
+		if (foundmod_stslib) {
+			return;
+		}
 		Class<StSLib> servMod = StSLib.class;
 		logger.info("ReplayTheSpireMod | Detected StSLib Mod!");
 		foundmod_stslib = true;
+	}
+	private static void initializeStsLibMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
+		Class<StSLib> servMod = StSLib.class;
+		if (!foundmod_stslib) {
+			logger.info("ReplayTheSpireMod | Detected StSLib Mod!");
+			foundmod_stslib = true;
+		}
+		
+	}
+	private static void initializeInfiniteMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
+		Class<InfiniteSpire> infiniteMod = InfiniteSpire.class;
+		logger.info("ReplayTheSpireMod | Detected Infinite Spire!");
+		foundmod_infinite = true;
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Infinite...");
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for Infinite...");
+			BaseMod.addColor(infinitespire.patches.CardColorEnumPatch.CardColorPatch.INFINITE_BLACK, InfiniteSpire.CARD_COLOR, InfiniteSpire.CARD_COLOR, InfiniteSpire.CARD_COLOR, InfiniteSpire.CARD_COLOR, InfiniteSpire.CARD_COLOR, Color.BLACK.cpy(), InfiniteSpire.CARD_COLOR, "img/infinitespire/cards/ui/512/boss-attack.png", "img/infinitespire/cards/ui/512/boss-skill.png", "img/infinitespire/cards/ui/512/boss-power.png", "img/infinitespire/cards/ui/512/boss-orb.png", "img/infinitespire/cards/ui/1024/boss-attack.png", "img/infinitespire/cards/ui/1024/boss-skill.png", "img/infinitespire/cards/ui/1024/boss-power.png", "img/infinitespire/cards/ui/1024/boss-orb.png");
+			infinitebs.BlackCards();
+		}
+	}
+	private static void initializeMysticMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
+		Class<MysticMod> servMod = MysticMod.class;
+		logger.info("ReplayTheSpireMod | Detected Mystic Mod!");
+		foundmod_mystic = true;
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Mystic...");
+			BaseMod.addRelicToCustomPool(new m_BookOfShivs(), madsciencemod.patches.CardColorEnum.BRONZE);
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for Mystic...");
+		}
 	}
 	private static void initializeServantMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
 		Class<BlackRuseMod> servMod = BlackRuseMod.class;
@@ -1124,11 +1217,23 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for Servant...");
-			BaseMod.addRelicToCustomPool((AbstractRelic)new m_ScarletBlood(), blackrusemod.patches.AbstractCardEnum.SILVER);
-			BaseMod.addRelicToCustomPool((AbstractRelic)new m_SnakeCloak(), blackrusemod.patches.AbstractCardEnum.SILVER);
+			BaseMod.addRelicToCustomPool(new m_SnakeCloak(), blackrusemod.patches.AbstractCardEnum.SILVER);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Servant...");
+		}
+	}
+	private static void initializeDecipleMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
+		Class<ChronoMod> servMod = ChronoMod.class;
+		logger.info("ReplayTheSpireMod | Detected Deciple Mod!");
+		foundmod_deciple = true;
+
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Deciple...");
+			BaseMod.addRelicToCustomPool(new m_MercuryCore(), chronomuncher.patches.Enum.BRONZE);
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for Deciple...");
 		}
 	}
 
@@ -1231,11 +1336,16 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			logger.info("Replay | Fetch not detected");
 		}
         try {
+        	initializeStsLibMod();
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Fetch not detected");
+		}
+        try {
         	initializeColorMapMod();
         } catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Colored Map not detected");
 		}
-        if (foundmod_fetch) {
+        if (foundmod_fetch || foundmod_stslib) {
         	String cardStrings = Gdx.files.internal(jsonPath + "ReplayFetchOverrideStrings.json").readString(
             		String.valueOf(StandardCharsets.UTF_8));
             BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
@@ -1299,25 +1409,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	}
 	
 	
-	public static void saveRunData() {
-		try {
-			SpireConfig config = new SpireConfig("ReplayTheSpireMod", "replayRunSaveData");
-			if (AbstractDungeon.player.hasRelic("Baseball")) {
-				
-			} else {
-				
-			}
-			if (AbstractDungeon.player.hasRelic("Chaos Ring")) {
-				
-			} else {
-				
-			}
-			
-			config.save();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
 	public static void saveSettingsData() {
 		try {
 			SpireConfig config = new SpireConfig("ReplayTheSpireMod", "replaySettingsData");
@@ -1447,11 +1538,53 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.unlockAchievements.add(new ReplayUnlockAchieve("complete_eye", "Baffling", "Complete a run with Snecko Eye", "Snecko Heart"));
 	}
 	
-    /*
-    public static void clearRunData() {
-    	logger.info("ReplayTheSpireMod | Clearing Saved Data...");
-    	saveData();
+	public static void loadRunData() {
+        ReplayTheSpireMod.logger.info("Loading Save Data");
+        try {
+            final SpireConfig config = new SpireConfig("ReplayTheSpireMod", "SaveData");
+            BottledFlurry.load(config);
+            BottledSteam.load(config);
+            Baseball.load(config);
+            ReplayMapScoutEvent.load(config);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-    */
-	
+    
+    public static void saveRunData() {
+    	ReplayTheSpireMod.logger.info("Saving Data");
+        try {
+            final SpireConfig config = new SpireConfig("ReplayTheSpireMod", "SaveData");
+            BottledFlurry.save(config);
+            BottledSteam.save(config);
+            Baseball.save(config);
+            ReplayMapScoutEvent.save(config);
+            config.save();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static void clearRunData() {
+    	ReplayTheSpireMod.logger.info("Clearing Saved Data");
+        try {
+            final SpireConfig config = new SpireConfig("ReplayTheSpireMod", "SaveData");
+            config.clear();
+            config.save();
+            BottledFlurry.clear();
+            BottledSteam.clear();
+            Baseball.clear();
+            ReplayMapScoutEvent.clear();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void receiveStartGame() {
+		ReplayMapScoutEvent.bannedBoss = "none";
+        loadRunData();
+    }
 }

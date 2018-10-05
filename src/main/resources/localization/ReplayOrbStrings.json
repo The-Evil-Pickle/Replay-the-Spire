@@ -1,9 +1,9 @@
 {
   "Light": {
     "DESCRIPTION": [
-      "#yPassive: At the end of turn, increase this Orb's healing by #b",
-      ". NL #yEvoke: Heal #b",
-      " HP."
+      "#yPassive: At the end of turn, heal #b",
+      ". NL #yEvoke: Gain #b",
+      " #yRegen."
     ],
     "NAME": "Light"
   },

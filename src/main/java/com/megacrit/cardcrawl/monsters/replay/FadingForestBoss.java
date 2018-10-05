@@ -744,7 +744,7 @@ public class FadingForestBoss extends AbstractMonster
 						break;
 					case 1:
 						for (int i = 0; i < p0 + 1; ++i) {
-			                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(AbstractDungeon.returnTrulyRandomColorlessCard().makeCopy(), 1, false));
+			                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(AbstractDungeon.returnTrulyRandomColorlessCardInCombat().makeCopy(), 1, false));
 			            }
 						for (int i = 0; i < p0 + 2; ++i) {
 							AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.player, new DamageInfo(this, this.savedDamage), AbstractGameAction.AttackEffect.FIRE));

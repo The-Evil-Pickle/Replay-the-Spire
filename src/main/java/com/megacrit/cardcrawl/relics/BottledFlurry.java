@@ -2,9 +2,11 @@ package com.megacrit.cardcrawl.relics;
 
 import java.util.function.Predicate;
 
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.unique.FlurryBottleAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
@@ -43,7 +45,7 @@ public class BottledFlurry extends AbstractRelic implements CustomBottleRelic
             AbstractDungeon.previousScreen = AbstractDungeon.screen;
         }
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
-        AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck, 1, this.DESCRIPTIONS[1] + this.name + ".", false, false, false, false);
+        AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck), 1, this.DESCRIPTIONS[1] + this.name + ".", false, false, false, false);
     }
     
     @Override
@@ -93,4 +95,32 @@ public class BottledFlurry extends AbstractRelic implements CustomBottleRelic
 	public Predicate<AbstractCard> isOnCard() {
 		return BottlePatches.BottleFields.inBottleFlurry::get;
 	}
+	
+	public static void save(final SpireConfig config) {
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(ID)) {
+            final BottledFlurry relic = (BottledFlurry)AbstractDungeon.player.getRelic(ID);
+            config.setInt("bottledFlurry", AbstractDungeon.player.masterDeck.group.indexOf(relic.card));
+        }
+        else {
+            config.remove("bottledFlurry");
+        }
+    }
+    
+    public static void load(final SpireConfig config) {
+        if (AbstractDungeon.player.hasRelic(ID) && config.has("bottledFlurry")) {
+            final BottledFlurry relic = (BottledFlurry)AbstractDungeon.player.getRelic(ID);
+            final int cardIndex = config.getInt("bottledFlurry");
+            if (cardIndex >= 0 && cardIndex < AbstractDungeon.player.masterDeck.group.size()) {
+                relic.card = AbstractDungeon.player.masterDeck.group.get(cardIndex);
+                if (relic.card != null) {
+                	BottlePatches.BottleFields.inBottleFlurry.set(relic.card, true);
+                    relic.setDescriptionAfterLoading();
+                }
+            }
+        }
+    }
+    
+    public static void clear() {
+    }
+	
 }

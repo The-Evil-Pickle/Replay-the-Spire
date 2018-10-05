@@ -74,12 +74,13 @@
   },
   "ReplayTheSpireMod:From All Sides": {
     "NAME": "From All Sides",
-    "DESCRIPTION": "Apply 1 Weak and deal !D! damage to a random enemy 2X + !M! times."
+    "DESCRIPTION": "Apply 1 Weak and deal !D! damage to a random enemy 2X + !M! times.",
+    "UPGRADE_DESCRIPTION": "Discard any number of cards from your hand. NL Apply 1 Weak and deal !D! X damage to a random enemy for each."
   },
   "Abandon": {
     "NAME": "Abandon",
-    "DESCRIPTION": "Exhaust !M! card. NL Draw !M! card. NL Ethereal.",
-    "UPGRADE_DESCRIPTION": "Exhaust up to !M! cards. NL Draw 1 card for each. NL Ethereal."
+    "DESCRIPTION": "Exhaust !M! card. NL Draw !M! card. NL Add a Void to your discard pile. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Exhaust up to !M! cards. NL Draw 1 card for each. NL Add a Void to your discard pile. NL Ethereal."
   },
   "Defy Death": {
     "NAME": "Defy Death",
@@ -268,6 +269,10 @@
     "DESCRIPTION": "Gain !M! Artifact. NL Gain !M! Dexterity. NL Gain 5 Plated Armor. NL Gain !B! Shielding.",
 	"UPGRADE_DESCRIPTION": "Gain !M! Artifact. NL Gain !M! Dexterity. NL Gain 1 Intangible. NL Gain 5 Plated Armor. NL Gain !B! Shielding."
   },
+  "Replay:Sssssssssstrike": {
+    "NAME": "Sssstrike",
+    "DESCRIPTION": "Deal !D! damage, plus an additional !D! for each [E] this cost. NL Refund !M!. NL Snecko."
+  },
   "Crow Ritual": {
     "NAME": "Awakened One Ritual",
     "DESCRIPTION": "Add !M! Ritual Components to your draw and discard piles. If 5 are ever in your hand at once, they become !D! damage Attacks."
@@ -320,10 +325,6 @@
 	"NAME": "Spreading Infection",
 	"DESCRIPTION": "Unplayable. NL At the end of your turn, duplicate all other Status and Curse cards in your hand."
   },
-  "Faulty Equipment": {
-	"NAME": "Faulty Equipment",
-	"DESCRIPTION": "Unplayable. NL Can only be Exhausted or removed from your deck by Upgrading."
-  },
   "Amnesia": {
 	"NAME": "Amnesia",
 	"DESCRIPTION": "Unplayable. NL At the end of your turn, Exhaust your hand."
@@ -335,6 +336,62 @@
   "Overencumbered": {
 	"NAME": "Over-Encumbered",
 	"DESCRIPTION": "Unplayable. NL When you draw this, add !M! Dazed to your hand and draw a card."
+  },
+  "ReplayTheSpireMod:Doomed": {
+	"NAME": "Doomed",
+	"DESCRIPTION": "Die. NL Fleeting."
+  },
+  "ReplayTheSpireMod:Faulty Equipment": {
+	"NAME": "Faulty Equipment",
+	"DESCRIPTION": "Unplayable. NL Soulbound.",
+	"UPGRADE_DESCRIPTION": "Fleeting."
+  },
+  "ReplayTheSpireMod:Restless Dread": {
+	"NAME": "Restless Dread",
+	"DESCRIPTION": "Unplayable. NL Grave. NL When drawn, Exhausts and is replaced with !M! random Curses."
+  },
+  "ReplayTheSpireMod:Misquitos": {
+	"NAME": "A Very Large Swarm Of Misquitos",
+	"DESCRIPTION": "Unplayable. NL When drawn, deal !M! damage to ALL fighters."
+  },
+  "ReplayTheSpireMod:Echoes of Time": {
+	"NAME": "Echoes of Time",
+	"DESCRIPTION": "Fetch up to !M! cards you've Exhausted this combat. NL Grave. NL Purge."
+  },
+  "ReplayTheSpireMod:Necrogeddon": {
+	"NAME": "Necrogeddon",
+	"DESCRIPTION": "Deal damage equal to the number of cards you've Exhausted this combat. NL Grave.",
+	"UPGRADE_DESCRIPTION": "Deal damage equal to the number of cards you've Exhausted this combat to ALL enemies. NL Grave.",
+	"EXTENDED_DESCRIPTION": [
+    	" NL (Deals !D! damage)"
+    ]
+  },
+  "ReplayTheSpireMod:Haul": {
+	"NAME": "Haul",
+	"DESCRIPTION": "Draw your entire draw pile. NL You cannot draw any more cards this turn. NL Exhaust.",
+	"UPGRADE_DESCRIPTION": "Draw your entire draw pile. NL Exhaust."
+  },
+  "ReplayTheSpireMod:Chaos Vortex": {
+	"NAME": "Chaos Vortex",
+	"DESCRIPTION": "Gain !B! Shielding. NL !M! card you draw each turn has its stats and effects scrambled."
+  },
+  "ReplayTheSpireMod:Brewmster": {
+	"NAME": "Brewmaster",
+	"DESCRIPTION": "Gain a random potion at the start of each round. NL Ethereal.",
+	"UPGRADE_DESCRIPTION": "Gain a random potion at the start of each round."
+  },
+  "ReplayTheSpireMod:Dark Transmutation": {
+	"NAME": "Dark Transmutation",
+	"DESCRIPTION": "Add X random Black cards to your hand. NL They cost 1 less this round. NL Exhaust.",
+	"UPGRADE_DESCRIPTION": "Add X random Black cards to your hand. NL They cost 1 less this round. NL Refund 1. NL Exhaust."
+  },
+  "ReplayTheSpireMod:Rythmic Step": {
+	"NAME": "Rythmic Step",
+	"DESCRIPTION": "Draw !M! cards. NL Switches into Rythmic Lunge."
+  },
+  "ReplayTheSpireMod:Rythmic Lunge": {
+	"NAME": "Rythmic Step",
+	"DESCRIPTION": "Deal !D! damage. NL Switches into Rythmic Step."
   },
   "Ghost Swipe": {
     "NAME": "Ghost Swipe",
@@ -453,5 +510,10 @@
     "NAME": "Power Mimicry",
     "DESCRIPTION": "Copy 1 stack of a random enemy buff X times. NL Refund !M!. ",
     "UPGRADE_DESCRIPTION": "Copy 1 stack of a random enemy buff X times. NL Refund !M!. "
+  },
+  "m_BoundBlade": {
+    "NAME": "Bound Blade",
+    "DESCRIPTION": "Cantrip. NL Add a Shiv to your hand. NL Draw a card.",
+    "UPGRADE_DESCRIPTION": "Cantrip. NL Add an Upgraded Shiv to your hand. NL Draw a card."
   }
 }

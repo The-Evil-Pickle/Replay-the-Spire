@@ -52,7 +52,7 @@
 		      <artifactId>InfiniteSpire</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/Infinite_Spire.jar</systemPath>
+          <systemPath>${basedir}/../lib/InfiniteSpire.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>coloredmap</groupId>
@@ -89,6 +89,20 @@
 		      <scope>system</scope>
           <systemPath>${basedir}/../lib/StSLib.jar</systemPath>
 	      </dependency>
+        <dependency>
+	        <groupId>mystic</groupId>
+		      <artifactId>TheMystic</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/TheMystic.jar</systemPath>
+	      </dependency>
+        <dependency>
+	        <groupId>deciple</groupId>
+		      <artifactId>TheDisciple</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/TheDisciple.jar</systemPath>
+	      </dependency>
     </dependencies>
   <build>
     <plugins>
@@ -103,5 +117,5 @@
     </plugins>
 	<finalName>${project.artifactId}</finalName>
   </build>
-  <version>1.1.7</version>
+  <version>1.1.9</version>
 </project>

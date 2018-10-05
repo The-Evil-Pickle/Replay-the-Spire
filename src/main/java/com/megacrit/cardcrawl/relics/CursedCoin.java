@@ -8,11 +8,11 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 public class CursedCoin extends AbstractRelic
 {
-    public static final String ID = "Cursed Coin";
+    public static final String ID = "ReplayTheSpireMod:CursedCoin";
     private static final int GOLD_AMT = 150;
     
     public CursedCoin() {
-        super(ID, "oldCoin.png", RelicTier.SHOP, LandingSound.CLINK);
+        super(ID, "betaRelic.png", RelicTier.SHOP, LandingSound.CLINK);
     }
     
     @Override

@@ -18,7 +18,7 @@ import java.util.*;
 
 public class ReplayMonsterEncounterPatches {
 	
-	@SpirePatch(cls = "com.megacrit.cardcrawl.helpers.MonsterHelper", method = "getEncounter")
+	//@SpirePatch(cls = "com.megacrit.cardcrawl.helpers.MonsterHelper", method = "getEncounter")
 	public static class ReplayEncounterPatch {
 		public static MonsterGroup Postfix(MonsterGroup __result, final String key) {
 			switch (key) {
@@ -65,7 +65,7 @@ public class ReplayMonsterEncounterPatches {
 		}
 	}
 
-	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.Exordium", method = "initializeBoss")
+	//@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.Exordium", method = "initializeBoss")
 	public static class ReplayExordiumBossListPatch {
 		public static void Prefix(Exordium __Instance) {
 			//Exordium.bossList.add("Fading Forest");
@@ -91,9 +91,10 @@ public class ReplayMonsterEncounterPatches {
 			}
 		}
 	}
-	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.TheCity", method = "initializeBoss")
+	//@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.TheCity", method = "initializeBoss")
 	public static class ReplayCityBossListPatch {
-		public static void Prefix(TheCity __Instance) {
+		@SpireInsertPatch(rloc=1)
+		public static void InsertAfterClear(TheCity __Instance) {
 			if (!ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(AbesTreasure.ID)) {
 				TheCity.bossList.add("Pondfish");
 			}
@@ -101,10 +102,14 @@ public class ReplayMonsterEncounterPatches {
 	}
 	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.TheBeyond", method = "initializeBoss")
 	public static class ReplayBeyondBossListPatch {
-		public static void Prefix(TheBeyond __Instance) {
-			if (TheBeyond.bossList.contains(ReplayMapScoutEvent.bannedBoss)) {
+		public static void Postfix(TheBeyond __Instance) {
+			if (TheBeyond.bossList.size() > 1 && TheBeyond.bossList.contains(ReplayMapScoutEvent.bannedBoss)) {
 				TheBeyond.bossList.remove(ReplayMapScoutEvent.bannedBoss);
-				ReplayMapScoutEvent.bannedBoss = "none lol";
+				ReplayMapScoutEvent.bannedBoss = "none";
+			}
+			else if (ReplayMapScoutEvent.bannedBoss.equals("you're fucked lol")) {
+				TheBeyond.bossList.add(0, "LordOfAnnihilation");
+				ReplayMapScoutEvent.bannedBoss = "none";
 			}
 		}
 	}

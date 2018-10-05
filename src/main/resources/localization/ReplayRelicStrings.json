@@ -365,6 +365,14 @@
 	" gold and a random #rCurse."
 	]
   },
+  "ReplayTheSpireMod:WaspNest": {
+	"NAME": "Wasp Nest",
+	"FLAVOR": "Like a bee nest, but more evil.",
+    "DESCRIPTIONS": [
+	"Each time you lose HP in combat, gain #b",
+	" #yThorns."
+	]
+  },
   "ReplayTheSpireMod:Ninjato": {
 	"NAME": "Ninjato",
 	"FLAVOR": "Stab stab stab",
@@ -409,6 +417,15 @@
 	"FLAVOR": "The merchant is a strange man, but one of many skills.",
     "DESCRIPTIONS": [
 		"#rDowngrade a card. NL #yUpgrade a card."
+	]
+  },
+  "ReplayTheSpireMod:SealedPack": {
+	"NAME": "Sealed Pack",
+	"FLAVOR": "A standard 5-card booster pack. Maybe you'll get lucky?",
+    "DESCRIPTIONS": [
+		"Choose a #yBasic card to obtain. NL Choose a #yRare card to obtain. NL Choose a #yColorless card to obtain. NL Choose a #yBlack card to obtain. NL Choose a #rCurse to obtain. NL #rCurse cannot be skipped, and becomes #ySoulbound.",
+		"Let's see what's inside...",
+		"Pick your poison"
 	]
   },
   "Another Sword": {
@@ -572,7 +589,7 @@
     "NAME": "Raider's Mask",
 	"FLAVOR": "Leave no survivors.",
     "DESCRIPTIONS": [
-		"After a #yDark orb triggers its passive effect, if it has more stored damage than the HP of the lowest-health enemy, it is #yEvoked."
+		"At the end of your turn, if a #yDark orb has more stored damage than the HP of the lowest-health enemy, it is #yEvoked."
 	]
   },
   "agfadhgsfhsgergfn": {
@@ -685,9 +702,9 @@
     "DESCRIPTIONS": [
 		"At the start of combat, Channel #b1 #yHellfire.",
 		"At the start of combat, gain #b2 orb slots.",
-		" NL Certain Red cards can appear in future card reward screens.",
-		" NL Certain Blue cards can appear in future card reward screens.",
-		"At the start of combat, gain #b2 orb slots if you have none, or #yChannel #b1 #yHellfire otherwise. NL Certain Red and Blue cards can appear in futrure card reward screens."
+		" NL Certain #rRed cards can appear in future card reward screens.",
+		" NL Certain #bBlue cards can appear in future card reward screens.",
+		"At the start of combat, gain #b2 orb slots if you have none, or #yChannel #b1 #yHellfire otherwise. NL Certain #rRed and #bBlue cards can appear in future card reward screens."
 	]
   },
   "m_BlackCat":{
@@ -707,7 +724,7 @@
 		"FLAVOR": ".",
 		"DESCRIPTIONS": [
 			"Whenever you take damage during your turn, gain #b1 #yFuel. NL At the end of combat, gain HP equal to your total fuel, up to #b",
-			" max. NL Certain Red cards can now be obtained."
+			" max. NL Certain #rRed cards can now be obtained."
 		]
 	},
 	"m_ArcaneBlood": {
@@ -715,21 +732,35 @@
 		"FLAVOR": ".",
 		"DESCRIPTIONS": [
 			"At the end of combat, gain #b",
-			" HP for each different debuff you have. NL Certain Red cards can now be obtained."
+			" HP for each different debuff you have. NL Certain #rRed cards can now be obtained."
 		]
 	},
 	"m_ScarletBlood": {
 		"NAME": "Scarlet Blood",
 		"FLAVOR": ".",
 		"DESCRIPTIONS": [
-			"Each time you gain #yStrength, gain twice that many #yKnives. NL Certain Red cards can now be obtained.",
+			"Each time you gain #yStrength, gain twice that many #yKnives. NL Certain #rRed cards can now be obtained.",
 		]
 	},
 	"m_SnakeCloak": {
 		"NAME": "Cloak of the Snake",
 		"FLAVOR": ".",
 		"DESCRIPTIONS": [
-			"Draw #b2 additional cards on the first turn of combat. NL Certain Green cards can now be obtained.",
+			"Draw #b2 additional cards on the first turn of combat. NL Certain #gGreen cards can now be obtained.",
+		]
+	},
+	"m_BookOfShivs": {
+		"NAME": "Book of the Snake",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"Shuffle #b2 random #yCantrips into your draw pile at the start of combat. NL Certain #gGreen cards can now be obtained.",
+		]
+	},
+	"m_MercuryCore": {
+		"NAME": "Mercury Core",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the start of combat, #yReplicate 1 Mercury. NL Certain #bBlue cards can now be obtained.",
 		]
 	}
 	

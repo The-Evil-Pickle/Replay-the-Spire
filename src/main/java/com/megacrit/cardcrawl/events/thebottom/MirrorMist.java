@@ -15,8 +15,11 @@ import com.megacrit.cardcrawl.screens.select.*;
 import com.megacrit.cardcrawl.vfx.*;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
 
+//import beaked.characters.*;
 import blackrusemod.characters.*;
+import chronomuncher.character.*;
 import fruitymod.seeker.characters.*;
+import mysticmod.character.*;
 
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.relics.*;
@@ -181,12 +184,13 @@ public class MirrorMist
 			this.has_1 = CardHelper.hasCardWithID("Bash");
 			this.has_1b = CardHelper.hasCardWithID("Bash");
 			this.has_2 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Burning Blood");
+			this.has_2b = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Burning Blood");
 			this.loss_c_1 = new Bash();
 			this.gain_c_1 = new Survivor();
 			this.gain_c_1b = new Neutralize();
 			this.loss_r_2 = new BurningBlood();
-			this.gain_c_2 = new SelfRepair();
-			this.gain_c_2.upgrade();
+			this.gain_c_2b = new SelfRepair();
+			this.gain_c_2b.upgrade();
 			this.gain_r_2 = new IronCore();
 			break;
 		}
@@ -292,35 +296,85 @@ public class MirrorMist
 				this.has_2b = CardHelper.hasCardWithID("KidneyShot");
 				this.loss_r_2 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Uniform");
 				this.gain_r_2 = new m_SnakeCloak();
-				if (this.has_2b) {
-					for (final AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-						if (c.cardID.equals("KidneyShot")) {
-							this.loss_c_2b = c.makeCopy();
-						}
-					}
-					this.gain_c_2b = new Survivor();
-				}
+				this.loss_c_2b = CardLibrary.getCopy("KidneyShot");
+				this.gain_c_2b = new Survivor();
 				this.has_3 = CardHelper.hasCardWithID("HouseCleaning");
-				if (this.has_3) {
-					for (final AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-						if (c.cardID.equals("HouseCleaning")) {
-							this.loss_c_3 = c.makeCopy();
-						}
-					}
-					this.gain_c_3 = new Reprogram();
-				}
+				this.loss_c_3 = CardLibrary.getCopy("HouseCleaning");
+				this.gain_c_3 = new Reprogram();
 				this.has_3b = CardHelper.hasCardWithID("KidneyShot");
-				if (this.has_3b) {
-					for (final AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-						if (c.cardID.equals("KidneyShot")) {
-							this.loss_c_3b = c.makeCopy();
-						}
-					}
-					this.gain_c_3b = new Reboot();
-				}
+				this.loss_c_3b = CardLibrary.getCopy("KidneyShot");
+				this.gain_c_3b = new Reboot();
 				this.thirdOption = true;
 				break;
 			}
+			if (ReplayTheSpireMod.foundmod_mystic && AbstractDungeon.player instanceof MysticCharacter) {
+				this.has_1 = CardHelper.hasCardWithID("mysticmod:ShockingGrasp");
+				this.has_1b = CardHelper.hasCardWithID("mysticmod:ArcaneDodge");
+				this.loss_c_1 = CardLibrary.getCopy("mysticmod:ShockingGrasp");
+				this.gain_c_1 = new Bash();
+				this.loss_c_1b = CardLibrary.getCopy("mysticmod:ArcaneDodge");
+				this.gain_c_1b = new Leap();
+				this.has_2 = AbstractDungeon.player.hasRelic("mysticmod:SpellBook");
+				this.loss_r_2 = RelicLibrary.getRelic("mysticmod:SpellBook").makeCopy();
+				this.gain_r_2 = new m_BookOfShivs();
+				break;
+			}
+			if (ReplayTheSpireMod.foundmod_deciple && AbstractDungeon.player instanceof Chronomuncher) {
+				if (ReplayTheSpireMod.foundmod_hubris) {
+					this.has_1 = CardHelper.hasCardWithID("PatternShift");
+					this.loss_c_1 = CardLibrary.getCopy("PatternShift");
+					this.gain_c_1 = CardLibrary.getCopy("hubris:StunningStrike");
+					this.has_1b = CardHelper.hasCardWithID("SecondHand");
+					this.loss_c_1b = CardLibrary.getCopy("SecondHand");
+					this.gain_c_1b = CardLibrary.getCopy("hubris:ReadiedAction");
+				} else {
+					this.has_1 = AbstractDungeon.player.hasRelic("Chronometer");
+					this.has_1b = CardHelper.hasCardWithID("SecondHand");
+					this.loss_r_1 = RelicLibrary.getRelic("Chronometer").makeCopy();
+					this.gain_r_1 = new BurningBlood();
+					this.loss_c_1b = CardLibrary.getCopy("SecondHand");
+					this.gain_c_1b = new SpotWeakness();
+				}
+				this.has_2 = CardHelper.hasCardWithID("PatternShift");
+				this.has_2b = CardHelper.hasCardWithID("SecondHand");
+				this.loss_c_2 = CardLibrary.getCopy("PatternShift");
+				this.loss_c_2b = CardLibrary.getCopy("SecondHand");
+				this.gain_c_2 = new InfiniteBlades();
+				this.gain_c_2b = new WellLaidPlans();
+				this.has_3 = AbstractDungeon.player.hasRelic("Chronometer");
+				this.has_3b = CardHelper.hasCardWithID("SecondHand");
+				this.loss_r_3 = RelicLibrary.getRelic("Chronometer").makeCopy();
+				this.gain_r_3 = new m_MercuryCore();
+				this.loss_c_3b = CardLibrary.getCopy("SecondHand");
+				this.gain_c_3b = new WhiteNoise();
+				this.thirdOption = true;
+				break;
+			}
+			/*if (ReplayTheSpireMod.foundmod_beaked && AbstractDungeon.player instanceof BeakedTheCultist) {
+				int ceremonies = 0;
+				for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+					if (c.cardID.equals("beaked:Ceremony")) {
+						ceremonies++;
+					}
+				}
+				if (ceremonies > 1) {
+					this.has_1 = true;
+					this.has_1b = true;
+					this.loss_c_1 = CardLibrary.getCopy("beaked:Ceremony");
+					this.loss_c_1b = CardLibrary.getCopy("beaked:Ceremony");
+					this.gain_c_1 = new DemonForm();
+				} else {
+					this.has_1 = AbstractDungeon.player.hasRelic("beaked:MendingPlumage");
+					this.has_1b = CardHelper.hasCardWithID("beaked:Ceremony");
+					if (this.has_1) {
+						this.loss_r_1 = AbstractDungeon.player.getRelic("beaked:MendingPlumage");
+					}
+					this.gain_r_1 = new BurningBlood();
+					this.loss_c_1b = CardLibrary.getCopy("beaked:Ceremony");
+					this.gain_c_1b = new Inflame();
+				}
+				break;
+			}*/
 			
 			this.moddedguy = true;
 		}

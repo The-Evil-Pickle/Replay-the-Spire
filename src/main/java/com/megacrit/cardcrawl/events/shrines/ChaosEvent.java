@@ -145,10 +145,10 @@ public class ChaosEvent
 		if (AbstractDungeon.miscRng.randomBoolean(0.5F)) {
 			AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.curse.makeCopy(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
 		}
-		AbstractDungeon.getCurrRoom().rewards.clear();
-		AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(this.ring.makeCopy()));
-		AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
 		AbstractDungeon.combatRewardScreen.open();
+		AbstractDungeon.combatRewardScreen.rewards.clear();
+		AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(this.ring.makeCopy()));
+		AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
         //UnlockTracker.markCardAsSeen("Hallucinations");
         this.imageEventText.updateBodyText(D_RESULT);
       }
@@ -158,10 +158,10 @@ public class ChaosEvent
 		if (AbstractDungeon.miscRng.randomBoolean(0.5F)) {
 			AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.curse2.makeCopy(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
 		}
-		AbstractDungeon.getCurrRoom().rewards.clear();
-		AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(this.ring2.makeCopy()));
-		AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
 		AbstractDungeon.combatRewardScreen.open();
+		AbstractDungeon.combatRewardScreen.rewards.clear();
+		AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(this.ring2.makeCopy()));
+		AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
         //UnlockTracker.markCardAsSeen("Hallucinations");
         this.imageEventText.updateBodyText(D_RESULT);
       }
@@ -171,11 +171,11 @@ public class ChaosEvent
 		if (AbstractDungeon.miscRng.randomBoolean(0.75F)) {
 			AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.getRandoCurse(), (Settings.WIDTH * 2.0F) / 3.0F, Settings.HEIGHT / 2.0F));
 		}
-		AbstractDungeon.getCurrRoom().rewards.clear();
-		AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(this.ring.makeCopy()));
-		AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(this.ring2.makeCopy()));
-		AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
 		AbstractDungeon.combatRewardScreen.open();
+		AbstractDungeon.combatRewardScreen.rewards.clear();
+		AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(this.ring.makeCopy()));
+		AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(this.ring2.makeCopy()));
+		AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
         //UnlockTracker.markCardAsSeen("Hallucinations");
         this.imageEventText.updateBodyText(D_RESULT);
       }

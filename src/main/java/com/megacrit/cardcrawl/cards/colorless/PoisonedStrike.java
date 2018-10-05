@@ -32,7 +32,7 @@ public class PoisonedStrike
   public PoisonedStrike()
   {
     super("Poisoned Strike", NAME, "status/beta", "status/beta", 0, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
-    CardTags.addTags(this, BaseModTags.STRIKE);
+    this.tags.add(AbstractCard.CardTags.STRIKE);
     this.baseDamage = 3;
   }
   
