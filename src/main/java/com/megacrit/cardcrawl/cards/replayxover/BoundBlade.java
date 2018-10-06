@@ -1,7 +1,7 @@
 package com.megacrit.cardcrawl.cards.replayxover;
 
 import mysticmod.cards.*;
-import mysticmod.mystictags.MysticTags;
+import mysticmod.patches.MysticTags;
 
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.characters.*;
@@ -30,6 +30,7 @@ public class BoundBlade extends AbstractMysticCard
     public BoundBlade() {
         super(ID, BoundBlade.NAME, "mysticmod/images/cards/diviningblow.png", 0, BoundBlade.DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.NONE);
         this.crystalBallToggle = false;
+        this.tags.add(MysticTags.IS_CANTRIP);
     }
     
     public void use(final AbstractPlayer p, final AbstractMonster m) {
@@ -47,10 +48,10 @@ public class BoundBlade extends AbstractMysticCard
     @Override
     public boolean isSpell() {
         if (AbstractDungeon.player == null || !AbstractDungeon.player.hasPower("mysticmod:SpellsPlayedPower") || AbstractDungeon.player.getPower("mysticmod:SpellsPlayedPower").amount <= 2) {
-            //CardTags.addTags((AbstractCard)this, new CardTags.Tag[] { MysticTags.IS_SPELL });
+            this.tags.add(MysticTags.IS_SPELL);
             return true;
         }
-        //CardTags.removeTags((AbstractCard)this, new CardTags.Tag[] { MysticTags.IS_SPELL });
+        this.tags.remove(MysticTags.IS_SPELL);
         return super.isSpell();
     }
     

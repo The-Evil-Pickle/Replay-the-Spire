@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic.LandingSound;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
 import madsciencemod.actions.common.GainFuelAction;
+import mysticmod.MysticMod;
 import mysticmod.cards.cantrips.AcidSplash;
 import mysticmod.cards.cantrips.Prestidigitation;
 import mysticmod.cards.cantrips.RayOfFrost;
@@ -39,39 +40,15 @@ public class m_BookOfShivs extends AbstractRelic
 
     public void atBattleStartPreDraw() {
         for (int i=0; i < 2; i++) {
-        	final int randomlyGeneratedNumber = AbstractDungeon.cardRandomRng.random(5);
-	        switch (randomlyGeneratedNumber) {
-	            case 0: {
-	                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new AcidSplash(), 1, true, true));
-	                break;
-	            }
-	            case 1: {
-	                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Prestidigitation(), 1, true, true));
-	                break;
-	            }
-	            case 2: {
-	                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new RayOfFrost(), 1, true, true));
-	                break;
-	            }
-	            case 3: {
-	                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Spark(), 1, true, true));
-	                break;
-	            }
-	            case 4: {
-	                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new ReadMagic(), 1, true, true));
-	                break;
-	            }
-	            case 5: {
-	                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new BoundBlade(), 1, true, true));
-	                break;
-	            }
-	        }
+        	AbstractCard randomCantrip = MysticMod.cantripsGroup.get(AbstractDungeon.cardRandomRng.random(MysticMod.cantripsGroup.size()-1)).makeCopy();
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(randomCantrip, 1, true, true));
         }
         this.flash();
     }
 	@Override
     public void onEquip() {
 		AbstractDungeon.bossRelicPool.add(WristBlade.ID);
+		MysticMod.cantripsGroup.add(new BoundBlade());
         final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
         tmpPool.add(new AThousandCuts());
         tmpPool.add(new Adrenaline());

@@ -25,7 +25,7 @@ public class DarkTransmutation extends BlackCard
     
     public DarkTransmutation() {
         super(ID, NAME, "cards/replay/replayBetaSkillDark.png", COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardTarget.SELF);
-        this.exhaust = true;
+        this.purgeOnUse = true;
     }
     
     public AbstractCard makeCopy() {

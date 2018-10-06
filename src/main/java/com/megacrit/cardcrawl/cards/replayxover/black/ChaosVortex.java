@@ -27,7 +27,6 @@ public class ChaosVortex extends BlackCard
         this.baseBlock = 10;
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
-        GraveField.grave.set(this, true);
     }
     
     public AbstractCard makeCopy() {

@@ -382,8 +382,8 @@
   },
   "ReplayTheSpireMod:Dark Transmutation": {
 	"NAME": "Dark Transmutation",
-	"DESCRIPTION": "Add X random Black cards to your hand. NL They cost 1 less this round. NL Exhaust.",
-	"UPGRADE_DESCRIPTION": "Add X random Black cards to your hand. NL They cost 1 less this round. NL Refund 1. NL Exhaust."
+	"DESCRIPTION": "Add X random Black cards to your hand. NL They cost 1 less this round. NL Purge.",
+	"UPGRADE_DESCRIPTION": "Add X random Black cards to your hand. NL They cost 1 less this round. NL Refund 1. NL Purge."
   },
   "ReplayTheSpireMod:Rythmic Step": {
 	"NAME": "Rythmic Step",
