@@ -333,6 +333,10 @@
 	"NAME": "Abe's Revenge",
 	"DESCRIPTION": "Unplayable. NL At the end of your turn, gain !M! Frail. NL Ethereal."
   },
+  "MirrorMistCurse": {
+	"NAME": "The Mists",
+	"DESCRIPTION": "Unplayable. NL You somehow had no transformable cards, so you got this instead."
+  },
   "Overencumbered": {
 	"NAME": "Over-Encumbered",
 	"DESCRIPTION": "Unplayable. NL When you draw this, add !M! Dazed to your hand and draw a card."
@@ -377,8 +381,8 @@
   },
   "ReplayTheSpireMod:Brewmster": {
 	"NAME": "Brewmaster",
-	"DESCRIPTION": "Gain a random potion at the start of each round. NL Ethereal.",
-	"UPGRADE_DESCRIPTION": "Gain a random potion at the start of each round."
+	"DESCRIPTION": "Obtain a random potion at the start of each round. NL Ethereal.",
+	"UPGRADE_DESCRIPTION": "Obtain a random potion at the start of each round."
   },
   "ReplayTheSpireMod:Dark Transmutation": {
 	"NAME": "Dark Transmutation",

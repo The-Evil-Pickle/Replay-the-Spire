@@ -12,7 +12,7 @@ public class CursedCoin extends AbstractRelic
     private static final int GOLD_AMT = 150;
     
     public CursedCoin() {
-        super(ID, "betaRelic.png", RelicTier.SHOP, LandingSound.CLINK);
+        super(ID, "cursedCoin.png", RelicTier.SHOP, LandingSound.CLINK);
     }
     
     @Override

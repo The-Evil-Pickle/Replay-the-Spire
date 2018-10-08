@@ -23,7 +23,7 @@ public class m_MercuryCore extends AbstractRelic
         super(ID, "crackedOrb.png", RelicTier.SPECIAL, LandingSound.CLINK);
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip("Replicate", "A #yReplica will float above your character, activating its effect every turn. When the countdown reaches 0, it will #yshatter and be removed."));
+        //this.tips.add(new PowerTip("Replicate", "A #yReplica will float above your character, activating its effect every turn. When the countdown reaches 0, it will #yshatter and be removed."));
         this.tips.add(new PowerTip("Mercury", "Deals #g3 damage to ALL enemies at the start of your turn. NL #pShatters #pin #b4 #pturns."));
         this.initializeTips();
     }

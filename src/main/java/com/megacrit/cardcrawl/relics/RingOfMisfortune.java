@@ -9,6 +9,8 @@ import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.powers.*;
 import com.badlogic.gdx.math.*;
+import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
+
 import java.util.*;
 
 public class RingOfMisfortune extends AbstractRelic
@@ -25,9 +27,8 @@ public class RingOfMisfortune extends AbstractRelic
         return this.DESCRIPTIONS[0] + RingOfMisfortune.BLOCK + this.DESCRIPTIONS[1] + RingOfMisfortune.BLOCK + this.DESCRIPTIONS[2];
     }
     
-    
     public void atBattleStartPreDraw() {
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(this.getCurse(), 1));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(AbstractDungeon.returnRandomCurse(), 1));
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         this.flash();
     }
@@ -35,17 +36,12 @@ public class RingOfMisfortune extends AbstractRelic
     public void onCardDraw(final AbstractCard drawnCard) {
         if (drawnCard.type == AbstractCard.CardType.CURSE) {
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
-			AbstractDungeon.actionManager.addToBottom(new ReplayGainShieldingAction(AbstractDungeon.player, AbstractDungeon.player, RingOfMisfortune.BLOCK));
+			AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(AbstractDungeon.player, AbstractDungeon.player, RingOfMisfortune.BLOCK));
             this.flash();
         } else if (drawnCard.type == AbstractCard.CardType.STATUS) {
 			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, RingOfMisfortune.BLOCK));
             this.flash();
 		}
-    }
-    
-    protected AbstractCard getCurse() {
-        final AbstractCard[] pool = { new Decay(), new Doubt(), new Injury(), new Normality(), new Regret(), new Voices(), new LoomingEvil(), new Overencumbered(), new Delirium(), new SpreadingInfection(), new Sickly()};
-        return pool[MathUtils.random(0, pool.length - 1)];
     }
     
     @Override

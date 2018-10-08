@@ -277,7 +277,7 @@ repeat: none
   orig: 128, 128
   offset: 23, 23
   index: -1
-128/hello
+128/brewmaster
   rotate: false
   xy: 1006, 242
   size: 84, 86
@@ -823,7 +823,7 @@ repeat: none
   orig: 48, 48
   offset: 8, 8
   index: -1
-48/hello
+48/brewmaster
   rotate: false
   xy: 1041, 138
   size: 32, 33

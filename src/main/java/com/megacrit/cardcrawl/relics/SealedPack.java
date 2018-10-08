@@ -34,10 +34,12 @@ public class SealedPack extends AbstractRelic
 
 	private boolean cursesSelected;
 	private boolean cursesOpened;
+	private boolean rewardsOpened;
     public SealedPack() {
         super(ID, "betaRelic.png", RelicTier.BOSS, LandingSound.FLAT);
 		this.cursesSelected = true;
 		this.cursesOpened = true;
+		this.rewardsOpened = true;
     }
     
     @Override
@@ -86,16 +88,9 @@ public class SealedPack extends AbstractRelic
     
     @Override
     public void onEquip() {
-        AbstractDungeon.combatRewardScreen.open(this.DESCRIPTIONS[1]);
-        AbstractDungeon.combatRewardScreen.rewards.clear();
-        for (int i = 0; i < 4; ++i) {
-        	RewardItem r = new RewardItem();
-        	SetUpCardType(r, i);
-        	AbstractDungeon.combatRewardScreen.rewards.add(r);
-        }
-        AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.0f;
 		this.cursesSelected = false;
 		this.cursesOpened = false;
+		this.rewardsOpened = false;
     }
 
     @Override
@@ -121,23 +116,36 @@ public class SealedPack extends AbstractRelic
     	        AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
     	        AbstractDungeon.gridSelectScreen.open(tmp, 1, this.DESCRIPTIONS[2], false, false, false, false);
     			
-        	} else if (!this.cursesSelected && AbstractDungeon.gridSelectScreen.selectedCards.size() == 1) {
-        		this.cursesSelected = true;
-				for (final AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
-					if (AbstractDungeon.player.hasRelic("Omamori") && AbstractDungeon.player.getRelic("Omamori").counter != 0) {
-						((Omamori)AbstractDungeon.player.getRelic("Omamori")).use();
-					} else {
-						AbstractCard c = card.makeCopy();
-						if (!SoulboundField.soulbound.get(c)) {
-							SoulboundField.soulbound.set(c, true);
-							c.rawDescription += " NL Soulbound.";
-							c.initializeDescription();
-						}
-						AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
-					}
-				}
+        	} else if (!this.cursesSelected) {
+        		if (AbstractDungeon.gridSelectScreen.selectedCards.size() == 1) {
+            		this.cursesSelected = true;
+    				for (final AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
+    					if (AbstractDungeon.player.hasRelic("Omamori") && AbstractDungeon.player.getRelic("Omamori").counter != 0) {
+    						((Omamori)AbstractDungeon.player.getRelic("Omamori")).use();
+    					} else {
+    						AbstractCard c = card.makeCopy();
+    						if (!SoulboundField.soulbound.get(c)) {
+    							SoulboundField.soulbound.set(c, true);
+    							c.rawDescription += " NL Soulbound.";
+    							c.initializeDescription();
+    						}
+    						AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
+    					}
+    				}
+    	            AbstractDungeon.gridSelectScreen.selectedCards.clear();	
+        		}
+        	} else if (!this.rewardsOpened) {
+        		this.rewardsOpened = true;
+        		AbstractDungeon.combatRewardScreen.open(this.DESCRIPTIONS[1]);
+                AbstractDungeon.combatRewardScreen.rewards.clear();
+                for (int i = 0; i < 4; ++i) {
+                	RewardItem r = new RewardItem();
+                	SetUpCardType(r, i);
+                	AbstractDungeon.combatRewardScreen.rewards.add(r);
+                }
+                AbstractDungeon.combatRewardScreen.positionRewards();
+                AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.0f;
 	            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
-	            AbstractDungeon.gridSelectScreen.selectedCards.clear();
         	}
         }
     }

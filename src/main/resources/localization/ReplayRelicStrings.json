@@ -373,6 +373,13 @@
 	" #yThorns."
 	]
   },
+  "ReplayTheSpireMod:Onyx Gauntlets": {
+	"NAME": "Onyx Gauntlets",
+	"FLAVOR": ".",
+    "DESCRIPTIONS": [
+	"Gain [E] each time you draw a card. NL Drawing a card increases its cost by #b1 for the round. NL At the start of combat, add a random #rCurse to your draw pile for each X-cost card in your deck."
+	]
+  },
   "ReplayTheSpireMod:Ninjato": {
 	"NAME": "Ninjato",
 	"FLAVOR": "Stab stab stab",
@@ -674,7 +681,7 @@
 	"FLAVOR": "Weary wear.",
 	"DESCRIPTIONS": [
 	"At the start of combat add a random #rCurse to your discard pile. NL Each time you draw a #rCurse, gain [E] and #b",
-	" #yShielding. NL Each time you draw a #rStatus, gain #b",
+	" #yTemporary #yHP. NL Each time you draw a #rStatus, gain #b",
 	" #yBlock."
 	]
   },

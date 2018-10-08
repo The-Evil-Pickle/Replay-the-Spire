@@ -21,7 +21,7 @@ public class OozeArmor extends AbstractRelic
     }
     
     public OozeArmor(final AbstractPlayer.PlayerClass c) {
-        super("Ooze Armor", "betaRelic.png", RelicTier.BOSS, LandingSound.HEAVY);
+        super("Ooze Armor", "oozeArmor.png", RelicTier.BOSS, LandingSound.HEAVY);
     }
     
     @Override

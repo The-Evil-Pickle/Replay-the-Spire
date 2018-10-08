@@ -12,6 +12,10 @@ import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.unlock.*;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
+
+import basemod.BaseMod;
+import basemod.helpers.RelicType;
+
 import com.megacrit.cardcrawl.rewards.*;
 import com.badlogic.gdx.math.MathUtils;
 import java.util.ArrayList;
@@ -31,6 +35,64 @@ public class ChaosEvent
   private AbstractRelic ring2;
   private AbstractCard curse;
   private AbstractCard curse2;
+
+  public static class RingListEntry {
+	  public AbstractRelic ring;
+	  public AbstractPlayer.PlayerClass classRestriction;
+	  public boolean moddedAlowed;
+	  public String[] relicConflictions;
+	  public RingListEntry(AbstractRelic ring) {
+		  this(ring, null, true, new String[0]);
+	  }
+	  public RingListEntry(AbstractRelic ring, AbstractPlayer.PlayerClass classRestriction, boolean moddedAlowed) {
+		  this(ring, classRestriction, moddedAlowed, new String[0]);
+	  }
+	  public RingListEntry(AbstractRelic ring, String[] relicConflictions) {
+		  this(ring, null, true, relicConflictions);
+	  }
+	  public RingListEntry(AbstractRelic ring, AbstractPlayer.PlayerClass classRestriction, boolean moddedAlowed, String[] relicConflictions) {
+		  this.ring = ring;
+		  this.classRestriction = classRestriction;
+		  this.moddedAlowed = moddedAlowed;
+		  this.relicConflictions = relicConflictions;
+	  }
+	  public boolean isValid() {
+		  if (this.ring == null) {
+			  return false;
+		  }
+		  if (AbstractDungeon.player.hasRelic(this.ring.relicId)) {
+			  return false;
+		  }
+		  if (this.classRestriction != null) {
+			  if (AbstractDungeon.player.chosenClass != this.classRestriction) {
+				  if (AbstractDungeon.player.chosenClass != AbstractPlayer.PlayerClass.IRONCLAD && AbstractDungeon.player.chosenClass != AbstractPlayer.PlayerClass.THE_SILENT && AbstractDungeon.player.chosenClass != AbstractPlayer.PlayerClass.DEFECT) {
+					  if (!this.moddedAlowed) {
+						  return false;
+					  }
+				  } else {
+					  return false;
+				  }
+			  }
+		  }
+		  if (this.relicConflictions.length > 0) {
+			  for (String s : this.relicConflictions) {
+				  if (AbstractDungeon.player.hasRelic(s)) {
+					  return false;
+				  }
+			  }
+		  }
+		  return true;
+	  }
+  }
+  private static ArrayList<RingListEntry> ringList = new ArrayList<RingListEntry>();
+  public static void addRing(AbstractRelic r) {
+	  ChaosEvent.ringList.add(new RingListEntry(r));
+	  BaseMod.addRelic(r, RelicType.SHARED);
+  }
+  public static void addRing(RingListEntry r) {
+	  ChaosEvent.ringList.add(r);
+	  BaseMod.addRelic(r.ring, RelicType.SHARED);
+  }
   
   private static enum CurScreen
   {
@@ -83,43 +145,18 @@ public class ChaosEvent
 	
 	this.curse = this.getRandoCurse();
 	this.curse2 = this.getRandoCurse();
+	while (this.curse.cardID.equals(this.curse2.cardID)) {
+		this.curse2 = this.getRandoCurse();
+	}
 	ArrayList<AbstractRelic> rings = new ArrayList<AbstractRelic>();
-	rings.add(new RingOfFury());
-	rings.add(new RingOfPeace());
-	if (!AbstractDungeon.player.hasRelic("Snecko Eye") && !AbstractDungeon.player.hasRelic("Snecko Heart")) {
-		rings.add(new RingOfPanic());
-	}
-	rings.add(new RingOfHypnosis());
-	rings.add(new RingOfMisfortune());
-	switch(AbstractDungeon.player.chosenClass) {
-		case IRONCLAD: {
-			if (!AbstractDungeon.player.hasRelic("Dodecahedron")) {
-				rings.add(new RingOfSearing());
-			}
-			break;
-		}
-		case THE_SILENT: {
-			rings.add(new RingOfFangs());
-			break;
-		}
-		case DEFECT: {
-			rings.add(new RingOfShattering());
-			break;
-		}
-		default: {
-			rings.add(new RingOfFangs());
-			if (!AbstractDungeon.player.hasRelic("Dodecahedron")) {
-				rings.add(new RingOfSearing());
-			}
+	for (RingListEntry e : ringList) {
+		if (e.isValid()) {
+			rings.add(e.ring.makeCopy());
 		}
 	}
-	if (AbstractDungeon.id.equals("TheBeyond")) {
+	if (AbstractDungeon.id.equals("TheBeyond") && AbstractDungeon.ascensionLevel < 20 && !Settings.isEndless) {
 		if (!AbstractDungeon.player.hasRelic("Ring of Chaos")) {
 			rings.add(new RingOfChaos());
-		}
-	} else {
-		if (!AbstractDungeon.player.hasRelic("Ectoplasm")) {
-			rings.add(new RingOfGreed());
 		}
 	}
 	
@@ -148,6 +185,7 @@ public class ChaosEvent
 		AbstractDungeon.combatRewardScreen.open();
 		AbstractDungeon.combatRewardScreen.rewards.clear();
 		AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(this.ring.makeCopy()));
+		AbstractDungeon.combatRewardScreen.positionRewards();
 		AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
         //UnlockTracker.markCardAsSeen("Hallucinations");
         this.imageEventText.updateBodyText(D_RESULT);
@@ -161,6 +199,7 @@ public class ChaosEvent
 		AbstractDungeon.combatRewardScreen.open();
 		AbstractDungeon.combatRewardScreen.rewards.clear();
 		AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(this.ring2.makeCopy()));
+		AbstractDungeon.combatRewardScreen.positionRewards();
 		AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
         //UnlockTracker.markCardAsSeen("Hallucinations");
         this.imageEventText.updateBodyText(D_RESULT);
@@ -175,6 +214,7 @@ public class ChaosEvent
 		AbstractDungeon.combatRewardScreen.rewards.clear();
 		AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(this.ring.makeCopy()));
 		AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(this.ring2.makeCopy()));
+		AbstractDungeon.combatRewardScreen.positionRewards();
 		AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
         //UnlockTracker.markCardAsSeen("Hallucinations");
         this.imageEventText.updateBodyText(D_RESULT);

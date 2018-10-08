@@ -24,7 +24,7 @@ public class GrabBag extends AbstractRelic
     
     
     public GrabBag() {
-        super(ID, "betaRelic.png", AbstractRelic.RelicTier.BOSS, AbstractRelic.LandingSound.FLAT);
+        super(ID, "grabBag.png", AbstractRelic.RelicTier.BOSS, AbstractRelic.LandingSound.FLAT);
         this.hasRelicOne = true;
         this.hasRelicTwo = true;
     }
@@ -87,7 +87,7 @@ public class GrabBag extends AbstractRelic
         this.hasRelicTwo = false;
         GrabBag.energyRelics.clear();
         GrabBag.nonEnergyRelics.clear();
-        String ckd = ((new CursedKey()).DESCRIPTIONS[1]);
+        String ckd = ((new CursedKey()).DESCRIPTIONS[1]) + ((new CursedKey()).DESCRIPTIONS[0]);
         String akd = "Gain [E] at the start of each turn.";
         String energyDesc = (ckd.substring(0, ckd.indexOf("[")));
         String energyDesc2 = (ckd.substring(ckd.indexOf("]") + 2, ckd.indexOf(".")));
@@ -107,6 +107,10 @@ public class GrabBag extends AbstractRelic
         	if (g1) {
         		if (g2) {
         			GrabBag.energyRelics.add(r.relicId);
+        		} else {
+        			if (r instanceof OnyxGauntlets) {
+        				GrabBag.energyRelics.add(r.relicId);
+        			}
         		}
         	} else {
         		GrabBag.nonEnergyRelics.add(r.relicId);

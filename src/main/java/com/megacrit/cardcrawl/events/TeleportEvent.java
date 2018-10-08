@@ -2,11 +2,8 @@ package com.megacrit.cardcrawl.events;
 
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.map.MapRoomNode;
-import com.megacrit.cardcrawl.cards.*;
-import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.vfx.cardManip.*;
-import com.megacrit.cardcrawl.vfx.*;
 import com.megacrit.cardcrawl.events.*;
 import com.megacrit.cardcrawl.core.*;
 import java.util.*;
@@ -30,6 +27,7 @@ public class TeleportEvent extends AbstractImageEvent
     }
     
     protected void buttonEffect(final int buttonPressed) {
+    	AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
     	AbstractDungeon.currMapNode = teleDest;
     	this.openMap();
     }

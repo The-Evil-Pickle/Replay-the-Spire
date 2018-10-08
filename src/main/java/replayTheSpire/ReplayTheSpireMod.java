@@ -905,7 +905,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		RelicLibrary.addBlue(new SolarPanel());
 		RelicLibrary.addBlue(new Carrot());
 		RelicLibrary.addBlue(new Geode());
-		//RelicLibrary.addBlue(new RaidersMask());
+		RelicLibrary.addBlue(new RaidersMask());
 		BaseMod.addRelic(new Arrowhead(), RelicType.SHARED);
 		BaseMod.addRelic(new AbesTreasure(), RelicType.SHARED);
 		BaseMod.addRelic(new Bandana(), RelicType.SHARED);
@@ -939,21 +939,13 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new Multitool(), RelicType.SHARED);
 		BaseMod.addRelic(new Ninjato(), RelicType.SHARED);
 		BaseMod.addRelic(new OnionRing(), RelicType.SHARED);
+		//BaseMod.addRelic(new OnyxGauntlets(), RelicType.SHARED);
 		BaseMod.addRelic(new OozeArmor(), RelicType.RED);
 		BaseMod.addRelic(new PainkillerHerb(), RelicType.SHARED);
 		BaseMod.addRelic(new PondfishScales(), RelicType.SHARED);
 		BaseMod.addRelic(new PetGhost(), RelicType.SHARED);
 		BaseMod.addRelic(new QuantumEgg(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfChaos(), RelicType.SHARED);
-		BaseMod.addRelic(new RingOfFury(), RelicType.SHARED);
-		BaseMod.addRelic(new RingOfPeace(), RelicType.SHARED);
-		BaseMod.addRelic(new RingOfFangs(), RelicType.SHARED);
-		BaseMod.addRelic(new RingOfPanic(), RelicType.SHARED);
-		BaseMod.addRelic(new RingOfSearing(), RelicType.SHARED);
-		BaseMod.addRelic(new RingOfShattering(), RelicType.SHARED);
-		BaseMod.addRelic(new RingOfHypnosis(), RelicType.SHARED);
-		BaseMod.addRelic(new RingOfGreed(), RelicType.SHARED);
-		BaseMod.addRelic(new RingOfMisfortune(), RelicType.SHARED);
 		BaseMod.addRelic(new SecondSwordRelic(), RelicType.RED);
 		BaseMod.addRelic(new SimpleRune(), RelicType.SHARED);
 		BaseMod.addRelic(new SizzlingBlood(), RelicType.SHARED);
@@ -961,10 +953,23 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new SnakeBasket(), RelicType.GREEN);
 		BaseMod.addRelic(new SneckoScales(), RelicType.GREEN);
 		BaseMod.addRelic(new SneckoHeart(), RelicType.SHARED);
+		//BaseMod.addRelic(new ReplaySpearhead(), RelicType.RED);
 		BaseMod.addRelic(new TagBag(), RelicType.SHARED);
 		BaseMod.addRelic(new TigerMarble(), RelicType.SHARED);
 		BaseMod.addRelic(new VampiricSpirits(), RelicType.GREEN);
         
+		ChaosEvent.addRing(new RingOfFury());
+		ChaosEvent.addRing(new RingOfPeace());
+		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfFangs(), AbstractPlayer.PlayerClass.THE_SILENT, true));
+		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfPanic(), new String[]{SneckoEye.ID, SneckoHeart.ID}));
+		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfSearing(), AbstractPlayer.PlayerClass.IRONCLAD, true, new String[]{Dodecahedron.ID}));
+		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfShattering(), AbstractPlayer.PlayerClass.DEFECT, false));
+		ChaosEvent.addRing(new RingOfHypnosis());
+		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfGreed(), new String[]{Ectoplasm.ID}));
+		if (foundmod_stslib) {
+			ChaosEvent.addRing(new RingOfMisfortune());
+		}
+		
 		initializeCrossoverRelics();
 		if (foundmod_stslib && foundmod_infinite) {
 			BaseMod.addRelic(new SealedPack(), RelicType.SHARED);
@@ -1040,6 +1045,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new ReplayUltimateDefense());
 		AddAndUnlockCard(new MidasTouch());
 		AddAndUnlockCard(new Trickstab());
+		AddAndUnlockCard(new ReplayBrewmasterCard());
 		/*if (Loader.isModLoaded("Friendly_Minions_0987678")) {
 			AddAndUnlockCard(new GrembosGang());
 		}*/
@@ -1055,10 +1061,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new SpreadingInfection());
 		AddAndUnlockCard(new AbeCurse());
 		AddAndUnlockCard(new Overencumbered());
-		if (foundmod_stslib) {
-			AddAndUnlockCard(new FaultyEquipment());
-			AddAndUnlockCard(new Sssssssssstrike());
-		}
 		logger.info("adding unobtainable cards...");
 		AddAndUnlockCard(new PotOfGreed());
 		AddAndUnlockCard(new GhostDefend());
@@ -1070,6 +1072,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new IC_FireWall());
 		//AddAndUnlockCard(new IC_BasicHellfireCard());
 		AddAndUnlockCard(new WeaponsOverheat());
+		if (foundmod_stslib) {
+			logger.info("adding stslib cards...");
+			AddAndUnlockCard(new FaultyEquipment());
+			AddAndUnlockCard(new Sssssssssstrike());
+			AddAndUnlockCard(new Necrogeddon());
+		}
 		logger.info("done editting cards");
 	}
 	

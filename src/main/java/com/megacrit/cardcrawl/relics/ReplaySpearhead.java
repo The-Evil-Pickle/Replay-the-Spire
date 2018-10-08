@@ -26,7 +26,7 @@ public class ReplaySpearhead extends AbstractRelic
         boolean triggered = false;
         for (final AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
         	if (m.hasPower(VulnerablePower.POWER_ID)) {
-        		AbstractDungeon.actionManager.addToTop(new DamageAction(m, new DamageInfo(null, m.getPower(VulnerablePower.POWER_ID).amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
+        		AbstractDungeon.actionManager.addToTop(new DamageAction(m, new DamageInfo(AbstractDungeon.player, m.getPower(VulnerablePower.POWER_ID).amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
         		AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(m, this));
         		triggered = true;
         	}

@@ -298,8 +298,8 @@ public class MirrorMist
 				this.gain_r_2 = new m_SnakeCloak();
 				this.loss_c_2b = CardLibrary.getCopy("KidneyShot");
 				this.gain_c_2b = new Survivor();
-				this.has_3 = CardHelper.hasCardWithID("HouseCleaning");
-				this.loss_c_3 = CardLibrary.getCopy("HouseCleaning");
+				this.has_3 = CardHelper.hasCardWithID("CleanUp");
+				this.loss_c_3 = CardLibrary.getCopy("CleanUp");
 				this.gain_c_3 = new Reprogram();
 				this.has_3b = CardHelper.hasCardWithID("KidneyShot");
 				this.loss_c_3b = CardLibrary.getCopy("KidneyShot");
@@ -720,17 +720,21 @@ public class MirrorMist
 			cards.add(c);
 		}
 		
-		AbstractCard card = (AbstractCard)cards.remove(MathUtils.random(cards.size() - 1));
-		card.untip();
-		card.unhover();
-		AbstractDungeon.player.masterDeck.removeCard(card);
-		AbstractDungeon.transformCard(card, true, AbstractDungeon.miscRng);
-		if ((AbstractDungeon.screen != AbstractDungeon.CurrentScreen.TRANSFORM) && (AbstractDungeon.transformedCard != null))
-		{
-		  AbstractDungeon.effectsQueue.add(new ShowCardAndObtainEffect(
-			AbstractDungeon.getTransformedCard(), Settings.WIDTH / 3.0F + displayCount, Settings.HEIGHT / 2.0F, false));
-		  
-		  displayCount += Settings.WIDTH / 6.0F;
+		if (cards.size() > 0) {
+			AbstractCard card = (AbstractCard)cards.remove(MathUtils.random(cards.size() - 1));
+			card.untip();
+			card.unhover();
+			AbstractDungeon.player.masterDeck.removeCard(card);
+			AbstractDungeon.transformCard(card, true, AbstractDungeon.miscRng);
+			if ((AbstractDungeon.screen != AbstractDungeon.CurrentScreen.TRANSFORM) && (AbstractDungeon.transformedCard != null))
+			{
+			  AbstractDungeon.effectsQueue.add(new ShowCardAndObtainEffect(
+				AbstractDungeon.getTransformedCard(), Settings.WIDTH / 3.0F + displayCount, Settings.HEIGHT / 2.0F, false));
+			  
+			  displayCount += Settings.WIDTH / 6.0F;
+			}
+		} else {
+			AbstractDungeon.effectsQueue.add(new ShowCardAndObtainEffect(new MirrorMistCurse(), Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0F, false));
 		}
 		AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25F;
 		

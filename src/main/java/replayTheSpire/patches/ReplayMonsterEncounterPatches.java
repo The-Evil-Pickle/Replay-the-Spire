@@ -12,6 +12,9 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.monsters.*;
 import com.badlogic.gdx.math.*;
 import com.megacrit.cardcrawl.relics.AbesTreasure;
+
+import basemod.BaseMod;
+
 import com.megacrit.cardcrawl.monsters.replay.*;
 import com.megacrit.cardcrawl.monsters.replay.eastereggs.*;
 import java.util.*;
@@ -49,6 +52,18 @@ public class ReplayMonsterEncounterPatches {
 	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.AbstractDungeon", method = "setBoss")
 	public static class ReplaySetBossPatch {
 		public static void Postfix(AbstractDungeon __Instance, final String key) {
+			if (ReplayMapScoutEvent.bannedBoss.equals("you're fucked lol")) {
+				ReplayMapScoutEvent.bannedBoss = "none";
+				AbstractDungeon.bossKey = ("LordOfAnnihilation");
+				final BaseMod.BossInfo bossInfo = BaseMod.getBossInfo(AbstractDungeon.bossKey);
+	            if (bossInfo != null) {
+	                DungeonMap.boss = bossInfo.bossMap;
+	                DungeonMap.bossOutline = bossInfo.bossMapOutline;
+	            } else {
+	            	DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/OldBossIcon.png");
+					DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/OldBossIcon.png");
+	            }
+			}
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Painkiller Herb")) {
 				DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/OldBossIcon.png");
 				DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/OldBossIcon.png");
@@ -109,7 +124,6 @@ public class ReplayMonsterEncounterPatches {
 			}
 			else if (ReplayMapScoutEvent.bannedBoss.equals("you're fucked lol")) {
 				TheBeyond.bossList.add(0, "LordOfAnnihilation");
-				ReplayMapScoutEvent.bannedBoss = "none";
 			}
 		}
 	}
