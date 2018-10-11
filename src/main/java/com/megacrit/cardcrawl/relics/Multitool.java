@@ -8,7 +8,7 @@ public class Multitool extends AbstractRelic
     public static final String ID = "ReplayTheSpireMod:Multitool";
     
     public Multitool() {
-        super(ID, "betaRelic.png", RelicTier.RARE, LandingSound.CLINK);
+        super(ID, "multiTool.png", RelicTier.RARE, LandingSound.CLINK);
     }
     
     @Override

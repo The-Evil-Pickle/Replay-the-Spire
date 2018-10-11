@@ -33,7 +33,7 @@ public class SnakeVenomPower extends AbstractPower
     @Override
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
         if (card.type == AbstractCard.CardType.ATTACK) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Snake Venom"));
+        	
         }
     }
 	
@@ -42,6 +42,7 @@ public class SnakeVenomPower extends AbstractPower
         if (damageAmount > 0 && target != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, this.owner, new NecroticPoisonPower(target, this.owner, this.amount), this.amount, true));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Snake Venom"));
         }
     }
     

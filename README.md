@@ -11,9 +11,9 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
 
 ### Currently adds:
  * 50 Relics (4 ironclad, 4 silent, 4 defect, 38 shared)
- * 53 Cards (10 ironclad, 12 silent, 11 defect, 9 colorless, 11 curses)
+ * 55 Cards (10 ironclad, 12 silent, 11 defect, 11 colorless, 11 curses)
  * 5 Events
- * 10 Potions
+ * 11 Potions
  * 2 Rooms
  * 2 Elites
  * 1 Boss
@@ -123,7 +123,9 @@ Survey Options | Colorless | Uncommon | Skill | X | Draw X. **Refund** 1(2).
 Trickstab | Colorless | Uncommon | Attack | 1 | Deal 4 damage 2(3) times. Damage is affected by block modifiers.
 Private Reserves | Colorless | Uncommon | Skill | 0 | Gain 1 energy (and draw 1 card). **Exhaust.** **Retain.**
 Awakened One Ritual | Colorless | Rare | Power | 0 | Add 6(8) Ritual Components to your discard pile. If you ever have 5 or more in your hand at once, replace them with Attacks that deal 42 damage.
+Brewmaster | Colorless | Rare | Power | 3(2) | Obtain a random potion at the start of each round.
 Midas Touch | Colorless | Rare | Skill | 0 | **Exhaust** any number of cards in your hand. Add a random Rare card to your hand for each.
+Necrogeddon | Colorless | Rare | Attack | 1 | Deal damage equal to the number of cards you've **Exhausted** this combat (to ALL enemies). **Grave.**
 The Ultimate Defense | Colorless | Rare | Power | 4 | Gain 1(2) **Artifact**. Gain 1(2) **Dexterity**. (Gain 1 **Intangible**). Gain 5 **Plated** **Armor**. Gain 5(8) **Shielding**.
 Amnesia | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, **Exhaust** your hand. **Ethereal**.
 Over-Encumbered | Curse | Curse | Curse | - | **Unplayable**. When drawn, add 3 **Dazed** to your hand and draw a card.
@@ -176,6 +178,7 @@ Languish Potion | Uncommon | Apply 3 Languid.
 Death Potion | Rare | Deal 60 damage and lose 12 HP.
 Doom Potion | Rare | Destroy an enemy after 10 turns.
 Cursed Concoction | Rare | Gain 3 Strength and 2 Dexterity. Add a random curse to your draw and discard piles.
+Flashpowder | Rare | Stun an enemy.
 
 # Rooms
 ### Portal

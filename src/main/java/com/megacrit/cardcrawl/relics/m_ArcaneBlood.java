@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic.LandingSound;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
-import madsciencemod.actions.common.GainFuelAction;
 import replayTheSpire.ReplayTheSpireMod;
 
 public class m_ArcaneBlood extends AbstractRelic

@@ -50,7 +50,7 @@ public class ReplayMapScoutEvent  extends AbstractImageEvent
     }
     
     public ReplayMapScoutEvent() {
-        super(NAME, DIALOG_1, "images/events/stuck.png");
+        super(NAME, DIALOG_1, null);
         this.goldCost = 60;
         if (AbstractDungeon.ascensionLevel >= 15) {
         	this.goldCost += 20;

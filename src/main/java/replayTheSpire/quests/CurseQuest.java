@@ -14,12 +14,17 @@ import infinitespire.helpers.*;
 import infinitespire.helpers.CardHelper;
 import infinitespire.quests.PickUpCardQuest;
 
-public class CurseQuest extends Quest
+public class CurseQuest extends PickUpCardQuest
 {
     private static final Color COLOR;
     
     public CurseQuest() {
-        super(CurseQuest.class.getName(), CurseQuest.COLOR, 1, QuestType.GREEN, QuestRarity.RARE);
+        super();
+        this.id = CurseQuest.class.getName();
+        this.color = COLOR;
+        this.maxSteps = 2;
+        this.type =  QuestType.GREEN;
+        this.rarity = QuestRarity.RARE;
     }
     
     @Override
@@ -46,7 +51,7 @@ public class CurseQuest extends Quest
     
     @Override
     public String getTitle() {
-        return "Pick up a Curse.";
+        return "Pick up " + this.maxSteps + " Curses.";
     }
     
     @Override

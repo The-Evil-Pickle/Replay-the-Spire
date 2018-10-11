@@ -60,7 +60,7 @@ import fruitymod.FruityMod;
 import fruitymod.seeker.patches.*;
 import infinitespire.InfiniteSpire;
 import madsciencemod.MadScienceMod;
-import madsciencemod.powers.*;
+//import madsciencemod.powers.*;
 import mysticmod.MysticMod;
 import replayTheSpire.panelUI.*;
 import replayTheSpire.patches.SimplicityRunePatches;
@@ -474,7 +474,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	
 	public ReplayTheSpireMod() {
 		BaseMod.subscribe(this);
-		initializePotions();
 	}
 	
 	public static void initialize() {
@@ -691,16 +690,16 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			"Milkshake",
 			ReplayTheSpireMod.PotionRarity.RARE
 		);
-		/*
-		ReplayTheSpireMod.addPotionToSet(
-			InspirationPotion.class,
-			Color.LIGHT_GRAY.cpy(),
-			null,
-			Color.SKY.cpy(),
-			"Inspiration Potion",
-			ReplayTheSpireMod.PotionRarity.RARE
-		);
-		*/
+		if (foundmod_stslib) {
+			ReplayTheSpireMod.addPotionToSet(
+				FlashbangPotion.class,
+				Color.YELLOW.cpy(),
+				null,
+				null,
+				"Flashbang",
+				ReplayTheSpireMod.PotionRarity.RARE
+			);
+		}
 		logger.info("end editting potions");
 	}
 	
@@ -857,8 +856,23 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		final String[] specNames = { "spectral", "Spectral", "Spectral."};
 		BaseMod.addKeyword(specNames, "Is #yEthereal. NL #yExhausts when played or discarded. NL When drawn, you draw an additional card. NL If your hand is full and you draw a card, this card is #yExhausted from your hand to make room.");
 		*/
-		
+
+        try {
+        	initializeStsLibMod();
+        } catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | StSLib not detected");
+		}
+        try {
+        	initializeInfiniteMod();
+        } catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Infinite not detected");
+		}
+		if (foundmod_infinite) {
+			logger.info("Replay | Registering Quests");
+			infinitebs.registerQuests();
+		}
 		InitializeMonsters();
+		initializePotions();
 		logger.info("end post init");
         Settings.isDailyRun = false;
         Settings.isTrial = false;
@@ -878,16 +892,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         	initializeHubrisMod();
         } catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Hubris not detected");
-		}
-        try {
-        	initializeInfiniteMod();
-        } catch (ClassNotFoundException | NoClassDefFoundError e) {
-			logger.info("Replay | Hubris not detected");
-		}
-        try {
-        	initializeStsLibMod();
-        } catch (ClassNotFoundException | NoClassDefFoundError e) {
-			logger.info("Replay | StSLib not detected");
 		}
 		if (ReplayTheSpireMod.foundmod_stslib) {
 			//if StSLib is installed, use Temporary HP instead of Shielding for certain relics.
@@ -986,11 +990,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	
 	@Override
 	public void receiveEditCards() {
-        try {
-        	initializeStsLibMod();
-		} catch (ClassNotFoundException | NoClassDefFoundError e) {
-			logger.info("Replay | StSLib not detected");
-		}
         try {
         	initializeInfiniteMod(LoadType.CARD);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
@@ -1138,7 +1137,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     }
 
 	private static void initializeScienceMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
-		Class<MadScienceMod> madScienceMod = MadScienceMod.class;
+		//Class<MadScienceMod> madScienceMod = MadScienceMod.class;
 		logger.info("ReplayTheSpireMod | Detected Mad Science Mod!");
 		foundmod_science = true;
 		
@@ -1212,7 +1211,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		foundmod_mystic = true;
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for Mystic...");
-			BaseMod.addRelicToCustomPool(new m_BookOfShivs(), madsciencemod.patches.CardColorEnum.BRONZE);
+			BaseMod.addRelicToCustomPool(new m_BookOfShivs(), mysticmod.patches.AbstractCardEnum.MYSTIC_PURPLE);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Mystic...");
@@ -1238,7 +1237,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for Deciple...");
-			BaseMod.addRelicToCustomPool(new m_MercuryCore(), chronomuncher.patches.Enum.BRONZE);
+			BaseMod.addRelicToCustomPool(new m_MercuryCore(), chronomuncher.patches.Enum.CHRONO_GOLD);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Deciple...");

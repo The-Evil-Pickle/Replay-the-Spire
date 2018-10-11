@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.map.MapRoomNode;
 
 import coloredmap.ColoredRoom;
 import replayTheSpire.ReplayTheSpireMod;
+import replayTheSpire.infinitebs;
 
 @ColoredRoom
 public class TeleportRoom extends AbstractRoom
@@ -43,6 +44,9 @@ public class TeleportRoom extends AbstractRoom
         AbstractDungeon.overlayMenu.proceedButton.hide();
         event = fakeRoom.event = new TeleportEvent(teleDest);
         fakeRoom.event.onEnterRoom();
+        if (ReplayTheSpireMod.foundmod_infinite) {
+        	infinitebs.TriggerPortalQuest();
+        }
     }
 
     @Override

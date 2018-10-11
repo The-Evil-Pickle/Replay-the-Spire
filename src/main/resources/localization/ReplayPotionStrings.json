@@ -128,5 +128,12 @@
 			" #yBlur. NL Gain #b",
 			" #yReflection."
 	]
+  },
+  "Flashbang": {
+	"NAME": "Flashpowder",
+    "DESCRIPTIONS": [
+			"#yStun an enemy.",
+			"#yStun all enemies."
+	]
   }
 }

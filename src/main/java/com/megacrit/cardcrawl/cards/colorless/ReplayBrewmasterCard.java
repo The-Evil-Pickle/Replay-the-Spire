@@ -22,7 +22,7 @@ public class ReplayBrewmasterCard extends CustomCard
     
     public ReplayBrewmasterCard() {
         super(ID, ReplayBrewmasterCard.NAME, "cards/replay/replayBetaPower.png", ReplayBrewmasterCard.COST, ReplayBrewmasterCard.DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.RARE, CardTarget.SELF);
-        this.isEthereal = true;
+        //this.isEthereal = true;
     }
     
     @Override
@@ -40,9 +40,10 @@ public class ReplayBrewmasterCard extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.isEthereal = false;
-            this.rawDescription = ReplayBrewmasterCard.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            this.upgradeBaseCost(2);
+            //this.isEthereal = false;
+            //this.rawDescription = ReplayBrewmasterCard.UPGRADE_DESCRIPTION;
+            //this.initializeDescription();
         }
     }
     

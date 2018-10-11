@@ -16,13 +16,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic.LandingSound;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
-import madsciencemod.actions.common.GainFuelAction;
 import mysticmod.MysticMod;
-import mysticmod.cards.cantrips.AcidSplash;
-import mysticmod.cards.cantrips.Prestidigitation;
-import mysticmod.cards.cantrips.RayOfFrost;
-import mysticmod.cards.cantrips.ReadMagic;
-import mysticmod.cards.cantrips.Spark;
 import replayTheSpire.ReplayTheSpireMod;
 
 public class m_BookOfShivs extends AbstractRelic

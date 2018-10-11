@@ -381,7 +381,7 @@
   },
   "ReplayTheSpireMod:Brewmster": {
 	"NAME": "Brewmaster",
-	"DESCRIPTION": "Obtain a random potion at the start of each round. NL Ethereal.",
+	"DESCRIPTION": "Obtain a random potion at the start of each round.",
 	"UPGRADE_DESCRIPTION": "Obtain a random potion at the start of each round."
   },
   "ReplayTheSpireMod:Dark Transmutation": {

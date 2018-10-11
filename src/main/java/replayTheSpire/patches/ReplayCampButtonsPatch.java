@@ -133,6 +133,9 @@ public class ReplayCampButtonsPatch
 				optionsYo.add(new SmithOption(AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 0));
 				optionsYo.add(new RestOption());
 				if (AbstractDungeon.currMapNode == BonfirePatches.bonfireNode) {
+			        if (ReplayTheSpireMod.foundmod_infinite) {
+			        	infinitebs.TriggerBonfireQuest();
+			        }
 					for (AbstractCampfireOption o : campfireButtons) {
 						if (o instanceof RestOption) {
 							optionsYo.get(0).setPosition(o.hb.cX, o.hb.cY);
