@@ -76,6 +76,7 @@ extends CustomCard
 		{
 			upgradeName();
 		    this.isMultiDamage = true;
+		    this.target = AbstractCard.CardTarget.ALL_ENEMY;
 			this.workOutDescription();
 		}
 	}

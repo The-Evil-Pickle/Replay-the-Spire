@@ -44,7 +44,7 @@ public class SimplicityRunePatches {
 				if (card instanceof Strike_Red || card instanceof Strike_Green || card instanceof Strike_Blue || card instanceof Defend_Red || card instanceof Defend_Green || card instanceof Defend_Blue) {
 					return true;
 				}
-				if ((CardTags.hasTag(card, BaseModTags.BASIC_STRIKE) || CardTags.hasTag(card, BaseModTags.BASIC_DEFEND)) || (card.hasTag(BaseModCardTags.BASIC_STRIKE) || card.hasTag(BaseModCardTags.BASIC_DEFEND))) {
+				if (card.hasTag(BaseModCardTags.BASIC_STRIKE) || card.hasTag(BaseModCardTags.BASIC_DEFEND)) {
 					card.upgraded = false;
 					return true;
 				}
@@ -58,13 +58,13 @@ public class SimplicityRunePatches {
 		@SpireInsertPatch(rloc=4)
 		public static void Insert(AbstractCard c) {
 			if (AbstractDungeon.player != null && c.rarity == AbstractCard.CardRarity.BASIC && AbstractDungeon.player.hasRelic("Simple Rune")) {
-				if(CardTags.hasTag(c, BaseModTags.BASIC_STRIKE) || c.hasTag(BaseModCardTags.BASIC_STRIKE)) {//if (c.type == AbstractCard.CardType.ATTACK && c.cardID.toLowerCase().contains("strike")) {
+				if(c.hasTag(BaseModCardTags.BASIC_STRIKE)) {//if (c.type == AbstractCard.CardType.ATTACK && c.cardID.toLowerCase().contains("strike")) {
 					c.name = c.makeCopy().name + "+" + c.timesUpgraded;
 					if (c.baseDamage > 0) {
 						c.baseDamage += (c.timesUpgraded - 1);
 					}
 				} else {
-					if(CardTags.hasTag(c, BaseModTags.BASIC_DEFEND) || c.hasTag(BaseModCardTags.BASIC_DEFEND)) {//if (c.type == AbstractCard.CardType.SKILL && c.cardID.toLowerCase().contains("defend")) {
+					if(c.hasTag(BaseModCardTags.BASIC_DEFEND)) {//if (c.type == AbstractCard.CardType.SKILL && c.cardID.toLowerCase().contains("defend")) {
 						c.name = c.makeCopy().name + "+" + c.timesUpgraded;
 						if (c.baseBlock > 0) {
 							c.baseBlock += (c.timesUpgraded - 1);
@@ -76,7 +76,7 @@ public class SimplicityRunePatches {
 		
 		public static void PostFix(AbstractCard c) {
 			if (AbstractDungeon.player != null && c.rarity == AbstractCard.CardRarity.BASIC && AbstractDungeon.player.hasRelic("Simple Rune")) {
-				if (CardTags.hasTag(c, BaseModTags.BASIC_STRIKE) || CardTags.hasTag(c, BaseModTags.BASIC_DEFEND) || c.hasTag(BaseModCardTags.BASIC_STRIKE) || c.hasTag(BaseModCardTags.BASIC_DEFEND)) {
+				if (c.hasTag(BaseModCardTags.BASIC_STRIKE) || c.hasTag(BaseModCardTags.BASIC_DEFEND)) {
 					c.upgraded = false;
 				}
 			}

@@ -1,6 +1,7 @@
 package com.megacrit.cardcrawl.relics;
 
 import com.megacrit.cardcrawl.dungeons.*;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.*;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.actions.*;
@@ -16,6 +17,10 @@ public class RingOfHypnosis extends AbstractRelic
     
     public RingOfHypnosis() {
         super("Ring of Hypnosis", "cring_hypnosis.png", RelicTier.SPECIAL, LandingSound.FLAT);
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
+        this.tips.add(new PowerTip("Confusion", "When applied to enemies, #yConfusion gives a random attack damage modifier each round, ranging from #b-3 to #b+2."));
+        this.initializeTips();
     }
     
     @Override

@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.rooms.*;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
 import replayTheSpire.*;
+import replayTheSpire.replayxover.infinitebs;
+
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import java.util.*;
 import java.util.function.*;
@@ -207,32 +209,60 @@ public class ReplayCampButtonsPatch
 				//e.printStackTrace();
 			}
 		}
-		/*
 		for (AbstractRelic r : AbstractDungeon.player.relics) {
 			if (r instanceof BottledFlame || r instanceof BottledLightning || r instanceof BottledTornado || r instanceof CustomBottleRelic) {
-				boolean makeFree = false;
+				boolean isEmpty = true;
 				if (r instanceof CustomBottleRelic) {
-					makeFree = true;
-				}
-				final CampfireUI campfire = (CampfireUI)meObj;
-				try {
-					final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");
-					final ReBottleOption button = new ReBottleOption(r, makeFree);
-					campfireButtons.add(button);
-					float x = 950.f;
-					float y = 990.0f - (270.0f * (float)((campfireButtons.size() + 1) / 2));
-					if (campfireButtons.size() % 2 == 0) {
-						x = 1110.0f;
-						campfireButtons.get(campfireButtons.size() - 2).setPosition(800.0f * Settings.scale, y * Settings.scale);
+					CustomBottleRelic cbr = (CustomBottleRelic)r;
+					for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+						if (cbr.isOnCard().test(c)) {
+							isEmpty = false;
+							continue;
+						}
 					}
-					campfireButtons.get(campfireButtons.size() - 1).setPosition(x * Settings.scale, y * Settings.scale);
+				} else if (r instanceof BottledFlame) {
+					for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+						if (c.inBottleFlame) {
+							isEmpty = false;
+							continue;
+						}
+					}
+				} else if (r instanceof BottledLightning) {
+					for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+						if (c.inBottleLightning) {
+							isEmpty = false;
+							continue;
+						}
+					}
+				} else if (r instanceof BottledTornado) {
+					for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+						if (c.inBottleTornado) {
+							isEmpty = false;
+							continue;
+						}
+					}
 				}
-				catch (SecurityException | IllegalArgumentException ex2) {
-					//final RuntimeException ex;
-					//final RuntimeException e = ex;
-					//e.printStackTrace();
+				if (isEmpty) {
+					final CampfireUI campfire = (CampfireUI)meObj;
+					try {
+						final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");
+						final ReBottleOption button = new ReBottleOption(r, true);
+						campfireButtons.add(button);
+						float x = 950.f;
+						float y = 990.0f - (270.0f * (float)((campfireButtons.size() + 1) / 2));
+						if (campfireButtons.size() % 2 == 0) {
+							x = 1110.0f;
+							campfireButtons.get(campfireButtons.size() - 2).setPosition(800.0f * Settings.scale, y * Settings.scale);
+						}
+						campfireButtons.get(campfireButtons.size() - 1).setPosition(x * Settings.scale, y * Settings.scale);
+					}
+					catch (SecurityException | IllegalArgumentException ex2) {
+						//final RuntimeException ex;
+						//final RuntimeException e = ex;
+						//e.printStackTrace();
+					}
 				}
 			}
-		}*/
+		}
     }
 }

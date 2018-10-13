@@ -38,6 +38,7 @@ public abstract class ReplayAbstractRelic extends AbstractRelic {
 		return new ArrayList<ReplayRelicSetting>();
 	}
 	public int SettingsPriorety;
+	public boolean usingDefaultSettings;
 	
 	//unlock stuff
 	public boolean CanDropHere() {

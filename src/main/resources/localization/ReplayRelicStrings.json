@@ -93,7 +93,7 @@
 	"NAME": "Pet Ghost",
 	"FLAVOR": "The ghost of a pet once belonging to a knight.",
     "DESCRIPTIONS": [
-	"Add a ghost card to your hand every turn."
+	"Add a ghost card to your hand every turn. NL Your max hand size is increased by #b1."
 	]
   },
   "Ring of Chaos": {
@@ -240,7 +240,20 @@
 	"NAME": "Honey Jar",
 	"FLAVOR": "Delicious!",
     "DESCRIPTIONS": [
-	"Draw 1 more card each turn. NL #yRetain up to 1 card each turn. NL Extra choice on card reward screens. NL Extra potion slot. NL You cannot skip rewards."
+	"You cannot skip rewards.",
+	"For 1 Act, you cannot skip rewards.",
+	"Draw #b",
+	" more",
+	" card each turn.",
+	" cards each turn.",
+	"#yRetain up to #b",
+	"Extra choice on card reward screens.",
+	"On pick up, gain #b",
+	" extra potion slot.",
+	" extra potion slots.",
+	"Increases Max Hand Size by #b",
+	"Gain ",
+	" at the start of each round."
 	]
   },
   "ReplayTheSpireMod:DimensionalGlitch": {
@@ -508,6 +521,13 @@
 		" has #yRefund #b1."
 	]
   },
+  "ReplayTheSpireMod:Bottled Eggs": {
+    "NAME": "Bottled Eggs",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"On pick up, choose a card. NL All copies of that card you have are #yUpgraded. NL All future copies of that card you obtain are #yUpgraded."
+	]
+  },
   "ReplayTheSpireMod:Multitool": {
     "NAME": "Multitool",
 	"FLAVOR": "",
@@ -693,6 +713,17 @@
 	" gold and #b",
 	" random relics with effects related to gold or shops. NL For every #b",
 	" gold you obtain, add #b1 random #rCurse to your deck."
+	]
+  },
+  "Ring of Addiction": {
+	"NAME": "Ring of Addiction",
+	"FLAVOR": "Good in abundance breeds evil.",
+	"DESCRIPTIONS": [
+	"On pick up, obtain #b",
+	" potions and #b",
+	" random relics with effects related to potions. NL Each time you go through #b",
+	" rooms without using a potion, lose #b",
+	" Max HP."
 	]
   },
   "ReplayTheSpireMod:Ring of Comfort": {

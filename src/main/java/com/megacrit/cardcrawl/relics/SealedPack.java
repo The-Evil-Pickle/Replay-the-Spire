@@ -23,10 +23,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import basemod.ReflectionHacks;
-import basemod.helpers.BaseModTags;
 import basemod.helpers.BaseModCardTags;
-import basemod.helpers.CardTags;
-import replayTheSpire.ReplayTheSpireMod;
 
 public class SealedPack extends AbstractRelic
 {
@@ -52,7 +49,7 @@ public class SealedPack extends AbstractRelic
 			case 0:
 		        final List<AbstractCard> list = (List<AbstractCard>)CardLibrary.getAllCards();
 		        for (final AbstractCard c : list) {
-		            if (c.rarity == AbstractCard.CardRarity.BASIC && !(c instanceof Strike_Red) && !(c instanceof Strike_Green) && !(c instanceof Strike_Blue) && !(c instanceof Defend_Red) && !(c instanceof Defend_Green) && !(c instanceof Defend_Blue) && !CardTags.hasTag(c, BaseModTags.BASIC_DEFEND) && !CardTags.hasTag(c, BaseModTags.BASIC_STRIKE) && !c.hasTag(BaseModCardTags.BASIC_STRIKE) && !c.hasTag(BaseModCardTags.BASIC_DEFEND)) {
+		            if (c.rarity == AbstractCard.CardRarity.BASIC && !(c instanceof Strike_Red) && !(c instanceof Strike_Green) && !(c instanceof Strike_Blue) && !(c instanceof Defend_Red) && !(c instanceof Defend_Green) && !(c instanceof Defend_Blue) && !c.hasTag(BaseModCardTags.BASIC_STRIKE) && !c.hasTag(BaseModCardTags.BASIC_DEFEND)) {
 		                group.addToBottom(c.makeCopy());
 		            }
 		        }

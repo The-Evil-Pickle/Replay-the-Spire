@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import com.megacrit.cardcrawl.cards.colorless.*;
 import com.megacrit.cardcrawl.cards.curses.*;
 import com.megacrit.cardcrawl.cards.red.*;
+import com.megacrit.cardcrawl.cards.replayxover.beaked.RavenHex;
 import com.megacrit.cardcrawl.cards.green.*;
 import com.megacrit.cardcrawl.cards.blue.*;
 import org.apache.logging.log4j.LogManager;
@@ -15,6 +16,7 @@ import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.hubris.HubrisMod;
+import com.evacipated.cardcrawl.mod.hubris.events.thebeyond.TheBottler;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -64,6 +66,8 @@ import madsciencemod.MadScienceMod;
 import mysticmod.MysticMod;
 import replayTheSpire.panelUI.*;
 import replayTheSpire.patches.SimplicityRunePatches;
+import replayTheSpire.replayxover.beakedbs;
+import replayTheSpire.replayxover.infinitebs;
 
 import java.lang.reflect.*;
 import java.io.*;
@@ -475,7 +479,19 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public ReplayTheSpireMod() {
 		BaseMod.subscribe(this);
 	}
-	
+
+	//just stole this code from blank lol
+    public static boolean checkForMod(final String classPath) {
+        try {
+            Class.forName(classPath);
+            ReplayTheSpireMod.logger.info("Found mod: " + classPath);
+            return true;
+        }
+        catch (ClassNotFoundException | NoClassDefFoundError ex) {
+        	ReplayTheSpireMod.logger.info("Could not find mod: " + classPath);
+            return false;
+        }
+    }
 	public static void initialize() {
     	logger.info("========================= ReplayTheSpireMod INIT =========================");
 		
@@ -495,7 +511,20 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.polymerizeButton = ImageMaster.loadImage("images/ui/campfire/replay/polymerize.png");
 		ReplayTheSpireMod.multitaskButton = ImageMaster.loadImage("images/ui/campfire/replay/multitask.png");
 		ReplayTheSpireMod.exploreButton = ImageMaster.loadImage("images/ui/campfire/replay/explore.png");
-
+		
+		//Loader.isModLoaded("beakedthecultist-sts")
+		foundmod_science = checkForMod("madsciencemod.MadScienceMod");
+	    foundmod_seeker = checkForMod("fruitymod.FruityMod");
+	    foundmod_servant = checkForMod("blackrusemod.BlackRuseMod");
+	    foundmod_fetch = checkForMod("fetch.FetchMod");
+	    foundmod_infinite = checkForMod("infinitespire.InfiniteSpire");
+	    foundmod_colormap = checkForMod("coloredmap.ColoredMap");
+	    foundmod_hubris = checkForMod("com.evacipated.cardcrawl.mod.hubris.HubrisMod");
+	    foundmod_stslib = checkForMod("com.evacipated.cardcrawl.mod.stslib.StSLib");
+	    foundmod_mystic = checkForMod("mysticmod.MysticMod");
+	    foundmod_beaked = checkForMod("beaked.Beaked");
+	    foundmod_deciple = checkForMod("chronomuncher.ChronoMod");
+		
 		logger.info("================================================================");
     }
 	
@@ -616,24 +645,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			"Adrenaline Potion",
 			ReplayTheSpireMod.PotionRarity.COMMON
 		);
-		/*
-		ReplayTheSpireMod.addPotionToSet(
-			IronSkinPotion.class,
-			Color.SKY.cpy(),
-			null,
-			null,
-			"Ironskin Potion",
-			ReplayTheSpireMod.PotionRarity.UNCOMMON
-		);
-		ReplayTheSpireMod.addPotionToSet(
-			ThornsPotion.class,
-			Color.GOLD.cpy(),
-			null,
-			Color.LIGHT_GRAY.cpy(),
-			"Thorns Potion",
-			ReplayTheSpireMod.PotionRarity.UNCOMMON
-		);
-		*/
 		ReplayTheSpireMod.addPotionToSet(
 			VenomPotion.class,
 			Color.OLIVE.cpy(),
@@ -642,14 +653,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			"Venom Potion",
 			ReplayTheSpireMod.PotionRarity.UNCOMMON
 		);
-		ReplayTheSpireMod.addPotionToSet(
-				ShieldPotion.class,
-				Color.ROYAL.cpy(),
-				null,
-				null,
-				"ReplayShieldPotion",
-				ReplayTheSpireMod.PotionRarity.UNCOMMON
-			);
 		ReplayTheSpireMod.addPotionToSet(
 				ReflectiveCoating.class,
 				Color.LIGHT_GRAY.cpy(),
@@ -692,6 +695,14 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		);
 		if (foundmod_stslib) {
 			ReplayTheSpireMod.addPotionToSet(
+					LifebloodPotion.class,
+					Color.BLUE.cpy(),
+					null,
+					null,
+					LifebloodPotion.POTION_ID,
+					ReplayTheSpireMod.PotionRarity.UNCOMMON
+				);
+			ReplayTheSpireMod.addPotionToSet(
 				FlashbangPotion.class,
 				Color.YELLOW.cpy(),
 				null,
@@ -699,6 +710,15 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				"Flashbang",
 				ReplayTheSpireMod.PotionRarity.RARE
 			);
+		} else {
+			ReplayTheSpireMod.addPotionToSet(
+					ShieldPotion.class,
+					Color.ROYAL.cpy(),
+					null,
+					null,
+					ShieldPotion.POTION_ID,
+					ReplayTheSpireMod.PotionRarity.UNCOMMON
+				);
 		}
 		logger.info("end editting potions");
 	}
@@ -736,6 +756,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	}
 	public static RelicSettingsButton BuildSettingsButton(ReplayAbstractRelic relic) {
 		ArrayList<IUIElement> settingElements = new ArrayList<IUIElement>();
+		ArrayList<ReplayRelicSetting> settings = new ArrayList<ReplayRelicSetting>();
 		float x = setting_start_x;
 		float y = setting_start_y;
 		for (String s : relic.GetSettingStrings()) {
@@ -743,10 +764,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			y -= 40.0f;
 		}
 		for (ReplayRelicSetting setting : ReplayTheSpireMod.RelicSettings.get(relic)) {
+			settings.add(setting);
 			settingElements.addAll(setting.GenerateElements(x, y));
 			y -= setting.elementHeight;
 		}
-		return new RelicSettingsButton(relic, settingElements);
+		return new RelicSettingsButton(relic, settingElements, settings);
 	}
 	
 	private ModToggleButton makeLabeledButton(final ArrayList<IUIElement> settingElements, final String labelText, final float xPos, final float yPos, final Color color, final BitmapFont font, final boolean enabled, final ModPanel p, final Consumer<ModLabel> labelUpdate, final Consumer<ModToggleButton> c) {
@@ -800,6 +822,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BuildSettings(new RingOfChaos());
 		BuildSettings(new Ninjato());
 		BuildSettings(new TagBag());
+		BuildSettings(new HoneyJar());
 		//BuildSettings(new EnergyBall());
 		
 		loadSettingsData();
@@ -856,21 +879,16 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		final String[] specNames = { "spectral", "Spectral", "Spectral."};
 		BaseMod.addKeyword(specNames, "Is #yEthereal. NL #yExhausts when played or discarded. NL When drawn, you draw an additional card. NL If your hand is full and you draw a card, this card is #yExhausted from your hand to make room.");
 		*/
-
-        try {
-        	initializeStsLibMod();
-        } catch (ClassNotFoundException | NoClassDefFoundError e) {
-			logger.info("Replay | StSLib not detected");
-		}
-        try {
-        	initializeInfiniteMod();
-        } catch (ClassNotFoundException | NoClassDefFoundError e) {
-			logger.info("Replay | Infinite not detected");
-		}
-		if (foundmod_infinite) {
+		
+		
+		/*if (foundmod_infinite) {
 			logger.info("Replay | Registering Quests");
 			infinitebs.registerQuests();
-		}
+		}*/
+		if (checkForMod("com.evacipated.cardcrawl.mod.hubris.events.thebeyond.TheBottler")) {
+            TheBottler.addBottleRelic(BottledFlurry.ID);
+            TheBottler.addBottleRelic(BottledSteam.ID);
+        }
 		InitializeMonsters();
 		initializePotions();
 		logger.info("end post init");
@@ -888,11 +906,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		logger.info("begin editting relics");
 		ReplayTheSpireMod.receiveEditUnlocks();
 
-        try {
-        	initializeHubrisMod();
-        } catch (ClassNotFoundException | NoClassDefFoundError e) {
-			logger.info("Replay | Hubris not detected");
-		}
 		if (ReplayTheSpireMod.foundmod_stslib) {
 			//if StSLib is installed, use Temporary HP instead of Shielding for certain relics.
 			BaseMod.addRelic(new Durian_stslib(), RelicType.SHARED);
@@ -943,7 +956,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new Multitool(), RelicType.SHARED);
 		BaseMod.addRelic(new Ninjato(), RelicType.SHARED);
 		BaseMod.addRelic(new OnionRing(), RelicType.SHARED);
-		//BaseMod.addRelic(new OnyxGauntlets(), RelicType.SHARED);
+		BaseMod.addRelic(new OnyxGauntlets(), RelicType.SHARED);
 		BaseMod.addRelic(new OozeArmor(), RelicType.RED);
 		BaseMod.addRelic(new PainkillerHerb(), RelicType.SHARED);
 		BaseMod.addRelic(new PondfishScales(), RelicType.SHARED);
@@ -957,7 +970,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new SnakeBasket(), RelicType.GREEN);
 		BaseMod.addRelic(new SneckoScales(), RelicType.GREEN);
 		BaseMod.addRelic(new SneckoHeart(), RelicType.SHARED);
-		//BaseMod.addRelic(new ReplaySpearhead(), RelicType.RED);
+		BaseMod.addRelic(new ReplaySpearhead(), RelicType.RED);
 		BaseMod.addRelic(new TagBag(), RelicType.SHARED);
 		BaseMod.addRelic(new TigerMarble(), RelicType.SHARED);
 		BaseMod.addRelic(new VampiricSpirits(), RelicType.GREEN);
@@ -975,7 +988,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 		
 		initializeCrossoverRelics();
-		if (foundmod_stslib && foundmod_infinite) {
+		if (foundmod_infinite) {
 			BaseMod.addRelic(new SealedPack(), RelicType.SHARED);
 		}
 		
@@ -1076,6 +1089,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			AddAndUnlockCard(new FaultyEquipment());
 			AddAndUnlockCard(new Sssssssssstrike());
 			AddAndUnlockCard(new Necrogeddon());
+		}
+		if (foundmod_beaked) {
+			logger.info("adding beaked cards...");
+			beakedbs.addBeakedCards();
 		}
 		logger.info("done editting cards");
 	}
@@ -1415,7 +1432,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 	}
 	
-	
+	public static final String DEFAULTSETTINGSUFFIX = "_IS_SET_TO_DEFAULT";
 	public static void saveSettingsData() {
 		try {
 			SpireConfig config = new SpireConfig("ReplayTheSpireMod", "replaySettingsData");
@@ -1431,40 +1448,18 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static void loadSettingsData() {
     	logger.info("ReplayTheSpireMod | Loading Data...");
     	try {
-			/*Properties defaultProperties = new Properties();
-			for (String key : ConfigSettings.keySet()) {
-				ReplayRelicSetting setting = ConfigSettings.get(key);
-				defaultProperties.setProperty(setting.settingsId, setting.defaultProperty);
-			}
-			defaultProperties.setProperty("chaos_mode", "1");*/
 			config.load();
 			for (String key : ConfigSettings.keySet()) {
 				ReplayRelicSetting setting = ConfigSettings.get(key);
 				if (!config.has(setting.settingsId)) {
 					config.setString(setting.settingsId, setting.defaultProperty);
+					config.setBool(setting.settingsId + DEFAULTSETTINGSUFFIX, true);
+				}
+				else if (!config.has(setting.settingsId + DEFAULTSETTINGSUFFIX)) {
+					config.setBool(setting.settingsId + DEFAULTSETTINGSUFFIX, false);
 				}
 				setting.LoadFromData(config);
 			}
-			/*try {
-				switch(config.getInt("chaos_mode")) {
-					case 0:
-						ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.ALWAYS;
-						break;
-					case 1:
-						ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.COST_ONLY;
-						break;
-					case 2:
-						ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.NEVER;
-						break;
-					case 3:
-						ReplayTheSpireMod.RingOfChaos_CompatibilityMode = ChaosMagicSetting.STRICT;
-						break;
-				}
-			} catch (NumberFormatException e) {
-				e.printStackTrace();
-			}*/
-			
-			
 		} catch (IOException e) {
 			logger.error("Failed to load ReplayTheSpireMod settings data!");
 			e.printStackTrace();

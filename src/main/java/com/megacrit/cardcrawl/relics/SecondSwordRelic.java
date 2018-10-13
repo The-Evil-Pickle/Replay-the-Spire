@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.monsters.*;
 
-import basemod.helpers.BaseModTags;
 import basemod.helpers.CardTags;
 
 import com.megacrit.cardcrawl.actions.*;
@@ -41,7 +40,7 @@ public class SecondSwordRelic extends AbstractRelic
 	
     @Override
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
-        if (!card.purgeOnUse && (PerfectedStrike.isStrike(card) || CardTags.hasTag(card, BaseModTags.STRIKE)) && this.counter <= 0) {
+        if (!card.purgeOnUse && (PerfectedStrike.isStrike(card) || card.hasTag(AbstractCard.CardTags.STRIKE)) && this.counter <= 0) {
             this.flash();
             AbstractMonster m = null;
             if (action.target != null) {

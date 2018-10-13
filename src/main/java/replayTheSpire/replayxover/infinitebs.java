@@ -1,4 +1,4 @@
-package replayTheSpire;
+package replayTheSpire.replayxover;
 
 import infinitespire.InfiniteSpire;
 import infinitespire.abstracts.Quest;
@@ -11,6 +11,7 @@ public class infinitebs {
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.cards.replayxover.black.EchoesOfTime());
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.cards.replayxover.black.DarkTransmutation());
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.cards.replayxover.black.ChaosVortex());
+		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.cards.replayxover.black.SuperSneckoCrazyCard());
 	}
 	public static void registerQuests() {
 		QuestHelper.registerQuest(CurseQuest.class);

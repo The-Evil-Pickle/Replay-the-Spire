@@ -114,6 +114,13 @@
 			" #yShielding."
 	]
   },
+  "LifebloodPotion": {
+	"NAME": "Lifeblood Potion",
+    "DESCRIPTIONS": [
+			"Gain #b",
+			" #yTemporary #yHP."
+	]
+  },
   "Languid Potion": {
 	"NAME": "Languish Potion",
     "DESCRIPTIONS": [

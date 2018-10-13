@@ -18,9 +18,6 @@ import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 
-import basemod.helpers.BaseModTags;
-import basemod.helpers.CardTags;
-
 public class PoisonedStrike
   extends AbstractCard
 {

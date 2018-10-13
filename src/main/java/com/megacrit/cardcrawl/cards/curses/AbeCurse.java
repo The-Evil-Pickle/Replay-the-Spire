@@ -5,12 +5,14 @@ import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.monsters.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.powers.*;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SoulboundField;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.core.*;
 import basemod.*;
 import basemod.abstracts.*;
+import replayTheSpire.ReplayTheSpireMod;
 
 public class AbeCurse extends CustomCard
 {
@@ -24,6 +26,11 @@ public class AbeCurse extends CustomCard
 		this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
         this.exhaust = true;
+        if (ReplayTheSpireMod.foundmod_stslib) {
+        	SoulboundField.soulbound.set(this, true);
+        	this.rawDescription += " NL Soulbound.";
+        	this.initializeDescription();
+        }
     }
     
     @Override

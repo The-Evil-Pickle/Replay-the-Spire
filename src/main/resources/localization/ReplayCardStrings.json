@@ -358,9 +358,34 @@
 	"NAME": "A Very Large Swarm Of Misquitos",
 	"DESCRIPTION": "Unplayable. NL When drawn, deal !M! damage to ALL fighters."
   },
+  "ReplayTheSpireMod:Immenent Threat": {
+	"NAME": "Immenent Threat.",
+	"DESCRIPTION": "Innate. NL Exhaust. NL Switches to Vengeful Threat."
+  },
+  "ReplayTheSpireMod:Vengeful Threat": {
+	"NAME": "Vengeful Threat",
+	"DESCRIPTION": "Grave. NL Draw 1 card. NL Switches to Immenent Threat."
+  },
   "ReplayTheSpireMod:Echoes of Time": {
 	"NAME": "Echoes of Time",
 	"DESCRIPTION": "Fetch up to !M! cards you've Exhausted this combat. NL Grave. NL Purge."
+  },
+  "ReplayTheSpireMod:??????????????????????": {
+	"NAME": "??????????????????",
+	"DESCRIPTION": "Snecko. Purge.",
+	"EXTENDED_DESCRIPTION": [
+		" NL ???????",
+		" NL Exhaust up to !M! cards in your hand.",
+		" NL Add !M! Shivs to your hand.",
+		" NL Channel !M! random orbs.",
+		" NL Refund 1.",
+		" NL Gain !M! Knives and !M! Protection.",
+		" NL Gain !M! Fuel and shuffle !M! Trinkets into your draw pile.",
+		" NL Shuffle !M! random Cores into your draw pile.",
+		" NL Shuffle !M! random Cantrips into your draw pile.",
+		" NL Reverse Withering on all cards in your hand by !M!.",
+		" NL Replicate up to !M! of your relics."
+	]
   },
   "ReplayTheSpireMod:Necrogeddon": {
 	"NAME": "Necrogeddon",
@@ -446,6 +471,20 @@
     "NAME": "Overheat Weapons",
     "DESCRIPTION": "Gain 1 Focus if you have <0, Lose 1 Focus if you have >0. NL Channel 1 Hellfire. NL Add 1 Backfire to your discard pile. NL Ethereal.",
     "UPGRADE_DESCRIPTION": "Gain 1 Focus if you have <0, Lose 1 Focus if you have >0. NL Channel 1 Hellfire. NL Ethereal."
+  },
+  "ReplayTheSpireMod:RavenHex": {
+    "NAME": "Raven's Hex",
+    "DESCRIPTION": "Apply !beaked:wI! Languid. NL Wither 1.",
+	"EXTENDED_DESCRIPTION": [
+		"Decreases the #yLanguid amount."
+	]
+  },
+  "ReplayTheSpireMod:Wings of Steel": {
+    "NAME": "Wings of Steel",
+    "DESCRIPTION": "Gain !beaked:wI! Shielding. NL Wither !M!.",
+	"EXTENDED_DESCRIPTION": [
+		"Decreases the #yShielding amount."
+	]
   },
   "OrbOptionCard_Lightning": {
     "NAME": "Lightning",

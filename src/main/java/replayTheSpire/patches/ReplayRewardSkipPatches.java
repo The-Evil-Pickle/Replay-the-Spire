@@ -7,6 +7,9 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.ui.*;
 import com.megacrit.cardcrawl.ui.panels.TopPanel;
+
+import basemod.ReflectionHacks;
+
 import com.megacrit.cardcrawl.screens.*;
 import com.megacrit.cardcrawl.screens.select.BossRelicSelectScreen;
 import com.badlogic.gdx.graphics.*;
@@ -34,6 +37,8 @@ public class ReplayRewardSkipPatches {
 					AbstractDungeon.topPanel.mapHb.move(ReplayRewardSkipPositionPatch.SHOW_X, AbstractDungeon.topPanel.mapHb.cY);
 				} else {
 					AbstractDungeon.overlayMenu.proceedButton.hide();
+					AbstractDungeon.overlayMenu.cancelButton.hide();
+					//ReflectionHacks.setPrivate((Object)__Instance, (Class)CombatRewardScreen.class, "labelOverride", (Object)null);
 					AbstractDungeon.topPanel.mapHb.move(ReplayRewardSkipPositionPatch.HIDE_X, AbstractDungeon.topPanel.mapHb.cY);
 				}
 			}

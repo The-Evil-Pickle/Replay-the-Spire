@@ -118,7 +118,7 @@ RNG | Blue | Rare | Skill | X | **Channel** X(+1) random orbs.
 Omega Cannon | Blue | Rare | Attack | 2 | Deal 7(6) damage to ALL enemies 4(5) times. Add 1 **Backfire** to your draw and discard piles. **Focus** increases damage."
 Poisoned Strike | Colorless | Uncommon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | Lose 1 Focus. All non-attack damage you deal is increased by 2. (**Innate.**)
-Ssssstrike | Colorless | Uncommon | Attack | ? | Deal 3(4) damage, plus an additional 3(4) for each energy this cost. **Snecko.** **Refund** 1.
+Ssssstrike | Colorless | Uncommon | Attack | ? | Deal 4(5) damage, plus an additional 4(5) for each energy this cost. **Snecko.** **Refund** 1.
 Survey Options | Colorless | Uncommon | Skill | X | Draw X. **Refund** 1(2).
 Trickstab | Colorless | Uncommon | Attack | 1 | Deal 4 damage 2(3) times. Damage is affected by block modifiers.
 Private Reserves | Colorless | Uncommon | Skill | 0 | Gain 1 energy (and draw 1 card). **Exhaust.** **Retain.**

@@ -28,6 +28,7 @@ public class Pagination implements IUIElement
             } else {
             	newElement = new RelicSettingsButton(element.image, element.outline, element.x + width * (i % columns), element.y - height * ((i % this.elementsPerPage - i % columns) / columns), width, height, element.elements);
             }
+            newElement.settings = element.settings;
             this.elements.add(newElement);
         }
     }

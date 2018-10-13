@@ -13,6 +13,7 @@ import java.util.*;
 import java.lang.*;
 import replayTheSpire.*;
 import replayTheSpire.panelUI.*;
+import replayTheSpire.replayxover.beakedbs;
 
 public class RingOfChaos
   extends ReplayAbstractRelic
@@ -74,6 +75,20 @@ public class RingOfChaos
 	  return r;
   }
   
+  public static boolean isMagicNegative(AbstractCard c) {
+	  String rawdesc = c.rawDescription.toLowerCase();
+	  if (rawdesc.contains("lose !m! hp.") || rawdesc.contains("gain !m! vulnerable") || rawdesc.contains("gain !m! weak") || rawdesc.contains("lose !m! strength") || rawdesc.contains("lose !m! dexterity")) {
+		  return true;
+	  }
+	  if (ReplayTheSpireMod.foundmod_beaked) {
+		  if (beakedbs.chaosCheck(c)) {
+			  return true;
+		  }
+	  }
+	  
+	  return false;
+  }
+  
   public static boolean ChaosScrambleCard(AbstractCard c)
   {
 	if (c.type == AbstractCard.CardType.CURSE || c.type == AbstractCard.CardType.STATUS) {
@@ -86,7 +101,7 @@ public class RingOfChaos
 	
 	ArrayList<ChaosUpgradeType> upOp = new ArrayList<ChaosUpgradeType>();
 	ArrayList<ChaosUpgradeType> dwnOp = new ArrayList<ChaosUpgradeType>();
-	
+	boolean invertMagic = isMagicNegative(c);
 	if (c.baseMagicNumber > 0 && c.rawDescription.contains("!M")) {
 		if (SETTING_MODE.value == 2) {//if (ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.STRICT) {
 			return false;
@@ -212,37 +227,48 @@ public class RingOfChaos
 						break;
 					case MAGIC:
 						switch(c.baseMagicNumber){
-							case 2:
+							case 1:
 								downmult = 0.5f;
-								c.baseMagicNumber += -1;
+								c.baseMagicNumber += invertMagic ? 1 : -1;
+								c.magicNumber = c.baseMagicNumber;
+								c.upgradedMagicNumber = true;
+								break;
+							case 2:
+								downmult = invertMagic ? 0.67f : 0.5f;
+								c.baseMagicNumber += invertMagic ? 1 : -1;
 								c.magicNumber = c.baseMagicNumber;
 								c.upgradedMagicNumber = true;
 								break;
 							case 3:
-								downmult = 0.67f;
-								c.baseMagicNumber += -1;
+								if (invertMagic && downtarg < 0.5f) {
+									downmult = 0.33f;
+									c.baseMagicNumber += 2;
+								} else {
+									downmult = invertMagic ? 0.75f : 0.67f;
+									c.baseMagicNumber += invertMagic ? 1 : -1;
+								}
 								c.magicNumber = c.baseMagicNumber;
 								c.upgradedMagicNumber = true;
 								break;
 							default:
 								prevnum = c.baseMagicNumber;
-								c.baseMagicNumber += (c.baseMagicNumber / (-1.0f / downtarg));
+								c.baseMagicNumber += (c.baseMagicNumber / ((invertMagic ? 1.0f : -1.0f) / downtarg));
 								c.magicNumber = c.baseMagicNumber;
 								c.upgradedMagicNumber = true;
-								downmult = (float)prevnum / (float)c.baseMagicNumber;
+								downmult = invertMagic ? ((float)prevnum / (float)c.baseMagicNumber) : ((float)c.baseMagicNumber / (float)prevnum);
 						}
 						break;
 					case DAMAGE:
 						prevnum = c.baseDamage;
 						c.baseDamage += (c.baseDamage / (-1.0f / downtarg));
 						c.upgradedDamage = true;
-						downmult = (float)prevnum / (float)c.baseDamage;
+						downmult = (float)c.baseMagicNumber / (float)prevnum;
 						break;
 					case BLOCK:
 						prevnum = c.baseBlock;
 						c.baseBlock += (c.baseBlock / (-1.0f / downtarg));
 						c.upgradedBlock = true;
-						downmult = (float)prevnum / (float)c.baseBlock;
+						downmult = (float)c.baseMagicNumber / (float)prevnum;
 						break;
 				}
 			}
@@ -274,7 +300,7 @@ public class RingOfChaos
 						if (prevnum <= 0) {
 							prevnum = 1;
 						}
-						c.baseMagicNumber += prevnum;
+						c.baseMagicNumber += prevnum * (invertMagic ? -1 : 1);
 						c.magicNumber = c.baseMagicNumber;
 						c.upgradedMagicNumber = true;
 						break;

@@ -1,14 +1,12 @@
 package com.megacrit.cardcrawl.relics;
 
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.random.Random;
-import com.megacrit.cardcrawl.characters.*;
-import com.megacrit.cardcrawl.core.*;
+
+import basemod.BaseMod;
 
 public class PetGhost
   extends AbstractRelic
@@ -57,6 +55,15 @@ public class PetGhost
 	}
 	AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, false));
     AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+  }
+
+  @Override
+  public void onEquip() {
+	  BaseMod.MAX_HAND_SIZE++;
+  }
+  @Override
+  public void onUnequip() {
+	  BaseMod.MAX_HAND_SIZE--;
   }
   
   public AbstractRelic makeCopy()

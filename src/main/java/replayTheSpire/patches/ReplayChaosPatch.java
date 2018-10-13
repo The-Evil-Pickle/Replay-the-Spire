@@ -14,7 +14,7 @@ import java.util.*;
 public class ReplayChaosPatch {
 	
 	public static ArrayList<AbstractCard> Postfix(ArrayList<AbstractCard> __result) {
-		if (AbstractDungeon.player.hasRelic("Honey Jar") && __result.size() < 4) {
+		if (HoneyJar.SETTING_CHOICE.value && AbstractDungeon.player.hasRelic("Honey Jar") && __result.size() < 4) {
 			final ArrayList<AbstractCard> retVal = new ArrayList<AbstractCard>();
 			final AbstractCard.CardRarity rarity = AbstractDungeon.rollRarity();
 			AbstractCard card = null;

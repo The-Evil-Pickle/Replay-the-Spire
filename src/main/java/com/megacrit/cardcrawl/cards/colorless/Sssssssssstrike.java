@@ -1,8 +1,6 @@
 package com.megacrit.cardcrawl.cards.colorless;
 
 import basemod.abstracts.*;
-import basemod.helpers.BaseModTags;
-import basemod.helpers.CardTags;
 
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.cards.*;
@@ -26,7 +24,7 @@ public class Sssssssssstrike extends CustomCard
         super(ID, Sssssssssstrike.NAME, "cards/replay/replayBetaAttack.png", -1, Sssssssssstrike.DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
         SneckoField.snecko.set(this, true);
         this.tags.add(AbstractCard.CardTags.STRIKE);
-        this.baseDamage = 3;
+        this.baseDamage = 4;
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
     }

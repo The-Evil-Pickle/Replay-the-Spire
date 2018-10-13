@@ -1,8 +1,11 @@
 package replayTheSpire.panelUI;
 
 import basemod.*;
+import replayTheSpire.ReplayTheSpireMod;
+
 import com.megacrit.cardcrawl.helpers.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.*;
 import com.badlogic.gdx.graphics.g2d.*;
@@ -26,13 +29,19 @@ public class RelicSettingsButton implements IUIElement
     public float w;
     public float h;
     private Hitbox hitbox;
+    private IUIElement resetButton;
     public AbstractRelic relic;
     public List<IUIElement> elements;
+    public List<ReplayRelicSetting> settings;
     public boolean isSelected;
     private Color rendColor;
 
     public RelicSettingsButton(final AbstractRelic relic, final List<IUIElement> elements) {
     	this(relic, 450.0f, 625.0f, 100.0f, 100.0f, elements);
+    }
+    public RelicSettingsButton(final AbstractRelic relic, final List<IUIElement> elements, final List<ReplayRelicSetting> settings) {
+    	this(relic, elements);
+    	this.settings = settings;
     }
     
     public RelicSettingsButton(final AbstractRelic relic, final float x, final float y, final float width, final float height, final List<IUIElement> elements) {
@@ -53,8 +62,12 @@ public class RelicSettingsButton implements IUIElement
         this.w = width;
         this.h = height;
         this.elements = elements;
+        this.settings = new ArrayList<ReplayRelicSetting>();
         this.isSelected = false;
         this.hitbox = new Hitbox((float)this.x * Settings.scale, (float)this.y * Settings.scale, (float)this.w * Settings.scale, (float)this.h * Settings.scale);
+        this.resetButton = new ModButton(800, 550, ReplayTheSpireMod.settingsPanel, (me) -> {
+        	this.resetAll();
+        });
         this.rendColor = Color.WHITE;
     }
     
@@ -70,6 +83,7 @@ public class RelicSettingsButton implements IUIElement
         	for (IUIElement element : this.elements) {
         		element.render(sb);
         	}
+        	this.resetButton.render(sb);
         }
     }
     
@@ -91,7 +105,14 @@ public class RelicSettingsButton implements IUIElement
         	for (IUIElement element : this.elements) {
         		element.update();
         	}
+        	this.resetButton.update();
         }
+    }
+    
+    public void resetAll() {
+    	for (ReplayRelicSetting element : this.settings) {
+    		element.ResetToDefault();
+    	}
     }
     
     public int renderLayer() {

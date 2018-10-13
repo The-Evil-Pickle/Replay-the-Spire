@@ -28,6 +28,9 @@ public class ReplayOptionsSetting extends ReplayRelicSetting {
 	@Override
 	public void LoadFromData(SpireConfig config) {
 		this.value = config.getInt(this.settingsId);
+		if (config.getBool(this.settingsId + ReplayTheSpireMod.DEFAULTSETTINGSUFFIX)) {
+			this.value = Integer.parseInt(defaultProperty);
+		}
 		if (this.buttons != null) {
 			for (int i=0; i < this.buttons.size(); i++) {
 				this.buttons.get(i).enabled = (i == this.value);
@@ -38,6 +41,7 @@ public class ReplayOptionsSetting extends ReplayRelicSetting {
 	@Override
 	public void SaveToData(SpireConfig config) {
 		config.setInt(this.settingsId, this.value);
+		config.setBool(this.settingsId + ReplayTheSpireMod.DEFAULTSETTINGSUFFIX, this.value == Integer.parseInt(defaultProperty));
 	}
 
 	@Override

@@ -22,7 +22,7 @@ public class CurseQuest extends PickUpCardQuest
         super();
         this.id = CurseQuest.class.getName();
         this.color = COLOR;
-        this.maxSteps = 2;
+        this.maxSteps = 3;
         this.type =  QuestType.GREEN;
         this.rarity = QuestRarity.RARE;
     }

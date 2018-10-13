@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.potions.*;
 import replayTheSpire.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.random.Random;
+import com.megacrit.cardcrawl.relics.HoneyJar;
+
 import java.util.*;
 
 @SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.AbstractDungeon", method = "nextRoomTransition")
@@ -14,6 +16,6 @@ public class ReplayNextRoomPatch {
 	
 	public static void Prefix() {
 		ReplayTheSpireMod.clearShielding();
-		ReplayTheSpireMod.noSkipRewardsRoom = AbstractDungeon.player.hasRelic("Honey Jar");
+		ReplayTheSpireMod.noSkipRewardsRoom = (AbstractDungeon.player.hasRelic(HoneyJar.ID) && AbstractDungeon.player.getRelic(HoneyJar.ID).counter < -1);
 	}
 }

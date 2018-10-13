@@ -21,8 +21,8 @@ import com.megacrit.cardcrawl.core.*;
 public class MimicMonster extends AbstractMonster
 {
     public static final String ID = "ReplayMimic";
-    private static final MonsterStrings monsterStrings;
     public static final String NAME;
+    private static final MonsterStrings monsterStrings;
     public static final String[] MOVES;
     public static final String[] DIALOG;
     private static final int[] HP = {80, 120, 160};

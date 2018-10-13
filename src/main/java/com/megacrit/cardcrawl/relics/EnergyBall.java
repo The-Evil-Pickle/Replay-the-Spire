@@ -15,8 +15,7 @@ import com.megacrit.cardcrawl.cards.red.DemonForm;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.ui.panels.*;
 
-import basemod.helpers.BaseModTags;
-import basemod.helpers.CardTags;
+import basemod.helpers.BaseModCardTags;
 import replayTheSpire.ReplayAbstractRelic;
 import replayTheSpire.panelUI.ReplayIntSliderSetting;
 import replayTheSpire.panelUI.ReplayRelicSetting;
@@ -63,7 +62,7 @@ public class EnergyBall extends ReplayAbstractRelic
     	} else {
     		this.srcCard = new DemonForm();
     		for (AbstractCard c : AbstractDungeon.srcRareCardPool.group) {
-    			if (CardTags.hasTag(c, BaseModTags.FORM)) {
+    			if (c.hasTag(BaseModCardTags.FORM)) {
     				this.srcCard = c.makeCopy();
     				return;
     			}

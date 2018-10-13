@@ -14,7 +14,7 @@ import replayTheSpire.ReplayTheSpireMod;
 
 public class ReplayBooleanSetting extends ReplayRelicSetting {
 
-	boolean value;
+	public boolean value;
 	ModToggleButton button;
 	
 	public ReplayBooleanSetting(String id, String name, Boolean defaultProperty) {
@@ -24,6 +24,9 @@ public class ReplayBooleanSetting extends ReplayRelicSetting {
 	@Override
 	public void LoadFromData(SpireConfig config) {
 		this.value = config.getBool(this.settingsId);
+		if (config.getBool(this.settingsId + ReplayTheSpireMod.DEFAULTSETTINGSUFFIX)) {
+			this.value = Boolean.parseBoolean(defaultProperty);
+		}
 		if (this.button != null) {
 			this.button.enabled = this.value;
 		}
@@ -32,6 +35,7 @@ public class ReplayBooleanSetting extends ReplayRelicSetting {
 	@Override
 	public void SaveToData(SpireConfig config) {
 		config.setBool(this.settingsId, this.value);
+		config.setBool(this.settingsId + ReplayTheSpireMod.DEFAULTSETTINGSUFFIX, this.value == Boolean.parseBoolean(defaultProperty));
 	}
 
 	@Override
