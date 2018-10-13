@@ -33,6 +33,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.ReplayRefundAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
+import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
 import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
 
 public class SuperSneckoCrazyCard extends BlackCard
@@ -173,6 +174,7 @@ public class SuperSneckoCrazyCard extends BlackCard
     	}
 		@Override
 		public void use(AbstractPlayer p, AbstractCard c) {
+			AbstractDungeon.actionManager.addToBottom(new ArmamentsAction(true));
 			for (AbstractCard card : p.hand.group) {
 				if (card instanceof AbstractWitherCard) {
 					AbstractDungeon.actionManager.addToBottom(new ReplenishWitherAction((AbstractWitherCard)card, c.magicNumber));

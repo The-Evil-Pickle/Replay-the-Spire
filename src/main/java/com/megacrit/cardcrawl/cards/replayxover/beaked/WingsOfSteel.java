@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.*;
 import beaked.patches.*;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.monsters.*;
+import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.dungeons.*;
 import beaked.actions.*;
 import beaked.cards.AbstractWitherCard;
@@ -21,8 +22,9 @@ public class WingsOfSteel extends AbstractWitherCard
     public static final String NAME;
     public static final String DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION;
-    private static final int COST = 1;
-    private static final int BLOCK_AMT = 10;
+    private static final int COST = 2;
+    private static final int BLOCK_AMT = 6;
+    private static final int BLOCK_BONUS = 2;
     private static final int WITHER_MINUS_BLOCK = 2;
     private static final int UPGRADE_PLUS_WITHER = -1;
     
@@ -32,8 +34,8 @@ public class WingsOfSteel extends AbstractWitherCard
         this.misc = n;
         this.baseMisc = n;
         final int misc = this.misc;
-        this.block = misc;
-        this.baseBlock = misc;
+        this.block = misc + BLOCK_BONUS;
+        this.baseBlock = misc + BLOCK_BONUS;
         final int n2 = WITHER_MINUS_BLOCK;
         this.magicNumber = n2;
         this.baseMagicNumber = n2;
@@ -42,15 +44,17 @@ public class WingsOfSteel extends AbstractWitherCard
     }
     
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new WitherAction(this));
-        AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new GainBlockAction((AbstractCreature)p, (AbstractCreature)p, this.block));
+        AbstractDungeon.actionManager.addToBottom(new WitherAction(this));
+        AbstractDungeon.actionManager.addToBottom(new ReplayGainShieldingAction(p, p, this.block));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(p, this.misc), this.misc));
     }
     
     @Override
     public void applyPowers() {
         final int misc = this.misc;
-        this.block = misc;
-        this.baseBlock = misc;
+        this.block = misc + BLOCK_BONUS;
+        this.baseBlock = misc + BLOCK_BONUS;
         super.applyPowers();
     }
     

@@ -30,6 +30,7 @@ public class TeleportEvent extends AbstractImageEvent
     	AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
     	AbstractDungeon.currMapNode = teleDest;
     	this.openMap();
+    	imageEventText.clear();
     }
     
     static {

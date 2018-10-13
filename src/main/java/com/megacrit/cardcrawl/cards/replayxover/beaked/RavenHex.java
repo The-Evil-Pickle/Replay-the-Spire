@@ -23,7 +23,7 @@ public class RavenHex extends AbstractWitherCard
     public static final String DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION;
     private static final int COST = 1;
-    private static final int LANGUID_AMT = 3;
+    private static final int LANGUID_AMT = 4;
     private static final int LANGUID_UPAMT = 2;
     
     public RavenHex() {

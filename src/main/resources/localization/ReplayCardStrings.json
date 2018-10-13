@@ -383,7 +383,7 @@
 		" NL Gain !M! Fuel and shuffle !M! Trinkets into your draw pile.",
 		" NL Shuffle !M! random Cores into your draw pile.",
 		" NL Shuffle !M! random Cantrips into your draw pile.",
-		" NL Reverse Withering on all cards in your hand by !M!.",
+		" NL Upgrade for combat, and Replenish !M! Wither uses of, all cards in your hand.",
 		" NL Replicate up to !M! of your relics."
 	]
   },
@@ -481,7 +481,7 @@
   },
   "ReplayTheSpireMod:Wings of Steel": {
     "NAME": "Wings of Steel",
-    "DESCRIPTION": "Gain !beaked:wI! Shielding. NL Wither !M!.",
+    "DESCRIPTION": "Gain !beaked:wB! Shielding, !beaked:wB! Block, and !beaked:wI! Plated Armor. NL Wither !M!.",
 	"EXTENDED_DESCRIPTION": [
 		"Decreases the #yShielding amount."
 	]

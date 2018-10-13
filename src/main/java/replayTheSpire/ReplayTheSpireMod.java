@@ -1160,7 +1160,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for MadScience...");
-			BaseMod.addRelicToCustomPool((AbstractRelic)new ChemicalBlood(), madsciencemod.patches.CardColorEnum.BRONZE);
+			BaseMod.addRelicToCustomPool((AbstractRelic)new ChemicalBlood(), madsciencemod.patches.CardColorEnum.MAD_SCIENCE);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for MadScience...");
