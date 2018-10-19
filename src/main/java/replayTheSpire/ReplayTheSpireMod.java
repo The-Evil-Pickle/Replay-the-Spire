@@ -5,7 +5,6 @@ import java.nio.charset.StandardCharsets;
 import com.megacrit.cardcrawl.cards.colorless.*;
 import com.megacrit.cardcrawl.cards.curses.*;
 import com.megacrit.cardcrawl.cards.red.*;
-import com.megacrit.cardcrawl.cards.replayxover.beaked.RavenHex;
 import com.megacrit.cardcrawl.cards.green.*;
 import com.megacrit.cardcrawl.cards.blue.*;
 import org.apache.logging.log4j.LogManager;
@@ -20,6 +19,7 @@ import com.evacipated.cardcrawl.mod.hubris.events.thebeyond.TheBottler;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.*;
@@ -29,6 +29,7 @@ import com.megacrit.cardcrawl.core.*;
 //import com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import com.megacrit.cardcrawl.potions.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.RidThyselfOfStatusCardsPower;
 import com.megacrit.cardcrawl.powers.TheWorksPower;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.events.thebottom.*;
@@ -67,7 +68,11 @@ import mysticmod.MysticMod;
 import replayTheSpire.panelUI.*;
 import replayTheSpire.patches.SimplicityRunePatches;
 import replayTheSpire.replayxover.beakedbs;
+import replayTheSpire.replayxover.chronobs;
+import replayTheSpire.replayxover.constructbs;
 import replayTheSpire.replayxover.infinitebs;
+import replayTheSpire.variables.Exhaustive;
+import replayTheSpire.variables.MagicMinusOne;
 
 import java.lang.reflect.*;
 import java.io.*;
@@ -82,7 +87,7 @@ import java.util.function.*;
 
 @SpireInitializer
 public class ReplayTheSpireMod implements PostInitializeSubscriber,
-EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscriber, PotionGetSubscriber, StartGameSubscriber
+EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscriber, PotionGetSubscriber, StartGameSubscriber, EditKeywordsSubscriber
 {
 	public static void InitCardTitle(AbstractCard c) {
 		FontHelper.cardTitleFont_L.getData().setScale(1.0f);
@@ -524,6 +529,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	    foundmod_mystic = checkForMod("mysticmod.MysticMod");
 	    foundmod_beaked = checkForMod("beaked.Beaked");
 	    foundmod_deciple = checkForMod("chronomuncher.ChronoMod");
+	    foundmod_construct = Loader.isModLoaded("constructmod");
 		
 		logger.info("================================================================");
     }
@@ -856,26 +862,26 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			BaseMod.addEvent(GremboTheGreat.ID, GremboTheGreat.class, "TheCity");
 		}*/
 
-		logger.info("keywords");
+		/*logger.info("keywords");
         final String[] necroNames = { "necrotic", "necrotic poison", "Necrotic" };
         BaseMod.addKeyword(necroNames, "A powerful poison that deals 2 damage each turn, but doesn't last as long.");
 		final String[] refundNames = { "refund", "refunds", "Refund", "Refunds"};
 		BaseMod.addKeyword(refundNames, "Returns energy spent on playing the card, up to the Refund value.");
 		final String[] crystalNames = { "crystal"};
-		BaseMod.addKeyword(crystalNames, "Orb: Gives adjacent orbs #b+2 #yFocus. When #yEvoked, if you have fewer than #b3 orb slots, gain an orb slot. NL #yPassive effect is not affected by other #yCrystal orbs.");
+		BaseMod.addKeyword(crystalNames, "Orb: Gives adjacent orbs #b+2 #yFocus. When #yEvoked, if you have fewer than #b3 orb slots, gain an orb slot. NL #yPassive effect is not affected by #yFocus.");
 		final String[] hfNames = { "hellfire"};
 		BaseMod.addKeyword(hfNames, "Orb: At the start of your turn, gain #b+2 #yStrength until the end of your turn. NL When #yEvoked, applies 1 #yVulnerable to a random enemy.");
 		final String[] glNames = { "glass"};
 		BaseMod.addKeyword(glNames, "Orb: No #yPassive effect. When #yEvoked while you have more than #b3 orb slots, consumes your leftmost orb slot and #yEvokes the occupying orb.");
 		final String[] rfNames = { "reflection", "Reflection", "reflection."};
-		BaseMod.addKeyword(rfNames, "Goes down by 1 each round, is removed on 0. While active, completely blocking Attack damage reflects it back at the attacker.");
+		BaseMod.addKeyword(rfNames, "Goes down by 1 each round, is removed on 0. NL While active, completely blocking Attack damage reflects it back at the attacker.");
 		final String[] shieldNames = { "shielding", "Shielding", "Shielding."};
 		BaseMod.addKeyword(shieldNames, "An alternate form of #yBlock that can directly block HP loss. NL #yShielding is not lost at the end of each round.");
 		final String[] langNames = { "languid", "Languid", "Languid."};
 		BaseMod.addKeyword(langNames, "Fighters with #yLanguid deal #b1 less #yAttack damage per stack. NL Is reduced by #b1 at the end of each round.");
 		final String[] bfNames = { "backfire", "Backfire", "Backfires", "backfires"};
 		BaseMod.addKeyword(bfNames, "#yStatus: Gives #b1 #yVulnerable when drawn. NL Deals #b6 damage and #yExhausts at the end of your turn.");
-		/*
+		
 		final String[] specNames = { "spectral", "Spectral", "Spectral."};
 		BaseMod.addKeyword(specNames, "Is #yEthereal. NL #yExhausts when played or discarded. NL When drawn, you draw an additional card. NL If your hand is full and you draw a card, this card is #yExhausted from your hand to make room.");
 		*/
@@ -900,6 +906,17 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		
     }
 	
+
+    public void receiveEditKeywords() {
+        final Gson gson = new Gson();
+        final String json = Gdx.files.internal("localization/ReplayKeywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        final Keyword[] keywords = (Keyword[])gson.fromJson(json, (Class)Keyword[].class);
+        if (keywords != null) {
+            for (final Keyword keyword : keywords) {
+                BaseMod.addKeyword(keyword.NAMES, keyword.DESCRIPTION);
+            }
+        }
+    }
 	
 	@Override
 	public void receiveEditRelics() {
@@ -964,6 +981,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new QuantumEgg(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfChaos(), RelicType.SHARED);
 		BaseMod.addRelic(new SecondSwordRelic(), RelicType.RED);
+		BaseMod.addRelic(new Shallot(), RelicType.SHARED);
 		BaseMod.addRelic(new SimpleRune(), RelicType.SHARED);
 		BaseMod.addRelic(new SizzlingBlood(), RelicType.SHARED);
 		BaseMod.addRelic(new SnackPack(), RelicType.SHARED);
@@ -1003,6 +1021,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	
 	@Override
 	public void receiveEditCards() {
+		BaseMod.addDynamicVariable(new MagicMinusOne());
+		BaseMod.addDynamicVariable(new Exhaustive());
         try {
         	initializeInfiniteMod(LoadType.CARD);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
@@ -1020,6 +1040,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new DemonicInfusion());
 		AddAndUnlockCard(new Eclipse());
 		AddAndUnlockCard(new StrikeFromHell());
+		AddAndUnlockCard(new LeadingStrike());
+		AddAndUnlockCard(new ReplayReversal());
+		AddAndUnlockCard(new ReplayStacked());
 		logger.info("adding cards for Silent...");
 		AddAndUnlockCard(new AtomBomb());
 		AddAndUnlockCard(new DrainingMist());
@@ -1043,8 +1066,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new ReplayGash());
 		AddAndUnlockCard(new ReplayOmegaCannon());
 		AddAndUnlockCard(new ReplayRNGCard());
-		AddAndUnlockCard(new FIFOQueue()); 
-		AddAndUnlockCard(new ReplaySort()); 
+		AddAndUnlockCard(new FIFOQueue());
+		AddAndUnlockCard(new ReplaySort());
+		AddAndUnlockCard(new SystemScan());
 		//AddAndUnlockCard(new ReflectiveLens());
 		//AddAndUnlockCard(new Crystallizer());
 		logger.info("adding colorless cards...");
@@ -1090,9 +1114,15 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			AddAndUnlockCard(new Sssssssssstrike());
 			AddAndUnlockCard(new Necrogeddon());
 		}
+		if (foundmod_deciple) {
+			chronobs.addCards();
+		}
 		if (foundmod_beaked) {
 			logger.info("adding beaked cards...");
 			beakedbs.addBeakedCards();
+		}
+		if (foundmod_construct) {
+			constructbs.addCards();
 		}
 		logger.info("done editting cards");
 	}
@@ -1123,6 +1153,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static boolean foundmod_mystic = false;
     public static boolean foundmod_beaked = false;
     public static boolean foundmod_deciple = false;
+    public static boolean foundmod_construct = false;
     
 
     private static void initializeCrossoverRelics() {
@@ -1405,6 +1436,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 		if (AbstractDungeon.player.hasPower(TheWorksPower.POWER_ID)) {
 			AbstractDungeon.player.getPower(TheWorksPower.POWER_ID).onSpecificTrigger();
+		}
+		if (AbstractDungeon.player.hasPower(RidThyselfOfStatusCardsPower.POWER_ID) && c.type == AbstractCard.CardType.STATUS) {
+			AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
+			AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
+			AbstractDungeon.player.getPower(RidThyselfOfStatusCardsPower.POWER_ID).onSpecificTrigger();
 		}
 	}
 	

@@ -60,7 +60,6 @@ public class Amnesia
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
         this.dontTriggerOnUseCard = true;
-        //AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
 		AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
   

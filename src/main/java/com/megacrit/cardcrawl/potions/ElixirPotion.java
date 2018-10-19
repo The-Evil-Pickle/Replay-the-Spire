@@ -63,7 +63,7 @@ public class ElixirPotion
 	if (this.potency <= 1) {
 		ArrayList<AbstractCard> handCopy = new ArrayList();
 		for (AbstractCard c : AbstractDungeon.player.hand.group) {
-		  if ((c.type == AbstractCard.CardType.STATUS) || (c.type == AbstractCard.CardType.CURSE)) {
+		  if ((c.type == AbstractCard.CardType.STATUS) || (c.type == AbstractCard.CardType.CURSE) || (c.color == AbstractCard.CardColor.CURSE)) {
 			handCopy.add(c);
 		  }
 		}
@@ -81,19 +81,19 @@ public class ElixirPotion
 	} else {
 		ArrayList<AbstractCard> handCopy = new ArrayList();
 		for (AbstractCard c : AbstractDungeon.player.hand.group) {
-		  if ((c.type == AbstractCard.CardType.STATUS) || (c.type == AbstractCard.CardType.CURSE)) {
+		  if ((c.type == AbstractCard.CardType.STATUS) || (c.type == AbstractCard.CardType.CURSE) || (c.color == AbstractCard.CardColor.CURSE)) {
 			handCopy.add(c);
 		  }
 		}
 		ArrayList<AbstractCard> deckCopy = new ArrayList();
 		for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-		  if ((c.type == AbstractCard.CardType.STATUS) || (c.type == AbstractCard.CardType.CURSE)) {
+		  if ((c.type == AbstractCard.CardType.STATUS) || (c.type == AbstractCard.CardType.CURSE) || (c.color == AbstractCard.CardColor.CURSE)) {
 			deckCopy.add(c);
 		  }
 		}
 		ArrayList<AbstractCard> discardCopy = new ArrayList();
 		for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-		  if ((c.type == AbstractCard.CardType.STATUS) || (c.type == AbstractCard.CardType.CURSE)) {
+		  if ((c.type == AbstractCard.CardType.STATUS) || (c.type == AbstractCard.CardType.CURSE) || (c.color == AbstractCard.CardColor.CURSE)) {
 			discardCopy.add(c);
 		  }
 		}

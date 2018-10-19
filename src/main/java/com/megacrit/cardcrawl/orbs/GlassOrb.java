@@ -115,7 +115,6 @@ public class GlassOrb extends AbstractOrb
 		}
     }
 	
-	
     @Override
     public void onEndOfTurn() {
 		if (AbstractDungeon.player.hasPower("Reflective Lens")) {

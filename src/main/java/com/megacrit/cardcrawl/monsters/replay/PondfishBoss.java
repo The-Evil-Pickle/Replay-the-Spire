@@ -68,6 +68,7 @@ public class PondfishBoss extends AbstractMonster
 	private int dragDwn;
 	private int underDmg;
 	private int underAmt;
+	private int deadWeight;
 	
 	private byte nextPlannedMove;
 	private int inslot;
@@ -117,6 +118,11 @@ public class PondfishBoss extends AbstractMonster
             this.dragDwn = PondfishBoss.DRAG_DROWN;
             this.underDmg = PondfishBoss.UNDER_DAMAGE;
             this.underAmt = PondfishBoss.UNDER_AMT;
+        }
+        if (AbstractDungeon.ascensionLevel >= 19) {
+        	this.deadWeight = 5;
+        } else {
+        	this.deadWeight = 3;
         }
         this.damage.add(new DamageInfo(this, this.chompDmg));
         this.damage.add(new DamageInfo(this, this.rakeDmg));
@@ -224,16 +230,12 @@ public class PondfishBoss extends AbstractMonster
 				for (final AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
 					if (m instanceof CaptainAbe) {
 						if (!m.halfDead) { 
-							if (AbstractDungeon.ascensionLevel < 19) {
-							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new AbePower(m), 0));
-							}
+							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new AbePower(m, this.deadWeight), 0));
 						} else {
 							m.halfDead = false;
 							AbstractDungeon.actionManager.addToBottom(new HealAction(m, this, (m.maxHealth / 4)));
-							if (AbstractDungeon.ascensionLevel < 19) {
-								AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new AbePower(m), 0));
-								}
-								AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new IntangiblePower(m, 1), 1));
+							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new AbePower(m, this.deadWeight), 0));
+							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new IntangiblePower(m, 1), 1));
 							AbstractDungeon.actionManager.addToBottom(new TalkAction(m, CaptainAbe.DIALOG[(int)(Math.random() * (3)) + 6]));
 						}
 					}
@@ -310,11 +312,8 @@ public class PondfishBoss extends AbstractMonster
 					}
 					abe.halfDead = false;
 					AbstractDungeon.actionManager.addToBottom(new HealAction(abe, this, (abe.maxHealth / 2)));
-					//AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(abe, "REVIVE"));
-					if (AbstractDungeon.ascensionLevel < 19) {
-						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, abe, new AbePower(abe), 0));
-						}
-						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, this, new IntangiblePower(abe, 1), 1));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, abe, new AbePower(abe, this.deadWeight), 0));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, this, new IntangiblePower(abe, 1), 1));
 					AbstractDungeon.actionManager.addToBottom(new TalkAction(abe, CaptainAbe.DIALOG[(int)(Math.random() * (3)) + 6]));
 					/*if (AbstractDungeon.player.hasRelic("Philosopher's Stone")) {
 						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, abe, new StrengthPower(abe, 2), 2));
@@ -335,6 +334,12 @@ public class PondfishBoss extends AbstractMonster
 		if (this.isFirstTurn) {
 			this.setMove(PondfishBoss.STARTUP, Intent.NONE);
 			return;
+		}
+		for (final AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+			if (m instanceof CaptainAbe && m.halfDead) {
+				this.setMoveNow(LIVING_LANTERN);
+				return;
+			}
 		}
 		if (this.lastMove(PondfishBoss.FEET_UNDER)) {
 			this.setMoveNow(PondfishBoss.SPLASH);

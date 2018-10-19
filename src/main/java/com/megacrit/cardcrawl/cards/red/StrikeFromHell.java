@@ -38,7 +38,7 @@ public class StrikeFromHell extends CustomCard
     @Override
     public void triggerOnExhaust() {
     	AbstractDungeon.actionManager.addToTop(new UnExhaustAction(this));
-    	AbstractDungeon.actionManager.addToTop(new ModifyDamageAction(this, this.magicNumber));
+    	AbstractDungeon.actionManager.addToTop(new ModifyDamageAction(this.uuid, this.magicNumber));
     }
     
     @Override

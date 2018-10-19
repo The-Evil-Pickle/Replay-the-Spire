@@ -3,6 +3,7 @@ package replayTheSpire.replayxover;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.replayxover.beaked.RavenHex;
 import com.megacrit.cardcrawl.cards.replayxover.beaked.WingsOfSteel;
+import com.megacrit.cardcrawl.cards.replayxover.curses.CompoundingHeadache;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
@@ -18,6 +19,7 @@ public class beakedbs {
 	public static void addBeakedCards() {
 		AddAndUnlockCard(new RavenHex());
 		AddAndUnlockCard(new WingsOfSteel());
+		AddAndUnlockCard(new CompoundingHeadache());
 	}
 	public static boolean chaosCheck(AbstractCard c) {
 		return (c instanceof AbstractWitherCard && ((AbstractWitherCard)c).linkWitherAmountToMagicNumber);

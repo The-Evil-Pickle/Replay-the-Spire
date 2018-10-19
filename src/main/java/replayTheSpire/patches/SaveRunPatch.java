@@ -18,7 +18,7 @@ public class SaveRunPatch {
     @SpirePatch(cls = "com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue", method = "deleteSave")
     public static class DeleteSave
     {
-        public static void Prefix(final AbstractPlayer.PlayerClass pClass) {
+        public static void Prefix(final AbstractPlayer p) {
         	ReplayTheSpireMod.clearRunData();
         }
     }

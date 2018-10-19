@@ -156,5 +156,16 @@
 		"Remove a card",
 		"Upgrade 2 cards"
 	]
+  },
+  "ReplayTheSpireMod:TheMausoleumExtra": {
+	"NAME": "The Mausoleum",
+	"DESCRIPTIONS": [
+		"You push open the coffin. As you do, #p~black~ #p~fog~ spews forth and covers the entire room! Inside, you find no body, only a #y~relic.~ You take it and move onwards, #r@coughing@ #r@violently.@",
+		"You push open the coffin. The fog dissipates harmlessly. Inside, you find the mortal remains of a decorated soldier grasping an old #yrelic. You pilfer it and move on."
+	],
+	"OPTIONS": [
+		"[Open Coffin] #gObtain #ga #gRelic. #r",
+		"%: #rBecome #rCursed #r(Random).",
+	]
   }
 }

@@ -1,0 +1,64 @@
+[
+	{
+		"NAMES": [
+			"necrotic"
+		],
+		"DESCRIPTION": "A powerful poison that deals 2 damage each turn, but doesn't last as long."
+	},
+	{
+		"NAMES": [
+			"refund",
+			"refunds"
+		],
+		"DESCRIPTION": "Returns energy spent on playing the card, up to the Refund value."
+	},
+	{
+		"NAMES": [
+			"crystal"
+		],
+		"DESCRIPTION": "Orb: Gives adjacent orbs #b+2 #yFocus. When #yEvoked, if you have fewer than #b3 orb slots, gain an orb slot. NL #yPassive effect is not affected by #yFocus."
+	},
+	{
+		"NAMES": [
+			"hellfire"
+		],
+		"DESCRIPTION": "Orb: At the start of your turn, gain #b+2 #yStrength until the end of your turn. NL When #yEvoked, applies 1 #yVulnerable to a random enemy."
+	},
+	{
+		"NAMES": [
+			"glass"
+		],
+		"DESCRIPTION": "Orb: No #yPassive effect. When #yEvoked while you have more than #b3 orb slots, consumes your leftmost orb slot and #yEvokes the occupying orb."
+	},
+	{
+		"NAMES": [
+			"reflection"
+		],
+		"DESCRIPTION": "Goes down by 1 each round, is removed on 0. NL While active, completely blocking Attack damage reflects it back at the attacker."
+	},
+	{
+		"NAMES": [
+			"shielding"
+		],
+		"DESCRIPTION": "An alternate form of #yBlock that can directly block HP loss. NL #yShielding is not lost at the end of each round."
+	},
+	{
+		"NAMES": [
+			"languid"
+		],
+		"DESCRIPTION": "Fighters with #yLanguid deal #b1 less #yAttack damage per stack. NL Is reduced by #b1 at the end of each round."
+	},
+	{
+		"NAMES": [
+			"backfire",
+			"backfires"
+		],
+		"DESCRIPTION": "#yStatus: Gives #b1 #yVulnerable when drawn. NL Deals #b6 damage and #yExhausts at the end of your turn."
+	},
+	{
+		"NAMES": [
+			"exhaustive"
+		],
+		"DESCRIPTION": "#yExhausts after a certain number of uses."
+	}
+]

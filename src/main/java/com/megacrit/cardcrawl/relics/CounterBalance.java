@@ -18,7 +18,7 @@ public class CounterBalance extends AbstractRelic
     
     @Override
     public void onEnterRoom(final AbstractRoom room) {
-        if (room instanceof MonsterRoomElite || room instanceof MonsterRoomBoss) {
+        if (room instanceof MonsterRoomElite || room instanceof MonsterRoomBoss || room.eliteTrigger) {
             this.pulse = true;
             this.beginPulse();
         }
@@ -29,9 +29,7 @@ public class CounterBalance extends AbstractRelic
     
     @Override
     public void onVictory() {
-        if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite || AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
-            this.pulse = false;
-        }
+    	this.pulse = false;
     }
     
     @Override

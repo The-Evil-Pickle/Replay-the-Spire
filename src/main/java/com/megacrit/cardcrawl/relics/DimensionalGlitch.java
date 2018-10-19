@@ -1,7 +1,12 @@
 package com.megacrit.cardcrawl.relics;
 
+import java.util.AbstractList;
+
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.rooms.*;
 
 public class DimensionalGlitch extends AbstractRelic
 {
@@ -27,7 +32,16 @@ public class DimensionalGlitch extends AbstractRelic
         final EnergyManager energy = AbstractDungeon.player.energy;
         --energy.energyMaster;
     }
-	
+
+    @Override
+    public int onPlayerHeal(final int healAmount) {
+        if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            this.flash();
+            return MathUtils.ceil((float)healAmount / 2.0f);
+        }
+        return healAmount;
+    }
+    
     @Override
     public AbstractRelic makeCopy() {
         return new DimensionalGlitch();

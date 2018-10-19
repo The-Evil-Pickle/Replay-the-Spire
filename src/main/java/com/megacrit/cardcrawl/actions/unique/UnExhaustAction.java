@@ -2,6 +2,9 @@ package com.megacrit.cardcrawl.actions.unique;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.localization.*;
+
+import basemod.BaseMod;
+
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.cards.*;
 import java.util.*;
@@ -20,7 +23,7 @@ public class UnExhaustAction extends AbstractGameAction
     
     @Override
     public void update() {
-        if (AbstractDungeon.player.hand.size() == 10) {
+        if (this.p.hand.size() >= BaseMod.MAX_HAND_SIZE) {
             AbstractDungeon.player.createHandIsFullDialog();
             this.isDone = true;
             return;

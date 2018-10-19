@@ -2,6 +2,9 @@ package com.megacrit.cardcrawl.actions.unique;
 
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.localization.*;
+
+import basemod.BaseMod;
+
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.cards.*;
@@ -26,7 +29,7 @@ public class BasicFromDeckToHandAction extends AbstractGameAction
             if (AbstractDungeon.gridSelectScreen.selectedCards.size() != 0) {
                 for (final AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
                     c.unhover();
-                    if (this.p.hand.size() == 10) {
+                    if (this.p.hand.size() >= BaseMod.MAX_HAND_SIZE) {
                         this.p.drawPile.moveToDiscardPile(c);
                         this.p.createHandIsFullDialog();
                     }
@@ -58,7 +61,7 @@ public class BasicFromDeckToHandAction extends AbstractGameAction
         }
         if (tmp.size() == 1) {
             final AbstractCard card = tmp.getTopCard();
-            if (this.p.hand.size() == 10) {
+            if (this.p.hand.size() >= BaseMod.MAX_HAND_SIZE) {
                 this.p.drawPile.moveToDiscardPile(card);
                 this.p.createHandIsFullDialog();
             }

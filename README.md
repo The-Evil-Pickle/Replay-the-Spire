@@ -7,11 +7,11 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
 ### Requires:
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)
  * BaseMod (https://github.com/daviscook477/BaseMod/releases)
- * [Recommended] StSLib (https://github.com/kiooeht/StSLib/releases)
+ * StSLib (https://github.com/kiooeht/StSLib/releases)
 
 ### Currently adds:
  * 50 Relics (4 ironclad, 4 silent, 4 defect, 38 shared)
- * 55 Cards (10 ironclad, 12 silent, 11 defect, 11 colorless, 11 curses)
+ * 55 Cards (10 ironclad, 12 silent, 12 defect, 11 colorless, 11 curses)
  * 5 Events
  * 11 Potions
  * 2 Rooms
@@ -83,13 +83,16 @@ Ring of Chaos | All | Boss | Some card rewards have randomly altered stats and e
 # Cards
 Name | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis)
 --- | --- | --- | --- | --- | ---
+Reversal | Red | Common | Skill | 1 | Gain 1(2) **Blur** and 2(3) **Reflection**.
 Run Through | Red | Common | Attack | 1 | Target loses 9(11) HP and 4(7) Block.
 Strike From Hell | Red | Common | Attack | 1 | Deal 7(8) damage. Each time this is **Exhausted**, increase its damage by 2(3) and return it to your hand.
 Defy Death | Red | Uncommon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat.
 Hemogenesis | Red | Uncommon | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2, or by 3 if the card has been upgraded outside of combat).
 Life Bind | Red | Uncommon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
+Leading Strike | Red | Uncommon | Attack | 1 | Deal 4 damage. Reduce the cost of an Attack in your hand to 1(0) for the round.
 Massacre | Red | Uncommon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
 Limb From Limb | Red | Uncommon | Attack | 3 | Deal 24(28) damage. If this deals at least 30(32) unblocked damage, **Refund** 2 and draw 2 cards.
+Phantom Shield | Red | Uncommon | Skill | 1 | Gain 11(13) **Block**. **Exhaustive** 2(3).
 Abandon | Red | Rare | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. Add a **Void** to your discard pile. **Ethereal**.
 Demonic Infusion | Red | Rare | Skill | X | Upgrade a card X(+1) times. **Refund** 1. **Exhaust**.
 Eclipse | Red | Rare | Skill | 3 | **Exhaust** your hand. For each card, add a random card to your hand that costs 1 less than normal. (**Refund** 1.)
@@ -111,6 +114,7 @@ Crystal Conduit | Blue | Uncommon | Skill | 1 | **Channel** 1 **Crystal** (and 1
 Claw Rake | Blue | Uncommon | Attack | 2 | Deal 3(5) damage. Deal 3(5) damage to ALL enemies. Damage is upgraded by Claw cards.
 FIFO Queue | Blue | Uncommon | Power | 2(X) | Gain 4(2X+1) orb slots.
 Sort | Blue | Uncommon | Skill | 1 | Shuffle all Rare cards in your discard pile into your draw pile. Draw 2 cards. (**Retain.**)
+System Scan | Blue | Uncommon | Skill | 1 | The next 2(3) **Status** cards you draw **Exhaust** and draw 1 card when drawn.
 Empty Bin | Blue | Uncommon | Power | 1 | (**Innate**.) At the end of your turn, **Exhaust** all Common cards in your hand and gain 4(5) **Block** for each.
 Time Bomb | Blue | Uncommon | Skill | 1 | Gain 2 orb slots. **Channel** 2 **Glass.** **Channel** 1 **Dark,** and trigger its passive 2(3) times. **Exhaust.**
 Mirror Shield | Blue | Rare | Skill | 2 | **Channel** 1 **Crystal.** **Channel** 1 **Frost.** Gain 5(8) **Block.** Gain 1(2) **Reflection.**
@@ -131,17 +135,13 @@ Amnesia | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, *
 Over-Encumbered | Curse | Curse | Curse | - | **Unplayable**. When drawn, add 3 **Dazed** to your hand and draw a card.
 Faulty Equipment | Curse | Curse | Curse | - | **Unplayable**. **Soulbound**. Can be **Upgraded** outside of combat to remove from deck.
 Common Cold | Curse | Curse | Curse | 0 | Sneeze!
-Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile.
+Hallucinations | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a random card into your draw pile. **Exhaustive** 3.
 Sickly | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, lose 3 **Block**.
 Spreading Infection | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a copy of all other status and curse cards in your hand to your discard pile.
 Depression | Curse | Curse | Curse | - | **Unplayable**. When drawn, gain 2 **Languid** and draw a card.
 Delirium | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, gain **Confusion** for 1 round.
 Voices | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, shuffle 2 Dazed into your discard pile. **Ethereal**.
 Looming Evil | Curse | Curse | Curse | 3 | Can be played for 3 Energy to **Exhaust**. At the end of your turn, shuffle a random curse into your draw pile and reduce the cost to play this card by 1.
-Chaos Vortex | Black | Power | Black | 0 | Gain 10(15) **Shielding.** 1 card you draw each turn has its stats and effects scrambled.
-Dark Transmutation | Black | Skill | Black | X | Add X random Black cards to your hand. They cost 1 less this turn. (**Refund** 1.) **Exhaust.**
-Echoes of Time | Black | Skill | Black | 1 | **Fetch** up to 3(8) cards you've **Exhausted** this combat. **Grave.** **Purge.**
-Haul | Black | Skill | Black | 0 | Draw your draw pile. You can't draw any more cards this turn (upgrade removes). **Exhaust.**
 Ghost Swipe | Colorless | Special | Attack | 1 | Deal 6 damage. **Exhaust**. **Ethereal**.
 Ghost Defend | Colorless | Special | Skill | 1 | Gain 5 block. **Exhaust**. **Ethereal**.
 Ghost Fetch | Colorless | Special | Skill | 0 | Choose a basic card from your draw pile and add it to your hand. **Exhaust**. **Ethereal**.
@@ -149,14 +149,27 @@ Grinning Jar | Colorless | Special | Skill | 0 | Draw 2 cards. You cannot play a
 Ritual Component | Colorless | Special | Skill | 0 | Draw 1 card.
 Abe's Revenge | Curse | Special | Curse | - | **Unplayable**. At the end of your turn, gain 2 **Frail**. **Ethereal**.
 
-**Note:** The following items are currently under maintainence, and have been temporarily removed:
- * Raider's Mask
- * Re-Bottling Rest Site Option
+# Mod-Crossover Cards
+Name | Mod(s) | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis)
+--- | --- | --- | --- | --- | --- | ---
+Chaos Vortex | Infinite Spire | Black | Black | Power | 0 | Gain 10(15) **Shielding.** 1 card you draw each turn has its stats and effects scrambled.
+Dark Transmutation | Infinite Spire | Black | Black | Skill | X | Add X random Black cards to your hand. They cost 1 less this turn. (**Refund** 1.) **Exhaust.**
+Echoes of Time | Infinite Spire | Black | Black | Skill | 1 | **Fetch** up to 3(8) cards you've **Exhausted** this combat. **Grave.** **Purge.**
+Haul | Infinite Spire | Black | Black | Skill | 0 | Draw your draw pile. You can't draw any more cards this turn (upgrade removes). **Exhaust.**
+Raven's Hex | Beaked | Purple | Uncommon | Skill | 1 | Apply 4(6) **Languid**. **Wither** 1.
+Wings of Steel | Beaked | Purple | Uncommon | Skill | 2 | Gain 8 **Shielding**, (8 **Block**,) and 6 **Plated** **Armor**. **Wither** 2.
+Compounding Headache | Beaked | Curse | Curse | Curse | 0 | Draw 1 card. Lose 1 HP. **Wither** -1.
+Meltdown Sequence | Construct | Curse | Curse | Curse | - | **Unplayable**. **Overheat:** 2 (6 if playing as Construct). **Cycle**. When **Cycled:** Gain 1 **Vulnerable**.
+Imminent Threat | Deciple + StSLib | Curse | Curse | Curse | 1 | **Innate**. Take 2 damage. **Exhaust**. **Switches** to Vengeful Threat.
+Vengeful Threat | Deciple + StSLib | Curse | Curse | Curse | 0 | **Grave**. Draw 1 card. **Exhaust**. **Switches** to Imminent Threat.
+Wavering Confidence | Deciple | Curse | Curse | Curse | - | **Unplayable**. **Self-Retaining**. At the end of your turn, **Switches** to Delayed Remorse.
+Delayed Remorse | Deciple | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, take 1 **Fibonacci** damage. **Switches** to Wavering Confidence.
 
 # Keywords
 Name | Type | Description
 --- | --- | ---
 Refund | Misc | When a card with **Refund** is played, energy spent on it is returned (up to the stated amount).
+Exhaustive | Misc | A card with **Exhaustive** **Exhausts** after a certain number of uses.
 Shielding | Misc | A form of **Block** that can block HP loss, and does not wear off between rounds.
 Crystal | Orb | **Passive:** Gives +2 **Focus** to adjacent orbs. **Evoke:** Gain an orb slot if you have less than 3.
 Glass | Orb | No **Passive** effect. When **Evoked**, if you have more than 3 orb slots, consumes your leftmost one and **Evokes** any occupying orb.

@@ -1,5 +1,6 @@
 package replayTheSpire.patches;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -26,7 +27,6 @@ public class PlayerDamagePatch {
 		return SpireReturn.Continue();
 	}
 	
-
 	private static int initialDamage;
 	
 	public static void Prefix(AbstractPlayer player, DamageInfo info) {
@@ -38,7 +38,7 @@ public class PlayerDamagePatch {
 			}
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(DimensionalGlitch.ID)) {
 				altered=true;
-				info.output += 2;
+				info.output += MathUtils.ceil(((float)info.output / 2.0f));
 			}
 			if (altered) {
 				PlayerDamagePatch.initialDamage = info.output;

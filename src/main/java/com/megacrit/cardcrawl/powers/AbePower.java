@@ -89,15 +89,6 @@ public class AbePower extends AbstractPower
 			((CaptainAbe)this.owner).isWaterLogged = this.atActiveDepth;
 		}
 	}
-	/*
-    @Override
-    public float atDamageGive(final float damage, final DamageInfo.DamageType type) {
-        if (!this.atActiveDepth || type != DamageInfo.DamageType.NORMAL) {
-            return damage;
-        }
-        return 0f;
-    }
-    */
     static {
         powerStrings = CardCrawlGame.languagePack.getPowerStrings("AbePower");
         NAME = AbePower.powerStrings.NAME;

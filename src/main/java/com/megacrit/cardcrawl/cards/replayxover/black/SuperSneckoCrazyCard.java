@@ -74,7 +74,9 @@ public class SuperSneckoCrazyCard extends BlackCard
     	}
 		@Override
 		public void use(AbstractPlayer p, AbstractCard c) {
-			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Shiv(), c.magicNumber));
+			AbstractCard shiv = new Shiv();
+			shiv.upgrade();
+			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(shiv, c.magicNumber));
 		}
 		@Override
     	public SSCCEffect makeCopy() {
@@ -209,7 +211,7 @@ public class SuperSneckoCrazyCard extends BlackCard
     }
     public SuperSneckoCrazyCard() {
         super(ID, NAME, "cards/replay/replayBetaSkillDark.png", COST, DESCRIPTION + EXTENDED_DESCRIPTION[0], AbstractCard.CardType.SKILL, AbstractCard.CardTarget.SELF);
-        this.purgeOnUse = true;
+        this.exhaust = true;
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
         SneckoField.snecko.set(this, true);

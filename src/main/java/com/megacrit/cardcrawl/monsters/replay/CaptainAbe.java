@@ -80,6 +80,7 @@ public class CaptainAbe extends AbstractMonster
 	private byte nextPlannedMove;
 	private boolean isFirstOrders;
 	private boolean neverDeadWeighted;
+	private int finaleCount;
 	
 	private ArrayList<AbstractGameAction.AttackEffect> slashEffects;
     
@@ -89,6 +90,7 @@ public class CaptainAbe extends AbstractMonster
 		this.isFirstTurn = true;
 		this.isFirstOrders = true;
 		this.neverDeadWeighted = true;
+		this.finaleCount = -1;
 		//this.animX = 0f;
 		//this.animY = 0f;
 		this.nextPlannedMove = CaptainAbe.SLASH;
@@ -160,6 +162,7 @@ public class CaptainAbe extends AbstractMonster
 				AbstractDungeon.actionManager.addToBottom(new WaitAction(0.75f));
 				AbstractDungeon.actionManager.addToBottom(new MoveMonsterAction(thisguy, 0.0f, -330.0f, 0.15f));
 				//AbstractDungeon.actionManager.addToBottom(new TalkAction(this, CaptainAbe.DIALOG[2]));
+				this.finaleCount = 1;
 				this.setMove(CaptainAbe.MOVES[4], CaptainAbe.FINALE_1, Intent.STRONG_DEBUFF);
 				this.createIntent();
 				AbstractDungeon.actionManager.addToBottom(new TextAboveCreatureAction(this, TextAboveCreatureAction.TextType.INTERRUPTED));
@@ -172,11 +175,7 @@ public class CaptainAbe extends AbstractMonster
     @Override
     public void usePreBattleAction() {
         AbstractDungeon.getCurrRoom().cannotLose = true;
-		if (AbstractDungeon.ascensionLevel >= 19) {
-			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, 5));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new IntangiblePower(this, 1), 1));
-		}
-		else if (AbstractDungeon.ascensionLevel >= 9) {
+		if (AbstractDungeon.ascensionLevel >= 9) {
 			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, 20));
 		}
         //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RegrowPower(this)));
@@ -436,16 +435,22 @@ public class CaptainAbe extends AbstractMonster
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TPH_ConfusionPower(AbstractDungeon.player, 3, true)));
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new PondfishDrowning(AbstractDungeon.player, 3), 3));
 				AbstractDungeon.actionManager.addToBottom(new RemoveDebuffsAction(this));
+				if (this.finaleCount < 2)
+					this.finaleCount = 2;
                 this.setNextTurn(FINALE_2);
                 break;
             }
             case FINALE_2: {
 				AbstractDungeon.actionManager.addToBottom(new TalkAction(this, CaptainAbe.DIALOG[11]));
+				if (this.finaleCount < 3)
+					this.finaleCount = 3;
                 this.setNextTurn(FINALE_3);
                 break;
             }
             case FINALE_3: {
 				AbstractDungeon.actionManager.addToBottom(new TalkAction(this, CaptainAbe.DIALOG[12]));
+				if (this.finaleCount < 4)
+					this.finaleCount = 4;
                 this.setNextTurn(FINALE_4);
                 break;
             }
@@ -494,6 +499,43 @@ public class CaptainAbe extends AbstractMonster
 			this.isFirstTurn = false;
 			this.setNextTurn(CaptainAbe.COLLAPSE);
 			//this.setMove(CaptainAbe.MOVES[0], CaptainAbe.COLLAPSE, Intent.ATTACK, this.damage.get(0).base, this.collapseAmt, true);
+			return;
+		}
+		if (this.halfDead) {
+			this.setNextTurn(NONEDEAD);
+			return;
+		}
+		if (this.finaleCount > 0) {
+			if (finaleCount == 1) {
+				this.setNextTurn(FINALE_1);
+			} else if (finaleCount == 2) {
+				this.setNextTurn(FINALE_2);
+			} else if (finaleCount == 3) {
+				this.setNextTurn(FINALE_3);
+			} else {
+				this.setNextTurn(FINALE_4);
+			}
+			this.finaleCount++;
+			return;
+		}
+		if (this.lastMove(ORDERS) || this.lastMove(COLLAPSE)) {
+			this.setNextTurn(SLASH);
+			return;
+		}
+		if (this.lastMove(SLASH)) {
+			this.setNextTurn(KEEL_HAUL);
+			return;
+		}
+		if (this.lastMove(KEEL_HAUL)) {
+			this.setNextTurn(BASH);
+			return;
+		}
+		if (this.lastMove(BASH)) {
+			if (AbstractDungeon.player.currentBlock > 45 && !this.isFirstOrders) {
+				this.setNextTurn(CaptainAbe.ROB_BLIND);
+			} else {
+				this.setNextTurn(CaptainAbe.ORDERS);
+			}
 			return;
 		}
 		this.setNextTurn(CaptainAbe.BASH);

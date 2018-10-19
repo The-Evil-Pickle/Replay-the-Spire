@@ -19,7 +19,7 @@ public class ReplayGainBlockPatch {
 		if (!__instance.target.isDying && !__instance.target.isDead && duration == startDuration) {
 			if (!__instance.target.isPlayer && ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Counterbalance")) {
 				AbstractRelic cbr = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Counterbalance");
-				if ((AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite || AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) && (__instance.amount / 2) > 0) {
+				if ((AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite || AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss || AbstractDungeon.getCurrRoom().eliteTrigger) && (__instance.amount / 2) > 0) {
 					__instance.amount -= (__instance.amount / 2);
 					if (cbr != null) {
 						cbr.flash();

@@ -10,17 +10,20 @@ public class OnionRing extends AbstractRelic
 {
     public static final String ID = "Onion Ring";
     public int TurnsLeft;
+    public boolean isFirstTurn;
     
     public OnionRing() {
-        super("Onion Ring", "onionRing.png", AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.FLAT);
-        this.TurnsLeft = 4;
+        super(ID, "onionRing.png", AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.FLAT);
+        this.TurnsLeft = 3;
+        this.isFirstTurn = true;
     }
     
     public void atBattleStart() {
-        this.TurnsLeft = 4;
+        this.TurnsLeft = 3;
+        this.isFirstTurn = true;
         this.flash();
-        AbstractDungeon.actionManager.addToTop((AbstractGameAction)new RelicAboveCreatureAction((AbstractCreature)AbstractDungeon.player, (AbstractRelic)this));
-        AbstractDungeon.player.addPower((AbstractPower)new StrengthPower((AbstractCreature)AbstractDungeon.player, 4));
+        AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        AbstractDungeon.player.addPower(new StrengthPower(AbstractDungeon.player, 3));
     }
     
     public String getUpdatedDescription() {
@@ -28,10 +31,12 @@ public class OnionRing extends AbstractRelic
     }
     
     public void atTurnStart() {
-        if (this.TurnsLeft > 0) {
+    	if (this.isFirstTurn) {
+    		this.isFirstTurn = false;
+    	} else if (this.TurnsLeft > 0) {
             this.flash();
-            AbstractDungeon.actionManager.addToTop((AbstractGameAction)new RelicAboveCreatureAction((AbstractCreature)AbstractDungeon.player, (AbstractRelic)this));
-            AbstractDungeon.player.addPower((AbstractPower)new StrengthPower((AbstractCreature)AbstractDungeon.player, -1));
+            AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            AbstractDungeon.player.addPower(new StrengthPower(AbstractDungeon.player, -1));
             --this.TurnsLeft;
         }
     }

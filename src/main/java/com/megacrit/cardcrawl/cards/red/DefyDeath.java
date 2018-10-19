@@ -6,12 +6,14 @@ import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.monsters.*;
 import com.megacrit.cardcrawl.dungeons.*;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.*;
 import com.megacrit.cardcrawl.core.*;
 import basemod.*;
 import basemod.abstracts.*;
+import replayTheSpire.ReplayTheSpireMod;
 
 public class DefyDeath extends CustomCard
 {
@@ -26,6 +28,10 @@ public class DefyDeath extends CustomCard
     public DefyDeath() {
         super("Defy Death", DefyDeath.NAME, "cards/replay/defyDeath.png", DefyDeath.COST, DefyDeath.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseBlock = DefyDeath.DEFENSE_GAINED;
+        if (ReplayTheSpireMod.foundmod_stslib) {
+        	GraveField.grave.set(this, true);
+        	this.rawDescription += " NL Grave.";
+        }
     }
     
 	public void updateDynamicCost() {
@@ -65,13 +71,6 @@ public class DefyDeath extends CustomCard
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBlock(4);
-			/*
-			if (AbstractDungeon.currMapNode == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT || AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-				this.upgradeBaseCost(5);
-			} else {
-				this.modifyCostForCombat(-1);
-			}
-			*/
         }
     }
     

@@ -30,9 +30,11 @@ public class ReplayApplyPowerPatch {
 				}
 			}
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Durian") && __instance.target.isPlayer && powerToApply.type == AbstractPower.PowerType.DEBUFF) {
-				Durian durian = (Durian)ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Durian");
-				durian.onDebuffRecieved(__instance);
-				AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(__instance.target, durian));
+				if (!powerToApply.ID.equals(LoseStrengthPower.POWER_ID) && !powerToApply.ID.equals(LoseDexterityPower.POWER_ID)) {
+					Durian durian = (Durian)ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Durian");
+					durian.onDebuffRecieved(__instance);
+					AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(__instance.target, durian));
+				}
 			}
 			if (ReplayTheSpireMod.foundmod_servant && ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("m_ScarletBlood") && __instance.target.isPlayer && powerToApply instanceof StrengthPower) {
 				((m_ScarletBlood)ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("m_ScarletBlood")).onGainStrength(__instance);
@@ -42,7 +44,7 @@ public class ReplayApplyPowerPatch {
 			
 			if (!__instance.target.isPlayer && powerToApply.ID.equals("Strength") && ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Counterbalance")) {
 				AbstractRelic cbr = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Counterbalance");
-				if ((AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite || AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) && (__instance.amount / 2) > 0) {
+				if ((AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite || AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss || AbstractDungeon.getCurrRoom().eliteTrigger) && (__instance.amount / 2) > 0) {
 					__instance.amount -= (__instance.amount / 2);
 					powerToApply.amount  -= (powerToApply.amount / 2);
 					if (cbr != null) {

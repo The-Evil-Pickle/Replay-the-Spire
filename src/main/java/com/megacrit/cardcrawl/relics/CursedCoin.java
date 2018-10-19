@@ -24,7 +24,7 @@ public class CursedCoin extends AbstractRelic
     public void onEquip() {
         CardCrawlGame.sound.play("GOLD_GAIN");
         AbstractDungeon.player.gainGold(GOLD_AMT);
-        final AbstractCard greedCurse = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE);
+        final AbstractCard greedCurse = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE).makeCopy();
 		UnlockTracker.markCardAsSeen(greedCurse.cardID);
 		AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(greedCurse, Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, false));
     }

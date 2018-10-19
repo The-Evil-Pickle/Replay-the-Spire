@@ -68,7 +68,7 @@ public class RingOfGreed extends AbstractRelic
         if (this.counter <= 0) {
         	while (this.counter <= 0) {
     			this.counter += GOLD_TRIGGER;
-    			final AbstractCard greedCurse = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE);
+    			final AbstractCard greedCurse = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE).makeCopy();
     			UnlockTracker.markCardAsSeen(greedCurse.cardID);
     			AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(greedCurse, Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, false));
     		}

@@ -104,7 +104,7 @@
   },
   "ReplayTheSpireMod:Hemoarmum": {
     "NAME": "Hemoarmum",
-    "DESCRIPTION": "Lose 2 HP and gain !M! Shielding X times. NL Refund 3. NL Exhaust."
+    "DESCRIPTION": "Lose 2 HP and gain !B! Shielding X times. NL Refund 3. NL Exhaust."
   },
   "Demonic Infusion": {
     "NAME": "Demonic Infusion",
@@ -122,15 +122,15 @@
   "ReplayReversal": {
     "NAME": "Reversal",
     "DESCRIPTION": "Keep Block at the end of this round. NL Gain !M! Reflection.",
-	"UPGRADE_DESCRIPTION": "Keep Block at the end of the next 2 rounds. NL Gain !M! Reflection.",
-	"EXTENDED_DESCRIPTION": [
-		"Keep Block at the end of the next ",
-		" rounds. NL Gain !M! Reflection."
-	]
+	"UPGRADE_DESCRIPTION": "Keep Block at the end of the next !replay:M-1! rounds. NL Gain !M! Reflection."
   },
-  "LeadingStrike": {
+  "ReplayTheSpireMod:LeadingStrike": {
     "NAME": "Leading Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Choose an Attack in your hand and reduce its cost to !M! this turn."
+    "DESCRIPTION": "Deal !D! damage. NL Reduce the cost of an Attack in your hand to !M! this round."
+  },
+  "ReplayTheSpireMod:Stacked": {
+    "NAME": "Phantom Shield",
+    "DESCRIPTION": "Gain !B! Block. NL Exhaustive !replay:ex!."
   },
   "Eclipse": {
     "NAME": "Eclipse",
@@ -214,7 +214,7 @@
   },
   "ReplaySolidLightProjector": {
     "NAME": "Solid Light Projector",
-    "DESCRIPTION": "Gain 1 Shielding for each card in your draw pile. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Shielding for every !M! cards in your discard pile. NL Exhaustive !replay:ex!."
   },
   "ReplayOverclock": {
     "NAME": "Overclock",
@@ -228,6 +228,10 @@
     "NAME": "FIFO Queue", 
     "DESCRIPTION": "Gain !M! Orb Slots.", 
     "UPGRADE_DESCRIPTION": "Gain 2X Orb Slots." 
+  },
+  "ReplayTheSpireMod:System Scan": {
+    "NAME": "System Scan",
+    "DESCRIPTION": "The next !M! Status cards you draw Exhaust and draw 1 card when drawn."
   },
   "Improvise": {
     "NAME": "Improvise",
@@ -296,7 +300,7 @@
   },
   "Hallucinations": {
 	"NAME": "Hallucinations",
-	"DESCRIPTION": "Unplayable. NL At the end of your turn, add !M! random card to your draw pile."
+	"DESCRIPTION": "Unplayable. NL At the end of your turn, add !M! random card to your draw pile. NL Exhaustive !replay:ex!."
   },
   "Sickly": {
 	"NAME": "Sickly",
@@ -343,7 +347,7 @@
   },
   "ReplayTheSpireMod:Doomed": {
 	"NAME": "Doomed",
-	"DESCRIPTION": "Die. NL Fleeting."
+	"DESCRIPTION": "Die. NL Soulbound. NL Fleeting."
   },
   "ReplayTheSpireMod:Faulty Equipment": {
 	"NAME": "Faulty Equipment",
@@ -358,13 +362,39 @@
 	"NAME": "A Very Large Swarm Of Misquitos",
 	"DESCRIPTION": "Unplayable. NL When drawn, deal !M! damage to ALL fighters."
   },
-  "ReplayTheSpireMod:Immenent Threat": {
-	"NAME": "Immenent Threat.",
-	"DESCRIPTION": "Innate. NL Exhaust. NL Switches to Vengeful Threat."
+  "ReplayTheSpireMod:Imminent Threat": {
+	"NAME": "Imminent Threat",
+	"DESCRIPTION": "Innate. NL Take !M! damage. NL Exhaust. NL Switches to Vengeful Threat."
   },
   "ReplayTheSpireMod:Vengeful Threat": {
 	"NAME": "Vengeful Threat",
-	"DESCRIPTION": "Grave. NL Draw 1 card. NL Switches to Immenent Threat."
+	"DESCRIPTION": "Grave. NL Draw 1 card. NL Exhaust. NL Switches to Imminent Threat."
+  },
+  "ReplayTheSpireMod:Meltdown Sequence": {
+	"NAME": "Meltdown Sequence",
+	"DESCRIPTION": "Unplayable. NL [#ff9900]OVERHEAT: [#ff9900]< !construct:O! [#ff9900]> NL Cycle. When cycled: NL Gain !M! Vulnerable."
+  },
+  "ReplayTheSpireMod:Compounding Headache": {
+	"NAME": "Compounding Headache",
+	"DESCRIPTION": "Draw 1 card. NL Lose !beaked:wI! HP. NL Exhaust. NL Wither -1.",
+	"EXTENDED_DESCRIPTION": [
+	"Increases HP loss."
+	]
+  },
+  "ReplayTheSpireMod:Traitor's Concience": {
+	"NAME": "Traitor's Concience",
+	"DESCRIPTION": "Unplayable. NL At the end of your turn, take !beaked:wI! damage. NL Wither -1.",
+	"EXTENDED_DESCRIPTION": [
+	"Increases damage taken."
+	]
+  },
+  "ReplayTheSpireMod:Wavering Confidence": {
+	"NAME": "Wavering Confidence",
+	"DESCRIPTION": "Unplayable. NL Self-Retaining. NL At the end of your turn, Switches to Delayed Remorse."
+  },
+  "ReplayTheSpireMod:Greater Regret": {
+	"NAME": "Delayed Remorse",
+	"DESCRIPTION": "Unplayable. NL At the end of your turn, take !M! Fibonacci damage. NL Switches to Wavering Confidence."
   },
   "ReplayTheSpireMod:Echoes of Time": {
 	"NAME": "Echoes of Time",
@@ -372,11 +402,11 @@
   },
   "ReplayTheSpireMod:??????????????????????": {
 	"NAME": "??????????????????",
-	"DESCRIPTION": "Snecko. Purge.",
+	"DESCRIPTION": "Snecko. Exhaust.",
 	"EXTENDED_DESCRIPTION": [
 		" NL ???????",
 		" NL Exhaust up to !M! cards in your hand.",
-		" NL Add !M! Shivs to your hand.",
+		" NL Add !M! Upgraded Shivs to your hand.",
 		" NL Channel !M! random orbs.",
 		" NL Refund 1.",
 		" NL Gain !M! Knives and !M! Protection.",
@@ -481,9 +511,10 @@
   },
   "ReplayTheSpireMod:Wings of Steel": {
     "NAME": "Wings of Steel",
-    "DESCRIPTION": "Gain !beaked:wB! Shielding, !beaked:wB! Block, and !beaked:wI! Plated Armor. NL Wither !M!.",
+    "DESCRIPTION": "Gain !beaked:wB! Shielding and !beaked:wI! Plated Armor. NL Wither !M!.",
+    "UPGRADE_DESCRIPTION": "Gain !beaked:wB! Shielding, !beaked:wB! Block, and !beaked:wI! Plated Armor. NL Wither !M!.",
 	"EXTENDED_DESCRIPTION": [
-		"Decreases the #yShielding amount."
+		"Decreases all amounts."
 	]
   },
   "OrbOptionCard_Lightning": {

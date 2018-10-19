@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.relics.DimensionalGlitch;
 
 import replayTheSpire.ReplayTheSpireMod;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 
 @SpirePatch(cls = "com.megacrit.cardcrawl.monsters.AbstractMonster", method = "damage")
@@ -23,7 +24,7 @@ public class ReplayMonsterDamagePatch {
 			}
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(DimensionalGlitch.ID)) {
 				altered=true;
-				info.output = Math.max(0, info.output - 2);
+				info.output = Math.max(0, info.output - MathUtils.floor((float)info.output / 2.0f));
 			}
 			if (altered) {
 				ReplayMonsterDamagePatch.initialDamage = info.output;

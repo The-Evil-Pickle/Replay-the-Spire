@@ -86,6 +86,21 @@
 	" #yReflection for each of your #yGlass orbs."
 	]
   },
+  "ReplayTheSpireMod:RefundNext": {
+    "NAME": "Refund Next Card",
+    "DESCRIPTIONS": [
+	"The next card you play this turn has #yRefund #b",
+	"."
+	]
+  },
+  "ReplayTheSpireMod:SystemScan": {
+    "NAME": "System Scan",
+    "DESCRIPTIONS": [
+	"The next #b",
+	" #yStatus card you draw #yExhausts and draws 1 card when drawn.",
+	" #yStatus cards you draw #yExhaust and draw 1 card when drawn."
+	]
+  },
   "Snake Venom": {
     "NAME": "Snake Venom",
     "DESCRIPTIONS": [

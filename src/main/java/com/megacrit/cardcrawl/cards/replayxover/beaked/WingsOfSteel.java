@@ -21,6 +21,7 @@ public class WingsOfSteel extends AbstractWitherCard
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION;
     private static final int COST = 2;
     private static final int BLOCK_AMT = 6;
@@ -46,7 +47,9 @@ public class WingsOfSteel extends AbstractWitherCard
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new WitherAction(this));
         AbstractDungeon.actionManager.addToBottom(new ReplayGainShieldingAction(p, p, this.block));
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+        if (this.upgraded) {
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+        }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(p, this.misc), this.misc));
     }
     
@@ -65,7 +68,7 @@ public class WingsOfSteel extends AbstractWitherCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(UPGRADE_PLUS_WITHER);
+            //this.upgradeMagicNumber(UPGRADE_PLUS_WITHER);
         }
     }
     
@@ -73,6 +76,7 @@ public class WingsOfSteel extends AbstractWitherCard
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         NAME = WingsOfSteel.cardStrings.NAME;
         DESCRIPTION = WingsOfSteel.cardStrings.DESCRIPTION;
+        UPGRADE_DESCRIPTION = WingsOfSteel.cardStrings.UPGRADE_DESCRIPTION;
         EXTENDED_DESCRIPTION = WingsOfSteel.cardStrings.EXTENDED_DESCRIPTION;
     }
 }

@@ -57,5 +57,10 @@
 		"Select card to discard.",
 		"Select cards to discard."
 	]
+  },
+  "ReduceCostToForTurnAction": {
+    "TEXT": [
+      "Reduce Cost"
+    ]
   }
 }

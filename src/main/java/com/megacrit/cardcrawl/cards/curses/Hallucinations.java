@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.ArrayList;
 import basemod.*;
 import basemod.abstracts.*;
+import replayTheSpire.variables.Exhaustive;
 
 public class Hallucinations
   extends CustomCard
@@ -21,14 +22,12 @@ public class Hallucinations
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Hallucinations");
   public static final String NAME = cardStrings.NAME;
   public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-  private static final int COST = -2;
-  private static final int POOL = 1;
+  private static final int EXHAUSTIVE = 3;
   
   public Hallucinations()
   {
     super("Hallucinations", NAME, "cards/replay/hallucinations.png", -2, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE);
-	
-	//this.exhaust = true;
+	Exhaustive.setBaseValue(this, EXHAUSTIVE);
 	this.baseMagicNumber = 1;
     this.magicNumber = this.baseMagicNumber;
   }
@@ -42,21 +41,21 @@ public class Hallucinations
 		}
 		else
 		{
-		  for (int counter = 0; counter < this.magicNumber; counter++){
-			  AbstractCard.CardRarity rarity = AbstractCard.CardRarity.COMMON;
-			  int r = MathUtils.random(20);
-			  if (r == 20)
-			  {
-				  rarity = AbstractCard.CardRarity.RARE;
-			  } else {
-				  if (r >= 15) {
-					  rarity = AbstractCard.CardRarity.UNCOMMON;
+			for (int i =0; i < this.magicNumber; i++) {
+				AbstractCard.CardRarity rarity = AbstractCard.CardRarity.COMMON;
+				  int r = MathUtils.random(20);
+				  if (r == 20)
+				  {
+					  rarity = AbstractCard.CardRarity.RARE;
+				  } else {
+					  if (r >= 15) {
+						  rarity = AbstractCard.CardRarity.UNCOMMON;
+					  }
 				  }
-			  }
-			  AbstractCard c = AbstractDungeon.getCard(rarity).makeCopy();
-			  AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, 1, true, false));
-		  }
-		  //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
+				  AbstractCard c = AbstractDungeon.getCard(rarity).makeCopy();
+				  AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, 1, true, false));
+			}
+		  Exhaustive.increment(this);
 		}
 	}
   

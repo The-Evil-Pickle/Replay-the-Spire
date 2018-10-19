@@ -68,9 +68,9 @@ public class Kintsugi extends AbstractRelic
         		this.cursesOpened = true;
         		final CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
     			for (int i=0; i < this.CURSEOPTIONS; i++) {
-    				AbstractCard bowlCurse = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE);
+    				AbstractCard bowlCurse = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE).makeCopy();
     				while (bowlCurse.rarity == AbstractCard.CardRarity.SPECIAL) {
-    					bowlCurse = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE);
+    					bowlCurse = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE).makeCopy();
     				}
     				UnlockTracker.markCardAsSeen(bowlCurse.cardID);
     				tmp.addToTop(bowlCurse);

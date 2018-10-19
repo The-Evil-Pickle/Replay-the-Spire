@@ -86,7 +86,14 @@
 	"NAME": "Onion Ring",
 	"FLAVOR": "The onion is encased in a deep-fried breading.",
     "DESCRIPTIONS": [
-	"You gain 3 #yStrength at the start of combat. You lose 1 #yStrength over the next 3 turns."
+	"You gain 3 #yStrength at the start of each combat. NL You lose 1 #yStrength over the next 3 turns."
+	]
+  },
+  "ReplayTheSpireMod:Shallot": {
+	"NAME": "Shallot",
+	"FLAVOR": "It's a shallot. Not a whole lot to say about it.",
+    "DESCRIPTIONS": [
+	"You gain 3 #yDexterity and #yMetallicize at the start of each combat. NL You lose 1 #yDexterity and #yMetallicize over the next 3 turns."
 	]
   },
   "Pet Ghost": {
@@ -260,7 +267,7 @@
 	"NAME": "Dimensional Glitch",
 	"FLAVOR": "UPDATE BODY TEXT",
     "DESCRIPTIONS": [
-	"Gain [E] at the start of each turn. NL All non-attack damage you deal is reduced by #b2. NL All non-attack damage you take is increased by #b2."
+	"Gain [E] at the start of each turn. NL All #ynon-attack #ydamage you deal is #rreduced to #bhalf, rounding #rdown. NL All #ynon-attack #ydamage you recieve is #rincreased by #bhalf, rounding #rup. NL All #yin-combat #yhealing you recieve is #rreduced to #bhalf, rounding #gup."
 	]
   },
   "Replay_Grab Bag": {
@@ -299,8 +306,8 @@
     "NAME": "Durian",
 	"FLAVOR": "Smells awful, tastes great.",
     "DESCRIPTIONS": [
-		"Whenever you gain a #rDebuff, gain #yShielding equal to the amount. NL At the start of your turn, reduce your #yWeak, #yVulnerable, and #yFrail to #b2. NL On pickup, increase your max HP by #b",
-		"Whenever you gain a #rDebuff, gain #yTemporary #yHP equal to the amount. NL At the start of your turn, reduce your #yWeak, #yVulnerable, and #yFrail to #b2. NL On pickup, increase your max HP by #b"
+		"Whenever you gain a #rDebuff, gain #yShielding equal to the amount. NL At the start of your turn, reduce your turn-based Debuffs to #b2. NL On pickup, increase your max HP by #b",
+		"Whenever you gain a #rDebuff, gain #yTemporary #yHP equal to the amount. NL At the start of your turn, reduce your turn-based Debuffs to #b2. NL On pickup, increase your max HP by #b"
 	]
   },
   "Basket Of Snakes": {
@@ -415,7 +422,7 @@
 	"NAME": "Tiger Marble",
 	"FLAVOR": "Eye of the Tiger",
     "DESCRIPTIONS": [
-		"At the start of combat, add a random card which #yExhausts to your hand. NL It costs #b0 until played."
+		"At the start of each combat, add a random card which #yExhausts to your hand. NL It costs #b0 until played."
 	]
   },
   "ReplayTheSpireMod:asdfghhj": {

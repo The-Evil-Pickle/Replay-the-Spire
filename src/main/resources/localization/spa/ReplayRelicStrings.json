@@ -214,7 +214,8 @@
     "NAME": "Durian",
 	"FLAVOR": "Huele horrible, sabe genial.",
     "DESCRIPTIONS": [
-		"Al inicio de tu turno, reduce tu #yWeak, #yVulnerable, y #yFrail a #b2. NL Al cogerlo, incrementa tu HP máxima en #b"
+		"Whenever you gain a #rDebuff, gain #yShielding equal to the amount. NL Al inicio de tu turno, reduce tu #yWeak, #yVulnerable, y #yFrail a #b2. NL Al cogerlo, incrementa tu HP máxima en #b",
+		"Whenever you gain a #rDebuff, gain #yTemporary #yHP equal to the amount. NL Al inicio de tu turno, reduce tu #yWeak, #yVulnerable, y #yFrail a #b2. NL Al cogerlo, incrementa tu HP máxima en #b"
 	]
   },
   "Basket Of Snakes": {

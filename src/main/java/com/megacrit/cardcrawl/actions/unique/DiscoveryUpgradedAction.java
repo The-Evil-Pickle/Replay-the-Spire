@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
 
+import basemod.BaseMod;
+
 public class DiscoveryUpgradedAction extends AbstractGameAction
 {
     private boolean retrieveCard;
@@ -43,7 +45,7 @@ public class DiscoveryUpgradedAction extends AbstractGameAction
                 final AbstractCard disCard = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
                 disCard.upgrade();
                 disCard.current_x = -1000.0f * Settings.scale;
-                if (AbstractDungeon.player.hand.size() < 10) {
+                if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
                 }
                 else {

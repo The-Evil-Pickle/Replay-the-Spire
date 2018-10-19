@@ -33,4 +33,6 @@ public class CardFieldStuff {
 	        }
 		}
 	}
+	@SpireEnum
+    public static AbstractCard.CardTags CHAOS_NEGATIVE_MAGIC;//means higher magic number is less powerful (used by ring of chaos)
 }

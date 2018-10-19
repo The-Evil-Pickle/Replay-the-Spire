@@ -4,6 +4,8 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.powers.*;
 
+import basemod.ReflectionHacks;
+
 public class Durian extends AbstractRelic
 {
     public static final String ID = "Durian";
@@ -32,7 +34,8 @@ public class Durian extends AbstractRelic
     public void atTurnStart() {
 		boolean gotem = false;
         for (final AbstractPower p : AbstractDungeon.player.powers) {
-            if (p.ID.equals("Frail") || p.ID.equals("Weakened") || p.ID.equals("Vulnerable")) {
+            //if (p.ID.equals("Frail") || p.ID.equals("Weakened") || p.ID.equals("Vulnerable")) {
+        	if (p.type == AbstractPower.PowerType.DEBUFF && (boolean)ReflectionHacks.getPrivate((Object)p, (Class)AbstractPower.class, "isTurnBased")) {
 				if (p.amount > 2) {
 					AbstractDungeon.actionManager.addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, p.ID, p.amount - 2));
 					gotem = true;

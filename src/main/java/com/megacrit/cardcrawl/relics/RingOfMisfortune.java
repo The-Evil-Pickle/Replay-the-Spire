@@ -34,7 +34,7 @@ public class RingOfMisfortune extends AbstractRelic
     }
     
     public void onCardDraw(final AbstractCard drawnCard) {
-        if (drawnCard.type == AbstractCard.CardType.CURSE) {
+        if (drawnCard.type == AbstractCard.CardType.CURSE || drawnCard.color == AbstractCard.CardColor.CURSE) {
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
 			AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(AbstractDungeon.player, AbstractDungeon.player, RingOfMisfortune.BLOCK));
             this.flash();
