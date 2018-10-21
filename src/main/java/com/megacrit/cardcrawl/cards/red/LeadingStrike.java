@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.actions.utility.*;
 import com.megacrit.cardcrawl.core.*;
 import basemod.*;
 import basemod.abstracts.*;
+import replayTheSpire.patches.CardFieldStuff;
 
 public class LeadingStrike extends CustomCard
 {
@@ -32,6 +33,7 @@ public class LeadingStrike extends CustomCard
         this.baseDamage = LeadingStrike.ATTACK_DMG;
         this.baseMagicNumber = REFUND_AMT;
         this.magicNumber = this.baseMagicNumber;
+        this.tags.add(CardFieldStuff.CHAOS_NEGATIVE_MAGIC);
     }
     
     @Override

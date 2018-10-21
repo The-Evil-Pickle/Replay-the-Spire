@@ -11,7 +11,7 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
 
 ### Currently adds:
  * 50 Relics (4 ironclad, 4 silent, 4 defect, 38 shared)
- * 55 Cards (10 ironclad, 12 silent, 12 defect, 11 colorless, 11 curses)
+ * 55 Cards (14 ironclad, 14 silent, 14 defect, 11 colorless, 11 curses)
  * 5 Events
  * 11 Potions
  * 2 Rooms
@@ -91,9 +91,10 @@ Hemogenesis | Red | Uncommon | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 
 Life Bind | Red | Uncommon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
 Leading Strike | Red | Uncommon | Attack | 1 | Deal 4 damage. Reduce the cost of an Attack in your hand to 1(0) for the round.
 Massacre | Red | Uncommon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
+Weight Training | Red | Uncommon | Skill | 0 | Gain 1 **Strength**. **Exhaustive** 2(3).
 Limb From Limb | Red | Uncommon | Attack | 3 | Deal 24(28) damage. If this deals at least 30(32) unblocked damage, **Refund** 2 and draw 2 cards.
 Phantom Shield | Red | Uncommon | Skill | 1 | Gain 11(13) **Block**. **Exhaustive** 2(3).
-Abandon | Red | Rare | Skill | 0 | **Exhaust** 1(up to 3) cards. Draw that many cards. Add a **Void** to your discard pile. **Ethereal**.
+Abandon | Red | Uncommon | Skill | 0 | **Exhaust** up to 3 cards. Draw that many cards. Add a **Void**(**Dazed**) to your discard pile. **Exhaustive** 3(4). **Ethereal**.
 Demonic Infusion | Red | Rare | Skill | X | Upgrade a card X(+1) times. **Refund** 1. **Exhaust**.
 Eclipse | Red | Rare | Skill | 3 | **Exhaust** your hand. For each card, add a random card to your hand that costs 1 less than normal. (**Refund** 1.)
 Fluid Movement | Green | Commmon | Power | 1 | Keep up to 5(8) block between rounds.
@@ -103,16 +104,20 @@ Draining Mist | Green | Uncommon | Skill | 3 | Apply 3 **Necrotic** **Poison** t
 Exploit Weakness | Green | Uncommon | Skill | 1(0) | Apply **Languid** equal to target's **Weak**. **Exhaust**.
 The Works | Green | Uncommon | Skill | 0 | For every 3 cards you draw this turn, gain 1 energy and deal 4(9) damage to a random enemy. Playable once per round.
 Scrap Shanks | Green | Uncommon | Power | 0 | When you discard a card during your turn, add 1 (**Upgraded**) **Shiv** to your hand.
+Shiv Toss | Green | Uncommon | Skill | 1(0) | Discard all **Shivs** in your hand. Your **Shivs** deal 1 extra damage this combat for each. **Exhaustive** 2. **Retain**.
 Sneak Up | Green | Uncommon | Skill | 1 | **Innate.** Discard 1 card (upgrade removes). Gain 1 **Intangible.** **Exhaust.** **Ethereal.**
+Speed Training | Green | Uncommon | Skill | 0 | Gain 1 **Dexterity**. **Exhaustive** 2(3).
 Atom Bomb | Green | Rare | Attack | 4 | Deal 60(75) damage. Apply 4 **Poison** to ALL fighters. **Exhaust**.
 From All Sides | Green | Rare | Attack | X | Apply 1 Weak and deal 3 damage to a random enemy 2X + 1(2) times.
 Poison Darts | Green | Rare | Skill | X | Apply 3(4) **Necrotic** **Poison** X times. Apply X Poison to ALL enemies.
 Necrosis | Green | Rare | Skill | 2 | Convert all **Poison** to **Necrotic** **Poison**. **Exhaust**.
 Panic Button | Blue | Common | Skill | 0 | **Evoke** all your orbs. Draw 2(4) cards. **Exhaust.** **Retain.**
 Repulse | Blue | Common | Skill | 0 | Gain 1(2) **Reflection**. Add 1 **Backfire** to your discard pile.
+Calculation Training | Blue | Uncommon | Skill | 0 | Gain 1 **Focus**. **Exhaustive** 2(3).
 Crystal Conduit | Blue | Uncommon | Skill | 1 | **Channel** 1 **Crystal** (and 1 random orb).
 Claw Rake | Blue | Uncommon | Attack | 2 | Deal 3(5) damage. Deal 3(5) damage to ALL enemies. Damage is upgraded by Claw cards.
 FIFO Queue | Blue | Uncommon | Power | 2(X) | Gain 4(2X+1) orb slots.
+Solid Light Projector | Blue | Uncommon | Skill | 1 | Gain 2 **Shielding** for every 5(3) cards in your discard pile. **Exhaustive** 2.
 Sort | Blue | Uncommon | Skill | 1 | Shuffle all Rare cards in your discard pile into your draw pile. Draw 2 cards. (**Retain.**)
 System Scan | Blue | Uncommon | Skill | 1 | The next 2(3) **Status** cards you draw **Exhaust** and draw 1 card when drawn.
 Empty Bin | Blue | Uncommon | Power | 1 | (**Innate**.) At the end of your turn, **Exhaust** all Common cards in your hand and gain 4(5) **Block** for each.

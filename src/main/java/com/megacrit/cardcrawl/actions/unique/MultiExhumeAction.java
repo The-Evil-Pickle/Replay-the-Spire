@@ -30,13 +30,18 @@ public class MultiExhumeAction extends AbstractGameAction
     public void update() {
         if (this.duration != Settings.ACTION_DUR_MED) {
             if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+            	int gottem = 0;
                 for (final AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-                    this.p.hand.addToHand(c);
-                    if (AbstractDungeon.player.hasPower("Corruption") && c.type == AbstractCard.CardType.SKILL) {
-                        c.setCostForTurn(-9);
-                    }
-                    this.p.exhaustPile.removeCard(c);
+                	gottem++;
+                	if (gottem <= this.amount) {
+                		this.p.hand.addToHand(c);
+                        if (AbstractDungeon.player.hasPower("Corruption") && c.type == AbstractCard.CardType.SKILL) {
+                            c.setCostForTurn(-9);
+                        }
+                        this.p.exhaustPile.removeCard(c);
+                	}
                     c.unhover();
+                    
                 }
                 AbstractDungeon.gridSelectScreen.selectedCards.clear();
                 this.p.hand.refreshHandLayout();

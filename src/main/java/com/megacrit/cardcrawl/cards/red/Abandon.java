@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardRarity;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardTarget;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
+import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.cards.status.Void;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -20,6 +21,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
 import basemod.*;
 import basemod.abstracts.*;
+import replayTheSpire.variables.Exhaustive;
 
 public class Abandon
   extends CustomCard
@@ -30,20 +32,25 @@ public class Abandon
   public static final String DESCRIPTION = cardStrings.DESCRIPTION;
   public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
   private static final int COST = 0;
-  private static final int POOL = 1;
   
   public Abandon()
   {
-    super("Abandon", NAME, "cards/replay/abandon.png", 0, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.NONE);
-    this.baseMagicNumber = 1;
+    super("Abandon", NAME, "cards/replay/abandon.png", COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.NONE);
+    this.baseMagicNumber = 3;
     this.magicNumber = this.baseMagicNumber;
+    Exhaustive.setBaseValue(this, 3);
     this.isEthereal = true;
   }
   
   public void use(AbstractPlayer p, AbstractMonster m)
   {
-	AbstractDungeon.actionManager.addToBottom(new AbandonAction(p, p, this.magicNumber, this.upgraded));
-    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Void(), 1));
+	AbstractDungeon.actionManager.addToBottom(new AbandonAction(p, p, this.magicNumber, true));
+	if (this.upgraded) {
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Dazed(), 1));
+	} else {
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Void(), 1));
+	}
+	Exhaustive.increment(this);
   }
   
   public AbstractCard makeCopy()
@@ -61,7 +68,8 @@ public class Abandon
     if (!this.upgraded)
     {
       upgradeName();
-      upgradeMagicNumber(2);
+      //upgradeMagicNumber(2);
+      Exhaustive.upgrade(this, 1);
       this.rawDescription = UPGRADE_DESCRIPTION;
       initializeDescription();
     }

@@ -3,8 +3,10 @@ package replayTheSpire.patches;
 import java.util.*;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.daily.mods.CertainFuture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.random.Random;
 
 import replayTheSpire.ReplayTheSpireMod;
@@ -20,7 +22,7 @@ public class BonfirePatches {
 	public static class PickBonfirePatch {
 		
 		public static void Postfix() {
-			if (ReplayTheSpireMod.SETTING_ROOMS_PORTAL.testChance(AbstractDungeon.mapRng)) {
+			if (ReplayTheSpireMod.SETTING_ROOMS_PORTAL.testChance(AbstractDungeon.mapRng) && !ModHelper.isModEnabled(CertainFuture.ID)) {
 				ArrayList<MapRoomNode> finalFires = new ArrayList<MapRoomNode>();
 				for (MapRoomNode node : AbstractDungeon.map.get(AbstractDungeon.map.size() - 1) ) {
 					

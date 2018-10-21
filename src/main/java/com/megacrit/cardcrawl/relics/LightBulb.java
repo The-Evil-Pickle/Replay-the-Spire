@@ -33,4 +33,9 @@ public class LightBulb extends AbstractRelic
     public AbstractRelic makeCopy() {
         return new LightBulb();
     }
+    
+    @Override
+    public int getPrice() {
+    	return 200;
+    }
 }

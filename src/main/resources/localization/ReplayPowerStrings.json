@@ -93,6 +93,13 @@
 	"."
 	]
   },
+  "replay:ExhaustiveNegationPower": {
+	"NAME": "Negate Exhaustive",
+    "DESCRIPTIONS": [
+	"The next #b",
+	" times you play an Exhaustive card, the Exhaustive counter will not go down."
+	]
+  },
   "ReplayTheSpireMod:SystemScan": {
     "NAME": "System Scan",
     "DESCRIPTIONS": [

@@ -12,6 +12,7 @@ import java.util.*;
 import com.megacrit.cardcrawl.core.*;
 import basemod.*;
 import basemod.abstracts.*;
+import replayTheSpire.patches.CardFieldStuff;
 
 public class AtomBomb extends CustomCard
 {
@@ -30,6 +31,7 @@ public class AtomBomb extends CustomCard
         this.baseMagicNumber = 4;
         this.magicNumber = this.baseMagicNumber;
         this.exhaust = true;
+        this.tags.add(CardFieldStuff.CHAOS_NEGATIVE_MAGIC);
     }
     
     public void use(final AbstractPlayer abstractPlayer, final AbstractMonster abstractMonster) {

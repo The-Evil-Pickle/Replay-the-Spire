@@ -13,7 +13,10 @@ import java.util.*;
 import java.lang.*;
 import replayTheSpire.*;
 import replayTheSpire.panelUI.*;
+import replayTheSpire.patches.CardFieldStuff;
 import replayTheSpire.replayxover.beakedbs;
+import replayTheSpire.replayxover.constructbs;
+import replayTheSpire.variables.Exhaustive;
 
 public class RingOfChaos
   extends ReplayAbstractRelic
@@ -47,7 +50,7 @@ public class RingOfChaos
 	}
   public static enum ChaosUpgradeType
   {
-    MAGIC, DAMAGE, BLOCK, COST;
+    MAGIC, DAMAGE, BLOCK, COST, EXHAUSTIVE, OVERHEAT;
     
     private ChaosUpgradeType() {}
   }
@@ -76,6 +79,9 @@ public class RingOfChaos
   }
   
   public static boolean isMagicNegative(AbstractCard c) {
+	  if (c.hasTag(CardFieldStuff.CHAOS_NEGATIVE_MAGIC)) {
+		  return true;
+	  }
 	  String rawdesc = c.rawDescription.toLowerCase();
 	  if (rawdesc.contains("lose !m! hp.") || rawdesc.contains("gain !m! vulnerable") || rawdesc.contains("gain !m! weak") || rawdesc.contains("lose !m! strength") || rawdesc.contains("lose !m! dexterity")) {
 		  return true;
@@ -102,14 +108,21 @@ public class RingOfChaos
 	ArrayList<ChaosUpgradeType> upOp = new ArrayList<ChaosUpgradeType>();
 	ArrayList<ChaosUpgradeType> dwnOp = new ArrayList<ChaosUpgradeType>();
 	boolean invertMagic = isMagicNegative(c);
-	if (c.baseMagicNumber > 0 && c.rawDescription.contains("!M")) {
+	if (c.baseMagicNumber > 0 && (c.rawDescription.contains("!M") || c.rawDescription.contains("M!"))) {
 		if (SETTING_MODE.value == 2) {//if (ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.STRICT) {
 			return false;
 		}
 		if (SETTING_MODE.value == 0) {//if (ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.ALWAYS) {
-			upOp.add(ChaosUpgradeType.MAGIC);
-			if (c.baseMagicNumber > 1) {
+			if (invertMagic) {
 				dwnOp.add(ChaosUpgradeType.MAGIC);
+				if (c.baseMagicNumber > 1) {
+					upOp.add(ChaosUpgradeType.MAGIC);
+				}
+			} else {
+				upOp.add(ChaosUpgradeType.MAGIC);
+				if (c.baseMagicNumber > 1) {
+					dwnOp.add(ChaosUpgradeType.MAGIC);
+				}
 			}
 		}
 	}  
@@ -123,6 +136,18 @@ public class RingOfChaos
 		upOp.add(ChaosUpgradeType.BLOCK);
 		if (c.block > 1) {
 			dwnOp.add(ChaosUpgradeType.BLOCK);
+		}
+	}
+	if (Exhaustive.ExhaustiveFields.baseExhaustive.get(c) > 0 && c.rawDescription.contains("!replay:ex")){
+		dwnOp.add(ChaosUpgradeType.EXHAUSTIVE);
+		if (c.block > 1) {
+			upOp.add(ChaosUpgradeType.EXHAUSTIVE);
+		}
+	}
+	if (ReplayTheSpireMod.foundmod_construct && constructbs.chaos_overheat(c) > 0) {
+		upOp.add(ChaosUpgradeType.OVERHEAT);
+		if (constructbs.chaos_overheat(c) > 1) {
+			dwnOp.add(ChaosUpgradeType.OVERHEAT);
 		}
 	}
 	if (c.cost >= 0){
@@ -270,6 +295,34 @@ public class RingOfChaos
 						c.upgradedBlock = true;
 						downmult = (float)c.baseMagicNumber / (float)prevnum;
 						break;
+					case EXHAUSTIVE:
+						switch(Exhaustive.ExhaustiveFields.baseExhaustive.get(c)){
+						case 1:
+							downmult = 0.5f;
+							Exhaustive.upgrade(c, 1);
+							break;
+						case 2:
+							downmult = 0.67f;
+							Exhaustive.upgrade(c, 1);
+							break;
+						case 3:
+							if (downtarg < 0.5f) {
+								downmult = 0.33f;
+								Exhaustive.upgrade(c, 2);
+							} else {
+								downmult = 0.75f;
+								Exhaustive.upgrade(c, 1);
+							}
+							break;
+						default:
+							prevnum = Exhaustive.ExhaustiveFields.baseExhaustive.get(c);
+							Exhaustive.upgrade(c, (int)(Exhaustive.ExhaustiveFields.baseExhaustive.get(c) / ((1.0f) / downtarg)));
+							downmult = ((float)prevnum / (float)Exhaustive.ExhaustiveFields.baseExhaustive.get(c));
+					}
+					break;
+					case OVERHEAT:
+						downmult = constructbs.chaos_overheat_downside(c, downtarg);
+						break;
 				}
 			}
 			icounter = 0;
@@ -319,6 +372,16 @@ public class RingOfChaos
 						}
 						c.baseBlock += prevnum;
 						c.upgradedBlock = true;
+						break;
+					case EXHAUSTIVE:
+						prevnum = MathUtils.ceilPositive((float)Exhaustive.ExhaustiveFields.baseExhaustive.get(c) / downmult) - Exhaustive.ExhaustiveFields.baseExhaustive.get(c);
+						if (prevnum <= 0) {
+							prevnum = 1;
+						}
+						Exhaustive.upgrade(c, prevnum * (-1));
+						break;
+					case OVERHEAT:
+						constructbs.chaos_overheat_upside(c, downmult);
 						break;
 				}
 			}

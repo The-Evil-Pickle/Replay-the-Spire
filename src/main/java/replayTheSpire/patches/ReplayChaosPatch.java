@@ -80,7 +80,13 @@ public class ReplayChaosPatch {
 			}
 		}
 		
-		
+		if (AbstractDungeon.player.hasRelic(OnyxGauntlets.ID)) {
+			for (int i = 0; i < __result.size() - 2; i++){
+				if (__result.get(i).cost == -1 && __result.get(i).rawDescription.contains("X") && __result.get(i).rarity != AbstractCard.CardRarity.SPECIAL && __result.get(i).rarity != AbstractCard.CardRarity.BASIC) {
+					__result.set(i, AbstractDungeon.getCard(__result.get(i).rarity).makeCopy());
+				}
+			}
+		}
 		
 		if (AbstractDungeon.player.hasRelic("Ring of Chaos")) {
 			int numToChange = AbstractDungeon.miscRng.random(2);

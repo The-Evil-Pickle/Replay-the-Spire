@@ -22,7 +22,7 @@ import java.util.*;
 public class ReplayMonsterEncounterPatches {
 	
 	//@SpirePatch(cls = "com.megacrit.cardcrawl.helpers.MonsterHelper", method = "getEncounter")
-	public static class ReplayEncounterPatch {
+	/*public static class ReplayEncounterPatch {
 		public static MonsterGroup Postfix(MonsterGroup __result, final String key) {
 			switch (key) {
 				case "Pondfish": {
@@ -47,7 +47,7 @@ public class ReplayMonsterEncounterPatches {
 			}
 			
 		}
-	}
+	}*/
 	
 	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.AbstractDungeon", method = "setBoss")
 	public static class ReplaySetBossPatch {
@@ -95,17 +95,30 @@ public class ReplayMonsterEncounterPatches {
 					//ReplayTheSpireMod.logger.info(CardCrawlGame.playerPref.getInteger(AbstractDungeon.player.chosenClass.name() + "_SPIRITS", 0));
 					if ((CardCrawlGame.playerPref.getInteger(AbstractDungeon.player.chosenClass.name() + "_SPIRITS", 0) > 0 && Settings.isStandardRun()) || AbstractDungeon.player.name.equals("Jrmiah")) {
 					monsters.add(new MonsterInfo("Erikyupuro", monsters.get(0).weight * ((float)(5 + AbstractDungeon.ascensionLevel) / 25f)));
-					MonsterInfo.normalizeWeights(monsters);
+					ReplayMonsterEncounterPatches.normalizeWeights(monsters);
 					}
 				} else if (__Instance instanceof TheBeyond) {
 					if (AbstractDungeon.player.masterDeck.size() < Math.min((AbstractDungeon.player.relics.size() * 2) + 5, 40) || (AbstractDungeon.player.name.equals("Rhapsody") && AbstractDungeon.player.masterDeck.size() < 40)) {
 						monsters.add(new MonsterInfo("R_Hoarder", monsters.get(0).weight * (((float)(AbstractDungeon.player.relics.size())) / Math.min((float)AbstractDungeon.player.masterDeck.size() / 2f, 12f))));
-						MonsterInfo.normalizeWeights(monsters);
+						ReplayMonsterEncounterPatches.normalizeWeights(monsters);
 					}
 				}
 			}
 		}
 	}
+
+    
+    public static void normalizeWeights(final ArrayList<MonsterInfo> list) {
+        Collections.sort(list);
+        float total = 0.0f;
+        for (final MonsterInfo i : list) {
+            total += i.weight;
+        }
+        for (final MonsterInfo monsterInfo : list) {
+            final MonsterInfo i = monsterInfo;
+            monsterInfo.weight /= total;
+        }
+    }
 	//@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.TheCity", method = "initializeBoss")
 	public static class ReplayCityBossListPatch {
 		@SpireInsertPatch(rloc=1)
@@ -138,6 +151,13 @@ public class ReplayMonsterEncounterPatches {
 	public static class SpawnGremlinPatch {
 		@SpireInsertPatch(rloc=4, localvars={"gremlinPool"})
 		public static void Insert(final float x, final float y, ArrayList<String> gremlinPool) {
+			gremlinPool.add("GremlinCook");
+		}
+	}
+	@SpirePatch(cls = "com.megacrit.cardcrawl.helpers.MonsterHelper", method = "spawnGremlins")
+	public static class SpawnGremlinsPatch {
+		@SpireInsertPatch(rloc=4, localvars={"gremlinPool"})
+		public static void Insert(ArrayList<String> gremlinPool) {
 			gremlinPool.add("GremlinCook");
 		}
 	}

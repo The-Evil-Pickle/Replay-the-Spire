@@ -4,6 +4,8 @@ import infinitespire.abstracts.*;
 import madsciencemod.actions.common.ShuffleTrinketAction;
 import madsciencemod.powers.FuelPower;
 import mysticmod.MysticMod;
+import replayTheSpire.ReplayTheSpireMod;
+import replayTheSpire.variables.Exhaustive;
 
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.cards.colorless.Shiv;
@@ -17,6 +19,7 @@ import blackrusemod.powers.KnivesPower;
 import blackrusemod.powers.ProtectionPower;
 import chronomuncher.cards.Facsimile;
 import chronomuncher.orbs.*;
+import chronomuncher.powers.RetainOncePower;
 
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -29,8 +32,11 @@ import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SneckoField
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.common.ModifyExhaustiveAction;
 import com.megacrit.cardcrawl.actions.common.ReplayRefundAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
@@ -104,7 +110,7 @@ public class SuperSneckoCrazyCard extends BlackCard
     	}
 		@Override
 		public void use(AbstractPlayer p, AbstractCard c) {
-			AbstractDungeon.actionManager.addToBottom(new ReplayRefundAction(c, 1));
+			AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
 		}
 		@Override
     	public SSCCEffect makeCopy() {
@@ -176,10 +182,25 @@ public class SuperSneckoCrazyCard extends BlackCard
     	}
 		@Override
 		public void use(AbstractPlayer p, AbstractCard c) {
-			AbstractDungeon.actionManager.addToBottom(new ArmamentsAction(true));
+			AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, c.magicNumber));
 			for (AbstractCard card : p.hand.group) {
 				if (card instanceof AbstractWitherCard) {
-					AbstractDungeon.actionManager.addToBottom(new ReplenishWitherAction((AbstractWitherCard)card, c.magicNumber));
+					AbstractDungeon.actionManager.addToBottom(new ReplenishWitherAction((AbstractWitherCard)card, c.magicNumber-1));
+				}
+			}
+			for (AbstractCard card : p.discardPile.group) {
+				if (card instanceof AbstractWitherCard) {
+					AbstractDungeon.actionManager.addToBottom(new ReplenishWitherAction((AbstractWitherCard)card, c.magicNumber-1));
+				}
+			}
+			for (AbstractCard card : p.hand.group) {
+				if (Exhaustive.ExhaustiveFields.baseExhaustive.get(card) > 0) {
+					AbstractDungeon.actionManager.addToBottom(new ModifyExhaustiveAction(card, c.magicNumber-1));
+				}
+			}
+			for (AbstractCard card : p.discardPile.group) {
+				if (Exhaustive.ExhaustiveFields.baseExhaustive.get(card) > 0) {
+					AbstractDungeon.actionManager.addToBottom(new ModifyExhaustiveAction(card, c.magicNumber-1));
 				}
 			}
 		}
@@ -203,6 +224,7 @@ public class SuperSneckoCrazyCard extends BlackCard
             card.target_y = Settings.HEIGHT / 2;
             card.targetDrawScale *= 1.2f;
             AbstractDungeon.actionManager.addToBottom(new QueueCardAction(card, AbstractDungeon.getRandomMonster()));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RetainOncePower(c.magicNumber), c.magicNumber));
 		}
 		@Override
     	public SSCCEffect makeCopy() {
@@ -210,8 +232,8 @@ public class SuperSneckoCrazyCard extends BlackCard
 		}
     }
     public SuperSneckoCrazyCard() {
-        super(ID, NAME, "cards/replay/replayBetaSkillDark.png", COST, DESCRIPTION + EXTENDED_DESCRIPTION[0], AbstractCard.CardType.SKILL, AbstractCard.CardTarget.SELF);
-        this.exhaust = true;
+        super(ID, NAME, "cards/replay/qmark.png", COST, DESCRIPTION + EXTENDED_DESCRIPTION[0], AbstractCard.CardType.SKILL, AbstractCard.CardTarget.SELF);
+        this.purgeOnUse = true;
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
         SneckoField.snecko.set(this, true);
@@ -235,9 +257,8 @@ public class SuperSneckoCrazyCard extends BlackCard
         for (SSCCEffect e : effects_src) {
         	elist.add(e.makeCopy());
         }
-        Collections.shuffle(elist, new Random(AbstractDungeon.miscRng.randomLong()));
         for (int i=0; i <= this.costForTurn && !elist.isEmpty(); i++) {
-        	this.effects.add(elist.remove(0));
+        	this.effects.add(elist.remove(AbstractDungeon.miscRng.random(elist.size()-1)));
         }
         this.rawDescription = DESCRIPTION;
         for (SSCCEffect e : this.effects) {
@@ -259,7 +280,6 @@ public class SuperSneckoCrazyCard extends BlackCard
         effects_src.add(new SSCCE_Exhaust());
         effects_src.add(new SSCCE_Shivs());
         effects_src.add(new SSCCE_Orbs());
-        effects_src.add(new SSCCE_Refund());
         if (Loader.isModLoaded("BlackRuseMod")) {
             effects_src.add(new SSCCE_Servant());
         }
@@ -275,5 +295,9 @@ public class SuperSneckoCrazyCard extends BlackCard
         if (Loader.isModLoaded("chronomuncher")) {
             effects_src.add(new SSCCE_Replicate());
         }
+        if (Loader.isModLoaded("beakedthecultist-sts") || ReplayTheSpireMod.foundmod_beaked) {
+            effects_src.add(new SSCCE_Wither());
+        }
+        effects_src.add(new SSCCE_Refund());
     }
 }

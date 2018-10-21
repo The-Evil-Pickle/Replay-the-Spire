@@ -752,7 +752,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	
 	public static HashMap<String, ReplayRelicSetting> ConfigSettings = new HashMap<String, ReplayRelicSetting>();
 	public static HashMap<ReplayAbstractRelic, ArrayList<ReplayRelicSetting>> RelicSettings = new HashMap<ReplayAbstractRelic, ArrayList<ReplayRelicSetting>>();
-	static final float setting_start_x = 300.0f;
+	static final float setting_start_x = 350.0f;
 	static final float setting_start_y = 550.0f;
 	public static void BuildSettings(ReplayAbstractRelic relic) {
 		ReplayTheSpireMod.RelicSettings.put(relic, relic.BuildRelicSettings());
@@ -829,6 +829,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BuildSettings(new Ninjato());
 		BuildSettings(new TagBag());
 		BuildSettings(new HoneyJar());
+		BuildSettings(new BargainBundle());
 		//BuildSettings(new EnergyBall());
 		
 		loadSettingsData();
@@ -858,33 +859,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addEvent(ReplayMapScoutEvent.ID, ReplayMapScoutEvent.class, "TheCity");
 		BaseMod.addEvent(TrappedChest.ID, TrappedChest.class);
 		BaseMod.addEvent(ChaosEvent.ID, ChaosEvent.class);
-		/*if (Loader.isModLoaded("Friendly_Minions_0987678")) {
-			BaseMod.addEvent(GremboTheGreat.ID, GremboTheGreat.class, "TheCity");
-		}*/
-
-		/*logger.info("keywords");
-        final String[] necroNames = { "necrotic", "necrotic poison", "Necrotic" };
-        BaseMod.addKeyword(necroNames, "A powerful poison that deals 2 damage each turn, but doesn't last as long.");
-		final String[] refundNames = { "refund", "refunds", "Refund", "Refunds"};
-		BaseMod.addKeyword(refundNames, "Returns energy spent on playing the card, up to the Refund value.");
-		final String[] crystalNames = { "crystal"};
-		BaseMod.addKeyword(crystalNames, "Orb: Gives adjacent orbs #b+2 #yFocus. When #yEvoked, if you have fewer than #b3 orb slots, gain an orb slot. NL #yPassive effect is not affected by #yFocus.");
-		final String[] hfNames = { "hellfire"};
-		BaseMod.addKeyword(hfNames, "Orb: At the start of your turn, gain #b+2 #yStrength until the end of your turn. NL When #yEvoked, applies 1 #yVulnerable to a random enemy.");
-		final String[] glNames = { "glass"};
-		BaseMod.addKeyword(glNames, "Orb: No #yPassive effect. When #yEvoked while you have more than #b3 orb slots, consumes your leftmost orb slot and #yEvokes the occupying orb.");
-		final String[] rfNames = { "reflection", "Reflection", "reflection."};
-		BaseMod.addKeyword(rfNames, "Goes down by 1 each round, is removed on 0. NL While active, completely blocking Attack damage reflects it back at the attacker.");
-		final String[] shieldNames = { "shielding", "Shielding", "Shielding."};
-		BaseMod.addKeyword(shieldNames, "An alternate form of #yBlock that can directly block HP loss. NL #yShielding is not lost at the end of each round.");
-		final String[] langNames = { "languid", "Languid", "Languid."};
-		BaseMod.addKeyword(langNames, "Fighters with #yLanguid deal #b1 less #yAttack damage per stack. NL Is reduced by #b1 at the end of each round.");
-		final String[] bfNames = { "backfire", "Backfire", "Backfires", "backfires"};
-		BaseMod.addKeyword(bfNames, "#yStatus: Gives #b1 #yVulnerable when drawn. NL Deals #b6 damage and #yExhausts at the end of your turn.");
-		
-		final String[] specNames = { "spectral", "Spectral", "Spectral."};
-		BaseMod.addKeyword(specNames, "Is #yEthereal. NL #yExhausts when played or discarded. NL When drawn, you draw an additional card. NL If your hand is full and you draw a card, this card is #yExhausted from your hand to make room.");
-		*/
 		
 		
 		/*if (foundmod_infinite) {
@@ -1043,6 +1017,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new LeadingStrike());
 		AddAndUnlockCard(new ReplayReversal());
 		AddAndUnlockCard(new ReplayStacked());
+		AddAndUnlockCard(new MuscleTraining());
 		logger.info("adding cards for Silent...");
 		AddAndUnlockCard(new AtomBomb());
 		AddAndUnlockCard(new DrainingMist());
@@ -1056,6 +1031,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new TheWorks());
 		AddAndUnlockCard(new FromAllSides());
 		AddAndUnlockCard(new ExploitWeakness());
+		AddAndUnlockCard(new ShivToss());
+		AddAndUnlockCard(new SpeedTraining());
 		logger.info("adding cards for Defect...");
 		AddAndUnlockCard(new com.megacrit.cardcrawl.cards.blue.PanicButton());
 		AddAndUnlockCard(new MirrorShield());
@@ -1069,6 +1046,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new FIFOQueue());
 		AddAndUnlockCard(new ReplaySort());
 		AddAndUnlockCard(new SystemScan());
+		AddAndUnlockCard(new SolidLightProjector());
+		AddAndUnlockCard(new CalculationTraining());
 		//AddAndUnlockCard(new ReflectiveLens());
 		//AddAndUnlockCard(new Crystallizer());
 		logger.info("adding colorless cards...");

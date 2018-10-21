@@ -3,6 +3,8 @@ package replayTheSpire.variables;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.ExhaustiveNegationPower;
 
 import basemod.abstracts.DynamicVariable;
 
@@ -50,6 +52,10 @@ public class Exhaustive extends DynamicVariable
     }
     
     public static void increment(final AbstractCard card) {
+    	if (AbstractDungeon.player.hasPower(ExhaustiveNegationPower.POWER_ID)) {
+            AbstractDungeon.player.getPower(ExhaustiveNegationPower.POWER_ID).onSpecificTrigger();
+            return;
+        }
     	ExhaustiveFields.exhaustive.set(card, ExhaustiveFields.exhaustive.get(card) - 1);
     	if (ExhaustiveFields.exhaustive.get(card) <= 0) {
     		card.exhaust = true;

@@ -40,6 +40,7 @@ public class Hemogenesis extends CustomCard
         this.magicNumber = this.baseMagicNumber;
 		this.timesUpgraded = upgrades;
 		this.exhaust = true;
+		this.tags.add(CardTags.HEALING);
     }
     
     @Override

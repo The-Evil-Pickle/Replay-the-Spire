@@ -4,10 +4,12 @@ import java.util.*;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.daily.mods.CertainFuture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.helpers.EventHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.EventRoom;
@@ -29,7 +31,7 @@ public class TeleporterPatches {
 		
 		public static void Postfix() {
 			
-			if (ReplayTheSpireMod.SETTING_ROOMS_PORTAL.testChance(AbstractDungeon.mapRng)) {
+			if (ReplayTheSpireMod.SETTING_ROOMS_PORTAL.testChance(AbstractDungeon.mapRng) && !ModHelper.isModEnabled(CertainFuture.ID)) {
 				
 				int overRow = AbstractDungeon.mapRng.random(2, AbstractDungeon.map.size() - 1);
 				

@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
+import com.megacrit.cardcrawl.powers.IntangiblePower;
 import com.megacrit.cardcrawl.relics.DimensionalGlitch;
 import com.megacrit.cardcrawl.relics.GhostHeart;
 
@@ -28,10 +30,11 @@ public class PlayerDamagePatch {
 	}
 	
 	private static int initialDamage;
-	
+	public static boolean altered;
 	public static void Prefix(AbstractPlayer player, DamageInfo info) {
-		if (player != null && info.type != DamageInfo.DamageType.NORMAL) {
-			boolean altered = false;
+		altered = false;
+		if (player != null && info.type != DamageInfo.DamageType.NORMAL && !player.hasPower(IntangiblePower.POWER_ID) && !player.hasPower(IntangiblePlayerPower.POWER_ID)) {
+			PlayerDamagePatch.initialDamage = info.output;
 			if (info.owner != null && info.owner != player && info.owner.hasPower("Specialist")) {
 				altered = true;
 				info.output += info.owner.getPower("Specialist").amount;
@@ -40,13 +43,10 @@ public class PlayerDamagePatch {
 				altered=true;
 				info.output += MathUtils.ceil(((float)info.output / 2.0f));
 			}
-			if (altered) {
-				PlayerDamagePatch.initialDamage = info.output;
-			}
 		}
 	}
 	public static void Postfix(AbstractPlayer player, DamageInfo info) {
-		if (player != null && info.type != DamageInfo.DamageType.NORMAL && ((info.owner != null && info.owner != AbstractDungeon.player && info.owner.hasPower("Specialist")) || ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(DimensionalGlitch.ID))) {
+		if (altered) {//if (player != null && info.type != DamageInfo.DamageType.NORMAL && ((info.owner != null && info.owner != AbstractDungeon.player && info.owner.hasPower("Specialist")) || ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(DimensionalGlitch.ID))) {
 			info.output = PlayerDamagePatch.initialDamage;
 		}
 	}

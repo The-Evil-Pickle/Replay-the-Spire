@@ -61,7 +61,7 @@ public class ReplayIntSliderSetting extends ReplayRelicSetting {
 
 	@Override
 	public ArrayList<IUIElement> GenerateElements(float x, float y) {
-		this.slider = new AdvModSlider(this.name, x, y, this.min, this.multi, this.suf, ReplayTheSpireMod.settingsPanel, (me) -> {
+		this.slider = new AdvModSlider(this.name, x + 125.0f, y, this.min, this.multi, this.suf, ReplayTheSpireMod.settingsPanel, (me) -> {
 			this.value = Math.round(me.value * me.multiplier + this.min);
 			ReplayTheSpireMod.saveSettingsData();
 		});

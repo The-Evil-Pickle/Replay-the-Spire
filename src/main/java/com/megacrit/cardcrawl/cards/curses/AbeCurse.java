@@ -29,6 +29,8 @@ public class AbeCurse extends CustomCard
         if (ReplayTheSpireMod.foundmod_stslib) {
         	SoulboundField.soulbound.set(this, true);
         	this.rawDescription += " NL Soulbound.";
+        	this.baseMagicNumber--;
+            this.magicNumber = this.baseMagicNumber;
         	this.initializeDescription();
         }
     }

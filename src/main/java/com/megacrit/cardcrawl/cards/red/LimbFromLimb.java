@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
+import replayTheSpire.patches.CardFieldStuff;
 
 public class LimbFromLimb extends CustomCard
 {
@@ -36,6 +37,7 @@ public class LimbFromLimb extends CustomCard
         this.baseDamage = ATTACK_DMG;
         this.baseMagicNumber = THRESHOLD;
         this.magicNumber = this.baseMagicNumber;
+        this.tags.add(CardFieldStuff.CHAOS_NEGATIVE_MAGIC);
     }
     
     @Override

@@ -54,7 +54,8 @@
   },
   "ReplayTheSpireMod:Shiv Toss": {
     "NAME": "Shiv Toss",
-    "DESCRIPTION": "Discard all Shivs in your hand. NL Draw !M! card and deal !D! damage to a random enemy for each. NL Retain."
+    "DESCRIPTION": "Discard all Shivs in your hand. NL Your Shivs deal !M! extra damage this combat for each one discarded. NL Exhaustive !replay:ex!.",
+    "UPGRADE_DESCRIPTION": "Discard all Shivs in your hand. NL Your Shivs deal !M! extra damage this combat for each one discarded. NL Exhaustive !replay:ex!. NL Retain."
   },
   "ReplayTheSpireMod:The Works": {
     "NAME": "The Works",
@@ -79,8 +80,8 @@
   },
   "Abandon": {
     "NAME": "Abandon",
-    "DESCRIPTION": "Exhaust !M! card. NL Draw !M! card. NL Add a Void to your discard pile. NL Ethereal.",
-    "UPGRADE_DESCRIPTION": "Exhaust up to !M! cards. NL Draw 1 card for each. NL Add a Void to your discard pile. NL Ethereal."
+    "DESCRIPTION": "Exhaust up to !M! cards. NL Draw 1 card for each. NL Add a Void to your discard pile. NL Exhaustive !replay:ex!. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Exhaust up to !M! cards. NL Draw 1 card for each. NL Add a Dazed to your discard pile. NL Exhaustive !replay:ex!. NL Ethereal."
   },
   "Defy Death": {
     "NAME": "Defy Death",
@@ -214,7 +215,11 @@
   },
   "ReplaySolidLightProjector": {
     "NAME": "Solid Light Projector",
-    "DESCRIPTION": "Gain !B! Shielding for every !M! cards in your discard pile. NL Exhaustive !replay:ex!."
+    "DESCRIPTION": "Gain !B! Shielding for every !M! cards in your discard pile. NL Exhaustive !replay:ex!.",
+	"EXTENDED_DESCRIPTION": [
+		" NL (Gain ",
+		" total)"
+	]
   },
   "ReplayOverclock": {
     "NAME": "Overclock",
@@ -232,6 +237,18 @@
   "ReplayTheSpireMod:System Scan": {
     "NAME": "System Scan",
     "DESCRIPTION": "The next !M! Status cards you draw Exhaust and draw 1 card when drawn."
+  },
+  "ReplayTheSpireMod:Muscle Training": {
+    "NAME": "Weight Training",
+    "DESCRIPTION": "Gain !M! Strength. NL Exhaustive !replay:ex!."
+  },
+  "ReplayTheSpireMod:Speed Training": {
+    "NAME": "Speed Training",
+    "DESCRIPTION": "Gain !M! Dexterity. NL Exhaustive !replay:ex!."
+  },
+  "ReplayTheSpireMod:Calculation Training": {
+    "NAME": "Calculation Training",
+    "DESCRIPTION": "Gain !M! Focus. NL Exhaustive !replay:ex!."
   },
   "Improvise": {
     "NAME": "Improvise",
@@ -402,19 +419,19 @@
   },
   "ReplayTheSpireMod:??????????????????????": {
 	"NAME": "??????????????????",
-	"DESCRIPTION": "Snecko. Exhaust.",
+	"DESCRIPTION": "Snecko. Purge.",
 	"EXTENDED_DESCRIPTION": [
 		" NL ???????",
 		" NL Exhaust up to !M! cards in your hand.",
 		" NL Add !M! Upgraded Shivs to your hand.",
 		" NL Channel !M! random orbs.",
-		" NL Refund 1.",
+		" NL Gain [E].",
 		" NL Gain !M! Knives and !M! Protection.",
 		" NL Gain !M! Fuel and shuffle !M! Trinkets into your draw pile.",
 		" NL Shuffle !M! random Cores into your draw pile.",
 		" NL Shuffle !M! random Cantrips into your draw pile.",
-		" NL Upgrade for combat, and Replenish !M! Wither uses of, all cards in your hand.",
-		" NL Replicate up to !M! of your relics."
+		" NL Heal !M! HP and Replenish !replay:M-1! uses of all Wither and/or Exhaustive cards in your hand and discard pile.",
+		" NL Replicate up to !M! of your relics and Retain !M! cards this turn."
 	]
   },
   "ReplayTheSpireMod:Necrogeddon": {

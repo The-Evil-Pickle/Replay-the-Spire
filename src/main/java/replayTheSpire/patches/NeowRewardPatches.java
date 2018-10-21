@@ -2,11 +2,14 @@ package replayTheSpire.patches;
 
 import java.util.*;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SoulboundField;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.cards.blue.*;
+import com.megacrit.cardcrawl.cards.curses.FaultyEquipment;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.neow.*;
 import com.megacrit.cardcrawl.neow.NeowReward.*;
@@ -79,8 +82,13 @@ public class NeowRewardPatches {
 	
 	@SpireEnum
 	public static NeowReward.NeowRewardType COLORLESS_CARD;
-	
+	@SpireEnum
+	public static NeowReward.NeowRewardType CURSED_BOSS_RELIC;
+	@SpireEnum
+	public static NeowReward.NeowRewardType DOUBLE_BOSS_RELIC;
+
 	public static final int NUM_BASIC_CARDS = 3;
+	public static final int NUM_BOSS_CURSES = 2;
 	
 	@SpirePatch(cls = "com.megacrit.cardcrawl.neow.NeowReward", method = "getRewardDrawbackOptions")
 	public static class DrawbackPatch {
@@ -98,6 +106,9 @@ public class NeowRewardPatches {
 
 			if (category == 0) {
 				__result.add(new NeowRewardDef(COLORLESS_CARD, "[ #gObtain #ga #grandom #gcolorless #gCard ]"));
+			} else if (category == 3 && ReplayTheSpireMod.foundmod_stslib && (AbstractDungeon.player.hasRelic("construct:ClockworkPhoenix") || AbstractDungeon.player.hasRelic("beaked:MendingPlumage"))) {
+				__result.add(new NeowRewardDef(CURSED_BOSS_RELIC, "[ #rObtain #r" + NUM_BOSS_CURSES + " #rSoulbound #rCurses #gObtain #ga #grandom #gboss #gRelic ]"));
+				__result.add(new NeowRewardDef(DOUBLE_BOSS_RELIC, "[ #rLose [E] #rat #rthe #rstart #rof #reach #rround #gObtain #g2 #grandom #gboss #gRelics ]"));
 			}
 			
 			if (__instance.drawback == BASIC_CARDS) {
@@ -126,6 +137,25 @@ public class NeowRewardPatches {
 			
 			if (__instance.type == COLORLESS_CARD) {
 				AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(AbstractDungeon.returnColorlessCard(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F)); 
+			} else if (ReplayTheSpireMod.foundmod_stslib && __instance.type == CURSED_BOSS_RELIC) {
+				for (int i=0; i < NUM_BOSS_CURSES; i++) {
+    				AbstractCard bowlCurse = AbstractDungeon.getCardWithoutRng(AbstractCard.CardRarity.CURSE);
+    				while (bowlCurse.rarity == AbstractCard.CardRarity.SPECIAL || FleetingField.fleeting.get(bowlCurse) || (bowlCurse instanceof FaultyEquipment)) {
+    					bowlCurse = AbstractDungeon.getCardWithoutRng(AbstractCard.CardRarity.CURSE);
+    				}
+    				UnlockTracker.markCardAsSeen(bowlCurse.cardID);
+    				if (!SoulboundField.soulbound.get(bowlCurse)) {
+    					SoulboundField.soulbound.set(bowlCurse, true);
+    					bowlCurse.rawDescription += " NL Soulbound.";
+    					bowlCurse.initializeDescription();
+    				}
+    				AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(bowlCurse, Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
+    			}
+				AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.BOSS));
+			} else if (__instance.type == DOUBLE_BOSS_RELIC) {
+				AbstractDungeon.player.energy.energyMaster--;
+				AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 3, Settings.HEIGHT / 2, AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.BOSS));
+				AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 3 * 2, Settings.HEIGHT / 2, AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.BOSS));
 			}
 			
 			if (__instance.drawback == NeowRewardPatches.BASIC_CARDS) {
