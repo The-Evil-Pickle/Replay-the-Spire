@@ -19,6 +19,9 @@ public class constructbs {
 		AddAndUnlockCard(new MeltdownSequence());
 	}
 	public static int chaos_overheat(AbstractCard c) {
+		if (!(c instanceof AbstractConstructCard)) {
+			return 0;
+		}
 		return ((AbstractConstructCard)c).overheat;
 	}
 	public static float chaos_overheat_downside(AbstractCard card, float downtarg) {

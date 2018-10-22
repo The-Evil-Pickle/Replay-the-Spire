@@ -77,12 +77,24 @@ public class MidasAction extends AbstractGameAction
     }
     
     private void DoRandoCard() {
-		AbstractCard c = AbstractDungeon.getCard(AbstractCard.CardRarity.RARE).makeCopy();
+    	final ArrayList<AbstractCard> list = new ArrayList<AbstractCard>();
 		int r = MathUtils.random(10);
 		if (r == 10)
 		{
-			
+			for (final AbstractCard c : AbstractDungeon.srcColorlessCardPool.group) {
+	            if (!c.hasTag(AbstractCard.CardTags.HEALING) && c.rarity == AbstractCard.CardRarity.RARE) {
+	                list.add(c);
+	            }
+	        }
+		} else {
+			for (final AbstractCard c : AbstractDungeon.srcRareCardPool.group) {
+	            if (!c.hasTag(AbstractCard.CardTags.HEALING)) {
+	                list.add(c);
+	            }
+	        }
 		}
+    	
+		AbstractCard c = list.get(AbstractDungeon.cardRandomRng.random(list.size() - 1)).makeCopy();
 		if (this.isUpgraded)
 		{
 		  if (c.canUpgrade())
