@@ -2,10 +2,13 @@ package replayTheSpire.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.unique.*;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.unique.DoublePoisonAction;
+import com.megacrit.cardcrawl.actions.unique.TriplePoisonAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.mod.replay.actions.common.*;
+import com.megacrit.cardcrawl.mod.replay.actions.unique.*;
+import com.megacrit.cardcrawl.mod.replay.powers.*;
 
 import basemod.ReflectionHacks;
 

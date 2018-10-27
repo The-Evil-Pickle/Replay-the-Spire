@@ -4,19 +4,21 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.events.thecity.ReplayMapScoutEvent;
 import com.megacrit.cardcrawl.map.*;
+import com.megacrit.cardcrawl.mod.replay.events.thecity.ReplayMapScoutEvent;
+import com.megacrit.cardcrawl.mod.replay.monsters.*;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.*;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.*;
+import com.megacrit.cardcrawl.mod.replay.relics.AbesTreasure;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.helpers.*;
 import replayTheSpire.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.monsters.*;
 import com.badlogic.gdx.math.*;
-import com.megacrit.cardcrawl.relics.AbesTreasure;
 
 import basemod.BaseMod;
 
-import com.megacrit.cardcrawl.monsters.replay.*;
-import com.megacrit.cardcrawl.monsters.replay.eastereggs.*;
 import java.util.*;
 
 public class ReplayMonsterEncounterPatches {

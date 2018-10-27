@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.cards.green.Strike_Green;
 import com.megacrit.cardcrawl.cards.red.Defend_Red;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.SimpleRune;
+import com.megacrit.cardcrawl.mod.replay.relics.SimpleRune;
 
 import basemod.BaseMod;
 import basemod.helpers.*;

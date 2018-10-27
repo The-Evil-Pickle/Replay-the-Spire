@@ -4,7 +4,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.ExhaustiveNegationPower;
+import com.megacrit.cardcrawl.mod.replay.powers.ExhaustiveNegationPower;
 
 import basemod.abstracts.DynamicVariable;
 

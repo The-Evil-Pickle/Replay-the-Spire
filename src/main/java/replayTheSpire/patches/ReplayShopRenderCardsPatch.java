@@ -1,16 +1,18 @@
 package replayTheSpire.patches;
 import com.megacrit.cardcrawl.shop.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.core.*;
-import com.megacrit.cardcrawl.cards.*;
-import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.mod.replay.actions.*;
+import com.megacrit.cardcrawl.mod.replay.actions.common.*;
+import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.rooms.*;
+
 import replayTheSpire.*;
 import replayTheSpire.patches.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.actions.*;
-import com.megacrit.cardcrawl.actions.common.*;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
 import basemod.*;

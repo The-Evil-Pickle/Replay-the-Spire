@@ -1,11 +1,13 @@
 package replayTheSpire.patches;
 
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.rooms.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.events.city.*;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.rooms.*;
+
 import basemod.*;
 import com.megacrit.cardcrawl.helpers.*;
 import java.util.*;
@@ -15,6 +17,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import javassist.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.*;
 
 public class TheMausoleumNewOption

@@ -13,13 +13,13 @@ import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.EventRoom;
-import com.megacrit.cardcrawl.rooms.TeleportRoom;
 import com.megacrit.cardcrawl.screens.DungeonMapScreen;
 
 import basemod.ReflectionHacks;
 import replayTheSpire.ReplayTheSpireMod;
 
 import com.megacrit.cardcrawl.map.*;
+import com.megacrit.cardcrawl.mod.replay.rooms.TeleportRoom;
 
 public class TeleporterPatches {
 	

@@ -5,11 +5,11 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.mod.replay.relics.DimensionalGlitch;
+import com.megacrit.cardcrawl.mod.replay.relics.GhostHeart;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.IntangiblePower;
-import com.megacrit.cardcrawl.relics.DimensionalGlitch;
-import com.megacrit.cardcrawl.relics.GhostHeart;
 
 import replayTheSpire.ReplayTheSpireMod;
 

@@ -1,13 +1,18 @@
 package replayTheSpire.patches;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.potions.*;
+
 import replayTheSpire.*;
 import com.megacrit.cardcrawl.helpers.*;
-import com.megacrit.cardcrawl.cards.*;
-import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.unique.DiscoveryUpgradedAction;
-import com.megacrit.cardcrawl.actions.*;
+import com.megacrit.cardcrawl.mod.replay.actions.*;
+import com.megacrit.cardcrawl.mod.replay.actions.common.*;
+import com.megacrit.cardcrawl.mod.replay.actions.unique.DiscoveryUpgradedAction;
+import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.potions.*;
+import com.megacrit.cardcrawl.potions.AttackPotion;
+import com.megacrit.cardcrawl.potions.PowerPotion;
+import com.megacrit.cardcrawl.potions.SkillPotion;
 import com.megacrit.cardcrawl.core.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 

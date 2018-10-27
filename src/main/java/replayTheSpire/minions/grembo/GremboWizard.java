@@ -1,78 +1,71 @@
 package replayTheSpire.minions.grembo;
 
 import kobting.friendlyminions.monsters.*;
-import com.megacrit.cardcrawl.monsters.*;
-import kobting.friendlyminions.actions.*;
 import basemod.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.mod.replay.actions.*;
+import com.megacrit.cardcrawl.mod.replay.actions.common.*;
+import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.monsters.*;
+import com.megacrit.cardcrawl.mod.replay.powers.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+//import com.megacrit.cardcrawl.monsters.Intent;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.*;
 import com.esotericsoftware.spine.AnimationState;
-import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.*;
-import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.vfx.SpeechBubble;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 import com.megacrit.cardcrawl.actions.utility.TextAboveCreatureAction;
 
 import java.util.*;
-import com.megacrit.cardcrawl.actions.*;
+
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.AnimateSlowAttackAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.EscapeAction;
+import com.megacrit.cardcrawl.actions.common.SetMoveAction;
 
 public class GremboWizard extends AbstractFriendlyMonster
 {
 	private static final MonsterStrings monsterStrings;
     public static String NAME;
     public static String ID;
-    private ArrayList<ChooseActionInfo> moveInfo;
-    private boolean hasAttacked;
-    private AbstractMonster target;
 	public int currentCharge;
 	private int baseDamage; 
     
     public GremboWizard(boolean makeMini) {
-        super(GremboWizard.NAME, GremboWizard.ID, 20, (ArrayList)null, -8.0f, 10.0f, 230.0f, 240.0f, "images/monsters/exord/cook.png", -700.0f, 0.0f);
-        this.hasAttacked = false;
+        super(GremboWizard.NAME, GremboWizard.ID, 20, -8.0f, 10.0f, 230.0f, 240.0f, "images/monsters/exord/cook.png", -700.0f, 0.0f);
         this.img = null;
-        if (makeMini) {
-            this.currentCharge = 2;
-        	this.baseDamage = 20;
-        } else {
-            this.currentCharge = 1;
-        	this.baseDamage = 25;
-        }
+        this.currentCharge = 2;
+    	this.baseDamage = 25;
     	this.damage.add(new DamageInfo(this, this.baseDamage));
         this.loadAnimation("images/monsters/theBottom/wizardGremlin/skeleton.atlas", "images/monsters/theBottom/wizardGremlin/skeleton.json", 1.0f);
         final AnimationState.TrackEntry e = this.state.setAnimation(0, "animation", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         this.flipHorizontal = true;
+        addMoves();
     }
+
+    private MinionMove move_blast;
+    private MinionMove move_charge;
     
-    public void takeTurn() {
-    	switch (this.nextMove) {
-    	case 2: {
-            ++this.currentCharge;
-            AbstractDungeon.actionManager.addToBottom(new TextAboveCreatureAction(this, DIALOG[1]));
-            if (this.escapeNext) {
-                AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, (byte)99, Intent.ESCAPE));
-                break;
-            }
-            if (this.currentCharge == 3) {
-                AbstractDungeon.actionManager.addToBottom(new TalkAction(this, DIALOG[2], 1.5f, 3.0f));
-                AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, MOVES[1], (byte)1, Intent.ATTACK, this.damage.get(0).base));
-                break;
-            }
-            this.setMove(MOVES[0], (byte)2, Intent.UNKNOWN);
-            break;
-        }
-        case 1: {
-            this.currentCharge = 0;
-            final ArrayList<AbstractMonster> m = AbstractDungeon.getCurrRoom().monsters.monsters;
+    private void addMoves(){
+    	this.move_blast = new MinionMove(MOVES[1], this, new Texture("images/monsters/atk_bubble.png"), "Deal " + this.baseDamage + " damage to ALL enemies.", () -> {
+        	final ArrayList<AbstractMonster> m = AbstractDungeon.getCurrRoom().monsters.monsters;
             final float[] tmp2 = new float[m.size()];
             for (int i = 0; i < tmp2.length; ++i) {
-                tmp2[i] = 25;
+                tmp2[i] = this.baseDamage;
             }
             for (int i = 0; i < tmp2.length; ++i) {
                 for (final AbstractPower p2 : this.powers) {
@@ -93,55 +86,31 @@ public class GremboWizard extends AbstractFriendlyMonster
             for (int i = 0; i < tmp2.length; ++i) {
                 multiDamage[i] = MathUtils.floor(tmp2[i]);
             }
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(this, multiDamage, null, AbstractGameAction.AttackEffect.FIRE));
-            if (this.escapeNext) {
-                AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, (byte)99, Intent.ESCAPE));
-                break;
-            }
-            this.setMove(MOVES[0], (byte)2, Intent.UNKNOWN);
-            break;
-        }
-	        case 99: {
-	        	AbstractDungeon.effectList.add(new SpeechBubble(this.hb.cX + this.dialogX, this.hb.cY + this.dialogY, 2.5f, DIALOG[1], false));
-                AbstractDungeon.actionManager.addToBottom(new EscapeAction(this));
-	        }
-    	}
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new MindblastEffect(this.dialogX, this.dialogY, false)));
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(this, multiDamage, DamageType.NORMAL, AttackEffect.NONE));
+            this.currentCharge = 2;
+            this.updateMoveCharge();
+        });
+        this.move_charge = new MinionMove(MOVES[0], this, new Texture("images/monsters/atk_bubble.png"),"Charge the Ultimate Blast (" + this.currentCharge + " charges before blast can be used).", () -> {
+            this.currentCharge--;
+            this.updateMoveCharge();
+        });
+        this.moves.addMove(this.move_charge);
     }
     
-    public void applyEndOfTurnTriggers() {
-        super.applyEndOfTurnTriggers();
-        this.hasAttacked = false;
-    }
-    
-    private static float applyPowersProxy(final AbstractMonster m, final float input, final AbstractMonster minionInstance) {
-        float retVal = input;
-        for (final AbstractPower p : minionInstance.powers) {
-            retVal = p.atDamageGive(retVal, DamageInfo.DamageType.NORMAL);
-        }
-        for (final AbstractPower p : m.powers) {
-            retVal = p.atDamageReceive(retVal, DamageInfo.DamageType.NORMAL);
-        }
-        for (final AbstractPower p : minionInstance.powers) {
-            retVal = p.atDamageFinalGive(retVal, DamageInfo.DamageType.NORMAL);
-        }
-        for (final AbstractPower p : m.powers) {
-            retVal = p.atDamageFinalReceive(retVal, DamageInfo.DamageType.NORMAL);
-        }
-        return retVal;
-    }
-
-    @Override
-    protected void getMove(final int num) {
-    	if (this.escapeNext || this.hasPower(CowardicePower.POWER_ID) && this.getPower(CowardicePower.POWER_ID).amount <= 0) {
-    		this.setMove((byte)99, Intent.ESCAPE);
-    		return;
-    	}
-    	if (this.currentCharge >= 3) {
-    		this.setMove((byte)1, Intent.ATTACK, this.damage.get(0).base);
+    public void updateMoveCharge() {
+    	if (this.currentCharge <= 0) {
+    		if (this.moves.removeMove(this.move_charge.getID()) != null) {
+    			this.moves.addMove(this.move_blast);
+    		}
     	} else {
-    		this.setMove(MOVES[0], (byte)2, Intent.UNKNOWN);
+    		if (this.moves.removeMove(this.move_blast.getID()) != null) {
+    			this.moves.addMove(this.move_charge);
+    		}
     	}
     }
+    
+    
     
     static {
     	monsterStrings = CardCrawlGame.languagePack.getMonsterStrings("GremlinWizard");

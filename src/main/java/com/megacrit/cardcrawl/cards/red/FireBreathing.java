@@ -1,13 +1,17 @@
 package com.megacrit.cardcrawl.cards.red;
 
-import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.FireBreathingPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+//import com.megacrit.cardcrawl.cards.CardColor;
+//import com.megacrit.cardcrawl.cards.CardRarity;
+//import com.megacrit.cardcrawl.cards.CardTarget;
+//import com.megacrit.cardcrawl.cards.CardType;
+import com.megacrit.cardcrawl.cards.red.FireBreathing;
 import com.megacrit.cardcrawl.characters.*;
-import com.megacrit.cardcrawl.monsters.*;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.powers.*;
-import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.core.*;
 
 public class FireBreathing extends AbstractCard

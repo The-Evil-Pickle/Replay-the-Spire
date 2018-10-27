@@ -2,15 +2,20 @@ package tobyspowerhouse.powers;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.mod.replay.actions.*;
+import com.megacrit.cardcrawl.mod.replay.actions.common.*;
+import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.powers.*;
+import com.megacrit.cardcrawl.mod.replay.vfx.*;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.ConfusionPower;
+//import com.megacrit.cardcrawl.powers.PowerType;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.*;
-import com.megacrit.cardcrawl.vfx.*;
 
 import replayTheSpire.ReplayTheSpireMod;
-
-import com.megacrit.cardcrawl.actions.*;
-import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.cards.*;
-import com.megacrit.cardcrawl.powers.*;
 
 public class TPH_ConfusionPower extends AbstractPower
 {

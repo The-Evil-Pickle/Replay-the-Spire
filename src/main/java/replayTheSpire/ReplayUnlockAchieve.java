@@ -2,11 +2,6 @@ package replayTheSpire;
 
 import java.nio.charset.StandardCharsets;
 
-import com.megacrit.cardcrawl.cards.colorless.*;
-import com.megacrit.cardcrawl.cards.curses.*;
-import com.megacrit.cardcrawl.cards.red.*;
-import com.megacrit.cardcrawl.cards.green.*;
-import com.megacrit.cardcrawl.cards.blue.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,27 +9,31 @@ import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.actions.*;
-import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.utility.*;
-import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.core.*;
-import com.megacrit.cardcrawl.potions.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.rooms.*;
+import com.megacrit.cardcrawl.mod.replay.actions.*;
+import com.megacrit.cardcrawl.mod.replay.actions.common.*;
+import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
+import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.cards.blue.*;
+import com.megacrit.cardcrawl.mod.replay.cards.colorless.*;
+import com.megacrit.cardcrawl.mod.replay.cards.curses.*;
+import com.megacrit.cardcrawl.mod.replay.cards.green.*;
+import com.megacrit.cardcrawl.mod.replay.cards.red.*;
+import com.megacrit.cardcrawl.mod.replay.potions.*;
+import com.megacrit.cardcrawl.mod.replay.relics.*;
+import com.megacrit.cardcrawl.mod.replay.rooms.*;
+import com.megacrit.cardcrawl.mod.replay.vfx.*;
 import com.megacrit.cardcrawl.unlock.*;
-import com.megacrit.cardcrawl.vfx.*;
 
 import basemod.*;
 import basemod.helpers.*;
 import basemod.interfaces.*;
 import java.lang.reflect.*;
 import java.io.*;
-
-import com.megacrit.cardcrawl.relics.*;
 import java.util.*;
 
 public class ReplayUnlockAchieve {

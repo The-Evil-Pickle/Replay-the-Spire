@@ -1,9 +1,9 @@
 package replayTheSpire.replayxover;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.replayxover.beaked.RavenHex;
-import com.megacrit.cardcrawl.cards.replayxover.beaked.WingsOfSteel;
-import com.megacrit.cardcrawl.cards.replayxover.curses.CompoundingHeadache;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.beaked.RavenHex;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.beaked.WingsOfSteel;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.curses.CompoundingHeadache;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;

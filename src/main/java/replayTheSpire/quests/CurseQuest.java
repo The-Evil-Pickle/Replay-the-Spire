@@ -1,6 +1,8 @@
 package replayTheSpire.quests;
 
 import infinitespire.abstracts.*;
+
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.*;
 
@@ -9,7 +11,8 @@ import java.util.ArrayList;
 import com.badlogic.gdx.graphics.*;
 import infinitespire.*;
 import com.megacrit.cardcrawl.helpers.*;
-import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.mod.replay.cards.*;
+
 import infinitespire.helpers.*;
 import infinitespire.helpers.CardHelper;
 import infinitespire.quests.PickUpCardQuest;

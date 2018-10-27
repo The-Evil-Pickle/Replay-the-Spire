@@ -4,11 +4,12 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import replayTheSpire.patches.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.*;
+import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.helpers.EventHelper;
-import com.megacrit.cardcrawl.events.*;
-import com.megacrit.cardcrawl.events.thebottom.*;
-import com.megacrit.cardcrawl.events.shrines.*;
+import com.megacrit.cardcrawl.mod.replay.events.*;
+import com.megacrit.cardcrawl.mod.replay.events.shrines.*;
+import com.megacrit.cardcrawl.mod.replay.events.thebottom.*;
 
 @SpirePatch(cls = "com.megacrit.cardcrawl.helpers.EventHelper", method = "getEvent")
 public class ReplayEventPatch {

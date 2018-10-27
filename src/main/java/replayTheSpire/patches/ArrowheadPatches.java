@@ -2,7 +2,8 @@ package replayTheSpire.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.vfx.campfire.*;
+import com.megacrit.cardcrawl.mod.replay.vfx.campfire.*;
+import com.megacrit.cardcrawl.vfx.campfire.CampfireSmithEffect;
 
 import basemod.ReflectionHacks;
 import replayTheSpire.ReplayTheSpireMod;

@@ -1,11 +1,15 @@
 package com.megacrit.cardcrawl.powers;
 
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.cards.*;
-import com.megacrit.cardcrawl.actions.*;
-import com.megacrit.cardcrawl.actions.common.*;
+
 import java.util.*;
+
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.*;
 
 public class FireBreathingPower extends AbstractPower

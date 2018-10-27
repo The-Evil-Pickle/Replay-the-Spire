@@ -3,7 +3,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.*;
-import com.megacrit.cardcrawl.rooms.*;
+import com.megacrit.cardcrawl.mod.replay.rooms.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+
 import replayTheSpire.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import java.util.*;

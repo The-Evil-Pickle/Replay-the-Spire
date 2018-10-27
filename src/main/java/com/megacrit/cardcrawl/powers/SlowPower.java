@@ -1,12 +1,14 @@
 package com.megacrit.cardcrawl.powers;
 
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+//import com.megacrit.cardcrawl.powers.PowerType;
 import com.megacrit.cardcrawl.helpers.*;
-import com.megacrit.cardcrawl.actions.utility.*;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.*;
-import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.*;
 
 public class SlowPower extends AbstractPower

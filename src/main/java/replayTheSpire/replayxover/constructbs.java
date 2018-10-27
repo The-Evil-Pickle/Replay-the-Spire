@@ -2,7 +2,7 @@ package replayTheSpire.replayxover;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.replayxover.curses.MeltdownSequence;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.curses.MeltdownSequence;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;

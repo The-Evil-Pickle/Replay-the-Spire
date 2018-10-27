@@ -3,16 +3,19 @@ package replayTheSpire.patches;
 import java.util.*;
 import replayTheSpire.*;
 import com.badlogic.gdx.graphics.*;
-import com.megacrit.cardcrawl.vfx.*;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.characters.*;
-import com.megacrit.cardcrawl.powers.*;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.math.*;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.megacrit.cardcrawl.helpers.*;
-import com.megacrit.cardcrawl.orbs.*;
+import com.megacrit.cardcrawl.mod.replay.orbs.*;
+import com.megacrit.cardcrawl.mod.replay.powers.*;
+import com.megacrit.cardcrawl.mod.replay.vfx.*;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+
 import basemod.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 public class ReplayOrbIntPatch {

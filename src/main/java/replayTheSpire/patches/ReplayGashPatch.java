@@ -4,11 +4,13 @@ import java.util.ArrayList;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.defect.*;
-import com.megacrit.cardcrawl.cards.*;
-import com.megacrit.cardcrawl.cards.blue.ReplayGash;
+import com.megacrit.cardcrawl.actions.defect.GashAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.*;
+import com.megacrit.cardcrawl.mod.replay.actions.defect.*;
+import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.cards.blue.ReplayGash;
 import com.megacrit.cardcrawl.rewards.*;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
 

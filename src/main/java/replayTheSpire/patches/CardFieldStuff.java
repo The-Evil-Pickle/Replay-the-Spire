@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
-import com.megacrit.cardcrawl.actions.common.ReplayRefundAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.red.Hemokinesis;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.TheMausoleum;
+import com.megacrit.cardcrawl.mod.replay.actions.common.ReplayRefundAction;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.ReflectionHacks;

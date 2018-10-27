@@ -1,7 +1,9 @@
 package replayTheSpire.variables;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.mod.replay.cards.*;
+
 import basemod.abstracts.*;
-import com.megacrit.cardcrawl.cards.*;
 
 public class MagicMinusOne extends DynamicVariable
 {

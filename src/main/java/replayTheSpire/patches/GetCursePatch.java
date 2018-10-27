@@ -1,9 +1,9 @@
 package replayTheSpire.patches;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.curses.AbeCurse;
-import com.megacrit.cardcrawl.cards.curses.MirrorMistCurse;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.mod.replay.cards.curses.AbeCurse;
+import com.megacrit.cardcrawl.mod.replay.cards.curses.MirrorMistCurse;
 import com.megacrit.cardcrawl.random.Random;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 

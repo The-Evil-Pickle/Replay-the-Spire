@@ -2,16 +2,18 @@ package replayTheSpire.replayxover;
 
 import infinitespire.InfiniteSpire;
 import infinitespire.abstracts.Quest;
+import infinitespire.events.PrismEvent;
 import infinitespire.helpers.QuestHelper;
+import replayTheSpire.patches.NeowRewardPatches;
 import replayTheSpire.quests.*;
 
 public class infinitebs {
 	public static void BlackCards() {
-		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.cards.replayxover.black.Haul());
-		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.cards.replayxover.black.EchoesOfTime());
-		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.cards.replayxover.black.DarkTransmutation());
-		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.cards.replayxover.black.ChaosVortex());
-		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.cards.replayxover.black.SuperSneckoCrazyCard());
+		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.Haul());
+		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.EchoesOfTime());
+		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.DarkTransmutation());
+		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.ChaosVortex());
+		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.SuperSneckoCrazyCard());
 	}
 	public static void registerQuests() {
 		QuestHelper.registerQuest(CurseQuest.class);
@@ -33,5 +35,8 @@ public class infinitebs {
 				q.incrementQuestSteps();
 			}
 		}
+	}
+	public static void NeowEventNonsense() {
+		NeowRewardPatches.possibleEvents.add(PrismEvent.ID);
 	}
 }

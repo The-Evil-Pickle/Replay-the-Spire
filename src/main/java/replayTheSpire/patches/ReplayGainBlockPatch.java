@@ -1,13 +1,20 @@
 package replayTheSpire.patches;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.relics.*;
+import com.megacrit.cardcrawl.mod.replay.actions.*;
+import com.megacrit.cardcrawl.mod.replay.actions.common.*;
+import com.megacrit.cardcrawl.mod.replay.relics.*;
+import com.megacrit.cardcrawl.mod.replay.rooms.*;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
+import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import com.megacrit.cardcrawl.core.*;
-import com.megacrit.cardcrawl.rooms.*;
+
 import replayTheSpire.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.actions.*;
-import com.megacrit.cardcrawl.actions.common.*;
+
 import basemod.*;
 
 @SpirePatch(cls = "com.megacrit.cardcrawl.actions.common.GainBlockAction", method = "update")

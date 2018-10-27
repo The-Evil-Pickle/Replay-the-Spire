@@ -1,13 +1,15 @@
 package replayTheSpire.patches;
 
-import com.megacrit.cardcrawl.actions.*;
-import com.megacrit.cardcrawl.vfx.*;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.ui.campfire.*;
 import com.megacrit.cardcrawl.dungeons.*;
+import com.megacrit.cardcrawl.mod.replay.actions.*;
+import com.megacrit.cardcrawl.mod.replay.ui.campfire.*;
+import com.megacrit.cardcrawl.mod.replay.vfx.*;
+import com.megacrit.cardcrawl.ui.campfire.RestOption;
+
 import java.util.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 

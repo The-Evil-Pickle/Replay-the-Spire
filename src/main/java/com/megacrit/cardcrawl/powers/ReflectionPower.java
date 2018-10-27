@@ -1,12 +1,18 @@
 package com.megacrit.cardcrawl.powers;
 
-import com.megacrit.cardcrawl.actions.utility.*;
-import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.powers.*;
-import com.megacrit.cardcrawl.actions.*;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.mod.replay.actions.*;
+import com.megacrit.cardcrawl.mod.replay.actions.common.*;
+import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
+import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.powers.*;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.badlogic.gdx.graphics.*;
 import replayTheSpire.*;

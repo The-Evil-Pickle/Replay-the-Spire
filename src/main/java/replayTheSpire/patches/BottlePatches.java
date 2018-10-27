@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.BottledSteam;
+import com.megacrit.cardcrawl.mod.replay.relics.BottledSteam;
 
 import replayTheSpire.ReplayTheSpireMod;
 

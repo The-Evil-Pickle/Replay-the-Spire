@@ -1,7 +1,9 @@
 package replayTheSpire.patches;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.potions.*;
+import com.megacrit.cardcrawl.mod.replay.potions.*;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
+
 import replayTheSpire.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 

@@ -1,20 +1,23 @@
 package replayTheSpire.patches;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.rooms.*;
+import com.megacrit.cardcrawl.mod.replay.ui.campfire.*;
+import com.megacrit.cardcrawl.mod.replay.vfx.*;
+import com.megacrit.cardcrawl.mod.replay.vfx.campfire.*;
 import com.megacrit.cardcrawl.core.*;
-import com.megacrit.cardcrawl.rooms.*;
-import com.megacrit.cardcrawl.cards.*;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
 import replayTheSpire.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import java.util.*;
-import com.megacrit.cardcrawl.vfx.campfire.*;
+
 import basemod.*;
-import com.megacrit.cardcrawl.vfx.*;
+
 import com.megacrit.cardcrawl.daily.*;
-import com.megacrit.cardcrawl.ui.campfire.*;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.math.*;
 import com.megacrit.cardcrawl.core.*;

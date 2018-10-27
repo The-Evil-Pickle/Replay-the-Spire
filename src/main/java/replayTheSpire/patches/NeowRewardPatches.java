@@ -7,19 +7,35 @@ import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SoulboundFi
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
-import com.megacrit.cardcrawl.cards.*;
-import com.megacrit.cardcrawl.cards.blue.*;
-import com.megacrit.cardcrawl.cards.curses.FaultyEquipment;
+import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.cards.blue.*;
+import com.megacrit.cardcrawl.mod.replay.cards.curses.FaultyEquipment;
+import com.megacrit.cardcrawl.mod.replay.events.shrines.ChaosEvent;
+import com.megacrit.cardcrawl.mod.replay.events.thebottom.MirrorMist;
+import com.megacrit.cardcrawl.mod.replay.relics.*;
+import com.megacrit.cardcrawl.mod.replay.rooms.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.blue.Dualcast;
+import com.megacrit.cardcrawl.cards.blue.Zap;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.neow.*;
 import com.megacrit.cardcrawl.neow.NeowReward.*;
-import com.megacrit.cardcrawl.relics.*;
-import com.megacrit.cardcrawl.rooms.*;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.BottledFlame;
+import com.megacrit.cardcrawl.relics.BottledLightning;
+import com.megacrit.cardcrawl.relics.BottledTornado;
+import com.megacrit.cardcrawl.relics.Ectoplasm;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
+import com.megacrit.cardcrawl.rooms.TreasureRoomBoss;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import basemod.abstracts.CustomCard;
 import replayTheSpire.ReplayTheSpireMod;
+import replayTheSpire.panelUI.ReplayBooleanSetting;
+import replayTheSpire.panelUI.ReplayIntSliderSetting;
+import replayTheSpire.panelUI.ReplayOptionsSetting;
 
 public class NeowRewardPatches {
 	
@@ -40,6 +56,7 @@ public class NeowRewardPatches {
 			outOfPlaceRelicBlacklist.add(GrabBag.ID);//uses the boss chest, so doesn't work outside boss treasure rooms
 			outOfPlaceRelicBlacklist.add(BargainBundle.ID);//directly impacts shop purchased from, so won't work if obtained outside a shop
 		}
+		
 		
 		public static String Postfix(String __Result, final AbstractRelic.RelicTier tier) {
 			if (UnlockTracker.isRelicLocked(__Result) && !Settings.treatEverythingAsUnlocked()) {
@@ -90,11 +107,30 @@ public class NeowRewardPatches {
 	public static final int NUM_BASIC_CARDS = 3;
 	public static final int NUM_BOSS_CURSES = 2;
 	
+	public static ReplayIntSliderSetting SETTING_BASIC_CARDS = new ReplayIntSliderSetting("Neow_Basic_Cards_Amt", "Random Basic Cards", 3, 5);
+	static final List<String> settingBossStrings = new ArrayList<String>();
+	public static final ReplayOptionsSetting SETTING_BOSS_OPTIONS_ENABLED;
+	public static ReplayIntSliderSetting SETTING_BOSS_CURSES = new ReplayIntSliderSetting("Neow_Boss_Curses_Amt", "Curses for Boss Relic (0 disables)", 2, 5);
+	public static ReplayBooleanSetting SETTING_SOULBOUND_CURSES = new ReplayBooleanSetting("Neow_Boss_Curses_Soulbound", "Curses for Boss Relic are Soulbound", true);
+	public static ReplayBooleanSetting SETTING_COLORLESS_OPTION = new ReplayBooleanSetting("Neow_Boss_Colorless_Option", "Colorless card option", false);
+	
+	public static final ArrayList<String> possibleEvents;
+	static {
+		possibleEvents = new ArrayList<String>();
+		possibleEvents.add(MirrorMist.ID);
+		possibleEvents.add(ChaosEvent.ID);
+		
+		settingBossStrings.add("Disabled");
+		settingBossStrings.add("Enabled on characters with important starting relics");
+		settingBossStrings.add("Enabled on all characters");
+		SETTING_BOSS_OPTIONS_ENABLED = new ReplayOptionsSetting("Neow_Boss_Options_Enabled", "Starter relic -> boss relic option replacements", 1, settingBossStrings);
+	}
+	
 	@SpirePatch(cls = "com.megacrit.cardcrawl.neow.NeowReward", method = "getRewardDrawbackOptions")
 	public static class DrawbackPatch {
 		
 		public static ArrayList<NeowRewardDrawbackDef> Postfix(ArrayList<NeowRewardDrawbackDef> __result, NeowReward __instance) {
-			__result.add(new NeowRewardDrawbackDef(BASIC_CARDS, "[ #rObtain #r" + NUM_BASIC_CARDS + " #rrandom #rbasic #rcards "));
+			__result.add(new NeowRewardDrawbackDef(BASIC_CARDS, "[ #rObtain #r" + SETTING_BASIC_CARDS.value + " #rrandom #rbasic #rcards "));
 			
 			return __result;
 		}
@@ -107,8 +143,10 @@ public class NeowRewardPatches {
 			if (category == 0) {
 				__result.add(new NeowRewardDef(COLORLESS_CARD, "[ #gObtain #ga #grandom #gcolorless #gCard ]"));
 			} else if (category == 3 && ReplayTheSpireMod.foundmod_stslib && (AbstractDungeon.player.hasRelic("construct:ClockworkPhoenix") || AbstractDungeon.player.hasRelic("beaked:MendingPlumage"))) {
-				__result.add(new NeowRewardDef(CURSED_BOSS_RELIC, "[ #rObtain #r" + NUM_BOSS_CURSES + " #rSoulbound #rCurses #gObtain #ga #grandom #gboss #gRelic ]"));
-				__result.add(new NeowRewardDef(DOUBLE_BOSS_RELIC, "[ #rLose [E] #rat #rthe #rstart #rof #reach #rround #gObtain #g2 #grandom #gboss #gRelics ]"));
+				if (SETTING_BOSS_CURSES.value > 0) {
+					__result.add(new NeowRewardDef(CURSED_BOSS_RELIC, "[ #rObtain #r" + SETTING_BOSS_CURSES.value + (SETTING_SOULBOUND_CURSES.value ? " #rSoulbound" : "") + " #rCurses #gObtain #ga #grandom #gboss #gRelic ]"));
+				}
+				__result.add(new NeowRewardDef(DOUBLE_BOSS_RELIC, "[ #rLose [E] #rat #rthe #rstart #rof #reach #rturn #gObtain #g2 #grandom #gboss #gRelics ]"));
 			}
 			
 			if (__instance.drawback == BASIC_CARDS) {
@@ -138,13 +176,13 @@ public class NeowRewardPatches {
 			if (__instance.type == COLORLESS_CARD) {
 				AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(AbstractDungeon.returnColorlessCard(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F)); 
 			} else if (ReplayTheSpireMod.foundmod_stslib && __instance.type == CURSED_BOSS_RELIC) {
-				for (int i=0; i < NUM_BOSS_CURSES; i++) {
+				for (int i=0; i < SETTING_BOSS_CURSES.value; i++) {
     				AbstractCard bowlCurse = AbstractDungeon.getCardWithoutRng(AbstractCard.CardRarity.CURSE);
     				while (bowlCurse.rarity == AbstractCard.CardRarity.SPECIAL || FleetingField.fleeting.get(bowlCurse) || (bowlCurse instanceof FaultyEquipment)) {
     					bowlCurse = AbstractDungeon.getCardWithoutRng(AbstractCard.CardRarity.CURSE);
     				}
     				UnlockTracker.markCardAsSeen(bowlCurse.cardID);
-    				if (!SoulboundField.soulbound.get(bowlCurse)) {
+    				if (SETTING_SOULBOUND_CURSES.value && !SoulboundField.soulbound.get(bowlCurse)) {
     					SoulboundField.soulbound.set(bowlCurse, true);
     					bowlCurse.rawDescription += " NL Soulbound.";
     					bowlCurse.initializeDescription();
@@ -175,12 +213,10 @@ public class NeowRewardPatches {
 		            	} 
 		            }
 		        }
-		        for (int i=0; i < NeowRewardPatches.NUM_BASIC_CARDS; i++) {
-		        	AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(basicCards.get(NeowEvent.rng.random(0, basicCards.size() - 1)).makeCopy(), (Settings.WIDTH / (NeowRewardPatches.NUM_BASIC_CARDS + 2)) * (i+2), Settings.HEIGHT / 3.0F));
+		        for (int i=0; i < SETTING_BASIC_CARDS.value; i++) {
+		        	AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(basicCards.get(NeowEvent.rng.random(0, basicCards.size() - 1)).makeCopy(), (Settings.WIDTH / (SETTING_BASIC_CARDS.value + 2)) * (i+2), Settings.HEIGHT / 3.0F));
 		        }
 			}
-			
-			
 			
 		}
 	}

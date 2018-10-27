@@ -3,7 +3,7 @@ package replayTheSpire.quests;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.Durian;
+import com.megacrit.cardcrawl.mod.replay.relics.Durian;
 
 import infinitespire.InfiniteSpire;
 import infinitespire.abstracts.Quest;

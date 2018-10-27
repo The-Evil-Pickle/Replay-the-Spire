@@ -2,11 +2,6 @@ package replayTheSpire;
 
 import java.nio.charset.StandardCharsets;
 
-import com.megacrit.cardcrawl.cards.colorless.*;
-import com.megacrit.cardcrawl.cards.curses.*;
-import com.megacrit.cardcrawl.cards.red.*;
-import com.megacrit.cardcrawl.cards.green.*;
-import com.megacrit.cardcrawl.cards.blue.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,37 +15,48 @@ import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.google.gson.Gson;
-import com.megacrit.cardcrawl.actions.*;
-import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.utility.*;
-import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.core.*;
-//import com.megacrit.cardcrawl.core.Settings.GameLanguage;
-import com.megacrit.cardcrawl.potions.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.RidThyselfOfStatusCardsPower;
-import com.megacrit.cardcrawl.powers.TheWorksPower;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.events.thebottom.*;
-import com.megacrit.cardcrawl.events.thecity.GremboTheGreat;
-import com.megacrit.cardcrawl.events.thecity.ReplayMapScoutEvent;
-import com.megacrit.cardcrawl.events.shrines.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.mod.replay.actions.*;
+import com.megacrit.cardcrawl.mod.replay.actions.common.*;
+import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
+import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.cards.blue.*;
+import com.megacrit.cardcrawl.mod.replay.cards.colorless.*;
+import com.megacrit.cardcrawl.mod.replay.cards.curses.*;
+import com.megacrit.cardcrawl.mod.replay.cards.green.*;
+import com.megacrit.cardcrawl.mod.replay.cards.red.*;
+import com.megacrit.cardcrawl.mod.replay.events.shrines.*;
+import com.megacrit.cardcrawl.mod.replay.events.thebottom.*;
+import com.megacrit.cardcrawl.mod.replay.events.thecity.GremboTheGreat;
+import com.megacrit.cardcrawl.mod.replay.events.thecity.ReplayMapScoutEvent;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.CaptainAbe;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.PondfishBoss;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.J_louse_1;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.J_louse_2;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.J_louse_3;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.R_Hoarder;
+import com.megacrit.cardcrawl.mod.replay.potions.*;
+import com.megacrit.cardcrawl.mod.replay.powers.RidThyselfOfStatusCardsPower;
+import com.megacrit.cardcrawl.mod.replay.powers.TheWorksPower;
+import com.megacrit.cardcrawl.mod.replay.relics.*;
+import com.megacrit.cardcrawl.mod.replay.relics.RingOfChaos.ChaosUpgradeType;
+import com.megacrit.cardcrawl.mod.replay.rooms.*;
+import com.megacrit.cardcrawl.mod.replay.vfx.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
-import com.megacrit.cardcrawl.monsters.replay.CaptainAbe;
-import com.megacrit.cardcrawl.monsters.replay.FadingForestBoss;
-import com.megacrit.cardcrawl.monsters.replay.PondfishBoss;
-import com.megacrit.cardcrawl.monsters.replay.eastereggs.J_louse_1;
-import com.megacrit.cardcrawl.monsters.replay.eastereggs.J_louse_2;
-import com.megacrit.cardcrawl.monsters.replay.eastereggs.J_louse_3;
-import com.megacrit.cardcrawl.monsters.replay.eastereggs.R_Hoarder;
-import com.megacrit.cardcrawl.rooms.*;
+//import com.megacrit.cardcrawl.core.Settings.GameLanguage;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.unlock.*;
-import com.megacrit.cardcrawl.vfx.*;
 
 import basemod.*;
 import basemod.helpers.*;
@@ -78,8 +84,13 @@ import java.lang.reflect.*;
 import java.io.*;
 
 import com.megacrit.cardcrawl.random.Random;
-import com.megacrit.cardcrawl.relics.*;
-import com.megacrit.cardcrawl.relics.RingOfChaos.ChaosUpgradeType;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.BloodyIdol;
+import com.megacrit.cardcrawl.relics.Dodecahedron;
+import com.megacrit.cardcrawl.relics.Ectoplasm;
+import com.megacrit.cardcrawl.relics.SneckoEye;
+import com.megacrit.cardcrawl.relics.Sozu;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
 import java.util.*;
 import java.util.function.*;
@@ -861,10 +872,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addEvent(ChaosEvent.ID, ChaosEvent.class);
 		
 		
-		/*if (foundmod_infinite) {
+		if (foundmod_infinite) {
+			infinitebs.NeowEventNonsense();
 			logger.info("Replay | Registering Quests");
 			infinitebs.registerQuests();
-		}*/
+		}
 		if (checkForMod("com.evacipated.cardcrawl.mod.hubris.events.thebeyond.TheBottler")) {
             TheBottler.addBottleRelic(BottledFlurry.ID);
             TheBottler.addBottleRelic(BottledSteam.ID);
@@ -1034,7 +1046,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new ShivToss());
 		AddAndUnlockCard(new SpeedTraining());
 		logger.info("adding cards for Defect...");
-		AddAndUnlockCard(new com.megacrit.cardcrawl.cards.blue.PanicButton());
+		AddAndUnlockCard(new com.megacrit.cardcrawl.mod.replay.cards.blue.PanicButton());
 		AddAndUnlockCard(new MirrorShield());
 		AddAndUnlockCard(new BasicCrystalCard());
 		AddAndUnlockCard(new TimeBomb());

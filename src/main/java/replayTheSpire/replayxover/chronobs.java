@@ -1,7 +1,7 @@
 package replayTheSpire.replayxover;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.replayxover.curses.*;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.curses.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;

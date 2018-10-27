@@ -2,15 +2,18 @@ package replayTheSpire.patches;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.audio.*;
-import com.megacrit.cardcrawl.actions.unique.*;
 import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.mod.replay.actions.unique.*;
+import com.megacrit.cardcrawl.mod.replay.monsters.*;
+import com.megacrit.cardcrawl.mod.replay.rooms.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
+
 import replayTheSpire.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.monsters.*;
 import com.megacrit.cardcrawl.scenes.*;
 import com.megacrit.cardcrawl.core.*;
 import com.badlogic.gdx.graphics.g2d.*;
-import com.megacrit.cardcrawl.rooms.*;
 
 public class ReplayBottomScenePatch {
 	
