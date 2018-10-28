@@ -1,0 +1,10 @@
+{
+	"replay:Chaotic": {
+		"NAME": "Chaotic",
+		"DESCRIPTION": "Start with the \"Ring of Chaos\" relic"
+	},
+	"replay:Library Looter": {
+		"NAME": "Library Looter",
+		"DESCRIPTION": "Each time you open a non-boss chest, choose 1 of 15 cards to obtain."
+	}
+}

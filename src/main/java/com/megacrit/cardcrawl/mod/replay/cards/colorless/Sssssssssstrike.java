@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.*;
+import com.evacipated.cardcrawl.mod.stslib.variables.RefundVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -30,15 +31,13 @@ public class Sssssssssstrike extends CustomCard
         SneckoField.snecko.set(this, true);
         this.tags.add(AbstractCard.CardTags.STRIKE);
         this.baseDamage = 4;
-        this.baseMagicNumber = 1;
-        this.magicNumber = this.baseMagicNumber;
+        RefundVariable.setBaseValue(this, 1);
     }
     
     public void use(final AbstractPlayer p, final AbstractMonster m) {
     	for (int i=0; i <= this.cost; i++) {
     		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     	}
-    	AbstractDungeon.actionManager.addToBottom(new ReplayRefundAction(this, this.magicNumber));
     }
     
     public void upgrade() {

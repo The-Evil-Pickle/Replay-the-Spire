@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.core.*;
+import com.evacipated.cardcrawl.mod.stslib.variables.RefundVariable;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -37,6 +38,7 @@ public class DarkTransmutation extends BlackCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            RefundVariable.upgrade(this, 1);
             this.rawDescription = DarkTransmutation.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

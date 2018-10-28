@@ -1,6 +1,7 @@
 package com.megacrit.cardcrawl.mod.replay.cards.curses;
 
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -31,7 +32,7 @@ public class Hallucinations
   public Hallucinations()
   {
     super("Hallucinations", NAME, "cards/replay/hallucinations.png", -2, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE);
-	Exhaustive.setBaseValue(this, EXHAUSTIVE);
+	ExhaustiveVariable.setBaseValue(this, EXHAUSTIVE);
 	this.baseMagicNumber = 1;
     this.magicNumber = this.baseMagicNumber;
   }
@@ -59,7 +60,7 @@ public class Hallucinations
 				  AbstractCard c = AbstractDungeon.getCard(rarity).makeCopy();
 				  AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, 1, true, false));
 			}
-		  Exhaustive.increment(this);
+		  //Exhaustive.increment(this);
 		}
 	}
   

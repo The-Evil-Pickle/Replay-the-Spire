@@ -19,7 +19,9 @@
     "DESCRIPTIONS": [
 	"Gain #b",
 	" #yThievery for the first #b",
-	" turns of combat."
+	" turns of combat. NL #ySynergy - ",
+	"While active, ",
+	" gives #yTemporary #yHP instead of healing."
 	]
   },
   "Baseball": {
@@ -634,6 +636,14 @@
 		"Each time you #yEvoke #yFrost, gain #b1 #yReflection."
 	]
   },
+  "Replay:Ringing Soul": {
+    "NAME": "Ringing Soul",
+	"FLAVOR": "How obnoxious!",
+    "DESCRIPTIONS": [
+		"Once per room, when you add a card to your deck, gain #b",
+		" Max HP."
+	]
+  },
   "Ring of Fury": {
 	"NAME": "Ring of Fury",
 	"FLAVOR": "A cursed ring that heightens both senses and senselessness.",
@@ -807,6 +817,14 @@
 		"FLAVOR": ".",
 		"DESCRIPTIONS": [
 			"At the start of combat, #yReplicate 1 Mercury. NL Certain #bBlue cards can now be obtained.",
+		]
+	},
+	"replay:Trail_Library": {
+		"NAME": "Library Looter",
+		"FLAVOR": "aight listen i KNOW its bad form to implement a custom run mod with a relic but y'know what sometimes you just gotta look urself in the mirror and ask \"do i really feel like dealing with patching shit when relics have a perfectly good hook for opening chests\" and sometimes the answer is no.",
+		"DESCRIPTIONS": [
+			"Each time you open a non-boss chest, choose 1 of 15 cards to obtain.",
+			"Choose a card to obtain."
 		]
 	}
 	

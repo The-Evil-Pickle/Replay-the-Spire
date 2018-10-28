@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.unique.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.evacipated.cardcrawl.mod.stslib.variables.RefundVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 //import com.megacrit.cardcrawl.cards.CardColor;
 //import com.megacrit.cardcrawl.cards.CardRarity;
@@ -30,7 +31,7 @@ public class DemonicInfusion extends CustomCard
     
     public DemonicInfusion() {
         super("Demonic Infusion", DemonicInfusion.NAME, "cards/replay/demonicInfusion.png", -1, DemonicInfusion.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.RARE, CardTarget.SELF);
-		
+		RefundVariable.setBaseValue(this, 1);
 		this.exhaust = true;
         this.baseMagicNumber = 0;
 		this.magicNumber = this.baseMagicNumber;

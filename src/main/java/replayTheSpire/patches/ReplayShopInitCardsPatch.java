@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.relics.RingOfChaos;
 import com.megacrit.cardcrawl.mod.replay.rooms.*;
 
 import replayTheSpire.*;
@@ -131,6 +132,9 @@ public class ReplayShopInitCardsPatch {
 					newTagCard.price /= 4;
 					newTagCard.price -= 10;
 					newTagCard.upgrade();
+					if (ReplayTheSpireMod.SETTING_TAG_SCRAMBLE_CHANCE.testChance(AbstractDungeon.merchantRng)) {
+						RingOfChaos.ChaosScrambleCard(newTagCard);
+					}
 					OnSaleTag newtag = new OnSaleTag(newTagCard);
 					dollTags.add(newtag);
 					ReplayShopInitCardsPatch.dollTagImgs.add(ImageMaster.loadImage(ReplayShopInitCardsPatch.SPECIAL_TAG));

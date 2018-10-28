@@ -35,7 +35,7 @@ public class ReplayReversal
   
   public ReplayReversal()
   {
-    super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.RED, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.NONE);
+    super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.NONE);
     this.baseMagicNumber = 2;
     this.magicNumber = this.baseMagicNumber;
     this.rawDescription = DESCRIPTION;
@@ -55,7 +55,6 @@ public class ReplayReversal
 	  }
 	  super.initializeDescription();
   }
-  
   public AbstractCard makeCopy()
   {
     return new ReplayReversal();

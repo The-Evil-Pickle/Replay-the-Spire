@@ -1,11 +1,6 @@
 package com.megacrit.cardcrawl.mod.replay.actions.unique;
 
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.mod.replay.actions.*;
-import com.megacrit.cardcrawl.mod.replay.actions.common.*;
-import com.megacrit.cardcrawl.mod.replay.cards.*;
-import com.megacrit.cardcrawl.mod.replay.relics.*;
-import com.megacrit.cardcrawl.mod.replay.ui.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.dungeons.*;

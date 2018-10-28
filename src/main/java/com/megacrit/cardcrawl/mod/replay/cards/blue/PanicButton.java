@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.defect.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.defect.AnimateOrbAction;
 import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
@@ -36,12 +37,7 @@ public class PanicButton extends CustomCard
 		this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
         this.retain = true;
-    }
-    
-    @Override
-    public void applyPowers() {
-		super.applyPowers();
-        this.retain = true;
+        AlwaysRetainField.alwaysRetain.set(this, true);
     }
 	
     @Override

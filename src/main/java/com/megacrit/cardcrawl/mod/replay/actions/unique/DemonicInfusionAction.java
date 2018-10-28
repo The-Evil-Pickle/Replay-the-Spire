@@ -60,9 +60,10 @@ public class DemonicInfusionAction extends AbstractGameAction
 			c.name = c.name + c.timesUpgraded;
 		}
 		if (!this.freeToPlayOnce) {
-			if (EnergyPanel.totalCount > 1) {
+			this.p.energy.use(EnergyPanel.totalCount);
+			/*if (EnergyPanel.totalCount > 1) {
 				this.p.energy.use(EnergyPanel.totalCount - 1);
-			}
+			}*/
 		}
 	}
 	

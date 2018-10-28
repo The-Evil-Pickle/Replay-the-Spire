@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import madsciencemod.actions.common.*;
+import madsciencemod.powers.FuelPower;
 import replayTheSpire.ReplayTheSpireMod;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -21,7 +22,6 @@ import com.megacrit.cardcrawl.cards.red.Immolate;
 import com.megacrit.cardcrawl.cards.red.Offering;
 import com.megacrit.cardcrawl.cards.red.Reaper;
 import com.megacrit.cardcrawl.cards.red.Rupture;
-import com.megacrit.cardcrawl.core.*;
 
 import java.util.ArrayList;
 
@@ -35,7 +35,7 @@ public class ChemicalBlood extends AbstractRelic
     boolean isChecking = false;
     
     public ChemicalBlood() {
-        super("m_ChemicalBlood", "sizzlingBlood.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, "sizzlingBlood.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
     
     @Override
@@ -48,8 +48,8 @@ public class ChemicalBlood extends AbstractRelic
         this.flash();
         AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         final AbstractPlayer p = AbstractDungeon.player;
-        if (p.currentHealth > 0 && p.hasPower("Fuel")) {
-            p.heal(Math.min(p.getPower("Fuel").amount, ChemicalBlood.MAX_HEALTH_AMT));
+        if (p.currentHealth > 0 && p.hasPower(FuelPower.POWER_ID)) {
+            p.heal(Math.min(p.getPower(FuelPower.POWER_ID).amount, ChemicalBlood.MAX_HEALTH_AMT));
         }
     }
     

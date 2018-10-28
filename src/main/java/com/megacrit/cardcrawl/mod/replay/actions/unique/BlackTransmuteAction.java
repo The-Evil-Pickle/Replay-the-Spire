@@ -47,11 +47,11 @@ public class BlackTransmuteAction extends AbstractGameAction
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, 1));
             }
             if (!this.freeToPlayOnce) {
-            	if (this.upgraded && EnergyPanel.totalCount > 0) {
-            		this.p.energy.use(EnergyPanel.totalCount - 1);
-                } else {
+            	//if (this.upgraded && EnergyPanel.totalCount > 0) {
+            		//this.p.energy.use(EnergyPanel.totalCount - 1);
+                //} else {
                 	this.p.energy.use(EnergyPanel.totalCount);
-                }
+                //}
                 
             }
         }

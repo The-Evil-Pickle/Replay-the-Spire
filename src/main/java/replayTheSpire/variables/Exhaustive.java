@@ -51,6 +51,7 @@ public class Exhaustive extends DynamicVariable
     	setBaseValue(card, ExhaustiveFields.baseExhaustive.get(card) + amount);
     }
     
+    //call this in the use() function of exhaustive cards
     public static void increment(final AbstractCard card) {
     	if (AbstractDungeon.player.hasPower(ExhaustiveNegationPower.POWER_ID)) {
             AbstractDungeon.player.getPower(ExhaustiveNegationPower.POWER_ID).onSpecificTrigger();

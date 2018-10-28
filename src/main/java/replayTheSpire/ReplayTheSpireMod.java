@@ -37,6 +37,8 @@ import com.megacrit.cardcrawl.mod.replay.events.shrines.*;
 import com.megacrit.cardcrawl.mod.replay.events.thebottom.*;
 import com.megacrit.cardcrawl.mod.replay.events.thecity.GremboTheGreat;
 import com.megacrit.cardcrawl.mod.replay.events.thecity.ReplayMapScoutEvent;
+import com.megacrit.cardcrawl.mod.replay.modifiers.ChaoticModifier;
+import com.megacrit.cardcrawl.mod.replay.modifiers.LibraryLooterModifier;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.CaptainAbe;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.PondfishBoss;
@@ -91,6 +93,7 @@ import com.megacrit.cardcrawl.relics.Ectoplasm;
 import com.megacrit.cardcrawl.relics.SneckoEye;
 import com.megacrit.cardcrawl.relics.Sozu;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
+import com.megacrit.cardcrawl.screens.custom.CustomMod;
 
 import java.util.*;
 import java.util.function.*;
@@ -98,7 +101,7 @@ import java.util.function.*;
 
 @SpireInitializer
 public class ReplayTheSpireMod implements PostInitializeSubscriber,
-EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscriber, PotionGetSubscriber, StartGameSubscriber, EditKeywordsSubscriber
+EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscriber, PotionGetSubscriber, StartGameSubscriber, EditKeywordsSubscriber, PostDungeonInitializeSubscriber, AddCustomModeModsSubscriber
 {
 	public static void InitCardTitle(AbstractCard c) {
 		FontHelper.cardTitleFont_L.getData().setScale(1.0f);
@@ -752,6 +755,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static final ReplayIntSliderSetting SETTING_TAG_NORMAL_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Normal", "Normal Sale Tag Chance", 3, 1, 5);
 	public static final ReplayIntSliderSetting SETTING_TAG_SPECIAL_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Special", "Special Edition Tag Chance", 1, 0, 5);
 	public static final ReplayIntSliderSetting SETTING_TAG_DOUBLE_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Double", "2 For 1 Tag Chance", 1, 0, 5);
+	public static final ReplayIntSliderSetting SETTING_TAG_SCRAMBLE_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Scramble", "Special Edition Stat Scramble Chance", 25, 0, 100, "%");
 	public static final ReplayIntSliderSetting SETTING_ROOMS_BONFIRE = new ReplayIntSliderSetting("Bonfire_Chance", "Bonfire Chance", 100, 0, 100, "%");
 	public static final ReplayIntSliderSetting SETTING_ROOMS_PORTAL = new ReplayIntSliderSetting("Portal_Chance", "Portal Chance", 66, 0, 100, "%");
 	public static final ReplayBooleanSetting SETTING_REBOTTLE_V_ENABLE = new ReplayBooleanSetting("Rebottle_V_Enable", "Enabled for Vanilla's Bottles", true);
@@ -841,6 +845,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BuildSettings(new TagBag());
 		BuildSettings(new HoneyJar());
 		BuildSettings(new BargainBundle());
+		BuildSettings(new Bandana());
 		//BuildSettings(new EnergyBall());
 		
 		loadSettingsData();
@@ -977,6 +982,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new ReplaySpearhead(), RelicType.RED);
 		BaseMod.addRelic(new TagBag(), RelicType.SHARED);
 		BaseMod.addRelic(new TigerMarble(), RelicType.SHARED);
+		BaseMod.addRelic(new TrialRelic_Library(), RelicType.SHARED);
+		UnlockTracker.markRelicAsSeen(TrialRelic_Library.ID);
 		BaseMod.addRelic(new VampiricSpirits(), RelicType.GREEN);
         
 		ChaosEvent.addRing(new RingOfFury());
@@ -1363,6 +1370,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         String mStrings = Gdx.files.internal(jsonPath + "ReplayMonsterStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(MonsterStrings.class, mStrings);
+        String rmStrings = Gdx.files.internal(jsonPath + "ReplayRunModStrings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(RunModStrings.class, rmStrings);
         // OrbStrings
 		/*
         String orbStrings = Gdx.files.internal(jsonPath + "ReplayOrbStrings.json").readString(
@@ -1434,7 +1443,29 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			AbstractDungeon.player.getPower(RidThyselfOfStatusCardsPower.POWER_ID).onSpecificTrigger();
 		}
 	}
-	
+
+    @Override
+    public void receiveCustomModeMods(List<CustomMod> l) {
+        l.add(new CustomMod(LibraryLooterModifier.ID, "b", true));
+        l.add(new CustomMod(ChaoticModifier.ID, "b", true));
+    }
+    @Override
+    public void receivePostDungeonInitialize() {
+        if (CardCrawlGame.trial != null) {
+        	if( CardCrawlGame.trial.dailyModIDs().contains(ChaoticModifier.ID)) {
+        		RelicLibrary.getRelic(RingOfChaos.ID).makeCopy().instantObtain();
+                for (AbstractRelic relicInBossPool : RelicLibrary.bossList) {
+                    if (relicInBossPool instanceof RingOfChaos) {
+                        RelicLibrary.bossList.remove(relicInBossPool);
+                        break;
+                    }
+                }
+        	}
+        	if( CardCrawlGame.trial.dailyModIDs().contains(LibraryLooterModifier.ID)) {
+        		RelicLibrary.getRelic(TrialRelic_Library.ID).makeCopy().instantObtain();
+        	}
+        }
+    }
 	public void receivePotionGet(final AbstractPotion p0) {
 		if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Chameleon Ring")) {
 			switch(p0.ID) {

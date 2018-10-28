@@ -1,4 +1,5 @@
 package com.megacrit.cardcrawl.mod.replay.actions.unique;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.RefundAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 //import com.megacrit.cardcrawl.actions.ActionType;
 //import com.megacrit.cardcrawl.actions.AttackEffect;
@@ -7,9 +8,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.mod.replay.actions.*;
-import com.megacrit.cardcrawl.mod.replay.actions.common.ReplayRefundAction;
-import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.vfx.combat.*;
 public class LimbFromLimbAction extends AbstractGameAction
 {
@@ -35,7 +33,7 @@ public class LimbFromLimbAction extends AbstractGameAction
             int damageDealt = startHp - this.target.currentHealth;
             if (damageDealt >= this.damageThreshold) {
             	AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, 2));
-            	AbstractDungeon.actionManager.addToTop(new ReplayRefundAction(this.card, 2));
+            	AbstractDungeon.actionManager.addToTop(new RefundAction(this.card, 2));
             }
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                 AbstractDungeon.actionManager.clearPostCombatActions();

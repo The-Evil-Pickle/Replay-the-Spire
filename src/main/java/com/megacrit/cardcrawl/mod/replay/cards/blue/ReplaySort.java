@@ -7,7 +7,9 @@ import com.megacrit.cardcrawl.mod.replay.actions.unique.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 //import com.megacrit.cardcrawl.cards.CardColor;
 //import com.megacrit.cardcrawl.cards.CardRarity;
@@ -33,25 +35,19 @@ public class ReplaySort extends CustomCard
 		this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }
-    
-    @Override
-    public void applyPowers() {
-		super.applyPowers();
-		if (this.upgraded) {
-			this.retain = true;
-		}
-    }
 	
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
     	final ChooseAction choice = new ChooseAction((AbstractCard)this, m, EXTENDED_DESCRIPTION[0]);
     	choice.add(EXTENDED_DESCRIPTION[1], EXTENDED_DESCRIPTION[2], () -> {
     		AbstractDungeon.actionManager.addToBottom(new ShuffleRareAction());
+    		AbstractDungeon.actionManager.addToBottom(new ShuffleAction(AbstractDungeon.player.drawPile, false));
     		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
             return;
         });
     	choice.add(EXTENDED_DESCRIPTION[3], EXTENDED_DESCRIPTION[4], () -> {
     		AbstractDungeon.actionManager.addToBottom(new ShuffleNonStatusAction());
+    		AbstractDungeon.actionManager.addToBottom(new ShuffleAction(AbstractDungeon.player.drawPile, false));
     		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
             return;
         });
@@ -69,6 +65,7 @@ public class ReplaySort extends CustomCard
 			//this.upgradeMagicNumber(1);
             this.upgradeName();
             this.retain = true;
+            AlwaysRetainField.alwaysRetain.set(this, true);
             this.rawDescription = ReplaySort.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

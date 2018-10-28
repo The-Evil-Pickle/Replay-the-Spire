@@ -29,6 +29,7 @@ public class TagBag extends ReplayAbstractRelic
   	  r.add(ReplayTheSpireMod.SETTING_TAG_NORMAL_CHANCE);
   	  r.add(ReplayTheSpireMod.SETTING_TAG_DOUBLE_CHANCE);
   	  r.add(ReplayTheSpireMod.SETTING_TAG_SPECIAL_CHANCE);
+  	  r.add(ReplayTheSpireMod.SETTING_TAG_SCRAMBLE_CHANCE);
   		return r;
   	}
     

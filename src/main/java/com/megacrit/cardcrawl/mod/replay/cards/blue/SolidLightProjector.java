@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 //import com.megacrit.cardcrawl.cards.CardColor;
 //import com.megacrit.cardcrawl.cards.CardRarity;
@@ -15,7 +16,6 @@ import com.megacrit.cardcrawl.characters.*;
 
 import basemod.abstracts.CustomCard;
 import replayTheSpire.patches.CardFieldStuff;
-import replayTheSpire.variables.Exhaustive;
 
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.core.*;
@@ -36,13 +36,12 @@ public class SolidLightProjector extends CustomCard
         this.baseMagicNumber = 5;
         this.magicNumber = this.baseMagicNumber;
         this.tags.add(CardFieldStuff.CHAOS_NEGATIVE_MAGIC);
-        Exhaustive.setBaseValue(this, 2);
+        ExhaustiveVariable.setBaseValue(this, 2);
     }
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ReplayGainShieldingAction(p, p, this.block * (AbstractDungeon.player.discardPile.size() / this.magicNumber)));
-        Exhaustive.increment(this);
     }
     
     @Override

@@ -1,5 +1,6 @@
 package com.megacrit.cardcrawl.mod.replay.cards.red;
 
+import com.evacipated.cardcrawl.mod.stslib.variables.RefundVariable;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -38,9 +39,6 @@ public class Eclipse
   {
     //AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p, p, this.magicNumber, false, true, false));
 	AbstractDungeon.actionManager.addToBottom(new EclipseAction(p, this.magicNumber));
-	if (this.magicNumber > 0) {
-		AbstractDungeon.actionManager.addToBottom(new ReplayRefundAction(this, this.magicNumber));
-	}
     //AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
   }
   
@@ -55,6 +53,7 @@ public class Eclipse
     {
       upgradeName();
       upgradeMagicNumber(1);
+      RefundVariable.upgrade(this, 1);
       this.rawDescription = UPGRADE_DESCRIPTION;
       initializeDescription();
     }

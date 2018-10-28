@@ -14,6 +14,8 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 
 import beaked.actions.ReplenishWitherAction;
 import beaked.cards.AbstractWitherCard;
+import beaked.cards.Inspiration;
+import beaked.characters.BeakedTheCultist;
 import blackrusemod.powers.KnivesPower;
 import blackrusemod.powers.ProtectionPower;
 import chronomuncher.cards.Facsimile;
@@ -31,6 +33,7 @@ import com.megacrit.cardcrawl.core.*;
 
 import java.util.*;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.ExhaustiveField;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SneckoField;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -178,30 +181,52 @@ public class SuperSneckoCrazyCard extends BlackCard
 		}
     }
     public static class SSCCE_Wither extends SSCCEffect {
+    	
+    	//if the player has no wither/exhaustive cards, shuffle inspiration cards rather than replenishing those.
+    	public static boolean useGenericForm() {
+    		if (AbstractDungeon.player == null) {
+    			return true;
+    		}
+    		if (AbstractDungeon.player instanceof BeakedTheCultist) {
+    			return false;
+    		}
+    		if (AbstractDungeon.player.masterDeck != null) {
+    			for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+    				if (ExhaustiveField.ExhaustiveFields.baseExhaustive.get(c) > 0 || (c instanceof AbstractWitherCard)) {
+    					return false;
+    				}
+    			}
+    		}
+    		return true;
+    	}
     	public SSCCE_Wither() {
-    		super(EXTENDED_DESCRIPTION[9]);
+    		super(EXTENDED_DESCRIPTION[useGenericForm() ? 11 : 9]);
     	}
 		@Override
 		public void use(AbstractPlayer p, AbstractCard c) {
 			AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, c.magicNumber));
-			for (AbstractCard card : p.hand.group) {
-				if (card instanceof AbstractWitherCard) {
-					AbstractDungeon.actionManager.addToBottom(new ReplenishWitherAction((AbstractWitherCard)card, c.magicNumber-1));
+			if (useGenericForm()) {
+				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Inspiration(), c.magicNumber, true, true));
+			} else {
+				for (AbstractCard card : p.hand.group) {
+					if (card instanceof AbstractWitherCard) {
+						AbstractDungeon.actionManager.addToBottom(new ReplenishWitherAction((AbstractWitherCard)card, c.magicNumber-1));
+					}
 				}
-			}
-			for (AbstractCard card : p.discardPile.group) {
-				if (card instanceof AbstractWitherCard) {
-					AbstractDungeon.actionManager.addToBottom(new ReplenishWitherAction((AbstractWitherCard)card, c.magicNumber-1));
+				for (AbstractCard card : p.discardPile.group) {
+					if (card instanceof AbstractWitherCard) {
+						AbstractDungeon.actionManager.addToBottom(new ReplenishWitherAction((AbstractWitherCard)card, c.magicNumber-1));
+					}
 				}
-			}
-			for (AbstractCard card : p.hand.group) {
-				if (Exhaustive.ExhaustiveFields.baseExhaustive.get(card) > 0) {
-					AbstractDungeon.actionManager.addToBottom(new ModifyExhaustiveAction(card, c.magicNumber-1));
+				for (AbstractCard card : p.hand.group) {
+					if (Exhaustive.ExhaustiveFields.baseExhaustive.get(card) > 0) {
+						AbstractDungeon.actionManager.addToBottom(new ModifyExhaustiveAction(card, c.magicNumber-1));
+					}
 				}
-			}
-			for (AbstractCard card : p.discardPile.group) {
-				if (Exhaustive.ExhaustiveFields.baseExhaustive.get(card) > 0) {
-					AbstractDungeon.actionManager.addToBottom(new ModifyExhaustiveAction(card, c.magicNumber-1));
+				for (AbstractCard card : p.discardPile.group) {
+					if (Exhaustive.ExhaustiveFields.baseExhaustive.get(card) > 0) {
+						AbstractDungeon.actionManager.addToBottom(new ModifyExhaustiveAction(card, c.magicNumber-1));
+					}
 				}
 			}
 		}

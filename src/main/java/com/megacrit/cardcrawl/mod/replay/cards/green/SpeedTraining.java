@@ -1,5 +1,6 @@
 package com.megacrit.cardcrawl.mod.replay.cards.green;
 
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 //import com.megacrit.cardcrawl.cards.CardColor;
@@ -10,13 +11,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.mod.replay.actions.common.*;
-import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 
 import basemod.abstracts.CustomCard;
-import replayTheSpire.variables.Exhaustive;
 
 public class SpeedTraining extends CustomCard
 {
@@ -30,13 +28,12 @@ public class SpeedTraining extends CustomCard
         super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF);
 		this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
-        Exhaustive.setBaseValue(this, 2);
+        ExhaustiveVariable.setBaseValue(this, 2);
     }
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
     	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
-    	Exhaustive.increment(this);
     }
     
     @Override
@@ -48,7 +45,7 @@ public class SpeedTraining extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            Exhaustive.upgrade(this, 1);
+            ExhaustiveVariable.upgrade(this, 1);
         }
     }
     

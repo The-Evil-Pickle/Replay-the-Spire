@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.unique.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.evacipated.cardcrawl.mod.stslib.variables.RefundVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 //import com.megacrit.cardcrawl.cards.CardColor;
 //import com.megacrit.cardcrawl.cards.CardRarity;
@@ -27,8 +28,7 @@ public class SurveyOptions extends CustomCard
     
     public SurveyOptions() {
         super("Survey Options", SurveyOptions.NAME, "cards/replay/Survey_Options.png", -1, SurveyOptions.DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.baseMagicNumber = 1;
-        this.magicNumber = this.baseMagicNumber;
+        RefundVariable.setBaseValue(this, 1);
     }
     
     @Override
@@ -45,7 +45,7 @@ public class SurveyOptions extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            RefundVariable.upgrade(this, 1);
         }
     }
     

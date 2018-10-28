@@ -30,7 +30,6 @@ public class DefyDeath extends CustomCard
     public static final String DESCRIPTION;
     private static final int COST = 5;
     private static final int DEFENSE_GAINED = 10;
-    private static final int POOL = 1;
     
     public DefyDeath() {
         super("Defy Death", DefyDeath.NAME, "cards/replay/defyDeath.png", DefyDeath.COST, DefyDeath.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.UNCOMMON, CardTarget.SELF);
@@ -43,6 +42,12 @@ public class DefyDeath extends CustomCard
     
 	public void updateDynamicCost() {
 		this.setCostForTurn(this.cost - AbstractDungeon.player.exhaustPile.group.size());
+	}
+	
+	@Override
+	public void applyPowers() {
+		this.updateDynamicCost();
+		super.applyPowers();
 	}
 	
     @Override

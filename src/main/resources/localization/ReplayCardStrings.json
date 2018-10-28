@@ -54,8 +54,8 @@
   },
   "ReplayTheSpireMod:Shiv Toss": {
     "NAME": "Shiv Toss",
-    "DESCRIPTION": "Discard all Shivs in your hand. NL Your Shivs deal !M! extra damage this combat for each one discarded. NL Exhaustive !replay:ex!.",
-    "UPGRADE_DESCRIPTION": "Discard all Shivs in your hand. NL Your Shivs deal !M! extra damage this combat for each one discarded. NL Exhaustive !replay:ex!. NL Retain."
+    "DESCRIPTION": "Discard all Shivs in your hand. NL Your Shivs deal !M! extra damage this combat for each one discarded. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Discard all Shivs in your hand. NL Your Shivs deal !M! extra damage this combat for each one discarded. NL Exhaustive !stslib:ex!. NL Retain."
   },
   "ReplayTheSpireMod:The Works": {
     "NAME": "The Works",
@@ -80,8 +80,8 @@
   },
   "Abandon": {
     "NAME": "Abandon",
-    "DESCRIPTION": "Exhaust up to !M! cards. NL Draw 1 card for each. NL Add a Void to your discard pile. NL Exhaustive !replay:ex!. NL Ethereal.",
-    "UPGRADE_DESCRIPTION": "Exhaust up to !M! cards. NL Draw 1 card for each. NL Add a Dazed to your discard pile. NL Exhaustive !replay:ex!. NL Ethereal."
+    "DESCRIPTION": "Exhaust up to !M! cards. NL Draw 1 card for each. NL Add a Void to your discard pile. NL Exhaustive !stslib:ex!. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Exhaust up to !M! cards. NL Draw 1 card for each. NL Add a Dazed to your discard pile. NL Exhaustive !stslib:ex!. NL Ethereal."
   },
   "Defy Death": {
     "NAME": "Defy Death",
@@ -109,8 +109,8 @@
   },
   "Demonic Infusion": {
     "NAME": "Demonic Infusion",
-    "DESCRIPTION": "Upgrade a Skill or Attack in your hand X times. NL Refund 1. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Upgrade a Skill or Attack in your hand X+ !M! times. NL Refund 1. NL Exhaust."
+    "DESCRIPTION": "Upgrade a Skill or Attack in your hand X times. NL Refund !stslib:refund!. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Upgrade a Skill or Attack in your hand X+ !M! times. NL Refund !stslib:refund!. NL Exhaust."
   },
   "Single Out": {
     "NAME": "Single Out",
@@ -131,12 +131,12 @@
   },
   "ReplayTheSpireMod:Stacked": {
     "NAME": "Phantom Shield",
-    "DESCRIPTION": "Gain !B! Block. NL Exhaustive !replay:ex!."
+    "DESCRIPTION": "Gain !B! Block. NL Exhaustive !stslib:ex!."
   },
   "Eclipse": {
     "NAME": "Eclipse",
     "DESCRIPTION": "Exhaust your hand, and replace it with random cards that costs 1 less than normal. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Exhaust your hand, and replace it with random cards that costs 1 less than normal. NL Refund !M!. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Exhaust your hand, and replace it with random cards that costs 1 less than normal. NL Refund !stslib:refund!. NL Exhaust."
   },
   "ReplayTheSpireMod:Strike From Hell": {
     "NAME": "Strike From Hell",
@@ -215,7 +215,7 @@
   },
   "ReplaySolidLightProjector": {
     "NAME": "Solid Light Projector",
-    "DESCRIPTION": "Gain !B! Shielding for every !M! cards in your discard pile. NL Exhaustive !replay:ex!.",
+    "DESCRIPTION": "Gain !B! Shielding for every !M! cards in your discard pile. NL Exhaustive !stslib:ex!.",
 	"EXTENDED_DESCRIPTION": [
 		" NL (Gain ",
 		" total)"
@@ -240,15 +240,15 @@
   },
   "ReplayTheSpireMod:Muscle Training": {
     "NAME": "Weight Training",
-    "DESCRIPTION": "Gain !M! Strength. NL Exhaustive !replay:ex!."
+    "DESCRIPTION": "Gain !M! Strength. NL Exhaustive !stslib:ex!."
   },
   "ReplayTheSpireMod:Speed Training": {
     "NAME": "Speed Training",
-    "DESCRIPTION": "Gain !M! Dexterity. NL Exhaustive !replay:ex!."
+    "DESCRIPTION": "Gain !M! Dexterity. NL Exhaustive !stslib:ex!."
   },
   "ReplayTheSpireMod:Calculation Training": {
     "NAME": "Calculation Training",
-    "DESCRIPTION": "Gain !M! Focus. NL Exhaustive !replay:ex!."
+    "DESCRIPTION": "Gain !M! Focus. NL Exhaustive !stslib:ex!."
   },
   "Improvise": {
     "NAME": "Improvise",
@@ -262,7 +262,7 @@
   },
   "Survey Options": {
     "NAME": "Survey Options",
-    "DESCRIPTION": "Draw X. NL Refund !M!. "
+    "DESCRIPTION": "Draw X. NL Refund !stslib:refund!. "
   },
   "ReplayTheSpireMod:Private Reserves": {
     "NAME": "Private Reserves",
@@ -292,7 +292,7 @@
   },
   "Replay:Sssssssssstrike": {
     "NAME": "Sssstrike",
-    "DESCRIPTION": "Deal !D! damage, plus an additional !D! for each [E] this cost. NL Refund !M!. NL Snecko."
+    "DESCRIPTION": "Deal !D! damage, plus an additional !D! for each [E] this cost. NL Refund !stslib:refund!. NL Snecko."
   },
   "Crow Ritual": {
     "NAME": "Awakened One Ritual",
@@ -317,7 +317,7 @@
   },
   "Hallucinations": {
 	"NAME": "Hallucinations",
-	"DESCRIPTION": "Unplayable. NL At the end of your turn, add !M! random card to your draw pile. NL Exhaustive !replay:ex!."
+	"DESCRIPTION": "Unplayable. NL At the end of your turn, add !M! random card to your draw pile. NL Exhaustive !stslib:ex!."
   },
   "Sickly": {
 	"NAME": "Sickly",
@@ -377,7 +377,7 @@
   },
   "ReplayTheSpireMod:Misquitos": {
 	"NAME": "A Very Large Swarm Of Misquitos",
-	"DESCRIPTION": "Unplayable. NL When drawn, deal !M! damage to ALL fighters."
+	"DESCRIPTION": "Autoplay. NL Deal !M! damage to ALL fighters."
   },
   "ReplayTheSpireMod:Imminent Threat": {
 	"NAME": "Imminent Threat",
@@ -431,7 +431,8 @@
 		" NL Shuffle !M! random Cores into your draw pile.",
 		" NL Shuffle !M! random Cantrips into your draw pile.",
 		" NL Heal !M! HP and Replenish !replay:M-1! uses of all Wither and/or Exhaustive cards in your hand and discard pile.",
-		" NL Replicate up to !M! of your relics and Retain !M! cards this turn."
+		" NL Replicate up to !M! of your relics and Retain !M! cards this turn.",
+		" NL Heal !M! HP and shuffle !M! Inspiration into your draw pile."
 	]
   },
   "ReplayTheSpireMod:Necrogeddon": {
@@ -444,8 +445,8 @@
   },
   "ReplayTheSpireMod:Haul": {
 	"NAME": "Haul",
-	"DESCRIPTION": "Draw your entire draw pile. NL You cannot draw any more cards this turn. NL Exhaust.",
-	"UPGRADE_DESCRIPTION": "Draw your entire draw pile. NL Exhaust."
+	"DESCRIPTION": "Draw your entire draw pile. NL You cannot draw any more cards this turn. NL Exhaustive !stslib:ex!.",
+	"UPGRADE_DESCRIPTION": "Draw your entire draw pile. NL Exhaustive !stslib:ex!."
   },
   "ReplayTheSpireMod:Chaos Vortex": {
 	"NAME": "Chaos Vortex",
@@ -459,7 +460,7 @@
   "ReplayTheSpireMod:Dark Transmutation": {
 	"NAME": "Dark Transmutation",
 	"DESCRIPTION": "Add X random Black cards to your hand. NL They cost 1 less this round. NL Purge.",
-	"UPGRADE_DESCRIPTION": "Add X random Black cards to your hand. NL They cost 1 less this round. NL Refund 1. NL Purge."
+	"UPGRADE_DESCRIPTION": "Add X random Black cards to your hand. NL They cost 1 less this round. NL Refund !stslib:refund!. NL Purge."
   },
   "ReplayTheSpireMod:Rythmic Step": {
 	"NAME": "Rythmic Step",
