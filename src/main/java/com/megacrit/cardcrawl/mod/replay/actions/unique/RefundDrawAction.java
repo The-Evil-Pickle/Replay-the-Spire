@@ -47,7 +47,7 @@ public class RefundDrawAction extends AbstractGameAction
         if (effect > 0) {
             AbstractDungeon.actionManager.addToTop(new DrawCardAction(this.p, effect));
             if (!this.freeToPlayOnce) {
-                this.p.energy.use(Math.max(0, EnergyPanel.totalCount - this.refundAmount));
+                this.p.energy.use(EnergyPanel.totalCount);
             }
         }
         this.isDone = true;

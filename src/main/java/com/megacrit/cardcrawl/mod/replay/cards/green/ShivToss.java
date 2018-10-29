@@ -29,7 +29,6 @@ public class ShivToss extends CustomCard
         if (this.upgraded)
         	AlwaysRetainField.alwaysRetain.set(this, true);
     }
-
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {

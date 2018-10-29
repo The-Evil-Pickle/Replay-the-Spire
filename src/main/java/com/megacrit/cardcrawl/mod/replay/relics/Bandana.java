@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.mod.replay.vfx.*;
+import com.megacrit.cardcrawl.mod.replay.vfx.combat.PlayerGainPennyEffect;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.ThieveryPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -71,7 +72,7 @@ public class Bandana extends ReplayAbstractRelic
 			//player.gold += Bandana.POWER;
 			CardCrawlGame.sound.play("GOLD_JINGLE");
 			for (int i = 0; i < SETTING_POWER.value; ++i) {
-				AbstractDungeon.effectList.add(new GainPennyEffect(abstractCreature.hb.cX, abstractCreature.hb.cY));
+				AbstractDungeon.effectList.add(new PlayerGainPennyEffect(abstractCreature.hb.cX, abstractCreature.hb.cY));
 			}
         }
     }

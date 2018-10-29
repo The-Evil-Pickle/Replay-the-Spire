@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import beaked.*;
 import beaked.patches.*;
+import replayTheSpire.patches.CardFieldStuff;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -74,6 +75,8 @@ public class WingsOfSteel extends AbstractWitherCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.initializeDescription();
             //this.upgradeMagicNumber(UPGRADE_PLUS_WITHER);
         }
     }

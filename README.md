@@ -17,6 +17,8 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * 2 Rooms
  * 2 Elites
  * 1 Boss
+ * 2 Custom run modifiers
+ * Additional Neow options
 
 Some content originally from this mod is now in the official release of the game!
  * Potion rarities
@@ -93,7 +95,7 @@ Leading Strike | Red | Uncommon | Attack | 1 | Deal 4 damage. Reduce the cost of
 Massacre | Red | Uncommon | Attack | 1 | Deal 1(3) damage to ALL enemies, then lose all **Strength**. Is affected 5(8) times by **Strength**.
 Weight Training | Red | Uncommon | Skill | 0 | Gain 1 **Strength**. **Exhaustive** 2(3).
 Limb From Limb | Red | Uncommon | Attack | 3 | Deal 24(28) damage. If this deals at least 30(32) unblocked damage, **Refund** 2 and draw 2 cards.
-Phantom Shield | Red | Uncommon | Skill | 1 | Gain 11(13) **Block**. **Exhaustive** 2(3).
+Phantom Shield | Red | Uncommon | Skill | 1 | Gain 11(14) **Block**. **Exhaustive** 2.
 Abandon | Red | Uncommon | Skill | 0 | **Exhaust** up to 3 cards. Draw that many cards. Add a **Void**(**Dazed**) to your discard pile. **Exhaustive** 3(4). **Ethereal**.
 Demonic Infusion | Red | Rare | Skill | X | Upgrade a card X(+1) times. **Refund** 1. **Exhaust**.
 Eclipse | Red | Rare | Skill | 3 | **Exhaust** your hand. For each card, add a random card to your hand that costs 1 less than normal. (**Refund** 1.)
@@ -104,7 +106,7 @@ Draining Mist | Green | Uncommon | Skill | 3 | Apply 3 **Necrotic** **Poison** t
 Exploit Weakness | Green | Uncommon | Skill | 1(0) | Apply **Languid** equal to target's **Weak**. **Exhaust**.
 The Works | Green | Uncommon | Skill | 0 | For every 3 cards you draw this turn, gain 1 energy and deal 4(9) damage to a random enemy. Playable once per round.
 Scrap Shanks | Green | Uncommon | Power | 0 | When you discard a card during your turn, add 1 (**Upgraded**) **Shiv** to your hand.
-Shiv Toss | Green | Uncommon | Skill | 1(0) | Discard all **Shivs** in your hand. Your **Shivs** deal 1 extra damage this combat for each. **Exhaustive** 2. **Retain**.
+Shiv Toss | Green | Uncommon | Skill | 1 | Discard all **Shivs** in your hand. Your **Shivs** deal 1 extra damage this combat for each. **Exhaustive** 2. (**Retain**).
 Sneak Up | Green | Uncommon | Skill | 1 | **Innate.** Discard 1 card (upgrade removes). Gain 1 **Intangible.** **Exhaust.** **Ethereal.**
 Speed Training | Green | Uncommon | Skill | 0 | Gain 1 **Dexterity**. **Exhaustive** 2(3).
 Atom Bomb | Green | Rare | Attack | 4 | Deal 60(75) damage. Apply 4 **Poison** to ALL fighters. **Exhaust**.
@@ -116,7 +118,7 @@ Repulse | Blue | Common | Skill | 0 | Gain 1(2) **Reflection**. Add 1 **Backfire
 Calculation Training | Blue | Uncommon | Skill | 0 | Gain 1 **Focus**. **Exhaustive** 2(3).
 Crystal Conduit | Blue | Uncommon | Skill | 1 | **Channel** 1 **Crystal** (and 1 random orb).
 Claw Rake | Blue | Uncommon | Attack | 2 | Deal 3(5) damage. Deal 3(5) damage to ALL enemies. Damage is upgraded by Claw cards.
-FIFO Queue | Blue | Uncommon | Power | 2(X) | Gain 4(2X+1) orb slots.
+FIFO Queue | Blue | Uncommon | Power | 2(X) | Gain 4(2X) orb slots. (Channel 1 ***Glass**. **Refund** 1).
 Solid Light Projector | Blue | Uncommon | Skill | 1 | Gain 2 **Shielding** for every 5(3) cards in your discard pile. **Exhaustive** 2.
 Sort | Blue | Uncommon | Skill | 1 | Shuffle all Rare cards in your discard pile into your draw pile. Draw 2 cards. (**Retain.**)
 System Scan | Blue | Uncommon | Skill | 1 | The next 2(3) **Status** cards you draw **Exhaust** and draw 1 card when drawn.
@@ -160,7 +162,7 @@ Name | Mod(s) | Color | Rarity | Type | Cost | Description (upgrade effect in pa
 Chaos Vortex | Infinite Spire | Black | Black | Power | 0 | Gain 10(15) **Shielding.** 1 card you draw each turn has its stats and effects scrambled.
 Dark Transmutation | Infinite Spire | Black | Black | Skill | X | Add X random Black cards to your hand. They cost 1 less this turn. (**Refund** 1.) **Exhaust.**
 Echoes of Time | Infinite Spire | Black | Black | Skill | 1 | **Fetch** up to 3(8) cards you've **Exhausted** this combat. **Grave.** **Purge.**
-Haul | Infinite Spire | Black | Black | Skill | 0 | Draw your draw pile. You can't draw any more cards this turn (upgrade removes). **Exhaust.**
+Haul | Infinite Spire | Black | Black | Skill | 0 | Draw your draw pile. You can't draw any more cards this turn (upgrade removes). **Exhaustive** 2.
 Raven's Hex | Beaked | Purple | Uncommon | Skill | 1 | Apply 4(6) **Languid**. **Wither** 1.
 Wings of Steel | Beaked | Purple | Uncommon | Skill | 2 | Gain 8 **Shielding**, (8 **Block**,) and 6 **Plated** **Armor**. **Wither** 2.
 Compounding Headache | Beaked | Curse | Curse | Curse | 0 | Draw 1 card. Lose 1 HP. **Wither** -1.
@@ -191,7 +193,7 @@ Elixir | Common | Exhaust ALL your status and curse cards.
 Venom Potion | Uncommon | Gain 1 Envenom and -1 Strength.
 Toxic Potion | Uncommon | Apply 5 Necrotic Poison to all enemies.
 Milkshake | Uncommon | You can retain up to 5 unspent energy between rounds.
-Shield Potion | Uncommon | Gain 12 Shielding.
+Lifeblood Potion | Uncommon | Gain 12 Temporary HP.
 Languish Potion | Uncommon | Apply 3 Languid.
 Death Potion | Rare | Deal 60 damage and lose 12 HP.
 Doom Potion | Rare | Destroy an enemy after 10 turns.

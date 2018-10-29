@@ -5,7 +5,10 @@ import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.defect.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
+import com.megacrit.cardcrawl.mod.replay.orbs.GlassOrb;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.evacipated.cardcrawl.mod.stslib.variables.RefundVariable;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 //import com.megacrit.cardcrawl.cards.CardColor;
@@ -36,6 +39,7 @@ public class FIFOQueue extends CustomCard
     public void use(final AbstractPlayer p, final AbstractMonster m) {
 		if (this.upgraded) {
 			AbstractDungeon.actionManager.addToBottom(new FIFOQ_Action(p, 2, 0, this.freeToPlayOnce, this.energyOnUse));
+			AbstractDungeon.actionManager.addToBottom(new ChannelAction(new GlassOrb()));
 		} else {
 			AbstractDungeon.actionManager.addToBottom(new IncreaseMaxOrbAction(this.magicNumber));
 		}
@@ -53,6 +57,7 @@ public class FIFOQueue extends CustomCard
 			this.cost = -1;
 			this.costForTurn = -1;
 			this.upgradedCost = true;
+			RefundVariable.upgrade(this, 1);
             this.rawDescription = FIFOQueue.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

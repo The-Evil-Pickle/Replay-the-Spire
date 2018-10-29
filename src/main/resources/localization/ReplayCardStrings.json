@@ -232,7 +232,7 @@
   "FIFO Queue": { 
     "NAME": "FIFO Queue", 
     "DESCRIPTION": "Gain !M! Orb Slots.", 
-    "UPGRADE_DESCRIPTION": "Gain 2X Orb Slots." 
+    "UPGRADE_DESCRIPTION": "Gain 2X Orb Slots. NL Channel 1 Glass. NL Refund !stslib:refund!." 
   },
   "ReplayTheSpireMod:System Scan": {
     "NAME": "System Scan",
@@ -529,8 +529,8 @@
   },
   "ReplayTheSpireMod:Wings of Steel": {
     "NAME": "Wings of Steel",
-    "DESCRIPTION": "Gain !beaked:wB! Shielding and !beaked:wI! Plated Armor. NL Wither !M!.",
-    "UPGRADE_DESCRIPTION": "Gain !beaked:wB! Shielding, !beaked:wB! Block, and !beaked:wI! Plated Armor. NL Wither !M!.",
+    "DESCRIPTION": "Gain !beaked:wB! Shielding and NL !beaked:wI! Plated Armor. NL Wither !M!.",
+    "UPGRADE_DESCRIPTION": "Gain !beaked:wB! Shielding, NL !beaked:wB! Block, NL and !beaked:wI! Plated Armor. NL Wither !M!.",
 	"EXTENDED_DESCRIPTION": [
 		"Decreases all amounts."
 	]

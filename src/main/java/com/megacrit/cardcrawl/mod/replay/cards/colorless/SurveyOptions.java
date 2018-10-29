@@ -33,7 +33,7 @@ public class SurveyOptions extends CustomCard
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new RefundDrawAction(p, this.magicNumber, this.freeToPlayOnce, this.energyOnUse));
+        AbstractDungeon.actionManager.addToBottom(new RefundDrawAction(p, 0, this.freeToPlayOnce, this.energyOnUse));
     }
     
     @Override

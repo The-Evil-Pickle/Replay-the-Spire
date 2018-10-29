@@ -14,7 +14,7 @@ public class Synergy_BloodyBandana {
 		if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(Bandana.ID) && AbstractDungeon.player.getRelic(Bandana.ID).counter > 0) {
 			__Instance.flash();
 			AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, __Instance));
-	        AbstractDungeon.actionManager.addToTop(new AddTemporaryHPAction(AbstractDungeon.player, AbstractDungeon.player, 5));
+	        AbstractDungeon.actionManager.addToTop(new AddTemporaryHPAction(AbstractDungeon.player, AbstractDungeon.player, 1));
 			return SpireReturn.Return(null);
 		}
 		return SpireReturn.Continue();
