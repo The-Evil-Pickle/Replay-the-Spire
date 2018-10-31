@@ -833,9 +833,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		
 		
 		settingElements.add(new ModLabel("Custom Room Settings", setting_start_x + 150.0f, setting_start_y, settingsPanel, (me) -> {}));
-		settingElements.addAll(SETTING_ROOMS_BONFIRE.GenerateElements(setting_start_x, setting_start_y + 50.0f));
-		settingElements.addAll(SETTING_ROOMS_PORTAL.GenerateElements(setting_start_x, setting_start_y + 100.0f));
-		settingsButtons.add(new RelicSettingsButton(ImageMaster.loadImage("images/ui/map/replay_bonfire.png"), ImageMaster.loadImage("images/ui/map/replay_bonfire.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements));
+		settingElements.addAll(SETTING_ROOMS_BONFIRE.GenerateElements(setting_start_x, setting_start_y - 50.0f));
+		settingElements.addAll(SETTING_ROOMS_PORTAL.GenerateElements(setting_start_x, setting_start_y - 100.0f));
+		ArrayList<ReplayRelicSetting> roomSettings = new ArrayList<ReplayRelicSetting>();
+		roomSettings.add(SETTING_ROOMS_BONFIRE);
+		roomSettings.add(SETTING_ROOMS_PORTAL);
+		settingsButtons.add(new RelicSettingsButton(ImageMaster.loadImage("images/ui/map/replay_bonfire.png"), ImageMaster.loadImage("images/ui/map/replay_bonfire.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings));
 		ReplayTheSpireMod.ConfigSettings.put(SETTING_ROOMS_BONFIRE.settingsId, SETTING_ROOMS_BONFIRE);
 		ReplayTheSpireMod.ConfigSettings.put(SETTING_ROOMS_PORTAL.settingsId, SETTING_ROOMS_PORTAL);
 		//settingElements = new ArrayList<IUIElement>();
@@ -970,6 +973,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new PondfishScales(), RelicType.SHARED);
 		BaseMod.addRelic(new PetGhost(), RelicType.SHARED);
 		BaseMod.addRelic(new QuantumEgg(), RelicType.SHARED);
+		BaseMod.addRelic(new RingingSoul(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfChaos(), RelicType.SHARED);
 		BaseMod.addRelic(new SecondSwordRelic(), RelicType.RED);
 		BaseMod.addRelic(new Shallot(), RelicType.SHARED);

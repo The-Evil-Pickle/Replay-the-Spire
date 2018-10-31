@@ -31,29 +31,8 @@ public class BonfireExploreOption extends AbstractCampfireOption
     
     @Override
     public void useOption() {
+        AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
     	AbstractDungeon.effectList.add(new CampfireExploreEffect());
-        /*final MapRoomNode cur = AbstractDungeon.currMapNode;
-        final MapRoomNode node = new MapRoomNode(cur.x, cur.y);
-        node.room = (AbstractRoom)new CustomEventRoom();
-        final ArrayList<MapEdge> curEdges = (ArrayList<MapEdge>)cur.getEdges();
-        for (final MapEdge edge : curEdges) {
-            node.addEdge(edge);
-        }
-        AbstractDungeon.previousScreen = null;
-        AbstractDungeon.dynamicBanner.hide();
-        AbstractDungeon.dungeonMapScreen.closeInstantly();
-        AbstractDungeon.closeCurrentScreen();
-        AbstractDungeon.topPanel.unhoverHitboxes();
-        AbstractDungeon.fadeIn();
-        AbstractDungeon.effectList.clear();
-        AbstractDungeon.topLevelEffects.clear();
-        AbstractDungeon.topLevelEffectsQueue.clear();
-        AbstractDungeon.effectsQueue.clear();
-        AbstractDungeon.dungeonMapScreen.dismissable = true;
-        AbstractDungeon.setCurrMapNode(AbstractDungeon.nextRoom = node);
-        AbstractDungeon.getCurrRoom().onPlayerEntry();
-        AbstractDungeon.scene.nextRoom(node.room);
-        AbstractDungeon.rs = AbstractDungeon.RenderScene.EVENT;*/
     }
     
     static {

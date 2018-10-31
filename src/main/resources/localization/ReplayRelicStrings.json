@@ -823,7 +823,7 @@
 		"NAME": "Library Looter",
 		"FLAVOR": "aight listen i KNOW its bad form to implement a custom run mod with a relic but y'know what sometimes you just gotta look urself in the mirror and ask \"do i really feel like dealing with patching shit when relics have a perfectly good hook for opening chests\" and sometimes the answer is no.",
 		"DESCRIPTIONS": [
-			"Each time you open a non-boss chest, choose 1 of 15 cards to obtain.",
+			"#bCustom #bRun #bModifer NL Each time you open a non-boss chest, choose 1 of 15 cards to obtain.",
 			"Choose a card to obtain."
 		]
 	}

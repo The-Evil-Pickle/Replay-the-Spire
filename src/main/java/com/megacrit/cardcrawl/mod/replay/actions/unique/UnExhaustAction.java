@@ -45,7 +45,7 @@ public class UnExhaustAction extends AbstractGameAction
             this.p.exhaustPile.removeCard(c);
             c.unhover();
             c.fadingOut = false;
-            this.isDone = true;
         }
+        this.isDone = true;
     }
 }

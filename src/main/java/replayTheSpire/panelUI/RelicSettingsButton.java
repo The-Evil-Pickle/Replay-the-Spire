@@ -53,6 +53,10 @@ public class RelicSettingsButton implements IUIElement
         	this.rendColor = Color.BLACK;
 		}
     }
+    public RelicSettingsButton(final Texture image, final Texture outline, final float x, final float y, final float width, final float height, final List<IUIElement> elements, final List<ReplayRelicSetting> settings) {
+    	this(image, outline, x, y, width, height, elements);
+    	this.settings = settings;
+    }
     public RelicSettingsButton(final Texture image, final Texture outline, final float x, final float y, final float width, final float height, final List<IUIElement> elements) {
     	this.relic = null;
         this.image = image;

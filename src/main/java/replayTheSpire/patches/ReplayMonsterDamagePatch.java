@@ -30,7 +30,7 @@ public class ReplayMonsterDamagePatch {
 			}
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(DimensionalGlitch.ID)) {
 				altered=true;
-				info.output = Math.max(0, info.output - MathUtils.floor((float)info.output / 2.0f));
+				info.output = Math.max(0, MathUtils.floor((float)info.output / 2.0f));
 			}
 		}
 	}

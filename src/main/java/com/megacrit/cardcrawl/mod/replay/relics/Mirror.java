@@ -35,13 +35,15 @@ public class Mirror extends AbstractRelic implements OnReceivePowerRelic {
 	}
 	@Override
 	public boolean onReceivePower(AbstractPower powerToApply, AbstractCreature source) {
-		if (powerToApply.ID.equals("Weakened")) {
-			ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Mirror").flash();
-			AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(source, AbstractDungeon.player, new WeakPower(source, powerToApply.amount, true), powerToApply.amount));
-		}
-		if (powerToApply.ID.equals("Vulnerable")) {
-			ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Mirror").flash();
-			AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(source, AbstractDungeon.player, new VulnerablePower(source, powerToApply.amount, true), powerToApply.amount));
+		if (source != null && source != AbstractDungeon.player) {
+			if (powerToApply.ID.equals("Weakened")) {
+				ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Mirror").flash();
+				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(source, AbstractDungeon.player, new WeakPower(source, powerToApply.amount, true), powerToApply.amount));
+			}
+			if (powerToApply.ID.equals("Vulnerable")) {
+				ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Mirror").flash();
+				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(source, AbstractDungeon.player, new VulnerablePower(source, powerToApply.amount, true), powerToApply.amount));
+			}
 		}
 		return true;
 	}
