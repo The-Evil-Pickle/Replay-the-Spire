@@ -13,16 +13,21 @@ import com.megacrit.cardcrawl.cards.blue.Scrape;
 import com.megacrit.cardcrawl.cards.blue.SelfRepair;
 import com.megacrit.cardcrawl.cards.blue.WhiteNoise;
 import com.megacrit.cardcrawl.cards.blue.Zap;
+import com.megacrit.cardcrawl.cards.green.AfterImage;
+import com.megacrit.cardcrawl.cards.green.Alchemize;
 import com.megacrit.cardcrawl.cards.green.DeadlyPoison;
 import com.megacrit.cardcrawl.cards.green.EndlessAgony;
 import com.megacrit.cardcrawl.cards.green.InfiniteBlades;
 import com.megacrit.cardcrawl.cards.green.Neutralize;
 import com.megacrit.cardcrawl.cards.green.Survivor;
 import com.megacrit.cardcrawl.cards.green.WellLaidPlans;
+import com.megacrit.cardcrawl.cards.red.Armaments;
 import com.megacrit.cardcrawl.cards.red.Bash;
+import com.megacrit.cardcrawl.cards.red.DemonForm;
 import com.megacrit.cardcrawl.cards.red.Hemokinesis;
 import com.megacrit.cardcrawl.cards.red.Inflame;
 import com.megacrit.cardcrawl.cards.red.RecklessCharge;
+import com.megacrit.cardcrawl.cards.red.SearingBlow;
 import com.megacrit.cardcrawl.cards.red.SpotWeakness;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.core.*;
@@ -47,6 +52,8 @@ import com.megacrit.cardcrawl.screens.select.*;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
 
+import beaked.characters.BeakedTheCultist;
+import blackbeard.characters.TheBlackbeard;
 //import beaked.characters.*;
 import blackrusemod.characters.*;
 import chronomuncher.character.*;
@@ -56,6 +63,7 @@ import mysticmod.character.*;
 import com.megacrit.cardcrawl.helpers.*;
 
 import replayTheSpire.*;
+import the_gatherer.character.TheGatherer;
 
 import com.megacrit.cardcrawl.unlock.*;
 import com.badlogic.gdx.math.MathUtils;
@@ -382,31 +390,82 @@ public class MirrorMist
 				this.thirdOption = true;
 				break;
 			}
-			/*if (ReplayTheSpireMod.foundmod_beaked && AbstractDungeon.player instanceof BeakedTheCultist) {
+			if (ReplayTheSpireMod.foundmod_gatherer && AbstractDungeon.player instanceof TheGatherer) {
+				this.has_1 = AbstractDungeon.player.hasRelic("AlchemyBag");
+				this.has_1b = CardHelper.hasCardWithID("SpareBottle");
+				this.loss_r_1 = RelicLibrary.getRelic("AlchemyBag").makeCopy();
+				this.gain_c_1 = new SearingBlow();
+				this.loss_c_1b = CardLibrary.getCopy("SpareBottle");
+				this.gain_c_1b = new Armaments();
+				this.has_2 = CardHelper.hasCardWithID("FlowerWhip");
+				this.loss_c_2 = CardLibrary.getCopy("FlowerWhip");
+				this.gain_c_2 = new Neutralize();
+				this.has_2b = CardHelper.hasCardWithID("Centralize");
+				this.loss_c_2b = CardLibrary.getCopy("Centralize");
+				this.gain_c_2b = new Alchemize();
+				break;
+			}
+			if (ReplayTheSpireMod.foundmod_blackbeard && AbstractDungeon.player instanceof TheBlackbeard) {
+				this.has_1 = AbstractDungeon.player.hasRelic("blackbeard:LoadTheCannons");
+				this.has_1b = CardHelper.hasCardWithID("blackbeard:Cutlass");
+				this.loss_r_1 = RelicLibrary.getRelic("blackbeard:LoadTheCannons").makeCopy();
+				this.gain_r_1 = new M_SeaBlood();
+				this.loss_c_1b = CardLibrary.getCopy("blackbeard:Cutlass");
+				this.gain_c_1b = new Bash();
+				this.has_2 = AbstractDungeon.player.hasRelic("blackbeard:LoadTheCannons");
+				this.has_2b = CardHelper.hasCardWithID("blackbeard:Cutlass");
+				this.loss_r_2 = RelicLibrary.getRelic("blackbeard:LoadTheCannons").makeCopy();
+				this.gain_r_2 = new M_SerpentRing();
+				this.loss_c_2b = CardLibrary.getCopy("blackbeard:Cutlass");
+				this.gain_c_2b = new Neutralize();
+				break;
+			}
+			if (ReplayTheSpireMod.foundmod_beaked && AbstractDungeon.player instanceof BeakedTheCultist) {
 				int ceremonies = 0;
 				for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
 					if (c.cardID.equals("beaked:Ceremony")) {
 						ceremonies++;
 					}
 				}
-				if (ceremonies > 1) {
+				if (ceremonies > 1 && !AbstractDungeon.player.hasRelic("beaked:MendingPlumage")) {
 					this.has_1 = true;
 					this.has_1b = true;
 					this.loss_c_1 = CardLibrary.getCopy("beaked:Ceremony");
 					this.loss_c_1b = CardLibrary.getCopy("beaked:Ceremony");
 					this.gain_c_1 = new DemonForm();
+				} else if (CardHelper.hasCardWithID("beaked:CrazyRituals")) {
+					this.has_1b = true;
+					this.has_1 = AbstractDungeon.player.hasRelic("beaked:MendingPlumage");
+					this.loss_c_1b = CardLibrary.getCopy("beaked:CrazyRituals");
+					this.gain_c_1b = CardLibrary.getCopy("beaked:Ceremony");
+					this.loss_r_1 = AbstractDungeon.player.getRelic("beaked:MendingPlumage");
+					this.gain_r_1 = new M_ByrdBlood();
+					this.has_3 = CardHelper.hasCardWithID("beaked:CrazyRituals");
+					this.loss_c_3 = CardLibrary.getCopy("beaked:CrazyRituals");
 				} else {
 					this.has_1 = AbstractDungeon.player.hasRelic("beaked:MendingPlumage");
 					this.has_1b = CardHelper.hasCardWithID("beaked:Ceremony");
 					if (this.has_1) {
 						this.loss_r_1 = AbstractDungeon.player.getRelic("beaked:MendingPlumage");
 					}
-					this.gain_r_1 = new BurningBlood();
+					this.gain_r_1 = new M_ByrdBlood();
 					this.loss_c_1b = CardLibrary.getCopy("beaked:Ceremony");
 					this.gain_c_1b = new Inflame();
+					this.has_3 = CardHelper.hasCardWithID("beaked:Ceremony");
+					this.loss_c_3 = CardLibrary.getCopy("beaked:Ceremony");
 				}
+				this.has_2 = AbstractDungeon.player.hasRelic("beaked:MendingPlumage");
+				this.has_2b = AbstractDungeon.player.hasRelic("beaked:MendingPlumage");
+				this.loss_r_2 = RelicLibrary.getRelic("beaked:MendingPlumage").makeCopy();
+				this.gain_r_2 = new SnakeRing();
+				this.gain_c_2b = new AfterImage();
+				this.gain_c_2b.upgrade();
+				this.has_3b = this.has_3;
+				this.gain_c_3 = new IC_ScorchingBeam();
+				this.gain_c_3b = new SelfRepair();
+				this.thirdOption = true;
 				break;
-			}*/
+			}
 			
 			this.moddedguy = true;
 		}

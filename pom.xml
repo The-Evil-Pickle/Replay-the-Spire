@@ -117,6 +117,20 @@
 		      <scope>system</scope>
           <systemPath>${basedir}/../lib/ConstructMod.jar</systemPath>
 	      </dependency>
+        <dependency>
+	        <groupId>gatherer</groupId>
+		      <artifactId>Gatherer</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/GathererMod.jar</systemPath>
+	      </dependency>
+        <dependency>
+	        <groupId>blackbeard</groupId>
+		      <artifactId>Blackbeard</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/TheBlackbeardMod.jar</systemPath>
+	      </dependency>
     </dependencies>
   <build>
     <plugins>

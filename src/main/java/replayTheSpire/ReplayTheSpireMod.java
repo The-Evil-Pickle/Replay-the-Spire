@@ -544,6 +544,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	    foundmod_beaked = checkForMod("beaked.Beaked");
 	    foundmod_deciple = checkForMod("chronomuncher.ChronoMod");
 	    foundmod_construct = Loader.isModLoaded("constructmod");
+	    foundmod_gatherer = Loader.isModLoaded("gatherermod");
+	    foundmod_blackbeard = Loader.isModLoaded("sts-mod-the-blackbeard");
 		
 		logger.info("================================================================");
     }
@@ -1156,6 +1158,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static boolean foundmod_beaked = false;
     public static boolean foundmod_deciple = false;
     public static boolean foundmod_construct = false;
+    public static boolean foundmod_gatherer = false;
+    public static boolean foundmod_blackbeard = false;
     
 
     private static void initializeCrossoverRelics() {

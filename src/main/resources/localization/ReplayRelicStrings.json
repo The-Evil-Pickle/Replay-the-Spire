@@ -819,6 +819,27 @@
 			"At the start of combat, #yReplicate 1 Mercury. NL Certain #bBlue cards can now be obtained.",
 		]
 	},
+	"m_ByrdBlood": {
+		"NAME": "Byrd's Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the end of combat, heal #b6 HP. NL All other healing you recieve during combat is #b50% more effective. NL Certain #yRed cards can now be obtained."
+		]
+	},
+	"m_SeaBlood": {
+		"NAME": "Sea Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the end of combat, heal #b6 HP. NL Certain #yRed cards can now be obtained."
+		]
+	},
+	"m_SerpentRing": {
+		"NAME": "Ring of the Sea Serpent",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the start of each combat, add #b2 #yShivs to your hand. NL Certain #yGreen cards can now be obtained."
+		]
+	},
 	"replay:Trail_Library": {
 		"NAME": "Library Looter",
 		"FLAVOR": "aight listen i KNOW its bad form to implement a custom run mod with a relic but y'know what sometimes you just gotta look urself in the mirror and ask \"do i really feel like dealing with patching shit when relics have a perfectly good hook for opening chests\" and sometimes the answer is no.",

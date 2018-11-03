@@ -2,17 +2,13 @@ package com.megacrit.cardcrawl.mod.replay.relics;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.red.DemonForm;
-import com.megacrit.cardcrawl.cards.red.DoubleTap;
-import com.megacrit.cardcrawl.cards.red.Flex;
-import com.megacrit.cardcrawl.cards.red.HeavyBlade;
-import com.megacrit.cardcrawl.cards.red.Inflame;
-import com.megacrit.cardcrawl.cards.red.LimitBreak;
-import com.megacrit.cardcrawl.cards.red.Pummel;
-import com.megacrit.cardcrawl.cards.red.SpotWeakness;
+import com.megacrit.cardcrawl.cards.red.*;
+import com.megacrit.cardcrawl.rooms.*;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
@@ -21,11 +17,11 @@ import com.megacrit.cardcrawl.relics.*;
 
 import blackrusemod.powers.*;
 
-public class m_ScarletBlood extends AbstractRelic
+public class M_ByrdBlood extends AbstractRelic
 {
-    public static final String ID = "m_ScarletBlood";
+    public static final String ID = "m_ByrdBlood";
     
-    public m_ScarletBlood() {
+    public M_ByrdBlood() {
         super(ID, "burningBlood.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
     
@@ -34,24 +30,20 @@ public class m_ScarletBlood extends AbstractRelic
         return this.DESCRIPTIONS[0];
     }
     
-    public void onGainStrength(ApplyPowerAction __instance) {
-    	AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(__instance.target, __instance.source, new KnivesPower(__instance.target, __instance.amount * 2), __instance.amount * 2));
-		AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(__instance.target, this));
-    }
-    
 	@Override
     public void onEquip() {
-		AbstractDungeon.rareRelicPool.add("Red Skull");
+		AbstractDungeon.rareRelicPool.add("Magic Flower");
         final long startTime = System.currentTimeMillis();
         final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
+        tmpPool.add(new Reaper());
+        tmpPool.add(new Feed());
+        tmpPool.add(new Hemogenesis());
         tmpPool.add(new Flex());
         tmpPool.add(new HeavyBlade());
+        tmpPool.add(new Massacre());
         tmpPool.add(new Inflame());
-        tmpPool.add(new Pummel());
         tmpPool.add(new SpotWeakness());
         tmpPool.add(new DemonForm());
-        tmpPool.add(new DoubleTap());
-        tmpPool.add(new LimitBreak());
         tmpPool.add(new MuscleTraining());
         for (final AbstractCard c : tmpPool) {
 			switch (c.rarity) {
@@ -78,10 +70,27 @@ public class m_ScarletBlood extends AbstractRelic
 			}
         }
     }
+	@Override
+    public int onPlayerHeal(final int healAmount) {
+        if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            this.flash();
+            return MathUtils.round(healAmount * 1.5f);
+        }
+        return healAmount;
+    }
+	@Override
+    public void onVictory() {
+        this.flash();
+        AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        final AbstractPlayer p = AbstractDungeon.player;
+        if (p.currentHealth > 0) {
+            p.heal(4);
+        }
+    }
     
     @Override
     public AbstractRelic makeCopy() {
-        return new m_ScarletBlood();
+        return new M_ByrdBlood();
     }
 }
 
