@@ -1,6 +1,7 @@
 package com.megacrit.cardcrawl.mod.replay.vfx.campfire;
 
 import basemod.CustomEventRoom;
+import replayTheSpire.patches.NeowRewardPatches;
 
 import com.badlogic.gdx.graphics.*;
 import com.megacrit.cardcrawl.dungeons.*;
@@ -21,6 +22,8 @@ import com.badlogic.gdx.graphics.g2d.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.map.MapEdge;
 import com.megacrit.cardcrawl.map.MapRoomNode;
+import com.megacrit.cardcrawl.neow.NeowEvent;
+import com.megacrit.cardcrawl.neow.NeowRoom;
 import com.megacrit.cardcrawl.core.*;
 
 public class CampfireExploreEffect extends AbstractGameEffect
@@ -43,10 +46,14 @@ public class CampfireExploreEffect extends AbstractGameEffect
         this.screenColor = AbstractDungeon.fadeColor.cpy();
         this.duration = 2.0f;
         this.screenColor.a = 0.0f;
+        if (AbstractDungeon.getCurrRoom() instanceof RestRoom)
         ((RestRoom)AbstractDungeon.getCurrRoom()).cutFireSound();
     }
 
     public static String generateEventName() {
+    	if (AbstractDungeon.getCurrRoom() instanceof NeowRoom) {
+    		return NeowRewardPatches.possibleEvents.get(NeowEvent.rng.random(NeowRewardPatches.possibleEvents.size() - 1));
+    	}
         if (AbstractDungeon.eventRng.random(1.0f) < 0.25f) {
             if (!AbstractDungeon.shrineList.isEmpty() || !AbstractDungeon.specialOneTimeEventList.isEmpty()) {
                 return getShrine();

@@ -11,11 +11,18 @@ public class PolymerizeTransformOption extends AbstractCampfireOption
 {
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
-    
+    private boolean makeFree;
     public PolymerizeTransformOption() {
+    	this(false);
+    }
+    public PolymerizeTransformOption(boolean makeFree) {
         this.label = PolymerizeTransformOption.TEXT[0];
         this.description = PolymerizeTransformOption.TEXT[1];
         this.img = ReplayTheSpireMod.polymerizeButton;
+    	this.makeFree = makeFree;
+    	if (makeFree) {
+        	this.description += TEXT[3];
+        }
     }
     
     @Override

@@ -5,7 +5,6 @@ import madsciencemod.actions.common.ShuffleTrinketAction;
 import madsciencemod.powers.FuelPower;
 import mysticmod.MysticMod;
 import replayTheSpire.ReplayTheSpireMod;
-import replayTheSpire.variables.Exhaustive;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.Shiv;
@@ -24,7 +23,6 @@ import chronomuncher.powers.RetainOncePower;
 
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.mod.replay.actions.common.ModifyExhaustiveAction;
 import com.megacrit.cardcrawl.mod.replay.actions.common.ReplayRefundAction;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
@@ -33,6 +31,7 @@ import com.megacrit.cardcrawl.core.*;
 
 import java.util.*;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.common.ModifyExhaustiveAction;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.ExhaustiveField;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SneckoField;
 import com.evacipated.cardcrawl.modthespire.Loader;
@@ -219,12 +218,12 @@ public class SuperSneckoCrazyCard extends BlackCard
 					}
 				}
 				for (AbstractCard card : p.hand.group) {
-					if (Exhaustive.ExhaustiveFields.baseExhaustive.get(card) > 0) {
+					if (ExhaustiveField.ExhaustiveFields.baseExhaustive.get(card) > 0) {
 						AbstractDungeon.actionManager.addToBottom(new ModifyExhaustiveAction(card, c.magicNumber-1));
 					}
 				}
 				for (AbstractCard card : p.discardPile.group) {
-					if (Exhaustive.ExhaustiveFields.baseExhaustive.get(card) > 0) {
+					if (ExhaustiveField.ExhaustiveFields.baseExhaustive.get(card) > 0) {
 						AbstractDungeon.actionManager.addToBottom(new ModifyExhaustiveAction(card, c.magicNumber-1));
 					}
 				}

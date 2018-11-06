@@ -1,6 +1,8 @@
 package com.megacrit.cardcrawl.mod.replay.relics;
 
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.ExhaustiveField;
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon.CurrentScreen;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -17,7 +19,6 @@ import replayTheSpire.panelUI.*;
 import replayTheSpire.patches.CardFieldStuff;
 import replayTheSpire.replayxover.beakedbs;
 import replayTheSpire.replayxover.constructbs;
-import replayTheSpire.variables.Exhaustive;
 
 public class RingOfChaos
   extends ReplayAbstractRelic
@@ -139,7 +140,7 @@ public class RingOfChaos
 			dwnOp.add(ChaosUpgradeType.BLOCK);
 		}
 	}
-	if (Exhaustive.ExhaustiveFields.baseExhaustive.get(c) > 0 && c.rawDescription.contains("!replay:ex")){
+	if (ExhaustiveField.ExhaustiveFields.baseExhaustive.get(c) > 0 && c.rawDescription.contains("!replay:ex")){
 		dwnOp.add(ChaosUpgradeType.EXHAUSTIVE);
 		if (c.block > 1) {
 			upOp.add(ChaosUpgradeType.EXHAUSTIVE);
@@ -297,28 +298,28 @@ public class RingOfChaos
 						downmult = (float)c.baseMagicNumber / (float)prevnum;
 						break;
 					case EXHAUSTIVE:
-						switch(Exhaustive.ExhaustiveFields.baseExhaustive.get(c)){
+						switch(ExhaustiveField.ExhaustiveFields.baseExhaustive.get(c)){
 						case 1:
 							downmult = 0.5f;
-							Exhaustive.upgrade(c, 1);
+							ExhaustiveVariable.upgrade(c, 1);
 							break;
 						case 2:
 							downmult = 0.67f;
-							Exhaustive.upgrade(c, 1);
+							ExhaustiveVariable.upgrade(c, 1);
 							break;
 						case 3:
 							if (downtarg < 0.5f) {
 								downmult = 0.33f;
-								Exhaustive.upgrade(c, 2);
+								ExhaustiveVariable.upgrade(c, 2);
 							} else {
 								downmult = 0.75f;
-								Exhaustive.upgrade(c, 1);
+								ExhaustiveVariable.upgrade(c, 1);
 							}
 							break;
 						default:
-							prevnum = Exhaustive.ExhaustiveFields.baseExhaustive.get(c);
-							Exhaustive.upgrade(c, (int)(Exhaustive.ExhaustiveFields.baseExhaustive.get(c) / ((1.0f) / downtarg)));
-							downmult = ((float)prevnum / (float)Exhaustive.ExhaustiveFields.baseExhaustive.get(c));
+							prevnum = ExhaustiveField.ExhaustiveFields.baseExhaustive.get(c);
+							ExhaustiveVariable.upgrade(c, (int)(ExhaustiveField.ExhaustiveFields.baseExhaustive.get(c) / ((1.0f) / downtarg)));
+							downmult = ((float)prevnum / (float)ExhaustiveField.ExhaustiveFields.baseExhaustive.get(c));
 					}
 					break;
 					case OVERHEAT:
@@ -375,11 +376,11 @@ public class RingOfChaos
 						c.upgradedBlock = true;
 						break;
 					case EXHAUSTIVE:
-						prevnum = MathUtils.ceilPositive((float)Exhaustive.ExhaustiveFields.baseExhaustive.get(c) / downmult) - Exhaustive.ExhaustiveFields.baseExhaustive.get(c);
+						prevnum = MathUtils.ceilPositive((float)ExhaustiveField.ExhaustiveFields.baseExhaustive.get(c) / downmult) - ExhaustiveField.ExhaustiveFields.baseExhaustive.get(c);
 						if (prevnum <= 0) {
 							prevnum = 1;
 						}
-						Exhaustive.upgrade(c, prevnum * (-1));
+						ExhaustiveVariable.upgrade(c, prevnum * (-1));
 						break;
 					case OVERHEAT:
 						constructbs.chaos_overheat_upside(c, downmult);

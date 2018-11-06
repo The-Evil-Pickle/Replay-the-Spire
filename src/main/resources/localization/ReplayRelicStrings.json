@@ -399,7 +399,7 @@
 	"NAME": "Onyx Gauntlets",
 	"FLAVOR": ".",
     "DESCRIPTIONS": [
-	"Gain [E] each time you draw a card. NL Drawing a card increases its cost by #b1 for the round. NL At the start of combat, add a random #rCurse to your draw pile for each X-cost card in your deck."
+	"Gain [E] each time you draw a card. NL Drawing a card increases its cost by #b1 for the turn. NL At the start of combat, add a random #rCurse to your draw pile for each X-cost card in your deck."
 	]
   },
   "ReplayTheSpireMod:Ninjato": {
@@ -733,7 +733,7 @@
 	" gold you obtain, add #b1 random #rCurse to your deck."
 	]
   },
-  "Ring of Addiction": {
+  "ReplayTheSpireMod:Ring of Addiction": {
 	"NAME": "Ring of Addiction",
 	"FLAVOR": "Good in abundance breeds evil.",
 	"DESCRIPTIONS": [
@@ -748,7 +748,8 @@
 	"NAME": "Ring of Comfort",
 	"FLAVOR": "Comfort protects. Comfort shelters. Comfort blinds.",
 	"DESCRIPTIONS": [
-	"All healing you recieve is doubled. NL When at less than #b",
+	"All healing you recieve is increased by #b",
+	"%. NL When at less than #b",
 	"% Max HP, you must #yRest at rest sites."
 	]
   },

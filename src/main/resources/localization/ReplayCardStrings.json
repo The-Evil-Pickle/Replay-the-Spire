@@ -127,7 +127,7 @@
   },
   "ReplayTheSpireMod:LeadingStrike": {
     "NAME": "Leading Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Reduce the cost of an Attack in your hand to !M! this round."
+    "DESCRIPTION": "Deal !D! damage. NL Reduce the cost of an Attack in your hand to !M! this turn."
   },
   "ReplayTheSpireMod:Stacked": {
     "NAME": "Phantom Shield",

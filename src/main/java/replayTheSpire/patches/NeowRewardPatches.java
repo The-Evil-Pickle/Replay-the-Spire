@@ -4,16 +4,25 @@ import java.util.*;
 
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SoulboundField;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.events.beyond.SensoryStone;
+import com.megacrit.cardcrawl.events.exordium.BigFish;
+import com.megacrit.cardcrawl.events.exordium.GoldenWing;
+import com.megacrit.cardcrawl.events.exordium.LivingWall;
+import com.megacrit.cardcrawl.events.shrines.GoldShrine;
+import com.megacrit.cardcrawl.events.shrines.GremlinMatchGame;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.cards.blue.*;
 import com.megacrit.cardcrawl.mod.replay.cards.curses.FaultyEquipment;
 import com.megacrit.cardcrawl.mod.replay.events.shrines.ChaosEvent;
 import com.megacrit.cardcrawl.mod.replay.events.thebottom.MirrorMist;
+import com.megacrit.cardcrawl.mod.replay.events.thebottom.Stuck;
 import com.megacrit.cardcrawl.mod.replay.relics.*;
 import com.megacrit.cardcrawl.mod.replay.rooms.*;
+import com.megacrit.cardcrawl.mod.replay.vfx.campfire.CampfireExploreEffect;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.blue.Dualcast;
 import com.megacrit.cardcrawl.cards.blue.Zap;
@@ -100,6 +109,8 @@ public class NeowRewardPatches {
 	@SpireEnum
 	public static NeowReward.NeowRewardType COLORLESS_CARD;
 	@SpireEnum
+	public static NeowReward.NeowRewardType RANDOM_EVENT;
+	@SpireEnum
 	public static NeowReward.NeowRewardType CURSED_BOSS_RELIC;
 	@SpireEnum
 	public static NeowReward.NeowRewardType DOUBLE_BOSS_RELIC;
@@ -112,14 +123,27 @@ public class NeowRewardPatches {
 	public static final ReplayOptionsSetting SETTING_BOSS_OPTIONS_ENABLED;
 	public static ReplayIntSliderSetting SETTING_BOSS_CURSES = new ReplayIntSliderSetting("Neow_Boss_Curses_Amt", "Curses for Boss Relic (0 disables)", 2, 5);
 	public static ReplayBooleanSetting SETTING_SOULBOUND_CURSES = new ReplayBooleanSetting("Neow_Boss_Curses_Soulbound", "Curses for Boss Relic are Soulbound", true);
-	public static ReplayBooleanSetting SETTING_COLORLESS_OPTION = new ReplayBooleanSetting("Neow_Boss_Colorless_Option", "Colorless card option", false);
+	public static ReplayBooleanSetting SETTING_COLORLESS_OPTION = new ReplayBooleanSetting("Neow_Colorless_Option", "Colorless card option", false);
+	public static ReplayBooleanSetting SETTING_EVENT_OPTION = new ReplayBooleanSetting("Neow_Event_Option", "Random event option", true);
 	
 	public static final ArrayList<String> possibleEvents;
 	static {
 		possibleEvents = new ArrayList<String>();
 		possibleEvents.add(MirrorMist.ID);
 		possibleEvents.add(ChaosEvent.ID);
-		
+		possibleEvents.add(Stuck.ID);
+		possibleEvents.add(BigFish.ID);
+		possibleEvents.add(LivingWall.ID);
+		possibleEvents.add(GoldShrine.ID);
+		possibleEvents.add(GremlinMatchGame.ID);
+		possibleEvents.add(SensoryStone.ID);
+		if (Loader.isModLoaded("infinitespire")) {
+			possibleEvents.add("Empty Rest Site");
+			possibleEvents.add("Prism of Light");
+		}
+		if (Loader.isModLoaded("hubris")) {
+			possibleEvents.add("hubris:UPDATEBODYTEXT");
+		}
 		settingBossStrings.add("Disabled");
 		settingBossStrings.add("Enabled on characters with important starting relics");
 		settingBossStrings.add("Enabled on all characters");
@@ -140,9 +164,13 @@ public class NeowRewardPatches {
 		
 		public static ArrayList<NeowRewardDef> Postfix(ArrayList<NeowRewardDef> __result, NeowReward __instance, final int category) {
 
-			if (category == 0) {
+			if (category == 0 && SETTING_COLORLESS_OPTION.value) {
 				__result.add(new NeowRewardDef(COLORLESS_CARD, "[ #gObtain #ga #grandom #gcolorless #gCard ]"));
-			} else if (category == 3 && ReplayTheSpireMod.foundmod_stslib && (AbstractDungeon.player.hasRelic("construct:ClockworkPhoenix") || AbstractDungeon.player.hasRelic("beaked:MendingPlumage"))) {
+			} else if (category == 1 && SETTING_EVENT_OPTION.value) {
+				__result.add(new NeowRewardDef(RANDOM_EVENT, "[ #gEncounter #ga #grandom #gevent. ]"));
+			} else if (category == 3 &&
+					(SETTING_BOSS_OPTIONS_ENABLED.value == 2 || SETTING_BOSS_OPTIONS_ENABLED.value == 1 && (AbstractDungeon.player.hasRelic("construct:ClockworkPhoenix") || AbstractDungeon.player.hasRelic("beaked:MendingPlumage")))
+					) {
 				if (SETTING_BOSS_CURSES.value > 0) {
 					__result.add(new NeowRewardDef(CURSED_BOSS_RELIC, "[ #rObtain #r" + SETTING_BOSS_CURSES.value + (SETTING_SOULBOUND_CURSES.value ? " #rSoulbound" : "") + " #rCurses #gObtain #ga #grandom #gboss #gRelic ]"));
 				}
@@ -175,6 +203,8 @@ public class NeowRewardPatches {
 			
 			if (__instance.type == COLORLESS_CARD) {
 				AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(AbstractDungeon.returnColorlessCard(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F)); 
+			} else if (__instance.type == RANDOM_EVENT) {
+				AbstractDungeon.topLevelEffects.add( new CampfireExploreEffect());
 			} else if (ReplayTheSpireMod.foundmod_stslib && __instance.type == CURSED_BOSS_RELIC) {
 				for (int i=0; i < SETTING_BOSS_CURSES.value; i++) {
     				AbstractCard bowlCurse = AbstractDungeon.getCardWithoutRng(AbstractCard.CardRarity.CURSE);

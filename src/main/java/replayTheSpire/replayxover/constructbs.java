@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
 import constructmod.cards.AbstractConstructCard;
-import replayTheSpire.variables.Exhaustive;
 
 public class constructbs {
 	static void AddAndUnlockCard(AbstractCard c)

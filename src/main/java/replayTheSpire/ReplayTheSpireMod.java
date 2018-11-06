@@ -63,6 +63,8 @@ import com.megacrit.cardcrawl.unlock.*;
 import basemod.*;
 import basemod.helpers.*;
 import basemod.interfaces.*;
+import beaked.Beaked;
+import blackbeard.TheBlackbeardMod;
 import blackrusemod.BlackRuseMod;
 import chronomuncher.ChronoMod;
 import coloredmap.ColoredMap;
@@ -74,12 +76,12 @@ import madsciencemod.MadScienceMod;
 //import madsciencemod.powers.*;
 import mysticmod.MysticMod;
 import replayTheSpire.panelUI.*;
+import replayTheSpire.patches.NeowRewardPatches;
 import replayTheSpire.patches.SimplicityRunePatches;
 import replayTheSpire.replayxover.beakedbs;
 import replayTheSpire.replayxover.chronobs;
 import replayTheSpire.replayxover.constructbs;
 import replayTheSpire.replayxover.infinitebs;
-import replayTheSpire.variables.Exhaustive;
 import replayTheSpire.variables.MagicMinusOne;
 
 import java.lang.reflect.*;
@@ -845,6 +847,30 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.ConfigSettings.put(SETTING_ROOMS_PORTAL.settingsId, SETTING_ROOMS_PORTAL);
 		//settingElements = new ArrayList<IUIElement>();
 		
+		settingElements = new ArrayList<IUIElement>();
+		settingElements.add(new ModLabel("Neow Reward Settings", setting_start_x + 150.0f, setting_start_y, settingsPanel, (me) -> {}));
+		settingElements.addAll(NeowRewardPatches.SETTING_COLORLESS_OPTION.GenerateElements(setting_start_x, setting_start_y - 40.0f));
+		settingElements.addAll(NeowRewardPatches.SETTING_EVENT_OPTION.GenerateElements(setting_start_x, setting_start_y - 80.0f));
+		settingElements.addAll(NeowRewardPatches.SETTING_BASIC_CARDS.GenerateElements(setting_start_x, setting_start_y - 120.0f));
+		settingElements.addAll(NeowRewardPatches.SETTING_BOSS_CURSES.GenerateElements(setting_start_x, setting_start_y - 160.0f));
+		settingElements.addAll(NeowRewardPatches.SETTING_SOULBOUND_CURSES.GenerateElements(setting_start_x, setting_start_y - 200.0f));
+		settingElements.addAll(NeowRewardPatches.SETTING_BOSS_OPTIONS_ENABLED.GenerateElements(setting_start_x, setting_start_y - 250.0f));
+		roomSettings = new ArrayList<ReplayRelicSetting>();
+		roomSettings.add(NeowRewardPatches.SETTING_COLORLESS_OPTION);
+		roomSettings.add(NeowRewardPatches.SETTING_EVENT_OPTION);
+		roomSettings.add(NeowRewardPatches.SETTING_BASIC_CARDS);
+		roomSettings.add(NeowRewardPatches.SETTING_BOSS_CURSES);
+		roomSettings.add(NeowRewardPatches.SETTING_SOULBOUND_CURSES);
+		roomSettings.add(NeowRewardPatches.SETTING_BOSS_OPTIONS_ENABLED);
+		settingsButtons.add(new RelicSettingsButton(ImageMaster.loadImage("images/relics/lament.png"), ImageMaster.loadImage("images/relics/outline/lament.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings));
+		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_COLORLESS_OPTION.settingsId, NeowRewardPatches.SETTING_COLORLESS_OPTION);
+		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_EVENT_OPTION.settingsId, NeowRewardPatches.SETTING_EVENT_OPTION);
+		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_BASIC_CARDS.settingsId, NeowRewardPatches.SETTING_BASIC_CARDS);
+		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_BOSS_CURSES.settingsId, NeowRewardPatches.SETTING_BOSS_CURSES);
+		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_SOULBOUND_CURSES.settingsId, NeowRewardPatches.SETTING_SOULBOUND_CURSES);
+		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_BOSS_OPTIONS_ENABLED.settingsId, NeowRewardPatches.SETTING_BOSS_OPTIONS_ENABLED);
+		
+		
 		BuildSettings(new RingOfChaos());
 		BuildSettings(new Ninjato());
 		BuildSettings(new TagBag());
@@ -996,6 +1022,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ChaosEvent.addRing(new RingOfPeace());
 		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfFangs(), AbstractPlayer.PlayerClass.THE_SILENT, true));
 		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfPanic(), new String[]{SneckoEye.ID, SneckoHeart.ID}));
+		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfAddiction(), new String[]{Sozu.ID}));
 		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfSearing(), AbstractPlayer.PlayerClass.IRONCLAD, true, new String[]{Dodecahedron.ID}));
 		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfShattering(), AbstractPlayer.PlayerClass.DEFECT, false));
 		ChaosEvent.addRing(new RingOfHypnosis());
@@ -1021,7 +1048,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	@Override
 	public void receiveEditCards() {
 		BaseMod.addDynamicVariable(new MagicMinusOne());
-		BaseMod.addDynamicVariable(new Exhaustive());
         try {
         	initializeInfiniteMod(LoadType.CARD);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
@@ -1161,7 +1187,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static boolean foundmod_gatherer = false;
     public static boolean foundmod_blackbeard = false;
     
-
     private static void initializeCrossoverRelics() {
     	try {
     		initializeScienceMod(LoadType.RELIC);
@@ -1181,12 +1206,22 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     	try {
     		initializeMysticMod(LoadType.RELIC);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
-			logger.info("Replay | Servant mod not detected");
+			logger.info("Replay | Mystic mod not detected");
 		}
     	try {
     		initializeDecipleMod(LoadType.RELIC);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
-			logger.info("Replay | Servant mod not detected");
+			logger.info("Replay | Deciple mod not detected");
+		}
+    	try {
+    		initializeBlackbeardMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Blackbeard mod not detected");
+		}
+    	try {
+    		initializeBeakedMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Beaked mod not detected");
 		}
     }
 
@@ -1295,6 +1330,33 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Deciple...");
+		}
+	}
+	private static void initializeBlackbeardMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
+		Class<TheBlackbeardMod> servMod = TheBlackbeardMod.class;
+		logger.info("ReplayTheSpireMod | Detected Blackbeard Mod!");
+		foundmod_blackbeard = true;
+
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Blackbeard...");
+			BaseMod.addRelicToCustomPool(new M_SeaBlood(), blackbeard.enums.AbstractCardEnum.BLACKBEARD_BLACK);
+			BaseMod.addRelicToCustomPool(new M_SerpentRing(), blackbeard.enums.AbstractCardEnum.BLACKBEARD_BLACK);
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for Blackbeard...");
+		}
+	}
+	private static void initializeBeakedMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
+		Class<Beaked> servMod = Beaked.class;
+		logger.info("ReplayTheSpireMod | Detected Beaked Mod!");
+		foundmod_beaked = true;
+
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Beaked...");
+			BaseMod.addRelicToCustomPool(new M_ByrdBlood(), beaked.patches.AbstractCardEnum.BEAKED_YELLOW);
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for Beaked...");
 		}
 	}
 

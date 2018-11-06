@@ -18,7 +18,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.ArrayList;
 import basemod.*;
 import basemod.abstracts.*;
-import replayTheSpire.variables.Exhaustive;
 
 public class Hallucinations
   extends CustomCard

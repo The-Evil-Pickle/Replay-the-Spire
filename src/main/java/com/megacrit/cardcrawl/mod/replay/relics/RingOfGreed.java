@@ -3,6 +3,7 @@ package com.megacrit.cardcrawl.mod.replay.relics;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.rewards.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.helpers.*;
@@ -168,7 +169,7 @@ public class RingOfGreed extends AbstractRelic
                 }
             }
             AbstractDungeon.combatRewardScreen.positionRewards();
-            AbstractDungeon.overlayMenu.proceedButton.setLabel(this.DESCRIPTIONS[2]);
+            AbstractDungeon.overlayMenu.proceedButton.setLabel("Continue");
             AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25f;
         }
     }
@@ -191,5 +192,14 @@ public class RingOfGreed extends AbstractRelic
 		greedlist.add(TagBag.ID);
 		greedlist.add(Bandana.ID);
 		greedlist.add(GoldenEgg.ID);
+		if (Loader.isModLoaded("sts-mod-the-blackbeard")) {
+			greedlist.add("blackbeard:TreasureChest");
+		}
+		if (Loader.isModLoaded("infinitespire")) {
+			greedlist.add("infinitespire:Midas Blood");
+			if (Loader.isModLoaded("hubris")) {
+				greedlist.add("hubris:MobiusCoin");
+			}
+		}
 	}
 }

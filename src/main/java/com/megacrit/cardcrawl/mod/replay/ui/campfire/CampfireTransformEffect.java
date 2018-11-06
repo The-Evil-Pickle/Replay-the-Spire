@@ -31,6 +31,7 @@ public class CampfireTransformEffect extends AbstractGameEffect
     private boolean openedScreen;
     private boolean selectedCard;
     private Color screenColor;
+    private boolean makeFree;
     
     public CampfireTransformEffect() {
         this.openedScreen = false;
