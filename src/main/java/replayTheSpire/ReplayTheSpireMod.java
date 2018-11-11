@@ -24,10 +24,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.mod.replay.actions.*;
-import com.megacrit.cardcrawl.mod.replay.actions.common.*;
-import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
-import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.cards.blue.*;
 import com.megacrit.cardcrawl.mod.replay.cards.colorless.*;
 import com.megacrit.cardcrawl.mod.replay.cards.curses.*;
@@ -39,6 +35,7 @@ import com.megacrit.cardcrawl.mod.replay.events.thecity.GremboTheGreat;
 import com.megacrit.cardcrawl.mod.replay.events.thecity.ReplayMapScoutEvent;
 import com.megacrit.cardcrawl.mod.replay.modifiers.ChaoticModifier;
 import com.megacrit.cardcrawl.mod.replay.modifiers.LibraryLooterModifier;
+import com.megacrit.cardcrawl.mod.replay.modifiers.MistsModifier;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.CaptainAbe;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.PondfishBoss;
@@ -50,13 +47,8 @@ import com.megacrit.cardcrawl.mod.replay.potions.*;
 import com.megacrit.cardcrawl.mod.replay.powers.RidThyselfOfStatusCardsPower;
 import com.megacrit.cardcrawl.mod.replay.powers.TheWorksPower;
 import com.megacrit.cardcrawl.mod.replay.relics.*;
-import com.megacrit.cardcrawl.mod.replay.relics.RingOfChaos.ChaosUpgradeType;
-import com.megacrit.cardcrawl.mod.replay.rooms.*;
-import com.megacrit.cardcrawl.mod.replay.vfx.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
-import com.megacrit.cardcrawl.monsters.MonsterInfo;
-//import com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.unlock.*;
 
@@ -72,12 +64,9 @@ import fetch.FetchMod;
 import fruitymod.FruityMod;
 import fruitymod.seeker.patches.*;
 import infinitespire.InfiniteSpire;
-import madsciencemod.MadScienceMod;
-//import madsciencemod.powers.*;
 import mysticmod.MysticMod;
 import replayTheSpire.panelUI.*;
 import replayTheSpire.patches.NeowRewardPatches;
-import replayTheSpire.patches.SimplicityRunePatches;
 import replayTheSpire.replayxover.beakedbs;
 import replayTheSpire.replayxover.chronobs;
 import replayTheSpire.replayxover.constructbs;
@@ -1498,7 +1487,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 					snek.flash();
 					c.setCostForTurn(-99);
 				} else {
-					c.setCostForTurn(AbstractDungeon.cardRandomRng.random(Math.min(3, c.cost + 1)));
+					c.setCostForTurn(AbstractDungeon.cardRandomRng.random(c.cost + 1));
 				}
 			} else {
 				c.setCostForTurn(AbstractDungeon.cardRandomRng.random(3));
@@ -1518,6 +1507,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public void receiveCustomModeMods(List<CustomMod> l) {
         l.add(new CustomMod(LibraryLooterModifier.ID, "b", true));
         l.add(new CustomMod(ChaoticModifier.ID, "b", true));
+        l.add(new CustomMod(MistsModifier.ID, "b", true));
     }
     @Override
     public void receivePostDungeonInitialize() {
@@ -1533,6 +1523,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         	}
         	if( CardCrawlGame.trial.dailyModIDs().contains(LibraryLooterModifier.ID)) {
         		RelicLibrary.getRelic(TrialRelic_Library.ID).makeCopy().instantObtain();
+        	}
+        	if( CardCrawlGame.trial.dailyModIDs().contains(MistsModifier.ID)) {
+        		MistsModifier.hasGottenEvent = false;
         	}
         }
     }

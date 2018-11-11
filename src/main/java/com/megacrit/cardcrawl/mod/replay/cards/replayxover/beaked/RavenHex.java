@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import beaked.*;
 import beaked.patches.*;
@@ -26,10 +27,11 @@ public class RavenHex extends AbstractWitherCard
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION;
     private static final int COST = 1;
-    private static final int LANGUID_AMT = 4;
-    private static final int LANGUID_UPAMT = 2;
+    private static final int LANGUID_AMT = 6;
+    private static final int LANGUID_UPAMT = 0;
     
     public RavenHex() {
         super(ID, RavenHex.NAME, "cards/replay/replayBetaSkill.png", COST, RavenHex.DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCardEnum.BEAKED_YELLOW, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
@@ -43,6 +45,9 @@ public class RavenHex extends AbstractWitherCard
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new WitherAction(this));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LanguidPower(m, this.misc, false), this.misc));
+        if (this.upgraded) {
+        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.misc, false), this.misc));
+        }
     }
     
     public AbstractCard makeCopy() {
@@ -53,6 +58,8 @@ public class RavenHex extends AbstractWitherCard
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMisc(LANGUID_UPAMT);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
     
@@ -60,6 +67,7 @@ public class RavenHex extends AbstractWitherCard
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         NAME = RavenHex.cardStrings.NAME;
         DESCRIPTION = RavenHex.cardStrings.DESCRIPTION;
+        UPGRADE_DESCRIPTION = RavenHex.cardStrings.DESCRIPTION;
         EXTENDED_DESCRIPTION = RavenHex.cardStrings.EXTENDED_DESCRIPTION;
     }
 }

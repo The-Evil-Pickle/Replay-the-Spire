@@ -4,16 +4,9 @@ import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.ExhaustiveField;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon.CurrentScreen;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
-import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.cards.CardGroup.CardGroupType;
 import java.util.*;
-import java.lang.*;
 import replayTheSpire.*;
 import replayTheSpire.panelUI.*;
 import replayTheSpire.patches.CardFieldStuff;
@@ -27,6 +20,7 @@ public class RingOfChaos
   private boolean calledTransform = true;
   static final List<String> settingStrings = new ArrayList<String>();
   public static final ReplayOptionsSetting SETTING_MODE;
+  public static final ReplayIntSliderSetting SETTING_CHANCE = new ReplayIntSliderSetting("chaos_chance", "Chance per Card", 33, 1, 100, "%");
   static {
 	  settingStrings.add("Don't avoid changes including magic number (more variety, more bugs)");
 	  settingStrings.add("Avoid changes including only magic number (compromise option)");
@@ -48,6 +42,7 @@ public class RingOfChaos
   public ArrayList<ReplayRelicSetting> BuildRelicSettings() {
 	  ArrayList<ReplayRelicSetting> r = new ArrayList<ReplayRelicSetting>();
 	  r.add(SETTING_MODE);
+	  r.add(SETTING_CHANCE);
 		return r;
 	}
   public static enum ChaosUpgradeType
@@ -289,13 +284,13 @@ public class RingOfChaos
 						prevnum = c.baseDamage;
 						c.baseDamage += (c.baseDamage / (-1.0f / downtarg));
 						c.upgradedDamage = true;
-						downmult = (float)c.baseMagicNumber / (float)prevnum;
+						downmult = (float)c.baseDamage / (float)prevnum;
 						break;
 					case BLOCK:
 						prevnum = c.baseBlock;
 						c.baseBlock += (c.baseBlock / (-1.0f / downtarg));
 						c.upgradedBlock = true;
-						downmult = (float)c.baseMagicNumber / (float)prevnum;
+						downmult = (float)c.baseBlock / (float)prevnum;
 						break;
 					case EXHAUSTIVE:
 						switch(ExhaustiveField.ExhaustiveFields.baseExhaustive.get(c)){

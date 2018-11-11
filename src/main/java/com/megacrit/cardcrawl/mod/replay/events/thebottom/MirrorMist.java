@@ -41,6 +41,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.curses.*;
 import com.megacrit.cardcrawl.mod.replay.cards.green.*;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
 import com.megacrit.cardcrawl.mod.replay.events.*;
+import com.megacrit.cardcrawl.mod.replay.modifiers.MistsModifier;
 import com.megacrit.cardcrawl.mod.replay.relics.*;
 import com.megacrit.cardcrawl.mod.replay.rooms.*;
 import com.megacrit.cardcrawl.mod.replay.vfx.*;
@@ -218,6 +219,7 @@ public class MirrorMist
 	this.has_3b = false;
 	this.moddedguy = false;
 	this.thirdOption = false;
+	MistsModifier.hasGottenEvent = true;
 	
 	switch(AbstractDungeon.player.chosenClass) {
 		case IRONCLAD: {

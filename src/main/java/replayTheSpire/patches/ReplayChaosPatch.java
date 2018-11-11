@@ -1,8 +1,10 @@
 package replayTheSpire.patches;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.mod.replay.modifiers.ChaoticModifier;
 import com.megacrit.cardcrawl.mod.replay.potions.*;
 import com.megacrit.cardcrawl.mod.replay.relics.*;
 
@@ -90,9 +92,11 @@ public class ReplayChaosPatch {
 		}
 		
 		if (AbstractDungeon.player.hasRelic("Ring of Chaos")) {
-			int numToChange = AbstractDungeon.miscRng.random(2);
-			for (int i = 0; i < __result.size() - 2; i++){
-				numToChange += AbstractDungeon.miscRng.random(2);
+			int numToChange = 0;
+			for (int i = 0; i < __result.size(); i++){
+				if (RingOfChaos.SETTING_CHANCE.testChance(AbstractDungeon.miscRng) || (CardCrawlGame.trial != null && CardCrawlGame.trial.dailyModIDs().contains(ChaoticModifier.ID) && AbstractDungeon.miscRng.randomBoolean(0.9f))) {
+					numToChange += 1;
+				}
 			}
 			for (int i = 0; i < __result.size() && numToChange > 0; i++){
 				if (((RingOfChaos)ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Ring of Chaos")).chaosUpgradeCard(__result.get(i))) {

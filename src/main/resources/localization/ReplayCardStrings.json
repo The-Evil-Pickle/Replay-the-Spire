@@ -523,6 +523,7 @@
   "ReplayTheSpireMod:RavenHex": {
     "NAME": "Raven's Hex",
     "DESCRIPTION": "Apply !beaked:wI! Languid. NL Wither 1.",
+    "UPGRADE_DESCRIPTION": "Apply !beaked:wI! Languid and Vulnerable. NL Wither 1.",
 	"EXTENDED_DESCRIPTION": [
 		"Decreases the #yLanguid amount."
 	]
