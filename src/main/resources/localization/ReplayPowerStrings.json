@@ -15,6 +15,12 @@
 	"Takes damage whenever you lose health."
     ]
   },
+  "Replay:Enemy Life Bind": {
+    "NAME": "Coupled Souls",
+    "DESCRIPTIONS": [
+	"This enemy shares its health bar with other enemies that have this power."
+    ]
+  },
   "Reflection": {
     "NAME": "Reflection",
     "DESCRIPTIONS": [
@@ -132,7 +138,8 @@
   "Crystallizer": {
     "NAME": "Crystallizer",
     "DESCRIPTIONS": [
-	"At the end of your turn, if at least half your orb slots are empty, #yChannel #b",
+	"Crystal orbs give an additional #b",
+	" #yFocus to adjacent orbs. NL At the end of your turn, if at least half your orb slots are empty, #yChannel #b",
 	" #yCrystal. NL Counts slots containing #yGlass as empty."
     ]
   },
@@ -189,6 +196,21 @@
     "DESCRIPTIONS": [
 	"If you play #b",
 	" cards in a single turn, your turn ends. NL #yTime #yCollector can activate only once per combat."
+    ]
+  },
+  "Replay:Storyteller": {
+    "NAME": "Story Teller",
+    "DESCRIPTIONS": [
+	"She just wants you to listen to her story. NL When the story ends in #b",
+	" turns, you may leave."
+    ]
+  },
+  "Replay:Aging": {
+    "NAME": "Aging",
+    "DESCRIPTIONS": [
+	"For every #b",
+	" damage taken, ",
+	" gains #b1 #yLanguid."
     ]
   },
   "Eggshell": {
@@ -307,7 +329,9 @@
   "FF_Thievery": {
     "NAME": "Soul Stealer",
     "DESCRIPTIONS": [
-      "Steals one of your buffs each time they deal unblocked attack damage."
+      "Each time ",
+	  " deals unblocked attack damage, they steal #b",
+	  " random buffs from the target."
     ]
   },
   "FF_Rage": {

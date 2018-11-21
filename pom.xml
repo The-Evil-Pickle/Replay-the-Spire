@@ -131,6 +131,20 @@
 		      <scope>system</scope>
           <systemPath>${basedir}/../lib/TheBlackbeardMod.jar</systemPath>
 	      </dependency>
+        <dependency>
+	        <groupId>conspire</groupId>
+		      <artifactId>Conspire</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/Conspire.jar</systemPath>
+	      </dependency>
+        <dependency>
+	        <groupId>marisa</groupId>
+		      <artifactId>Marisa</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/TS05_Marisa_v0.14.3.jar</systemPath>
+	      </dependency>
     </dependencies>
   <build>
     <plugins>
@@ -153,5 +167,5 @@
     </plugins>
 	<finalName>${project.artifactId}</finalName>
   </build>
-  <version>1.2.7</version>
+  <version>1.2.21</version>
 </project>

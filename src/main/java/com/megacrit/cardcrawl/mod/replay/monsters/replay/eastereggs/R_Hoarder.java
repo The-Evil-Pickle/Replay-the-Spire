@@ -70,6 +70,12 @@ public class R_Hoarder extends AbstractMonster
             this.slamDmg = 25;
             this.nomDmg = 5;
         }
+        if (AbstractDungeon.ascensionLevel >= 8) {
+            this.setHp(350);
+        }
+        else {
+            this.setHp(300);
+        }
         this.damage.add(new DamageInfo(this, this.slamDmg));
         this.damage.add(new DamageInfo(this, this.nomDmg));
     }
@@ -100,16 +106,19 @@ public class R_Hoarder extends AbstractMonster
                 int deckcount = limiter - AbstractDungeon.player.drawPile.size();
                 for (int i = 0; i < deckcount; i++) {
                 	  AbstractCard.CardRarity rarity = AbstractCard.CardRarity.COMMON;
-	      			  int r = MathUtils.random(6);
-	      			  if (r == 6)
+	      			  int r = MathUtils.random((AbstractDungeon.ascensionLevel >= 18) ? 9 : 8);
+	      			  if (r == 6 || r == 7)
 	      			  {
 	      				  rarity = AbstractCard.CardRarity.RARE;
 	      			  } else {
-	      				  if (r >= 3) {
+	      				  if (r >= ((AbstractDungeon.ascensionLevel >= 18) ? 4 : 3)) {
 	      					  rarity = AbstractCard.CardRarity.UNCOMMON;
 	      				  }
 	      			  }
 	      			  AbstractCard c = AbstractDungeon.getCard(rarity).makeCopy();
+	      			  if (r > 6) {
+	      				  c = AbstractDungeon.getColorlessCardFromPool(rarity).makeCopy();
+    				  }
 	      			  AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, 1, true, false));
                 }
                 this.roared = true;
@@ -121,7 +130,7 @@ public class R_Hoarder extends AbstractMonster
                 break;
             }
             case 4: {
-            	for (int i = 0; i < 2; i++) {
+            	for (int i = 0; i < ((AbstractDungeon.ascensionLevel >= 18) ? 3 : 2); i++) {
 	            	switch (AbstractDungeon.miscRng.random(0, 10)) {
 		    			case 0: case 5:
 		    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_VajraPower(this), 1));

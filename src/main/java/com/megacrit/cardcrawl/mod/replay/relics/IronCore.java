@@ -128,6 +128,7 @@ public class IronCore extends AbstractRelic
     		tmpPool.add(new SeeingRed());
     		tmpPool.add(new Warcry());
     		tmpPool.add(new Whirlwind());
+    		tmpPool.add(new MuscleTraining());
     		this.hasReds = true;
         }
         if (!(AbstractDungeon.player instanceof Defect)) {
@@ -149,6 +150,7 @@ public class IronCore extends AbstractRelic
         	tmpPool.add(new ReplayGoodbyeWorld());
         	tmpPool.add(new ReplayRepulse());
         	tmpPool.add(new MirrorShield());
+        	tmpPool.add(new SystemScan());
         	this.hasBlues = true;
         }
 		AbstractDungeon.commonCardPool.addToTop(new WeaponsOverheat());

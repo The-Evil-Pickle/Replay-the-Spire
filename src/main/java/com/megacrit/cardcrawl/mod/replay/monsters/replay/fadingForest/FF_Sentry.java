@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.cards.status.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.mod.replay.vfx.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -66,7 +67,9 @@ public class FF_Sentry extends AbstractMonster
             this.beamDmg = 7;
         }
         this.damage.add(new DamageInfo(this, this.beamDmg));
-        this.loadAnimation("images/monsters/fadingForest/sentry/skeleton.atlas", "images/monsters/fadingForest/sentry/skeleton.json", 1.0f);
+        this.tint.color = FadingForestBoss.tintColor;
+        this.loadAnimation("images/monsters/theBottom/sentry/skeleton.atlas", "images/monsters/theBottom/sentry/skeleton.json", 1.0f);
+        //this.loadAnimation("images/monsters/fadingForest/sentry/skeleton.atlas", "images/monsters/fadingForest/sentry/skeleton.json", 1.0f);
         final AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
         e.setTimeScale(2.0f);
         e.setTime(e.getEndTime() * MathUtils.random());

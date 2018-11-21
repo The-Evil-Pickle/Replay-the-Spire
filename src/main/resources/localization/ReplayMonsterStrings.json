@@ -71,6 +71,41 @@
 		"Feel free to drop by again sometime, and I'll tell you a new tale."
 	]
   },
+  "Replay:Hell Engine": {
+    "MOVES": [
+		"Now Leaving",
+		"Hot Coals",
+		"Doors Closing",
+		"Runaway Train",
+		"Living Steel"
+    ],
+    "NAME": "Hell's Engine",
+    "DIALOG": [
+		""
+    ]
+  },
+  "Replay:Conductor": {
+    "MOVES": [
+		"Destination Nowhere",
+		"Please Remain Seated",
+		"Complementary Explosives",
+		"Rail Gunner",
+		"Cargo Hold"
+    ],
+    "NAME": "The Conductor",
+    "DIALOG": [
+		"CHOO CHOO MOTHERFUCKER"
+    ]
+  },
+  "Replay:ConductorBomb": {
+    "MOVES": [
+		""
+    ],
+    "NAME": "Dynamite",
+    "DIALOG": [
+		""
+    ]
+  },
   "FF_ComboSlime_L": {
     "MOVES": [
       "Mixed Spit",

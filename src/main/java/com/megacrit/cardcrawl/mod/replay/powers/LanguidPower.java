@@ -5,6 +5,9 @@ import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import replayTheSpire.ReplayTheSpireMod;
+
 //import com.megacrit.cardcrawl.powers.PowerType;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -36,7 +39,12 @@ public class LanguidPower extends AbstractPower
         this.isTurnBased = true;
         //this.priority = 99;
     }
-    
+
+	@Override
+    protected void loadRegion(final String fileName) {
+        this.region48 = ReplayTheSpireMod.powerAtlas.findRegion("48/" + fileName);
+		this.region128 = ReplayTheSpireMod.powerAtlas.findRegion("128/" + fileName);
+    }
     @Override
     public void atEndOfRound() {
         if (this.justApplied) {

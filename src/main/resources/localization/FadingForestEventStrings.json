@@ -101,7 +101,8 @@
 		],
 		"OPTIONS": [
 			"[Continue]",
-			"[Outrun] #rAdd #ra #rWound #rto #ryour #rdraw #rpile.",
+			"[Outrun] #rAdd #r",
+			" #rWounds #rto #ryour #rdraw #rpile.",
 			"[Smash] #rTake #r",
 			" #rDamage.",
 			"[Hide] #rTake #r",
@@ -235,7 +236,8 @@
 			" #rdamage.",
 			"[Jump] #r",
 			"%: #rTake #r",
-			" #rdamage #rand #robtain #r1 #rWound."
+			" #rdamage #rand #robtain #r1 #rWound.",
+			"[Continue]"
 		]
 	},
 	"FF_Finale": {

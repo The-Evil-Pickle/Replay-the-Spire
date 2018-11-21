@@ -41,7 +41,7 @@ public class FaultyEquipment extends CustomCard
             this.useBlueCandle(p);
         }
         else {
-            AbstractDungeon.actionManager.addToBottom(new UseCardAction(this));
+            //AbstractDungeon.actionManager.addToBottom(new UseCardAction(this));
         }
     }
 
@@ -51,6 +51,11 @@ public class FaultyEquipment extends CustomCard
     
     @Override
     public AbstractCard makeCopy() {
+    	if (this.upgraded) {
+    		AbstractCard c = new FaultyEquipment();
+    		c.upgrade();
+    		return c;
+    	}
         return new FaultyEquipment();
     }
     
@@ -67,6 +72,7 @@ public class FaultyEquipment extends CustomCard
     		SoulboundField.soulbound.set(this, false);
     		FleetingField.fleeting.set(this, true);
     		this.upgradeBaseCost(0);
+    		//this.type = AbstractCard.CardType.SKILL;
             this.rawDescription = FaultyEquipment.UPGRADE_DESCRIPTION;
             this.initializeDescription();
     	}

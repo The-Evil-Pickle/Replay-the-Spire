@@ -37,7 +37,7 @@ public class SealedPack extends AbstractRelic
 	private boolean cursesOpened;
 	private boolean rewardsOpened;
     public SealedPack() {
-        super(ID, "betaRelic.png", RelicTier.BOSS, LandingSound.FLAT);
+        super(ID, "replay_sealedPack.png", RelicTier.BOSS, LandingSound.FLAT);
 		this.cursesSelected = true;
 		this.cursesOpened = true;
 		this.rewardsOpened = true;

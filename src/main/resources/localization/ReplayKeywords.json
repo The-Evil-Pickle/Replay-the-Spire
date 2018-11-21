@@ -7,13 +7,6 @@
 	},
 	{
 		"NAMES": [
-			"refund",
-			"refunds"
-		],
-		"DESCRIPTION": "Returns energy spent on playing the card, up to the Refund value."
-	},
-	{
-		"NAMES": [
 			"crystal"
 		],
 		"DESCRIPTION": "Orb: Gives adjacent orbs #b+2 #yFocus. When #yEvoked, if you have fewer than #b3 orb slots, gain an orb slot. NL #yPassive effect is not affected by #yFocus."
@@ -57,8 +50,8 @@
 	},
 	{
 		"NAMES": [
-			"exhaustive"
+			"manaspark"
 		],
-		"DESCRIPTION": "#yExhausts after a certain number of uses."
+		"DESCRIPTION": "Orb: At the start of your turn, gain #b3 #yCharge-Up. NL When #yEvoked, gain [e] and #b5 #yCharge-Up."
 	}
 ]

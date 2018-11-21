@@ -32,6 +32,9 @@ public class ReplayOrbRandomPatch {
 		} else {
 			orbs.add(new CrystalOrb());
 		}
+		if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("m_SpellCore")) {
+			orbs.add(new ManaSparkOrb());
+		}
         if (useCardRng) {
             return orbs.get(AbstractDungeon.cardRng.random(orbs.size() - 1));
         }

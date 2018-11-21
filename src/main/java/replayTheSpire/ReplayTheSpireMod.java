@@ -29,6 +29,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.colorless.*;
 import com.megacrit.cardcrawl.mod.replay.cards.curses.*;
 import com.megacrit.cardcrawl.mod.replay.cards.green.*;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.DualPolarity;
 import com.megacrit.cardcrawl.mod.replay.events.shrines.*;
 import com.megacrit.cardcrawl.mod.replay.events.thebottom.*;
 import com.megacrit.cardcrawl.mod.replay.events.thecity.GremboTheGreat;
@@ -52,6 +53,7 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.unlock.*;
 
+import ThMod_FnH.ThMod;
 import basemod.*;
 import basemod.helpers.*;
 import basemod.interfaces.*;
@@ -71,6 +73,7 @@ import replayTheSpire.replayxover.beakedbs;
 import replayTheSpire.replayxover.chronobs;
 import replayTheSpire.replayxover.constructbs;
 import replayTheSpire.replayxover.infinitebs;
+import replayTheSpire.replayxover.marisabs;
 import replayTheSpire.variables.MagicMinusOne;
 
 import java.lang.reflect.*;
@@ -502,6 +505,24 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
             return false;
         }
     }
+
+    public static boolean foundmod_science = false;
+    public static boolean foundmod_seeker = false;
+    public static boolean foundmod_servant = false;
+    public static boolean foundmod_fetch = false;
+    public static boolean foundmod_infinite = false;
+    public static boolean foundmod_colormap = false;
+    public static boolean foundmod_hubris = false;
+    public static boolean foundmod_stslib = false;
+    public static boolean foundmod_mystic = false;
+    public static boolean foundmod_beaked = false;
+    public static boolean foundmod_deciple = false;
+    public static boolean foundmod_construct = false;
+    public static boolean foundmod_gatherer = false;
+    public static boolean foundmod_blackbeard = false;
+    public static boolean foundmod_conspire = false;
+    public static boolean foundmod_marisa = false;
+    
 	public static void initialize() {
     	logger.info("========================= ReplayTheSpireMod INIT =========================");
 		
@@ -537,6 +558,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	    foundmod_construct = Loader.isModLoaded("constructmod");
 	    foundmod_gatherer = Loader.isModLoaded("gatherermod");
 	    foundmod_blackbeard = Loader.isModLoaded("sts-mod-the-blackbeard");
+	    foundmod_conspire = Loader.isModLoaded("conspire");
+	    foundmod_marisa = Loader.isModLoaded("TS05_Marisa");
 		
 		logger.info("================================================================");
     }
@@ -951,6 +974,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		RelicLibrary.addBlue(new Carrot());
 		RelicLibrary.addBlue(new Geode());
 		RelicLibrary.addBlue(new RaidersMask());
+		BaseMod.addRelic(new Accelerometer(), RelicType.SHARED);
 		BaseMod.addRelic(new Arrowhead(), RelicType.SHARED);
 		BaseMod.addRelic(new AbesTreasure(), RelicType.SHARED);
 		BaseMod.addRelic(new Bandana(), RelicType.SHARED);
@@ -966,7 +990,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new CursedCoin(), RelicType.SHARED);
 		BaseMod.addRelic(new DimensionalGlitch(), RelicType.SHARED);
 		BaseMod.addRelic(new ElectricBlood(), RelicType.RED);
-		//BaseMod.addRelic(new EnergyBall(), RelicType.SHARED);
+		BaseMod.addRelic(new EnergyBall(), RelicType.SHARED);
 		BaseMod.addRelic(new Funnel(), RelicType.SHARED);
 		BaseMod.addRelic(new Garlic(), RelicType.SHARED);
 		BaseMod.addRelic(new GoldenEgg(), RelicType.SHARED);
@@ -1003,9 +1027,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new ReplaySpearhead(), RelicType.RED);
 		BaseMod.addRelic(new TagBag(), RelicType.SHARED);
 		BaseMod.addRelic(new TigerMarble(), RelicType.SHARED);
+		BaseMod.addRelic(new ToweringPillarOfHats(), RelicType.SHARED);
 		BaseMod.addRelic(new TrialRelic_Library(), RelicType.SHARED);
 		UnlockTracker.markRelicAsSeen(TrialRelic_Library.ID);
 		BaseMod.addRelic(new VampiricSpirits(), RelicType.GREEN);
+		BaseMod.addRelic(new WaspNest(), RelicType.SHARED);
         
 		ChaosEvent.addRing(new RingOfFury());
 		ChaosEvent.addRing(new RingOfPeace());
@@ -1089,7 +1115,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new SolidLightProjector());
 		AddAndUnlockCard(new CalculationTraining());
 		//AddAndUnlockCard(new ReflectiveLens());
-		//AddAndUnlockCard(new Crystallizer());
+		AddAndUnlockCard(new Crystallizer());
 		logger.info("adding colorless cards...");
 		//AddAndUnlockCard(new Improvise());
 		AddAndUnlockCard(new PoisonedStrike());
@@ -1128,10 +1154,13 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		//AddAndUnlockCard(new IC_BasicHellfireCard());
 		AddAndUnlockCard(new WeaponsOverheat());
 		if (foundmod_stslib) {
-			logger.info("adding stslib cards...");
 			AddAndUnlockCard(new FaultyEquipment());
 			AddAndUnlockCard(new Sssssssssstrike());
 			AddAndUnlockCard(new Necrogeddon());
+		}
+		if (foundmod_conspire) {
+			logger.info("adding conspire cards...");
+			AddAndUnlockCard(new DualPolarity());
 		}
 		if (foundmod_deciple) {
 			chronobs.addCards();
@@ -1142,6 +1171,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 		if (foundmod_construct) {
 			constructbs.addCards();
+		}
+		if (foundmod_marisa) {
+			logger.info("adding marisa cards...");
+			marisabs.addCards();
 		}
 		logger.info("done editting cards");
 	}
@@ -1161,20 +1194,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     	KEYWORD,
     }
 
-    public static boolean foundmod_science = false;
-    public static boolean foundmod_seeker = false;
-    public static boolean foundmod_servant = false;
-    public static boolean foundmod_fetch = false;
-    public static boolean foundmod_infinite = false;
-    public static boolean foundmod_colormap = false;
-    public static boolean foundmod_hubris = false;
-    public static boolean foundmod_stslib = false;
-    public static boolean foundmod_mystic = false;
-    public static boolean foundmod_beaked = false;
-    public static boolean foundmod_deciple = false;
-    public static boolean foundmod_construct = false;
-    public static boolean foundmod_gatherer = false;
-    public static boolean foundmod_blackbeard = false;
     
     private static void initializeCrossoverRelics() {
     	try {
@@ -1209,6 +1228,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
     	try {
     		initializeBeakedMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Beaked mod not detected");
+		}
+    	try {
+    		initializeMarisaMod(LoadType.RELIC);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Beaked mod not detected");
 		}
@@ -1346,6 +1370,20 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Beaked...");
+		}
+	}
+	private static void initializeMarisaMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
+		Class<ThMod> servMod = ThMod.class;
+		logger.info("ReplayTheSpireMod | Detected Marisa Mod!");
+		foundmod_marisa = true;
+
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Marisa...");
+			BaseMod.addRelicToCustomPool(new M_TsuchinokoRing(), ThMod_FnH.patches.AbstractCardEnum.MARISA_COLOR);
+			BaseMod.addRelicToCustomPool(new M_SpellCore(), ThMod_FnH.patches.AbstractCardEnum.MARISA_COLOR);
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for Marisa...");
 		}
 	}
 

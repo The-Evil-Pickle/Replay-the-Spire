@@ -40,6 +40,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.blue.*;
 import com.megacrit.cardcrawl.mod.replay.cards.curses.*;
 import com.megacrit.cardcrawl.mod.replay.cards.green.*;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.marisa.LightBash;
 import com.megacrit.cardcrawl.mod.replay.events.*;
 import com.megacrit.cardcrawl.mod.replay.modifiers.MistsModifier;
 import com.megacrit.cardcrawl.mod.replay.relics.*;
@@ -53,6 +54,7 @@ import com.megacrit.cardcrawl.screens.select.*;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
 
+import ThMod_FnH.characters.Marisa;
 import beaked.characters.BeakedTheCultist;
 import blackbeard.characters.TheBlackbeard;
 //import beaked.characters.*;
@@ -465,6 +467,22 @@ public class MirrorMist
 				this.has_3b = this.has_3;
 				this.gain_c_3 = new IC_ScorchingBeam();
 				this.gain_c_3b = new SelfRepair();
+				this.thirdOption = true;
+				break;
+			}
+			if (ReplayTheSpireMod.foundmod_marisa && AbstractDungeon.player instanceof Marisa) {
+				this.has_1 = CardHelper.hasCardWithID("UpSweep");
+				this.loss_c_1 = CardLibrary.getCopy("UpSweep");
+				this.gain_c_1 = new LightBash();
+				this.has_2 = AbstractDungeon.player.hasRelic("MiniHakkero");
+				this.has_2b = CardHelper.hasCardWithID("MasterSpark");
+				this.loss_r_2 = RelicLibrary.getRelic("MiniHakkero").makeCopy();
+				this.gain_r_2 = new M_TsuchinokoRing();
+				this.loss_c_2b = CardLibrary.getCopy("MasterSpark");
+				this.gain_c_2b = new Neutralize();
+				this.has_3 = AbstractDungeon.player.hasRelic("MiniHakkero");
+				this.loss_r_3 = RelicLibrary.getRelic("MiniHakkero").makeCopy();
+				this.gain_r_3 = new M_SpellCore();
 				this.thirdOption = true;
 				break;
 			}

@@ -167,5 +167,17 @@
 		"[Open Coffin] #gObtain #ga #gRelic. #r",
 		"%: #rBecome #rCursed #r(Random).",
 	]
+  },
+  "ReplayTheSpireMod:DanceKnight": {
+	"NAME": "Testing Knight",
+	"DESCRIPTIONS": [
+		"A tall knight blocks your path. NL \"Halt! Only those who #yprove #ytheir #yworth may pass through here!\"",
+		""
+	],
+	"OPTIONS": [
+		"[Prove Strength] Trial by combat.",
+		"[Prove Dexterity] Trial by dance-off.",
+		"[Prove Focus] Trial by questions."
+	]
   }
 }

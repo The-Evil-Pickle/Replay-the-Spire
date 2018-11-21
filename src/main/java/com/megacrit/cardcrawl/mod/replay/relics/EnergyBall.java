@@ -9,8 +9,10 @@ import com.megacrit.cardcrawl.core.*;
 
 import java.util.ArrayList;
 
+import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.blue.EchoForm;
 import com.megacrit.cardcrawl.cards.green.WraithForm;
@@ -23,13 +25,15 @@ import replayTheSpire.ReplayAbstractRelic;
 import replayTheSpire.panelUI.ReplayIntSliderSetting;
 import replayTheSpire.panelUI.ReplayRelicSetting;
 
-public class EnergyBall extends ReplayAbstractRelic
+public class EnergyBall extends ReplayAbstractRelic implements ClickableRelic
 {
     public static final String ID = "ReplayTheSpireMod:EnergyBall";
     private AbstractCard srcCard;
     private AbstractCard card;
-	
+    
+	private boolean usedThisBattle;
     public static final ReplayIntSliderSetting SETTING_ENERGY = new ReplayIntSliderSetting("EnergyBall_Energy", "Energy Required", 3, 2, 6);
+    public static final ReplayIntSliderSetting SETTING_MAX = new ReplayIntSliderSetting("EnergyBall_Max", "Max Storage", 5, 2, 12);
     public ArrayList<ReplayRelicSetting> BuildRelicSettings() {
   		ArrayList<ReplayRelicSetting> r = new ArrayList<ReplayRelicSetting>();
   		r.add(SETTING_ENERGY);
@@ -37,20 +41,22 @@ public class EnergyBall extends ReplayAbstractRelic
   	}
     public EnergyBall() {
         super(ID, "SSBB_Smash_Ball.png", RelicTier.SHOP, LandingSound.MAGICAL);
+        this.usedThisBattle = true;
+        this.counter = 0;
     }
     
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0] + SETTING_ENERGY.value + this.DESCRIPTIONS[1];
+        return this.CLICKABLE_DESCRIPTIONS()[0] + this.DESCRIPTIONS[0] + SETTING_MAX.value + this.DESCRIPTIONS[1] + SETTING_ENERGY.value + this.DESCRIPTIONS[2];
     }
 
     @Override
     public void atBattleStart() {
-    	this.counter = 0;
+    	this.usedThisBattle = false;
     }
     @Override
     public void onVictory() {
-    	this.counter = -1;
+    	this.usedThisBattle = true;
     }
     
     @Override
@@ -78,22 +84,11 @@ public class EnergyBall extends ReplayAbstractRelic
     
     @Override
     public void onPlayerEndTurn() {
-    	
-    	if (EnergyPanel.totalCount > 0 && this.counter < SETTING_ENERGY.value) {
+    	if (EnergyPanel.totalCount > 0 && this.counter < SETTING_MAX.value) {
     		this.flash();
-    		this.counter += EnergyPanel.totalCount;
-    		if (this.counter >= SETTING_ENERGY.value) {
-    			if (this.srcCard == null) {
-    				this.onEquip();
-    			}
-    			this.counter = SETTING_ENERGY.value;
-    			this.card = this.srcCard.makeCopy();
-    			this.card.freeToPlayOnce = true;
-    			this.card.retain = true;
-    			this.card.isEthereal = false;
-    			AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(this.card));
-    		}
+    		int increaseby = Math.min(SETTING_MAX.value - this.counter, EnergyPanel.totalCount);
+			this.counter += increaseby;
+    		EnergyPanel.useEnergy(increaseby);
     	}
     	if (this.card != null) {
     		this.card.retain = true;
@@ -104,4 +99,18 @@ public class EnergyBall extends ReplayAbstractRelic
     public AbstractRelic makeCopy() {
         return new EnergyBall();
     }
+	@Override
+	public void onRightClick() {
+		if (this.isObtained && this.counter >= SETTING_ENERGY.value && !this.usedThisBattle) {
+			this.counter -= SETTING_ENERGY.value;
+			this.usedThisBattle = true;
+			if (this.srcCard == null) {
+				this.onEquip();
+			}
+			if (AbstractDungeon.player.hasRelic(QuantumEgg.ID) && !this.srcCard.upgraded) {
+				this.srcCard.upgrade();
+			}
+			AbstractDungeon.actionManager.addToBottom(new QueueCardAction(this.srcCard.makeCopy(), AbstractDungeon.player));
+		}
+	}
 }

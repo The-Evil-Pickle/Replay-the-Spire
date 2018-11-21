@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import com.megacrit.cardcrawl.monsters.Intent;
@@ -82,7 +83,10 @@ public class FF_Lagavulin extends AbstractMonster
         }
         this.damage.add(new DamageInfo(this, this.attackDmg));
         this.asleep = setAsleep;
-        this.loadAnimation("images/monsters/fadingForest/lagavulin/skeleton.atlas", "images/monsters/fadingForest/lagavulin/skeleton.json", 1.0f);
+        //this.loadAnimation("images/monsters/fadingForest/lagavulin/skeleton.atlas", "images/monsters/fadingForest/lagavulin/skeleton.json", 1.0f);
+        this.tint.color = FadingForestBoss.tintColor;
+        this.loadAnimation("images/monsters/theBottom/lagavulin/skeleton.atlas", "images/monsters/theBottom/lagavulin/skeleton.json", 1.0f);
+        this.tint.changeColor(FadingForestBoss.tintColor);
         AnimationState.TrackEntry e = null;
         if (!this.asleep) {
             this.isOut = true;

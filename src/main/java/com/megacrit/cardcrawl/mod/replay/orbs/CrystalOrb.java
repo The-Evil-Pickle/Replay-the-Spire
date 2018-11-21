@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.actions.defect.*;
 import com.megacrit.cardcrawl.mod.replay.actions.unique.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.powers.CrystallizerPower;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.helpers.*;
 import com.badlogic.gdx.math.*;
@@ -80,6 +81,9 @@ public class CrystalOrb extends AbstractOrb
     public void applyFocus() {
         super.applyFocus();
         this.passiveAmount = this.basePassiveAmount;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(CrystallizerPower.POWER_ID)) {
+        	this.passiveAmount += AbstractDungeon.player.getPower(CrystallizerPower.POWER_ID).amount;
+        }
     }
     
     /*

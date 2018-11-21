@@ -28,12 +28,14 @@ public class Crystallizer extends CustomCard
     private static final int COST = 0;
     
     public Crystallizer() {
-        super("Crystallizer", Crystallizer.NAME, "cards/replay/replayBetaPower.png", Crystallizer.COST, Crystallizer.DESCRIPTION, CardType.POWER, CardColor.BLUE, CardRarity.RARE, CardTarget.SELF);
+        super("Crystallizer", Crystallizer.NAME, "cards/replay/replayBetaPower.png", Crystallizer.COST, Crystallizer.DESCRIPTION, CardType.POWER, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
+        this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber;
     }
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CrystallizerPower(p, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CrystallizerPower(p, this.magicNumber), this.magicNumber));
     }
     
     @Override
@@ -45,7 +47,9 @@ public class Crystallizer extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            //this.upgradeBaseCost(Crystallizer.COST - 1);
+            if (this.isInnate) {
+            	this.upgradeMagicNumber(1);
+            }
             this.isInnate = true;
             this.rawDescription = Crystallizer.UPGRADE_DESCRIPTION;
             this.initializeDescription();

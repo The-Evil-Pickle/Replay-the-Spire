@@ -50,7 +50,9 @@
 		"Re-Bottle (",
 		")",
 		"Change which card this bottle relic targets.",
-		" Free action."
+		" Free action.",
+		"Pitch",
+		"Randomly change which card Baseball targets."
 	]
   },
   "Claw Rake": {

@@ -21,7 +21,7 @@ public class ReplayBottomScenePatch {
 	public static class BottomSceneRandomizePatch {
 		public static void Postfix(TheBottomScene __instance) {
 			if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && AbstractDungeon.getCurrRoom().monsters.getMonster("FadingForestBoss") != null) {//AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && 
-				ReplayTheSpireMod.renderForestBG = true;
+				ReplayTheSpireMod.renderForestBG = false;//true;
 			}
 			else {
 				ReplayTheSpireMod.renderForestBG = false;

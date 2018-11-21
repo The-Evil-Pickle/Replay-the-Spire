@@ -20,15 +20,17 @@ public class CrystallizerPower extends AbstractPower
     private static final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
+    private int orbAmount;
     
     public CrystallizerPower(final AbstractCreature owner, final int amount) {
         this.name = CrystallizerPower.NAME;
         this.ID = "Crystallizer";
         this.owner = owner;
         this.amount = amount;
+        this.orbAmount = 1;
         this.updateDescription();
 		//this.img = ImageMaster.loadImage("images/powers/32/xanatos.png");
-        this.loadRegion("specialist");
+        this.loadRegion("crystallizer");
     }
     
 	@Override
@@ -39,9 +41,14 @@ public class CrystallizerPower extends AbstractPower
 	
     @Override
     public void updateDescription() {
-        this.description = CrystallizerPower.DESCRIPTIONS[0] + this.amount + CrystallizerPower.DESCRIPTIONS[1];
+        this.description = CrystallizerPower.DESCRIPTIONS[0] + this.amount + CrystallizerPower.DESCRIPTIONS[1] + this.orbAmount + CrystallizerPower.DESCRIPTIONS[2];
     }
-    
+    @Override
+    public void stackPower(final int stackAmount) {
+        this.fontScale = 8.0f;
+    	this.amount += stackAmount;
+    	this.orbAmount += 1;
+    }
     @Override
     public void atEndOfTurn(final boolean isPlayer) {
 		int emptyslots = 0;
@@ -53,9 +60,9 @@ public class CrystallizerPower extends AbstractPower
 				filledslots++;
 			}
 		}
-		if (emptyslots >= filledslots) {
+		if (emptyslots > filledslots) {
 			this.flash();
-			for (int i=0; i < this.amount; i++) {
+			for (int i=0; i < this.orbAmount; i++) {
 				AbstractDungeon.actionManager.addToTop(new ChannelAction(new CrystalOrb()));
 			}
 		}

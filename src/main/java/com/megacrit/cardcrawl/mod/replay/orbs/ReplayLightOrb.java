@@ -36,13 +36,14 @@ public class ReplayLightOrb extends AbstractOrb
     private static final float ORB_WAVY_DIST = 0.05f;
     private static final float PI_4 = 12.566371f;
     private static final float ORB_BORDER_SCALE = 1.2f;
+	public static Texture ORB_TEXTURE = ImageMaster.loadImage("images/orbs/replay/light.png");
     
     public ReplayLightOrb() {
         this.vfxTimer = 1.0f;
         this.vfxIntervalMin = 0.15f;
         this.vfxIntervalMax = 0.8f;
         this.ID = ORB_ID;
-        this.img = ImageMaster.ORB_LIGHTNING;
+        this.img = ORB_TEXTURE;
         this.name = ReplayLightOrb.orbString.NAME;
         this.baseEvokeAmount = 5;
         this.evokeAmount = this.baseEvokeAmount;
