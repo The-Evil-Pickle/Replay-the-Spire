@@ -402,6 +402,13 @@
 	" [#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]combat.[] NL Decrease your turn-based Debuffs by #b1. NL Increase all enemy turn-based Debuffs by #b1."
 	]
   },
+  "Replay:Winged Headress": {
+	"NAME": "Winged Headdress",
+	"FLAVOR": "Poyo!",
+    "DESCRIPTIONS": [
+	" [#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]turn.[] NL Replenish #b1 use of all #yWither cards in your hand, and #yExhaust them. NL [#2aecd7]Cannot [#2aecd7]be [#2aecd7]used [#2aecd7]once [#2aecd7]your [#2aecd7]deck [#2aecd7]has [#2aecd7]been [#2aecd7]shuffled [#2aecd7]on [#2aecd7]a [#2aecd7]previous [#2aecd7]turn [#2aecd7]this [#2aecd7]combat. NL [#2aecd7](Can [#2aecd7]be [#2aecd7]used [#2aecd7]the [#2aecd7]turn [#2aecd7]it [#2aecd7]is [#2aecd7]first [#2aecd7]shuffled, [#2aecd7]but [#2aecd7]not [#2aecd7]the [#2aecd7]turns [#2aecd7]after)"
+	]
+  },
   "ReplayTheSpireMod:Onyx Gauntlets": {
 	"NAME": "Onyx Gauntlets",
 	"FLAVOR": ".",
@@ -644,6 +651,13 @@
 		"Each time you #yEvoke #yFrost, gain #b1 #yReflection."
 	]
   },
+  "Replay:Sigil": {
+    "NAME": "Sigil of the Unseen Hand",
+	"FLAVOR": "...",
+    "DESCRIPTIONS": [
+		"Gain [E] at the start of turn. NL During combat, some of your cards will be obscured."
+	]
+  },
   "Replay:Towering Pillar of Hats": {
     "NAME": "Towering Pillar of Hats",
 	"FLAVOR": "\"Tarnish notte the majesty of my TOWER of HATS!\"",
@@ -844,7 +858,7 @@
 		"NAME": "Byrd's Blood",
 		"FLAVOR": ".",
 		"DESCRIPTIONS": [
-			"At the end of combat, heal #b6 HP. NL All other healing you recieve during combat is #b50% more effective. NL Certain #yRed cards can now be obtained."
+			"At the end of combat, heal #b6 HP. NL All other healing you recieve during combat is #b50% more effective. NL Gaining #yStrength also heals you. NL Certain #yRed cards can now be obtained."
 		]
 	},
 	"m_SeaBlood": {

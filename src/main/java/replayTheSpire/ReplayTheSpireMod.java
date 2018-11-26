@@ -53,7 +53,6 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.unlock.*;
 
-import ThMod_FnH.ThMod;
 import basemod.*;
 import basemod.helpers.*;
 import basemod.interfaces.*;
@@ -1367,20 +1366,21 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for Beaked...");
 			BaseMod.addRelicToCustomPool(new M_ByrdBlood(), beaked.patches.AbstractCardEnum.BEAKED_YELLOW);
+			BaseMod.addRelicToCustomPool(new WingHat(), beaked.patches.AbstractCardEnum.BEAKED_YELLOW);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Beaked...");
 		}
 	}
 	private static void initializeMarisaMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
-		Class<ThMod> servMod = ThMod.class;
+		Class<ThMod.patches.AbstractCardEnum> servMod = ThMod.patches.AbstractCardEnum.class;
 		logger.info("ReplayTheSpireMod | Detected Marisa Mod!");
 		foundmod_marisa = true;
 
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for Marisa...");
-			BaseMod.addRelicToCustomPool(new M_TsuchinokoRing(), ThMod_FnH.patches.AbstractCardEnum.MARISA_COLOR);
-			BaseMod.addRelicToCustomPool(new M_SpellCore(), ThMod_FnH.patches.AbstractCardEnum.MARISA_COLOR);
+			BaseMod.addRelicToCustomPool(new M_TsuchinokoRing(), ThMod.patches.AbstractCardEnum.MARISA_COLOR);
+			BaseMod.addRelicToCustomPool(new M_SpellCore(), ThMod.patches.AbstractCardEnum.MARISA_COLOR);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Marisa...");

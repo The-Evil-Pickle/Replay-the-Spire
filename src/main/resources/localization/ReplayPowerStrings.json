@@ -437,5 +437,14 @@
       " damage to ALL enemies, increasing damage by #b",
 	  " each time."
     ]
+  },
+  "Replay:Necro_Skullink": {
+    "NAME": "Skullink",
+    "DESCRIPTIONS": [
+      "When this enemy is killed, ",
+	  "'s #yCursed #yLife ability is reduced by #b",
+	  ". NL If ",
+      " is still alive, revives at full HP. NL Becomes more powerful each time it revives."
+    ]
   }
 }

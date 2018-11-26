@@ -54,7 +54,7 @@ import com.megacrit.cardcrawl.screens.select.*;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
 
-import ThMod_FnH.characters.Marisa;
+import ThMod.characters.Marisa;
 import beaked.characters.BeakedTheCultist;
 import blackbeard.characters.TheBlackbeard;
 //import beaked.characters.*;
@@ -395,17 +395,17 @@ public class MirrorMist
 				break;
 			}
 			if (ReplayTheSpireMod.foundmod_gatherer && AbstractDungeon.player instanceof TheGatherer) {
-				this.has_1 = AbstractDungeon.player.hasRelic("AlchemyBag");
-				this.has_1b = CardHelper.hasCardWithID("SpareBottle");
-				this.loss_r_1 = RelicLibrary.getRelic("AlchemyBag").makeCopy();
+				this.has_1 = AbstractDungeon.player.hasRelic("Gatherer:AlchemyBag");
+				this.has_1b = CardHelper.hasCardWithID("Gatherer:SpareBottle");
+				this.loss_r_1 = RelicLibrary.getRelic("Gatherer:AlchemyBag").makeCopy();
 				this.gain_c_1 = new SearingBlow();
-				this.loss_c_1b = CardLibrary.getCopy("SpareBottle");
+				this.loss_c_1b = CardLibrary.getCopy("Gatherer:SpareBottle");
 				this.gain_c_1b = new Armaments();
-				this.has_2 = CardHelper.hasCardWithID("FlowerWhip");
-				this.loss_c_2 = CardLibrary.getCopy("FlowerWhip");
+				this.has_2 = CardHelper.hasCardWithID("Gatherer:FlowerWhip");
+				this.loss_c_2 = CardLibrary.getCopy("Gatherer:FlowerWhip");
 				this.gain_c_2 = new Neutralize();
-				this.has_2b = CardHelper.hasCardWithID("Centralize");
-				this.loss_c_2b = CardLibrary.getCopy("Centralize");
+				this.has_2b = CardHelper.hasCardWithID("Gatherer:Centralize");
+				this.loss_c_2b = CardLibrary.getCopy("Gatherer:Centralize");
 				this.gain_c_2b = new Alchemize();
 				break;
 			}

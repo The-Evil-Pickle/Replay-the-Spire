@@ -1,6 +1,5 @@
 package com.megacrit.cardcrawl.mod.replay.relics;
 
-import com.evacipated.cardcrawl.mod.hubris.relics.abstracts.*;
 import com.evacipated.cardcrawl.mod.stslib.relics.*;
 import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.dungeons.*;

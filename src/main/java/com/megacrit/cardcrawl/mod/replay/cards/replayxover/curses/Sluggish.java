@@ -3,7 +3,7 @@ package com.megacrit.cardcrawl.mod.replay.cards.replayxover.curses;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import ThMod_FnH.ThMod;
+import ThMod.ThMod;
 
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;

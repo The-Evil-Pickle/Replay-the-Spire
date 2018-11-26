@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.green.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.WristBlade;
 
-import ThMod_FnH.powers.Marisa.ChargeUpPower;
+import ThMod.powers.Marisa.ChargeUpPower;
 
 public class M_TsuchinokoRing extends AbstractRelic
 {

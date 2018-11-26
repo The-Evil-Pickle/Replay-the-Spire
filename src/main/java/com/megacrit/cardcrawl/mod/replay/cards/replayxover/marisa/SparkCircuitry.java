@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.mod.replay.relics.M_SpellCore;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 
-import ThMod_FnH.ThMod;
+import ThMod.ThMod;
 
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

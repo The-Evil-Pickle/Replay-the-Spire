@@ -1,11 +1,9 @@
 package com.megacrit.cardcrawl.mod.replay.relics;
 
-import com.evacipated.cardcrawl.mod.hubris.relics.abstracts.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.mod.replay.actions.unique.FlurryBottleAction;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.relics.*;
 import basemod.*;

@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.badlogic.gdx.*;
 import com.megacrit.cardcrawl.vfx.combat.*;
 
-import ThMod_FnH.powers.Marisa.ChargeUpPower;
+import ThMod.powers.Marisa.ChargeUpPower;
 
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.*;

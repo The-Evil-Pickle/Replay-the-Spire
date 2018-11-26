@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.AbstractRelic.LandingSound;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
-import ThMod_FnH.powers.Marisa.ChargeUpPower;
+import ThMod.powers.Marisa.ChargeUpPower;
 import replayTheSpire.ReplayTheSpireMod;
 
 

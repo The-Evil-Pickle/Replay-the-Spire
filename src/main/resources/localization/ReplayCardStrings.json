@@ -85,7 +85,7 @@
   },
   "Defy Death": {
     "NAME": "Defy Death",
-    "DESCRIPTION": "Gain !B! Block. NL Costs [R] less for each card you've Exhausted this combat."
+    "DESCRIPTION": "Gain !B! Block. NL Costs [R] less for each card you've Exhausted this combat. NL Grave."
   },
   "Life Link": {
     "NAME": "Life Bind",
@@ -457,7 +457,9 @@
 		" NL Shuffle !M! random Cantrips into your draw pile.",
 		" NL Heal !M! HP and Replenish !replay:M-1! uses of all Wither and/or Exhaustive cards in your hand and discard pile.",
 		" NL Replicate up to !M! of your relics and Retain !M! cards this turn.",
-		" NL Heal !M! HP and shuffle !M! Inspiration into your draw pile."
+		" NL Heal !M! HP and shuffle !M! Inspiration into your draw pile.",
+		" NL Equip a 3/ !M! Weapon.",
+		" NL Add !M! Sparks to your hand. NL Amplify [E] : add a copy of this card to your discard pile."
 	]
   },
   "ReplayTheSpireMod:Necrogeddon": {
@@ -567,6 +569,14 @@
     "UPGRADE_DESCRIPTION": "Gain !beaked:wB! Shielding, NL !beaked:wB! Block, NL and !beaked:wI! Plated Armor. NL Wither !M!.",
 	"EXTENDED_DESCRIPTION": [
 		"Decreases all amounts."
+	]
+  },
+  "ReplayTheSpireMod:Owlgaze": {
+    "NAME": "Owlgaze",
+    "DESCRIPTION": "Stun a random enemy. NL Refund !stslib:refund!. NL Wither !M!.",
+    "UPGRADE_DESCRIPTION": "Stun all enemies. NL Refund !stslib:refund!. NL Wither !M!.",
+	"EXTENDED_DESCRIPTION": [
+		"Decreases Refund amount."
 	]
   },
   "BackFire": {

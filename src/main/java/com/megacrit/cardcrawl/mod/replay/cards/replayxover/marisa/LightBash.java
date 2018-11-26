@@ -9,12 +9,12 @@ import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.powers.*;
 
-import ThMod_FnH.ThMod;
-import ThMod_FnH.abstracts.AmplifiedAttack;
+import ThMod.ThMod;
+import basemod.abstracts.CustomCard;
 
 import com.megacrit.cardcrawl.core.*;
 
-public class LightBash extends AmplifiedAttack
+public class LightBash extends CustomCard
 {
     public static final String ID = "Replay:Light Bash";
     private static final CardStrings cardStrings;

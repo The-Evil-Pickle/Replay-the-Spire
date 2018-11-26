@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.red.*;
@@ -29,7 +30,11 @@ public class M_ByrdBlood extends AbstractRelic
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0];
     }
-    
+
+    public void onGainStrength(ApplyPowerAction __instance) {
+    	AbstractDungeon.actionManager.addToTop(new HealAction(__instance.target, __instance.source, __instance.amount));
+		AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(__instance.target, this));
+    }
 	@Override
     public void onEquip() {
 		AbstractDungeon.rareRelicPool.add("Magic Flower");

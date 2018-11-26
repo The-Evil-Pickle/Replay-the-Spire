@@ -34,10 +34,13 @@ public class ReplayApplyPowerPatch {
 		if (__instance != null && __instance.target != null && !__instance.target.isDying && !__instance.target.isDead && duration == startDuration) {
 			AbstractPower powerToApply = (AbstractPower)ReflectionHacks.getPrivate((Object)__instance, (Class)ApplyPowerAction.class, "powerToApply");
 			
-			if (ReplayTheSpireMod.foundmod_servant && ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("m_ScarletBlood") && __instance.target.isPlayer && powerToApply instanceof StrengthPower) {
-				((m_ScarletBlood)ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("m_ScarletBlood")).onGainStrength(__instance);
-				//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(__instance.target, __instance.source, new KnivesPower(__instance.target, __instance.amount * 2), __instance.amount * 2));
-				//AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(__instance.target, ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("m_ScarletBlood")));
+			if (__instance.target.isPlayer && powerToApply instanceof StrengthPower) {
+				if (ReplayTheSpireMod.foundmod_servant && ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("m_ScarletBlood")) {
+					((m_ScarletBlood)ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("m_ScarletBlood")).onGainStrength(__instance);
+				}
+				if (ReplayTheSpireMod.foundmod_beaked && ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("m_ByrdBlood")) {
+					((M_ByrdBlood)ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("m_ByrdBlood")).onGainStrength(__instance);
+				}
 			}
 			
 			if (!__instance.target.isPlayer && powerToApply.ID.equals("Strength") && ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Counterbalance")) {
