@@ -47,12 +47,6 @@ public class Amnesia
 		for (int i = 0; i < count; ++i) {
 			AbstractDungeon.actionManager.addToTop(new ExhaustAction(AbstractDungeon.player, AbstractDungeon.player, 1, true, true));
 		}
-		//AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.limbo));
-		//AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.discardPile));
-		//AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
-      //AbstractDungeon.actionManager.addToTop(new LoseBlockAction(p, p, this.magicNumber));
-      
-      //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
     }
   }
 	

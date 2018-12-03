@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.mod.replay.vfx.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -34,10 +35,8 @@ public class FF_JawWorm extends AbstractMonster
     public static final String NAME;
     public static final String[] MOVES;
     public static final String[] DIALOG;
-    private static final int HP_MIN = 40;
-    private static final int HP_MAX = 44;
-    private static final int A_2_HP_MIN = 42;
-    private static final int A_2_HP_MAX = 46;
+    private static final int HP_MIN = 55;
+    private static final int A_2_HP_MIN = 60;
     private static final float HB_X = 0.0f;
     private static final float HB_Y = -25.0f;
     private static final float HB_W = 260.0f;
@@ -62,13 +61,13 @@ public class FF_JawWorm extends AbstractMonster
     public FF_JawWorm(final float x, final float y) {
         super(FF_JawWorm.NAME, "FF_JawWorm", 44, 0.0f, -25.0f, 260.0f, 170.0f, null, x, y);
         this.firstMove = true;
-        if (AbstractDungeon.ascensionLevel >= 7) {
-            this.setHp(42, 46);
+        if (AbstractDungeon.ascensionLevel >= 9) {
+            this.setHp(A_2_HP_MIN);
         }
         else {
-            this.setHp(40, 44);
+            this.setHp(HP_MIN);
         }
-        if (AbstractDungeon.ascensionLevel >= 2) {
+        if (AbstractDungeon.ascensionLevel >= 4) {
             this.bellowStr = 4;
             this.bellowBlock = 6;
             this.chompDmg = 12;
@@ -84,7 +83,10 @@ public class FF_JawWorm extends AbstractMonster
         }
         this.damage.add(new DamageInfo(this, this.chompDmg));
         this.damage.add(new DamageInfo(this, this.thrashDmg));
-        this.loadAnimation("images/monsters/fadingForest/jawWorm/skeleton.atlas", "images/monsters/fadingForest/jawWorm/skeleton.json", 1.0f);
+        this.tint.color = FadingForestBoss.tintColor.cpy();
+        this.loadAnimation("images/monsters/theBottom/jawWorm/skeleton.atlas", "images/monsters/theBottom/jawWorm/skeleton.json", 1.0f);
+        this.tint.changeColor(FadingForestBoss.tintColor.cpy());
+        //this.loadAnimation("images/monsters/fadingForest/jawWorm/skeleton.atlas", "images/monsters/fadingForest/jawWorm/skeleton.json", 1.0f);
         final AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
     }

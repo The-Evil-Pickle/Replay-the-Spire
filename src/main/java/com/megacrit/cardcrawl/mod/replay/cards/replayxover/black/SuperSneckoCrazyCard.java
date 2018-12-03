@@ -10,11 +10,16 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.Shiv;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
+import ThMod.ThMod;
+import ThMod.cards.derivations.Spark;
 import beaked.actions.ReplenishWitherAction;
 import beaked.cards.AbstractWitherCard;
 import beaked.cards.Inspiration;
 import beaked.characters.BeakedTheCultist;
+import blackbeard.actions.EquipAction;
+import blackbeard.orbs.CutlassOrb;
 import blackrusemod.powers.KnivesPower;
 import blackrusemod.powers.ProtectionPower;
 import chronomuncher.cards.Facsimile;
@@ -39,6 +44,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
@@ -256,6 +262,35 @@ public class SuperSneckoCrazyCard extends BlackCard
 			return new SSCCE_Replicate();
 		}
     }
+    public static class SSCCE_Weapon extends SSCCEffect {
+    	public SSCCE_Weapon() {
+    		super(EXTENDED_DESCRIPTION[12]);
+    	}
+		@Override
+		public void use(AbstractPlayer p, AbstractCard c) {
+			AbstractDungeon.actionManager.addToBottom(new EquipAction(new CutlassOrb(3, c.magicNumber, false)));
+		}
+		@Override
+    	public SSCCEffect makeCopy() {
+			return new SSCCE_Weapon();
+		}
+    }
+    public static class SSCCE_Sparks extends SSCCEffect {
+    	public SSCCE_Sparks() {
+    		super(EXTENDED_DESCRIPTION[13]);
+    	}
+		@Override
+		public void use(AbstractPlayer p, AbstractCard c) {
+			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Spark(), c.magicNumber));
+			if (ThMod.Amplified(c, 1)) {
+				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(c.makeCopy(), 1));
+			}
+		}
+		@Override
+    	public SSCCEffect makeCopy() {
+			return new SSCCE_Sparks();
+		}
+    }
     public SuperSneckoCrazyCard() {
         super(ID, NAME, "cards/replay/qmark.png", COST, DESCRIPTION + EXTENDED_DESCRIPTION[0], AbstractCard.CardType.SKILL, AbstractCard.CardTarget.SELF);
         this.purgeOnUse = true;
@@ -263,6 +298,15 @@ public class SuperSneckoCrazyCard extends BlackCard
         this.magicNumber = this.baseMagicNumber;
         SneckoField.snecko.set(this, true);
         this.effects = new ArrayList<SSCCEffect>();
+        if ((AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead())) {
+        	final int newCost = AbstractDungeon.cardRandomRng.random(3);
+            if (this.cost != newCost) {
+            	this.cost = newCost;
+            	this.costForTurn = this.cost;
+            	this.isCostModified = true;
+            }
+        	this.rollEffects();
+        }
     }
     
     public AbstractCard makeCopy() {
@@ -275,14 +319,13 @@ public class SuperSneckoCrazyCard extends BlackCard
             this.upgradeMagicNumber(2);
         }
     }
-    @Override
-    public void triggerWhenDrawn() {
-        this.effects.clear();
+    public void rollEffects() {
+    	this.effects.clear();
         ArrayList<SSCCEffect> elist = new ArrayList<SSCCEffect>();
         for (SSCCEffect e : effects_src) {
         	elist.add(e.makeCopy());
         }
-        for (int i=0; i <= this.costForTurn && !elist.isEmpty(); i++) {
+        for (int i=0; i <= Math.max(0, this.costForTurn) && !elist.isEmpty(); i++) {
         	this.effects.add(elist.remove(AbstractDungeon.miscRng.random(elist.size()-1)));
         }
         this.rawDescription = DESCRIPTION;
@@ -290,6 +333,10 @@ public class SuperSneckoCrazyCard extends BlackCard
         	this.rawDescription += e.description;
         }
         this.initializeDescription();
+    }
+    @Override
+    public void triggerWhenDrawn() {
+        this.rollEffects();
     }
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         for (SSCCEffect effect : this.effects) {
@@ -320,8 +367,14 @@ public class SuperSneckoCrazyCard extends BlackCard
         if (Loader.isModLoaded("chronomuncher")) {
             effects_src.add(new SSCCE_Replicate());
         }
-        if (Loader.isModLoaded("beakedthecultist-sts") || ReplayTheSpireMod.foundmod_beaked) {
+        if (Loader.isModLoaded("beakedthecultist-sts")) {
             effects_src.add(new SSCCE_Wither());
+        }
+        if (Loader.isModLoaded("sts-mod-the-blackbeard")) {
+            effects_src.add(new SSCCE_Weapon());
+        }
+        if (Loader.isModLoaded("TS05_Marisa")) {
+            effects_src.add(new SSCCE_Sparks());
         }
         effects_src.add(new SSCCE_Refund());
     }

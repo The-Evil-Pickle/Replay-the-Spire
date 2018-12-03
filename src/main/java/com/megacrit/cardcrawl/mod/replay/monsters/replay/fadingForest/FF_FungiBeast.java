@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import com.megacrit.cardcrawl.monsters.Intent;
@@ -65,7 +66,10 @@ public class FF_FungiBeast extends AbstractMonster
             this.strAmt = 3;
             this.biteDamage = 4;
         }
-        this.loadAnimation("images/monsters/fadingForest/fungi/skeleton.atlas", "images/monsters/fadingForest/fungi/skeleton.json", 1.0f);
+        this.tint.color = FadingForestBoss.tintColor.cpy();
+        this.loadAnimation("images/monsters/theBottom/fungi/skeleton.atlas", "images/monsters/theBottom/fungi/skeleton.json", 1.0f);
+        this.tint.changeColor(FadingForestBoss.tintColor.cpy());
+        //this.loadAnimation("images/monsters/fadingForest/fungi/skeleton.atlas", "images/monsters/fadingForest/fungi/skeleton.json", 1.0f);
         final AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         e.setTimeScale(MathUtils.random(0.7f, 1.0f));

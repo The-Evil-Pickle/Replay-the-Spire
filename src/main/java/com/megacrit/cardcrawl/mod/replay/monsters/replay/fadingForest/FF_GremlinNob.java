@@ -70,8 +70,9 @@ public class FF_GremlinNob extends AbstractMonster
         }
         this.damage.add(new DamageInfo(this, this.rushDmg));
         this.damage.add(new DamageInfo(this, this.bashDmg));
-        this.tint.color = FadingForestBoss.tintColor;
+        this.tint.color = FadingForestBoss.tintColor.cpy();
         this.loadAnimation("images/monsters/theBottom/nobGremlin/skeleton.atlas", "images/monsters/theBottom/nobGremlin/skeleton.json", 1.0f);
+        this.tint.changeColor(FadingForestBoss.tintColor.cpy());
         //this.loadAnimation("images/monsters/fadingForest/nobGremlin/skeleton.atlas", "images/monsters/fadingForest/nobGremlin/skeleton.json", 1.0f);
         final AnimationState.TrackEntry e = this.state.setAnimation(0, "animation", true);
         e.setTime(e.getEndTime() * MathUtils.random());

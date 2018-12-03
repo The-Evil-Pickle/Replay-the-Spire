@@ -19,8 +19,11 @@ public class ReplayMonsterDamagePatch {
 	
 	private static int initialDamage;
 	public static boolean altered;
+	private static int starthp;
+	private static int endhp;
 	
 	public static void Prefix(AbstractMonster m, DamageInfo info) {
+		starthp = m.currentHealth;
 		altered = false;
 		if (AbstractDungeon.player != null && (info.owner == null || info.owner == AbstractDungeon.player) && info.type != DamageInfo.DamageType.NORMAL && !m.hasPower(IntangiblePower.POWER_ID) && !m.hasPower(IntangiblePlayerPower.POWER_ID)) {
 			ReplayMonsterDamagePatch.initialDamage = info.output;
@@ -35,6 +38,10 @@ public class ReplayMonsterDamagePatch {
 		}
 	}
 	public static void Postfix(AbstractMonster m, DamageInfo info) {
+		endhp = m.currentHealth;
+		if (endhp < starthp) {
+			ReplayTheSpireMod.onMonsterHpLoss(m, starthp - endhp);
+		}
 		if (altered) {//if (AbstractDungeon.player != null && (info.owner == null || info.owner == AbstractDungeon.player) && info.type != DamageInfo.DamageType.NORMAL && (AbstractDungeon.player.hasPower("Specialist") || ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(DimensionalGlitch.ID))) {
 			info.output = ReplayMonsterDamagePatch.initialDamage;
 		}

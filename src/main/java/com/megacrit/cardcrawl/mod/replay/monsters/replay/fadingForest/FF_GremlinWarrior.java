@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.mod.replay.vfx.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -35,27 +36,28 @@ public class FF_GremlinWarrior extends AbstractMonster
     private static final int SCRATCH_DAMAGE = 4;
     private static final int A_2_SCRATCH_DAMAGE = 5;
     private static final byte SCRATCH = 1;
-    private static final int HP_MIN = 20;
-    private static final int HP_MAX = 24;
-    private static final int A_2_HP_MIN = 21;
-    private static final int A_2_HP_MAX = 25;
+    private static final int HP_MIN = 40;
+    private static final int A_2_HP_MIN = 42;
     
     public FF_GremlinWarrior(final float x, final float y) {
         super(FF_GremlinWarrior.NAME, "FF_GremlinWarrior", 24, -4.0f, 12.0f, 130.0f, 194.0f, null, x, y);
         this.dialogY = 30.0f * Settings.scale;
-        if (AbstractDungeon.ascensionLevel >= 7) {
-            this.setHp(21, 25);
+        if (AbstractDungeon.ascensionLevel >= 9) {
+            this.setHp(A_2_HP_MIN);
         }
         else {
-            this.setHp(20, 24);
+            this.setHp(HP_MIN);
         }
-        if (AbstractDungeon.ascensionLevel >= 2) {
+        if (AbstractDungeon.ascensionLevel >= 4) {
             this.damage.add(new DamageInfo(this, 5));
         }
         else {
             this.damage.add(new DamageInfo(this, 4));
         }
-        this.loadAnimation("images/monsters/fadingForest/angryGremlin/skeleton.atlas", "images/monsters/fadingForest/angryGremlin/skeleton.json", 1.0f);
+        this.tint.color = FadingForestBoss.tintColor.cpy();
+        this.loadAnimation("images/monsters/theBottom/angryGremlin/skeleton.atlas", "images/monsters/theBottom/angryGremlin/skeleton.json", 1.0f);
+        this.tint.changeColor(FadingForestBoss.tintColor.cpy());
+        //this.loadAnimation("images/monsters/fadingForest/angryGremlin/skeleton.atlas", "images/monsters/fadingForest/angryGremlin/skeleton.json", 1.0f);
         final AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
     }

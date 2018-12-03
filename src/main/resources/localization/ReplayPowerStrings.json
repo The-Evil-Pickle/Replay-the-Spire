@@ -422,6 +422,12 @@
 	  " #yBlock next round."
     ]
   },
+  "RP_IncenseBurner": {
+    "NAME": "Incense Burner",
+	"DESCRIPTIONS": [
+      "Gain #b1 #yIntangible every #b6 turns."
+    ]
+  },
   "Fire Breathing": {
     "NAME": "Fire Breathing",
     "DESCRIPTIONS": [

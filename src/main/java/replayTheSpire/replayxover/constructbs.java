@@ -2,10 +2,13 @@ package replayTheSpire.replayxover;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.construct.ArmamentsMkII;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.construct.MirrorSystem;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.curses.MeltdownSequence;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
+import constructmod.ConstructMod;
 import constructmod.cards.AbstractConstructCard;
 
 public class constructbs {
@@ -15,7 +18,11 @@ public class constructbs {
 		UnlockTracker.unlockCard(c.cardID);
 	}
 	public static void addCards() {
-		AddAndUnlockCard(new MeltdownSequence());
+		if (ConstructMod.overheatedExpansion) {
+			AddAndUnlockCard(new MeltdownSequence());
+			AddAndUnlockCard(new MirrorSystem());
+		}
+		AddAndUnlockCard(new ArmamentsMkII());
 	}
 	public static int chaos_overheat(AbstractCard c) {
 		if (!(c instanceof AbstractConstructCard)) {

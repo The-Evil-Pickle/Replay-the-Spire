@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.mod.replay.powers.relicPowers.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.IntangiblePower;
 //import com.megacrit.cardcrawl.monsters.EnemyType;
 //import com.megacrit.cardcrawl.monsters.Intent;
 import com.badlogic.gdx.math.*;
@@ -131,7 +132,7 @@ public class R_Hoarder extends AbstractMonster
             }
             case 4: {
             	for (int i = 0; i < ((AbstractDungeon.ascensionLevel >= 18) ? 3 : 2); i++) {
-	            	switch (AbstractDungeon.miscRng.random(0, 10)) {
+	            	switch (AbstractDungeon.miscRng.random(0, 11)) {
 		    			case 0: case 5:
 		    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_VajraPower(this), 1));
 		    				break;
@@ -158,6 +159,10 @@ public class R_Hoarder extends AbstractMonster
 		    				break;
 		    			case 10:
 		    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_GiryaPower(this), 3));
+		    				break;
+		    			case 11:
+		    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RP_IncenseBurner(this)));
+		    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new IntangiblePower(this, 1), 1));
 		    				break;
 		    		}
             	}

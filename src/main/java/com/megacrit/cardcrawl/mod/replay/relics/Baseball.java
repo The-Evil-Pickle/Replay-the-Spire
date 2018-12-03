@@ -23,7 +23,8 @@ public class Baseball extends AbstractRelic
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0];
     }
-    
+
+    @Override
     public void onEquip() {
         final ArrayList<AbstractCard> list = new ArrayList<AbstractCard>();
         for (final AbstractCard abstractCard : AbstractDungeon.player.masterDeck.group) {
@@ -41,6 +42,11 @@ public class Baseball extends AbstractRelic
             AbstractDungeon.player.bottledCardUpgradeCheck((AbstractCard)list.get(0));
             AbstractDungeon.topLevelEffects.add(new ShowCardBrieflyEffect(list.get(0).makeStatEquivalentCopy()));
         }
+    }
+    @Override
+    public void onUnequip() {
+    	this.card.cost = this.card.makeCopy().cost;
+    	this.card.costForTurn = this.card.cost;
     }
     
     public AbstractRelic makeCopy() {

@@ -678,6 +678,32 @@
 		" Max HP."
 	]
   },
+  "Replay:Gravy": {
+    "NAME": "Gravy",
+	"FLAVOR": "Goes great with large, flightless byrds.",
+    "DESCRIPTIONS": [
+		"On pick up, choose up to #b",
+		" cards in your deck. NL They gain #yGrave."
+	]
+  },
+  "Replay:Lucky Slots": {
+    "NAME": "Lucky Slots",
+	"FLAVOR": "Spin to win!",
+    "DESCRIPTIONS": [
+		"Whenever a fighter loses exactly #b7 HP, gain #yCritical. NL If this triggers #b",
+		" times in one combat, gain #b",
+		" gold."
+	]
+  },
+  "Replay:Wanted Poster": {
+    "NAME": "Wanted Poster",
+	"FLAVOR": "Gold and blood: weighed on the same scale.",
+    "DESCRIPTIONS": [
+		"Gain [E] at the start of each turn. NL For every #b",
+		" gold below #b",
+		" you have, enemies start with a random buff."
+	]
+  },
   "Ring of Fury": {
 	"NAME": "Ring of Fury",
 	"FLAVOR": "A cursed ring that heightens both senses and senselessness.",
@@ -785,6 +811,30 @@
 	"All healing you recieve is increased by #b",
 	"%. NL When at less than #b",
 	"% Max HP, you must #yRest at rest sites."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Crippling": {
+	"NAME": "Ring of Crippling",
+	"FLAVOR": "\"Do unto others...\"",
+	"DESCRIPTIONS": [
+	" [#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]combat.[] NL ALL fighters gain #b1 #yWeak, #b2 #yLanguid, and #b3 #yVulnerable."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Challenge": {
+	"NAME": "Ring of Challenge",
+	"FLAVOR": "There is a fine line between bravery and stupidity.",
+	"DESCRIPTIONS": [
+	" [#2aecd7]Usable [#2aecd7]up [#2aecd7]to [#2aecd7]",
+	" [#2aecd7]times [#2aecd7]per [#2aecd7]combat.[] NL Fully heal and apply random buffs to all enemies. NL Gain #b~",
+	" gold. NL For every #b",
+	" times you use this relic, obtain a random relic."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Collecting": {
+	"NAME": "Ring of Collecting",
+	"FLAVOR": "A full set is greater than the sum of its parts, yet not nessearily worth the cost.",
+	"DESCRIPTIONS": [
+	"Non-boss chests contain a random ring relic in addition to thier normal contents. NL Shops will sell ring relics."
 	]
   },
   "Iron Core": {

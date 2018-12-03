@@ -252,12 +252,19 @@ public class ReplayCampButtonsPatch
 							continue;
 						}
 					}
+				} else if (r instanceof Baseball) {
+					for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+						if (c == ((Baseball)r).card) {
+							isEmpty = false;
+							continue;
+						}
+					}
 				}
-				if (isEmpty) {
+				if (isEmpty || r instanceof Baseball) {
 					final CampfireUI campfire = (CampfireUI)meObj;
 					try {
 						final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");
-						final ReBottleOption button = new ReBottleOption(r, true);
+						final ReBottleOption button = new ReBottleOption(r, isEmpty);
 						campfireButtons.add(button);
 						float x = 950.f;
 						float y = 990.0f - (270.0f * (float)((campfireButtons.size() + 1) / 2));

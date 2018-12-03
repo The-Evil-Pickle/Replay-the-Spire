@@ -16,7 +16,7 @@ public class ToweringPillarOfHats extends AbstractRelic
     public static final ReplayIntSliderSetting SETTING_MAX_SIZE = new ReplayIntSliderSetting("Pillar_Max", "Hand Size", 2, 0, 5);
     public static final ReplayIntSliderSetting SETTING_RETAIN = new ReplayIntSliderSetting("Pillar_Retain", "Retain 1 per __", 3, 2, 6);
     public ToweringPillarOfHats() {
-        super(ID, "pillarOfHats.png", AbstractRelic.RelicTier.SHOP, AbstractRelic.LandingSound.FLAT);
+        super(ID, "pillarOfHats.png", AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.FLAT);
         this.counter = -1;
     	this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
@@ -26,6 +26,7 @@ public class ToweringPillarOfHats extends AbstractRelic
         if (ReplayTheSpireMod.foundmod_conspire) {
         	this.tips.add(new PowerTip("Synergy", this.DESCRIPTIONS[5]));
         }
+        this.initializeTips();
     }
 
     @Override
@@ -80,10 +81,5 @@ public class ToweringPillarOfHats extends AbstractRelic
     @Override
     public AbstractRelic makeCopy() {
         return new ToweringPillarOfHats();
-    }
-    
-    @Override
-    public int getPrice() {
-    	return 300;
     }
 }

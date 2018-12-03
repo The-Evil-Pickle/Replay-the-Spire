@@ -309,6 +309,10 @@
     "NAME": "Sssstrike",
     "DESCRIPTION": "Deal !D! damage, plus an additional !D! for each [E] this cost. NL Refund !stslib:refund!. NL Snecko."
   },
+  "Replay:Dark Deal": {
+    "NAME": "Dark Deal",
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL Startup: add a random Black card to your draw pile."
+  },
   "Crow Ritual": {
     "NAME": "Awakened One Ritual",
     "DESCRIPTION": "Add !M! Ritual Components to your draw and discard piles. If 5 are ever in your hand at once, they become !D! damage Attacks."
@@ -355,7 +359,7 @@
   },
   "Voices": {
 	"NAME": "Voices",
-	"DESCRIPTION": "Unplayable. NL Ethereal. NL Startup: Add a copy of this card to your draw and discard piles."
+	"DESCRIPTION": "Unplayable. NL Ethereal. NL Startup: Add !M! copies of this card to your discard pile."
   },
   "Spreading Infection": {
 	"NAME": "Spreading Infection",
@@ -388,7 +392,11 @@
   },
   "ReplayTheSpireMod:Restless Dread": {
 	"NAME": "Restless Dread",
-	"DESCRIPTION": "Unplayable. NL Grave. NL When drawn, Exhausts and is replaced with !M! random Curses."
+	"DESCRIPTION": "Autoplay. NL Draw 1 card. NL Add !M! random Curses to your discard pile. NL Exhaust. NL Grave."
+  },
+  "ReplayTheSpireMod:Splinters": {
+	"NAME": "Splinters",
+	"DESCRIPTION": "Take !M! damage. NL Draw 1 card. NL Exhaustive !stslib:ex!. NL Startup: add a copy of this to your draw pile."
   },
   "ReplayTheSpireMod:Misquitos": {
 	"NAME": "A Very Large Swarm Of Misquitos",
@@ -477,7 +485,8 @@
   },
   "ReplayTheSpireMod:Chaos Vortex": {
 	"NAME": "Chaos Vortex",
-	"DESCRIPTION": "Gain !B! Shielding. NL !M! card you draw each turn has its stats and effects scrambled."
+	"DESCRIPTION": "Gain !B! Shielding. NL Confuse all enemies. NL !M! card you draw each turn has its stats and effects scrambled.",
+	"UPGRADE_DESCRIPTION": "Gain !B! Shielding. NL Gain !M! Artifact. NL Confuse all enemies. NL !M! card you draw each turn has its stats and effects scrambled."
   },
   "ReplayTheSpireMod:Brewmster": {
 	"NAME": "Brewmaster",
@@ -496,6 +505,14 @@
   "ReplayTheSpireMod:Rythmic Lunge": {
 	"NAME": "Rythmic Step",
 	"DESCRIPTION": "Deal !D! damage. NL Switches into Rythmic Step."
+  },
+  "ReplayTheSpireMod:Uncanny Aura": {
+	"NAME": "Uncanny Aura",
+	"DESCRIPTION": "Unplayable. NL Grave. NL At the end of your turn, gain !M! Strength and Dexterity for each other Unplayable card in your hand."
+  },
+  "ReplayTheSpireMod:Five Aces": {
+	"NAME": "Five Aces",
+	"DESCRIPTION": "Each time you play a card, !M!% chance to gain 1 Critical."
   },
   "Ghost Swipe": {
     "NAME": "Ghost Swipe",
@@ -576,8 +593,20 @@
     "DESCRIPTION": "Stun a random enemy. NL Refund !stslib:refund!. NL Wither !M!.",
     "UPGRADE_DESCRIPTION": "Stun all enemies. NL Refund !stslib:refund!. NL Wither !M!.",
 	"EXTENDED_DESCRIPTION": [
-		"Decreases Refund amount."
+		"Decreases Refund amount. NL Card is not Depleted until Refund drops below 0."
 	]
+  },
+  "ReplayTheSpireMod:Armaments MK-II": {
+    "NAME": "Armaments MK-II",
+    "DESCRIPTION": "Gain !B! Block. NL Upgrade a card in your hand. NL Can Mega-Upgrade cards.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Upgrade ALL cards in your hand. NL Can Mega-Upgrade cards.",
+	"EXTENDED_DESCRIPTION": [
+		"Gain !B! Block. NL Mega-Upgrade ALL cards in your hand."
+	]
+  },
+  "ReplayTheSpireMod:Mirror System": {
+    "NAME": "Mirror System",
+    "DESCRIPTION": "[#ff9900]OVERHEAT: [#ff9900]< !construct:O! [#ff9900]> NL Cycle if you have < 1 Dexterity. NL Gain !M! Reflection."
   },
   "BackFire": {
     "NAME": "Backfire",

@@ -388,41 +388,24 @@ public class RingOfChaos
 	}
 	return false;
   }
-  /*
-  public void onEquip()
-  {
-    this.calledTransform = false;
-    ArrayList<AbstractCard> upgradableCards = new ArrayList<AbstractCard>();
-    for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-        upgradableCards.add(c);
-    }
-    Collections.shuffle(upgradableCards, new java.util.Random(AbstractDungeon.miscRng.randomLong()));
-	CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-    if (!upgradableCards.isEmpty()) {
-	  int remaining = 1 + (upgradableCards.size() / 3);
-	  for (int i = 0; i < upgradableCards.size() && remaining > 0; i++) {
-		  if (chaosUpgradeCard(upgradableCards.get(i))) {
-			  remaining -= 1;
-			  group.addToBottom(upgradableCards.get(i).makeStatEquivalentCopy());
+  
+  //adding these two to see if it fixes the turn 1 glitch. probably won't but hey worth a shot.
+  @Override
+  public void atBattleStartPreDraw() {
+	  for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+		  if (c != null) {
+			  c.applyPowers();
 		  }
 	  }
-    }
-	if (!group.group.isEmpty()){
-		AbstractDungeon.gridSelectScreen.openConfirmationGrid(group, this.DESCRIPTIONS[1]);
-		flash();
-	}
   }
-  
-  public void update()
-  {
-    super.update();
-    if ((!this.calledTransform) && (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.GRID))
-    {
-      this.calledTransform = true;
-      AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25F;
-    }
+  @Override
+  public void atBattleStart() {
+	  for (AbstractCard c : AbstractDungeon.player.hand.group) {
+		  if (c != null) {
+			  c.applyPowers();
+		  }
+	  }
   }
-  */
   
   public AbstractRelic makeCopy()
   {

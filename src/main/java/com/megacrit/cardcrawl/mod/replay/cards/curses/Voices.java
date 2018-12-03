@@ -84,7 +84,7 @@ public class Voices extends CustomCard implements StartupCard
 
 	@Override
 	public boolean atBattleStartPreDraw() {
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAndDeckAction(this.makeCopy()));
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(this.makeCopy(), this.magicNumber));
 		return true;
 	}
 }

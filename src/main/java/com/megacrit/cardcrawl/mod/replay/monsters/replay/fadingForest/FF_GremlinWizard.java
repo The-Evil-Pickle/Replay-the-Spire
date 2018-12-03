@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.vfx.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import com.megacrit.cardcrawl.monsters.Intent;
@@ -30,10 +31,8 @@ public class FF_GremlinWizard extends AbstractMonster
     public static final String NAME;
     public static final String[] MOVES;
     public static final String[] DIALOG;
-    private static final int HP_MIN = 21;
-    private static final int HP_MAX = 25;
-    private static final int A_2_HP_MIN = 22;
-    private static final int A_2_HP_MAX = 26;
+    private static final int HP_MIN = 42;
+    private static final int A_2_HP_MIN = 45;
     private static final int MAGIC_DAMAGE = 25;
     private static final int A_2_MAGIC_DAMAGE = 30;
     private static final int CHARGE_LIMIT = 3;
@@ -46,19 +45,22 @@ public class FF_GremlinWizard extends AbstractMonster
         this.currentCharge = 1;
         this.dialogX = 0.0f * Settings.scale;
         this.dialogY = 50.0f * Settings.scale;
-        if (AbstractDungeon.ascensionLevel >= 7) {
-            this.setHp(22, 26);
+        if (AbstractDungeon.ascensionLevel >= 9) {
+            this.setHp(A_2_HP_MIN);
         }
         else {
-            this.setHp(21, 25);
+            this.setHp(HP_MIN);
         }
-        if (AbstractDungeon.ascensionLevel >= 2) {
+        if (AbstractDungeon.ascensionLevel >= 4) {
             this.damage.add(new DamageInfo(this, 24));
         }
         else {
             this.damage.add(new DamageInfo(this, 20));
         }
-        this.loadAnimation("images/monsters/fadingForest/wizardGremlin/skeleton.atlas", "images/monsters/fadingForest/wizardGremlin/skeleton.json", 1.0f);
+        this.tint.color = FadingForestBoss.tintColor.cpy();
+        this.loadAnimation("images/monsters/theBottom/wizardGremlin/skeleton.atlas", "images/monsters/theBottom/wizardGremlin/skeleton.json", 1.0f);
+        this.tint.changeColor(FadingForestBoss.tintColor.cpy());
+        //this.loadAnimation("images/monsters/fadingForest/wizardGremlin/skeleton.atlas", "images/monsters/fadingForest/wizardGremlin/skeleton.json", 1.0f);
         final AnimationState.TrackEntry e = this.state.setAnimation(0, "animation", true);
         e.setTime(e.getEndTime() * MathUtils.random());
     }

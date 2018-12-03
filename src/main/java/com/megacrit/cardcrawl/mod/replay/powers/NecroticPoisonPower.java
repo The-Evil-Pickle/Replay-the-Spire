@@ -20,9 +20,10 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.*;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 
 public class NecroticPoisonPower
-  extends AbstractPower
+  extends AbstractPower implements HealthBarRenderPower
 {
   public static final String POWER_ID = "Necrotic Poison";
   private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("Necrotic Poison");
@@ -85,4 +86,13 @@ public class NecroticPoisonPower
     }
   }
   */
+	@Override
+	public Color getColor() {
+		return Color.PURPLE;
+	}
+
+	@Override
+	public int getHealthBarAmount() {
+		return this.amount * 2;
+	}
 }

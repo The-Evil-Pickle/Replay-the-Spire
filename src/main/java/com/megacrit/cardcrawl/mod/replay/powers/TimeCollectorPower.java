@@ -59,6 +59,14 @@ public class TimeCollectorPower extends AbstractPower
         this.amount = this.maxAmount;
     }
     
+    @Override
+    public void stackPower(final int stackAmount) {
+        this.fontScale = 8.0f;
+        this.amount += stackAmount;
+        this.maxAmount += stackAmount;
+        this.updateDescription();
+    }
+    
     static {
         powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
         NAME = TimeCollectorPower.powerStrings.NAME;

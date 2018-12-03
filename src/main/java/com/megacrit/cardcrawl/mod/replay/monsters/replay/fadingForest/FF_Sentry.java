@@ -67,8 +67,9 @@ public class FF_Sentry extends AbstractMonster
             this.beamDmg = 7;
         }
         this.damage.add(new DamageInfo(this, this.beamDmg));
-        this.tint.color = FadingForestBoss.tintColor;
+        this.tint.color = FadingForestBoss.tintColor.cpy();
         this.loadAnimation("images/monsters/theBottom/sentry/skeleton.atlas", "images/monsters/theBottom/sentry/skeleton.json", 1.0f);
+        this.tint.changeColor(FadingForestBoss.tintColor.cpy());
         //this.loadAnimation("images/monsters/fadingForest/sentry/skeleton.atlas", "images/monsters/fadingForest/sentry/skeleton.json", 1.0f);
         final AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
         e.setTimeScale(2.0f);

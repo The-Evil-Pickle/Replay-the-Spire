@@ -36,6 +36,7 @@ public class TheWorks extends CustomCard
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TheWorksPower(p, this.magicNumber), this.magicNumber));
         this.copyPlayedThisTurn = true;
+        this.setCostForTurn(-2);
     }
     
     @Override

@@ -63,7 +63,7 @@
 		"[Use Cursed Key] #gObtain #grandom #gloot. #rObtain #rrandom #rcurse.",
 		"[Locked] Requires: Cursed Key.",
 		"[Leave]",
-		"[Endure] #rBecome #rCursed #r- #rPain.",
+		"[Endure] #rBecome #rCursed #r- #r",
 		"[Block] #rTake #r",
 		" #rDamage.",
 		"[Dodge] #r",

@@ -31,10 +31,7 @@ public class WispExhaustAction extends AbstractGameAction
     @Override
     public void update() {
         if (this.duration == Settings.ACTION_DUR_MED) {
-            if (this.p.hand.size() == 0) {
-                this.isDone = true;
-                return;
-            }
+            
 			//AbstractDungeon.handCardSelectScreen.open(ExhaustAction.TEXT[0], this.amount, this.anyNumber, this.canPickZero);
 			final CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 			for (final AbstractCard c2 : this.p.drawPile.group) {
@@ -47,6 +44,10 @@ public class WispExhaustAction extends AbstractGameAction
 					tmp.addToRandomSpot(c2);
 				}
 			}
+			if (tmp.size() == 0) {
+                this.isDone = true;
+                return;
+            }
 			AbstractDungeon.gridSelectScreen.open(tmp, 1, WispExhaustAction.TEXT[0], false);
 			this.tickDuration();
 			return;

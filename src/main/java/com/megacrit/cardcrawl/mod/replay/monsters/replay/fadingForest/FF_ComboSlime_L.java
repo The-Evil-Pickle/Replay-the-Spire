@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.cards.status.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.mod.replay.rooms.*;
 import com.megacrit.cardcrawl.dungeons.*;
@@ -51,10 +52,8 @@ public class FF_ComboSlime_L extends AbstractMonster
     private static final String WOUND_NAME;
     private static final String SPLIT_NAME;
     private static final String WEAK_NAME;
-    public static final int HP_MIN = 65;
-    public static final int HP_MAX = 69;
-    public static final int A_2_HP_MIN = 68;
-    public static final int A_2_HP_MAX = 72;
+    public static final int HP_MIN = 80;
+    public static final int A_2_HP_MIN = 100;
     public static final int W_TACKLE_DMG = 11;
     public static final int N_TACKLE_DMG = 16;
     public static final int A_2_W_TACKLE_DMG = 12;
@@ -71,11 +70,11 @@ public class FF_ComboSlime_L extends AbstractMonster
     
     public FF_ComboSlime_L(final float x, final float y) {
         this(x, y, 0, 70);
-        if (AbstractDungeon.ascensionLevel >= 7) {
-            this.setHp(70);
+        if (AbstractDungeon.ascensionLevel >= 9) {
+            this.setHp(A_2_HP_MIN);
         }
         else {
-            this.setHp(65);
+            this.setHp(HP_MIN);
         }
     }
     
@@ -84,7 +83,7 @@ public class FF_ComboSlime_L extends AbstractMonster
         this.saveX = x;
         this.saveY = y;
         this.splitTriggered = false;
-        if (AbstractDungeon.ascensionLevel >= 2) {
+        if (AbstractDungeon.ascensionLevel >= 4) {
             this.damage.add(new DamageInfo(this, 12));
             this.damage.add(new DamageInfo(this, 18));
         }
@@ -96,7 +95,10 @@ public class FF_ComboSlime_L extends AbstractMonster
         if (poisonAmount >= 1) {
             this.powers.add(new PoisonPower(this, this, poisonAmount));
         }
-        this.loadAnimation("images/monsters/fadingForest/slimeL/skeleton.atlas", "images/monsters/fadingForest/slimeL/skeleton.json", 1.0f);
+        this.tint.color = FadingForestBoss.tintColor.cpy();
+        this.loadAnimation("images/monsters/theBottom/slimeL/skeleton.atlas", "images/monsters/theBottom/slimeL/skeleton.json", 1.0f);
+        this.tint.changeColor(FadingForestBoss.tintColor.cpy());
+        //this.loadAnimation("images/monsters/fadingForest/slimeL/skeleton.atlas", "images/monsters/fadingForest/slimeL/skeleton.json", 1.0f);
         final AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         this.state.addListener(new SlimeAnimListener());

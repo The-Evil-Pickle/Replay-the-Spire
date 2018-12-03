@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import com.megacrit.cardcrawl.monsters.Intent;
@@ -32,10 +33,8 @@ public class FF_LouseDefensive extends AbstractMonster
     public static final String NAME;
     public static final String[] MOVES;
     public static final String[] DIALOG;
-    private static final int HP_MIN = 11;
-    private static final int HP_MAX = 17;
-    private static final int A_2_HP_MIN = 12;
-    private static final int A_2_HP_MAX = 18;
+    private static final int HP_MIN = 20;
+    private static final int A_2_HP_MIN = 24;
     private static final byte BITE = 3;
     private static final byte WEAKEN = 4;
     private boolean isOpen;
@@ -48,16 +47,19 @@ public class FF_LouseDefensive extends AbstractMonster
     public FF_LouseDefensive(final float x, final float y) {
         super(FF_LouseDefensive.NAME, "FF_LouseDefensive", 17, 0.0f, -5.0f, 180.0f, 140.0f, null, x, y);
         this.isOpen = true;
-        this.loadAnimation("images/monsters/fadingForest/louseGreen/skeleton.atlas", "images/monsters/fadingForest/louseGreen/skeleton.json", 1.0f);
+        this.tint.color = FadingForestBoss.tintColor.cpy();
+        this.loadAnimation("images/monsters/theBottom/louseGreen/skeleton.atlas", "images/monsters/theBottom/louseGreen/skeleton.json", 1.0f);
+        this.tint.changeColor(FadingForestBoss.tintColor.cpy());
+        //this.loadAnimation("images/monsters/fadingForest/louseGreen/skeleton.atlas", "images/monsters/fadingForest/louseGreen/skeleton.json", 1.0f);
         final AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
-        if (AbstractDungeon.ascensionLevel >= 7) {
-            this.setHp(18);
+        if (AbstractDungeon.ascensionLevel >= 9) {
+            this.setHp(A_2_HP_MIN);
         }
         else {
-            this.setHp(15);
+            this.setHp(HP_MIN);
         }
-        if (AbstractDungeon.ascensionLevel >= 2) {
+        if (AbstractDungeon.ascensionLevel >= 4) {
             this.biteDamage = 5;
         }
         else {

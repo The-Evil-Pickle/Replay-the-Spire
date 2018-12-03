@@ -120,7 +120,11 @@ public class EnergyBall extends ReplayAbstractRelic implements ClickableRelic
 			if (AbstractDungeon.player.hasRelic(QuantumEgg.ID) && !this.srcCard.upgraded) {
 				this.srcCard.upgrade();
 			}
-			AbstractDungeon.actionManager.addToBottom(new QueueCardAction(this.srcCard.makeCopy(), AbstractDungeon.getRandomMonster()));
+			AbstractCard c = this.srcCard.makeCopy();
+			c.freeToPlayOnce = true;
+			c.cost = 0;
+			c.costForTurn = 0;
+			AbstractDungeon.actionManager.addToBottom(new QueueCardAction(c, AbstractDungeon.getRandomMonster()));
 		}
 	}
 }

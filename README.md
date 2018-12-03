@@ -1,6 +1,7 @@
 # Replay the Spire
 #### Expansion mod for Slay the Spire by The_Evil_Pickle, AstroPenguin642, Bakuhaku, Stewartisme, and Slimer509.
 ###### (Currently maintained by The_Evil_Pickle)
+Support this mod at https://www.patreon.com/the_evil_pickle/overview
 
 This mod aims to expand upon the base game by adding lots of content. It is currently a work in progress, but you can download the [latest release](https://github.com/AstroPenguin642/Replay-the-Spire/releases) to help us improve it.
 
@@ -16,7 +17,7 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * 11 Potions
  * 2 Rooms
  * 2 Elites
- * 1 Boss
+ * 2 Bosses
  * 2 Custom run modifiers
  * Additional Neow options
 
@@ -41,7 +42,8 @@ King of Hearts | Ironclad | Common | When you lose HP during your turn, gain twi
 Rune of Simplicity | All | Common | Strikes and Defends can be **Upgraded** any number of times. On pickup, **Upgrade** 2 randomly.
 Tag Bag | All | Common | Shops have all 3 kinds of sale tags. Sale tags can appear on colorless cards. On-sale cards are slightly cheaper
 Tiger Marble | All | Common | At the start of combat, add a random card that **Exhausts** to your hand. It costs 0 this turn.
-Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe, Ghost Defend, or Ghost Fetch to your hand (chosen randomly).
+Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe, Ghost Defend, or Ghost Fetch to your hand (chosen randomly). Max hand size is increased by 1.
+Accelerometer | All | Uncommon | Can be used once per combat. Decrease your turn-based debuffs by 1, and increase all enemy turn-based debuffs by 1.
 Basket of Snakes | Silent | Uncommon | Every 5th **Attack** you play applies 2 **Necrotic** **Poison** upon dealing unblocked damage.
 Bottled Flurry | All | Uncommon | On pick up, choose a card. You **Retain** that card at the end of your turn, or Discard it if it is **Ethereal.**
 Bottled Geyser | All | Uncommon | On pick up, choose a card. Each time you shuffle your deck, that card is placed on top.
@@ -54,26 +56,30 @@ Iron Hammer | All | Uncommon | During the first turn, drawing a card upgrades it
 Ninjato | All | Uncommon | When you play 3 **Attacks** in a single turn, draw 2 cards.
 Onion Ring | All | Uncommon | Gain 3 **Strength** at the start of combat, then lose 1 **Strength** on the next 3 turns.
 Raider's Mask | Defect | Uncommon | After a **Dark** orb triggers its passive effect, if it has more stored damage than the HP of the lowest-health enemy, it is **Evoked.**
+Shallot | All | Uncommon | Start each combat with 3 **Dexterity** and 3 **Metallicize**, then lose 1 of each on the next 3 turns.
 Snack Pack | All | Uncommon | Every time you play 3 **Attacks** in a single turn, gain 2 HP.
 Solar Panel | Defect | Uncommon | At the end of combat, gain 2 HP for each of your active **Lightning** orbs.
 Quantum Egg | All | Uncommon | Whenever a card is created during combat, it is **Upgraded**.
+Wasp Nest | All | Uncommon | Whenever you lose HP in battle, gain 2 **Thorns**.
 Another Sword | Ironclad | Rare | The first card containing "Strike" you play each turn is played twice. Takes 1 additional turn to recharge for each energy spent on the card.
 Arrowhead | All | Rare | You may **Upgrade** 2 cards whenever you smith.
 Byrd Skull | Silent | Rare | Your **Innate** cards have **Refund** 1 and draw 1 card.
 Counterbalance | All | Rare | During boss and elite fights all enemy **Strength** gain, **Block** gain, and healing is reduced by half.
-Durian | All | Rare | Gain 5 Max HP on pickup. Each time you gain a debuff, also gain that much **Shielding**. At the start of your turn, reduce your **Weakened,** **Frail,** and/or **Vulnerable** to 2 (if > 2).
+Durian | All | Rare | Gain 5 Max HP on pickup. Each time you gain a debuff, also gain that much **Temporary** **HP**. At the start of your turn, reduce your turn-based debuffs to 2 (if > 2).
 Mirror | All | Rare | Whenever you gain **Vulnerable** or **Weakened**, it is also applied to the enemy that sent it.
 Pondfish Scales | All | Rare | Whenever you play a Skill that does not give **Block,** gain 2 **Block**.
+Towering Pillar of Hats | All | Rare | Max hand size increased by 2. At the end of your turn, **Retain** the right-most cards in your hand. **Retains** 1 card for every 3 in hand.
 Vampiric Spirits | Silent | Rare | During the first turn of combat, 25% of all unblocked attack damage you deal is retuned as health.
 Bargain Bundle | All | Shop | When purchased, decreases the cost of potions, cards, and card removal service in the same shop by 100 gold.
 GuideBook | All | Shop | On pickup, **Upgrade** 2 cards randomly. Prioritizes rarer cards.
 Lightbulb | All | Shop | If you have leftover energy at the end of your turn, draw that many cards at the start of your next turn.
 Abe's Treasure | All | Boss | Gain 1 more energy each turn. Start combat with **Drowning**. On Pickup, add the Abe's Revenge curse to your deck.
 Chewing Gum | All | Boss | Gain 1 more energy each turn. Each time you shuffle your deck, add 2 Slimed to your draw pile.
-Dimensional Glitch | All | Boss | Gain 1 more energy each turn. All non-attack damage you deal is reduced by 2. All non-attack damage you take is increased by 2.
+Dimensional Glitch | All | Boss | Gain 1 more energy each turn. All non-attack damage you deal is reduced by half. All non-attack damage you take is increased by half. All in-combat healing you recieve is decreased to half.
 Grab Bag | All | Boss | Choose 1 energy boss relic and 1 non-energy boss relic to obtain. Choices are out of 3, and cannot be skipped.
 Honey Jar | All | Boss | Draw 1 more card each turn. **Retain** up to 1 card each turn. Gain 1 potion slot on pick up. Card rewards have 1 more option to chose from. You cannot skip rewards.
 Kintsugi | All | Boss | Remove 5 cards from your deck. Choose 2 **Curses** to obtain.
+Onyx Gauntlets | All | Gain 1 energy each time you draw a card. Drawing a card increases its cost by 1 for the turn.
 Ooze Armor | Ironclad | Boss | Gain 1 energy at the start of each turn. At the start of combat, gain **Slow** (resets to -3) and **Malleable** (resets to 4).
 Sweet Flower | All | Boss | Gain 1 more energy each turn. Map displays much less information.
 Electric Blood | Ironclad | Boss | Gain 2 energy at the start of each turn. When you spend energy, lose that much HP, excluding the first 2 energy spent each turn.
@@ -88,7 +94,7 @@ Name | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis
 Reversal | Red | Common | Skill | 1 | Gain 1(2) **Blur** and 2(3) **Reflection**.
 Run Through | Red | Common | Attack | 1 | Target loses 9(11) HP and 4(7) Block.
 Strike From Hell | Red | Common | Attack | 1 | Deal 7(8) damage. Each time this is **Exhausted**, increase its damage by 2(3) and return it to your hand.
-Defy Death | Red | Uncommon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat.
+Defy Death | Red | Uncommon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat. **Grave**.
 Hemogenesis | Red | Uncommon | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2, or by 3 if the card has been upgraded outside of combat).
 Life Bind | Red | Uncommon | Power | 1(0) | Apply to an enemy. When you lose health, the bound enemy takes that much damage.
 Leading Strike | Red | Uncommon | Attack | 1 | Deal 4 damage. Reduce the cost of an Attack in your hand to 1(0) for the round.
@@ -117,6 +123,7 @@ Panic Button | Blue | Common | Skill | 0 | **Evoke** all your orbs. Draw 2(4) ca
 Repulse | Blue | Common | Skill | 0 | Gain 1(2) **Reflection**. Add 1 **Backfire** to your discard pile.
 Calculation Training | Blue | Uncommon | Skill | 0 | Gain 1 **Focus**. **Exhaustive** 2(3).
 Crystal Conduit | Blue | Uncommon | Skill | 1 | **Channel** 1 **Crystal** (and 1 random orb).
+Crystalizer | Blue | Uncommon | Power | 0 | (**Innate**.) If more than half your orb slots are empty at the end of your turn, **Channel** 1 **Crystal**. Your **Crystal** orbs provide an additional +2 **Focus** to adjacent orbs.
 Claw Rake | Blue | Uncommon | Attack | 2 | Deal 3(5) damage. Deal 3(5) damage to ALL enemies. Damage is upgraded by Claw cards.
 FIFO Queue | Blue | Uncommon | Power | 2(X) | Gain 4(2X) orb slots. (Channel 1 ***Glass**. **Refund** 1).
 Solid Light Projector | Blue | Uncommon | Skill | 1 | Gain 2 **Shielding** for every 5(3) cards in your discard pile. **Exhaustive** 2.
@@ -147,30 +154,39 @@ Sickly | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, lo
 Spreading Infection | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, add a copy of all other status and curse cards in your hand to your discard pile.
 Depression | Curse | Curse | Curse | - | **Unplayable**. When drawn, gain 2 **Languid** and draw a card.
 Delirium | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, gain **Confusion** for 1 round.
-Voices | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, shuffle 2 Dazed into your discard pile. **Ethereal**.
+Voices | Curse | Curse | Curse | - | **Unplayable**. **Ethereal**. **Startup:** add a copy of this card to your draw and discard piles.
 Looming Evil | Curse | Curse | Curse | 3 | Can be played for 3 Energy to **Exhaust**. At the end of your turn, shuffle a random curse into your draw pile and reduce the cost to play this card by 1.
 Ghost Swipe | Colorless | Special | Attack | 1 | Deal 6 damage. **Exhaust**. **Ethereal**.
 Ghost Defend | Colorless | Special | Skill | 1 | Gain 5 block. **Exhaust**. **Ethereal**.
 Ghost Fetch | Colorless | Special | Skill | 0 | Choose a basic card from your draw pile and add it to your hand. **Exhaust**. **Ethereal**.
 Grinning Jar | Colorless | Special | Skill | 0 | Draw 2 cards. You cannot play another Grinning Jar card this turn (upgrade removes).
 Ritual Component | Colorless | Special | Skill | 0 | Draw 1 card.
-Abe's Revenge | Curse | Special | Curse | - | **Unplayable**. At the end of your turn, gain 2 **Frail**. **Ethereal**.
+Abe's Revenge | Curse | Special | Curse | - | **Unplayable**. **Soulbound.** At the end of your turn, gain 2 **Frail**. **Ethereal**.
 
 # Mod-Crossover Cards
 Name | Mod(s) | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis)
 --- | --- | --- | --- | --- | --- | ---
-Chaos Vortex | Infinite Spire | Black | Black | Power | 0 | Gain 10(15) **Shielding.** 1 card you draw each turn has its stats and effects scrambled.
+Dual Polarity | Conspire | Blue | Uncommon | Skill | 2(1) | **Channel** 1 Lightning and Dark, Crystal and Frost, Water and Hellfire, or Glass and Plasma.
+Chaos Vortex | Infinite Spire | Black | Black | Power | 0 | Gain 10(15) **Shielding.** (Gain 1 **Artifact**.) **Confuse** all enemies. 1 card you draw each turn has its stats and effects scrambled.
 Dark Transmutation | Infinite Spire | Black | Black | Skill | X | Add X random Black cards to your hand. They cost 1 less this turn. (**Refund** 1.) **Exhaust.**
 Echoes of Time | Infinite Spire | Black | Black | Skill | 1 | **Fetch** up to 3(8) cards you've **Exhausted** this combat. **Grave.** **Purge.**
 Haul | Infinite Spire | Black | Black | Skill | 0 | Draw your draw pile. You can't draw any more cards this turn (upgrade removes). **Exhaustive** 2.
-Raven's Hex | Beaked | Purple | Uncommon | Skill | 1 | Apply 4(6) **Languid**. **Wither** 1.
-Wings of Steel | Beaked | Purple | Uncommon | Skill | 2 | Gain 8 **Shielding**, (8 **Block**,) and 6 **Plated** **Armor**. **Wither** 2.
+Raven's Hex | Beaked | Beaked | Uncommon | Skill | 1 | Apply 6 **Languid** (and **Vulnerable**). **Wither** 1.
+Wings of Steel | Beaked | Beaked | Uncommon | Skill | 2 | Gain 8 **Shielding**, (8 **Block**,) and 6 **Plated** **Armor**. **Wither** 2.
+Owlgaze | Beaked | Beaked | Uncommon | Skill | 3 | **Stun** a random(all) enemy(ies). **Refund** 3. **Wither** 1.
 Compounding Headache | Beaked | Curse | Curse | Curse | 0 | Draw 1 card. Lose 1 HP. **Wither** -1.
-Meltdown Sequence | Construct | Curse | Curse | Curse | - | **Unplayable**. **Overheat:** 2 (6 if playing as Construct). **Cycle**. When **Cycled:** Gain 1 **Vulnerable**.
-Imminent Threat | Deciple + StSLib | Curse | Curse | Curse | 1 | **Innate**. Take 2 damage. **Exhaust**. **Switches** to Vengeful Threat.
-Vengeful Threat | Deciple + StSLib | Curse | Curse | Curse | 0 | **Grave**. Draw 1 card. **Exhaust**. **Switches** to Imminent Threat.
+Mirror System | Construct | Construct | Uncommon | Skill | 1 | **Overheat** 5(10). **Cycle** if **Dexterity** < 1. Gain 2 **Reflection** (3 on mega-upgrade).
+Meltdown Sequence | Construct | Curse | Curse | Curse | - | **Unplayable**. **Overheat:** 3 (10 if playing as Construct). **Cycle**. When **Cycled:** Add 1 **Cycling** **Status** to your discard pile. **Exhaustive** 3. **Startup:** Add 2 **Cycling** **Status** cards with **Overheat** to your draw pile.
+Imminent Threat | Deciple | Curse | Curse | Curse | 1 | **Innate**. Take 2 damage. **Exhaust**. **Switches** to Vengeful Threat.
+Vengeful Threat | Deciple | Curse | Curse | Curse | 0 | **Grave**. Draw 1 card. **Exhaust**. **Switches** to Imminent Threat.
 Wavering Confidence | Deciple | Curse | Curse | Curse | - | **Unplayable**. **Self-Retaining**. At the end of your turn, **Switches** to Delayed Remorse.
 Delayed Remorse | Deciple | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, take 1 **Fibonacci** damage. **Switches** to Wavering Confidence.
+
+# Mod-Crossover Relics
+Name | Mod(s) | Character | Rarity | Description
+--- | --- | --- | --- | ---
+Winged Headdress | Beaked | Beaked | Common | Can be used once per turn, before your deck is shufled for the first time each combat. Replenishes 1 use of all **Wither** cards in your hand, and **Exhausts** them.
+Sealed Pack | Infinite Spire | All | Boss | Chose 1 basic card to obtain. Choose 1 colorless card to obtain. Choose 1 rare card to obtain. Choose 1 black card to obtain. Choose 1 **Curse** to obtain. **Curse** cannot be skipped, and becomes **Soulbound**.
 
 # Keywords
 Name | Type | Description
@@ -309,12 +325,18 @@ Scarlet Blood | Mirror Mist (as Servant) | Each time you gain **Strength**, gain
 Cloak of the Snake | Mirror Mist (as Servant) | Draw 2 additional cards on the first turn of combat. Certain green cards can now be obtained.
 Book of the Snake | Mirror Mist (as Mystic) | At the start of combat, 2 random **Cantrips** are shuffled into your draw pile. Certain green cards can now be obtained.
 Mercury Core | Mirror Mist (as Deciple) | At the start of combat, **Replicate** 1 **Mercury.** Certain blue cards can now be obtained.
+Byrd's Blood | Mirror Mist (as Beaked) | Heal 6 HP at the end of combat. All other in-combat healing you recieve is increased by 50%. Gaining **Strength** also heals you. Certain red cards can now be obtained.
+Sea Blood | Mirror Mist (as Blackbeard) | Heal 6 HP at the end of combat. Certain red cards can now be obtained.
+Ring of the Sea Serpent | Mirror Mist (as Blackbeard) | At the start of combat, add 2 **Shivs** to your hand. Certain green cards can now be obtained.
+Ring of the Tsuchinoko | Mirror Mist (as Marisa) | Draw 2 additional cards on the first turn of combat. Each time you play a **Skill** or 0-cost card, gain 1 **Charge-Up.** Certain green cards can now be obtained.
+Spell Core | Mirror Mist (as Marisa) | At the start of each combat, gain 3 orb slots and **Channel** 1 **Manaspark.** Certain blue cards can now be obtained.
 Ring of Fury | Dead Man's Rings | At the start of combat, gain 2 **Strength** and lose 1 **Dexterity.**
 Ring of Peace | Dead Man's Rings | At the start of combat, apply 3 **Weak** to ALL fighters and gain 1 **Buffer.**
 Ring of Panic | Dead Man's Rings | At the start of combat, become **Confused** for 3 turns. Gain 2 energy on the first and second turns, and 1 energy on the third.
 Ring of Hypnosis | Dead Man's Rings | All enemies start with 5 **Confusion.**
-Ring of Misfortune | Dead Man's Rings | At the start of combat, add a random **Curse** to your discard pile. Each time you draw a curse, gain 1 energy and 3 **Shielding**. Each time you draw a **Status**, gain 3 **Block**.
+Ring of Misfortune | Dead Man's Rings | At the start of combat, add a random **Curse** to your discard pile. Each time you draw a curse, gain 1 energy and 3 **Temporary** **HP**. Each time you draw a **Status**, gain 3 **Block**.
 Ring of Greed | Dead Man's Rings | For every 150 gold you gain, obtain a random **Curse.** On pickup, gain 50 gold and 2 random relics related to gold or shops.
+Ring of Addiction | Dead Man's Rings | On pickup, obtain 3 potions and 2 random relics related to potions. Each time you go through 3 rooms without using a potion, lose 2 max hp.
 Ring of Searing | Dead Man's Rings (as Ironclad or modded) | At the start of your turn, ALL enemies above 50% max HP lose 10% of their HP, and you lose 5 HP if you are above 75% max HP.
 Ring of Fangs | Dead Man's Rings (as Silent or modded) | At the start of combat, lose 3 **Strength** and gain 1 **Envenom.**
 Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 3 **Focus** and lose 2 orb slots.
@@ -330,7 +352,7 @@ Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 
 
 
 ## Known Issues:
- * Cards altered by Ring of Chaos or Baseball return to the normal version if the run is saved and returned to later.
+ * Cards altered by Ring of Chaos return to the normal version if the run is saved and returned to later.
  * Honey Jar + Question Card doesn't stack (except in the case of busted crown).
- * Crystal orbs and the Carrot relic may cause inconsistant focus values under certain circumstances.
+ * Portal rooms may cause crashing, especially if you save/load after going through one.
  

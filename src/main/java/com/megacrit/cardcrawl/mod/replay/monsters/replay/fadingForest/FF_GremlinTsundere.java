@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.actions.unique.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.vfx.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import com.megacrit.cardcrawl.monsters.Intent;
@@ -31,10 +32,8 @@ public class FF_GremlinTsundere extends AbstractMonster
     public static final String NAME;
     public static final String[] MOVES;
     public static final String[] DIALOG;
-    private static final int HP_MIN = 12;
-    private static final int HP_MAX = 15;
-    private static final int A_2_HP_MIN = 13;
-    private static final int A_2_HP_MAX = 17;
+    private static final int HP_MIN = 24;
+    private static final int A_2_HP_MIN = 28;
     private static final int BLOCK_AMOUNT = 7;
     private static final int A_2_BLOCK_AMOUNT = 8;
     private static final int BASH_DAMAGE = 6;
@@ -47,22 +46,25 @@ public class FF_GremlinTsundere extends AbstractMonster
     public FF_GremlinTsundere(final float x, final float y) {
         super(FF_GremlinTsundere.NAME, "FF_GremlinTsundere", 15, 0.0f, 0.0f, 120.0f, 200.0f, null, x, y);
         this.dialogY = 60.0f * Settings.scale;
-        if (AbstractDungeon.ascensionLevel >= 7) {
-            this.setHp(13, 17);
-            this.blockAmt = 6;
+        if (AbstractDungeon.ascensionLevel >= 9) {
+            this.setHp(A_2_HP_MIN);
+            this.blockAmt = A_2_BLOCK_AMOUNT;
         }
         else {
-            this.setHp(12, 15);
-            this.blockAmt = 5;
+            this.setHp(HP_MIN);
+            this.blockAmt = BLOCK_AMOUNT;
         }
-        if (AbstractDungeon.ascensionLevel >= 2) {
+        if (AbstractDungeon.ascensionLevel >= 4) {
             this.bashDmg = 8;
         }
         else {
             this.bashDmg = 6;
         }
         this.damage.add(new DamageInfo(this, this.bashDmg));
-        this.loadAnimation("images/monsters/fadingForest/femaleGremlin/skeleton.atlas", "images/monsters/fadingForest/femaleGremlin/skeleton.json", 1.0f);
+        this.tint.color = FadingForestBoss.tintColor.cpy();
+        this.loadAnimation("images/monsters/theBottom/femaleGremlin/skeleton.atlas", "images/monsters/theBottom/femaleGremlin/skeleton.json", 1.0f);
+        this.tint.changeColor(FadingForestBoss.tintColor.cpy());
+        //this.loadAnimation("images/monsters/fadingForest/femaleGremlin/skeleton.atlas", "images/monsters/fadingForest/femaleGremlin/skeleton.json", 1.0f);
         final AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
     }

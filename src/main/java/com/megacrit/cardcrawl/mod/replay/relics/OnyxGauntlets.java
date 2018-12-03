@@ -16,7 +16,7 @@ import java.util.Collections;
 public class OnyxGauntlets extends AbstractRelic
 {
     public static final String ID = "ReplayTheSpireMod:Onyx Gauntlets";
-    
+    private static ArrayList<AbstractCard> cardsIncreased = new ArrayList<AbstractCard>();
     public OnyxGauntlets() {
         super(ID, "betaRelic.png", RelicTier.BOSS, LandingSound.HEAVY);
     }
@@ -33,10 +33,21 @@ public class OnyxGauntlets extends AbstractRelic
     	}
     	if (drawnCard.costForTurn >= 0) {
     		drawnCard.setCostForTurn(drawnCard.costForTurn + 1);
+    		for (AbstractCard c : cardsIncreased) {
+    			if (c == drawnCard) {
+    				drawnCard.setCostForTurn(drawnCard.costForTurn + 1);
+    			}
+    		}
+    		cardsIncreased.add(drawnCard);
     	}
     	AbstractDungeon.actionManager.addToTop(new GainEnergyAction(1));
     }
 
+    @Override
+    public void atTurnStart() {
+    	cardsIncreased.clear();
+    }
+    
     @Override
     public void atBattleStartPreDraw() {
     	for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {

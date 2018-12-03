@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.mod.replay.relics.Baseball;
 import com.megacrit.cardcrawl.mod.replay.vfx.campfire.CampfireBurnResetEffect;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -37,6 +38,10 @@ public class ReBottleOption extends AbstractCampfireOption
     	this.makeFree = makeFree;
         this.label = TEXT[0] + bottle.name + TEXT[1];
         this.description = TEXT[2];
+        if (bottle instanceof Baseball) {
+        	this.label = TEXT[4];
+        	this.description = TEXT[5];
+        }
         if (makeFree) {
         	this.description += TEXT[3];
         }

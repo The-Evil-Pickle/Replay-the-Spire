@@ -1030,6 +1030,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new TrialRelic_Library(), RelicType.SHARED);
 		UnlockTracker.markRelicAsSeen(TrialRelic_Library.ID);
 		BaseMod.addRelic(new VampiricSpirits(), RelicType.GREEN);
+		BaseMod.addRelic(new WantedPoster(), RelicType.SHARED);
 		BaseMod.addRelic(new WaspNest(), RelicType.SHARED);
         
 		ChaosEvent.addRing(new RingOfFury());
@@ -1048,6 +1049,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		initializeCrossoverRelics();
 		if (foundmod_infinite) {
 			BaseMod.addRelic(new SealedPack(), RelicType.SHARED);
+			BaseMod.addRelic(new LuckySlots(), RelicType.SHARED);
 		}
 		
         logger.info("done editting relics");
@@ -1126,6 +1128,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new MidasTouch());
 		AddAndUnlockCard(new Trickstab());
 		AddAndUnlockCard(new ReplayBrewmasterCard());
+		AddAndUnlockCard(new UncannyAura());
 		/*if (Loader.isModLoaded("Friendly_Minions_0987678")) {
 			AddAndUnlockCard(new GrembosGang());
 		}*/
@@ -1141,6 +1144,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new SpreadingInfection());
 		AddAndUnlockCard(new AbeCurse());
 		AddAndUnlockCard(new Overencumbered());
+		AddAndUnlockCard(new RestlessDread());
+		AddAndUnlockCard(new Splinters());
 		logger.info("adding unobtainable cards...");
 		AddAndUnlockCard(new PotOfGreed());
 		AddAndUnlockCard(new GhostDefend());
@@ -1184,7 +1189,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         BaseMod.addMonster("R_Hoarder", () -> new MonsterGroup(new AbstractMonster[] {new R_Hoarder(0, 10)}));
         BaseMod.addMonster("Erikyupuro", () -> new MonsterGroup(new AbstractMonster[] { new J_louse_1(-350.0f, 25.0f), new J_louse_2(-125.0f, 10.0f), new J_louse_3(80.0f, 30.0f) }));
         BaseMod.addMonster("Fading Forest", () -> new MonsterGroup(new AbstractMonster[] {new FadingForestBoss()}));
-        
+        BaseMod.addBoss("Exordium", "Fading Forest", "images/ui/map/boss/FableSpinner.png", "images/ui/map/bossOutline/FableSpinner.png");
 	}
 
     private enum LoadType {
@@ -1747,5 +1752,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public void receiveStartGame() {
 		ReplayMapScoutEvent.bannedBoss = "none";
         loadRunData();
+    }
+    public static void onMonsterHpLoss(AbstractMonster m, int damageAmount) {
+    	if (m != null && AbstractDungeon.player != null) {
+    		if (AbstractDungeon.player.hasRelic(LuckySlots.ID)) {
+    			((LuckySlots)AbstractDungeon.player.getRelic(LuckySlots.ID)).onLoseHp(damageAmount);
+    		}
+    	}
     }
 }

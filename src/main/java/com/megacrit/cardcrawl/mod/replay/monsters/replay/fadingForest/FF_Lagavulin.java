@@ -84,9 +84,9 @@ public class FF_Lagavulin extends AbstractMonster
         this.damage.add(new DamageInfo(this, this.attackDmg));
         this.asleep = setAsleep;
         //this.loadAnimation("images/monsters/fadingForest/lagavulin/skeleton.atlas", "images/monsters/fadingForest/lagavulin/skeleton.json", 1.0f);
-        this.tint.color = FadingForestBoss.tintColor;
+        this.tint.color = FadingForestBoss.tintColor.cpy();
         this.loadAnimation("images/monsters/theBottom/lagavulin/skeleton.atlas", "images/monsters/theBottom/lagavulin/skeleton.json", 1.0f);
-        this.tint.changeColor(FadingForestBoss.tintColor);
+        this.tint.changeColor(FadingForestBoss.tintColor.cpy());
         AnimationState.TrackEntry e = null;
         if (!this.asleep) {
             this.isOut = true;
@@ -126,8 +126,8 @@ public class FF_Lagavulin extends AbstractMonster
                     this.debuffTurnCount = 0;
                     AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "DEBUFF"));
                     AbstractDungeon.actionManager.addToBottom(new WaitAction(0.3f));
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new DexterityPower(AbstractDungeon.player, -1), -1));
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new StrengthPower(AbstractDungeon.player, -1), -1));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new DecrepitPower(AbstractDungeon.player, 2, true), 2));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new LanguidPower(AbstractDungeon.player, 2, true), 2));
                     AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
                     break;
                 }

@@ -69,15 +69,6 @@ public class ReplayMonsterEncounterPatches {
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Painkiller Herb")) {
 				DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/OldBossIcon.png");
 				DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/OldBossIcon.png");
-			} else {
-				if (key.equals("Pondfish")) {
-					DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/pondfish.png");
-					DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/pondfish.png");
-				}
-				if (key.equals("Fading Forest")) {
-					DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/OldBossIcon.png");
-					DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/OldBossIcon.png");
-				}
 			}
 		}
 	}

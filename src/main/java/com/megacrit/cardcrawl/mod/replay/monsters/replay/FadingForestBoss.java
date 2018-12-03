@@ -41,6 +41,7 @@ import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.characters.Ironclad;
 import com.megacrit.cardcrawl.characters.TheSilent;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
+import com.megacrit.cardcrawl.vfx.combat.SmokeBombEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -83,7 +84,7 @@ public class FadingForestBoss extends CustomMonster
     private static final float HB_H = 350.0f;
     private static final int DEATH_DMG = 30;
     private static final int A_2_DEATH_DMG = 40;
-    public static final Color tintColor = new Color(0.33f, 0.33f, 1.0f, 0.9f);
+    public static final Color tintColor = new Color(0.33f, 0.45f, 1.0f, 1.0f);
 	
     private int fish_healing;
 	private int jax_damage;
@@ -191,7 +192,7 @@ public class FadingForestBoss extends CustomMonster
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StoryPower(this, (AbstractDungeon.ascensionLevel >= 19) ? 12 : 10)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new AgingPower(this, (AbstractDungeon.ascensionLevel >= 19) ? 15 : 12)));
 		AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
-		AbstractDungeon.actionManager.addToBottom(new TalkAction(this, FadingForestBoss.DIALOG[(int)(Math.random() * (4))], 2.5f, 2.5f));
+		AbstractDungeon.actionManager.addToBottom(new TalkAction(this, FadingForestBoss.DIALOG[(int)(Math.random() * (4))], 3.5f, 3.5f));
     }
     
 	private void giveRelicEffect() {
@@ -310,7 +311,7 @@ public class FadingForestBoss extends CustomMonster
             }
             case ATTACK_MUSHROOMS: {
 				this.imageEventText.loadImage("images/events/fadingForest/mushrooms.jpg");
-				this.savedDamage = this.damage.get(2).base;
+				this.savedDamage = this.damage.get(2).output;
                 this.imageEventText.updateBodyText(this.eDesc(0));
 				this.imageEventText.setDialogOption(this.eOp(1));
 				this.imageEventText.setDialogOption(this.eOp(2) + this.savedDamage + this.eOp(3), new SpreadingInfection());
@@ -372,8 +373,8 @@ public class FadingForestBoss extends CustomMonster
             }
             case ATTACK_VAMPIRES: {
 				this.imageEventText.loadImage("images/events/fadingForest/fadingForest.jpg");
-				this.savedDamage = this.damage.get(5).base;
-				this.savedDamage2 = this.damage.get(4).base;
+				this.savedDamage = this.damage.get(5).output;
+				this.savedDamage2 = this.damage.get(4).output;
 				if (AbstractDungeon.player instanceof Ironclad) {
 					this.imageEventText.updateBodyText(this.eDesc(0));
 				} else if (AbstractDungeon.player instanceof TheSilent) {
@@ -389,7 +390,7 @@ public class FadingForestBoss extends CustomMonster
             }
             case ATTACK_TESSERACT: {
 				this.imageEventText.loadImage("images/events/fadingForest/sensoryStone.jpg");
-				this.savedDamage = this.damage.get(3).base;
+				this.savedDamage = this.damage.get(3).output;
 				this.imageEventText.updateBodyText(this.eDesc(0));
 				this.imageEventText.setDialogOption(this.eOp(6));
 				AbstractDungeon.actionManager.addToBottom(new ForestEventAction());
@@ -408,7 +409,7 @@ public class FadingForestBoss extends CustomMonster
             }
             case ATTACK_IDOL: {
             	this.imageEventText.loadImage("images/events/fadingForest/goldenIdol.jpg");
-				this.savedDamage = this.damage.get(1).base;
+				this.savedDamage = this.damage.get(1).output;
 				this.imageEventText.updateBodyText(this.eDesc(0));
 				this.imageEventText.setDialogOption(this.eOp(0));
 				AbstractDungeon.actionManager.addToBottom(new ForestEventAction());
@@ -417,25 +418,30 @@ public class FadingForestBoss extends CustomMonster
             }
             case ATTACK_RAVINE: {
             	this.imageEventText.loadImage("images/events/fadingForest/ravine.jpg");
-				this.savedDamage = this.damage.get(6).base;
-				this.savedDamage2 = this.damage.get(7).base;
+				this.savedDamage = this.damage.get(6).output;
+				this.savedDamage2 = this.damage.get(7).output;
 				this.imageEventText.updateBodyText(this.eDesc(0));
-				this.imageEventText.setDialogOption(this.eOp(0) + this.savedDamage + this.eOp(2));
-				this.imageEventText.setDialogOption(this.eOp(3) + 50 + this.eOp(4) + this.savedDamage2 + this.eOp(5));
+				this.imageEventText.setDialogOption(this.eOp(0) + this.savedDamage + this.eOp(1));
+				this.imageEventText.setDialogOption(this.eOp(2) + 50 + this.eOp(3) + this.savedDamage2 + this.eOp(4));
 				AbstractDungeon.actionManager.addToBottom(new ForestEventAction());
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
 				break;
             }
             case FOREST_FINALE: {
-            	AbstractDungeon.actionManager.addToBottom(new TalkAction(this, FadingForestBoss.DIALOG[14 + (int)(Math.random() * (4))]));
-            	AbstractDungeon.actionManager.addToBottom(new WaitAction(2.0f));
+            	AbstractDungeon.actionManager.addToBottom(new TalkAction(this, FadingForestBoss.DIALOG[14 + (int)(Math.random() * (4))], 3.5f, 3.5f));
+            	AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
+            	AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
+            	AbstractDungeon.actionManager.addToBottom(new WaitAction(0.5f));
             	for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             		if (m != null && m != this && !m.isDeadOrEscaped()) {
             			AbstractDungeon.actionManager.addToBottom(new SuicideAction(m));
-            			AbstractDungeon.actionManager.addToBottom(new WaitAction(0.2f));
+            			AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmokeBombEffect(m.hb.cX, m.hb.cY)));
+            			AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
+            			AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
             		}
             	}
-            	AbstractDungeon.actionManager.addToBottom(new TalkAction(this, FadingForestBoss.DIALOG[18 + (int)(Math.random() * (2))]));
+    			AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
+            	AbstractDungeon.actionManager.addToBottom(new TalkAction(this, FadingForestBoss.DIALOG[18 + (int)(Math.random() * (2))], 2.5f, 2.5f));
             	AbstractDungeon.actionManager.addToBottom(new WaitAction(2.0f));
             	AbstractDungeon.actionManager.addToBottom(new EscapeAction(this));
                 AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, FOREST_FINALE, Intent.ESCAPE));
@@ -443,7 +449,13 @@ public class FadingForestBoss extends CustomMonster
             }
         }
     }
-    
+    @Override
+    public void escape() {
+        this.hideHealthBar();
+        this.isEscaping = true;
+        this.escapeTimer = 3.0f;
+        this.onBossVictoryLogic();
+    }
     @Override
     protected void getMove(final int num) {
 		if (this.turncount <= 0) {
@@ -489,17 +501,26 @@ public class FadingForestBoss extends CustomMonster
 			case 7:
 				this.setNextTurn(DEBUFF_WALLS);
 				return;
-			case 8:
-				if (num > 50) {
-					this.setNextTurn(ATTACK_IDOL);
-				} else {
-					this.setNextTurn(ATTACK_RAVINE);
-				}
-				return;
 			default:
 				if (!this.hasPower(StoryPower.POWER_ID) || this.getPower(StoryPower.POWER_ID).amount <= 1) {
 					this.setNextTurn(FOREST_FINALE);
 					return;
+				} else if (this.hasPower(StoryPower.POWER_ID) && this.getPower(StoryPower.POWER_ID).amount > 1) {
+					boolean othersExist = false;
+					for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+						if (m != null && m != this && !m.isDeadOrEscaped()) {
+							othersExist = true;
+						}
+					}
+					if (!othersExist) {
+						if (num > 50) {
+							this.setNextTurn(FORK_NOISE);
+						} else {
+							this.setNextTurn(FORK_NOISE);
+							//this.setNextTurn(FORK_PATHS);
+						}
+						return;
+					}
 				}
 				if (this.lastMove(ATTACK_RAVINE) || !this.lastMove(ATTACK_IDOL) && num > 50) {
 					this.setNextTurn(ATTACK_IDOL);
@@ -538,10 +559,10 @@ public class FadingForestBoss extends CustomMonster
 								break;
 							default:
 								this.imageEventText.updateBodyText(this.eDesc(4));
-								m = new FF_Sentry(0, 30, false);
+								m = new FF_Sentry(-75, 50, false);
 								//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new ArtifactPower(m, 1), 1));
 								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
-								m = new FF_Sentry(-200, 30, true);
+								m = new FF_Sentry(-225, 30, true);
 								//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new ArtifactPower(m, 1), 1));
 								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 								break;
@@ -744,30 +765,48 @@ public class FadingForestBoss extends CustomMonster
 						AbstractMonster m = new FF_ComboSlime_L(-250, 0);
 						switch(p0) {
 							case 0:
-								this.imageEventText.updateBodyText(this.eDesc(2));
+								this.imageEventText.updateBodyText(this.eDesc(1));
 								m = new FF_ComboSlime_L(-250, 0);
 								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 								break;
 							case 1:
-								this.imageEventText.updateBodyText(this.eDesc(3));
-								m = new FF_JawWorm(-400, 0);
+								this.imageEventText.updateBodyText(this.eDesc(2));
+								m = new FF_JawWorm(-600, -25);
 								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
-								m = new FF_LouseNormal(-325, 0);
+								m = new FF_LouseNormal(-380, 0);
 								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
-								m = new FF_LouseDefensive(-250, 0);
+								m = new FF_LouseDefensive(-225, -25);
 								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 								break;
 							default:
-								this.imageEventText.updateBodyText(this.eDesc(4));
-								m = new FF_Sentry(0, 30, false);
-								//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new ArtifactPower(m, 1), 1));
-								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
-								m = new FF_Sentry(-200, 30, true);
-								//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new ArtifactPower(m, 1), 1));
-								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
+								this.imageEventText.updateBodyText(this.eDesc(3));
+								for (int i=0; i < 3; i++) {
+									switch (AbstractDungeon.miscRng.random(0, 5)) {
+									case 0:
+										m = new FF_GremlinThief(-50 - (i * 175), 0);
+										break;
+									case 1:
+										m = new FF_GremlinTsundere(-50 - (i * 175), 0);
+										break;
+									case 2:
+										m = new FF_GremlinFat(-50 - (i * 175), 0);
+										break;
+									case 3:
+										m = new FF_GremlinWarrior(-50 - (i * 175), 0);
+										break;
+									case 4:
+										m = new FF_GremlinWizard(-50 - (i * 175), 0);
+										break;
+									default:
+										m = new FF_GremlinThief(-50 - (i * 175), 0);
+										break;
+									}
+									
+									AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
+								}
 								break;
 						}
-						this.imageEventText.updateDialogOption(0, this.eOp(4));
+						this.imageEventText.updateDialogOption(0, this.eOp(3));
 						this.imageEventText.clearRemainingOptions();
 						AbstractDungeon.actionManager.addToTop(new ForestEventAction());
 						this.c_part++;
@@ -842,12 +881,13 @@ public class FadingForestBoss extends CustomMonster
 						this.imageEventText.clear();
 						break;
 				}
+				break;
 			}
 			case ATTACK_TESSERACT: {
 				switch(c_part) {
 					case 0:
 						this.imageEventText.updateBodyText(this.eDesc(1));
-						this.imageEventText.setDialogOption(this.eOp(0) + this.savedDamage + this.eOp(3) + 2 + this.eOp(4));
+						this.imageEventText.updateDialogOption(0, this.eOp(0) + this.savedDamage + this.eOp(3) + 2 + this.eOp(4));
 						this.imageEventText.setDialogOption(this.eOp(1) + this.savedDamage + this.eOp(3) + 3 + this.eOp(4));
 						this.imageEventText.setDialogOption(this.eOp(2) + this.savedDamage + this.eOp(3) + 4 + this.eOp(4));
 						AbstractDungeon.actionManager.addToTop(new ForestEventAction());
@@ -969,7 +1009,7 @@ public class FadingForestBoss extends CustomMonster
     @Override
     public void render(final SpriteBatch sb) {
         super.render(sb);
-		if (!AbstractDungeon.id.equals("Exordium")) {
+		if (AbstractDungeon.id != null && !AbstractDungeon.id.equals("Exordium")) {
 			this.imageEventText.render(sb);
 		}
 		/*
@@ -992,6 +1032,7 @@ public class FadingForestBoss extends CustomMonster
             if (!m.isDead && !m.isDying) {
                 AbstractDungeon.actionManager.addToTop(new HideHealthBarAction(m));
                 AbstractDungeon.actionManager.addToTop(new SuicideAction(m));
+    			AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmokeBombEffect(m.hb.cX, m.hb.cY)));
             }
         }
     }

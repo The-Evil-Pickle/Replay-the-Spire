@@ -18,11 +18,13 @@ public class RingOfAddiction extends AbstractRelic
 	public static final ArrayList<String> greedlist;
 	private int relicsLeft;
 	private ArrayList<String> greedpool;
+	private boolean chuggedThisRoom;
 	
     public RingOfAddiction() {
-        super(ID, "cring_greed.png", RelicTier.SPECIAL, LandingSound.FLAT);
+        super(ID, "cring_addiction.png", RelicTier.SPECIAL, LandingSound.FLAT);
 		this.counter = POTION_TRIGGER;
 		this.relicsLeft = 0;
+		this.chuggedThisRoom = true;
     }
     
     @Override
@@ -43,18 +45,22 @@ public class RingOfAddiction extends AbstractRelic
     
     @Override
     public void onEnterRoom(final AbstractRoom room) {
-    	setCounter(this.counter - 1);
-    	if (this.counter <= 0) {
-    		AbstractDungeon.player.decreaseMaxHealth(HP_LOSS);
-    		this.flash();
-    		setCounter(POTION_TRIGGER);
+    	if (!this.chuggedThisRoom) {
+    		setCounter(this.counter - 1);
+        	if (this.counter <= 0) {
+        		AbstractDungeon.player.decreaseMaxHealth(HP_LOSS);
+        		this.flash();
+        		setCounter(POTION_TRIGGER);
+        	}
     	}
+    	this.chuggedThisRoom = false;
     }
     
     @Override
     public void onUsePotion() {
         this.flash();
         setCounter(POTION_TRIGGER);
+        this.chuggedThisRoom = true;
     }
     
     @Override

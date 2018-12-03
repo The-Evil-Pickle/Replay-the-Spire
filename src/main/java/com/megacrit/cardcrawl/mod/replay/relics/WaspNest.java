@@ -21,7 +21,7 @@ public class WaspNest extends AbstractRelic
 	
 	public WaspNest()
 	{
-		super(ID, "WaspNest.png", AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.FLAT);
+		super(ID, "WaspNest.png", AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.FLAT);
 	}
 	
 	public String getUpdatedDescription()

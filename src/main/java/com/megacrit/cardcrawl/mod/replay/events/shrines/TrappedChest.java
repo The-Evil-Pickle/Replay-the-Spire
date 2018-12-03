@@ -2,6 +2,7 @@ package com.megacrit.cardcrawl.mod.replay.events.shrines;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.audio.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.curses.Pain;
 import com.megacrit.cardcrawl.characters.*;
@@ -43,7 +44,7 @@ public class TrappedChest
   private int dodgeChance;
   private boolean hasKey;
   private CurScreen screen = CurScreen.INTRO;
-  
+  private AbstractCard curse;
   private static enum CurScreen
   {
     INTRO,  TRAP, CURSE, RESULT;
@@ -66,15 +67,17 @@ public class TrappedChest
     this.imageEventText.setDialogOption(OPTIONS[3]);
     if (AbstractDungeon.ascensionLevel >= 15)
     {
-      this.hpLoss = ((int)(AbstractDungeon.player.maxHealth * 0.33F));
-      this.maxHpLoss = ((int)(AbstractDungeon.player.maxHealth * 0.4F));
+      this.hpLoss = ((int)(AbstractDungeon.player.maxHealth * A_2_HP_LOSS_PERCENT));
+      this.maxHpLoss = ((int)(AbstractDungeon.player.maxHealth * DODGE_HP_LOSS_PERCENT));
 	  this.dodgeChance = 75;
+	  this.curse = new Pain();
     }
     else
     {
-      this.hpLoss = ((int)(AbstractDungeon.player.maxHealth * 0.25F));
-      this.maxHpLoss = ((int)(AbstractDungeon.player.maxHealth * 0.4F));
+      this.hpLoss = ((int)(AbstractDungeon.player.maxHealth * HP_LOSS_PERCENT));
+      this.maxHpLoss = ((int)(AbstractDungeon.player.maxHealth * DODGE_HP_LOSS_PERCENT));
 	  this.dodgeChance = 50;
+	  this.curse = new Splinters();
     }
     if (this.maxHpLoss < 1) {
       this.maxHpLoss = 1;
@@ -106,7 +109,7 @@ public class TrappedChest
         this.screen = CurScreen.TRAP;
         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
         //logMetric("Triggered Chest Trap");
-        this.imageEventText.updateDialogOption(0, OPTIONS[4], new Pain());
+        this.imageEventText.updateDialogOption(0, OPTIONS[4] + this.curse.name + ".", this.curse);
         this.imageEventText.updateDialogOption(1, OPTIONS[5] + this.hpLoss + OPTIONS[6]);
         this.imageEventText.updateDialogOption(2, OPTIONS[7] + this.dodgeChance + OPTIONS[8] + this.maxHpLoss + OPTIONS[6]);
         break;
@@ -132,9 +135,9 @@ public class TrappedChest
 				this.imageEventText.updateBodyText(DESCRIPTIONS[3]);
 				this.unlockTheChest();
 				CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
-				AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Pain(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+				AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(curse.makeCopy(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
 
-				UnlockTracker.markCardAsSeen("Pain");
+				UnlockTracker.markCardAsSeen(curse.cardID);
 				//logMetric("Take Pain");
 				break;
 			case 1: 

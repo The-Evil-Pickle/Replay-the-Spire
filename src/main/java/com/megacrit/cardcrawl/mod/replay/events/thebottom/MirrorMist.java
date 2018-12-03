@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.cards.green.AfterImage;
 import com.megacrit.cardcrawl.cards.green.Alchemize;
 import com.megacrit.cardcrawl.cards.green.DeadlyPoison;
 import com.megacrit.cardcrawl.cards.green.EndlessAgony;
+import com.megacrit.cardcrawl.cards.green.Footwork;
 import com.megacrit.cardcrawl.cards.green.InfiniteBlades;
 import com.megacrit.cardcrawl.cards.green.Neutralize;
 import com.megacrit.cardcrawl.cards.green.Survivor;
@@ -40,6 +41,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.blue.*;
 import com.megacrit.cardcrawl.mod.replay.cards.curses.*;
 import com.megacrit.cardcrawl.mod.replay.cards.green.*;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.construct.ArmamentsMkII;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.marisa.LightBash;
 import com.megacrit.cardcrawl.mod.replay.events.*;
 import com.megacrit.cardcrawl.mod.replay.modifiers.MistsModifier;
@@ -60,6 +62,11 @@ import blackbeard.characters.TheBlackbeard;
 //import beaked.characters.*;
 import blackrusemod.characters.*;
 import chronomuncher.character.*;
+import constructmod.cards.AttackMode;
+import constructmod.cards.DefenseMode;
+import constructmod.characters.TheConstruct;
+import constructmod.relics.ClockworkPhoenix;
+import constructmod.relics.Cogwheel;
 import fruitymod.seeker.characters.*;
 import mysticmod.character.*;
 
@@ -483,6 +490,35 @@ public class MirrorMist
 				this.has_3 = AbstractDungeon.player.hasRelic("MiniHakkero");
 				this.loss_r_3 = RelicLibrary.getRelic("MiniHakkero").makeCopy();
 				this.gain_r_3 = new M_SpellCore();
+				this.thirdOption = true;
+				break;
+			}
+			if (ReplayTheSpireMod.foundmod_construct && AbstractDungeon.player instanceof TheConstruct) {
+				this.has_1 = AbstractDungeon.player.hasRelic(ClockworkPhoenix.ID) && CardHelper.hasCardWithID(AttackMode.ID);
+				this.has_1b = CardHelper.hasCardWithID(AttackMode.ID);
+				this.loss_r_1 = RelicLibrary.getRelic(ClockworkPhoenix.ID).makeCopy();
+				this.gain_r_1 = new BurningBlood();
+				this.loss_c_1b = CardLibrary.getCopy(AttackMode.ID);
+				if (this.has_1) {
+					this.gain_c_1b = new ArmamentsMkII();
+				} else {
+					this.gain_c_1b = new Inflame();
+				}
+				this.has_2 = CardHelper.hasCardWithID(DefenseMode.ID);
+				this.loss_c_2 = CardLibrary.getCopy(DefenseMode.ID);
+				this.gain_c_2 = new Footwork();
+				if (AbstractDungeon.player.hasRelic(Cogwheel.ID) || !CardHelper.hasCardWithID(DefenseMode.ID) || !CardHelper.hasCardWithID(AttackMode.ID) || !ReplayTheSpireMod.foundmod_beaked) {
+					this.has_3 = AbstractDungeon.player.hasRelic(Cogwheel.ID);
+					this.loss_r_3 = RelicLibrary.getRelic(Cogwheel.ID).makeCopy();
+					this.gain_r_3 = new AncientBracer();
+				} else {
+					this.has_3 = CardHelper.hasCardWithID(AttackMode.ID);
+					this.has_3b = CardHelper.hasCardWithID(DefenseMode.ID);
+					this.loss_c_3 = CardLibrary.getCopy(AttackMode.ID);
+					this.loss_c_3b = CardLibrary.getCopy(DefenseMode.ID);
+					this.gain_c_3 = new SystemScan();
+					this.gain_c_3b = CardLibrary.getCopy("beaked:MimicMachine");
+				}
 				this.thirdOption = true;
 				break;
 			}
