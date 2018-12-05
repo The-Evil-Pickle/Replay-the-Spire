@@ -49,7 +49,7 @@ public class GremCookAction extends AbstractGameAction
             }
             if (this.target != null) {
                 this.target.heal(this.amount);
-                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.target, this.source, new StrengthPower(this.target, this.flexAmt), this.flexAmt));
+                //AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.target, this.source, new StrengthPower(this.target, this.flexAmt), this.flexAmt));
                 AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.target, this.source, new DelayedLoseStrengthPower(this.target, this.flexAmt), this.flexAmt));
             }
         }

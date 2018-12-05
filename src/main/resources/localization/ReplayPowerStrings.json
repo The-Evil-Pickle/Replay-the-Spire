@@ -213,6 +213,14 @@
 	" gains #b1 #yLanguid."
     ]
   },
+  "Replay:Fed": {
+    "NAME": "Well-Fed",
+    "DESCRIPTIONS": [
+	"Has gained #b",
+	" #yStrength. NL Will lose #b",
+	" #yStrength at the end of this turn."
+    ]
+  },
   "Eggshell": {
     "NAME": "Eggshell",
     "DESCRIPTIONS": [

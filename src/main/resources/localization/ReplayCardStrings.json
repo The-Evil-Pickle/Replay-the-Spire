@@ -31,8 +31,8 @@
   },
   "Sneak Up": {
     "NAME": "Sneak Up",
-    "DESCRIPTION": "Gain !M! Intangible. NL Discard a random card. NL Innate. NL Exhaust. NL Ethereal.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Intangible. NL Innate. NL Exhaust. NL Ethereal."
+    "DESCRIPTION": "Gain !M! Intangible. NL Discard all Attacks in your hand. NL Refund !stslib:refund!. NL Innate. NL Exhaust. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Intangible. NL Refund !stslib:refund!. NL Innate. NL Exhaust. NL Ethereal."
   },
   "ReplayTheSpireMod:Necrosis": {
     "NAME": "Necrosis",
@@ -152,7 +152,7 @@
   },
   "ReplayGash": {
     "NAME": "Claw Rake",
-    "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage to ALL enemies. NL Counts as a Claw card."
+    "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage to ALL enemies. NL Grave. Counts as Claw. NL Startup: if your deck has no normal Claw cards, add one to your draw pile."
   },
   "Crystallizer": {
     "NAME": "Crystallizer",
@@ -255,15 +255,16 @@
   },
   "ReplayTheSpireMod:Muscle Training": {
     "NAME": "Weight Training",
-    "DESCRIPTION": "Gain !M! Strength. NL Exhaustive !stslib:ex!."
+    "DESCRIPTION": "Gain 1 Strength. NL Lose !M! HP. NL Exhaustive !stslib:ex!."
   },
   "ReplayTheSpireMod:Speed Training": {
     "NAME": "Speed Training",
-    "DESCRIPTION": "Gain !M! Dexterity. NL Exhaustive !stslib:ex!."
+    "DESCRIPTION": "Gain !M! Dexterity. NL Discard a random card. NL Refund !stslib:refund!. NL Exhaustive !stslib:ex!."
   },
   "ReplayTheSpireMod:Calculation Training": {
     "NAME": "Calculation Training",
-    "DESCRIPTION": "Gain !M! Focus. NL Exhaustive !stslib:ex!."
+    "DESCRIPTION": "Gain 1 Focus. NL Add !M! Dazed to your discard pile. NL Exhaustive !stslib:ex!.",
+	"UPGRADE_DESCRIPTION": "Gain 1 Focus. NL Exhaustive !stslib:ex!. NL Startup: add !M! Dazed to your discard pile."
   },
   "Improvise": {
     "NAME": "Improvise",
@@ -513,6 +514,10 @@
   "ReplayTheSpireMod:Five Aces": {
 	"NAME": "Five Aces",
 	"DESCRIPTION": "Each time you play a card, !M!% chance to gain 1 Critical."
+  },
+  "ReplayTheSpireMod:Heavy Armor": {
+	"NAME": "Heavy Armor",
+	"DESCRIPTION": "Gain !M! Plated Armor. NL Exhaustive !stslib:ex!"
   },
   "Ghost Swipe": {
     "NAME": "Ghost Swipe",

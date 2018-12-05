@@ -19,6 +19,7 @@ public class WantedPoster extends AbstractRelic
     public static final String ID = "Replay:Wanted Poster";
     static final int GOLD_MAX = 500;
     static final int GOLD_INC = 100;
+    static final int GOLD_BONUS = 100;
     
     public WantedPoster() {
         super(ID, "betaRelic.png", RelicTier.BOSS, LandingSound.FLAT);
@@ -26,13 +27,14 @@ public class WantedPoster extends AbstractRelic
     
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0] + GOLD_INC + this.DESCRIPTIONS[1] + GOLD_MAX + this.DESCRIPTIONS[2];
+        return this.DESCRIPTIONS[0] + GOLD_INC + this.DESCRIPTIONS[1] + GOLD_MAX + this.DESCRIPTIONS[2] + GOLD_BONUS + this.DESCRIPTIONS[3];
     }
 	
     @Override
     public void onEquip() {
         final EnergyManager energy = AbstractDungeon.player.energy;
         ++energy.energyMaster;
+        AbstractDungeon.player.gainGold(GOLD_BONUS);
     }
     
     @Override

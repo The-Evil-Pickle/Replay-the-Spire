@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.core.*;
 
 public class DelayedLoseStrengthPower extends AbstractPower
 {
-    public static final String POWER_ID = "Flex";
+    public static final String POWER_ID = "Replay:Fed";
     private static final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
@@ -43,7 +43,7 @@ public class DelayedLoseStrengthPower extends AbstractPower
     
     @Override
     public void updateDescription() {
-        this.description = DelayedLoseStrengthPower.DESCRIPTIONS[0] + this.amount + DelayedLoseStrengthPower.DESCRIPTIONS[1];
+        this.description = DelayedLoseStrengthPower.DESCRIPTIONS[0] + this.amount + DelayedLoseStrengthPower.DESCRIPTIONS[1] + this.amount + DelayedLoseStrengthPower.DESCRIPTIONS[2];
     }
     
     @Override
@@ -52,12 +52,14 @@ public class DelayedLoseStrengthPower extends AbstractPower
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -this.amount), -this.amount));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+    	} else {
+    		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount), this.amount));
     	}
     	this.delay--;
     }
     
     static {
-        powerStrings = CardCrawlGame.languagePack.getPowerStrings("Flex");
+        powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
         NAME = DelayedLoseStrengthPower.powerStrings.NAME;
         DESCRIPTIONS = DelayedLoseStrengthPower.powerStrings.DESCRIPTIONS;
     }

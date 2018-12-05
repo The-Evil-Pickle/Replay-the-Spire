@@ -1,10 +1,11 @@
 {
   "modid": "ReplayTheSpireMod",
   "name": "Replay The Spire",
-  "author_list": ["The_Evil_Pickle", "AstroPenguin642", "Stewartisme", "Slimer509", "Bakuhaku"],
+  "author_list": ["The_Evil_Pickle"],
   "description": "Huge content expansion mod. Adds new cards, relics, potions, events, monsters, and shenanigans.",
   "dependencies": ["basemod","stslib"],
-  "version": "1.3.0",
+  "credits" : "Original creator of Replay:AstroPenguin642.\nArtists: Bakuhaku, Stewartisme, Lyman, RedDyeNo5.\nOST: Slimer509.\nSpanish translation: PJJLegend.",
+  "version": "1.3.1",
   "sts_version": "11-15-2018",
   "mts_version": "3.0.0",
   "update_json": "https://api.github.com/repos/AstroPenguin642/Replay-the-Spire/releases/latest"

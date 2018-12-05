@@ -3,12 +3,14 @@ package com.megacrit.cardcrawl.mod.replay.cards.green;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
+import com.megacrit.cardcrawl.mod.replay.actions.unique.DiscardByTypeAction;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
+import com.evacipated.cardcrawl.mod.stslib.variables.RefundVariable;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -29,14 +31,14 @@ public class SneakUp extends CustomCard
     public static final String NAME;
     public static final String DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION;
-    private static final int COST = 1;
+    private static final int COST = 3;
     
     public SneakUp() {
         super("Sneak Up", SneakUp.NAME, "cards/replay/sneakUp.png", SneakUp.COST, SneakUp.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF);
         this.exhaust = true;
         this.isEthereal = true;
         this.isInnate = true;
-		
+		RefundVariable.setBaseValue(this, 2);
 		this.baseMagicNumber = 1;
 		this.magicNumber = this.baseMagicNumber;
     }
@@ -44,17 +46,21 @@ public class SneakUp extends CustomCard
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1), 1));
-		if (!this.upgraded) {
-			AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, true));
-		}
+		//if (!this.upgraded) {
+			AbstractDungeon.actionManager.addToBottom(new DiscardByTypeAction(p, AbstractCard.CardType.ATTACK, -1));
+		//} else {
+		//	
+		//}
     }
     
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.rawDescription = SneakUp.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            this.upgradeBaseCost(this.cost - 1);
+            RefundVariable.upgrade(this, -1);
+            //this.rawDescription = SneakUp.UPGRADE_DESCRIPTION;
+            //this.initializeDescription();
         }
     }
     

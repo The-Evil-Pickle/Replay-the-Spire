@@ -41,7 +41,6 @@ import com.megacrit.cardcrawl.mod.replay.cards.blue.*;
 import com.megacrit.cardcrawl.mod.replay.cards.curses.*;
 import com.megacrit.cardcrawl.mod.replay.cards.green.*;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
-import com.megacrit.cardcrawl.mod.replay.cards.replayxover.construct.ArmamentsMkII;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.marisa.LightBash;
 import com.megacrit.cardcrawl.mod.replay.events.*;
 import com.megacrit.cardcrawl.mod.replay.modifiers.MistsModifier;
@@ -494,13 +493,13 @@ public class MirrorMist
 				break;
 			}
 			if (ReplayTheSpireMod.foundmod_construct && AbstractDungeon.player instanceof TheConstruct) {
-				this.has_1 = AbstractDungeon.player.hasRelic(ClockworkPhoenix.ID) && CardHelper.hasCardWithID(AttackMode.ID);
+				this.has_1 = AbstractDungeon.player.hasRelic(ClockworkPhoenix.ID);
 				this.has_1b = CardHelper.hasCardWithID(AttackMode.ID);
 				this.loss_r_1 = RelicLibrary.getRelic(ClockworkPhoenix.ID).makeCopy();
 				this.gain_r_1 = new BurningBlood();
 				this.loss_c_1b = CardLibrary.getCopy(AttackMode.ID);
 				if (this.has_1) {
-					this.gain_c_1b = new ArmamentsMkII();
+					this.gain_c_1b = CardLibrary.getCopy("ReplayTheSpireMod:Armaments MK-II");
 				} else {
 					this.gain_c_1b = new Inflame();
 				}

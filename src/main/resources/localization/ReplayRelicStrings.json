@@ -701,7 +701,8 @@
     "DESCRIPTIONS": [
 		"Gain [E] at the start of each turn. NL For every #b",
 		" gold below #b",
-		" you have, enemies start with a random buff."
+		" you have, enemies start with a random buff. NL Gain #b",
+		" gold on pick up."
 	]
   },
   "Ring of Fury": {
