@@ -23,18 +23,6 @@ public class CardFieldStuff {
 	)
 	public static class ReplayCardFields {
 		public static SpireField<Boolean> isSpectral = new SpireField<>(() -> false);
-		public static SpireField<Integer> refund = new SpireField<>(() -> 0);
-	}
-	@SpirePatch(
-	        cls="com.megacrit.cardcrawl.characters.AbstractPlayer",
-	        method="useCard"
-	)
-	public static class ReplayRefundPatch {
-		public static void Postfix(AbstractPlayer __Instance, final AbstractCard c, final AbstractMonster monster, final int energyOnUse) {
-			if (CardFieldStuff.ReplayCardFields.refund.get(c) > 0 && c.cost > 0 && !c.freeToPlayOnce && (!__Instance.hasPower("Corruption") || c.type != AbstractCard.CardType.SKILL)) {
-	            AbstractDungeon.actionManager.addToBottom(new ReplayRefundAction(c, CardFieldStuff.ReplayCardFields.refund.get(c)));
-	        }
-		}
 	}
 	@SpireEnum
     public static AbstractCard.CardTags CHAOS_NEGATIVE_MAGIC;//means higher magic number is less powerful (used by ring of chaos)
