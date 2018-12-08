@@ -39,7 +39,7 @@
 		"NAMES": [
 			"languid"
 		],
-		"DESCRIPTION": "Fighters with #yLanguid deal #b1 less #yAttack damage per stack. NL Is reduced by #b1 at the end of each round."
+		"DESCRIPTION": "Fighters with #yLanguid deal 1 less #yAttack damage per stack. NL Is reduced by #b1 at the end of each turn."
 	},
 	{
 		"NAMES": [
@@ -53,5 +53,11 @@
 			"manaspark"
 		],
 		"DESCRIPTION": "Orb: At the start of your turn, gain #b3 #yCharge-Up. NL When #yEvoked, gain [e] and #b5 #yCharge-Up."
+	},
+	{
+		"NAMES": [
+			"decrepit"
+		],
+		"DESCRIPTION": "Fighters afflicted by #yDecrepit suffer 1 extra damage from attacks for each stack. NL Each turn #yDecrepit is decreased by #b1."
 	}
 ]

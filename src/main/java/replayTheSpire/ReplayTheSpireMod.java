@@ -973,6 +973,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		RelicLibrary.addBlue(new Carrot());
 		RelicLibrary.addBlue(new Geode());
 		RelicLibrary.addBlue(new RaidersMask());
+		RelicLibrary.addBlue(new FrozenProgram());
 		BaseMod.addRelic(new Accelerometer(), RelicType.SHARED);
 		BaseMod.addRelic(new Arrowhead(), RelicType.SHARED);
 		BaseMod.addRelic(new AbesTreasure(), RelicType.SHARED);
@@ -993,6 +994,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new Funnel(), RelicType.SHARED);
 		BaseMod.addRelic(new Garlic(), RelicType.SHARED);
 		BaseMod.addRelic(new GoldenEgg(), RelicType.SHARED);
+		
 		BaseMod.addRelic(new GrabBag(), RelicType.SHARED);
 		BaseMod.addRelic(new GremlinFood(), RelicType.SHARED);
 		BaseMod.addRelic(new GrinningJar(), RelicType.SHARED);
@@ -1100,6 +1102,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new ExploitWeakness());
 		AddAndUnlockCard(new ShivToss());
 		AddAndUnlockCard(new SpeedTraining());
+		AddAndUnlockCard(new TripWire());
 		logger.info("adding cards for Defect...");
 		AddAndUnlockCard(new com.megacrit.cardcrawl.mod.replay.cards.blue.PanicButton());
 		AddAndUnlockCard(new MirrorShield());

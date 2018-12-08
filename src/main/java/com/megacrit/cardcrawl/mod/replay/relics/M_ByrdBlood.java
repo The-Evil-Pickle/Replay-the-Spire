@@ -12,11 +12,7 @@ import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
-import com.megacrit.cardcrawl.mod.replay.powers.*;
-import com.megacrit.cardcrawl.mod.replay.relics.*;
 import com.megacrit.cardcrawl.relics.*;
-
-import blackrusemod.powers.*;
 
 public class M_ByrdBlood extends AbstractRelic
 {
@@ -32,8 +28,10 @@ public class M_ByrdBlood extends AbstractRelic
     }
 
     public void onGainStrength(ApplyPowerAction __instance) {
-    	AbstractDungeon.actionManager.addToTop(new HealAction(__instance.target, __instance.source, __instance.amount));
-		AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(__instance.target, this));
+    	if(__instance.amount > 0) {
+	    	AbstractDungeon.actionManager.addToTop(new HealAction(__instance.target, __instance.source, __instance.amount));
+			AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(__instance.target, this));
+    	}
     }
 	@Override
     public void onEquip() {

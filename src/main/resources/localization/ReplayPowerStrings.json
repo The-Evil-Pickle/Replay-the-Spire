@@ -213,6 +213,13 @@
 	" gains #b1 #yLanguid."
     ]
   },
+  "Replay:Tripwire": {
+    "NAME": "Tripwire",
+    "DESCRIPTIONS": [
+	"At start of turn, #yStun a random enemy #b",
+	" times."
+    ]
+  },
   "Replay:Fed": {
     "NAME": "Well-Fed",
     "DESCRIPTIONS": [

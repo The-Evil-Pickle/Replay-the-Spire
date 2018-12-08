@@ -644,9 +644,9 @@
 		"At the end of your turn, if a #yDark orb has more stored damage than the HP of the lowest-health enemy, it is #yEvoked."
 	]
   },
-  "agfadhgsfhsgergfn": {
-    "NAME": "agfadhgsfhsgergfn",
-	"FLAVOR": "idk",
+  "Replay:Frozen Program": {
+    "NAME": "Frozen Program",
+	"FLAVOR": "FROST.exe has stopped responding.",
     "DESCRIPTIONS": [
 		"Each time you #yEvoke #yFrost, gain #b1 #yReflection."
 	]

@@ -78,6 +78,11 @@
     "DESCRIPTION": "Apply 1 Weak and deal !D! damage to a random enemy 2X + !M! times.",
     "UPGRADE_DESCRIPTION": "Discard any number of cards from your hand. NL Apply 1 Weak and deal !D! X damage to a random enemy for each."
   },
+  "ReplayTheSpireMod:Tripwire": {
+    "NAME": "Tripwire",
+    "DESCRIPTION": "Gain !B! Block. NL At the start of your next turn, Stun a random enemy. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL At the start of your next turn, Stun a random enemy and draw !M! card. NL Exhaust."
+  },
   "Abandon": {
     "NAME": "Abandon",
     "DESCRIPTION": "Exhaust up to !M! cards. NL Draw 1 card for each. NL Add a Void to your discard pile. NL Exhaustive !stslib:ex!. NL Ethereal.",
