@@ -40,7 +40,10 @@ public class UncannyAura extends CustomCard
     		}
     	}
     }
-    
+    @Override
+    public boolean canUse(final AbstractPlayer p, final AbstractMonster m) {
+        return false;
+    }
     @Override
     public void triggerWhenDrawn() {
         AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));

@@ -630,7 +630,7 @@ public class FadingForestBoss extends CustomMonster
 						break;
 					case 1:
 						this.giveRelicEffect();
-						AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(new Slimed(), 3, true, false));
+						AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new Slimed(), 3));
 					default:
 						this.imageEventText.clear();
 						break;
@@ -738,13 +738,13 @@ public class FadingForestBoss extends CustomMonster
 								AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, this.headache_amt, true), this.headache_amt));
 								break;
 							case 1:
-								this.imageEventText.updateBodyText(this.eDesc(3));
+								this.imageEventText.updateBodyText(this.eDesc(2));
 								this.imageEventText.updateDialogOption(0, this.eOp(6));
 								this.imageEventText.clearRemainingOptions();
 								AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, this.headache_amt, true), this.headache_amt));
 								break;
 							case 2:
-								this.imageEventText.updateBodyText(this.eDesc(4));
+								this.imageEventText.updateBodyText(this.eDesc(3));
 								this.imageEventText.updateDialogOption(0, this.eOp(6));
 								this.imageEventText.clearRemainingOptions();
 								AbstractDungeon.actionManager.addToTop(new MakeTempCardInDiscardAction(new Dazed(), this.headache_amt * 2));

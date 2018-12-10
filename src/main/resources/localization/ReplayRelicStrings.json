@@ -825,10 +825,10 @@
 	"NAME": "Ring of Challenge",
 	"FLAVOR": "There is a fine line between bravery and stupidity.",
 	"DESCRIPTIONS": [
-	" [#2aecd7]Usable [#2aecd7]up [#2aecd7]to [#2aecd7]",
-	" [#2aecd7]times [#2aecd7]per [#2aecd7]combat.[] NL Fully heal and apply random buffs to all enemies. NL Gain #b~",
-	" gold. NL For every #b",
-	" times you use this relic, obtain a random relic."
+	"[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]the [#2aecd7]first [#2aecd7]turn [#2aecd7]of [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] [#2aecd7]Usable [#2aecd7]up [#2aecd7]to [#2aecd7]",
+	" [#2aecd7]times [#2aecd7]per [#2aecd7]combat.[] NL Apply random buffs to all enemies. NL Gain #b~",
+	" gold. NL Every #b",
+	" times you use this relic, you will obtain an random relic at the end of the fight."
 	]
   },
   "ReplayTheSpireMod:Ring of Collecting": {

@@ -1,5 +1,9 @@
 package replayTheSpire.replayxover;
 
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.DarkDeal;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
+
+import basemod.BaseMod;
 import infinitespire.InfiniteSpire;
 import infinitespire.abstracts.Quest;
 import infinitespire.events.PrismEvent;
@@ -14,6 +18,8 @@ public class infinitebs {
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.DarkTransmutation());
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.ChaosVortex());
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.SuperSneckoCrazyCard());
+		BaseMod.addCard(new DarkDeal());
+		UnlockTracker.unlockCard(DarkDeal.ID);
 	}
 	public static void registerQuests() {
 		QuestHelper.registerQuest(CurseQuest.class);

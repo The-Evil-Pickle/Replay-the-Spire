@@ -317,7 +317,8 @@
   },
   "Replay:Dark Deal": {
     "NAME": "Dark Deal",
-    "DESCRIPTION": "Unplayable. NL Ethereal. NL Startup: add a random Black card to your draw pile."
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL Startup: add a random Black card to your draw pile.",
+	"UPGRADE_DESCRIPTION": "Unplayable. NL Ethereal. NL Grave. NL Startup: add a random Upgraded Black card to your draw pile."
   },
   "Crow Ritual": {
     "NAME": "Awakened One Ritual",

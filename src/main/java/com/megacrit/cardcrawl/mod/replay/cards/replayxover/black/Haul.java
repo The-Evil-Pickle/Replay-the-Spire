@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.powers.NoDrawPower;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.mod.replay.actions.unique.HaulAction;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -41,7 +42,13 @@ public class Haul extends BlackCard
         }
     }
     
+    @Override
+    public boolean canUse(final AbstractPlayer p, final AbstractMonster m) {
+        return (super.canUse(p, m) && AbstractDungeon.player.drawPile.size() > 0);
+    }
+    
     public void use(final AbstractPlayer p, final AbstractMonster m) {
+    	//AbstractDungeon.actionManager.addToBottom(new HaulAction());
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, p.drawPile.size()));
         if (!this.upgraded) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new NoDrawPower(p)));
