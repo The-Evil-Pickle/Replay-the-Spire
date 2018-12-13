@@ -228,6 +228,16 @@
 	" #yStrength at the end of this turn."
     ]
   },
+  "Replay:Whispers Of Evil": {
+    "NAME": "Whispers Of Evil",
+    "DESCRIPTIONS": [
+	"At start of turn, Draw #b",
+	" card. NL At end of turn, add #b",
+	" random #yCurse #yEcho to your draw pile.",
+	" cards. NL At end of turn, add #b",
+	" random #yCurse #yEchoes to your draw pile."
+    ]
+  },
   "Eggshell": {
     "NAME": "Eggshell",
     "DESCRIPTIONS": [

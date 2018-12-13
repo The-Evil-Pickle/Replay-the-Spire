@@ -423,7 +423,7 @@
   },
   "ReplayTheSpireMod:Doomed": {
 	"NAME": "Doomed",
-	"DESCRIPTION": "Die. NL Soulbound. NL Fleeting."
+	"DESCRIPTION": "Die. NL Fleeting. NL Ethereal. NL Grave. NL Soulbound."
   },
   "ReplayTheSpireMod:Faulty Equipment": {
 	"NAME": "Faulty Equipment",
@@ -437,6 +437,14 @@
   "ReplayTheSpireMod:Splinters": {
 	"NAME": "Splinters",
 	"DESCRIPTION": "Take !M! damage. NL Draw 1 card. NL Exhaustive !stslib:ex!. NL Startup: add a copy of this to your draw pile."
+  },
+  "ReplayTheSpireMod:IOU": {
+	"NAME": "I.O.U.",
+	"DESCRIPTION": "Costs !M! gold to play. NL Soulbound. NL Fleeting."
+  },
+  "ReplayTheSpireMod:Whispers of Evil": {
+	"NAME": "Whispers of Evil",
+	"DESCRIPTION": "Autoplay. NL At the start of your turn, draw !M! additional card. NL At the end of your turn, add !M! Echo of a random Curse to your draw pile."
   },
   "ReplayTheSpireMod:Misquitos": {
 	"NAME": "A Very Large Swarm Of Misquitos",

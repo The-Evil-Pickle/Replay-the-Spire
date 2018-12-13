@@ -81,7 +81,7 @@ Dimensional Glitch | All | Boss | Gain 1 more energy each turn. All non-attack d
 Grab Bag | All | Boss | Choose 1 energy boss relic and 1 non-energy boss relic to obtain. Choices are out of 3, and cannot be skipped.
 Honey Jar | All | Boss | Draw 1 more card each turn. **Retain** up to 1 card each turn. Gain 1 potion slot on pick up. Card rewards have 1 more option to chose from. You cannot skip rewards.
 Kintsugi | All | Boss | Remove 5 cards from your deck. Choose 2 **Curses** to obtain.
-Onyx Gauntlets | All | Gain 1 energy each time you draw a card. Drawing a card increases its cost by 1 for the turn.
+Onyx Gauntlets | All | Boss | Gain 1 energy each time you draw a card. Drawing a card increases its cost by 1 for the turn.
 Ooze Armor | Ironclad | Boss | Gain 1 energy at the start of each turn. At the start of combat, gain **Slow** (resets to -3) and **Malleable** (resets to 4).
 Sweet Flower | All | Boss | Gain 1 more energy each turn. Map displays much less information.
 Electric Blood | Ironclad | Boss | Gain 2 energy at the start of each turn. When you spend energy, lose that much HP, excluding the first 2 energy spent each turn.

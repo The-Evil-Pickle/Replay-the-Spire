@@ -18,5 +18,6 @@ public class ReplayNextRoomPatch {
 	public static void Prefix() {
 		ReplayTheSpireMod.clearShielding();
 		ReplayTheSpireMod.noSkipRewardsRoom = (AbstractDungeon.player.hasRelic(HoneyJar.ID) && AbstractDungeon.player.getRelic(HoneyJar.ID).counter < -1);
+		RenderHandPatch.plsDontRenderHand = false;
 	}
 }

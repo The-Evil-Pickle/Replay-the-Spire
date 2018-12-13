@@ -170,6 +170,17 @@
 		"%: #rBecome #rCursed #r(Random).",
 	]
   },
+  "ReplayTheSpireMod:TheJoustExtra": {
+	"NAME": "The Joust",
+	"DESCRIPTIONS": [
+		"The ghost you've been traveling with runs up to the knight excitedly. NL #y@\"Noodles!!\"@ NL The knight is overjoyed to be reunited with his pet, even if it is now a pet ghost. Shedding tears of joy, he offers you a #greward for bringing them back together. NL NL The other knight just kinda... leaves."
+	],
+	"OPTIONS": [
+		"[Locked] Requires: Pet Ghost.",
+		"[Lose Pet Ghost] #gObtain #g",
+		" #ggold. #gChoose #ga #grare #gcard #gto #gobtain."
+	]
+  },
   "ReplayTheSpireMod:DanceKnight": {
 	"NAME": "Testing Knight",
 	"DESCRIPTIONS": [

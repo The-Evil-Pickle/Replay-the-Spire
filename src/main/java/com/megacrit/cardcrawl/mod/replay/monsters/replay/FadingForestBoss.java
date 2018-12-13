@@ -66,6 +66,7 @@ import com.badlogic.gdx.graphics.g2d.*;
 import java.util.*;
 import basemod.*;
 import basemod.animations.*;
+import replayTheSpire.patches.RenderHandPatch;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.CustomMonster;
 
@@ -428,6 +429,7 @@ public class FadingForestBoss extends CustomMonster
 				break;
             }
             case FOREST_FINALE: {
+            	RenderHandPatch.plsDontRenderHand = false;
             	AbstractDungeon.actionManager.addToBottom(new TalkAction(this, FadingForestBoss.DIALOG[14 + (int)(Math.random() * (4))], 3.5f, 3.5f));
             	AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
             	AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
@@ -1025,6 +1027,7 @@ public class FadingForestBoss extends CustomMonster
     public void die() {
 		this.imageEventText.clear();
 		ForestEventAction.forest = null;
+		RenderHandPatch.plsDontRenderHand = false;
         this.deathTimer += 1.5f;
         super.die();
         this.onBossVictoryLogic();
