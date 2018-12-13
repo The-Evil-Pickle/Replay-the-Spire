@@ -107,8 +107,8 @@ public class ChaosEvent
     private CurScreen() {}
   }
   
-  private AbstractCard getRandoCurse() {
-	switch (AbstractDungeon.miscRng.random(0, 15)) {
+  private AbstractCard getRandoCurse(int rchance) {
+	switch (AbstractDungeon.miscRng.random(0, 15 + rchance)) {
 		case 0: case 1: {
 			return new Delirium();
 		}
@@ -139,20 +139,33 @@ public class ChaosEvent
 		case 14: {
 			return new CommonCold();
 		}
-		default: {
+		case 15: {
 			return new SpreadingInfection();
 		}
+		default: {
+			return AbstractDungeon.returnRandomCurse().makeCopy();
+		}
 	}
+  }
+  
+  public static ArrayList<AbstractRelic> getRingPool() {
+	  ArrayList<AbstractRelic> rings = new ArrayList<AbstractRelic>();
+		for (RingListEntry e : ringList) {
+			if (e.isValid()) {
+				rings.add(e.ring.makeCopy());
+			}
+		}
+		return rings;
   }
   
   public ChaosEvent()
   {
     super(NAME, DIALOG_1, "images/events/blacksmith.jpg");
 	
-	this.curse = this.getRandoCurse();
-	this.curse2 = this.getRandoCurse();
+	this.curse = this.getRandoCurse(0);
+	this.curse2 = this.getRandoCurse(0);
 	while (this.curse.cardID.equals(this.curse2.cardID)) {
-		this.curse2 = this.getRandoCurse();
+		this.curse2 = this.getRandoCurse(2);
 	}
 	ArrayList<AbstractRelic> rings = new ArrayList<AbstractRelic>();
 	for (RingListEntry e : ringList) {
@@ -214,7 +227,7 @@ public class ChaosEvent
       {
         //AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, this.ring.makeCopy());
 		if (AbstractDungeon.miscRng.randomBoolean(0.75F)) {
-			AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.getRandoCurse(), (Settings.WIDTH * 2.0F) / 3.0F, Settings.HEIGHT / 2.0F));
+			AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.getRandoCurse(4), (Settings.WIDTH * 2.0F) / 3.0F, Settings.HEIGHT / 2.0F));
 		}
 		AbstractDungeon.combatRewardScreen.open();
 		AbstractDungeon.combatRewardScreen.rewards.clear();

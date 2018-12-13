@@ -55,7 +55,7 @@ public class ChaosVortex extends BlackCard
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ChaosPower(p, this.magicNumber), this.magicNumber));
         for (AbstractMonster mon : AbstractDungeon.getMonsters().monsters) {
         	if (!mon.isDeadOrEscaped()) {
-        		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new TPH_ConfusionPower(m)));
+        		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mon, p, new TPH_ConfusionPower(mon)));
         	}
         }
     }

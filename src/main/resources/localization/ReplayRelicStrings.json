@@ -161,7 +161,7 @@
 	"NAME": "Transient Totem",
 	"FLAVOR": "This wooden totem can only be percived by those who have passed through The Fading Forest.",
     "DESCRIPTIONS": [
-	"Gain [E] at the start of each round. NL Mimics the #rnegative effect of a random #yBoss #yRelic each combat. NL ",
+	"Gain [E] at the start of your turn. NL Mimics the #rnegative effect of a random #yBoss #yRelic each combat. NL ",
 	"#yOut #yof #yCombat: You're not in combat right now, but when you are, the negative effect of this relic will display here.",
 	"#yCursed #yKey: #b",
 	" random #rCurses have been shuffled into your deck (1 for each chest opened since you got this relic).",
@@ -472,6 +472,16 @@
 		"Pick your poison"
 	]
   },
+  "ReplayTheSpireMod:ShopPack": {
+	"NAME": "Shop Pack",
+	"FLAVOR": "A cheap 3-card booster pack. Probably rigged by the merchant.",
+    "DESCRIPTIONS": [
+		"Choose #b",
+		" #yColorless cards to obtain. NL Guaranteed to get at least 1 #yRare card!",
+		" NL Chance to get a super-rare #yShop-Specialty #yCard!",
+		"Let's see what's inside..."
+	]
+  },
   "Another Sword": {
     "NAME": "Another Sword",
 	"FLAVOR": "A second sword. You have two now.",
@@ -494,7 +504,15 @@
     "NAME": "Blightstone",
 	"FLAVOR": "Ew",
     "DESCRIPTIONS": [
-		"Gain [E] at the start of each round. NL On pick up, choose a #rBlight to obtain."
+		"Gain [E] at the start of each turn. NL On pick up, choose a #rBlight to obtain."
+	]
+  },
+  "ReplayTheSpireMod:Blightapple": {
+    "NAME": "Blighted Apple",
+	"FLAVOR": "Ew",
+    "DESCRIPTIONS": [
+		"Gain [E] at the start of each turn. NL On pick up, lose #b",
+		" Max HP."
 	]
   },
   "BargainBundle": {
@@ -655,7 +673,7 @@
     "NAME": "Sigil of the Unseen Hand",
 	"FLAVOR": "...",
     "DESCRIPTIONS": [
-		"Gain [E] at the start of turn. NL During combat, some of your cards will be obscured."
+		"Gain [E] at the start of your turn. NL During combat, some of your cards will be obscured."
 	]
   },
   "Replay:Towering Pillar of Hats": {
@@ -703,6 +721,13 @@
 		" gold below #b",
 		" you have, enemies start with a random buff. NL Gain #b",
 		" gold on pick up."
+	]
+  },
+  "Replay:Byrd Feeder": {
+    "NAME": "Byrd Feeder",
+	"FLAVOR": "Feeling... peckish?",
+    "DESCRIPTIONS": [
+		"In combat, healing beyond your Max HP grants #yTemporary HP."
 	]
   },
   "Ring of Fury": {
@@ -881,28 +906,28 @@
 		"NAME": "Scarlet Blood",
 		"FLAVOR": ".",
 		"DESCRIPTIONS": [
-			"Each time you gain #yStrength, gain twice that many #yKnives. NL Certain #rRed cards can now be obtained.",
+			"Each time you gain #yStrength, gain twice that many #yKnives. NL Certain #rRed cards can now be obtained."
 		]
 	},
 	"m_SnakeCloak": {
 		"NAME": "Cloak of the Snake",
 		"FLAVOR": ".",
 		"DESCRIPTIONS": [
-			"Draw #b2 additional cards on the first turn of combat. NL Certain #gGreen cards can now be obtained.",
+			"Draw #b2 additional cards on the first turn of combat. NL Certain #gGreen cards can now be obtained."
 		]
 	},
 	"m_BookOfShivs": {
 		"NAME": "Book of the Snake",
 		"FLAVOR": ".",
 		"DESCRIPTIONS": [
-			"Shuffle #b2 random #yCantrips into your draw pile at the start of combat. NL Certain #gGreen cards can now be obtained.",
+			"Shuffle #b2 random #yCantrips into your draw pile at the start of combat. NL Certain #gGreen cards can now be obtained."
 		]
 	},
 	"m_MercuryCore": {
 		"NAME": "Mercury Core",
 		"FLAVOR": ".",
 		"DESCRIPTIONS": [
-			"At the start of combat, #yReplicate 1 Mercury. NL Certain #bBlue cards can now be obtained.",
+			"At the start of combat, #yReplicate 1 Mercury. NL Certain #bBlue cards can now be obtained."
 		]
 	},
 	"m_ByrdBlood": {
@@ -938,6 +963,13 @@
 		"FLAVOR": ".",
 		"DESCRIPTIONS": [
 			"Draw #b2 additional cards on the first turn of combat. NL Each time you play a #ySkill or #y0-Cost card, gain #b1 #yCharge-Up. NL Certain #yGreen cards can now be obtained."
+		]
+	},
+	"m_IronSupplements": {
+		"NAME": "Iron Supplements",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the end of combat, heal #b6 HP. NL Certain #yRed cards can now be obtained."
 		]
 	},
 	"replay:Trail_Library": {

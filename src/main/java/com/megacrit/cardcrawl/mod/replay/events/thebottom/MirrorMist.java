@@ -3,11 +3,13 @@ package com.megacrit.cardcrawl.mod.replay.events.thebottom;
 import com.megacrit.cardcrawl.audio.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.blue.AutoShields;
 import com.megacrit.cardcrawl.cards.blue.BeamCell;
 import com.megacrit.cardcrawl.cards.blue.Dualcast;
 import com.megacrit.cardcrawl.cards.blue.Leap;
 import com.megacrit.cardcrawl.cards.blue.Reboot;
 import com.megacrit.cardcrawl.cards.blue.Rebound;
+import com.megacrit.cardcrawl.cards.blue.Recycle;
 import com.megacrit.cardcrawl.cards.blue.Reprogram;
 import com.megacrit.cardcrawl.cards.blue.Scrape;
 import com.megacrit.cardcrawl.cards.blue.SelfRepair;
@@ -24,6 +26,7 @@ import com.megacrit.cardcrawl.cards.green.Survivor;
 import com.megacrit.cardcrawl.cards.green.WellLaidPlans;
 import com.megacrit.cardcrawl.cards.red.Armaments;
 import com.megacrit.cardcrawl.cards.red.Bash;
+import com.megacrit.cardcrawl.cards.red.Brutality;
 import com.megacrit.cardcrawl.cards.red.DemonForm;
 import com.megacrit.cardcrawl.cards.red.Hemokinesis;
 import com.megacrit.cardcrawl.cards.red.Inflame;
@@ -67,6 +70,7 @@ import constructmod.characters.TheConstruct;
 import constructmod.relics.ClockworkPhoenix;
 import constructmod.relics.Cogwheel;
 import fruitymod.seeker.characters.*;
+import gluttonmod.characters.GluttonCharacter;
 import mysticmod.character.*;
 
 import com.megacrit.cardcrawl.helpers.*;
@@ -126,6 +130,8 @@ public class MirrorMist
   
   private int goldgain;
   private int searchcursechance;
+  private int searchcursechance2;
+  private int searchrelicchance2;
   private AbstractCard searchCurse;
   private AbstractCard searchCurse2;
   
@@ -216,6 +222,8 @@ public class MirrorMist
     
 	this.goldgain = 80;
 	this.searchcursechance = 50;
+	this.searchcursechance2 = 75;
+	this.searchrelicchance2 = 75;
 	this.searchCurse = new Delirium();
 	this.searchCurse2 = new Amnesia();
 	
@@ -521,6 +529,27 @@ public class MirrorMist
 				this.thirdOption = true;
 				break;
 			}
+			if (ReplayTheSpireMod.foundmod_glutton && AbstractDungeon.player instanceof GluttonCharacter) {
+				this.has_1 = AbstractDungeon.player.hasRelic("Glutton:EternalHunger");
+				this.has_1b = this.has_1;
+				this.loss_r_1 = RelicLibrary.getRelic("Glutton:EternalHunger").makeCopy();
+				this.gain_r_1 = new M_IronSupplements();
+				this.gain_c_1b = new Brutality();
+				this.has_2 = CardHelper.hasCardWithID("Glutton:Strike");
+				this.has_2b = CardHelper.hasCardWithID("Glutton:Flail");
+				this.loss_c_2 = CardLibrary.getCopy("Glutton:Strike");
+				this.loss_c_2b = CardLibrary.getCopy("Glutton:Flail");
+				this.gain_c_2 = new Survivor();
+				this.gain_c_2b = new Neutralize();
+				this.has_3 = CardHelper.hasCardWithID("Glutton:Defend");
+				this.has_3b = CardHelper.hasCardWithID("Glutton:Flail");
+				this.loss_c_3 = CardLibrary.getCopy("Glutton:Defend");
+				this.loss_c_3b = CardLibrary.getCopy("Glutton:Flail");
+				this.gain_c_3 = new AutoShields();
+				this.gain_c_3b = new Recycle();
+				this.thirdOption = true;
+				break;
+			}
 			
 			this.moddedguy = true;
 		}
@@ -530,6 +559,10 @@ public class MirrorMist
 		this.imageEventText.setDialogOption(OPTIONS[10] + this.goldgain + OPTIONS[11] + this.searchcursechance + OPTIONS[12] + this.searchCurse.name + ".", this.searchCurse);
 		this.imageEventText.setDialogOption(OPTIONS[13] + this.searchCurse2.name + ".", this.searchCurse2);
 		this.thirdOption = false;
+		if (!(AbstractDungeon.player.hasRelic("hubris:DisguiseKit") && AbstractDungeon.player.hasRelic("PrismaticShard"))) {
+			this.imageEventText.setDialogOption(OPTIONS[14] + this.searchrelicchance2 + OPTIONS[15] + this.searchcursechance2 + OPTIONS[12] + "(Random)" + ".", this.searchCurse);
+			this.thirdOption = true;
+		}
 	} else {
 		this.checkForUpgrades();
 		String string_1 = "";
@@ -822,6 +855,23 @@ public class MirrorMist
       case 2: 
 		if (this.thirdOption) {
 			this.imageEventText.updateBodyText(RESULT_DIALOG_A);
+			if (this.moddedguy) {
+				if (AbstractDungeon.miscRng.randomBoolean(((float)this.searchcursechance2) / 100.0F)) {
+					AbstractCard curse = AbstractDungeon.returnRandomCurse().makeCopy();
+					AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(curse, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+					UnlockTracker.markCardAsSeen(curse.cardID);
+				}
+				if (AbstractDungeon.miscRng.randomBoolean(((float)this.searchrelicchance2) / 100.0F)) {
+					if (ReplayTheSpireMod.foundmod_hubris && !AbstractDungeon.player.hasRelic("hubris:DisguiseKit") && (AbstractDungeon.player.hasRelic("PrismaticShard") || AbstractDungeon.miscRng.randomBoolean(0.70f))) {
+						AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, RelicLibrary.getRelic("hubris:DisguiseKit"));
+						AbstractDungeon.uncommonRelicPool.remove("hubris:DisguiseKit");
+					} else {
+						AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, RelicLibrary.getRelic("PrismaticShard"));
+						AbstractDungeon.shopRelicPool.remove("PrismaticShard");
+					}
+				}
+				break;
+			}
 			if (this.has_3) {
 				if (this.loss_c_3 != null) {
 					AbstractDungeon.effectList.add(new PurgeCardEffect(this.loss_c_3.makeCopy()));

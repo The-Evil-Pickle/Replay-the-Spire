@@ -22,7 +22,7 @@ public class M_SeaBlood extends AbstractRelic
     public static final String ID = "m_SeaBlood";
     
     public M_SeaBlood() {
-        super(ID, "blackBlood.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, "burningBlood_blue.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
     
     @Override

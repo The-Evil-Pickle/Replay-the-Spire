@@ -62,7 +62,7 @@ public class FF_Lagavulin extends AbstractMonster
     private int debuffTurnCount;
     
     public FF_Lagavulin(final boolean setAsleep) {
-        super(FF_Lagavulin.NAME, "FF_Lagavulin", 90, 0.0f, -25.0f, 320.0f, 220.0f, null, -50.0f, 20.0f);
+        super(FF_Lagavulin.NAME, "FF_Lagavulin", 90, 0.0f, -25.0f, 320.0f, 220.0f, null, -150.0f, 20.0f);
         this.isOut = false;
         this.isOutTriggered = false;
         this.idleCount = 1;

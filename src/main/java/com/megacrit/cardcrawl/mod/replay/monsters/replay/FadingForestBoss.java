@@ -766,7 +766,7 @@ public class FadingForestBoss extends CustomMonster
 						switch(p0) {
 							case 0:
 								this.imageEventText.updateBodyText(this.eDesc(1));
-								m = new FF_ComboSlime_L(-250, 0);
+								m = new FF_ComboSlime_L(-400, 0);
 								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 								break;
 							case 1:

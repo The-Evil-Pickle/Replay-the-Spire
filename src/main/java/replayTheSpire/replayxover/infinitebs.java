@@ -18,6 +18,7 @@ public class infinitebs {
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.DarkTransmutation());
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.ChaosVortex());
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.SuperSneckoCrazyCard());
+		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.FractalStrike());
 		BaseMod.addCard(new DarkDeal());
 		UnlockTracker.unlockCard(DarkDeal.ID);
 	}

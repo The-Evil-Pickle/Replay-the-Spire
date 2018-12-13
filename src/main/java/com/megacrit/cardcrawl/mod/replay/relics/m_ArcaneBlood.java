@@ -33,7 +33,7 @@ public class m_ArcaneBlood extends AbstractRelic
     private static final int HEALTH_AMT = 3;
     
     public m_ArcaneBlood() {
-        super(ID, "sizzlingBlood.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, "burningBlood_purple.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
     
     @Override

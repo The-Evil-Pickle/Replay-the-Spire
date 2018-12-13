@@ -30,6 +30,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.curses.*;
 import com.megacrit.cardcrawl.mod.replay.cards.green.*;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.DualPolarity;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.ResoundingBlow;
 import com.megacrit.cardcrawl.mod.replay.events.shrines.*;
 import com.megacrit.cardcrawl.mod.replay.events.thebottom.*;
 import com.megacrit.cardcrawl.mod.replay.events.thecity.GremboTheGreat;
@@ -521,6 +522,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static boolean foundmod_blackbeard = false;
     public static boolean foundmod_conspire = false;
     public static boolean foundmod_marisa = false;
+    public static boolean foundmod_glutton = false;
     
 	public static void initialize() {
     	logger.info("========================= ReplayTheSpireMod INIT =========================");
@@ -542,7 +544,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.multitaskButton = ImageMaster.loadImage("images/ui/campfire/replay/multitask.png");
 		ReplayTheSpireMod.exploreButton = ImageMaster.loadImage("images/ui/campfire/replay/explore.png");
 		
-		//Loader.isModLoaded("beakedthecultist-sts")
 		foundmod_science = checkForMod("madsciencemod.MadScienceMod");
 	    foundmod_seeker = checkForMod("fruitymod.FruityMod");
 	    foundmod_servant = checkForMod("blackrusemod.BlackRuseMod");
@@ -552,13 +553,14 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	    foundmod_hubris = checkForMod("com.evacipated.cardcrawl.mod.hubris.HubrisMod");
 	    foundmod_stslib = checkForMod("com.evacipated.cardcrawl.mod.stslib.StSLib");
 	    foundmod_mystic = checkForMod("mysticmod.MysticMod");
-	    foundmod_beaked = checkForMod("beaked.Beaked");
+	    foundmod_beaked = Loader.isModLoaded("beakedthecultist-sts");
 	    foundmod_deciple = checkForMod("chronomuncher.ChronoMod");
 	    foundmod_construct = Loader.isModLoaded("constructmod");
 	    foundmod_gatherer = Loader.isModLoaded("gatherermod");
 	    foundmod_blackbeard = Loader.isModLoaded("sts-mod-the-blackbeard");
 	    foundmod_conspire = Loader.isModLoaded("conspire");
 	    foundmod_marisa = Loader.isModLoaded("TS05_Marisa");
+	    foundmod_glutton = Loader.isModLoaded("GluttonMod");
 		
 		logger.info("================================================================");
     }
@@ -994,7 +996,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new Funnel(), RelicType.SHARED);
 		BaseMod.addRelic(new Garlic(), RelicType.SHARED);
 		BaseMod.addRelic(new GoldenEgg(), RelicType.SHARED);
-		
 		BaseMod.addRelic(new GrabBag(), RelicType.SHARED);
 		BaseMod.addRelic(new GremlinFood(), RelicType.SHARED);
 		BaseMod.addRelic(new GrinningJar(), RelicType.SHARED);
@@ -1019,6 +1020,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new RingOfChaos(), RelicType.SHARED);
 		BaseMod.addRelic(new SecondSwordRelic(), RelicType.RED);
 		BaseMod.addRelic(new Shallot(), RelicType.SHARED);
+		BaseMod.addRelic(new ShopPack(), RelicType.SHARED);
+		//BaseMod.addRelic(new Sigil(), RelicType.SHARED);
 		BaseMod.addRelic(new SimpleRune(), RelicType.SHARED);
 		BaseMod.addRelic(new SizzlingBlood(), RelicType.SHARED);
 		BaseMod.addRelic(new SnackPack(), RelicType.SHARED);
@@ -1057,7 +1060,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         logger.info("done editting relics");
 	}
 	
-	void AddAndUnlockCard(AbstractCard c)
+	public static void AddAndUnlockCard(AbstractCard c)
 	{
 		BaseMod.addCard(c);
 		UnlockTracker.unlockCard(c.cardID);
@@ -1087,6 +1090,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new ReplayReversal());
 		AddAndUnlockCard(new ReplayStacked());
 		AddAndUnlockCard(new MuscleTraining());
+		AddAndUnlockCard(new CorrosionCurse());
 		logger.info("adding cards for Silent...");
 		AddAndUnlockCard(new AtomBomb());
 		AddAndUnlockCard(new DrainingMist());
@@ -1183,6 +1187,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			logger.info("adding marisa cards...");
 			marisabs.addCards();
 		}
+		if (foundmod_glutton) {
+			logger.info("adding glutton cards...");
+			AddAndUnlockCard(new ResoundingBlow());
+		}
 		logger.info("done editting cards");
 	}
 	
@@ -1241,7 +1249,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     	try {
     		initializeMarisaMod(LoadType.RELIC);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
-			logger.info("Replay | Beaked mod not detected");
+			logger.info("Replay | Marisa mod not detected");
+		}
+    	try {
+    		initializeGluttonMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Glutton mod not detected");
 		}
     }
 
@@ -1375,6 +1388,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			logger.info("ReplayTheSpireMod | Initializing Relics for Beaked...");
 			BaseMod.addRelicToCustomPool(new M_ByrdBlood(), beaked.patches.AbstractCardEnum.BEAKED_YELLOW);
 			BaseMod.addRelicToCustomPool(new WingHat(), beaked.patches.AbstractCardEnum.BEAKED_YELLOW);
+			BaseMod.addRelicToCustomPool(new ByrdFeeder(), beaked.patches.AbstractCardEnum.BEAKED_YELLOW);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Beaked...");
@@ -1392,6 +1406,20 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Marisa...");
+		}
+	}
+	private static void initializeGluttonMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
+		Class<gluttonmod.patches.AbstractCardEnum> servMod = gluttonmod.patches.AbstractCardEnum.class;
+		logger.info("ReplayTheSpireMod | Detected Glutton Mod!");
+		foundmod_marisa = true;
+
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Glutton...");
+			BaseMod.addRelicToCustomPool(new M_IronSupplements(), gluttonmod.patches.AbstractCardEnum.GLUTTON);
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for Glutton...");
+			AddAndUnlockCard(new ResoundingBlow());
 		}
 	}
 

@@ -138,6 +138,10 @@
     "NAME": "Phantom Shield",
     "DESCRIPTION": "Gain !B! Block. NL Exhaustive !stslib:ex!."
   },
+  "ReplayTheSpireMod:Corrosion Curse": {
+    "NAME": "Corrosion Curse",
+    "DESCRIPTION": "Apply !replay:M-1! Languid and !M! Decrepit. NL Exhaustive !stslib:ex!."
+  },
   "Eclipse": {
     "NAME": "Eclipse",
     "DESCRIPTION": "Exhaust your hand, and replace it with random cards that costs 1 less than normal. NL Exhaust.",
@@ -319,6 +323,35 @@
     "NAME": "Dark Deal",
     "DESCRIPTION": "Unplayable. NL Ethereal. NL Startup: add a random Black card to your draw pile.",
 	"UPGRADE_DESCRIPTION": "Unplayable. NL Ethereal. NL Grave. NL Startup: add a random Upgraded Black card to your draw pile."
+  },
+  "Replay:Resounding Blow": {
+    "NAME": "Resounding Blow",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL When drawn, add an Echo of this card to your hand."
+  },
+  "Replay:Duplecho": {
+    "NAME": "Duplecho",
+    "DESCRIPTION": "Create X Echoes of a card in your hand.",
+	"UPGRADE_DESCRIPTION": "Create X Echoes of a card in your hand. NL Refund !stslib!."
+  },
+  "Replay:SS_Removal": {
+    "NAME": "Shop Special: Card Removal Service",
+    "DESCRIPTION": "Permanently remove a card from your deck. NL Fleeting.",
+	"UPGRADE_DESCRIPTION": "Permanently remove a card from your deck. NL Fleeting. NL You may choose to spend !M! gold to negate Fleeting."
+  },
+  "Replay:SS_Rewards": {
+    "NAME": "Shop Special: Rewards Program",
+    "DESCRIPTION": "Gain !M! gold for each card in your draw pile. NL Purge.",
+	"UPGRADE_DESCRIPTION": "Innate. NL Gain !M! gold for each card in your draw pile. NL Purge."
+  },
+  "Replay:SS_Contract": {
+    "NAME": "Shop Special: Contract",
+    "DESCRIPTION": "When you deal unblocked damage this turn, gain that much Max HP. NL Fleeting.",
+	"UPGRADE_DESCRIPTION": "When you deal unblocked damage this turn, gain that much Max HP. NL Permanently Downgrade this card. NL Exhaust."
+  },
+  "Replay:SS_Spare Waffle": {
+    "NAME": "Shop Special: Spare Waffle",
+    "DESCRIPTION": "Heal to full HP. NL Retain. NL Fleeting.",
+	"UPGRADE_DESCRIPTION": "Heal to full HP. NL Gain !M! Max HP. NL Retain. NL Fleeting."
   },
   "Crow Ritual": {
     "NAME": "Awakened One Ritual",
@@ -504,6 +537,10 @@
 	"NAME": "Dark Transmutation",
 	"DESCRIPTION": "Add X random Black cards to your hand. NL They cost 1 less this round. NL Purge.",
 	"UPGRADE_DESCRIPTION": "Add X random Black cards to your hand. NL They cost 1 less this round. NL Refund !stslib:refund!. NL Purge."
+  },
+  "Replay:Fractal Strike": {
+    "NAME": "Fractal Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL Add a new Fractal Strike to your discard pile. NL **Exhaustive** !stslib:ex!."
   },
   "ReplayTheSpireMod:Rythmic Step": {
 	"NAME": "Rythmic Step",

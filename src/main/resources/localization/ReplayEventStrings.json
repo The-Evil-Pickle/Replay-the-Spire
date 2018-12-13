@@ -45,7 +45,9 @@
 		"[Search] #gObtain ",
 		" #gGold. #r",
 		"%: #rBecome #rCursed #r- #r",
-		"[Meditate] #gFully #gheal. #rBecome #rCursed #r- #r"
+		"[Meditate] #gFully #gheal. #rBecome #rCursed #r- #r",
+		"[Gaze] #g",
+		"%: #gObtain #ga #gRelic. #r"
 	]
   },
   "Trapped Chest": {
