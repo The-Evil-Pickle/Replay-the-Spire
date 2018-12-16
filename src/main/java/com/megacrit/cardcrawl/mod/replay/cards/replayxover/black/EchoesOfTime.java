@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.core.*;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 
 public class EchoesOfTime extends BlackCard
@@ -36,12 +37,14 @@ public class EchoesOfTime extends BlackCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(5);
+            this.upgradeMagicNumber(2);
+            this.upgradeBaseCost(0);
         }
     }
     
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new MultiExhumeAction(this.magicNumber));
+    	AbstractDungeon.actionManager.addToBottom(new FetchAction(p.exhaustPile, this.magicNumber));
+        //AbstractDungeon.actionManager.addToBottom(new MultiExhumeAction(this.magicNumber));
     }
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

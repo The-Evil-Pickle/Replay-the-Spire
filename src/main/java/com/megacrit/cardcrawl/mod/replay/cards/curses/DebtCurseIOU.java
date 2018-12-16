@@ -18,11 +18,12 @@ public class DebtCurseIOU extends CustomCard
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = -2;
+	public static final int GOLD_COST = 100;
 	
 	public DebtCurseIOU()
 	{
 			super(ID, NAME, "cards/replay/betaCurse.png", COST, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE);
-			this.baseMagicNumber = 100;
+			this.baseMagicNumber = GOLD_COST;
 			this.magicNumber = this.baseMagicNumber;
 			SoulboundField.soulbound.set(this, true);
 			FleetingField.fleeting.set(this, true);

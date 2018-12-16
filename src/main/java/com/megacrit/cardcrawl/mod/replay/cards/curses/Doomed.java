@@ -31,7 +31,7 @@ public class Doomed extends CustomCard
 	{
 			super(ID, NAME, "cards/replay/betaCurse.png", COST, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.SELF);
 			this.isEthereal = true;
-			SoulboundField.soulbound.set(this, true);
+			//SoulboundField.soulbound.set(this, true);
 			FleetingField.fleeting.set(this, true);
 			GraveField.grave.set(this, true);
 	}

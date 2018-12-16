@@ -31,6 +31,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.green.*;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.DualPolarity;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.ResoundingBlow;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.curses.WhispersOfEvil;
 import com.megacrit.cardcrawl.mod.replay.events.shrines.*;
 import com.megacrit.cardcrawl.mod.replay.events.thebottom.*;
 import com.megacrit.cardcrawl.mod.replay.events.thecity.GremboTheGreat;
@@ -86,6 +87,7 @@ import com.megacrit.cardcrawl.relics.Dodecahedron;
 import com.megacrit.cardcrawl.relics.Ectoplasm;
 import com.megacrit.cardcrawl.relics.SneckoEye;
 import com.megacrit.cardcrawl.relics.Sozu;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 
@@ -769,6 +771,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public ModToggleButton chaos_button_2;
 	public ModToggleButton chaos_button_3;
 	public ModToggleButton chaos_button_4;
+	private boolean foundmod_infiniteSpire;
 	public static final ReplayIntSliderSetting SETTING_TAG_NORMAL_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Normal", "Normal Sale Tag Chance", 3, 1, 5);
 	public static final ReplayIntSliderSetting SETTING_TAG_SPECIAL_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Special", "Special Edition Tag Chance", 1, 0, 5);
 	public static final ReplayIntSliderSetting SETTING_TAG_DOUBLE_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Double", "2 For 1 Tag Chance", 1, 0, 5);
@@ -1018,6 +1021,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new QuantumEgg(), RelicType.SHARED);
 		BaseMod.addRelic(new RingingSoul(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfChaos(), RelicType.SHARED);
+		BaseMod.addRelic(new RubberDucky(), RelicType.SHARED);
 		BaseMod.addRelic(new SecondSwordRelic(), RelicType.RED);
 		BaseMod.addRelic(new Shallot(), RelicType.SHARED);
 		BaseMod.addRelic(new ShopPack(), RelicType.SHARED);
@@ -1037,6 +1041,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new VampiricSpirits(), RelicType.GREEN);
 		BaseMod.addRelic(new WantedPoster(), RelicType.SHARED);
 		BaseMod.addRelic(new WaspNest(), RelicType.SHARED);
+		BaseMod.addRelic(new WaxSeal(), RelicType.SHARED);
         
 		ChaosEvent.addRing(new RingOfFury());
 		ChaosEvent.addRing(new RingOfPeace());
@@ -1153,6 +1158,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Overencumbered());
 		AddAndUnlockCard(new RestlessDread());
 		AddAndUnlockCard(new Splinters());
+		AddAndUnlockCard(new Doomed());
+		AddAndUnlockCard(new DebtCurseIOU());
 		logger.info("adding unobtainable cards...");
 		AddAndUnlockCard(new PotOfGreed());
 		AddAndUnlockCard(new GhostDefend());
@@ -1190,6 +1197,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		if (foundmod_glutton) {
 			logger.info("adding glutton cards...");
 			AddAndUnlockCard(new ResoundingBlow());
+			AddAndUnlockCard(new WhispersOfEvil());
 		}
 		logger.info("done editting cards");
 	}
@@ -1411,7 +1419,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	private static void initializeGluttonMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
 		Class<gluttonmod.patches.AbstractCardEnum> servMod = gluttonmod.patches.AbstractCardEnum.class;
 		logger.info("ReplayTheSpireMod | Detected Glutton Mod!");
-		foundmod_marisa = true;
+		foundmod_glutton = true;
 
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for Glutton...");
@@ -1624,6 +1632,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				default:
 					return;
 			}
+		}
+		if (foundmod_infiniteSpire && AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom() != null && !(AbstractDungeon.getCurrRoom() instanceof MonsterRoom)) {
+			infinitebs.TriggerPotionQuest();
 		}
 	}
 	

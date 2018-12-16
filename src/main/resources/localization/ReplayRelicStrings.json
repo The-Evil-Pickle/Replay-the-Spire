@@ -681,7 +681,7 @@
 	"FLAVOR": "\"Tarnish notte the majesty of my TOWER of HATS!\"",
     "DESCRIPTIONS": [
 		"Max hand size increased by #b",
-		". NL At the end of your turn, #yRetain the right-most cards in your hand. #yRetains #b1 card for every #",
+		". NL At the end of your turn, #yRetain the right-most cards in your hand. #yRetains #b1 card for every #b",
 		" in your hand.",
 		" NL #ySynergy - ",
 		"#ySlimy #yHat NL NL Max hand size increased by additional #b1.",
@@ -728,6 +728,25 @@
 	"FLAVOR": "Feeling... peckish?",
     "DESCRIPTIONS": [
 		"In combat, healing beyond your Max HP grants #yTemporary HP."
+	]
+  },
+  "Replay:Rubber Ducky": {
+    "NAME": "Rubber Ducky",
+	"FLAVOR": "When you squeeze it, it makes noise.",
+    "DESCRIPTIONS": [
+		"Each time you play a #yPower, gain #yBlock equal to #b",
+		" times its [E] cost."
+	]
+  },
+  "Replay:Wax Seal": {
+    "NAME": "Wax Seal",
+	"FLAVOR": "The kind used to close envelopes, not the sea creature.",
+    "DESCRIPTIONS": [
+		"[#2aecd7]Right [#2aecd7]click [#2aecd7]at [#2aecd7]a [#2aecd7]shop [#2aecd7]to [#2aecd7]activate:[]",
+		" NL Borrow #b",
+		" gold. Add a #rCurse to your deck until you pay it back.",
+		"#yRelics in shops cost #b",
+		"% less. NL "
 	]
   },
   "Ring of Fury": {

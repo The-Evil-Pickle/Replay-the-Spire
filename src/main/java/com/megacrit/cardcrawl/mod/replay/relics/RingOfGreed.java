@@ -192,6 +192,7 @@ public class RingOfGreed extends AbstractRelic
 		greedlist.add(TagBag.ID);
 		greedlist.add(Bandana.ID);
 		greedlist.add(GoldenEgg.ID);
+		greedlist.add(WaxSeal.ID);
 		if (Loader.isModLoaded("sts-mod-the-blackbeard")) {
 			greedlist.add("blackbeard:TreasureChest");
 		}

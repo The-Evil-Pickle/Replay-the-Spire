@@ -10,19 +10,15 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import basemod.BaseMod;
 import constructmod.ConstructMod;
 import constructmod.cards.AbstractConstructCard;
+import replayTheSpire.ReplayTheSpireMod;
 
 public class constructbs {
-	static void AddAndUnlockCard(AbstractCard c)
-	{
-		BaseMod.addCard(c);
-		UnlockTracker.unlockCard(c.cardID);
-	}
 	public static void addCards() {
 		if (ConstructMod.overheatedExpansion) {
-			AddAndUnlockCard(new MeltdownSequence());
-			AddAndUnlockCard(new MirrorSystem());
+			ReplayTheSpireMod.AddAndUnlockCard(new MeltdownSequence());
+			ReplayTheSpireMod.AddAndUnlockCard(new MirrorSystem());
 		}
-		AddAndUnlockCard(new ArmamentsMkII());
+		ReplayTheSpireMod.AddAndUnlockCard(new ArmamentsMkII());
 	}
 	public static int chaos_overheat(AbstractCard c) {
 		if (!(c instanceof AbstractConstructCard)) {

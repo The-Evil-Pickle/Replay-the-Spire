@@ -423,7 +423,7 @@
   },
   "ReplayTheSpireMod:Doomed": {
 	"NAME": "Doomed",
-	"DESCRIPTION": "Die. NL Fleeting. NL Ethereal. NL Grave. NL Soulbound."
+	"DESCRIPTION": "Die. NL Fleeting. NL Ethereal. NL Grave."
   },
   "ReplayTheSpireMod:Faulty Equipment": {
 	"NAME": "Faulty Equipment",
@@ -440,7 +440,7 @@
   },
   "ReplayTheSpireMod:IOU": {
 	"NAME": "I.O.U.",
-	"DESCRIPTION": "Costs !M! gold to play. NL Soulbound. NL Fleeting."
+	"DESCRIPTION": "Costs !M! gold to play. NL Fleeting. NL Soulbound."
   },
   "ReplayTheSpireMod:Whispers of Evil": {
 	"NAME": "Whispers of Evil",
@@ -496,7 +496,7 @@
   },
   "ReplayTheSpireMod:Echoes of Time": {
 	"NAME": "Echoes of Time",
-	"DESCRIPTION": "Fetch up to !M! cards you've Exhausted this combat. NL Grave. NL Purge."
+	"DESCRIPTION": "Fetch !M! cards you've Exhausted this combat. NL Grave. NL Purge."
   },
   "ReplayTheSpireMod:??????????????????????": {
 	"NAME": "??????????????????",

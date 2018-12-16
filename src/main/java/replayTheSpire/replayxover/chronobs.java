@@ -8,16 +8,11 @@ import basemod.BaseMod;
 import replayTheSpire.ReplayTheSpireMod;
 
 public class chronobs {
-	static void AddAndUnlockCard(AbstractCard c)
-	{
-		BaseMod.addCard(c);
-		UnlockTracker.unlockCard(c.cardID);
-	}
 	public static void addCards() {
 		if (ReplayTheSpireMod.foundmod_stslib) {
-			AddAndUnlockCard(new SwitchThreat());
+			ReplayTheSpireMod.AddAndUnlockCard(new SwitchThreat());
 		}
-		AddAndUnlockCard(new SwitchConfidence());
+		ReplayTheSpireMod.AddAndUnlockCard(new SwitchConfidence());
 	}
 	public static void setCompendiumSwitchCards() {
 		final AbstractCard c = new SwitchThreat(ImminentThreat.ID);
