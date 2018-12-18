@@ -7,7 +7,7 @@ public class ByrdFeeder extends AbstractRelic
     public static final String ID = "Replay:Byrd Feeder";
     
     public ByrdFeeder() {
-        super(ID, "betaRelic.png", RelicTier.COMMON, LandingSound.SOLID);
+        super(ID, "betaRelic.png", RelicTier.RARE, LandingSound.SOLID);
     }
     
     @Override

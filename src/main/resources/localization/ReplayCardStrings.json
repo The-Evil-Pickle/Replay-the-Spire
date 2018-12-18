@@ -142,10 +142,15 @@
     "NAME": "Corrosion Curse",
     "DESCRIPTION": "Apply !replay:M-1! Languid and !M! Decrepit. NL Exhaustive !stslib:ex!."
   },
+  "ReplayTheSpireMod:dsdhgffg": {
+    "NAME": "gfjhtreg",
+    "DESCRIPTION": "Deal !D! damage and apply 1 Decrepit to a random enemy X times. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage and apply 1 Decrepit to a random enemy X + !M! times. NL Exhaustive !stslib:ex!."
+  },
   "Eclipse": {
     "NAME": "Eclipse",
-    "DESCRIPTION": "Exhaust your hand, and replace it with random cards that costs 1 less than normal. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Exhaust your hand, and replace it with random cards that costs 1 less than normal. NL Refund !stslib:refund!. NL Exhaust."
+    "DESCRIPTION": "Exhaust your hand, and replace it with random cards that cost 1 less than normal. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exhaust your hand, and replace it with random cards that cost 1 less than normal. NL Refund !stslib:refund!. NL Exhaust."
   },
   "ReplayTheSpireMod:Strike From Hell": {
     "NAME": "Strike From Hell",

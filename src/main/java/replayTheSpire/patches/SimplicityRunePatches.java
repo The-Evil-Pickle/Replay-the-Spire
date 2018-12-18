@@ -57,7 +57,7 @@ public class SimplicityRunePatches {
 		
 		@SpireInsertPatch(rloc=4)
 		public static void Insert(AbstractCard c) {
-			if (AbstractDungeon.player != null && c.rarity == AbstractCard.CardRarity.BASIC && AbstractDungeon.player.hasRelic("Simple Rune")) {
+			if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("Simple Rune")) {// && c.rarity == AbstractCard.CardRarity.BASIC
 				if(c.hasTag(BaseModCardTags.BASIC_STRIKE)) {//if (c.type == AbstractCard.CardType.ATTACK && c.cardID.toLowerCase().contains("strike")) {
 					c.name = c.makeCopy().name + "+" + c.timesUpgraded;
 					if (c.baseDamage > 0) {
@@ -75,7 +75,7 @@ public class SimplicityRunePatches {
 		}
 		
 		public static void PostFix(AbstractCard c) {
-			if (AbstractDungeon.player != null && c.rarity == AbstractCard.CardRarity.BASIC && AbstractDungeon.player.hasRelic("Simple Rune")) {
+			if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("Simple Rune")) {// && c.rarity == AbstractCard.CardRarity.BASIC
 				if (c.hasTag(BaseModCardTags.BASIC_STRIKE) || c.hasTag(BaseModCardTags.BASIC_DEFEND)) {
 					c.upgraded = false;
 				}

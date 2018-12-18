@@ -167,6 +167,17 @@
 	  " cards?"
     ]
   },
+  "Replay:Snechameleon": {
+    "MOVES": [
+      "Paralyzing Gaze",
+	  "Graspers",
+	  "Chompers"
+    ],
+    "NAME": "Snechameleon",
+    "DIALOG": [
+		""
+    ]
+  },
   "ReplayMimic": {
     "MOVES": [
       "Close Lid",

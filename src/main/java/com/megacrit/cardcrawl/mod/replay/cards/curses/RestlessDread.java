@@ -19,7 +19,7 @@ public class RestlessDread extends CustomCard
     private static final int COST = 0;
     
     public RestlessDread() {
-        super("hubris:Sloth", RestlessDread.NAME, "cards/replay/betaCurse.png", COST, RestlessDread.DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.SELF);
+        super(ID, RestlessDread.NAME, "cards/replay/betaCurse.png", COST, RestlessDread.DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.SELF);
         AutoplayField.autoplay.set(this, true);
         GraveField.grave.set(this, true);
         this.exhaust = true;

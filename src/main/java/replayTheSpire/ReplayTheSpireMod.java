@@ -42,6 +42,7 @@ import com.megacrit.cardcrawl.mod.replay.modifiers.MistsModifier;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.CaptainAbe;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.PondfishBoss;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.Snechameleon;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.J_louse_1;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.J_louse_2;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.J_louse_3;
@@ -52,6 +53,7 @@ import com.megacrit.cardcrawl.mod.replay.powers.TheWorksPower;
 import com.megacrit.cardcrawl.mod.replay.relics.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.unlock.*;
 
@@ -1208,7 +1210,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         BaseMod.addMonster("R_Hoarder", () -> new MonsterGroup(new AbstractMonster[] {new R_Hoarder(0, 10)}));
         BaseMod.addMonster("Erikyupuro", () -> new MonsterGroup(new AbstractMonster[] { new J_louse_1(-350.0f, 25.0f), new J_louse_2(-125.0f, 10.0f), new J_louse_3(80.0f, 30.0f) }));
         BaseMod.addMonster("Fading Forest", () -> new MonsterGroup(new AbstractMonster[] {new FadingForestBoss()}));
+        BaseMod.addMonster("Replay:Snechameleon", () -> new MonsterGroup(new AbstractMonster[] {new Snechameleon()}));
         BaseMod.addBoss("Exordium", "Fading Forest", "images/ui/map/boss/FableSpinner.png", "images/ui/map/bossOutline/FableSpinner.png");
+        BaseMod.addEliteEncounter("TheCity", new MonsterInfo("Replay:Snechameleon", 0.9f));
 	}
 
     private enum LoadType {
@@ -1633,9 +1637,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 					return;
 			}
 		}
-		if (foundmod_infiniteSpire && AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom() != null && !(AbstractDungeon.getCurrRoom() instanceof MonsterRoom)) {
-			infinitebs.TriggerPotionQuest();
-		}
+		
 	}
 	
 	public static final String DEFAULTSETTINGSUFFIX = "_IS_SET_TO_DEFAULT";

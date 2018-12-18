@@ -54,6 +54,6 @@ public class WaxSeal extends AbstractRelic implements ClickableRelic
     
     @Override
     public int getPrice() {
-        return 25;
+        return 80;
     }
 }
