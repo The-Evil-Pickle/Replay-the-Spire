@@ -83,6 +83,40 @@
     "DESCRIPTION": "Gain !B! Block. NL At the start of your next turn, Stun a random enemy. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL At the start of your next turn, Stun a random enemy and draw !M! card. NL Exhaust."
   },
+  "Replay:Decoy": {
+    "NAME": "Decoy",
+    "DESCRIPTION": "Unplayable. NL Random discard and Exhaust effects prioritize this. NL When Exhausted or discarded during your turn, gain !B! Block this turn and next.",
+    "UPGRADE_DESCRIPTION": "Random discard and Exhaust effects prioritize this. NL When played, Exhausted, or discarded during your turn, gain !B! Block this turn and next.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this card."
+    ]
+  },
+  "Replay:Bag of Tricks": {
+    "NAME": "Bag of Tricks",
+    "DESCRIPTION": "Choose X: NL Apply !replay:M+1! Poison, NL add !replay:M-1! shivs to your hand, NL gain !B! block, draw !replay:M-2! cards, NL or gain [E] [E] next turn.",
+    "UPGRADE_DESCRIPTION": "Choose X: NL Apply !replay:M+2! Poison, NL add !replay:M-1! shivs to your hand, NL gain !B! block, draw !replay:M-2! cards, NL or gain [E] [E] [E] next turn.",
+    "EXTENDED_DESCRIPTION": [
+      "Choose ",
+	  " tricks.",
+	  "Smoke Pellets",
+	  "Apply !replay:M+1! Poison",
+	  "Apply !replay:M+2! Poison",
+	  "Juggling Knives",
+	  "Add !replay:M-1! Shivs to your hand",
+	  "Vanishing Act",
+	  "Gain !B! Block",
+	  "Card Trick",
+	  "Draw !replay:M-2! cards",
+	  "Lightshow",
+	  "Gain [E] [E] next turn",
+	  "Gain [E] [E] [E] next turn"
+    ]
+  },
+  "Replay:Poison Smokescreen": {
+    "NAME": "Poison Smokescreen",
+    "DESCRIPTION": "Gain !B! Block. NL Apply that much Poison randomly split among all enemies.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Apply that much Poison to all enemies."
+  },
   "Abandon": {
     "NAME": "Abandon",
     "DESCRIPTION": "Exhaust up to !M! cards. NL Draw 1 card for each. NL Add a Void to your discard pile. NL Exhaustive !stslib:ex!. NL Ethereal.",
@@ -142,10 +176,14 @@
     "NAME": "Corrosion Curse",
     "DESCRIPTION": "Apply !replay:M-1! Languid and !M! Decrepit. NL Exhaustive !stslib:ex!."
   },
-  "ReplayTheSpireMod:dsdhgffg": {
-    "NAME": "gfjhtreg",
-    "DESCRIPTION": "Deal !D! damage and apply 1 Decrepit to a random enemy X times. NL Exhaustive !stslib:ex!.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage and apply 1 Decrepit to a random enemy X + !M! times. NL Exhaustive !stslib:ex!."
+  "Replay:Many Hands": {
+    "NAME": "Many Hands",
+    "DESCRIPTION": "Add X copies of Undeath's Touch to your hand. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Add X copies of Undeath's Touch to your hand. NL Refund !stslib:refund!. NL Exhaustive !stslib:ex!."
+  },
+  "Replay:Undeath's Touch": {
+    "NAME": "Undeath's Touch",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Apply 1 Decrepit. NL Exhaust."
   },
   "Eclipse": {
     "NAME": "Eclipse",
@@ -279,6 +317,11 @@
     "NAME": "Calculation Training",
     "DESCRIPTION": "Gain 1 Focus. NL Add !M! Dazed to your discard pile. NL Exhaustive !stslib:ex!.",
 	"UPGRADE_DESCRIPTION": "Gain 1 Focus. NL Exhaustive !stslib:ex!. NL Startup: add !M! Dazed to your discard pile."
+  },
+  "Replay:Refactor": {
+    "NAME": "Refactor",
+    "DESCRIPTION": "Choose: Lose !M! Strength, Dexterity, or Focus. NL Choose: Gain !M! Strength, Dexterity, or Focus. NL Exhaust.",
+	"UPGRADE_DESCRIPTION": "Choose: Lose !M! Strength, Dexterity, or Focus. NL Choose: Gain !M! Strength, Dexterity, or Focus. NL Exhaust."
   },
   "Improvise": {
     "NAME": "Improvise",

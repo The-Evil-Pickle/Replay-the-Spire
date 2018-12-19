@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.blue.AutoShields;
 import com.megacrit.cardcrawl.cards.blue.BeamCell;
+import com.megacrit.cardcrawl.cards.blue.Chaos;
 import com.megacrit.cardcrawl.cards.blue.Dualcast;
 import com.megacrit.cardcrawl.cards.blue.Leap;
 import com.megacrit.cardcrawl.cards.blue.Reboot;
@@ -76,6 +77,7 @@ import mysticmod.character.*;
 import com.megacrit.cardcrawl.helpers.*;
 
 import replayTheSpire.*;
+import slimebound.characters.SlimeboundCharacter;
 import the_gatherer.character.TheGatherer;
 
 import com.megacrit.cardcrawl.unlock.*;
@@ -547,6 +549,22 @@ public class MirrorMist
 				this.loss_c_3b = CardLibrary.getCopy("Glutton:Flail");
 				this.gain_c_3 = new AutoShields();
 				this.gain_c_3b = new Recycle();
+				this.thirdOption = true;
+				break;
+			}
+			if (ReplayTheSpireMod.foundmod_slimebound && AbstractDungeon.player instanceof SlimeboundCharacter) {
+				this.has_1 = AbstractDungeon.player.hasRelic("Slimebound:AbsorbEndCombat");
+				this.loss_r_1 = RelicLibrary.getRelic("Slimebound:AbsorbEndCombat").makeCopy();
+				this.gain_r_1 = new M_BurningSludge();
+				this.has_2 = AbstractDungeon.player.hasRelic("Slimebound:AbsorbEndCombat");
+				this.loss_r_2 = RelicLibrary.getRelic("Slimebound:AbsorbEndCombat").makeCopy();
+				this.gain_r_2 = new M_SlimeRing();
+				this.has_2b = CardHelper.hasCardWithID("Slimebound:CorrosiveSpit");
+				this.loss_c_2b = CardLibrary.getCopy("Slimebound:CorrosiveSpit");
+				this.gain_c_2b = new DeadlyPoison();
+				this.has_3 = CardHelper.hasCardWithID("Slimebound:Split");
+				this.loss_c_3 = CardLibrary.getCopy("Slimebound:Split");
+				this.gain_c_3 = new Chaos();
 				this.thirdOption = true;
 				break;
 			}

@@ -77,7 +77,7 @@ import replayTheSpire.replayxover.chronobs;
 import replayTheSpire.replayxover.constructbs;
 import replayTheSpire.replayxover.infinitebs;
 import replayTheSpire.replayxover.marisabs;
-import replayTheSpire.variables.MagicMinusOne;
+import replayTheSpire.variables.MagicArithmatic;
 
 import java.lang.reflect.*;
 import java.io.*;
@@ -527,6 +527,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static boolean foundmod_conspire = false;
     public static boolean foundmod_marisa = false;
     public static boolean foundmod_glutton = false;
+    public static boolean foundmod_slimebound = false;
     
 	public static void initialize() {
     	logger.info("========================= ReplayTheSpireMod INIT =========================");
@@ -565,6 +566,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	    foundmod_conspire = Loader.isModLoaded("conspire");
 	    foundmod_marisa = Loader.isModLoaded("TS05_Marisa");
 	    foundmod_glutton = Loader.isModLoaded("GluttonMod");
+	    foundmod_slimebound = Loader.isModLoaded("Slimebound");
 		
 		logger.info("================================================================");
     }
@@ -1075,7 +1077,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	
 	@Override
 	public void receiveEditCards() {
-		BaseMod.addDynamicVariable(new MagicMinusOne());
+		BaseMod.addDynamicVariable(new MagicArithmatic.MagicMinusOne());
+		BaseMod.addDynamicVariable(new MagicArithmatic.MagicPlusOne());
+		BaseMod.addDynamicVariable(new MagicArithmatic.MagicPlusTwo());
+		BaseMod.addDynamicVariable(new MagicArithmatic.MagicMinusTwo());
+		BaseMod.addDynamicVariable(new MagicArithmatic.MagicTimesTwo());
         try {
         	initializeInfiniteMod(LoadType.CARD);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
@@ -1098,6 +1104,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new ReplayStacked());
 		AddAndUnlockCard(new MuscleTraining());
 		AddAndUnlockCard(new CorrosionCurse());
+		AddAndUnlockCard(new UndeathsTouch());
+		AddAndUnlockCard(new ManyHands());
 		logger.info("adding cards for Silent...");
 		AddAndUnlockCard(new AtomBomb());
 		AddAndUnlockCard(new DrainingMist());
@@ -1114,6 +1122,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new ShivToss());
 		AddAndUnlockCard(new SpeedTraining());
 		AddAndUnlockCard(new TripWire());
+		//AddAndUnlockCard(new BagOfTricks());//coming soon yo
+		AddAndUnlockCard(new PoisonSmokescreen());
 		logger.info("adding cards for Defect...");
 		AddAndUnlockCard(new com.megacrit.cardcrawl.mod.replay.cards.blue.PanicButton());
 		AddAndUnlockCard(new MirrorShield());
@@ -1267,6 +1277,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     		initializeGluttonMod(LoadType.RELIC);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Glutton mod not detected");
+		}
+    	try {
+    		initializeSlimeboundMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Slimebound mod not detected");
 		}
     }
 
@@ -1432,6 +1447,20 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Glutton...");
 			AddAndUnlockCard(new ResoundingBlow());
+		}
+	}
+	private static void initializeSlimeboundMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
+		Class<slimebound.patches.AbstractCardEnum> servMod = slimebound.patches.AbstractCardEnum.class;
+		logger.info("ReplayTheSpireMod | Detected Slimeboi Mod!");
+		foundmod_slimebound = true;
+
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Slimebound...");
+			BaseMod.addRelicToCustomPool(new M_BurningSludge(), slimebound.patches.AbstractCardEnum.SLIMEBOUND);
+			BaseMod.addRelicToCustomPool(new M_SlimeRing(), slimebound.patches.AbstractCardEnum.SLIMEBOUND);
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for Slimebound...");
 		}
 	}
 

@@ -22,6 +22,10 @@ public class ChooseAction extends AbstractGameAction
     String message;
     
     public ChooseAction(final AbstractCard baseCard, final AbstractMonster target, final String message) {
+        this(baseCard, target, message, 1);
+    }
+
+    public ChooseAction(final AbstractCard baseCard, final AbstractMonster target, final String message, final int toChoose) {
         this.choices = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         this.actions = new ArrayList<Runnable>();
         this.setValues((AbstractCreature)AbstractDungeon.player, (AbstractCreature)AbstractDungeon.player, 1);
@@ -29,8 +33,8 @@ public class ChooseAction extends AbstractGameAction
         this.baseCard = baseCard;
         this.message = message;
         this.duration = Settings.ACTION_DUR_FASTER;
+        this.amount = toChoose;
     }
-    
     public void add(final String name, final String description, final Runnable action) {
         final AbstractCard choice = this.baseCard.makeStatEquivalentCopy();
         choice.name = name;
@@ -44,6 +48,7 @@ public class ChooseAction extends AbstractGameAction
         }
         this.choices.addToTop(choice);
         this.actions.add(action);
+        this.amount = 1;
     }
     
     public void update() {
@@ -54,20 +59,24 @@ public class ChooseAction extends AbstractGameAction
         }
         if (this.duration != Settings.ACTION_DUR_FASTER) {
             if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-                final AbstractCard pick = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
-                AbstractDungeon.gridSelectScreen.selectedCards.clear();
-                final int i = this.choices.group.indexOf(pick);
-                this.actions.get(i).run();
+            	for (int j = 0; j < AbstractDungeon.gridSelectScreen.selectedCards.size(); j++) {
+            		final AbstractCard pick = AbstractDungeon.gridSelectScreen.selectedCards.get(j);
+                    AbstractDungeon.gridSelectScreen.selectedCards.clear();
+                    final int i = this.choices.group.indexOf(pick);
+                    this.actions.get(i).run();
+            	}
             }
             this.tickDuration();
             return;
         }
-        if (this.choices.size() > 1) {
-            AbstractDungeon.gridSelectScreen.open(this.choices, 1, this.message, false, false, false, false);
+        if (this.choices.size() > this.amount) {
+            AbstractDungeon.gridSelectScreen.open(this.choices, this.amount, this.message, false, false, false, false);
             this.tickDuration();
             return;
         }
-        this.actions.get(0).run();
+        for (int i=0; i < this.amount && i < this.actions.size(); i++) {
+        	this.actions.get(0).run();
+        }
         this.tickDuration();
         this.isDone = true;
     }

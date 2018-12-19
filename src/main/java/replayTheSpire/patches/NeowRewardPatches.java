@@ -169,7 +169,7 @@ public class NeowRewardPatches {
 			} else if (category == 1 && SETTING_EVENT_OPTION.value) {
 				__result.add(new NeowRewardDef(RANDOM_EVENT, "[ #gEncounter #ga #grandom #gevent. ]"));
 			} else if (category == 3 &&
-					(SETTING_BOSS_OPTIONS_ENABLED.value == 2 || SETTING_BOSS_OPTIONS_ENABLED.value == 1 && (AbstractDungeon.player.hasRelic("construct:ClockworkPhoenix") || AbstractDungeon.player.hasRelic("beaked:MendingPlumage") || AbstractDungeon.player.hasRelic("MiniHakkero")))
+					(SETTING_BOSS_OPTIONS_ENABLED.value == 2 || SETTING_BOSS_OPTIONS_ENABLED.value == 1 && (AbstractDungeon.player.hasRelic("construct:ClockworkPhoenix") || AbstractDungeon.player.hasRelic("beaked:MendingPlumage") || AbstractDungeon.player.hasRelic("MiniHakkero") || AbstractDungeon.player.hasRelic("Slimebound:AbsorbEndCombat")))
 					) {
 				if (SETTING_BOSS_CURSES.value > 0) {
 					__result.add(new NeowRewardDef(CURSED_BOSS_RELIC, "[ #rObtain #r" + SETTING_BOSS_CURSES.value + (SETTING_SOULBOUND_CURSES.value ? " #rSoulbound" : "") + " #rCurses #gObtain #ga #grandom #gboss #gRelic ]"));
