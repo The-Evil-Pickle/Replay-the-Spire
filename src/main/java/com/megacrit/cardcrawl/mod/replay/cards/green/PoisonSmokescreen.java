@@ -53,7 +53,7 @@ public class PoisonSmokescreen extends CustomCard
             	poisonList.set(r, poisonList.get(r) + 1);
             } 
             for (int i=0; i < validMonsters.size(); i++) {
-            	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, validMonsters.get(i), new PoisonPower(validMonsters.get(i), p, poisonList.get(i)), poisonList.get(i)));
+            	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(validMonsters.get(i), p, new PoisonPower(validMonsters.get(i), p, poisonList.get(i)), poisonList.get(i)));
             }
         }
     }

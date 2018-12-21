@@ -5,6 +5,12 @@ import madsciencemod.actions.common.ShuffleTrinketAction;
 import madsciencemod.powers.FuelPower;
 import mysticmod.MysticMod;
 import replayTheSpire.ReplayTheSpireMod;
+import slimebound.actions.SlimeSpawnAction;
+import slimebound.orbs.AttackSlime;
+import slimebound.orbs.PoisonSlime;
+import slimebound.orbs.ShieldSlime;
+import slimebound.orbs.SlimingSlime;
+import slimebound.powers.SlimedPower;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.Shiv;
@@ -25,6 +31,7 @@ import blackrusemod.powers.ProtectionPower;
 import chronomuncher.cards.Facsimile;
 import chronomuncher.orbs.*;
 import chronomuncher.powers.RetainOncePower;
+import clockworkmod.actions.CreateCogInDeckAction;
 
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -291,6 +298,60 @@ public class SuperSneckoCrazyCard extends BlackCard
 			return new SSCCE_Sparks();
 		}
     }
+    public static class SSCCE_Cogs extends SSCCEffect {
+    	public SSCCE_Cogs() {
+    		super(EXTENDED_DESCRIPTION[14]);
+    	}
+		@Override
+		public void use(AbstractPlayer p, AbstractCard c) {
+			AbstractDungeon.actionManager.addToBottom(new CreateCogInDeckAction(c.magicNumber));
+		}
+		@Override
+    	public SSCCEffect makeCopy() {
+			return new SSCCE_Cogs();
+		}
+    }
+    public static class SSCCE_Slimed extends SSCCEffect {
+    	public SSCCE_Slimed() {
+    		super(EXTENDED_DESCRIPTION[15]);
+    	}
+		@Override
+		public void use(AbstractPlayer p, AbstractCard c) {
+			final ArrayList<Integer> orbs = new ArrayList<Integer>();
+	        orbs.add(1);
+	        orbs.add(2);
+	        orbs.add(3);
+	        orbs.add(4);
+	        final Integer o = orbs.get(AbstractDungeon.cardRng.random(orbs.size() - 1));
+	        switch (o) {
+	            case 1: {
+	                AbstractDungeon.actionManager.addToBottom(new SlimeSpawnAction(new AttackSlime(), false, true));
+	                break;
+	            }
+	            case 2: {
+	                AbstractDungeon.actionManager.addToBottom(new SlimeSpawnAction(new ShieldSlime(), false, true));
+	                break;
+	            }
+	            case 3: {
+	                AbstractDungeon.actionManager.addToBottom(new SlimeSpawnAction(new SlimingSlime(), false, true));
+	                break;
+	            }
+	            case 4: {
+	                AbstractDungeon.actionManager.addToBottom(new SlimeSpawnAction(new PoisonSlime(), false, true));
+	                break;
+	            }
+	        }
+	        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+	        	if (m != null && !m.isDeadOrEscaped()) {
+	        		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new SlimedPower(m, p, c.magicNumber), c.magicNumber));
+	        	}
+	        }
+		}
+		@Override
+    	public SSCCEffect makeCopy() {
+			return new SSCCE_Slimed();
+		}
+    }
     public SuperSneckoCrazyCard() {
         super(ID, NAME, "cards/replay/qmark.png", COST, DESCRIPTION + EXTENDED_DESCRIPTION[0], AbstractCard.CardType.SKILL, AbstractCard.CardTarget.SELF);
         this.purgeOnUse = true;
@@ -375,6 +436,12 @@ public class SuperSneckoCrazyCard extends BlackCard
         }
         if (Loader.isModLoaded("TS05_Marisa")) {
             effects_src.add(new SSCCE_Sparks());
+        }
+        if (Loader.isModLoaded("ClockworkMod")) {
+            effects_src.add(new SSCCE_Cogs());
+        }
+        if (Loader.isModLoaded("Slimebound")) {
+            effects_src.add(new SSCCE_Slimed());
         }
         effects_src.add(new SSCCE_Refund());
     }

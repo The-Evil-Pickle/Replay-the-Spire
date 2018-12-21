@@ -14,6 +14,7 @@ public class beakedbs {
 		ReplayTheSpireMod.AddAndUnlockCard(new RavenHex());
 		ReplayTheSpireMod.AddAndUnlockCard(new WingsOfSteel());
 		ReplayTheSpireMod.AddAndUnlockCard(new OwlGaze());
+		ReplayTheSpireMod.AddAndUnlockCard(new PrepareTheCeremony());
 		ReplayTheSpireMod.AddAndUnlockCard(new CompoundingHeadache());
 	}
 	public static boolean chaosCheck(AbstractCard c) {

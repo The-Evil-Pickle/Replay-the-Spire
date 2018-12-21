@@ -42,7 +42,7 @@ public class RavenHex extends AbstractWitherCard
         AbstractDungeon.actionManager.addToBottom(new WitherAction(this));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LanguidPower(m, this.misc, false), this.misc));
         if (this.upgraded) {
-        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.misc, false), this.misc));
+        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DecrepitPower(m, this.misc, false), this.misc));
         }
     }
     

@@ -749,6 +749,17 @@
 		"% less. NL "
 	]
   },
+  "Replay:Drink Me": {
+    "NAME": "Strange Drink",
+	"FLAVOR": "The label reads \"Drink me.\"",
+    "DESCRIPTIONS": [
+		"Lose [e] and draw #b",
+		" cards at the start of your turn. NL Start each combat with #b",
+		" #yDexterity. NL On pick up, remove #b",
+		" cards from your deck.",
+		"Choose cards to remove."
+	]
+  },
   "Ring of Fury": {
 	"NAME": "Ring of Fury",
 	"FLAVOR": "A cursed ring that heightens both senses and senselessness.",
@@ -873,6 +884,13 @@
 	" [#2aecd7]times [#2aecd7]per [#2aecd7]combat.[] NL Apply random buffs to all enemies. NL Gain #b~",
 	" gold. NL Every #b",
 	" times you use this relic, you will obtain an random relic at the end of the fight."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Exchange": {
+	"NAME": "Ring of Exchange",
+	"FLAVOR": "You never know the value of what you have until it is lost.",
+	"DESCRIPTIONS": [
+	"Shop relics can sometimes appear in boss chests. NL Boss relics can sometimes appear in shops."
 	]
   },
   "ReplayTheSpireMod:Ring of Collecting": {

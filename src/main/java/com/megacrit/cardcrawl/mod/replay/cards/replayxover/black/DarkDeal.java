@@ -44,6 +44,8 @@ public class DarkDeal extends CustomCard implements StartupCard
         if (!this.upgraded) {
             this.upgradeName();
             GraveField.grave.set(this, true);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
     

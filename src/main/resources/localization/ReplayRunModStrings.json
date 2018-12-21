@@ -10,5 +10,9 @@
 	"replay:Mists": {
 		"NAME": "Mists",
 		"DESCRIPTION": "The first room will be the Mirror Mists event."
+	},
+	"replay:ALWAYS": {
+		"NAME": "ALWAYS WHALE",
+		"DESCRIPTION": "Neow shows up a lot."
 	}
 }
