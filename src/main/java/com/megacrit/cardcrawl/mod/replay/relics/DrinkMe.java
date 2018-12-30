@@ -1,48 +1,54 @@
 package com.megacrit.cardcrawl.mod.replay.relics;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.*;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.helpers.input.*;
-import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
-import com.megacrit.cardcrawl.mod.replay.cards.curses.AbeCurse;
-import com.megacrit.cardcrawl.mod.replay.cards.status.*;
-import com.megacrit.cardcrawl.mod.replay.powers.*;
-import com.megacrit.cardcrawl.mod.replay.ui.*;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.EnergizedPower;
 import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.*;
-import com.badlogic.gdx.math.*;
 import com.megacrit.cardcrawl.unlock.*;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import com.badlogic.gdx.*;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
-import java.io.*;
+import com.esotericsoftware.spine.AnimationState;
+import com.esotericsoftware.spine.AnimationStateData;
+import com.esotericsoftware.spine.Skeleton;
+import com.esotericsoftware.spine.SkeletonData;
+import com.esotericsoftware.spine.SkeletonJson;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.screens.mainMenu.*;
 import basemod.*;
 import replayTheSpire.ReplayAbstractRelic;
 import replayTheSpire.panelUI.ReplayIntSliderSetting;
 import replayTheSpire.panelUI.ReplayRelicSetting;
+import replayTheSpire.patches.LoadAnimPatch;
 
 public class DrinkMe extends ReplayAbstractRelic
 {
     public static final String ID = "Replay:Drink Me";
     public static final ReplayIntSliderSetting SETTING_DRAW = new ReplayIntSliderSetting("Drink_Draw", "Cards Drawn", 2, 0, 5);
-    public static final ReplayIntSliderSetting SETTING_DEX = new ReplayIntSliderSetting("Drink_Dex", "Dexterity", 5, 0, 10);
-    public static final ReplayIntSliderSetting SETTING_REMOVE = new ReplayIntSliderSetting("Drink_Remove", "Card Removal", 3, 0, 10);
+    public static final ReplayIntSliderSetting SETTING_DEX = new ReplayIntSliderSetting("Drink_Dex", "Dexterity", 4, 0, 5);
+    public static final ReplayIntSliderSetting SETTING_REMOVE = new ReplayIntSliderSetting("Drink_Remove", "Card Removal", 3, 0, 5);
+    public static final ReplayIntSliderSetting SETTING_ENERGY = new ReplayIntSliderSetting("Drink_Energy", "Cards for Energy", 6, 5, 10);
+    public static final ReplayIntSliderSetting SETTING_HEALTH = new ReplayIntSliderSetting("Drink_Health", "HP Loss", 25, 0, 100, "%");
     public ArrayList<ReplayRelicSetting> BuildRelicSettings() {
     	ArrayList<ReplayRelicSetting> settings = new ArrayList<ReplayRelicSetting>();
     	settings.add(SETTING_DRAW);
     	settings.add(SETTING_DEX);
     	settings.add(SETTING_REMOVE);
+    	settings.add(SETTING_HEALTH);
+    	settings.add(SETTING_ENERGY);
 		return settings;
 	}
 
@@ -50,11 +56,15 @@ public class DrinkMe extends ReplayAbstractRelic
     public DrinkMe() {
         super(ID, "betaRelic.png", RelicTier.BOSS, LandingSound.CLINK);
         this.cardSelected = true;
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
+        this.tips.add(new PowerTip("Synergy", this.DESCRIPTIONS[7]));
+        this.initializeTips();
     }
     
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        return this.DESCRIPTIONS[0] + SETTING_DRAW.value + this.DESCRIPTIONS[1] + SETTING_DEX.value + this.DESCRIPTIONS[2] + SETTING_ENERGY.value + this.DESCRIPTIONS[3] + SETTING_REMOVE.value + this.DESCRIPTIONS[4] + SETTING_HEALTH.value + this.DESCRIPTIONS[5];
     }
 	
     @Override
@@ -62,16 +72,37 @@ public class DrinkMe extends ReplayAbstractRelic
         final EnergyManager energy = AbstractDungeon.player.energy;
         --energy.energyMaster;
         AbstractDungeon.player.masterHandSize += SETTING_DRAW.value;
+        if (SETTING_HEALTH.value > 0 && AbstractDungeon.player.maxHealth > 1) {
+        	AbstractDungeon.player.decreaseMaxHealth((AbstractDungeon.player.maxHealth * SETTING_HEALTH.value) / 100);
+        }
         this.cardSelected = false;
         if (AbstractDungeon.isScreenUp) {
             AbstractDungeon.dynamicBanner.hide();
             AbstractDungeon.overlayMenu.cancelButton.hide();
             AbstractDungeon.previousScreen = AbstractDungeon.screen;
         }
+        scalePlayer(AbstractDungeon.player, 1.5f);
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
-        AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck.getPurgeableCards(), SETTING_REMOVE.value, this.DESCRIPTIONS[4], false, false, false, true);
+        AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck.getPurgeableCards(), SETTING_REMOVE.value, this.DESCRIPTIONS[6], false, false, false, true);
     }
 
+    private static void scalePlayer(AbstractPlayer player, float _scale) {
+    	if (player == null || LoadAnimPatch.LAST_SKELETON_URL == null) {
+    		return;
+    	}
+        //Skeleton skeleton = (Skeleton)ReflectionHacks.getPrivate(AbstractDungeon.player, AbstractCreature.class, "skeleton");
+        TextureAtlas atlas = (TextureAtlas)ReflectionHacks.getPrivate(player, AbstractCreature.class, "atlas");
+    	final SkeletonJson json = new SkeletonJson(atlas);
+        json.setScale(Settings.scale / _scale);
+        final SkeletonData skeletonData = json.readSkeletonData(Gdx.files.internal(LoadAnimPatch.LAST_SKELETON_URL));
+        Skeleton skeleton = new Skeleton(skeletonData);
+        ReflectionHacks.setPrivateInherited(player, AbstractPlayer.class, "skeleton", skeleton);
+        skeleton.setColor(Color.WHITE);
+        AnimationStateData stateData = new AnimationStateData(skeletonData);
+        ReflectionHacks.setPrivateInherited(player, AbstractPlayer.class, "stateData", stateData);
+        ReflectionHacks.setPrivateInherited(player, AbstractPlayer.class, "state", new AnimationState(stateData));
+    }
+    
     @Override
     public void update() {
         super.update();
@@ -94,53 +125,47 @@ public class DrinkMe extends ReplayAbstractRelic
         final EnergyManager energy = AbstractDungeon.player.energy;
         ++energy.energyMaster;
         AbstractDungeon.player.masterHandSize -= SETTING_DRAW.value;
+        //AbstractDungeon.player.increaseMaxHp(AbstractDungeon.player.maxHealth, false);
     }
     
     @Override
     public void atPreBattle() {
         this.flash();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, SETTING_DEX.value), SETTING_DEX.value));
+        if (AbstractDungeon.player.hasRelic(TinyHouse.ID)) {
+        	AbstractDungeon.actionManager.addToBottom(new ReplayGainShieldingAction(AbstractDungeon.player, AbstractDungeon.player, 15));
+        }
+        this.counter = 0;
+    }
+    
+    @Override
+    public void atTurnStart() {
+    	this.counter = 0;
+    }
+    
+    @Override
+    public void onVictory() {
+    	this.counter = -1;
+    }
+    
+    @Override
+    public void onUseCard(final AbstractCard card, final UseCardAction action) {
+    	if (card != null && action != null) {
+    		this.counter ++;
+    		if (this.counter == SETTING_ENERGY.value) {
+    			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EnergizedPower(AbstractDungeon.player, 1), 1));
+    		}
+    	}
     }
     
     @Override
     public AbstractRelic makeCopy() {
         return new DrinkMe();
     }
-/*
-    @Override
-    public void onShuffle() {
-        this.flash();
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new AbeCurse(), 1, true, false));
-    }
-    */
-	@Override
-    public void renderLock(final SpriteBatch sb, final Color outlineColor) {
-		final float rot = (float)ReflectionHacks.getPrivate((Object)this, (Class)AbstractRelic.class, "rotation");
-        sb.setColor(outlineColor);
-        sb.draw(ImageMaster.RELIC_LOCK_OUTLINE, this.currentX - 64.0f, this.currentY - 64.0f, 64.0f, 64.0f, 128.0f, 128.0f, this.scale, this.scale, rot, 0, 0, 128, 128, false, false);
-        sb.setColor(Color.WHITE);
-        sb.draw(ImageMaster.RELIC_LOCK, this.currentX - 64.0f, this.currentY - 64.0f, 64.0f, 64.0f, 128.0f, 128.0f, this.scale, this.scale, rot, 0, 0, 128, 128, false, false);
-        if (this.hb.hovered) {
-            String unlockReq = UnlockTracker.unlockReqs.get(this.relicId);
-            if (unlockReq == null) {
-                unlockReq = "Missing unlock req.";
-            }
-            if (InputHelper.mX < 1400.0f * Settings.scale) {
-                if (CardCrawlGame.mainMenuScreen.screen == MainMenuScreen.CurScreen.RELIC_VIEW && InputHelper.mY < Settings.HEIGHT / 5.0f) {
-                    TipHelper.renderGenericTip(InputHelper.mX + 60.0f * Settings.scale, InputHelper.mY + 100.0f * Settings.scale, AbstractRelic.LABEL[3], unlockReq);
-                }
-                else {
-                    TipHelper.renderGenericTip(InputHelper.mX + 60.0f * Settings.scale, InputHelper.mY - 50.0f * Settings.scale, AbstractRelic.LABEL[3], unlockReq);
-                }
-            }
-            else {
-                TipHelper.renderGenericTip(InputHelper.mX - 350.0f * Settings.scale, InputHelper.mY - 50.0f * Settings.scale, AbstractRelic.LABEL[3], unlockReq);
-            }
-            float tmpX = this.currentX;
-            float tmpY = this.currentY;
-            sb.setColor(Color.WHITE);
-            sb.draw(ImageMaster.RELIC_LOCK, tmpX - 64.0f, tmpY - 64.0f, 64.0f, 64.0f, 128.0f, 128.0f, this.scale, this.scale, rot, 0, 0, 128, 128, false, false);
-        }
-        this.hb.render(sb);
+    
+    public static void load(SpireConfig config) {
+    	if(AbstractDungeon.player.hasRelic(ID)) {
+    		scalePlayer(AbstractDungeon.player, 1.5f);
+    	}
     }
 }

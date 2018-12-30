@@ -94,4 +94,10 @@ public class CampfireTransformEffect extends AbstractGameEffect
         uiStrings = CardCrawlGame.languagePack.getUIString("Polymerize Option");
         TEXT = CampfireTransformEffect.uiStrings.TEXT;
     }
+
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
 }

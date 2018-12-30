@@ -367,6 +367,11 @@
     "NAME": "Sssstrike",
     "DESCRIPTION": "Deal !D! damage, plus an additional !D! for each [E] this cost. NL Refund !stslib:refund!. NL Snecko."
   },
+  "Replay:Sssssssssshield": {
+    "NAME": "Sssshield",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !B! Shielding for each [E] this cost. NL Snecko. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !B! Shielding for each [E] this cost. NL Refund !stslib:refund!. NL Snecko. NL Exhaust."
+  },
   "Replay:Dark Deal": {
     "NAME": "Dark Deal",
     "DESCRIPTION": "Unplayable. NL Ethereal. NL Startup: add a random Black card to your draw pile.",

@@ -32,7 +32,7 @@ public class CreatureHealthPatches
 				return damageAmount;
 			}
 			int currentShielding = ReplayTheSpireMod.shieldingAmount(__Instance);
-			if (currentShielding > 0) {
+			if (currentShielding > 0 && info.type != DamageInfo.DamageType.HP_LOSS) {
 				if (damageAmount > currentShielding) {
 					//CardCrawlGame.sound.play("BLOCK_BREAK");
 					damageAmount -= currentShielding;

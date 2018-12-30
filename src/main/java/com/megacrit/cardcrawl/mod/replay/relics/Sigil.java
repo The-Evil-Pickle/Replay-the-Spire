@@ -64,32 +64,41 @@ public class Sigil extends AbstractRelic
 	        ReflectionHacks.setPrivate(c, AbstractCard.class, "portraitImg", cardTexture);
 		}
     }
+    private void obscureCard(AbstractCard c) {
+    	c.name = "???";
+		c.rawDescription = "???????";
+		c.initializeDescription();
+		//no matter what texture i use, or what i check for, only attack cards can have their textures changed. ?????
+		if (c.type == AbstractCard.CardType.ATTACK) {
+			setTexture(c, "cards/replay/replayBetaAttack.png");
+		}
+		if (c.type == AbstractCard.CardType.POWER) {
+			setTexture(c, "cards/replay/replayBetaPower.png");
+		}
+		if (c.type == AbstractCard.CardType.SKILL){
+			setTexture(c, "cards/replay/replayBetaSkill.png");
+		}
+		if (c.type == AbstractCard.CardType.CURSE){
+			setTexture(c, "cards/replay/betaCurse.png");
+		}
+    }
     @Override
     public void atBattleStartPreDraw() {
     	this.obscuredCards = new ArrayList<AbstractCard>();
     	for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
     		if (c != null && SETTING_CHANCE.testChance(AbstractDungeon.miscRng)) {
     			this.obscuredCards.add(c);
-    			c.name = "???";
-    			c.rawDescription = "???????";
-    			c.initializeDescription();
-    			//no matter what texture i use, or what i check for, only attack cards can have their textures changed. ?????
-    			if (c.type == AbstractCard.CardType.ATTACK) {
-    				setTexture(c, "cards/replay/replayBetaAttack.png");
-    			}
-    			if (c.type == AbstractCard.CardType.POWER) {
-    				setTexture(c, "cards/replay/replayBetaPower.png");
-    			}
-    			if (c.type == AbstractCard.CardType.SKILL){
-    				setTexture(c, "cards/replay/replayBetaSkill.png");
-    			}
-    			if (c.type == AbstractCard.CardType.CURSE){
-    				setTexture(c, "cards/replay/betaCurse.png");
-    			}
+    			obscureCard(c);
     		}
     	}
     }
-    
+
+    @Override
+    public void onCardDraw(final AbstractCard drawnCard) {
+    	if (this.obscuredCards != null && drawnCard != null && this.obscuredCards.contains(drawnCard)) {
+    		obscureCard(drawnCard);
+    	}
+    }
     @Override
     public AbstractRelic makeCopy() {
         return new Sigil();

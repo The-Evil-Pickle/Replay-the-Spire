@@ -135,4 +135,10 @@ public class PlayerGainPennyEffect extends AbstractGameEffect
         START_VX_JITTER = 300.0f * Settings.scale;
         TARGET_JITTER = 50.0f * Settings.scale;
     }
+
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
 }

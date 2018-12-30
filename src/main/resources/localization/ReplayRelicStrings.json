@@ -727,7 +727,7 @@
     "NAME": "Byrd Feeder",
 	"FLAVOR": "Feeling... peckish?",
     "DESCRIPTIONS": [
-		"In combat, healing beyond your Max HP grants #yTemporary HP."
+		"In combat, healing beyond your Max HP grants #yTemporary #yHP."
 	]
   },
   "Replay:Rubber Ducky": {
@@ -750,14 +750,24 @@
 	]
   },
   "Replay:Drink Me": {
-    "NAME": "Strange Drink",
+    "NAME": "Shrinking Draught",
 	"FLAVOR": "The label reads \"Drink me.\"",
     "DESCRIPTIONS": [
-		"Lose [e] and draw #b",
+		"Lose [E] and draw #b",
 		" cards at the start of your turn. NL Start each combat with #b",
-		" #yDexterity. NL On pick up, remove #b",
-		" cards from your deck.",
-		"Choose cards to remove."
+		" #yDexterity. NL If you play at least #b",
+		" cards in a single turn, gain [E] at the start of your next turn. NL On pick up, remove #b",
+		" cards from your deck and lose #b",
+		"% Max HP. NL #ySynergy - #yTiny #yHouse",
+		"Choose cards to remove.",
+		"If you have #yTiny #yHouse, start each combat with #b15 #yShielding."
+	]
+  },
+  "Replay:Bronze Core": {
+    "NAME": "Bronze Core",
+	"FLAVOR": "Even now, it acts to defend the spire.",
+    "DESCRIPTIONS": [
+		"Gain [E] at the start of your turn. NL Each combat includes a Bronze Orb minion that won't attack, but will put cards into stasis until killed. "
 	]
   },
   "Ring of Fury": {

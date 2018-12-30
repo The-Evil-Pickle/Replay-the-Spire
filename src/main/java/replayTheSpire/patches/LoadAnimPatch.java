@@ -12,8 +12,11 @@ import javassist.CtBehavior;
 
 @SpirePatch(cls = "com.megacrit.cardcrawl.core.AbstractCreature", method = "loadAnimation")
 public class LoadAnimPatch {
+	public static String LAST_SKELETON_URL = null;
 	public static void Prefix(AbstractCreature __instance, final String atlasUrl, final String skeletonUrl, float scale) {
-		if (__instance.isPlayer && AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(DrinkMe.ID)) {
+		if (__instance.isPlayer) {
+			LAST_SKELETON_URL = skeletonUrl;
+			if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(DrinkMe.ID))
 			scale += 0.3f;
 		}
 	}

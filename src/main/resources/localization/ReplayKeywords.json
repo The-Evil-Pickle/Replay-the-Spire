@@ -33,7 +33,7 @@
 		"NAMES": [
 			"shielding"
 		],
-		"DESCRIPTION": "An alternate form of #yBlock that can directly block HP loss. NL #yShielding is not lost at the end of each round."
+		"DESCRIPTION": "An alternate form of #yBlock that is not lost at the end of each round."
 	},
 	{
 		"NAMES": [

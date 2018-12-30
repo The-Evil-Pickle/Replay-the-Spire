@@ -11,14 +11,14 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * StSLib (https://github.com/kiooeht/StSLib/releases)
 
 ### Currently adds:
- * 58 Relics (4 ironclad, 4 silent, 6 defect, 44 shared)
- * 70 Cards (15 ironclad, 15 silent, 15 defect, 12 colorless, 13 curses)
+ * 60 Relics (4 ironclad, 4 silent, 6 defect, 46 shared)
+ * 71 Cards (15 ironclad, 15 silent, 15 defect, 13 colorless, 13 curses)
  * 5 Events
  * 11 Potions
  * 2 Rooms
- * 2 Elites
+ * 3 Elites
  * 2 Bosses
- * 2 Custom run modifiers
+ * 3 Custom run modifiers
  * Additional Neow options
 
 Some content originally from this mod is now in the official release of the game!
@@ -76,6 +76,7 @@ GuideBook | All | Shop | On pickup, **Upgrade** 2 cards randomly. Prioritizes ra
 Raider's Mask | Defect | Shop | After a **Dark** orb triggers its passive effect, if it has more stored damage than the HP of the lowest-health enemy, it is **Evoked.**
 Shop Pack | All | Shop | Choose 3 Colorless cards to obtain. At least one of the options will be all Rare cards.
 Abe's Treasure | All | Boss | Gain 1 more energy each turn. Start combat with **Drowning**. On Pickup, add the Abe's Revenge curse to your deck.
+Bronze Core | All | Boss | Gain 1 more energy each turn. Each combat includes a Bronze Orb minion that does not attack, but puts cards into stasis until killed.
 Chewing Gum | All | Boss | Gain 1 more energy each turn. Each time you shuffle your deck, add 2 Slimed to your draw pile.
 Dimensional Glitch | All | Boss | Gain 1 more energy each turn. All non-attack damage you deal is reduced by half. All non-attack damage you take is increased by half. All in-combat healing you recieve is decreased to half.
 Grab Bag | All | Boss | Choose 1 energy boss relic and 1 non-energy boss relic to obtain. Choices are out of 3, and cannot be skipped.
@@ -83,6 +84,7 @@ Honey Jar | All | Boss | Draw 1 more card each turn. **Retain** up to 1 card eac
 Kintsugi | All | Boss | Remove 5 cards from your deck. Choose 2 **Curses** to obtain.
 Onyx Gauntlets | All | Boss | Gain 1 energy each time you draw a card. Drawing a card increases its cost by 1 for the turn.
 Ooze Armor | Ironclad | Boss | Gain 1 energy at the start of each turn. At the start of combat, gain **Slow** (resets to -3) and **Malleable** (resets to 4).
+Shrinking Draught | All | Boss | Lose 1 energy and draw 2 cards at the start of each turn. Start combat with 4 **Dexterity**. If you play at least 6 cards in a turn, gain 1 energy next turn. On pick up, remove 3 cards from your deck and lose 25% Max HP.
 Sweet Flower | All | Boss | Gain 1 more energy each turn. Map displays much less information.
 Electric Blood | Ironclad | Boss | Gain 2 energy at the start of each turn. When you spend energy, lose that much HP, excluding the first 2 energy spent each turn.
 Snecko Heart | All | Boss | Start combat **Confused**. **Confusion** will never increase the cost of a card by more than 1. The first card you draw each turn always costs 0.
@@ -141,6 +143,7 @@ RNG | Blue | Rare | Skill | X | **Channel** X(+1) random orbs.
 Omega Cannon | Blue | Rare | Attack | 2 | Deal 7(6) damage to ALL enemies 4(5) times. Add 1 **Backfire** to your draw and discard piles. **Focus** increases damage."
 Poisoned Strike | Colorless | Uncommon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | Lose 1 Focus. All non-attack damage you deal is increased by 2. (**Innate.**)
+Ssssshield | Colorless | Uncommon | Skill | ? | Gain 6 **Block**. Gain 6 **Shielding** for each energy this cost. (**Refund** 1). **Snecko**. **Exhaust**.
 Ssssstrike | Colorless | Uncommon | Attack | ? | Deal 4(5) damage, plus an additional 4(5) for each energy this cost. **Snecko.** **Refund** 1.
 Survey Options | Colorless | Uncommon | Skill | X | Draw X. **Refund** 1(2).
 Trickstab | Colorless | Uncommon | Attack | 1 | Deal 4 damage 2(3) times. Damage is affected by block modifiers.
@@ -345,6 +348,8 @@ Ring of the Sea Serpent | Mirror Mist (as Blackbeard) | At the start of combat, 
 Ring of the Tsuchinoko | Mirror Mist (as Marisa) | Draw 2 additional cards on the first turn of combat. Each time you play a **Skill** or 0-cost card, gain 1 **Charge-Up.** Certain green cards can now be obtained.
 Spell Core | Mirror Mist (as Marisa) | At the start of each combat, gain 3 orb slots and **Channel** 1 **Manaspark.** Certain blue cards can now be obtained.
 Iron Supplements | Mirror Mist (as Glutton) | Heal 6 HP at the end of combat. Certain red cards can now be obtained.
+Burning Sludge | Mirror Mist (as Slimebound) | At the end of combat, heal 4 HP for each of your spawned slimes. Certain red cards can now be obtained.
+Ring of the Slime | Mirror Mist (as Slimebound) | Draw 2 additional cards on the first turn of combat. At the end of combat, heal 3 HP for each of your spawned slimes. Certain green cards can now be obtained.
 Ring of Fury | Dead Man's Rings | At the start of combat, gain 2 **Strength** and lose 1 **Dexterity.**
 Ring of Peace | Dead Man's Rings | At the start of combat, apply 3 **Weak** to ALL fighters and gain 1 **Buffer.**
 Ring of Panic | Dead Man's Rings | At the start of combat, become **Confused** for 3 turns. Gain 2 energy on the first and second turns, and 1 energy on the third.

@@ -36,6 +36,7 @@ import com.megacrit.cardcrawl.mod.replay.events.shrines.*;
 import com.megacrit.cardcrawl.mod.replay.events.thebottom.*;
 import com.megacrit.cardcrawl.mod.replay.events.thecity.GremboTheGreat;
 import com.megacrit.cardcrawl.mod.replay.events.thecity.ReplayMapScoutEvent;
+import com.megacrit.cardcrawl.mod.replay.modifiers.ALWAYSwhaleModifier;
 import com.megacrit.cardcrawl.mod.replay.modifiers.ChaoticModifier;
 import com.megacrit.cardcrawl.mod.replay.modifiers.LibraryLooterModifier;
 import com.megacrit.cardcrawl.mod.replay.modifiers.MistsModifier;
@@ -58,6 +59,7 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.unlock.*;
 
 import basemod.*;
+import basemod.BaseMod.BossInfo;
 import basemod.helpers.*;
 import basemod.interfaces.*;
 import beaked.Beaked;
@@ -775,7 +777,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public ModToggleButton chaos_button_2;
 	public ModToggleButton chaos_button_3;
 	public ModToggleButton chaos_button_4;
-	private boolean foundmod_infiniteSpire;
 	public static final ReplayIntSliderSetting SETTING_TAG_NORMAL_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Normal", "Normal Sale Tag Chance", 3, 1, 5);
 	public static final ReplayIntSliderSetting SETTING_TAG_SPECIAL_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Special", "Special Edition Tag Chance", 1, 0, 5);
 	public static final ReplayIntSliderSetting SETTING_TAG_DOUBLE_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Double", "2 For 1 Tag Chance", 1, 0, 5);
@@ -789,6 +790,31 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static final ReplayBooleanSetting SETTING_REBOTTLE_M_ENABLE = new ReplayBooleanSetting("Rebottle_M_Enable", "Enabled for Other Mods' Bottles", true);
 	public static final ReplayBooleanSetting SETTING_REBOTTLE_M_FREE = new ReplayBooleanSetting("Rebottle_M_Free", "Free Action for Other Mods' Bottles", false);
 	
+	public static final HashMap<String, List<ReplayBooleanSetting>> SETTING_BOSSTOGGLES = new HashMap<String, List<ReplayBooleanSetting>>();
+	public static ReplayBooleanSetting addBossToggle(final String dungeon, final String bossID, final String name) {
+        if (!SETTING_BOSSTOGGLES.containsKey(dungeon)) {
+        	SETTING_BOSSTOGGLES.put(dungeon, new ArrayList<ReplayBooleanSetting>());
+        }
+        final ReplayBooleanSetting setting = new ReplayBooleanSetting("Replay_boss_toggle_" + bossID, name, bossID.equals("hubris:NecromanticTotem"));
+        SETTING_BOSSTOGGLES.get(dungeon).add(setting);
+        return setting;
+    }
+	public static void purgeBossToggle() {
+		HashMap<String, List<BossInfo>> customBosses = (HashMap<String, List<BossInfo>>)ReflectionHacks.getPrivateStatic(BaseMod.class, "customBosses");
+		for (String dungeonid : SETTING_BOSSTOGGLES.keySet()) {
+			for (ReplayBooleanSetting setting : SETTING_BOSSTOGGLES.get(dungeonid)) {
+				for (BossInfo boss : customBosses.get(dungeonid)) {
+					if (setting.settingsId.equals("Replay_boss_toggle_" + boss.id)) {
+						if (setting.value) {
+							BaseMod.encounterList.remove(boss.id);
+							customBosses.get(dungeonid).remove(boss);
+						}
+						break;
+					}
+				}
+			}
+		}
+	}
 	public static HashMap<String, ReplayRelicSetting> ConfigSettings = new HashMap<String, ReplayRelicSetting>();
 	public static HashMap<ReplayAbstractRelic, ArrayList<ReplayRelicSetting>> RelicSettings = new HashMap<ReplayAbstractRelic, ArrayList<ReplayRelicSetting>>();
 	static final float setting_start_x = 350.0f;
@@ -822,8 +848,13 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		settingElements.add(b);
 		return b;
 	}
-
+	public static Pagination pager;
 	static SpireConfig config;
+	
+	public static void postPostInit() {
+		
+	}
+	
 	@Override
     public void receivePostInitialize() {
 		ReplayTheSpireMod.powerAtlas = new com.badlogic.gdx.graphics.g2d.TextureAtlas(Gdx.files.internal("powers/replayPowers.atlas"));
@@ -842,6 +873,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.renderFishFG = false;
 		ReplayTheSpireMod.fishAtlas = new TextureAtlas(Gdx.files.internal("images/replayScenes/fishfight.atlas"));
 		ReplayTheSpireMod.fishFG = ReplayTheSpireMod.fishAtlas.findRegion("mod/fg");
+		
+		InitializeMonsters();
+		
         // Mod badge
 		try {
 			config = new SpireConfig("ReplayTheSpireMod", "replaySettingsData");
@@ -890,6 +924,30 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_SOULBOUND_CURSES.settingsId, NeowRewardPatches.SETTING_SOULBOUND_CURSES);
 		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_BOSS_OPTIONS_ENABLED.settingsId, NeowRewardPatches.SETTING_BOSS_OPTIONS_ENABLED);
 		
+		settingElements = new ArrayList<IUIElement>();
+		roomSettings = new ArrayList<ReplayRelicSetting>();
+		settingElements.add(new ModLabel("Disable Custom Bosses", setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
+		HashMap<String, List<BossInfo>> customBosses = (HashMap<String, List<BossInfo>>)ReflectionHacks.getPrivateStatic(BaseMod.class, "customBosses");
+		float ymod = 0f;
+		float xmod = 0f;
+		for (String dungeonid : customBosses.keySet()) {
+			ymod = 0f;
+			settingElements.add(new ModLabel(dungeonid + ":", setting_start_x + xmod + 150.0f, setting_start_y + ymod, settingsPanel, (me) -> {}));
+			ymod += -40f;
+			for (BossInfo boss : customBosses.get(dungeonid)) {
+				ReplayBooleanSetting bosssetting = addBossToggle(dungeonid, boss.id, boss.id);
+				settingElements.addAll(bosssetting.GenerateElements(setting_start_x + xmod, setting_start_y + ymod));
+				ymod += -40f;
+				roomSettings.add(bosssetting);
+			}
+			xmod += 450f;
+		}
+		settingsButtons.add(new RelicSettingsButton(ImageMaster.loadImage("images/relics/test5.png"), ImageMaster.loadImage("images/relics/outline/test5.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings));
+		for (String dungeonid : SETTING_BOSSTOGGLES.keySet()) {
+			for (ReplayBooleanSetting bosssetting : SETTING_BOSSTOGGLES.get(dungeonid)) {
+				ReplayTheSpireMod.ConfigSettings.put(bosssetting.settingsId, bosssetting);
+			}
+		}
 		
 		BuildSettings(new RingOfChaos());
 		BuildSettings(new Ninjato());
@@ -897,7 +955,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BuildSettings(new HoneyJar());
 		BuildSettings(new BargainBundle());
 		BuildSettings(new Bandana());
-		//BuildSettings(new EnergyBall());
+		BuildSettings(new EnergyBall());
 		
 		loadSettingsData();
 		/*
@@ -913,7 +971,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 		
 		
-		final Pagination pager = new Pagination(new ImageButton("img/replay/tinyRightArrow.png", 615, 550, 100, 100, b -> {}), new ImageButton("img/replay/tinyLeftArrow.png", 350, 550, 100, 100, b -> {}), 2, 3, 50, 50, settingsButtons);
+		pager = new Pagination(new ImageButton("img/replay/tinyRightArrow.png", 615, 550, 100, 100, b -> {}), new ImageButton("img/replay/tinyLeftArrow.png", 350, 550, 100, 100, b -> {}), 2, 3, 50, 50, settingsButtons);
         settingsPanel.addUIElement((IUIElement)pager);
 		
 		
@@ -937,7 +995,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
             TheBottler.addBottleRelic(BottledFlurry.ID);
             TheBottler.addBottleRelic(BottledSteam.ID);
         }
-		InitializeMonsters();
 		initializePotions();
 		logger.info("end post init");
         Settings.isDailyRun = false;
@@ -991,6 +1048,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new Baseball(), RelicType.SHARED);
 		BaseMod.addRelic(new BottledFlurry(), RelicType.SHARED);
 		BaseMod.addRelic(new BottledSteam(), RelicType.SHARED);
+		BaseMod.addRelic(new BronzeCore(), RelicType.SHARED);
 		BaseMod.addRelic(new ByrdSkull(), RelicType.GREEN);
 		BaseMod.addRelic(new ChameleonRing(), RelicType.SHARED);
 		//BaseMod.addRelic(new ChemicalX(), RelicType.SHARED);
@@ -998,6 +1056,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new CounterBalance(), RelicType.SHARED);
 		BaseMod.addRelic(new CursedCoin(), RelicType.SHARED);
 		BaseMod.addRelic(new DimensionalGlitch(), RelicType.SHARED);
+		BaseMod.addRelic(new DrinkMe(), RelicType.SHARED);
 		BaseMod.addRelic(new ElectricBlood(), RelicType.RED);
 		BaseMod.addRelic(new EnergyBall(), RelicType.SHARED);
 		BaseMod.addRelic(new Funnel(), RelicType.SHARED);
@@ -1153,6 +1212,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Trickstab());
 		AddAndUnlockCard(new ReplayBrewmasterCard());
 		AddAndUnlockCard(new UncannyAura());
+		AddAndUnlockCard(new Sssssssssstrike());
+		AddAndUnlockCard(new Sssssssssshield());
+		AddAndUnlockCard(new Necrogeddon());
 		/*if (Loader.isModLoaded("Friendly_Minions_0987678")) {
 			AddAndUnlockCard(new GrembosGang());
 		}*/
@@ -1172,6 +1234,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Splinters());
 		AddAndUnlockCard(new Doomed());
 		AddAndUnlockCard(new DebtCurseIOU());
+		AddAndUnlockCard(new FaultyEquipment());
 		logger.info("adding unobtainable cards...");
 		AddAndUnlockCard(new PotOfGreed());
 		AddAndUnlockCard(new GhostDefend());
@@ -1183,11 +1246,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new IC_FireWall());
 		//AddAndUnlockCard(new IC_BasicHellfireCard());
 		AddAndUnlockCard(new WeaponsOverheat());
-		if (foundmod_stslib) {
-			AddAndUnlockCard(new FaultyEquipment());
-			AddAndUnlockCard(new Sssssssssstrike());
-			AddAndUnlockCard(new Necrogeddon());
-		}
 		if (foundmod_conspire) {
 			logger.info("adding conspire cards...");
 			AddAndUnlockCard(new DualPolarity());
@@ -1623,6 +1681,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         l.add(new CustomMod(LibraryLooterModifier.ID, "b", true));
         l.add(new CustomMod(ChaoticModifier.ID, "b", true));
         l.add(new CustomMod(MistsModifier.ID, "b", true));
+        //l.add(new CustomMod(ALWAYSwhaleModifier.ID, "b", true));
     }
     @Override
     public void receivePostDungeonInitialize() {
@@ -1785,6 +1844,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
             BottledSteam.load(config);
             Baseball.load(config);
             ReplayMapScoutEvent.load(config);
+            DrinkMe.load(config);
         }
         catch (IOException e) {
             e.printStackTrace();

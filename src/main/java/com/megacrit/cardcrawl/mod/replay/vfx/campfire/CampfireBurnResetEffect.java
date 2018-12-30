@@ -92,4 +92,9 @@ public class CampfireBurnResetEffect extends AbstractGameEffect
             AbstractDungeon.gridSelectScreen.render(sb);
         }
     }
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -112,6 +112,8 @@ public class GrabBag extends AbstractRelic
         		} else {
         			if (r instanceof OnyxGauntlets || r.relicId.equals("RNG:RNG")) {
         				GrabBag.energyRelics.add(r.relicId);
+        			} else if (r instanceof DrinkMe) {
+        				GrabBag.nonEnergyRelics.add(r.relicId);
         			}
         		}
         	} else {
