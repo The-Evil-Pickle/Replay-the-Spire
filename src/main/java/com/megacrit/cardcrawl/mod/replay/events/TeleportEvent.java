@@ -5,6 +5,10 @@ import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.mod.replay.events.*;
 import com.megacrit.cardcrawl.mod.replay.rooms.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+
+import replayTheSpire.ReplayTheSpireMod;
+import replayTheSpire.replayxover.infinitebs;
+
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.core.*;
@@ -33,6 +37,9 @@ public class TeleportEvent extends AbstractImageEvent
     	AbstractDungeon.currMapNode = teleDest;
     	this.openMap();
     	imageEventText.clear();
+        if (ReplayTheSpireMod.foundmod_infinite) {
+        	infinitebs.TriggerPortalQuest();
+        }
     }
     
     static {

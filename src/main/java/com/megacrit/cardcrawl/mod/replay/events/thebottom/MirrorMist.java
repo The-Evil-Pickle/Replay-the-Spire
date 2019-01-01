@@ -578,7 +578,7 @@ public class MirrorMist
 		this.imageEventText.setDialogOption(OPTIONS[13] + this.searchCurse2.name + ".", this.searchCurse2);
 		this.thirdOption = false;
 		if (!(AbstractDungeon.player.hasRelic("hubris:DisguiseKit") && AbstractDungeon.player.hasRelic("PrismaticShard"))) {
-			this.imageEventText.setDialogOption(OPTIONS[14] + this.searchrelicchance2 + OPTIONS[15] + this.searchcursechance2 + OPTIONS[12] + "(Random)" + ".", this.searchCurse);
+			this.imageEventText.setDialogOption(OPTIONS[14] + this.searchrelicchance2 + OPTIONS[15] + this.searchcursechance2 + OPTIONS[12] + "(Random)" + ".");
 			this.thirdOption = true;
 		}
 	} else {

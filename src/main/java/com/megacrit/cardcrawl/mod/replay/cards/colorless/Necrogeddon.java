@@ -29,7 +29,7 @@ extends CustomCard
 	
 	public Necrogeddon()
 	{
-		super(ID, NAME, "cards/replay/necrogeddon.png", 1, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
+		super(ID, NAME, "cards/replay/necrogeddon.png", 0, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
 		GraveField.grave.set(this, true);
 		this.baseDamage = 0;
 	}

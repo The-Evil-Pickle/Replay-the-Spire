@@ -770,6 +770,13 @@
 		"Gain [E] at the start of your turn. NL Each combat includes a Bronze Orb minion that won't attack, but will put cards into stasis until killed. "
 	]
   },
+  "Replay:Cursed D8": {
+    "NAME": "Cursed D8",
+	"FLAVOR": "Roll the dice, meet your fate.",
+    "DESCRIPTIONS": [
+		"Gain [E] and draw a card at the start of your turn. NL Shuffle an #yEcho of a random #rCurse into your draw pile at the end of your turn."
+	]
+  },
   "Ring of Fury": {
 	"NAME": "Ring of Fury",
 	"FLAVOR": "A cursed ring that heightens both senses and senselessness.",

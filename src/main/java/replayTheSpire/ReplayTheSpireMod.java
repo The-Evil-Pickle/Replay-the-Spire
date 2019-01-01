@@ -1501,6 +1501,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for Glutton...");
 			BaseMod.addRelicToCustomPool(new M_IronSupplements(), gluttonmod.patches.AbstractCardEnum.GLUTTON);
+			BaseMod.addRelic(new CursedDEight(), RelicType.SHARED);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Glutton...");
@@ -1681,7 +1682,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         l.add(new CustomMod(LibraryLooterModifier.ID, "b", true));
         l.add(new CustomMod(ChaoticModifier.ID, "b", true));
         l.add(new CustomMod(MistsModifier.ID, "b", true));
-        //l.add(new CustomMod(ALWAYSwhaleModifier.ID, "b", true));
+        l.add(new CustomMod(ALWAYSwhaleModifier.ID, "b", true));
     }
     @Override
     public void receivePostDungeonInitialize() {

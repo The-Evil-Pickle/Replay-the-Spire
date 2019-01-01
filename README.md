@@ -18,7 +18,7 @@ This mod aims to expand upon the base game by adding lots of content. It is curr
  * 2 Rooms
  * 3 Elites
  * 2 Bosses
- * 3 Custom run modifiers
+ * 4 Custom run modifiers
  * Additional Neow options
 
 Some content originally from this mod is now in the official release of the game!
@@ -196,21 +196,23 @@ Vengeful Threat | Deciple | Curse | Curse | Curse | 0 | **Grave**. Draw 1 card. 
 Wavering Confidence | Deciple | Curse | Curse | Curse | - | **Unplayable**. **Self-Retaining**. At the end of your turn, **Switches** to Delayed Remorse.
 Delayed Remorse | Deciple | Curse | Curse | Curse | - | **Unplayable**. At the end of your turn, take 1 **Fibonacci** damage. **Switches** to Wavering Confidence.
 Sluggish | Marisa | Curse | Curse | Curse | 0 | **Exhaustive** 3. **Amplify** 1: Draw 1 card, and reduce **Exhaustive** counter an additional time.
+Whispers of Evil | Glutton | Curse | Curse | Power | 0 | **Autoplay**. Draw 1 card at the start of each turn. Add an **Echo** of a random **Curse** to your draw pile at the end of each turn.
 
 # Mod-Crossover Relics
 Name | Mod(s) | Character | Rarity | Description
 --- | --- | --- | --- | ---
-Byrd Feeder | Beaked | Beaked | Common | Healing beyond your max hp gives **Temporary** HP.
 Winged Headdress | Beaked | Beaked | Common | Can be used once per turn, before your deck is shufled for the first time each combat. Replenishes 1 use of all **Wither** cards in your hand, and **Exhausts** them.
+Byrd Feeder | Beaked | Beaked | Rare | Healing beyond your max hp gives **Temporary** HP.
 Lucky Slots | Infinite Spire | All | Shop | When a fighter loses exactly 7 HP, gain **Critical**. If this triggers 3 times in a single combat, gain 7 gold.
 Sealed Pack | Infinite Spire | All | Boss | Chose 1 basic card to obtain. Choose 1 colorless card to obtain. Choose 1 rare card to obtain. Choose 1 black card to obtain. Choose 1 **Curse** to obtain. **Curse** cannot be skipped, and becomes **Soulbound**.
+Cursed D8 | Glutton | All | Boss | Gain 1 energy and draw 1 card at the start of your turn. Shuffle an **Echo** of a random **Curse** into your draw pile at the end of your turn.
 
 # Keywords
 Name | Type | Description
 --- | --- | ---
 Refund | Misc | When a card with **Refund** is played, energy spent on it is returned (up to the stated amount).
 Exhaustive | Misc | A card with **Exhaustive** **Exhausts** after a certain number of uses.
-Shielding | Misc | A form of **Block** that can block HP loss, and does not wear off between rounds.
+Shielding | Misc | A form of **Block** that does not wear off between rounds.
 Crystal | Orb | **Passive:** Gives +2 **Focus** to adjacent orbs. **Evoke:** Gain an orb slot if you have less than 3.
 Glass | Orb | No **Passive** effect. When **Evoked**, if you have more than 3 orb slots, consumes your leftmost one and **Evokes** any occupying orb.
 Hellfire | Orb | **Passive:** Gives +2 **Strength** at the start of your turn that is removed at the end of your turn. **Evoke:** Apply 1 **Vulnerable** to a random enemy.

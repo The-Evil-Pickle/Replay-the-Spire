@@ -238,6 +238,14 @@
 	" random #yCurse #yEchoes to your draw pile."
     ]
   },
+  "Replay:Echo Chamber": {
+    "NAME": "Echo Chamber",
+    "DESCRIPTIONS": [
+	"Make an #yEcho of the first #b",
+	" non-Ethereal non-Power",
+	" cards you play each turn."
+    ]
+  },
   "Replay:Color Shift": {
     "NAME": "Color Shift",
     "DESCRIPTIONS": [

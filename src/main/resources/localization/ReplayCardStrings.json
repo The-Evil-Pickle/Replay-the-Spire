@@ -595,6 +595,11 @@
 	"DESCRIPTION": "Gain !B! Shielding. NL Confuse all enemies. NL !M! card you draw each turn has its stats and effects scrambled.",
 	"UPGRADE_DESCRIPTION": "Gain !B! Shielding. NL Gain !M! Artifact. NL Confuse all enemies. NL !M! card you draw each turn has its stats and effects scrambled."
   },
+  "ReplayTheSpireMod:Echo Chamber": {
+	"NAME": "Echo Chamber",
+	"DESCRIPTION": "Make an Echo of the first !M! non-Ethereal non-Power cards you play each turn.",
+	"UPGRADE_DESCRIPTION": "Make an Echo of the first !M! cards you play each turn."
+  },
   "ReplayTheSpireMod:Brewmster": {
 	"NAME": "Brewmaster",
 	"DESCRIPTION": "Obtain a random potion at the start of each round.",

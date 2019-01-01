@@ -20,6 +20,9 @@ public class infinitebs {
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.ChaosVortex());
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.SuperSneckoCrazyCard());
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.FractalStrike());
+		if (ReplayTheSpireMod.foundmod_glutton) {
+			infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.EchoChamber());
+		}
 		ReplayTheSpireMod.AddAndUnlockCard(new DarkDeal());
 	}
 	public static void registerQuests() {

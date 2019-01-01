@@ -48,9 +48,8 @@ public class ALWAYSwhaleModifier extends AbstractDailyMod
         this.img = ImageMaster.loadImage("images/relics/cursedBlood.png");
     }
     
-    
 	@SpirePatch(clz = NeowEvent.class, method = "blessing")
-	public static class FUCKUCASEYANDORANTHONY {
+	public static class WhyIsThisDoneLikeThis {
 	    @SpireInsertPatch(rloc = 3)
 	    public static void FUCK(NeowEvent __instance) {
 	    	if (CardCrawlGame.trial != null && CardCrawlGame.trial.dailyModIDs().contains(ALWAYSwhaleModifier.ID)) {
@@ -58,7 +57,7 @@ public class ALWAYSwhaleModifier extends AbstractDailyMod
 	    	}
 	    }
 	}
-	
+
 	@SpirePatch(clz=AbstractDungeon.class, method="generateMap")
 	public static class ALWAYS {
 	    @SpireInsertPatch(locator = Locator.class)
@@ -66,7 +65,7 @@ public class ALWAYSwhaleModifier extends AbstractDailyMod
 	    	if (CardCrawlGame.trial != null && CardCrawlGame.trial.dailyModIDs().contains(ALWAYSwhaleModifier.ID)) {
 		        for (List<MapRoomNode> rows : AbstractDungeon.map) {
 		            for (MapRoomNode node : rows) {
-		                if (node.room instanceof EventRoom) {
+		                if (node.room instanceof EventRoom && AbstractDungeon.mapRng.randomBoolean()) {
 		                    node.setRoom(new FakeNeowRoom());
 		                }
 		            }
@@ -85,12 +84,22 @@ public class ALWAYSwhaleModifier extends AbstractDailyMod
 
 	}
 	
+	@SpirePatch(clz=NeowEvent.class, method="shouldSkipNeowDialog")
+	public static class DontSkipPls {
+		public static boolean Postfix(boolean _result, NeowEvent _instance) {
+			if (CardCrawlGame.trial != null && CardCrawlGame.trial.dailyModIDs().contains(ALWAYSwhaleModifier.ID) && AbstractDungeon.floorNum > 1) {
+				return false;
+			}
+			return _result;
+		}
+	}
+	
 
 	@SpirePatch(
 	        clz= AbstractDungeon.class,
 	        method="returnRandomRelicKey"
 	)
-	public static class fuckofflock {
+	public static class banishTheseRelics {
 	    private static List<String> relicBlacklist = new ArrayList<>();
 	
 	    static {
@@ -122,7 +131,7 @@ public class ALWAYSwhaleModifier extends AbstractDailyMod
 	        clz = NeowsLament.class,
 	        method = "atBattleStart"
 	)
-	public static class fuckyoukio {
+	public static class stackTheLaments {
 	    private static ArrayList<AbstractRelic> laments = new ArrayList<>();
 	    private static AbstractRelic fuckukio = null;
 	    public static SpireReturn Prefix(NeowsLament __instance) {

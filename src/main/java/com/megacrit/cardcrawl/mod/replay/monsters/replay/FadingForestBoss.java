@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.HexPower;
 import com.megacrit.cardcrawl.powers.IntangiblePower;
 import com.megacrit.cardcrawl.powers.SlowPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.events.AbstractEvent;
@@ -962,6 +963,7 @@ public class FadingForestBoss extends CustomMonster
 						break;
 					case 2:
 						this.imageEventText.updateBodyText(this.eDesc(4));
+						AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, 2, true), 2));
 						AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.player, new DamageInfo(this, (this.savedDamage / 2)), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 						break;
 					}

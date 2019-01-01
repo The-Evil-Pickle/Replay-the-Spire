@@ -20,6 +20,7 @@ public class DoomedPower
   private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("Doomed");
   public static final String NAME = powerStrings.NAME;
   public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+  private int damage;
   
   public DoomedPower(AbstractCreature owner, int amnt)
   {
@@ -28,15 +29,14 @@ public class DoomedPower
     this.owner = owner;
     this.amount = amnt;
     this.type = AbstractPower.PowerType.DEBUFF;
+    this.damage = 999;
     updateDescription();
     loadRegion("corruption");
   }
   
   public void updateDescription()
   {
-    if (this.owner.isPlayer) {
-      this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]);
-    }
+      this.description = (DESCRIPTIONS[0] + this.damage + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2]);
   }
   
   public void stackPower(int stackAmount)
@@ -49,6 +49,7 @@ public class DoomedPower
 			amount = amount - 1;
 		}
 	}
+	this.damage += 1001;
   }
   
   public void atEndOfTurn(boolean isPlayer)
@@ -56,10 +57,11 @@ public class DoomedPower
     flash();
 	if (amount == 1)
 	{
-	  AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.owner, 999, AbstractGameAction.AttackEffect.FIRE));
+	  AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.owner, this.damage, AbstractGameAction.AttackEffect.FIRE));
 	  AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Doomed"));
 	} else {
 	  amount = amount - 1;
+	  updateDescription();
 	}
   }
 }
