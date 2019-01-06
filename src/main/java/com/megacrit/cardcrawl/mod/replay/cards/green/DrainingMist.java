@@ -55,7 +55,8 @@ public class DrainingMist
     //AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.GREEN_TEXT_COLOR, ShockWaveEffect.ShockWaveType.NORMAL), 1.5F));
 	
 	for (int i=0; i < this.magicNumber; i++) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.getMonsters().getRandomMonster(true), p, new NecroticPoisonPower(AbstractDungeon.getMonsters().getRandomMonster(true), p, 3), 3, AbstractGameAction.AttackEffect.POISON));
+		AbstractMonster mo = AbstractDungeon.getMonsters().getRandomMonster(true);
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new NecroticPoisonPower(mo, p, 3), 3, AbstractGameAction.AttackEffect.POISON));
 		if (!Settings.FAST_MODE) {
 			AbstractDungeon.actionManager.addToBottom(new WaitAction(0.2f));
 		}

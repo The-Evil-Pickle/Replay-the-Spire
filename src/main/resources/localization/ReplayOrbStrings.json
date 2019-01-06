@@ -34,7 +34,7 @@
   "ManaSpark": {
     "DESCRIPTION": [
       "#yPassive: At the start of turn, gain #b",
-      " #yCharge-Up. NL #yEvoke: Gain [e] and #b",
+      " #yCharge-Up. NL #yEvoke: Gain [E] and #b",
       " #yCharge-Up."
     ],
     "NAME": "Manaspark"

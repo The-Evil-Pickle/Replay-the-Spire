@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.relics.*;
 import java.util.ArrayList;
 
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
+import com.evacipated.cardcrawl.mod.stslib.relics.SuperRareRelic;
 import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.blue.EchoForm;
@@ -20,7 +21,7 @@ import replayTheSpire.ReplayAbstractRelic;
 import replayTheSpire.panelUI.ReplayIntSliderSetting;
 import replayTheSpire.panelUI.ReplayRelicSetting;
 
-public class EnergyBall extends ReplayAbstractRelic implements ClickableRelic
+public class EnergyBall extends ReplayAbstractRelic implements ClickableRelic, SuperRareRelic
 {
     public static final String ID = "ReplayTheSpireMod:EnergyBall";
     private AbstractCard srcCard;

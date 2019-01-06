@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.random.Random;
 
 import java.util.*;
 
-@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.AbstractDungeon", method = "nextRoomTransition")
+@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.AbstractDungeon", method = "nextRoomTransition", paramtypez = {})
 public class ReplayNextRoomPatch {
 	
 	public static void Prefix() {

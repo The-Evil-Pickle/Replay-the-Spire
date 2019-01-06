@@ -31,6 +31,8 @@ public class AbesTreasure extends AbstractRelic
     
     public AbesTreasure() {
         super("Abe's Treasure", "abeTreasure.png", RelicTier.BOSS, LandingSound.SOLID);
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
         this.tips.add(new PowerTip("Drowning", "#yDebuff that causes HP loss. Taking unblocked #yAttack damage increases #yDrowning, dealing unblocked #yAttack damage lowers it."));
         this.tips.add(new PowerTip("Abe's Revenge", "A #ySoulbound #yEthereal #rCurse that applies #yFrail."));
         this.initializeTips();

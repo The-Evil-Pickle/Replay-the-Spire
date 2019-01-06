@@ -782,7 +782,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static final ReplayIntSliderSetting SETTING_TAG_DOUBLE_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Double", "2 For 1 Tag Chance", 1, 0, 5);
 	public static final ReplayIntSliderSetting SETTING_TAG_SCRAMBLE_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Scramble", "Special Edition Stat Scramble Chance", 25, 0, 100, "%");
 	public static final ReplayIntSliderSetting SETTING_ROOMS_BONFIRE = new ReplayIntSliderSetting("Bonfire_Chance", "Bonfire Chance", 100, 0, 100, "%");
-	public static final ReplayIntSliderSetting SETTING_ROOMS_PORTAL = new ReplayIntSliderSetting("Portal_Chance", "Portal Chance", 66, 0, 100, "%");
+	public static final ReplayIntSliderSetting SETTING_ROOMS_PORTAL = new ReplayIntSliderSetting("Portal_Chance", "Portal Chance", 33, 0, 100, "%");
 	public static final ReplayBooleanSetting SETTING_REBOTTLE_V_ENABLE = new ReplayBooleanSetting("Rebottle_V_Enable", "Enabled for Vanilla's Bottles", true);
 	public static final ReplayBooleanSetting SETTING_REBOTTLE_V_FREE = new ReplayBooleanSetting("Rebottle_V_Free", "Free Action for Vanilla's Bottles", false);
 	public static final ReplayBooleanSetting SETTING_REBOTTLE_R_ENABLE = new ReplayBooleanSetting("Rebottle_R_Enable", "Enabled for Replay's Bottles", true);
@@ -1633,16 +1633,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         } catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Colored Map not detected");
 		}
-        if (foundmod_fetch || foundmod_stslib) {
-        	String cardStrings = Gdx.files.internal(jsonPath + "ReplayFetchOverrideStrings.json").readString(
-            		String.valueOf(StandardCharsets.UTF_8));
-            BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
-        }
-		if (Settings.language.toString().equals("SPA")) {
+        //spanish is busted right now, sorry
+		/*if (Settings.language.toString().equals("SPA")) {
 			logger.info("Spanish detected!");
 			jsonPath = "localization/spa/";
 			editStringsByLang(jsonPath);
-		}
+		}*/
 		
 		logger.info("done editting strings");
 	}

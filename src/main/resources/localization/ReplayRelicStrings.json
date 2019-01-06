@@ -410,8 +410,8 @@
 	]
   },
   "ReplayTheSpireMod:Onyx Gauntlets": {
-	"NAME": "Onyx Gauntlets",
-	"FLAVOR": ".",
+	"NAME": "Hamster Wheel",
+	"FLAVOR": "Keep on running.",
     "DESCRIPTIONS": [
 	"Gain [E] each time you draw a card. NL Drawing a card increases its cost by #b1 for the turn. NL At the start of combat, add a random #rCurse to your draw pile for each X-cost card in your deck."
 	]
@@ -720,7 +720,9 @@
 		"Gain [E] at the start of each turn. NL For every #b",
 		" gold below #b",
 		" you have, enemies start with a random buff. NL Gain #b",
-		" gold on pick up."
+		" gold on pick up.",
+		" NL While you have more than #b",
+		" gold, various #rthieves and #rbounty #rhunters may come after you."
 	]
   },
   "Replay:Byrd Feeder": {

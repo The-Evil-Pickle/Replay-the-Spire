@@ -18,7 +18,7 @@ public class OnyxGauntlets extends AbstractRelic
     public static final String ID = "ReplayTheSpireMod:Onyx Gauntlets";
     private static ArrayList<AbstractCard> cardsIncreased = new ArrayList<AbstractCard>();
     public OnyxGauntlets() {
-        super(ID, "betaRelic.png", RelicTier.BOSS, LandingSound.HEAVY);
+        super(ID, "hamsterWheel.png", RelicTier.BOSS, LandingSound.HEAVY);
     }
     
     @Override

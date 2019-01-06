@@ -165,7 +165,7 @@
 	"FF_Headache": {
 		"NAME": "Headache",
 		"DESCRIPTIONS": [
-			"As you make your way past tree after tree, your thoughts become jumbled. You head begins to pound. NL After a short time, the pain becomes unbearable.",
+			"As you make your way past tree after tree, your thoughts become jumbled. You head begins to @pound.@ NL After a short time, the pain becomes #runbearable.",
 			"You ignore the pain and press forward. Doing so occupies a significant amount of your strength.",
 			"You close your eyes. You focus on your thoughts, on your heartbeat, on yourself. The pain eases a little - but you've lost track of the dangers around you.",
 			"You try to distract yourself from the pain, and from the unsettling forest that surrounds you. The pain soon subsides. Mostly."

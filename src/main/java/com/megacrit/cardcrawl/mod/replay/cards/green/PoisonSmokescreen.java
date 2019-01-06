@@ -33,13 +33,13 @@ public class PoisonSmokescreen extends CustomCard
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-        if (this.upgraded) {
+        /*if (this.upgraded) {
         	for (AbstractMonster mm : AbstractDungeon.getMonsters().monsters) {
             	if (mm != null && !mm.isDeadOrEscaped()) {
             		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mm, p, new PoisonPower(mm, p, this.block), this.block));
             	}
             }
-        } else {
+        } else {*/
             ArrayList<AbstractMonster> validMonsters = new ArrayList<AbstractMonster>();
             ArrayList<Integer> poisonList = new ArrayList<Integer>();
             for (AbstractMonster mm : AbstractDungeon.getMonsters().monsters) {
@@ -55,16 +55,16 @@ public class PoisonSmokescreen extends CustomCard
             for (int i=0; i < validMonsters.size(); i++) {
             	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(validMonsters.get(i), p, new PoisonPower(validMonsters.get(i), p, poisonList.get(i)), poisonList.get(i)));
             }
-        }
+        //}
     }
     
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            //this.upgradeBlock(2);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            this.upgradeBlock(2);
+            //this.rawDescription = UPGRADE_DESCRIPTION;
+            //this.initializeDescription();
         }
     }
     

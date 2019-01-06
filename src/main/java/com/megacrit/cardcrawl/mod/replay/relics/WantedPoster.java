@@ -29,7 +29,7 @@ public class WantedPoster extends AbstractRelic
     static final int GOLD_BONUS = 100;
     
     public WantedPoster() {
-        super(ID, "betaRelic.png", RelicTier.BOSS, LandingSound.FLAT);
+        super(ID, "wantedPoster.png", RelicTier.BOSS, LandingSound.FLAT);
     }
     
     @Override

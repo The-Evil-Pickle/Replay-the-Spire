@@ -134,8 +134,8 @@ public class FF_ComboSlime_L extends AbstractMonster
                 AbstractDungeon.actionManager.addToBottom(new SuicideAction(this, false));
                 AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
                 AbstractDungeon.actionManager.addToBottom(new SFXAction("SLIME_SPLIT"));
-                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(new SpikeSlime_M(this.saveX - 134.0f, this.saveY + MathUtils.random(-4.0f, 4.0f), 0, this.currentHealth), false));
-                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(new AcidSlime_M(this.saveX + 134.0f, this.saveY + MathUtils.random(-4.0f, 4.0f), 0, this.currentHealth), false));
+                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(new SpikeSlime_M(this.saveX - 134.0f, this.saveY + MathUtils.random(-4.0f, 4.0f), 0, this.currentHealth), true));
+                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(new AcidSlime_M(this.saveX + 134.0f, this.saveY + MathUtils.random(-4.0f, 4.0f), 0, this.currentHealth), true));
                 AbstractDungeon.actionManager.addToBottom(new CanLoseAction());
                 this.setMove(FF_ComboSlime_L.SPLIT_NAME, (byte)3, Intent.UNKNOWN);
                 break;

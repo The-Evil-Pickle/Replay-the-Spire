@@ -16,7 +16,7 @@ public class infinitebs {
 	public static void BlackCards() {
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.Haul());
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.EchoesOfTime());
-		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.DarkTransmutation());
+		//infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.DarkTransmutation());
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.ChaosVortex());
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.SuperSneckoCrazyCard());
 		infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.FractalStrike());
@@ -27,7 +27,7 @@ public class infinitebs {
 	}
 	public static void registerQuests() {
 		QuestHelper.registerQuest(CurseQuest.class);
-		QuestHelper.registerQuest(PortalQuest.class);
+		//QuestHelper.registerQuest(PortalQuest.class);
 		QuestHelper.registerQuest(BonfireQuest.class);
 		QuestHelper.registerQuest(PotionBuyQuest.class);
 	}
