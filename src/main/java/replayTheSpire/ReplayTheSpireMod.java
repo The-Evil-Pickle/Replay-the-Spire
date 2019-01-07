@@ -795,7 +795,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         if (!SETTING_BOSSTOGGLES.containsKey(dungeon)) {
         	SETTING_BOSSTOGGLES.put(dungeon, new ArrayList<ReplayBooleanSetting>());
         }
-        final ReplayBooleanSetting setting = new ReplayBooleanSetting("Replay_boss_toggle_" + bossID, name, bossID.equals("hubris:NecromanticTotem"));
+        final ReplayBooleanSetting setting = new ReplayBooleanSetting("Replay_boss_toggle_" + bossID, name, false);
         SETTING_BOSSTOGGLES.get(dungeon).add(setting);
         return setting;
     }

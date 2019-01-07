@@ -79,7 +79,9 @@ public class PotOfGreed extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            //this.upgradeMagicNumber(1);
+            if (this.rawDescription.equals(UPGRADE_DESCRIPTION)) {
+            	this.upgradeMagicNumber(1);
+            }
             this.rawDescription = PotOfGreed.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

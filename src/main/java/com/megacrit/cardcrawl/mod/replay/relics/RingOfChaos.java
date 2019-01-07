@@ -80,7 +80,7 @@ public class RingOfChaos
 		  return true;
 	  }
 	  String rawdesc = c.rawDescription.toLowerCase();
-	  if (rawdesc.contains("lose !m! hp.") || rawdesc.contains("gain !m! vulnerable") || rawdesc.contains("gain !m! weak") || rawdesc.contains("lose !m! strength") || rawdesc.contains("lose !m! dexterity")) {
+	  if (rawdesc.contains("lose !m! hp.") || rawdesc.contains("gain !m! vulnerable") || rawdesc.contains("gain !m! weak") || rawdesc.contains("lose !m! strength") || rawdesc.contains("lose !m! dexterity") || rawdesc.contains("pay !m!") || rawdesc.contains("spend !m!")) {
 		  return true;
 	  }
 	  if (ReplayTheSpireMod.foundmod_beaked) {
