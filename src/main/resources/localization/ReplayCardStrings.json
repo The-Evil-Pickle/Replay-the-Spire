@@ -661,7 +661,8 @@
   },
   "GremboGang": {
     "NAME": "Grembo's Gang",
-    "DESCRIPTION": "Summon !M! random gremlins that last 2X rounds."
+    "DESCRIPTION": "Summon a random gremlin to fight for you.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Summon a random gremlin to fight for you."
   },
   "AutogenPotionCard": {
     "NAME": "AutogenPotionCard",

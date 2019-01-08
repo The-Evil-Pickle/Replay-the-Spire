@@ -24,7 +24,7 @@ import replayTheSpire.ReplayTheSpireMod;
 
 public class GremboTheGreat extends AbstractImageEvent
 {
-    public static final String ID = "Stuck";
+    public static final String ID = "Grembo";
     private static final EventStrings eventStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
@@ -38,7 +38,7 @@ public class GremboTheGreat extends AbstractImageEvent
 	private boolean upgradeOption;
     
     public GremboTheGreat() {
-        super(GremboTheGreat.NAME, GremboTheGreat.DIALOG_1, "images/events/stuck.png");
+        super(GremboTheGreat.NAME, GremboTheGreat.DIALOG_1, "images/events/grembo.png");
         this.screen = CurScreen.INTRO;
         this.card = new GrembosGang();
         this.relic = new GremlinFood();

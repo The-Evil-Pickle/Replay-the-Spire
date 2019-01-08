@@ -124,8 +124,10 @@ public class ReplayMonsterEncounterPatches {
 	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.TheBeyond", method = "initializeBoss")
 	public static class ReplayBeyondBossListPatch {
 		public static void Postfix(TheBeyond __Instance) {
-			if (TheBeyond.bossList.size() > 1 && TheBeyond.bossList.contains(ReplayMapScoutEvent.bannedBoss)) {
-				TheBeyond.bossList.remove(ReplayMapScoutEvent.bannedBoss);
+			if (AbstractDungeon.bossList.size() > 1 && AbstractDungeon.bossList.contains(ReplayMapScoutEvent.bannedBoss)) {
+				while (AbstractDungeon.bossList.size() > 1 && AbstractDungeon.bossList.contains(ReplayMapScoutEvent.bannedBoss)) {
+					AbstractDungeon.bossList.remove(ReplayMapScoutEvent.bannedBoss);
+				}
 				ReplayMapScoutEvent.bannedBoss = "none";
 			}
 			else if (ReplayMapScoutEvent.bannedBoss.equals("you're fucked lol")) {

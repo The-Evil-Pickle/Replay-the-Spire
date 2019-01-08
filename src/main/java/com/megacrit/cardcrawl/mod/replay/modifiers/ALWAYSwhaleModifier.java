@@ -135,27 +135,30 @@ public class ALWAYSwhaleModifier extends AbstractDailyMod
 	    private static ArrayList<AbstractRelic> laments = new ArrayList<>();
 	    private static AbstractRelic fuckukio = null;
 	    public static SpireReturn Prefix(NeowsLament __instance) {
-	        for (AbstractRelic r : AbstractDungeon.player.relics) {
-	            if (r.relicId.equals(NeowsLament.ID)) {
-	                laments.add(r);
-	            }
-	        }
-	        for (AbstractRelic r : laments) {
-	            if (fuckukio == null) {
-	                fuckukio = r;
-	            }
-	            if (fuckukio.counter < 0 && r.counter > 0) {
-	                fuckukio = r;
-	            }
-	            if (r.counter < fuckukio.counter && r.counter > 0) {
-	                fuckukio = r;
-	            }
-	        }
-	        if (__instance == fuckukio) {
-	            return SpireReturn.Continue();
-	        } else {
-	            return SpireReturn.Return(null);
-	        }
+	    	if (CardCrawlGame.trial != null && CardCrawlGame.trial.dailyModIDs().contains(ALWAYSwhaleModifier.ID)) {
+		        for (AbstractRelic r : AbstractDungeon.player.relics) {
+		            if (r.relicId.equals(NeowsLament.ID)) {
+		                laments.add(r);
+		            }
+		        }
+		        for (AbstractRelic r : laments) {
+		            if (fuckukio == null) {
+		                fuckukio = r;
+		            }
+		            if (fuckukio.counter < 0 && r.counter > 0) {
+		                fuckukio = r;
+		            }
+		            if (r.counter < fuckukio.counter && r.counter > 0) {
+		                fuckukio = r;
+		            }
+		        }
+		        if (__instance == fuckukio) {
+		            return SpireReturn.Continue();
+		        } else {
+		            return SpireReturn.Return(null);
+		        }
+		    }
+	    	return SpireReturn.Continue();
 	    }
 	}
 }

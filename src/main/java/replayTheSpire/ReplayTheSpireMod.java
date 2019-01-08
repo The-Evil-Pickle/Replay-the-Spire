@@ -984,6 +984,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addEvent(ReplayMapScoutEvent.ID, ReplayMapScoutEvent.class, "TheCity");
 		BaseMod.addEvent(TrappedChest.ID, TrappedChest.class);
 		BaseMod.addEvent(ChaosEvent.ID, ChaosEvent.class);
+		if (Loader.isModLoaded("Friendly_Minions_0987678")) {
+			BaseMod.addEvent(GremboTheGreat.ID, GremboTheGreat.class, "TheCity");
+		}
 		
 		
 		if (foundmod_infinite) {
@@ -1215,9 +1218,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Sssssssssstrike());
 		AddAndUnlockCard(new Sssssssssshield());
 		AddAndUnlockCard(new Necrogeddon());
-		/*if (Loader.isModLoaded("Friendly_Minions_0987678")) {
+		if (Loader.isModLoaded("Friendly_Minions_0987678")) {
 			AddAndUnlockCard(new GrembosGang());
-		}*/
+		}
 		logger.info("adding curses...");
 		AddAndUnlockCard(new CommonCold());
 		AddAndUnlockCard(new Hallucinations());

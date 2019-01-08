@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import kobting.friendlyminions.helpers.BasePlayerMinionHelper;
+import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 
 public class ActionGremboSummon
   extends AbstractGameAction
@@ -51,14 +52,18 @@ public class ActionGremboSummon
     }
     if (effect > 0)
     {
-    	for (int i=0; i < this.magic; i++) {
+    	for (int i=0; i < effect; i++) {
     		if(this.p instanceof AbstractPlayerWithMinions) {
                 AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) this.p;
-                player.addMinion(GrembosGang.GetRandomGremboi(effect));
+                AbstractFriendlyMonster grem = GrembosGang.GetRandomGremboi(effect);
+                player.addMinion(grem);
             } else {
             	BasePlayerMinionHelper.addMinion(this.p, GrembosGang.GetRandomGremboi(effect));
             }
     	}
+    }
+    if (!this.freeToPlayOnce) {
+		this.p.energy.use(EnergyPanel.totalCount);
     }
     this.isDone = true;
   }

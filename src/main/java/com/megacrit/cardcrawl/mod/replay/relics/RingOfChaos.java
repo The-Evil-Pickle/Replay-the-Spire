@@ -4,6 +4,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.ExhaustiveField;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.mod.replay.powers.ChaosPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import java.util.*;
@@ -98,7 +99,7 @@ public class RingOfChaos
 		return false;
 	}
 	
-	if (c.type == AbstractCard.CardType.POWER && SETTING_MODE.value != 0) {//ReplayTheSpireMod.RingOfChaos_CompatibilityMode != ReplayTheSpireMod.ChaosMagicSetting.ALWAYS
+	if (c.type == AbstractCard.CardType.POWER && SETTING_MODE.value != 0 && !(AbstractDungeon.player != null && AbstractDungeon.player.hasPower(ChaosPower.POWER_ID))) {//ReplayTheSpireMod.RingOfChaos_CompatibilityMode != ReplayTheSpireMod.ChaosMagicSetting.ALWAYS
 		return false;
 	}
 	
@@ -106,10 +107,10 @@ public class RingOfChaos
 	ArrayList<ChaosUpgradeType> dwnOp = new ArrayList<ChaosUpgradeType>();
 	boolean invertMagic = isMagicNegative(c);
 	if (c.baseMagicNumber > 0 && (c.rawDescription.contains("!M") || c.rawDescription.contains("M!"))) {
-		if (SETTING_MODE.value == 2) {//if (ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.STRICT) {
+		if (SETTING_MODE.value == 2 && !(AbstractDungeon.player != null && AbstractDungeon.player.hasPower(ChaosPower.POWER_ID))) {//if (ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.STRICT) {
 			return false;
 		}
-		if (SETTING_MODE.value == 0) {//if (ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.ALWAYS) {
+		if (SETTING_MODE.value == 0 || AbstractDungeon.player != null && AbstractDungeon.player.hasPower(ChaosPower.POWER_ID)) {//if (ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.ALWAYS) {
 			if (invertMagic) {
 				dwnOp.add(ChaosUpgradeType.MAGIC);
 				if (c.baseMagicNumber > 1) {
@@ -175,7 +176,7 @@ public class RingOfChaos
 			}
 			if (downside == ChaosUpgradeType.COST) {
 				if (c.baseMagicNumber > 0 && c.rawDescription.contains("!M") && 
-				(SETTING_MODE.value == 1)) {//(ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.COST_ONLY)) {
+				(SETTING_MODE.value == 1 && !(AbstractDungeon.player != null && AbstractDungeon.player.hasPower(ChaosPower.POWER_ID)))) {//(ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.COST_ONLY)) {
 					upOp.add(ChaosUpgradeType.MAGIC);
 					if (c.baseMagicNumber > 1) {
 						dwnOp.add(ChaosUpgradeType.MAGIC);
@@ -188,7 +189,7 @@ public class RingOfChaos
 			}
 			if (upside == ChaosUpgradeType.COST) {
 				if (c.baseMagicNumber > 0 && c.rawDescription.contains("!M") && 
-				(SETTING_MODE.value == 1)) {//(ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.COST_ONLY)) {
+				(SETTING_MODE.value == 1 && !(AbstractDungeon.player != null && AbstractDungeon.player.hasPower(ChaosPower.POWER_ID)))) {//(ReplayTheSpireMod.RingOfChaos_CompatibilityMode == ReplayTheSpireMod.ChaosMagicSetting.COST_ONLY)) {
 					upOp.add(ChaosUpgradeType.MAGIC);
 					if (c.baseMagicNumber > 1) {
 						dwnOp.add(ChaosUpgradeType.MAGIC);

@@ -61,7 +61,7 @@ public class GremboWizard extends AbstractFriendlyMonster
     private MinionMove move_charge;
     
     private void addMoves(){
-    	this.move_blast = new MinionMove(MOVES[1], this, new Texture("images/monsters/atk_bubble.png"), "Deal " + this.baseDamage + " damage to ALL enemies.", () -> {
+    	this.move_blast = new MinionMove(MOVES[1], this, new Texture("images/summons/bubbles/atk7_bubble.png"), "Deal " + this.baseDamage + " damage to ALL enemies.", () -> {
         	final ArrayList<AbstractMonster> m = AbstractDungeon.getCurrRoom().monsters.monsters;
             final float[] tmp2 = new float[m.size()];
             for (int i = 0; i < tmp2.length; ++i) {
@@ -91,7 +91,7 @@ public class GremboWizard extends AbstractFriendlyMonster
             this.currentCharge = 2;
             this.updateMoveCharge();
         });
-        this.move_charge = new MinionMove(MOVES[0], this, new Texture("images/monsters/atk_bubble.png"),"Charge the Ultimate Blast (" + this.currentCharge + " charges before blast can be used).", () -> {
+        this.move_charge = new MinionMove(MOVES[0], this, new Texture("images/summons/bubbles/charge_bubble.png"),"Charge the Ultimate Blast (" + this.currentCharge + " charges before blast can be used).", () -> {
             this.currentCharge--;
             this.updateMoveCharge();
         });

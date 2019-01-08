@@ -26,34 +26,45 @@ public class GrembosGang extends CustomCard
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
-    private static final int COST = -1;
-    private static final int NUM_BOIS = 2;
+    public static final String UPGRADE_DESCRIPTION;
+    private static final int COST = 1;
     
     public GrembosGang() {
-        super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
-        this.baseMagicNumber = NUM_BOIS;
-        this.magicNumber = this.baseMagicNumber;
+        super(ID, NAME, "cards/replay/replayBetaPower.png", COST, DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
     }
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-    	AbstractDungeon.actionManager.addToBottom(new ActionGremboSummon(p, this.magicNumber, this.freeToPlayOnce, this.energyOnUse));
+    	//AbstractDungeon.actionManager.addToBottom(new ActionGremboSummon(p, this.magicNumber, this.freeToPlayOnce, this.energyOnUse));
+    	if(p instanceof AbstractPlayerWithMinions) {
+            AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) p;
+            AbstractFriendlyMonster grem = GrembosGang.GetRandomGremboi(((AbstractPlayerWithMinions) p).getMinions().monsters.size());
+            grem.usePreBattleAction();
+            player.addMinion(grem);
+        } else {
+        	AbstractFriendlyMonster grem = GrembosGang.GetRandomGremboi(0);
+        	grem.usePreBattleAction();
+        	BasePlayerMinionHelper.addMinion(p, grem);
+        }
     }
     
     public static AbstractFriendlyMonster GetRandomGremboi(int dur) {
     	AbstractFriendlyMonster gremboi = null;
-    	switch(AbstractDungeon.miscRng.random(0, 3)) {
+    	switch(AbstractDungeon.miscRng.random(1, 4)) {
     	case 0:
-    		gremboi = new GremboWizard((dur <= 1));
+    		gremboi = new GremboWizard(false);//this boi doesn't work :rip:
     		break;
     	case 1:
-    		gremboi = new GremboFat();
+    		gremboi = new GremboFat(dur * 80.0f);
     		break;
     	case 2:
-    		gremboi = new GremboTsundere();
+    		gremboi = new GremboTsundere(dur * 80.0f);
+    		break;
+    	case 3:
+    		gremboi = new GremboWarrior(dur * 80.0f);
     		break;
     	default:
-    		gremboi = new GremboThief();
+    		gremboi = new GremboThief(dur * 80.0f);
     		break;
     	}
     	//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(gremboi, gremboi, new CowardicePower(gremboi, dur * 2)));
@@ -75,7 +86,9 @@ public class GrembosGang extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.isInnate = true;
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
     
@@ -83,5 +96,6 @@ public class GrembosGang extends CustomCard
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
+        UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     }
 }
