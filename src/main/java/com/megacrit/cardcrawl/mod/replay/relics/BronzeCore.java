@@ -61,6 +61,16 @@ public class BronzeCore extends AbstractRelic
         }
     }
     @Override
+    public void atTurnStart() {
+    	for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
+    		if (monster != null && !monster.isDeadOrEscaped() && !monster.hasPower(MinionPower.POWER_ID)) {
+    			return;
+    		}
+    	}
+        this.flash();
+        AbstractDungeon.actionManager.addToBottom(new SuicideAction(this.orbBoi));
+    }
+    @Override
     public AbstractRelic makeCopy() {
         return new BronzeCore();
     }

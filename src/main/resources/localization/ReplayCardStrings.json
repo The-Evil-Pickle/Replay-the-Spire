@@ -590,6 +590,11 @@
 	"DESCRIPTION": "Draw your entire draw pile. NL You cannot draw any more cards this turn. NL Exhaustive !stslib:ex!.",
 	"UPGRADE_DESCRIPTION": "Draw your entire draw pile. NL Exhaustive !stslib:ex!."
   },
+  "ReplayTheSpireMod:Black Plague": {
+	"NAME": "Black Plague",
+	"DESCRIPTION": "Apply !M! Poison. NL Apply !M! Necrotic Poison. NL Apply !M! Languid. NL Apply !M! Decrepit. NL Exhaust.",
+	"UPGRADE_DESCRIPTION": "Apply !M! Poison. NL Apply !M! Languid. NL Apply !M! Decrepit. NL When the target dies, play this on all other enemies. NL Exhaust."
+  },
   "ReplayTheSpireMod:Chaos Vortex": {
 	"NAME": "Chaos Vortex",
 	"DESCRIPTION": "Gain !B! Shielding. NL Confuse all enemies. NL !M! card you draw each turn has its stats and effects scrambled.",

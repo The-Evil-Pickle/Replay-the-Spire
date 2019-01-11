@@ -181,16 +181,50 @@
 		" #ggold. #gChoose #ga #grare #gcard #gto #gobtain."
 	]
   },
+  "ReplayTheSpireMod:DesignerExtra": {
+	"NAME": "Designer In-Spire",
+	"DESCRIPTIONS": [
+		"this is stupid."
+	],
+	"OPTIONS": [
+		"[Give Kiss] #g",
+		"[Stop]",
+		"[Continue] #g",
+		"[PASSION] #g",
+		"[DESIRE] #g",
+		"%: #gUpgrade #ga #grandom #gcard.",
+		"%: #rChoose #r1 #rof #r3 #rrandom #rCurses #rto #rObtain.",
+		"#rLose #r",
+		" #rHP."
+	]
+  },
   "ReplayTheSpireMod:DanceKnight": {
 	"NAME": "Testing Knight",
 	"DESCRIPTIONS": [
-		"A tall knight blocks your path. NL \"Halt! Only those who #yprove #ytheir #yworth may pass through here!\"",
-		""
+		"A tall #bknight blocks your path. NL @\"Halt!@ Only those who #yprove #ytheir #yworth may pass through here!\"",
+		"\"So be it! Beat my #bsweet #bmoves, and I shall let ye through!\"",
+		"You are no match for the #bKnight. NL \"A #rpitiful display! Did you really think you could beat me with moves like those? @HA!\"@",
+		"\"#gWell #gdone! You have #yproven #yyour #yworth, traveler. Here, have a small #gprize for your trouble. I wish you luck on your adventure!\"",
+		"#g@\"FANTASTIC!\"@ NL The knight is overwhealmingly impressed by your skill. NL \"Never have I seen such #y~grace~, such #b@majesty!@ Here, take this #gtrinket as thanks for showing me such a display!\" NL He hands you something and steps aside to let you pass.",
+		"\"Not in the mood for a fight, eh? Not that I can blame you - probably been fighting all day, what's with the mosters all over the place. Very well, #bQuestions it is!\"",
+		"\"Which of the following does #rnot have #yArtifact?\"",
+		"\"Which of the following is #yRarest?\""
+		
 	],
 	"OPTIONS": [
 		"[Prove Strength] Trial by combat.",
 		"[Prove Dexterity] Trial by dance-off.",
-		"[Prove Focus] Trial by questions."
+		"[Prove Focus] Trial by questions.",
+		"[Continue]",
+		"[The Guardian]",
+		"[Bronze Orbs]",
+		"[Orb Walkers]",
+		"[Giant Head]",
+		"[Sentries]",
+		"[Spheric Guardians]",
+		"[Bronze Automaton]",
+		"[Donu]",
+		"[]"
 	]
   }
 }

@@ -66,6 +66,8 @@ import blackrusemod.cards.Exchange;
 import blackrusemod.cards.KidneyShot;
 //import beaked.characters.*;
 import blackrusemod.characters.*;
+import chronomuncher.cards.PatternShift;
+import chronomuncher.cards.SecondHand;
 import chronomuncher.character.*;
 import constructmod.cards.AttackMode;
 import constructmod.cards.DefenseMode;
@@ -383,31 +385,31 @@ public class MirrorMist
 			}
 			if (ReplayTheSpireMod.foundmod_deciple && AbstractDungeon.player instanceof Chronomuncher) {
 				if (ReplayTheSpireMod.foundmod_hubris) {
-					this.has_1 = CardHelper.hasCardWithID("PatternShift");
-					this.loss_c_1 = CardLibrary.getCopy("PatternShift");
+					this.has_1 = CardHelper.hasCardWithID(PatternShift.ID);
+					this.loss_c_1 = CardLibrary.getCopy(PatternShift.ID);
 					this.gain_c_1 = CardLibrary.getCopy("hubris:StunningStrike");
-					this.has_1b = CardHelper.hasCardWithID("SecondHand");
-					this.loss_c_1b = CardLibrary.getCopy("SecondHand");
-					this.gain_c_1b = CardLibrary.getCopy("hubris:ReadiedAction");
+					//this.has_1b = CardHelper.hasCardWithID(SecondHand.ID);
+					//this.loss_c_1b = CardLibrary.getCopy(SecondHand.ID);
+					//this.gain_c_1b = CardLibrary.getCopy("hubris:ReadiedAction");
 				} else {
 					this.has_1 = AbstractDungeon.player.hasRelic("Chronometer");
-					this.has_1b = CardHelper.hasCardWithID("SecondHand");
+					this.has_1b = CardHelper.hasCardWithID(SecondHand.ID);
 					this.loss_r_1 = RelicLibrary.getRelic("Chronometer").makeCopy();
 					this.gain_r_1 = new BurningBlood();
-					this.loss_c_1b = CardLibrary.getCopy("SecondHand");
+					this.loss_c_1b = CardLibrary.getCopy(SecondHand.ID);
 					this.gain_c_1b = new SpotWeakness();
 				}
-				this.has_2 = CardHelper.hasCardWithID("PatternShift");
-				this.has_2b = CardHelper.hasCardWithID("SecondHand");
-				this.loss_c_2 = CardLibrary.getCopy("PatternShift");
-				this.loss_c_2b = CardLibrary.getCopy("SecondHand");
+				this.has_2 = CardHelper.hasCardWithID(PatternShift.ID);
+				this.has_2b = CardHelper.hasCardWithID(SecondHand.ID);
+				this.loss_c_2 = CardLibrary.getCopy(PatternShift.ID);
+				this.loss_c_2b = CardLibrary.getCopy(SecondHand.ID);
 				this.gain_c_2 = new InfiniteBlades();
 				this.gain_c_2b = new WellLaidPlans();
 				this.has_3 = AbstractDungeon.player.hasRelic("Chronometer");
-				this.has_3b = CardHelper.hasCardWithID("SecondHand");
+				this.has_3b = CardHelper.hasCardWithID(SecondHand.ID);
 				this.loss_r_3 = RelicLibrary.getRelic("Chronometer").makeCopy();
 				this.gain_r_3 = new m_MercuryCore();
-				this.loss_c_3b = CardLibrary.getCopy("SecondHand");
+				this.loss_c_3b = CardLibrary.getCopy(SecondHand.ID);
 				this.gain_c_3b = new WhiteNoise();
 				this.thirdOption = true;
 				break;

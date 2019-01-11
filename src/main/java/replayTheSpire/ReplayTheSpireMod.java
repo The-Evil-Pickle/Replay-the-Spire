@@ -1636,12 +1636,18 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         } catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Colored Map not detected");
 		}
+        ///LocalizedStrings.class is a good reference
         //spanish is busted right now, sorry
 		/*if (Settings.language.toString().equals("SPA")) {
 			logger.info("Spanish detected!");
 			jsonPath = "localization/spa/";
 			editStringsByLang(jsonPath);
 		}*/
+		if (Settings.language.toString().equals("RUS")) {
+			logger.info("Russian detected!");
+			jsonPath = "localization/rus/";
+			editStringsByLang(jsonPath);
+		}
 		
 		logger.info("done editting strings");
 	}
