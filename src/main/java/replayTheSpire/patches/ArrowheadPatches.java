@@ -19,7 +19,7 @@ public class ArrowheadPatches {
 		@SpireInsertPatch(rloc = 16)
 		public static void Insert(CampfireSmithEffect __Instance) {
 			//ReplayTheSpireMod.logger.info((boolean)ReflectionHacks.getPrivate((Object)__Instance, (Class)CampfireSmithEffect.class, "selectedCard"));
-			if (ArrowheadPatches.hasSecondUpgrade) {// && (boolean)ReflectionHacks.getPrivate((Object)__Instance, (Class)CampfireSmithEffect.class, "selectedCard")
+			if (ArrowheadPatches.hasSecondUpgrade && AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 0) {// && (boolean)ReflectionHacks.getPrivate((Object)__Instance, (Class)CampfireSmithEffect.class, "selectedCard")
 				ReflectionHacks.setPrivate((Object)__Instance, (Class)CampfireSmithEffect.class, "openedScreen", (Object)false);
 				ReflectionHacks.setPrivate((Object)__Instance, (Class)CampfireSmithEffect.class, "selectedCard", (Object)false);
 				ReflectionHacks.setPrivate((Object)__Instance, (Class)CampfireSmithEffect.class, "screenColor", (Object)(AbstractDungeon.fadeColor.cpy()));
@@ -37,7 +37,7 @@ public class ArrowheadPatches {
 		
 		public static void Postfix(CampfireSmithEffect __Instance) {
 			ArrowheadPatches.didSecondUpgrade = false;
-			if (AbstractDungeon.player.hasRelic("Arrowhead")) {
+			if (AbstractDungeon.player.hasRelic("Arrowhead") && AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 1) {
 				ArrowheadPatches.hasSecondUpgrade = true;
 	        }
 	        else {

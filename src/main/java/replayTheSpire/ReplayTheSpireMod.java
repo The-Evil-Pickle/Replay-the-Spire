@@ -11,7 +11,8 @@ import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.hubris.HubrisMod;
 import com.evacipated.cardcrawl.mod.hubris.events.thebeyond.TheBottler;
-import com.evacipated.cardcrawl.mod.stslib.StSLib;
+import com.evacipated.cardcrawl.mod.stslib.*;
+import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.google.gson.Gson;
@@ -1008,14 +1009,25 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		
     }
 	
-
     public void receiveEditKeywords() {
         final Gson gson = new Gson();
-        final String json = Gdx.files.internal("localization/ReplayKeywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
-        final Keyword[] keywords = (Keyword[])gson.fromJson(json, (Class)Keyword[].class);
+        String jsonPath = "localization/";
+        if (Settings.language.toString().equals("RUS")) {
+			logger.info("Russian detected!");
+			jsonPath = "localization/rus/";
+	        /*BaseMod.addKeyword(new String[] {"Запуск","Автозапуск"}, "Эффект срабатывает в начале боя.");
+	        BaseMod.addKeyword(new String[] {"Временное ОЗ","Временных ОЗ","Временные ОЗ","Временного ОЗ"}, "Временное здоровье исчезает в конце боя.");
+	        BaseMod.addKeyword(new String[] {"Мимолётная","Мимолётность"}, "Когда вы разыгрываете данную карту, она #yИзгоняется и удаляется из колоды.");
+	        BaseMod.addKeyword(new String[] {"Сжигаемость","Тление"}, "Может быть разыграна несколько раз перед сжиганием");
+	        BaseMod.addKeyword(new String[] {"Возвратность"}, "При разыгрывании карты верните немного энергии.");
+	        BaseMod.addKeyword(new String[] {"Вялость"}, "Враги с эффектом #yВялости наносят на 1 урона от #yАтак меньше (за единицу эффекта). NL Уменьшается на #b1 в конце хода.");*/
+		}
+        final String json = Gdx.files.internal(jsonPath + "ReplayKeywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        final Keyword[] keywords = (Keyword[])gson.fromJson(json, Keyword[].class);
         if (keywords != null) {
             for (final Keyword keyword : keywords) {
-                BaseMod.addKeyword(keyword.NAMES, keyword.DESCRIPTION);
+            	logger.info("Adding Keyword - " + keyword.PROPER_NAME + " | " + keyword.NAMES[0]);
+                BaseMod.addKeyword(keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
         }
     }
@@ -1539,7 +1551,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 	}
 	
-	
+	public static String SINGLE_SUFFIX = "";
+	public static String MULTI_SUFFIX = "s";
 	private static void doStringOverrides(final Type stringType, final String jsonString) {
 		
 		HashMap<Type, String> typeMaps = (HashMap<Type, String>)ReflectionHacks.getPrivateStatic(BaseMod.class, "typeMaps");
@@ -1622,16 +1635,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		String jsonPath = "localization/";
 		editStringsByLang(jsonPath);
         try {
-        	initializeFetchMod();
-		} catch (ClassNotFoundException | NoClassDefFoundError e) {
-			logger.info("Replay | Fetch not detected");
-		}
-        try {
-        	initializeStsLibMod();
-		} catch (ClassNotFoundException | NoClassDefFoundError e) {
-			logger.info("Replay | Fetch not detected");
-		}
-        try {
         	initializeColorMapMod();
         } catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Colored Map not detected");
@@ -1647,6 +1650,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			logger.info("Russian detected!");
 			jsonPath = "localization/rus/";
 			editStringsByLang(jsonPath);
+			SINGLE_SUFFIX = "a";
+			MULTI_SUFFIX = "";
 		}
 		
 		logger.info("done editting strings");

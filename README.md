@@ -3,7 +3,7 @@
 ###### (Currently maintained by The_Evil_Pickle)
 Support this mod at https://www.patreon.com/the_evil_pickle/overview
 
-This mod aims to expand upon the base game by adding lots of content. It is currently a work in progress, but you can download the [latest release](https://github.com/AstroPenguin642/Replay-the-Spire/releases) to help us improve it.
+This mod aims to expand upon the base game by adding lots of content. It is currently a work in progress, but you can download the [latest release](https://github.com/The-Evil-Pickle/Replay-the-Spire/releases) to help us improve it.
 
 ### Requires:
  * ModTheSpire (https://github.com/kiooeht/ModTheSpire)

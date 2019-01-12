@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 //import com.megacrit.cardcrawl.potions.PotionRarity;
 
+import replayTheSpire.ReplayTheSpireMod;
+
 import java.util.ArrayList;
 
 public class AdrenalinePotion
@@ -25,13 +27,13 @@ public class AdrenalinePotion
   public AdrenalinePotion()
   {
     super(NAME, "Adrenaline Potion", PotionRarity.COMMON, AbstractPotion.PotionSize.BOLT, AbstractPotion.PotionColor.EXPLOSIVE);
-	String p = "s ";
+	String p = ReplayTheSpireMod.MULTI_SUFFIX + " ";
 	this.secondPotency = 1;
 	this.potency = this.getPotency();
 	
 	if (this.potency == 1)
 	{
-		p = " ";
+		p = ReplayTheSpireMod.SINGLE_SUFFIX + " ";
 	}
     this.description = (DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1] + p + DESCRIPTIONS[2] + this.secondPotency + DESCRIPTIONS[3]);
     this.isThrown = false;

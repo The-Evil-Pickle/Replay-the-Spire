@@ -52,13 +52,13 @@ public class GremboTsundere extends AbstractFriendlyMonster
     }
     
     private void addMoves(){
-        this.moves.addMove(new MinionMove(MOVES[1], this, new Texture("images/summons/bubbles/atk_bubble.png"), "Deal " + this.baseDamage + " damage.", () -> {
+        this.moves.addMove(new MinionMove("Shield Bash", this, new Texture("images/summons/bubbles/atk_bubble.png"), "Deal " + this.baseDamage + " damage.", () -> {
             target = AbstractDungeon.getRandomMonster();
             DamageInfo info = new DamageInfo(this,this.baseDamage,DamageInfo.DamageType.NORMAL);
             info.applyPowers(this, target); // <--- This lets powers effect minions attacks
             AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
         }));
-        this.moves.addMove(new MinionMove(MOVES[0], this, new Texture("images/summons/bubbles/block_bubble.png"),"Gives you " + this.baseBlock + " Block.", () -> {
+        this.moves.addMove(new MinionMove("Protect", this, new Texture("images/summons/bubbles/block_bubble.png"),"Gives you " + this.baseBlock + " Block.", () -> {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, this, this.baseBlock));
         }));
         this.moves.addMove(new MinionMove("Defend", this, new Texture("images/summons/bubbles/block_bubble.png"),"Gains " + this.baseBlock + " Block.", () -> {

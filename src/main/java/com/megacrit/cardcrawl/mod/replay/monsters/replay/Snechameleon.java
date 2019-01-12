@@ -115,7 +115,7 @@ public class Snechameleon extends AbstractMonster
 
     @Override
     public void usePreBattleAction() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ColorShiftPower(this, (AbstractDungeon.ascensionLevel >= 18) ? 3 : 2)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ColorShiftPower(this, (AbstractDungeon.ascensionLevel >= 18) ? 2 : 1)));
     }
     
     @Override

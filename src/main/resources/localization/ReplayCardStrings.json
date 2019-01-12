@@ -617,7 +617,7 @@
   },
   "Replay:Fractal Strike": {
     "NAME": "Fractal Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL Add a new Fractal πStrike to your discard pile. NL **Exhaustive** !stslib:ex!."
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL Add a new Fractal πStrike to your discard pile. NL Exhaustive !stslib:ex!."
   },
   "ReplayTheSpireMod:Rythmic Step": {
 	"NAME": "Rythmic Step",
