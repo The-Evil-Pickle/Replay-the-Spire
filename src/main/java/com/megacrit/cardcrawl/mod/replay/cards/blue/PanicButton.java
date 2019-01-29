@@ -1,21 +1,12 @@
 package com.megacrit.cardcrawl.mod.replay.cards.blue;
 
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.mod.replay.actions.*;
-import com.megacrit.cardcrawl.mod.replay.actions.common.*;
-import com.megacrit.cardcrawl.mod.replay.actions.defect.*;
-import com.megacrit.cardcrawl.mod.replay.cards.*;
-import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.defect.AnimateOrbAction;
 import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-//import com.megacrit.cardcrawl.cards.CardColor;
-//import com.megacrit.cardcrawl.cards.CardRarity;
-//import com.megacrit.cardcrawl.cards.CardTarget;
-//import com.megacrit.cardcrawl.cards.CardType;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.core.*;

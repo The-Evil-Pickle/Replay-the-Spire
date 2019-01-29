@@ -1,0 +1,784 @@
+{
+  "Atom Bomb": {
+    "NAME": "원자 폭탄",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 나를 포함한 모두에게 중독 을 !M! 부여합니다. NL 소멸"
+  },
+  "Poison Darts": {
+    "NAME": "독 다트",
+    "DESCRIPTION": "괴저독 을 !M! 만큼 X 번 부여합니다. NL 적 전체에게 중독 을 !M! 부여합니다.",
+	"UPGRADE_DESCRIPTION": "괴저독 을 X 부여합니다. NL 적 전체에게 괴저독 을 !M! 만큼 X 번 부여합니다."
+  },
+  "Draining Mist": {
+    "NAME": "안개 방출",
+    "DESCRIPTION": "무작위 적에게 괴저독 을 3 만큼 !M! 번 부여합니다. NL 적 전체에게 힘 -1 을 부여합니다. NL 소멸",
+	"UPGRADE_DESCRIPTION": "무작위 적에게 괴저독 을 3 만큼 !M! 번 부여합니다. NL 적 전체에게 힘 -2 을 부여합니다. NL 소멸"
+  },
+  "Toxin Wave": {
+    "NAME": "맹독파",
+    "DESCRIPTION": "적 전체에게 괴저독 을 !M! 부여합니다."
+  },
+  "Hidden Blade": {
+    "NAME": "숨겨진 칼",
+    "DESCRIPTION": "단도 카드 1 장 얻고 카드를 !M! 장 뽑습니다."
+  },
+  "Fluid Movement": {
+    "NAME": "유연한 움직임",
+    "DESCRIPTION": "방어도 가 !M! 만큼 유지됩니다."
+  },
+  "Combo Extender": {
+    "NAME": "연계자",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 이 카드가 턴 시작 후에 뽑힌다면, 사용하기 전까지 비용이 0이 됩니다."
+  },
+  "Sneak Up": {
+    "NAME": "살금살금",
+    "DESCRIPTION": "불가침 을 !M! 얻습니다. NL 모든 공격 카드를 버립니다. NL 환급 !stslib:refund! NL 선천성 NL 소멸 NL 휘발성",
+    "UPGRADE_DESCRIPTION": "불가침 을 !M! 얻습니다. NL 환급 !stslib:refund! NL 선천성 NL 소멸 NL 휘발성"
+  },
+  "ReplayTheSpireMod:Necrosis": {
+    "NAME": "괴사",
+    "DESCRIPTION": "적 전체의 모든 중독 을 괴저독 으로 변화시킵니다. NL 소멸",
+    "UPGRADE_DESCRIPTION": "적 전체의 모든 중독 을 제거합니다. NL 적 전체에게 제거한 양만큼의 괴저독 을 부여합니다. NL 소멸",
+    "EXTENDED_DESCRIPTION": [
+      "That enemy isn't Poisoned."
+    ]
+  },
+  "ReplayTheSpireMod:Extra Pockets": {
+    "NAME": "추가 주머니",
+    "DESCRIPTION": "카드를 1장 버립니다. NL 버린 카드의 비용만큼 단도 카드를 얻습니다.",
+    "UPGRADE_DESCRIPTION": "카드를 1장 버립니다. NL 버린 카드의 비용만큼 강화된 단도 카드를 얻습니다."
+  },
+  "ReplayTheSpireMod:Scrap Shanks": {
+    "NAME": "조각 자루",
+    "DESCRIPTION": "내 턴에 카드를 버릴 때 마다, 단도 카드를 !M! 장 얻습니다.",
+    "UPGRADE_DESCRIPTION": "내 턴에 카드를 버릴 때 마다, 강화된 단도 카드를 !M! 장 얻습니다."
+  },
+  "ReplayTheSpireMod:Shiv Toss": {
+    "NAME": "단도 던지기",
+    "DESCRIPTION": "손에 있는 모든 단도 카드를 버립니다. NL 버려진 단도 카드 1 장당 이번 전투에서 단도 카드의 피해가 !M! 증가합니다. NL 고갈 !stslib:ex!",
+    "UPGRADE_DESCRIPTION": "손에 있는 모든 단도 카드를 버립니다. NL 버려진 단도 카드 1 장당 이번 전투에서 단도 카드의 피해가 !M! 증가합니다. NL 고갈 !stslib:ex! NL 보존"
+  },
+  "ReplayTheSpireMod:The Works": {
+    "NAME": "작업",
+    "DESCRIPTION": "이번 턴에 카드를 3 장 뽑을 때마다, [E] 를 얻고 무작위 적에게 피해를 !M! 줍니다. NL 턴 종료시까지 사용불가 가 됩니다."
+  },
+  "ReplayTheSpireMod:Spot Opening": {
+    "NAME": "스팟 오프닝",
+    "DESCRIPTION": "각 적의 약화 마다, 방어도를 !B! 얻고 반사 를 !M! 얻습니다."
+  },
+  "ReplayTheSpireMod:Exploit Weakness": {
+    "NAME": "약점 활용",
+    "DESCRIPTION": "선택한 적의 약화 수치만큼 나른함 을 부여합니다. NL 소멸",
+    "UPGRADE_DESCRIPTION": "선택한 적의 약화 수치만큼 적 전체에게 나른함 을 부여합니다.",
+    "EXTENDED_DESCRIPTION": [
+      "That enemy isn't Weakened."
+    ]
+  },
+  "ReplayTheSpireMod:From All Sides": {
+    "NAME": "모든면에서",
+    "DESCRIPTION": "무작위 적에게 약화 를 1 부여하고 피해를 !D! 줍니다. NL 2X + !M! 번 반복합니다.",
+    "UPGRADE_DESCRIPTION": "Discard any number of cards from your hand. NL Apply 1 Weak and deal !D! X damage to a random enemy for each."
+  },
+  "ReplayTheSpireMod:Tripwire": {
+    "NAME": "인계철선",
+    "DESCRIPTION": "방어도 를 !B! 얻습니다. NL 다음 턴 시작 시, 무작위 적 하나를 기절 시킵니다. NL 소멸",
+    "UPGRADE_DESCRIPTION": "방어도 를 !B! 얻습니다. NL 다음 턴 시작 시, 무작위 적 하나를 기절시키고 카드를 !M! 장 뽑습니다. NL 소멸"
+  },
+  "Replay:Decoy": {
+    "NAME": "미끼",
+    "DESCRIPTION": "사용불가 NL 무작위 카드를 1 장 버립니다. 소멸 카드가 우선 됩니다. NL 내 턴에 카드가 소멸되거나 버려질 때, 이번 턴과 다음 턴에 방어도를 !B! 얻습니다.",
+    "UPGRADE_DESCRIPTION": "무작위 카드를 1 장 버립니다. 소멸 카드가 우선 됩니다. NL 내 턴에 카드가 소멸되거나 버려질 때, 이번 턴과 다음 턴에 방어도를 !B! 얻습니다.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this card."
+    ]
+  },
+  "Replay:Bag of Tricks": {
+    "NAME": "Bag of Tricks",
+    "DESCRIPTION": "Choose X: NL Apply !replay:M+1! Poison, NL add !replay:M-1! shivs to your hand, NL 방어도 를 !B! 얻습니다, draw !replay:M-2! cards, NL or gain [E] [E] next turn.",
+    "UPGRADE_DESCRIPTION": "Choose X: NL Apply !replay:M+2! Poison, NL add !replay:M-1! shivs to your hand, NL 방어도 를 !B! 얻습니다, draw !replay:M-2! cards, NL or gain [E] [E] [E] next turn.",
+    "EXTENDED_DESCRIPTION": [
+      "Choose ",
+	  " tricks.",
+	  "Smoke Pellets",
+	  "Apply !replay:M+1! Poison",
+	  "Apply !replay:M+2! Poison",
+	  "Juggling Knives",
+	  "Add !replay:M-1! Shivs to your hand",
+	  "Vanishing Act",
+	  "방어도 를 !B! 얻습니다",
+	  "Card Trick",
+	  "Draw !replay:M-2! cards",
+	  "Lightshow",
+	  "Gain [E] [E] next turn",
+	  "Gain [E] [E] [E] next turn"
+    ]
+  },
+  "Replay:Poison Smokescreen": {
+    "NAME": "독 연막",
+    "DESCRIPTION": "방어도 를 !B! 얻습니다. NL 무작위 적들에게 이 카드로 얻은 방어도 만큼 중독 을 나눠서 부여합니다.",
+    "UPGRADE_DESCRIPTION": "방어도 를 !B! 얻습니다. NL 적 전체에게 이 카드로 얻은 방어도 만큼 중독 을 부여합니다."
+  },
+  "Abandon": {
+    "NAME": "유기",
+    "DESCRIPTION": "카드 !M! 장까지 소멸 시킵니다. NL 소멸 시킨 카드 1 장당 카드를 1 장 뽑습니다. NL 버린 카드 더미에 공허 카드를 섞어 넣습니다. NL 고갈 !stslib:ex! NL 휘발성",
+    "UPGRADE_DESCRIPTION": "카드 !M! 장까지 소멸 시킵니다. NL 소멸 시킨 카드 1 장당 카드를 1 장 뽑습니다. NL 버린 카드 더미에 어지러움 카드를 섞어 넣습니다. NL 고갈 !stslib:ex! NL 휘발성"
+  },
+  "Defy Death": {
+    "NAME": "죽음을 거역하다",
+    "DESCRIPTION": "방어도 를 !B! 얻습니다. NL 이번 전투에서 소멸된 카드마다 비용이 [R] 감소합니다. NL 무덤"
+  },
+  "Life Link": {
+    "NAME": "생명결속",
+    "DESCRIPTION": "적 하나를 선택합니다. 내가 체력을 잃을 때, 선택한 적도 피해를 받습니다."
+  },
+  "Massacre": {
+    "NAME": "학살",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. NL 모든 힘 을 잃습니다. NL 힘 1 당 피해를 !M! 증가시킵니다."
+  },
+  "Hemogenesis": {
+    "NAME": "조혈",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 방어도 를 !B! 얻습니다. NL 체력을 !M! 회복합니다. NL 내 손에 있는 동안 피해를 입으면 강화 됩니다. NL 소멸"
+  },
+  "Run Through": {
+    "NAME": "관통",
+    "DESCRIPTION": "선택한 적이 체력을 !D! , 방어도 를 !M! 잃습니다."
+  },
+  "ReplayTheSpireMod:Hemoarmum": {
+    "NAME": "Hemoarmum",
+    "DESCRIPTION": "체력을 2 잃습니다 NL 방패 를 !B! 만큼 X 번 얻습니다. NL 환급 3 NL 소멸"
+  },
+  "Demonic Infusion": {
+    "NAME": "악마 주입",
+    "DESCRIPTION": "손에 있는 공격 카드나 스킬 카드를 1 장 X 번 강화합니다. NL 환급 !stslib:refund! NL 소멸",
+    "UPGRADE_DESCRIPTION": "손에 있는 공격 카드나 스킬 카드를 1 장 X+ !M! 번 강화합니다. NL 환급 !stslib:refund! NL 소멸"
+  },
+  "Single Out": {
+    "NAME": "선발",
+    "DESCRIPTION": "취약을 !M! 부여합니다. NL 카드를 1 장 뽑습니다. 파워 카드나 공격 카드가 아니면, 소멸 시킵니다."
+  },
+  "Cursed Blade": {
+    "NAME": "저주받은 검",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 손에 이 카드가 있는 동안 다른 카드를 사용 할 수 없습니다."
+  },
+  "ReplayReversal": {
+    "NAME": "역행",
+    "DESCRIPTION": "다음 턴 종료까지 방어도를 유지합니다. NL 반사 를 !M! 얻습니다.",
+	"UPGRADE_DESCRIPTION": "다음 !replay:M-1! 턴 종료까지 방어도를 유지합니다. NL 반사 를 !M! 얻습니다."
+  },
+  "ReplayTheSpireMod:LeadingStrike": {
+    "NAME": "주도하는 타격",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 이번 턴 동안 손에 있는 공격 카드를 1 장 선택해 비용을 !M! 로 감소시킵니다."
+  },
+  "ReplayTheSpireMod:Stacked": {
+    "NAME": "유령 방패",
+    "DESCRIPTION": "방어도 를 !B! 얻습니다. NL 고갈 !stslib:ex!"
+  },
+  "ReplayTheSpireMod:Corrosion Curse": {
+    "NAME": "부식의 저주",
+    "DESCRIPTION": "나른함 을 !replay:M-1! 부여합니다. NL 노쇠 를 !M! 부여합니다. NL 고갈 !stslib:ex!"
+  },
+  "Replay:Many Hands": {
+    "NAME": "더 많은 손길",
+    "DESCRIPTION": "언데드의 손길 카드를 X 장 얻습니다. NL 고갈 !stslib:ex!",
+    "UPGRADE_DESCRIPTION": "언데드의 손길 카드를 X 장 얻습니다. NL 환급 !stslib:refund! NL 고갈 !stslib:ex!"
+  },
+  "Replay:Undeath's Touch": {
+    "NAME": "언데드의 손길",
+    "DESCRIPTION": "피해를 !D! 만큼 !M! 번 줍니다. NL 노쇠 를 1 부여합니다. NL 소멸"
+  },
+  "Eclipse": {
+    "NAME": "일식",
+    "DESCRIPTION": "손에 있는 모든 카드를 소멸 시키고 소멸 시킨 카드 수만큼 무작위로 비용이 1 감소 된 카드들을 얻습니다. NL 소멸",
+    "UPGRADE_DESCRIPTION": "손에 있는 모든 카드를 소멸 시키고 소멸 시킨 카드 수만큼무작위로 비용이 1 감소 된 카드들을 얻습니다. NL 환급 !stslib:refund! NL 소멸"
+  },
+  "ReplayTheSpireMod:Strike From Hell": {
+    "NAME": "지옥에서의 타격",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 이 카드가 소멸되면, 피해가 !M! 증가하고 손으로 다시 가져옵니다."
+  },
+  "ReplayTheSpireMod:Limb From Limb": {
+    "NAME": "사지에서 사지로",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 이 카드로 막히지 않은 피해를 !M! 이상 준다면, 카드를 2 장 뽑고 환급 2 합니다."
+  },
+  "ReplayScrap": {
+    "NAME": "토막",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 이 공격으로 하수인이 아닌 적을 죽이면, 체력을 6 회복하고 영구적으로 이 카드의 피해량을 !M! 증가시킵니다."
+  },
+  "ReplayGash": {
+    "NAME": "후벼 파는 갈퀴",
+    "DESCRIPTION": "후벼 파기로 취급합니다. NL 피해를 !D! 줍니다. NL 적 전체에게 피해를 !D! 줍니다. NL 개전: 덱에 후벼 파기 카드가 없다면, 뽑을 카드 더머에 후벼 파기 카드를 1 장 섞어 넣습니다. NL 무덤"
+  },
+  "Crystallizer": {
+    "NAME": "수정화",
+    "DESCRIPTION": "수정 구체는 양옆의 구체에게 추가적인 밀집 을 !M! 부여합니다. NL 턴 종료 시 구체 슬롯이 1/2 이상 비어있다면, 수정 을 1 번 영창 합니다.",
+    "UPGRADE_DESCRIPTION": "선천성 NL 수정 구체는 양옆의 구체에게 추가적인 밀집 을 !M! 부여합니다. NL 턴 종료 시 구체 슬롯이 1/2 이상 비어있다면, 수정 을 1 번 영창 합니다."
+  },
+  "ReplayTheSpireMod:GoodbyeWorld": {
+    "NAME": "빈 통",
+    "DESCRIPTION": "매 턴 종료시, 손에 있는 모든 일반 카드를 소멸 시키고 소멸 시킨 카드 1 장당 방어도 를 !M! 얻습니다.",
+    "UPGRADE_DESCRIPTION": "선천성 NL 매 턴 종료시, 손에 있는 모든 일반 카드를 소멸 시키고 소멸 시킨 카드 1 장당 방어도 를 !M! 얻습니다."
+  },
+  "Mirror Shield": {
+    "NAME": "거울 방패",
+    "DESCRIPTION": "수정 을 1번 영창 합니다. NL 냉기 를 1번 영창 합니다. NL 방어도 를 !B! 얻습니다. NL 반사 를 !M! 얻습니다."
+  },
+  "ReplayTheSpireMod:Repulse": {
+    "NAME": "거부",
+    "DESCRIPTION": "반사 를 !M! 얻습니다. NL 버린 카드 더미에 역화 카드를 1 장 섞어 넣습니다."
+  },
+  "ReplayTheSpireMod:Omega Cannon": {
+    "NAME": "오메가 캐논",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 만큼 !M! 번 줍니다. NL 뽑을 카드 더미와 버린 카드 더미에 역화 카드를 1 장씩 섞어 넣습니다."
+  },
+  "ReplayTheSpireMod:Dual Polarity": {
+    "NAME": "이중 극성",
+    "DESCRIPTION": " 번 영창 합니다 !M! Lightning and Dark, NL 수정 and Frost, NL Water and 지옥불, NL or 유리 and Plasma.",
+	"EXTENDED_DESCRIPTION": [
+		"Choose",
+		"Light and Dark",
+		" 번 영창 합니다 !M! 전기. NL  번 영창 합니다 !M! 암흑.",
+		"Stone and Ice",
+		" 번 영창 합니다 !M! 수정. NL  번 영창 합니다 !M! 냉기.",
+		"Water and Fire",
+		" 번 영창 합니다 !M! Water. NL  번 영창 합니다 !M! 지옥불.",
+		"Entropy and Energy",
+		" 번 영창 합니다 !M! 유리. NL  번 영창 합니다 !M! 플라즈마."
+	]
+  },
+  "Reflective Lens": {
+    "NAME": "반사형 렌즈",
+    "DESCRIPTION": "유리 를 1 번 영창합니다. NL 유리 구체는 지속 효과로 반사 를 부여합니다."
+  },
+  "Panic Button": {
+    "NAME": "비상 버튼",
+    "DESCRIPTION": "모든 구체를 발현 합니다. NL 카드를 !M! 장 뽑습니다. NL 소멸 NL 보존",
+    "UPGRADE_DESCRIPTION": "모든 구체를 발현 합니다. NL 카드를 !M! 장 뽑습니다. NL 소멸 NL 보존"
+  },
+  "ReplayRNGCard": {
+    "NAME": "RNG",
+    "DESCRIPTION": "무작위 구체를 X 번 영창 합니다.",
+    "UPGRADE_DESCRIPTION": "무작위 구체를 X+1 번 영창 합니다."
+  },
+  "BasicCrystalCard": {
+    "NAME": "수정 도관",
+    "DESCRIPTION": "수정 을 1 번 영창 합니다.",
+    "UPGRADE_DESCRIPTION": "수정 을 1 번 영창 합니다. NL 무작위 구체를 1 번 영창 합니다."
+  },
+  "ReplayIlluminate": {
+    "NAME": "빛",
+    "DESCRIPTION": "Light 를 1 번 영창 합니다. NL 소멸"
+  },
+  "ReplaySort": {
+    "NAME": "분류",
+    "DESCRIPTION": "버린 카드 더미의 모든 희귀 또는 상태이상 이 아닌 카드들을 뽑을 카드 더미로 섞어 넣습니다. 카드를 !M! 장 뽑습니다.",
+    "UPGRADE_DESCRIPTION": "버린 카드 더미의 모든 희귀 또는 상태이상 이 아닌 카드들을 뽑을 카드 더미로 섞어 넣습니다. 카드를 !M! 장 뽑습니다. NL 보존",
+	"EXTENDED_DESCRIPTION": [
+		"Sort By...",
+		"Rarity",
+		"버린 카드 더미의 모든 희귀 카드들을 뽑을 카드 더미로 섞어 넣습니다. 카드를 !M! 장 뽑습니다.",
+		"Type",
+		"버린 카드 더미의 상태이상 이 아닌 카드들을 뽑을 카드 더미로 섞어 넣습니다. 카드를 !M! 장 뽑습니다.",
+		"Cost",
+		"Shuffle all 0-cost cards from your 버린 카드 더미 into your deck. NL 카드를 !M! 장 뽑습니다."
+	]
+  },
+  "ReplaySolidLightProjector": {
+    "NAME": "솔리드 라이트 프로젝터",
+    "DESCRIPTION": "버린 카드 더미의 카드 !M! 장 마다 방패 를 !B! 얻습니다. NL 고갈 !stslib:ex!",
+	"EXTENDED_DESCRIPTION": [
+		" NL (Gain ",
+		" total)"
+	]
+  },
+  "ReplayOverclock": {
+    "NAME": "과열",
+    "DESCRIPTION": "밀집 을 !M! 얻습니다. NL 턴 종료시, 밀집 을 !M! 잃습니다."
+  },
+  "Time Bomb": {
+    "NAME": "시간 폭탄",
+    "DESCRIPTION": "구체 슬롯 2 개를 얻습니다. NL 유리 를 2 번 영창 합니다. NL 암흑 을 1 번 영창 하고 지속 효과를 !M! 번 발동시킵니다. NL 소멸"
+  },
+  "FIFO Queue": { 
+    "NAME": "FIFO Queue", 
+    "DESCRIPTION": "구체 슬롯 !M! 개를 얻습니다.", 
+    "UPGRADE_DESCRIPTION": "유리 를 1 번 영창 합니다. NL 구체 슬롯 2X 개를 얻습니다. NL 환급 !stslib:refund!" 
+  },
+  "ReplayTheSpireMod:System Scan": {
+    "NAME": "시스템 점검",
+    "DESCRIPTION": "내가 뽑는 다음 상태이상 카드 !M! 장을 소멸 시키고 카드를 1 장 뽑습니다."
+  },
+  "ReplayTheSpireMod:Muscle Training": {
+    "NAME": "무게 훈련",
+    "DESCRIPTION": "힘 을 1 얻습니다. NL 체력을 !M! 잃습니다. NL 고갈 !stslib:ex!"
+  },
+  "ReplayTheSpireMod:Speed Training": {
+    "NAME": "속도 훈련",
+    "DESCRIPTION": "민첩 을 !M! 얻습니다. NL 무작위로 카드를 1 장 버립니다. NL 환급 !stslib:refund! NL 고갈 !stslib:ex!"
+  },
+  "ReplayTheSpireMod:Calculation Training": {
+    "NAME": "계산 훈련",
+    "DESCRIPTION": "밀집 을 1 얻습니다. NL 버린 카드 더미에 어지러움 카드를 !M! 장 섞어 넣습니다. NL 고갈 !stslib:ex!",
+	"UPGRADE_DESCRIPTION": "밀집 을 1 얻습니다. NL 고갈 !stslib:ex! NL 개전: 버린 카드 더미에 어지러움 카드를 !M! 장 섞어 넣습니다."
+  },
+  "Replay:Refactor": {
+    "NAME": "역률",
+    "DESCRIPTION": "Choose: 힘, 민첩, or 밀집 을 !M! 잃습니다. NL Choose: 힘, 민첩, or 밀집 을 !M! 얻습니다. NL 소멸",
+	"UPGRADE_DESCRIPTION": "Choose: 힘, 민첩, or 밀집 을 !M! 잃습니다. NL Choose: 힘, 민첩, or 밀집 을 !M! 얻습니다. NL 소멸"
+  },
+  "Improvise": {
+    "NAME": "즉흥",
+    "DESCRIPTION": "3 장의 무작위 카드 중 1 장을 선택해 가져옵니다. 비용이 1 감소합니다. NL 소멸",
+    "UPGRADE_DESCRIPTION": "3 장의 강화된 무작위 카드 중 1 장을 선택해 가져옵니다. 비용이 1 감소합니다. NL 소멸"
+  },
+  "Midas Touch": {
+    "NAME": "마이다스의 손길",
+    "DESCRIPTION": "손에 있는 카드를 원하는 만큼 소멸 시킵니다. NL 소멸 시킨 카드 1 장당 희귀 카드를 1 장 얻습니다. NL 소멸",
+    "UPGRADE_DESCRIPTION": "손에 있는 카드를 원하는 만큼 소멸 시킵니다. NL 소멸 시킨 카드 1 장당 강화된 희귀 카드를 1 장 얻습니다. NL 소멸"
+  },
+  "Survey Options": {
+    "NAME": "조사권",
+    "DESCRIPTION": "카드를 X 장 뽑습니다. NL 환급 !stslib:refund! "
+  },
+  "ReplayTheSpireMod:Private Reserves": {
+    "NAME": "개인적 비축",
+    "DESCRIPTION": "[E] 를 얻습니다. NL 소멸 NL 보존",
+    "UPGRADE_DESCRIPTION": "[E] 를 얻습니다. NL 카드를 1 장 뽑습니다. NL 소멸 NL 보존"
+  },
+  "Poisoned Strike": {
+    "NAME": "중독 타격",
+    "DESCRIPTION": "중독 을 !D! 부여합니다. NL 힘 에 의해 변합니다."
+  },
+  "ReplayTheSpireMod:Trickstab": {
+    "NAME": "교묘한 찌르기",
+    "DESCRIPTION": "피해를 !D! 만큼 !M! 번 줍니다. NL 민첩 에 의해 피해량이 변합니다."
+  },
+  "Specialist": {
+    "NAME": "전문가",
+    "DESCRIPTION": "내가 가하는 모든 비-공격 피해가 !M! 증가합니다. ",
+	"UPGRADE_DESCRIPTION": "선천성. NL 내가 가하는 모든 비-공격 피해가 !M! 증가합니다. ",
+	"EXTENDED_DESCRIPTION": [
+		"밀집 을 1 잃습니다. NL "
+	]
+  },
+  "ReplayUltimateDefense": {
+    "NAME": "궁극의 방어",
+    "DESCRIPTION": "인공물 을 !M! 얻습니다. NL 민첩 을 !M! 얻습니다. NL 판금 갑옷 을 5 얻습니다. NL 방패 를 !B! 얻습니다.",
+	"UPGRADE_DESCRIPTION": "인공물 을 !M! 얻습니다. NL 민첩 을 !M! 얻습니다. NL 판금 갑옷 을 5 얻습니다. NL 방패 를 !B! 얻습니다. NL 불가침을 1 얻습니다."
+  },
+  "Replay:Sssssssssstrike": {
+    "NAME": "Sssstrike",
+    "DESCRIPTION": "피해를 !D! 줍니다. 소비한 [E] 당 추가로 피해를 !D! 줍니다. NL 환급 !stslib:refund! NL 스네코."
+  },
+  "Replay:Sssssssssshield": {
+    "NAME": "Sssshield",
+    "DESCRIPTION": "방어도 를 !B! 얻습니다. NL 소비한 [E] 당 방패 를 !B! 얻습니다. NL 스네코. NL 소멸",
+    "UPGRADE_DESCRIPTION": "방어도 를 !B! 얻습니다. NL 소비한 [E] 당 방패 를 !B! 얻습니다. NL 환급 !stslib:refund! NL 스네코. NL 소멸"
+  },
+  "Replay:Dark Deal": {
+    "NAME": "어둠의 거래",
+    "DESCRIPTION": "사용불가 NL 휘발성 NL 개전: 뽑을 카드 더미에 무작위 Black 카드를 1 장 섞어 넣습니다.",
+	"UPGRADE_DESCRIPTION": "사용불가 NL 휘발성 NL 무덤 NL 개전: 뽑을 카드 더미에 무작위 강화된 Black 카드를 1 장 섞어 넣습니다."
+  },
+  "Replay:Resounding Blow": {
+    "NAME": "Resounding Blow",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 방어도 를 !B! 얻습니다. NL 이 카드를 뽑았을 때, 이 카드의 Echoes 를 복사합니다."
+  },
+  "Replay:Duplecho": {
+    "NAME": "Duplecho",
+    "DESCRIPTION": "Create X Echoes of a card in your hand.",
+	"UPGRADE_DESCRIPTION": "Create X Echoes of a card in your hand. NL 환급 !stslib!."
+  },
+  "Replay:SS_Removal": {
+    "NAME": "Shop Special: Card Removal Service",
+    "DESCRIPTION": "Permanently remove a card from your deck. NL 일시적",
+	"UPGRADE_DESCRIPTION": "Permanently remove a card from your deck. NL 일시적 NL You may choose to spend !M! gold to negate 일시적"
+  },
+  "Replay:SS_Rewards": {
+    "NAME": "Shop Special: Rewards Program",
+    "DESCRIPTION": "Gain !M! gold for each card in your 뽑을 카드 더미. NL Purge.",
+	"UPGRADE_DESCRIPTION": "선천성. NL Gain !M! gold for each card in your 뽑을 카드 더미. NL Purge."
+  },
+  "Replay:SS_Contract": {
+    "NAME": "Shop Special: Contract",
+    "DESCRIPTION": "When you deal unblocked damage this turn, gain that much Max HP. NL 일시적",
+	"UPGRADE_DESCRIPTION": "When you deal unblocked damage this turn, gain that much Max HP. NL Permanently Downgrade this card. NL 소멸"
+  },
+  "Replay:SS_Spare Waffle": {
+    "NAME": "Shop Special: Spare Waffle",
+    "DESCRIPTION": "Heal to full HP. NL Retain. NL 일시적",
+	"UPGRADE_DESCRIPTION": "Heal to full HP. NL Gain !M! Max HP. NL Retain. NL 일시적"
+  },
+  "Crow Ritual": {
+    "NAME": "깨어난 자 의식",
+    "DESCRIPTION": "버린 카드 더미와 뽑을 카드 더미에 의식 카드를 !M! 장씩 섞어 넣습니다. 손에 의식 카드를 5 장 갖고 있다면 소멸 시키고 피해를 !D! 주는 카드를 5 장 얻습니다.",
+	"EXTENDED_DESCRIPTION": [
+		"Ritual Component",
+		"카드를 1 장 뽑는 비용이 0인 카드입니다."
+	]
+  },
+  "Ritual Component": {
+    "NAME": "의식",
+    "DESCRIPTION": "카드를 1 장 뽑습니다. NL If it is an Attack, 피해를 !M! 받습니다.",
+	"UPGRADE_DESCRIPTION": "카드를 1 장 뽑습니다."
+  },
+  "Dark Echo": {
+    "NAME": "어둠의 메아리",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다."
+  },
+  "Looming Evil": {
+	"NAME": "희미한 악",
+	"DESCRIPTION": "에너지를 !M! 사용해 소멸 시킬 수 있습니다. NL 턴 종료 시, 저주를 뽑을 카드 더미에 섞어 넣고 비용이 감소합니다.",
+    	"EXTENDED_DESCRIPTION": [
+    	"에너지를 사용해 ",
+    	" 소멸 시킬 수 있습니다. NL 턴 종료 시, 저주를 뽑을 카드 더미에 섞어 넣고 비용이 감소합니다."
+		]
+  },
+  "Hallucinations": {
+	"NAME": "환각",
+	"DESCRIPTION": "사용불가 NL 턴 종료 시, 뽑을 카드 더미에 무작위 카드를 !M! 장 섞어 넣습니다. NL 고갈 !stslib:ex!"
+  },
+  "Sickly": {
+	"NAME": "병약함",
+	"DESCRIPTION": "사용불가 NL 턴 종료 시, 방어도를 !M! 잃습니다."
+  },
+  "Languid": {
+	"NAME": "우울증",
+	"DESCRIPTION": "사용불가 NL 카드를 뽑을 때, 나른함 을 !M! 얻고 카드를 1 장 뽑습니다."
+  },
+  "CommonCold": {
+	"NAME": "감기",
+	"DESCRIPTION": "엣취!",
+	"EXTENDED_DESCRIPTION": [
+		" NL Is Exhausted by Medical Kit rather than Blue Candle."
+	]
+  },
+  "Delirium": {
+	"NAME": "섬망",
+	"DESCRIPTION": "사용불가 NL 턴 종료 시, 혼란 을 1 턴 동안 얻습니다."
+  },
+  "Voices": {
+	"NAME": "소음",
+	"DESCRIPTION": "사용불가 NL 휘발성 NL 개전: 버린 카드 더미에 이 카드를 복사해 !M! 장 섞어 넣습니다."
+  },
+  "Spreading Infection": {
+	"NAME": "확산되는 감염",
+	"DESCRIPTION": "사용불가 NL 턴 종료 시, 손에 있는 모든 다른 저주 와 상태이상 카드를 복제합니다."
+  },
+  "Amnesia": {
+	"NAME": "기억상실",
+	"DESCRIPTION": "사용불가 NL 턴 종료 시, 소멸 합니다."
+  },
+  "AbeCurse": {
+	"NAME": "아베의 복수",
+	"DESCRIPTION": "사용불가 NL 턴 종료 시, 손상을 !M! 얻습니다. NL 휘발성"
+  },
+  "MirrorMistCurse": {
+	"NAME": "안개",
+	"DESCRIPTION": "사용불가 NL 어떻게 해도 이 카드를 변화 할 수 없습니다. 이 카드를 대신 받았습니다."
+  },
+  "Overencumbered": {
+	"NAME": "과적",
+	"DESCRIPTION": "사용불가 NL 이 카드를 뽑을 때, 어지러움 카드를 !M! 장 얻고 카드를 1 장 뽑습니다."
+  },
+  "ReplayTheSpireMod:Doomed": {
+	"NAME": "파멸",
+	"DESCRIPTION": "사용하면 죽습니다. NL 일시적 NL 휘발성 NL 무덤"
+  },
+  "ReplayTheSpireMod:Faulty Equipment": {
+	"NAME": "불완전한 장비",
+	"DESCRIPTION": "사용불가 NL 영혼결속",
+	"UPGRADE_DESCRIPTION": "일시적"
+  },
+  "ReplayTheSpireMod:Restless Dread": {
+	"NAME": "쉼없는 두려움",
+	"DESCRIPTION": "자동화. NL 카드를 1 장 뽑습니다. NL 버린 카드 더미에 무작위 저주를 !M! 장 섞어 넣습니다. NL 소멸 NL 무덤"
+  },
+  "ReplayTheSpireMod:Splinters": {
+	"NAME": "조각남",
+	"DESCRIPTION": "피해를 !M! 받습니다. NL 카드를 1 장 뽑습니다. NL 고갈 !stslib:ex! NL 개전: 뽑을 카드 더미에 이 카드를 1 장 복사해 섞어 넣습니다."
+  },
+  "ReplayTheSpireMod:IOU": {
+	"NAME": "차용증",
+	"DESCRIPTION": "!M! 골드 를 쓰고 사용합니다. NL 일시적 NL 영혼결속."
+  },
+  "ReplayTheSpireMod:Whispers of Evil": {
+	"NAME": "악의 속삭임",
+	"DESCRIPTION": "자동화. NL 턴 시작 시, 카드를 !M! 장 추가로 뽑습니다. NL 턴 종료 시, 뽑을 카드 더미에 무작위 Echo 저주 카드를 !M! 장 섞어 넣습니다."
+  },
+  "ReplayTheSpireMod:Misquitos": {
+	"NAME": "A Very Large Swarm Of Misquitos",
+	"DESCRIPTION": "자동화. NL 나를 포함한 모두에게 피해를 !M! 줍니다."
+  },
+  "ReplayTheSpireMod:Imminent Threat": {
+	"NAME": "임박한 위협",
+	"DESCRIPTION": "선천성. NL 피해를 !M! 받습니다. NL 소멸 NL 복수심에 불타는 위협 으로 전환 됩니다."
+  },
+  "ReplayTheSpireMod:Vengeful Threat": {
+	"NAME": "복수심에 불타는 위협",
+	"DESCRIPTION": "무덤 NL 카드를 1 장 뽑습니다. NL 소멸 NL 임박한 위협 으로 전환 됩니다."
+  },
+  "ReplayTheSpireMod:Meltdown Sequence": {
+	"NAME": "Meltdown Sequence",
+	"DESCRIPTION": "사용불가 NL Cycle. When cycled: NL Add 1 Lagged to your 버린 카드 더미. 고갈 !stslib:ex! NL Startup: Add !M! Lagged+ to your 뽑을 카드 더미.",
+	"UPGRADE_DESCRIPTION": "사용불가 NL [#ff9900]OVERHEAT: [#ff9900]< !construct:O! [#ff9900]> NL Cycle. When cycled: NL Add 1 Lagged to your 버린 카드 더미. 고갈 !stslib:ex!. NL Startup: Add !M! Lagged+ to your 뽑을 카드 더미."
+  },
+  "ReplayTheSpireMod:Lagged": {
+	"NAME": "Lagged",
+	"DESCRIPTION": "사용불가 NL Cycle.",
+	"UPGRADE_DESCRIPTION": "사용불가 NL [#ff9900]OVERHEAT: [#ff9900]< !construct:O! [#ff9900]> NL Cycle."
+  },
+  "ReplayTheSpireMod:Compounding Headache": {
+	"NAME": "복합 두통",
+	"DESCRIPTION": "카드를 1 장 뽑습니다. NL 체력을 !beaked:wI! 잃습니다. NL 소멸 NL Wither -1.",
+	"EXTENDED_DESCRIPTION": [
+	"Increases HP loss."
+	]
+  },
+  "ReplayTheSpireMod:Traitor's Concience": {
+	"NAME": "배신자의 양심",
+	"DESCRIPTION": "사용불가 NL 턴 종료 시, 피해를 !beaked:wI! 받습니다. NL Wither -1.",
+	"EXTENDED_DESCRIPTION": [
+	"Increases damage taken."
+	]
+  },
+  "ReplayTheSpireMod:Wavering Confidence": {
+	"NAME": "흔들리는 자신감",
+	"DESCRIPTION": "사용불가 NL 자가보존. NL 턴 종료 시, 지연된 자책감으로 변환합니다."
+  },
+  "ReplayTheSpireMod:Greater Regret": {
+	"NAME": "지연된 자책감",
+	"DESCRIPTION": "사용불가 NL 턴 종료 시, 피보나치 피해를 !M! 받습니다. NL 흔들리는 자신감으로 변환됩니다."
+  },
+  "Replay:Sluggish": {
+	"NAME": "Sluggish",
+	"DESCRIPTION": "고갈 !stslib:ex! NL Amplify [E] : 카드를 1 장 뽑습니다 and reduce 고갈 counter an extra time."
+  },
+  "ReplayTheSpireMod:Echoes of Time": {
+	"NAME": "반향의 시간",
+	"DESCRIPTION": "이번 전투에서 소멸된 카드 !M! 장을 Fetch 합니다. NL 무덤 NL Purge."
+  },
+  "ReplayTheSpireMod:??????????????????????": {
+	"NAME": "??????????????????",
+	"DESCRIPTION": "스네코. NL Purge.",
+	"EXTENDED_DESCRIPTION": [
+		" NL ???????",
+		" NL 카드를 !M! 장까지 소멸 시킵니다.",
+		" NL 강화된 단도 카드를 !M! 장 얻습니다.",
+		" NL 무작위 구체를 !M! 번 영창 합니다.",
+		" NL [E] 를 얻습니다.",
+		" NL Gain !M! Knives and !M! Protection.",
+		" NL Gain !M! Fuel and shuffle !M! Trinkets into your 뽑을 카드 더미.",
+		" NL Shuffle !M! random Cores into your 뽑을 카드 더미.",
+		" NL Shuffle !M! random Cantrips into your 뽑을 카드 더미.",
+		" NL Heal !M! HP and Replenish !replay:M-1! uses of all Wither and/or 고갈 cards in your hand and 버린 카드 더미.",
+		" NL Replicate up to !M! of your relics and Retain !M! cards this turn.",
+		" NL Heal !M! HP and shuffle !M! Inspiration into your 뽑을 카드 더미.",
+		" NL Equip a 3/ !M! Weapon.",
+		" NL Add !M! Sparks to your hand. NL Amplify [E] : add a copy of this card to your 버린 카드 더미.",
+		" NL Add !M! Cogs to your 뽑을 카드 더미.",
+		" NL Split into a random Slime. NL Apply !M! Slimed to all enemies."
+	]
+  },
+  "ReplayTheSpireMod:Necrogeddon": {
+	"NAME": "네크로게돈",
+	"DESCRIPTION": "선택한 적에게 이번 전투에서 소멸 된 카드 수만큼 피해를 줍니다. NL 무덤",
+	"UPGRADE_DESCRIPTION": "적 전체에게 이번 전투에서 소멸 된 카드 수만큼 피해를 줍니다. NL 무덤",
+	"EXTENDED_DESCRIPTION": [
+    	" NL (Deals !D! damage)"
+    ]
+  },
+  "ReplayTheSpireMod:Haul": {
+	"NAME": "끌기",
+	"DESCRIPTION": "뽑을 카드 더미에서 카드를 모두 뽑습니다. NL 이번 턴에 더 이상 카드를 뽑을 수 없습니다. NL 고갈 !stslib:ex!",
+	"UPGRADE_DESCRIPTION": "뽑을 카드 더미에서 카드를 모두 뽑습니다. NL 고갈 !stslib:ex!"
+  },
+  "ReplayTheSpireMod:Chaos Vortex": {
+	"NAME": "혼돈의 소용돌이",
+	"DESCRIPTION": "방패 를 !B! 얻습니다. NL 적 전체에게 혼란 을 부여합니다. NL 매 턴 뽑는 카드 !M! 장 의 효과가 무작위로 됩니다.",
+	"UPGRADE_DESCRIPTION": "방패 를 !B! 얻습니다. NL 인공물 을 !M! 얻습니다. NL  적 전체에게 혼란 을 부여합니다. NL 매 턴 뽑는 카드 !M! 장 의 효과가 무작위로 됩니다."
+  },
+  "ReplayTheSpireMod:Echo Chamber": {
+	"NAME": "울림실",
+	"DESCRIPTION": "매 턴 처음 사용하는 휘발성이 아니고 파워가 아닌 카드를 !M! 장 Make an Echo.",
+	"UPGRADE_DESCRIPTION": "매 턴 처음 사용하는 카드를 !M! 장 Make an Echo."
+  },
+  "ReplayTheSpireMod:Brewmster": {
+	"NAME": "양조의 달인",
+	"DESCRIPTION": "매 턴 시작시 무작위 포션 하나를 얻습니다.",
+	"UPGRADE_DESCRIPTION": "매 턴 시작시 무작위 포션 하나를 얻습니다."
+  },
+  "ReplayTheSpireMod:Dark Transmutation": {
+	"NAME": "어둠의 변환",
+	"DESCRIPTION": "무작위 Black 카드를 X 장 얻습니다. NL 이번 턴 동안 비용이 1 감소합니다. NL Purge.",
+	"UPGRADE_DESCRIPTION": "무작위 Black 카드를 X 장 얻습니다. NL 이번 턴 동안 비용이 1 감소합니다. NL 환급 !stslib:refund!. NL Purge."
+  },
+  "Replay:Fractal Strike": {
+    "NAME": "프랙탈 타격",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 카드를 1 장 뽑습니다. NL 버린 카드 더미에 프랙탈 타격 카드를 섞어 넣습니다. NL **고갈** !stslib:ex!"
+  },
+  "ReplayTheSpireMod:Rythmic Step": {
+	"NAME": "Rythmic Step",
+	"DESCRIPTION": "카드를 !M! 장 뽑습니다. NL Switches into Rythmic Lunge."
+  },
+  "ReplayTheSpireMod:Rythmic Lunge": {
+	"NAME": "Rythmic Step",
+	"DESCRIPTION": "피해를 !D! 줍니다. NL Switches into Rythmic Step."
+  },
+  "ReplayTheSpireMod:Uncanny Aura": {
+	"NAME": "이상한 기운",
+	"DESCRIPTION": "사용불가 NL 무덤 NL 턴 종료 시, 손에 있는 사용불가 카드 1 장당 !M! 만큼 힘 과 민첩 을 얻습니다."
+  },
+  "ReplayTheSpireMod:Five Aces": {
+	"NAME": "5 에이스",
+	"DESCRIPTION": "카드를 사용할 때마다, !M!% 의 확률로 치명타 를 1 얻습니다."
+  },
+  "ReplayTheSpireMod:Heavy Armor": {
+	"NAME": "중장갑",
+	"DESCRIPTION": "판금 갑옷 을 !M! 얻습니다. NL 고갈 !stslib:ex!"
+  },
+  "Ghost Swipe": {
+    "NAME": "환영 강타",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 소멸 NL 휘발성"
+  },
+  "Ghost Defend": {
+    "NAME": "환영 수비",
+    "DESCRIPTION": "방어도 를 !B! 얻습니다. NL 소멸 NL 휘발성"
+  },
+  "Ghost Fetch": {
+    "NAME": "환영 술책",
+    "DESCRIPTION": "뽑을 카드 더미에서 기본 카드를 1 장 선택합니다. 그 카드를 가져옵니다. NL 소멸 NL 휘발성",
+	"UPGRADE_DESCRIPTION": "뽑을 카드 더미에서 기본 카드를 1 장 선택합니다. 그 카드를 가져옵니다. NL 이번 턴에 그 카드의 비용은 0이 됩니다. NL 소멸 NL 휘발성",
+	"EXTENDED_DESCRIPTION": [
+    	"There are no Basic cards NL in my 뽑을 카드 더미."
+    ]
+  },
+  "Pot Of Greed": {
+    "NAME": "욕망의 항아리",
+    "DESCRIPTION": "카드를 !M! 장 뽑습니다. NL 이번 턴에 다른 욕망의 항아리를 사용할 수 없습니다",
+    "UPGRADE_DESCRIPTION": "카드를 !M! 장 뽑습니다.",
+	"EXTENDED_DESCRIPTION": [
+		"I've already played a Grinning Jar this turn!",
+		"I've already played this card once this turn!"
+	]
+  },
+  "GremboGang": {
+    "NAME": "Grembo's Gang",
+    "DESCRIPTION": "Summon !M! random gremlins that last 2X rounds."
+  },
+  "AutogenPotionCard": {
+    "NAME": "AutogenPotionCard",
+    "DESCRIPTION": " NL 소멸 NL 보존."
+  },
+  "Scorching Beam": {
+    "NAME": "맹렬한 광선",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. NL 지옥불 을 !M! 번 영창 합니다."
+  },
+  "Firewall": {
+    "NAME": "불의 벽",
+    "DESCRIPTION": "방어도 를 !B! 얻습니다. NL 이번 턴에 피해를 막을 때마다, 지옥불 을 !M! 번 영창 합니다."
+  },
+  "IC_BasicHellfireCard": {
+    "NAME": "녹은 핵",
+    "DESCRIPTION": "지옥불 을 1 번 영창 합니다. NL 소멸"
+  },
+  "WeaponsOverheat": {
+    "NAME": "과열된 무기",
+    "DESCRIPTION": "0 보다 작은 밀집 을 갖고 있다면, 밀집 을 1 얻습니다. NL 0 보다 큰 밀집 을 갖고 있다면, 밀집 을 1 잃습니다. NL 지옥불 을 1 번 영창 합니다. NL 버린 카드 더미에 역화 카드를 1 장 섞어 넣습니다. NL 휘발성",
+    "UPGRADE_DESCRIPTION": "0 보다 작은 밀집 을 갖고 있다면, 밀집 을 1 얻습니다. NL 0 보다 큰 밀집 을 갖고 있다면, 밀집 을 1 잃습니다. NL 지옥불 을 1 번 영창 합니다. NL 휘발성"
+  },
+  "Replay:Light Bash": {
+    "NAME": "Light Bash",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL Amplify [E] : also apply !M! Vulnerable."
+  },
+  "Replay:Spark Circuitry": {
+    "NAME": "Spark Circuitry",
+    "DESCRIPTION": "Manaspark 를 !M! 번 영창 합니다. NL Amplify [E] : Crystal first 를 !M! 번 영창 합니다. NL 소멸"
+  },
+  "ReplayTheSpireMod:RavenHex": {
+    "NAME": "까마귀의 저주",
+    "DESCRIPTION": "나른함 을 !beaked:wI! 부여합니다. NL Wither 1.",
+    "UPGRADE_DESCRIPTION": "나른함 과 노쇠 를 !beaked:wI! 부여합니다. NL Wither 1.",
+	"EXTENDED_DESCRIPTION": [
+		"Decreases the debuff amount."
+	]
+  },
+  "ReplayTheSpireMod:Wings of Steel": {
+    "NAME": "철의 날개",
+    "DESCRIPTION": "방패 를 !beaked:wB! 얻고 NL 판금 갑옷 을 !beaked:wI! 얻습니다. NL Wither !M!.",
+    "UPGRADE_DESCRIPTION": "방패 를 !beaked:wB! 얻고 NL 판금 갑옷 을 !beaked:wI! 얻습니다. NL Wither !M!.",
+	"EXTENDED_DESCRIPTION": [
+		"Decreases all amounts."
+	]
+  },
+  "ReplayTheSpireMod:Owlgaze": {
+    "NAME": "응시",
+    "DESCRIPTION": "무작위 적 하나를 기절 시킵니다. NL 환급 !stslib:refund! NL Wither !M!.",
+    "UPGRADE_DESCRIPTION": "적 전체를 기절 시킵니다. NL 환급 !stslib:refund! NL Wither !M!.",
+	"EXTENDED_DESCRIPTION": [
+		"Decreases Refund amount. NL Card is not Depleted until Refund drops below 0."
+	]
+  },
+  "ReplayTheSpireMod:Prepare the Ceremony": {
+    "NAME": "의식을 준비하다",
+    "DESCRIPTION": "의식 카드를 !M! 장 얻습니다. NL 이번 턴에 스킬 카드를 사용할 때마다, 무작위 적 하나에게 피해를 !M! 줍니다. NL 고갈 !stslib:ex!",
+	"EXTENDED_DESCRIPTION": [
+		"Ritual Component",
+		"A 0-cost Skill that draws 1 card."
+	]
+  },
+  "ReplayTheSpireMod:Armaments MK-II": {
+    "NAME": "장비 MK-II",
+    "DESCRIPTION": "방어도 를 !B! 얻습니다. NL 손에 있는 카드를 1 장 강화합니다. NL 특급강화 할 수 있습니다.",
+    "UPGRADE_DESCRIPTION": "방어도 를 !B! 얻습니다. NL 손에 있는 모든 카드를 강화합니다. NL 특급강화 할 수 있습니다.",
+	"EXTENDED_DESCRIPTION": [
+		"방어도 를 !B! 얻습니다. NL Mega-Upgrade ALL cards in your hand."
+	]
+  },
+  "ReplayTheSpireMod:Mirror System": {
+    "NAME": "거울 시스템",
+    "DESCRIPTION": "[#ff9900]OVERHEAT: [#ff9900]< !construct:O! [#ff9900]> NL Cycle if you have < 1 Dexterity. NL Gain !M! 반사."
+  },
+  "BackFire": {
+    "NAME": "역화",
+    "DESCRIPTION": "사용불가 NL 이 카드를 뽑을 때, 취약 을 1 얻습니다. NL 턴 종료 시, 피해를 6 받습니다. NL 소멸",
+    "UPGRADE_DESCRIPTION": "사용불가. NL 이 카드를 뽑을 때, 취약 을 1 얻습니다. NL 턴 종료 시, 피해를 8 받습니다 NL 소멸"
+  },
+  "MimicStatus": {
+    "NAME": "광적인 흉내",
+    "DESCRIPTION": "손에 있는 무작위 카드를 1 장 복제합니다. NL 소멸"
+  },
+  "ReplayMimic_AttackMimicry": {
+    "NAME": "공격 흉내",
+    "DESCRIPTION": "선택한 적이 공격할 의도를 갖고 있다면, 그 공격을 복사해 가져옵니다. NL 소멸"
+  },
+  "ReplayMimic_RelicMimicry": {
+    "NAME": "유물 흉내",
+    "DESCRIPTION": "무작위 유물 효과를 얻습니다.",
+	"UPGRADE_DESCRIPTION": "일반 유물이 아닌 무작위 유물 효과를 얻습니다."
+  },
+  "ReplayMimic_Lock": {
+    "NAME": "미믹의 잠금",
+    "DESCRIPTION": "인공물 을 !M! 얻습니다. NL 민첩 을 !M! 얻습니다."
+  },
+  "ReplayMimic_Shell": {
+    "NAME": "미믹의 껍질",
+    "DESCRIPTION": "#y판금 #y갑옷 을!M! 얻습니다."
+  },
+  "ReplayMimic_Boo": {
+    "NAME": "부!",
+    "DESCRIPTION": "약화 를 !M! 부여합니다. NL 혼란 을 !M! 부여합니다."
+  },
+  "ReplayMimic_MadMimicry": {
+    "NAME": "Mimic Madness",
+    "DESCRIPTION": "손에 있는 카드를 1 장 복제합니다. NL 소멸 NL 휘발성",
+	"UPGRADE_DESCRIPTION": "손에 있는 카드를 1 장 복제합니다. NL 소멸"
+  },
+  "ReplayMimic_PowerMimicry": {
+    "NAME": "Power Mimicry",
+    "DESCRIPTION": "Copy 1 stack of a random enemy buff X times. NL 환급 !M!. ",
+    "UPGRADE_DESCRIPTION": "Copy 1 stack of a random enemy buff X times. NL 환급 !M!. "
+  },
+  "m_BoundBlade": {
+    "NAME": "Bound Blade",
+    "DESCRIPTION": "Cantrip. NL Add a Shiv to your hand. NL Draw a card.",
+    "UPGRADE_DESCRIPTION": "Cantrip. NL Add an Upgraded Shiv to your hand. NL Draw a card."
+  }
+}

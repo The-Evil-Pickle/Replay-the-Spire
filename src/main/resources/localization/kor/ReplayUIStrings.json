@@ -1,0 +1,69 @@
+{
+  "Brew Option": {
+    "TEXT": [
+		"양조",
+		"무작위 포션 2 개를 양조합니다.",
+		"무작위 포션 1 개를 양조합니다. 소주를 무시합니다 ."
+	]
+  },
+  "Mine Option": {
+    "TEXT": [
+		"채굴",
+		"50-100 골드를 얻습니다."
+	]
+  },
+  "Polymerize Option": {
+    "TEXT": [
+		"중합",
+		"카드 1 장을 변화시킵니다.",
+		"Choose a card to Transform.",
+		" Free action."
+	]
+  },
+  "Multitask Option": {
+    "TEXT": [
+		"멀티태스킹",
+		"무작위 카드 1 장을 강화합니다. 최대 체력의 20% 을 회복합니다. (",
+		" hp)."
+	]
+  },
+  "Prepare Option": {
+    "TEXT": [
+		"준비",
+		"다음 전투는 힘과 민첩을 2 얻고 시작합니다."
+	]
+  },
+  "Explore Option": {
+    "TEXT": [
+		"탐험",
+		"무작위 이벤트가 발생합니다."
+	]
+  },
+  "Burn Branch Option": {
+    "TEXT": [
+		"가지에 불을 붙이다",
+		"말라죽은가지를 잃습니다. 특별한 유물을 얻습니다. 다른 행동을 할 수 있습니다."
+	]
+  },
+  "Re-Bottle Option": {
+    "TEXT": [
+		"Re-Bottle (",
+		")",
+		"Change which card this bottle relic targets.",
+		" Free action.",
+		"Pitch",
+		"Randomly change which card Baseball targets."
+	]
+  },
+  "Claw Rake": {
+    "TEXT": [
+		"Select card to discard.",
+		"Select cards to discard."
+	]
+  },
+  "ReduceCostToForTurnAction": {
+    "TEXT": [
+      "Reduce Cost"
+    ]
+  }
+}

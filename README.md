@@ -99,6 +99,7 @@ Name | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis
 Reversal | Red | Common | Skill | 1 | Gain 1(2) **Blur** and 2(3) **Reflection**.
 Run Through | Red | Common | Attack | 1 | Target loses 9(11) HP and 4(7) Block.
 Strike From Hell | Red | Common | Attack | 1 | Deal 7(8) damage. Each time this is **Exhausted**, increase its damage by 2(3) and return it to your hand.
+Undeath's Touch | Red | Common | Deal 1 damage 2(3) times. Apply 1 **Decrepit**. **Exhaust**.
 Corrosion Curse | Red | Uncommon | Skill | 1 | Apply 1(2) **Languid** and 2(3) **Decrepit**. **Exhaustive** 2.
 Defy Death | Red | Uncommon | Skill | 5(4) | Gain 14(16) Block. Costs 1 less for each card you've exhausted this combat. **Grave**.
 Hemogenesis | Red | Uncommon | Attack | 2 | Deal 5 damage. Gain 5 Block. Heal 5 HP. **Exhaust**. Each time you lose HP while this is in your hand, it is **Upgraded** until the end of combat. Can be **Upgraded** any number of times. (Upgrading increases all numbers by 2, or by 3 if the card has been upgraded outside of combat).
@@ -111,12 +112,14 @@ Phantom Shield | Red | Uncommon | Skill | 1 | Gain 11(14) **Block**. **Exhaustiv
 Abandon | Red | Uncommon | Skill | 0 | **Exhaust** up to 3 cards. Draw that many cards. Add a **Void**(**Dazed**) to your discard pile. **Exhaustive** 3(4). **Ethereal**.
 Demonic Infusion | Red | Rare | Skill | X | Upgrade a card X(+1) times. **Refund** 1. **Exhaust**.
 Eclipse | Red | Rare | Skill | 3 | **Exhaust** your hand. For each card, add a random card to your hand that costs 1 less than normal. (**Refund** 1.)
+Many Hands | Red | Rare | Skill | X | Add X copies of Undeath's Touch to your hand. (**Refund** 1.) **Exhaustive** 2(3).
 Fluid Movement | Green | Commmon | Power | 1 | Keep up to 5(8) block between rounds.
 Hidden Blade | Green | Commmon | Skill | 1 | Add a Shiv to your hand and draw 2(3) cards.
 Toxin Wave | Green | Uncommon | Skill | 1 | Apply 3(4) **Necrotic** **Poison** to ALL enemies.
-Tripwire | Green | Uncommon | Skill | 2 | Gain 4(6) **Block**. At the start of your next turn, **Stun** a random enemy (and draw 1 card). **Exhaust**.
+Tripwire | Green | Uncommon | Skill | 2 | Gain 2(4) **Block**. At the start of your next turn, **Stun** a random enemy (and draw 1 card). **Exhaust**.
 Draining Mist | Green | Uncommon | Skill | 3 | Apply 3 **Necrotic** **Poison** to a random enemy 2(3) times. Apply -1(-2) **Strength** to ALL enemies. **Exhaust**.
 Exploit Weakness | Green | Uncommon | Skill | 1(0) | Apply **Languid** equal to target's **Weak**. **Exhaust**.
+Poison Smokescreen | Green | Uncommon | Skill | 2 | Gain 6(8) **Block**, and apply that much **Poison** randomly split among all enemies.
 The Works | Green | Uncommon | Skill | 0 | For every 3 cards you draw this turn, gain 1 energy and deal 4(9) damage to a random enemy. Playable once per round.
 Scrap Shanks | Green | Uncommon | Power | 0 | When you discard a card during your turn, add 1 (**Upgraded**) **Shiv** to your hand.
 Shiv Toss | Green | Uncommon | Skill | 1 | Discard all **Shivs** in your hand. Your **Shivs** deal 1 extra damage this combat for each. **Exhaustive** 2. (**Retain**).
@@ -133,6 +136,7 @@ Crystal Conduit | Blue | Uncommon | Skill | 1 | **Channel** 1 **Crystal** (and 1
 Crystalizer | Blue | Uncommon | Power | 0 | (**Innate**.) If more than half your orb slots are empty at the end of your turn, **Channel** 1 **Crystal**. Your **Crystal** orbs provide an additional +2 **Focus** to adjacent orbs.
 Claw Rake | Blue | Uncommon | Attack | 2 | Deal 2(4) damage. Deal 2(4) damage to ALL enemies. Damage is upgraded by Claw cards. **Grave**. **Startup:** If your deck has no normal Claw cards, add one to your draw pile.
 FIFO Queue | Blue | Uncommon | Power | 2(X) | Gain 4(2X) orb slots. (Channel 1 ***Glass**. **Refund** 1).
+Reroute Power | Blue | Uncommon | Skill | 0 | Swap your **Strength** and **Focus**. Draw 1 card. (**Retain**.)
 Solid Light Projector | Blue | Uncommon | Skill | 1 | Gain 2 **Shielding** for every 5(3) cards in your discard pile. **Exhaustive** 2.
 Sort | Blue | Uncommon | Skill | 1 | Shuffle all Rare cards in your discard pile into your draw pile. Draw 2 cards. (**Retain.**)
 System Scan | Blue | Uncommon | Skill | 1 | The next 2(3) **Status** cards you draw **Exhaust** and draw 1 card when drawn.

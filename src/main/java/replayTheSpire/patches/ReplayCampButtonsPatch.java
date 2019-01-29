@@ -41,7 +41,7 @@ public class ReplayCampButtonsPatch
 	public static ArrayList<AbstractCampfireOption> GetBonfireOptions() {
 		final ArrayList<AbstractCampfireOption> optionsYo = new ArrayList<AbstractCampfireOption>();
 		if ((!AbstractDungeon.player.hasRelic("Coffee Dripper") && AbstractDungeon.currMapNode == BonfirePatches.bonfireNode) || (AbstractDungeon.player.hasRelic("Coffee Dripper") && AbstractDungeon.player.hasRelic(Multitool.ID))) {
-			optionsYo.add(new RestOption());
+			optionsYo.add(new RestOption(true));
 		}
 		if ((!ModHelper.isModEnabled("Midas") && !AbstractDungeon.player.hasRelic("Fusion Hammer")  && AbstractDungeon.currMapNode == BonfirePatches.bonfireNode) || ((ModHelper.isModEnabled("Midas") || AbstractDungeon.player.hasRelic("Fusion Hammer")) && AbstractDungeon.player.hasRelic(Multitool.ID))) {
 			optionsYo.add(new SmithOption(AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 0));
@@ -144,7 +144,7 @@ public class ReplayCampButtonsPatch
 				boolean foundsmith = false;
 				optionsYo.add(new BonfireMultitaskOption());
 				optionsYo.add(new SmithOption(AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 0));
-				optionsYo.add(new RestOption());
+				optionsYo.add(new RestOption(true));
 				if (AbstractDungeon.currMapNode == BonfirePatches.bonfireNode) {
 			        if (ReplayTheSpireMod.foundmod_infinite) {
 			        	infinitebs.TriggerBonfireQuest();

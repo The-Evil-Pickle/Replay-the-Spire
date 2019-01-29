@@ -25,7 +25,7 @@ public class CorrosionCurse extends CustomCard
     private static final int EXHAUSTIVE_AMT = 2;
     
     public CorrosionCurse() {
-        super(ID, CorrosionCurse.NAME, "cards/replay/replayBetaSkill.png", COST, CorrosionCurse.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, CorrosionCurse.NAME, "cards/replay/corrosionCurse.png", COST, CorrosionCurse.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.UNCOMMON, CardTarget.ENEMY);
         ExhaustiveVariable.setBaseValue(this, EXHAUSTIVE_AMT);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;

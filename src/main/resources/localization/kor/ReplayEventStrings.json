@@ -1,0 +1,196 @@
+{
+  "Stuck": {
+	"NAME": "낌",
+    "DESCRIPTIONS": [
+			"돌무더기를 기어다니다, 당신의 다리가 어떤 바위 사이에 끼었습니다.",
+			"어떻게 하시겠습니까?",
+			"다행히 누구도 당신을 보진 않았습니다!",
+			"당신의 존엄성은 시간보다 중요합니다."
+	],
+    "OPTIONS": [
+			"[계속]",
+			"[바지를 벗는다] 다음을 #r잃습니다. : ",
+			"[잡아당긴다] 다음을 #g강화합니다: ",
+			"[잠김] Requires: Unupgraded Card",
+			"[떠난다]"
+    ]
+  },
+  "ReplayTeleport": {
+	"NAME": "포탈",
+    "DESCRIPTIONS": [
+			"당신의 눈앞에서 공간 자체가 ~일그러지고~ 있습니다!"
+	],
+    "OPTIONS": [
+			"[포탈에 들어간다]"
+    ]
+  },
+  "Mirror Mist": {
+	"NAME": "거울 안개",
+	"DESCRIPTIONS": [
+		"안개속에서 당신은 왜곡 된 당신의 반사체를 발견합니다. #b~소용돌이치는~ #b~빛깔~ 이 당신을 둘러싸자 당신은 정신을 유지하려 애씁니다.",
+		"당신은 잃어버린 기억들을 잠깐 기억합니다, 하지만 그건 이제 다른 사람의 것입니다. 약간 어리둥절한 당신을 두고 안개가 없어집니다.",
+		"당신은 당신의 일부를 잃어버렸다고 느낍니다. 그걸 잃어버리면 안된다고 생각합니다. 안개가 가시자, 그 느낌은 곧 잊어버렸습니다."
+	],
+	"OPTIONS": [
+		"[잠김] Requires: ",
+		".",
+		"[",
+		"를 잃습니다] #g다음을 #g얻습니다. : #gSurvivor #g, #gNeutralize.",
+		"를 잃습니다] #g다음을 #g얻습니다. #gBurning #gBlood.",
+		"[돌아다닌다] 무작위 카드를 1장 #g변환 하고 #g강화 합니다.",
+		"[떠난다]",
+		"를 잃습니다] #gSizzling #gBlood 를 #g얻습니다.",
+		"를 잃습니다] #g다음을 #g얻습니다. : ",
+		" , ",
+		"[찾는다] #gObtain ",
+		" #gGold. #r",
+		"%: #rBecome #rCursed #r- #r",
+		"[명상한다] #gFully #gheal. #rBecome #rCursed #r- #r",
+		"[Gaze] #g",
+		"%: #gObtain #ga #gRelic. #r"
+	]
+  },
+  "Trapped Chest": {
+	"NAME": "함정 상자",
+	"DESCRIPTIONS": [
+		"당신은 잠긴 상자를 찾았습니다. 무언가 좀 이상한 것 같습니다...",
+		"상자를 열자, 갑자기 다트들이 당신에게 날아왔습니다!",
+		"열쇠는 함정을 발동시키지 않고 부드럽게 잠금을 해제합니다.",
+		"최선의 노력에도 불구하고, 함정은 목표를 공격합니다. 그래도 상자는 열렸습니다!",
+		"당신은 간신히 다트를 피했습니다.",
+		"상자에는 숨겨진 물건들이 있습니다!"
+	],
+	"OPTIONS": [
+		"[자물쇠를 딴다] #g무작위 #g전리품을 #g얻습니다. #r함정을 #r발동시킵니다.",
+		"[저주받은 열쇠를 사용한다] #g무작위 #g전리품을 #g얻습니다. #r무작위 #r저주 #r카드를 #r1 #r장 #r얻습니다.",
+		"[Locked] Requires: Cursed Key.",
+		"[떠난다]",
+		"[견딘다] #r저주를 #r얻습니다 : #r- #r",
+		"[막는다] #r피해를 #r",
+		" #r받습니다.",
+		"[피한다] #r",
+		"%: #rTake #r",
+		"[상자를 연다]",
+		"[Locked] Requires: Matryoshka.",
+		"[Locked] No Matryoshka charges remaining.",
+		"[마트료시카를 사용한다] #g전리품을 #g2배로 #g얻습니다."
+	]
+  },
+  "Chaos Ring Event": {
+	"NAME": "죽은 자의 반지",
+	"DESCRIPTIONS": [
+		"당신이 한 해골을 지나가다, 그것이 양 손에 #y빨간 #y반지 를 끼고 있는걸 봤습니다. 당신은 반지에서 일종의 #r~혼란스러운~ #r~에너지~ 가 발산되는걸 느낍니다. 그냥 보기만 해도 머리가 @지끈@ 거립니다.",
+		"당신은 죽은 자의 저주받은 반지를 줍는 것이 좋은 생각이 아닐거라고 생각하지 못했습니다."
+	],
+	"OPTIONS": [
+		"[왼손] #g유물을 #g1 #g개 #g얻습니다. #r50%: #r저주를 #r받습니다. - ",
+		"[오른손] #g유물을 #g1 #g개 #g얻습니다. #r50%: #r저주를 #r받습니다. - ",
+		"[양손] #g유물을 #g2 #g개 #g얻습니다. #r75%: #r무작위로 #r저주를 #r받습니다.",
+		"[떠난다]"
+	]
+  },
+  "ReplayMapScout": {
+	"NAME": "지도 정찰",
+	"DESCRIPTIONS": [
+		"사나운 눈초리를 한 젊은이가 다가와 첨탑의 위험성에 대해 떠벌거렸습니다. NL \"상상을 초월하는 괴물들이 저 앞에 있어! ~그리고~ ~나,~ @난@ @그@ @장소들을@ @알고있지!@ 난 그 위험들이 어디 있는지 알고, 피하는 방법도 잘 알고있지! 관심있어?\"",
+		"그는 위험을 피하는 방법을 알고 그의 지식을 나눌 생각이 있어보입니다 - 어쨋든 조금의 골드를 지불한다면요.",
+		"당신은 단순히 앞으로 계속해 나가는 것이 최선이라고 결정합니다.",
+		"그는 열심히 별로 상관 없는 것들을 포함해, 당신이 알고 싶어 하는것에 대해 말해줬습니다. NL 당신은 이 새로운 정보에 기반해 다음 지역의 경로를 조정했습니다.",
+		"당신은 그에게 위험을 피할 필요가 없다고 했습니다. 그리고 그가 알고있는 이 앞의 가장 강력한 힘을 알려달라고 요청했습니다. NL 그는 아까와는 다르게 잠깐동안 침묵하더니, 활짝 웃으며 말했습니다. NL NL #r~\"...~ #r~확실하나?\"~",
+		"그는 폭소를 터트립니다. 그리고는 위치가 표시된 피투성이의 희미한 지도를 건네줍니다. NL 당신은 무엇을 마주할지는 모르지만, 곧 알게 될 것입니다."
+	],
+	"OPTIONS": [
+		"[Locked] Requires: ",
+		" 골드",
+		"[",
+		"를 잃습니다.] 다음 막에서 #y깨어난 #y자 를 만나지 않습니다.",
+		"를 잃습니다.] 다음 막에서 #y도누 와 #y데카 를 만나지 않습니다.",
+		"를 잃습니다.] 다음 막에서 #y시간 #y포식자 를 만나지 않습니다.",
+		"[무시한다]",
+		"[떠난다]",
+		"[운명에 도전한다] 다음 막에서 #r무언가 #r무서운 #r것 을 만납니다.",
+		"#rYes",
+		"#gNo",
+		"[계속]"
+	]
+  },
+  "Grembo": {
+	"NAME": "Grembo The Great",
+	"DESCRIPTIONS": [
+		"A small gremlin wielding a tiny sword approaches you. NL \"Behold! It is I, @GREMBO@ @THE@ @GREAT!@\" NL The creature seems to think itself much more threatening than it actually is.",
+		"The gremlin speaks. NL \"Grembo has watched you fight. Grembo also like to fight! Grembo will lend you great strength, if you give shinies!\" NL He seems trustworthy, if somewhat delusional.",
+		"\"An adequate payment! The legendary strength of Grembo is yours!\" NL As he says this, a small collection of gremlins emerge from the shadows. It seems you've made some friends.",
+		"\"Fine. Grembo does not care! Grembo has other, stronger warriors to lend his sword to!\" NL He isn't very good at hiding his disappointment. He disappears back into the shadows of the city."
+	],
+	"OPTIONS": [
+		"[계속]",
+		"[Locked] Requires: ",
+		"[Lose ",
+		" gold",
+		"] #yJoin #gforces #gwith #gGrembo #gThe #gGreat.",
+		"[Decline]"
+	]
+  },
+  "Tinkerer": {
+	"NAME": "The Tinkerer",
+	"DESCRIPTIONS": [
+		"A man with messy hair and wild eyes hidden behind goggles appears from the alleyways. NL \" @WELCOME!@ I am known as #yThe #yTinkerer. Might I have a look at your equipment?\"",
+		"The Tinkerer scraps the offered object, using the pieces to improve some of your other equipment. He seems to quite enjoy the task.",
+		"The man produces a number of tools and begins to work. NL ",
+		"The man gleefully takes the offered item and starts pulling it appart and rearranging its insides. NL ",
+		"In a flurry of motion, the man grabs the object and adjusts its various components. NL ",
+		"After some time, he proudly presents you the result of his work.",
+		"When he gives the device back, you hardly recognise it.",
+		"Eventually he returns the subject of his expirementing, excited telling you about the new features and improvements he's added.",
+		"In a sudden explosion of light and fire, the object is destroyed. In a state of panic, the man appologises profusely for his failiure.",
+		"When you get your equipment back, it has been rendered nothing more than a useless pile of parts. The man seems oblivious of this fact."
+	],
+	"OPTIONS": [
+		"[떠난다]",
+		"[Locked] Requires: ???",
+		"[Locked] Requires: Upgraded Card",
+		"[Lose Upgraded Card] #gUpgrade #g",
+		" #gcards.",
+		"[Lose ",
+		"] #g",
+		"% #gObtain ",
+		"[Used]",
+		"Remove a card",
+		"Upgrade 2 cards"
+	]
+  },
+  "ReplayTheSpireMod:TheMausoleumExtra": {
+	"NAME": "The Mausoleum",
+	"DESCRIPTIONS": [
+		"You push open the coffin. As you do, #p~black~ #p~fog~ spews forth and covers the entire room! Inside, you find no body, only a #y~relic.~ You take it and move onwards, #r@coughing@ #r@violently.@",
+		"You push open the coffin. The fog dissipates harmlessly. Inside, you find the mortal remains of a decorated soldier grasping an old #yrelic. You pilfer it and move on."
+	],
+	"OPTIONS": [
+		"[Open Coffin] #gObtain #ga #gRelic. #r",
+		"%: #rBecome #rCursed #r(Random).",
+	]
+  },
+  "ReplayTheSpireMod:TheJoustExtra": {
+	"NAME": "The Joust",
+	"DESCRIPTIONS": [
+		"The ghost you've been traveling with runs up to the knight excitedly. NL #y@\"Noodles!!\"@ NL The knight is overjoyed to be reunited with his pet, even if it is now a pet ghost. Shedding tears of joy, he offers you a #greward for bringing them back together. NL NL The other knight just kinda... 떠난다s."
+	],
+	"OPTIONS": [
+		"[Locked] Requires: Pet Ghost.",
+		"[Lose Pet Ghost] #gObtain #g",
+		" #ggold. #gChoose #ga #grare #gcard #gto #gobtain."
+	]
+  },
+  "ReplayTheSpireMod:DanceKnight": {
+	"NAME": "Testing Knight",
+	"DESCRIPTIONS": [
+		"A tall knight blocks your path. NL \"Halt! Only those who #yprove #ytheir #yworth may pass through here!\"",
+		""
+	],
+	"OPTIONS": [
+		"[Prove Strength] Trial by combat.",
+		"[Prove Dexterity] Trial by dance-off.",
+		"[Prove Focus] Trial by questions."
+	]
+  }
+}

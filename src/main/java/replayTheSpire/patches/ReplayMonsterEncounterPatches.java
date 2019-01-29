@@ -65,6 +65,32 @@ public class ReplayMonsterEncounterPatches {
 	            	DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/OldBossIcon.png");
 					DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/OldBossIcon.png");
 	            }
+			} else {
+				if (ReplayMapScoutEvent.bannedBoss.equals(AbstractDungeon.bossKey) && AbstractDungeon.bossList.size() > 1 && !AbstractDungeon.bossList.get(1).equals(ReplayMapScoutEvent.bannedBoss)) {
+					AbstractDungeon.bossKey = AbstractDungeon.bossList.get(1);
+					if (AbstractDungeon.bossKey.equals("Awakened One")) {
+			            DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/awakened.png");
+			            DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/awakened.png");
+			        }
+			        else if (AbstractDungeon.bossKey.equals("Time Eater")) {
+			            DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/timeeater.png");
+			            DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/timeeater.png");
+			        }
+			        else if (AbstractDungeon.bossKey.equals("Donu and Deca")) {
+			            DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/donu.png");
+			            DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/donu.png");
+			        } else {
+			        	final BaseMod.BossInfo bossInfo = BaseMod.getBossInfo(AbstractDungeon.bossKey);
+			            if (bossInfo != null) {
+			                DungeonMap.boss = bossInfo.bossMap;
+			                DungeonMap.bossOutline = bossInfo.bossMapOutline;
+			            } else {
+			            	DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/OldBossIcon.png");
+							DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/OldBossIcon.png");
+			            }
+			        }
+				}
+				ReplayMapScoutEvent.bannedBoss = "none";
 			}
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Painkiller Herb")) {
 				DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/OldBossIcon.png");
@@ -128,7 +154,6 @@ public class ReplayMonsterEncounterPatches {
 				while (AbstractDungeon.bossList.size() > 1 && AbstractDungeon.bossList.contains(ReplayMapScoutEvent.bannedBoss)) {
 					AbstractDungeon.bossList.remove(ReplayMapScoutEvent.bannedBoss);
 				}
-				ReplayMapScoutEvent.bannedBoss = "none";
 			}
 			else if (ReplayMapScoutEvent.bannedBoss.equals("you're fucked lol")) {
 				TheBeyond.bossList.add(0, "LordOfAnnihilation");

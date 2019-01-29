@@ -55,7 +55,7 @@ public AbstractCard makeCopy()
 {
   return new ReplayOmegaCannon();
 }
-public void applyPowers()
+/*public void applyPowers()
 {
   AbstractPlayer player = AbstractDungeon.player;
   this.isDamageModified = false;
@@ -96,10 +96,10 @@ public void applyPowers()
 	this.multiDamage[i] = MathUtils.floor(tmp[i]);
 	}
 	this.damage = this.multiDamage[0];
-}
+}*/
 
 
-public void calculateCardDamage(AbstractMonster mo)
+/*public void calculateCardDamage(AbstractMonster mo)
 {
   AbstractPlayer player = AbstractDungeon.player;
   this.isDamageModified = false;
@@ -154,7 +154,7 @@ public void calculateCardDamage(AbstractMonster mo)
 	this.multiDamage[i] = MathUtils.floor(tmp[i]);
 	}
 	this.damage = this.multiDamage[0];
-}
+}*/
 
 public void upgrade()
 {

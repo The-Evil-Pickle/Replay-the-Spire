@@ -150,7 +150,10 @@ public class PondfishBoss extends AbstractMonster
     
     @Override
     public void usePreBattleAction() {
+		CardCrawlGame.music.unsilenceBGM();
+		AbstractDungeon.scene.fadeOutAmbiance();
 		AbstractDungeon.getCurrRoom().playBgmInstantly("replay/Shanty_for_a_Poorly_Drawn_Pirate.ogg");
+		ReplayTheSpireMod.renderFishFG = true;
 	}
 	
 	private SetMoveAction setNextTurnAction(byte nextTurn) {
@@ -483,6 +486,7 @@ public class PondfishBoss extends AbstractMonster
     public void render(final SpriteBatch sb) {
         super.render(sb);
 		if (!this.isDying && !this.isEscaping && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.player.isDead) {
+			sb.draw(ReplayTheSpireMod.fishFG.getTexture(), ReplayTheSpireMod.fishFG.offsetX * Settings.scale, ReplayTheSpireMod.fishFG.offsetY * Settings.scale + AbstractDungeon.sceneOffsetY, 0.0f, 0.0f, ReplayTheSpireMod.fishFG.packedWidth, ReplayTheSpireMod.fishFG.packedHeight, Settings.scale, Settings.scale, 0.0f, ReplayTheSpireMod.fishFG.getRegionX(), ReplayTheSpireMod.fishFG.getRegionY(), ReplayTheSpireMod.fishFG.getRegionWidth(), ReplayTheSpireMod.fishFG.getRegionHeight(), false, false);
 			for (final AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
 				if (m instanceof CaptainAbe && !m.halfDead) {
 					//m.render(sb);

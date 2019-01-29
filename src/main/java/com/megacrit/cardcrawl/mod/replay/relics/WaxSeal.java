@@ -31,7 +31,12 @@ public class WaxSeal extends AbstractRelic implements ClickableRelic
     public void onRightClick() {
         if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof ShopRoom) {
             this.flash();
-            AbstractDungeon.topLevelEffects.add(new FastCardObtainEffect(new DebtCurseIOU(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+            if (AbstractDungeon.player.hasRelic(Omamori.ID) && AbstractDungeon.player.getRelic(Omamori.ID).counter > 0) {
+            	AbstractDungeon.player.getRelic(Omamori.ID).flash();
+            	AbstractDungeon.player.getRelic(Omamori.ID).counter--;
+            } else {
+            	AbstractDungeon.topLevelEffects.add(new FastCardObtainEffect(new DebtCurseIOU(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+            }
             AbstractDungeon.player.gainGold(DebtCurseIOU.GOLD_COST);
         }
     }

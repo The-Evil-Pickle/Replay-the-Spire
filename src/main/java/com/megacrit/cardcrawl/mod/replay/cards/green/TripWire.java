@@ -25,7 +25,7 @@ public class TripWire extends CustomCard
     public TripWire() {
         super(ID, TripWire.NAME, "cards/replay/replayBetaSkill.png", TripWire.COST, TripWire.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF);
         this.exhaust = true;
-        this.baseBlock = 4;
+        this.baseBlock = 2;
         this.block = this.baseBlock;
         this.baseMagicNumber = 0;
         this.magicNumber = this.baseMagicNumber;

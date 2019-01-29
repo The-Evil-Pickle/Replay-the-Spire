@@ -1,0 +1,146 @@
+{
+  "Adrenaline Potion": {
+	"NAME": "아드레날린 포션",
+    "DESCRIPTIONS": [
+			"카드를 #b",
+			" 장 뽑습니다.",
+			" 에너지를 #b",
+			" 얻습니다."
+	]
+  },
+  "Death Potion": {
+	"NAME": "죽음 포션",
+    "DESCRIPTIONS": [
+			"피해를 #b",
+			" 줍니다. 체력을 #r",
+			" 잃습니다."
+	]
+  },
+  "Doom Potion": {
+	"NAME": "파멸 포션",
+    "DESCRIPTIONS": [
+			"선택한 적을 #b",
+			" 턴 후에 파괴합니다."
+	]
+  },
+  "Elixir": {
+	"NAME": "엘릭서",
+    "DESCRIPTIONS": [
+			"손의 모든 #y상태이상 과 #y저주 를 #y소멸 시킵니다.",
+			"손의 모든 #y상태이상 과 #y저주 를 #y소멸 시킵니다.",
+			"",
+			"It had no effect..."
+	]
+  },
+  "Spirit Potion": {
+	"NAME": "영혼 포션",
+    "DESCRIPTIONS": [
+			"#y불가침 을 #b",
+			" 얻습니다."
+	]
+  },
+  "Thorns Potion": {
+	"NAME": "가시 포션",
+    "DESCRIPTIONS": [
+			"#y가시 를 #b",
+			" 얻습니다."
+	]
+  },
+  "Toxic Potion": {
+	"NAME": "맹독 포션",
+    "DESCRIPTIONS": [
+			"적 전체에게 #y괴저독 을 #b",
+			" 부여합니다.",
+			" #y취약 and #b",
+			" #y손상."
+	]
+  },
+  "Venom Potion": {
+	"NAME": "독 포션",
+    "DESCRIPTIONS": [
+			"적에게 피해를 줄 때마다 #y중독 을 #b",
+			" 부여합니다.",
+			" #y힘을 #b",
+			" 잃습니다."
+	]
+  },
+  "Ironskin Potion": {
+	"NAME": "철갑 포션",
+    "DESCRIPTIONS": [
+			"턴 종료 시 #y방어도 를 #b",
+			" 얻습니다."
+	]
+  },
+  "Inspiration Potion": {
+	"NAME": "영감 포션",
+    "DESCRIPTIONS": [
+			"무작위 강화된 파워 카드 1 장을 얻습니다.",
+			"무작위 파워 카드 1 장을 얻습니다.",
+			" NL 비용은 0 이 됩니다."
+	]
+  },
+  "Milkshake": {
+	"NAME": "밀크셰이크",
+    "DESCRIPTIONS": [
+			"이번 전투동안 #y에너지 를 #b",
+			" 까지 #y보존 합니다."
+	]
+  },
+  "Cursed Concoction": {
+	"NAME": "저주받은 혼합물",
+    "DESCRIPTIONS": [
+			"#y힘 을 #b",
+			"  얻고 #y민첩 을 #b",
+			" 얻습니다. NL 무작위 #y저주 카드를 1장 씩 뽑을 카드 더미와 버린 카드 더미에 섞어 넣습니다."
+	]
+  },
+  "Confusion Potion": {
+	"NAME": "혼란 포션",
+    "DESCRIPTIONS": [
+			"#y혼란 을 #b",
+			" 부여합니다."
+	]
+  },
+  "Salt Potion": {
+	"NAME": "소금 포션",
+    "DESCRIPTIONS": [
+			"전투를 다시 시작합니다. NL 다른 적을 상대합니다."
+	]
+  },
+  "ReplayShieldPotion": {
+	"NAME": "방패 포션",
+    "DESCRIPTIONS": [
+			"#y방패 을 #b",
+			" 얻습니다."
+	]
+  },
+  "LifebloodPotion": {
+	"NAME": "생명혈액 포션",
+    "DESCRIPTIONS": [
+			"#y임시 #y체력 을 #b",
+			" 얻습니다."
+	]
+  },
+  "Languid Potion": {
+	"NAME": "나른함 포션",
+    "DESCRIPTIONS": [
+			"#y나른함 을 #b",
+			" 부여합니다."
+	]
+  },
+  "Reflective Coating": {
+	"NAME": "반사 코팅",
+    "DESCRIPTIONS": [
+			"#y흐릿함 을 #b",
+			" 얻습니다. NL #y반사 를 #b",
+			" 얻습니다."
+	]
+  },
+  "Flashbang": {
+	"NAME": "섬광가루",
+    "DESCRIPTIONS": [
+			"적 하나를 #y기절 시킵니다.",
+			"적 전체를 #y기절 시킵니다."
+	]
+  }
+}

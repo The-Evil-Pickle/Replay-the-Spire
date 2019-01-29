@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.fadingForest.*;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.mod.replay.powers.relicPowers.*;
+import com.megacrit.cardcrawl.mod.replay.vfx.combat.ColorSmokeBombEffect;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ConfusionPower;
 //import com.megacrit.cardcrawl.monsters.Intent;
@@ -24,6 +25,8 @@ import com.megacrit.cardcrawl.powers.IntangiblePower;
 import com.megacrit.cardcrawl.powers.SlowPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.events.GenericEventDialog;
@@ -195,6 +198,12 @@ public class FadingForestBoss extends CustomMonster
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new AgingPower(this, (AbstractDungeon.ascensionLevel >= 19) ? 15 : 12)));
 		AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
 		AbstractDungeon.actionManager.addToBottom(new TalkAction(this, FadingForestBoss.DIALOG[(int)(Math.random() * (4))], 3.5f, 3.5f));
+		if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
+			CardCrawlGame.music.unsilenceBGM();
+	        AbstractDungeon.scene.fadeOutAmbiance();
+	        AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BOTTOM");
+		}
+        UnlockTracker.markBossAsSeen(this.ID);
     }
     
 	private void giveRelicEffect() {
@@ -438,7 +447,7 @@ public class FadingForestBoss extends CustomMonster
             	for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             		if (m != null && m != this && !m.isDeadOrEscaped()) {
             			AbstractDungeon.actionManager.addToBottom(new SuicideAction(m));
-            			AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmokeBombEffect(m.hb.cX, m.hb.cY)));
+            			AbstractDungeon.actionManager.addToBottom(new VFXAction(new ColorSmokeBombEffect(m.hb.cX, m.hb.cY, FadingForestBoss.tintColor)));
             			AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
             			AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
             		}

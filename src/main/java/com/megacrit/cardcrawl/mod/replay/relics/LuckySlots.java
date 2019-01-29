@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import infinitespire.powers.CriticalPower;
 
@@ -28,10 +29,10 @@ public class LuckySlots extends AbstractRelic
 	{
 		return this.DESCRIPTIONS[0] + TICTACTOE + this.DESCRIPTIONS[1] + GOLD_AMT + this.DESCRIPTIONS[2];
 	}
-
+	
 	@Override
 	public void onLoseHp(int damageAmount) {
-		if (damageAmount == 7) {
+		if (damageAmount == 7 && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
 			flash();
 			AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CriticalPower(AbstractDungeon.player)));

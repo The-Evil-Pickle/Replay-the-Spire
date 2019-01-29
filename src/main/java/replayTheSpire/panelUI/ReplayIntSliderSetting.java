@@ -71,7 +71,7 @@ public class ReplayIntSliderSetting extends ReplayRelicSetting {
 	}
 	
 	public boolean testChance(Random rng) {
-		return rng.random(100) < this.value;
+		return rng.random(99) < this.value;
 	}
 	@Override
 	public void ResetToDefault() {

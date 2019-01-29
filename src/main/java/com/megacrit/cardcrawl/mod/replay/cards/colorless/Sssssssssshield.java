@@ -38,7 +38,7 @@ public class Sssssssssshield extends CustomCard
     
     public void use(final AbstractPlayer p, final AbstractMonster m) {
     	AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-    	for (int i=0; i <= this.cost; i++) {
+    	for (int i=0; i < this.cost; i++) {
     		AbstractDungeon.actionManager.addToBottom(new ReplayGainShieldingAction(p, p, this.block));
     	}
     }

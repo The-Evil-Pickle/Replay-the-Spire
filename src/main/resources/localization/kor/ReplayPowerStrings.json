@@ -1,0 +1,424 @@
+{
+  "Doomed": {
+    "NAME": "파멸",
+    "DESCRIPTIONS": [
+	"체력을 #b",
+	" 잃습니다. #b", 
+	" 턴 후.", 
+	""
+    ]
+  },
+  "Life Bind": {
+    "NAME": "생명결속",
+    "DESCRIPTIONS": [
+	"체력을 잃을 때마다, #yLife #yBind 된 적들 또한 피해를 입습니다.", 
+	"체력을 잃을 때마다 피해를 입습니다."
+    ]
+  },
+  "Replay:Enemy Life Bind": {
+    "NAME": "Coupled Souls",
+    "DESCRIPTIONS": [
+	"This enemy shares its health bar with other enemies that have this power."
+    ]
+  },
+  "Reflection": {
+    "NAME": "반사",
+    "DESCRIPTIONS": [
+	"완벽하게 방어 할 때마다 공격 피해를 공격자에게 되돌려줍니다."
+    ]
+  },
+  "Necrotic Poison": {
+    "NAME": "괴저독",
+    "DESCRIPTIONS": [
+	"턴 시작 시 #b",
+	" 피해를 받고, #y괴저독 이 #b1/2 감소합니다.", 
+	"At the start of its turn, loses #b",
+	" NL #y중독 은 감소하지 않습니다."
+    ]
+  },
+  "Retain Some Block": {
+    "NAME": "방어도 보존",
+    "DESCRIPTIONS": [
+	"매 턴 종료 시, #y방어도 를 #b",
+	" 까지 보존합니다."
+    ]
+  },
+  "Retain Some Energy": {
+    "NAME": "에너지 보존",
+    "DESCRIPTIONS": [
+	"매 턴 종료시, #y에너지 를 #b",
+	" 까지 보존합니다."
+    ]
+  },
+  "Scrap Shanks": {
+    "NAME": "Scrap Shanks",
+    "DESCRIPTIONS": [
+	"내 턴에 카드를 버릴 때마다, 단도 카드를 #b", 
+	" 장 얻습니다",
+	" Shivs",
+	" and #b",
+	" Upgraded",
+	" to your hand."
+    ]
+  },
+  "The Works": {
+    "NAME": "작업",
+    "DESCRIPTIONS": [
+	"이번 턴에 카드를 #b", 
+	" 장 뽑을 때마다,  ",
+	" 를 얻고 무작위 적 하나에게 피해를 #b",
+	" 줍니다."
+    ]
+  },
+  "Specialist": {
+    "NAME": "전문가",
+    "DESCRIPTIONS": [
+	"비-공격 피해가 다음 수치만큼 증가합니다: #b", 
+	"비-공격 피해가 다음 수치만큼 감소합니다: #b"
+    ]
+  },
+  "Awakened Ritual": {
+    "NAME": "깨어난 자 의식",
+    "DESCRIPTIONS": [
+	"손에 #y의식 카드를 5 장 갖고 있다면 소멸 시키고 #y어둠의 #y메아리 카드를 5 장 얻습니다.", 
+	" NL (need #b",
+	" more in hand)"
+    ]
+  },
+  "Reflective Lens": {
+    "NAME": "Reflective Lens",
+    "DESCRIPTIONS": [
+	"턴 종료 시, #y유리 구체 1개 마다 #y반사를 #b",
+	" 얻습니다s."
+	]
+  },
+  "ReplayTheSpireMod:RefundNext": {
+    "NAME": "Refund Next Card",
+    "DESCRIPTIONS": [
+	"The next card you play this turn has #y환급 #b",
+	"."
+	]
+  },
+  "replay:ExhaustiveNegationPower": {
+	"NAME": "Negate Exhaustive",
+    "DESCRIPTIONS": [
+	"The next #b",
+	" times you play an Exhaustive card, the Exhaustive counter will not go down."
+	]
+  },
+  "ReplayTheSpireMod:SystemScan": {
+    "NAME": "시스템 스캔",
+    "DESCRIPTIONS": [
+	"The next #b",
+	" #yStatus card you draw #yExhausts and draws 1 card when drawn.",
+	" #yStatus cards you draw #yExhaust and draw 1 card when drawn."
+	]
+  },
+  "Snake Venom": {
+    "NAME": "뱀 맹독",
+    "DESCRIPTIONS": [
+	"내 다음 공격은 막히지 않은 피해를 줄 때마다 #y괴저독 을 #b",
+	" 부여합니다."
+    ]
+  },
+  "GoodbyeWorld": {
+    "NAME": "빈 통",
+    "DESCRIPTIONS": [
+	"At the end of your turn, #yExhaust all #yCommon cards in your hand and gain #b",
+	" #yBlock for each."
+    ]
+  },
+  "Firewall": {
+    "NAME": "불의 벽",
+    "DESCRIPTIONS": [
+	"피해를 막을 때마다, #y지옥불 을 #b",
+	" 개 #y영창합니다"
+    ]
+  },
+  "Crystallizer": {
+    "NAME": "수정화",
+    "DESCRIPTIONS": [
+	"#y수정 구체는 양옆의 구체들에게 #y밀집 을 #b",
+	" 을 줍니다. NL 턴 종료 시, 구체 슬롯이 1/2 이상 비어있다면, 수정 을 1 #b",
+	" 번 #y영창 합니다. NL #y유리 구체는 빈 슬롯으로 취급합니다."
+    ]
+  },
+  "LanguidPower": {
+    "NAME": "나른함",
+    "DESCRIPTIONS": [
+	"#y",
+	" 가 가하는 피해는 #b",
+	" 만큼 감소합니다. NL 지속 턴수 : #b",
+	" "
+    ]
+  },
+  "ReplayChaosPower": {
+    "NAME": "혼돈!",
+    "DESCRIPTIONS": [
+	"매 턴 뽑는 카드 #b",
+	"  장 의 효과가 전투가 끝날 때까지 무작위로 됩니다. NL #b",
+	" remaining this round."
+    ]
+  },
+  "ReplayBrewPower": {
+    "NAME": "양조의 달인",
+    "DESCRIPTIONS": [
+	"매 턴 시작시, 무작위 포션 #b",
+	" 개를 얻습니다.",
+	" 개를 얻습니다."
+    ]
+  },
+  "Friendly": {
+    "NAME": "Friendly",
+    "DESCRIPTIONS": [
+	"This monster is on your side, and will attack enemies or help you."
+    ]
+  },
+  "Drowning": {
+    "NAME": "익사",
+    "DESCRIPTIONS": [
+	"턴 종료 시, 체력을 #b",
+	" At the end of your turn, gain #b",
+	" 잃습니다. NL 막히지 않은 피해를 받을 때마다 증가합니다. NL막히지 않은 피해를 줄 때마다 감소합니다. NL #b",
+	" 부터 #b",
+	" 까지 증감합니다"
+    ]
+  },
+  "AbePower": {
+    "NAME": "중압",
+    "DESCRIPTIONS": [
+	"#y선장 #y아베 는 사실 물 속에서 싸울 수 없습니다. (#y익사 수준이 #b",
+	" 이상 일 때). NL NL 대체 어느 해적이 수영을 못할까요?"
+    ]
+  },
+  "TimeCollector": {
+    "NAME": "시간 수집가",
+    "DESCRIPTIONS": [
+	"한 턴에 카드를 #b",
+	" 장 사용하면 턴이 종료됩니다. NL #y시간 #y수집가 는 전투 중 1 번만 발동 시킵니다."
+    ]
+  },
+  "Replay:Storyteller": {
+    "NAME": "이야기꾼",
+    "DESCRIPTIONS": [
+	"그녀는 당신이 이야기를 들어주길 원합니다. NL 이야기는 #b",
+	" 턴 후 끝나고, 그녀는 떠날 것입니다."
+    ]
+  },
+  "Replay:Aging": {
+    "NAME": "늙음",
+    "DESCRIPTIONS": [
+	"피해를 #b",
+	" 받을 때마다, ",
+	" 는 #y나른함 을 #b1 얻습니다."
+    ]
+  },
+  "Replay:Tripwire": {
+    "NAME": "인계철선",
+    "DESCRIPTIONS": [
+	"At start of turn, #yStun a random enemy #b",
+	" times."
+    ]
+  },
+  "Replay:Fed": {
+    "NAME": "Well-Fed",
+    "DESCRIPTIONS": [
+	"Has gained #b",
+	" #yStrength. NL Will lose #b",
+	" #yStrength at the end of this turn."
+    ]
+  },
+  "Replay:Whispers Of Evil": {
+    "NAME": "Whispers Of Evil",
+    "DESCRIPTIONS": [
+	"At start of turn, Draw #b",
+	" card. NL At end of turn, add #b",
+	" random #yCurse #yEcho to your draw pile.",
+	" cards. NL At end of turn, add #b",
+	" random #yCurse #yEchoes to your draw pile."
+    ]
+  },
+  "Replay:Echo Chamber": {
+    "NAME": "울림실",
+    "DESCRIPTIONS": [
+	"Make an #yEcho of the first #b",
+	" non-Ethereal non-Power",
+	" cards you play each turn."
+    ]
+  },
+  "Replay:Color Shift": {
+    "NAME": "색 변화",
+    "DESCRIPTIONS": [
+	"매 턴, 3 개의 무작위 효과 중에서 1 개를 선택합니다. NL #b", 
+	" 턴 동안 지속됩니다.",
+	"Yellow Shift",
+	"혼란",
+	"You are #yConfused for #b",
+	"Green Shift",
+	"독 바르기",
+	"Has #yEnvenom for #b",
+	"Red Shift",
+	"취약",
+	"Vulnerable for #b",
+	"Orange Shift",
+	"Backfire",
+	" is added to your draw pile at start of turn for #b",
+	"Blue Shift",
+	"주술",
+	"#yHexxed for #b",
+	"Purple Shift",
+	"둔화",
+	"Slowed for #b",
+	"Pale Shift",
+	"불가침",
+	"Intangible for #b",
+	"Bronze Shift",
+	"가시",
+	"Has #yThorns for #b",
+	"Dark Shift",
+	"죽음의 고동",
+	"Beat of Death for #b"
+    ]
+  },
+  "Sleeping": {
+    "NAME": "Asleep",
+    "DESCRIPTIONS": [
+	"Won't do anything yet. Wakes up when damaged or after #b",
+	" turns."
+    ]
+  },
+  "FF_Spore Cloud": {
+    "NAME": "Spore Mist",
+    "DESCRIPTIONS": [
+      "If killed by #yFade, applies #yVulnerable to you for #b",
+      " turns."
+    ]
+  },
+  "FF_Thievery": {
+    "NAME": "Soul Stealer",
+    "DESCRIPTIONS": [
+      "Each time ",
+	  " deals unblocked attack damage, they steal #b",
+	  " random buffs from the target."
+    ]
+  },
+  "FF_Rage": {
+    "NAME": "Ethereous Rage",
+    "DESCRIPTIONS": [
+      "Each time a monster dies, gains #b",
+	  " #yStrength."
+    ]
+  },
+  "RP_HourglassPower": {
+    "NAME": "Mercury Hourglass",
+    "DESCRIPTIONS": [
+      "At the start of your turn, deal #b",
+	  " damage to ALL enemies.",
+      "At the start of ",
+	  "'s turn, it deals #b",
+	  " damage to you."
+    ]
+  },
+  "RP_ThreadPower": {
+    "NAME": "Thread and Needle",
+    "DESCRIPTIONS": [
+      "Gives #b5 #yPlated #yArmor."
+    ]
+  },
+  "RP_OrichalcumPower": {
+    "NAME": "Orichalcum",
+    "DESCRIPTIONS": [
+      "Upon ending a turn with no #yBlock, gives #b",
+	  " #yBlock."
+    ]
+  },
+  "RP_SmoothStonePower": {
+    "NAME": "Oddly Smooth Stone",
+    "DESCRIPTIONS": [
+      "Gives #b1 #yDexterity."
+    ]
+  },
+  "RP_VajraPower": {
+    "NAME": "Vajra",
+    "DESCRIPTIONS": [
+      "Gives #b1 #yStrength."
+    ]
+  },
+  "RP_GiryaPower": {
+    "NAME": "Girya",
+    "DESCRIPTIONS": [
+      "Gives #b1 #yStrength at the start of turn. NL #b",
+	  " remaining."
+    ]
+  },
+  "RP_KunaiPower": {
+    "NAME": "Kunai",
+      "DESCRIPTIONS": [
+      "If you play #b",
+      " more #yAttack this turn, gain #b",
+      " #yDexterity.",
+      " more #yAttacks this turn, gain #b"
+    ]
+  },
+  "RP_LetterOpenerPower": {
+    "NAME": "Letter Opener",
+	"DESCRIPTIONS": [
+      "If you play #b",
+      " more #ySkill this turn, deal #b",
+      " damage to ALL enemies.",
+      " more #ySkills this turn, deal #b"
+    ]
+  },
+  "RP_Mango": {
+    "NAME": "Mango",
+	"DESCRIPTIONS": [
+      "Max HP increased by #b",
+      "."
+    ]
+  },
+  "RP_BronzeScales": {
+    "NAME": "Bronze Scales",
+	"DESCRIPTIONS": [
+      "When receiving #yAttack damage, deals #b",
+      " damage back."
+    ]
+  },
+  "RP_SelfFormingClay": {
+    "NAME": "Self-Forming Clay",
+	"DESCRIPTIONS": [
+      "Upon taking unblocked #yAttack damage, gives #b",
+	  " #yBlock next round."
+    ]
+  },
+  "RP_IncenseBurner": {
+    "NAME": "Incense Burner",
+	"DESCRIPTIONS": [
+      "Gain #b1 #yIntangible every #b6 turns."
+    ]
+  },
+  "Fire Breathing": {
+    "NAME": "Fire Breathing",
+    "DESCRIPTIONS": [
+      "At the end of your turn, for each #yAttack played this turn deal #b",
+      " damage to ALL enemies, increasing damage by #b",
+	  " each time."
+    ]
+  },
+  "GremboCoward": {
+    "NAME": "Cowardice",
+    "DESCRIPTIONS": [
+      "At the end of your turn, for each #yAttack played this turn deal #b",
+      " damage to ALL enemies, increasing damage by #b",
+	  " each time."
+    ]
+  },
+  "Replay:Necro_Skullink": {
+    "NAME": "Skullink",
+    "DESCRIPTIONS": [
+      "When this enemy is killed, ",
+	  "'s #yCursed #yLife ability is reduced by #b",
+	  ". NL If ",
+      " is still alive, revives at full HP. NL Becomes more powerful each time it revives."
+    ]
+  }
+}

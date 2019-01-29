@@ -242,13 +242,6 @@ public class FF_Lagavulin extends AbstractMonster
         }
     }
     
-    @Override
-    public void die() {
-        super.die();
-        AbstractDungeon.scene.fadeInAmbiance();
-        CardCrawlGame.music.fadeOutTempBGM();
-    }
-    
     static {
         logger = LogManager.getLogger(FF_Lagavulin.class.getName());
         monsterStrings = CardCrawlGame.languagePack.getMonsterStrings("Lagavulin");

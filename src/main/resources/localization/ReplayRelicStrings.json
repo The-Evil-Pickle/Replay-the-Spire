@@ -571,6 +571,13 @@
 		"On pick up, choose a card. NL All copies of that card you have are #yUpgraded. NL All future copies of that card you obtain are #yUpgraded."
 	]
   },
+  "ReplayTheSpireMod:Bottled Snecko": {
+    "NAME": "Bottled Snecko",
+	"FLAVOR": "Despite how large the adults are, baby sneckos are small enough to fit in your pocket - and they're cute!",
+    "DESCRIPTIONS": [
+		"On pick up, you may choose a card. NL It gains #ySnecko. NL If you do #rnot choose a card, you may choose one at a later #yrest #ysite as a #gfree #gaction."
+	]
+  },
   "ReplayTheSpireMod:Multitool": {
     "NAME": "Multitool",
 	"FLAVOR": "",
@@ -777,6 +784,29 @@
 	"FLAVOR": "Roll the dice, meet your fate.",
     "DESCRIPTIONS": [
 		"Gain [E] and draw a card at the start of your turn. NL Shuffle an #yEcho of a random #rCurse into your draw pile at the end of your turn."
+	]
+  },
+  "Replay:Blank Codex": {
+    "NAME": "Blank Codex",
+	"FLAVOR": "Full of empty. Full of evil.",
+    "DESCRIPTIONS": [
+		"Each time you shuffle your deck, you may choose 1 of 3 random #yBlack cards to add to your discard pile. If you do, also add a random #rCurse to your discard pile."
+	]
+  },
+  "Replay:Broken Controller": {
+    "NAME": "Broken Controller",
+	"FLAVOR": "A bad craftsman blames his tools. You swear this one is actually broken though.",
+    "DESCRIPTIONS": [
+		"When you die in combat, revive with #b",
+		" HP. NL All active #yPowers are lost on revival. NL Half your cards are #yExhausted at random on revival. NL Can revive you up to #b",
+		" times be combat."
+	]
+  },
+  "Replay:Mystery Machine": {
+    "NAME": "Mystery Machine",
+	"FLAVOR": "?",
+    "DESCRIPTIONS": [
+		"Gains #b1 charge each time you enter a #y? room, loses #b1 charge each time you enter another type of room. NL Start combat with #b1 random #yStrength or #yDexterity for each charge this has."
 	]
   },
   "Ring of Fury": {
@@ -995,7 +1025,7 @@
 	},
 	"m_SeaBlood": {
 		"NAME": "Sea Blood",
-		"FLAVOR": ".",
+		"FLAVOR": "Your blood becomes merged with the rage of the far-off seas.",
 		"DESCRIPTIONS": [
 			"At the end of combat, heal #b6 HP. NL Certain #yRed cards can now be obtained."
 		]
@@ -1023,7 +1053,7 @@
 	},
 	"m_IronSupplements": {
 		"NAME": "Iron Supplements",
-		"FLAVOR": ".",
+		"FLAVOR": "The gnawing hunger subsides, only to be replaced with a burning rage...",
 		"DESCRIPTIONS": [
 			"At the end of combat, heal #b6 HP. NL Certain #yRed cards can now be obtained."
 		]
@@ -1032,14 +1062,23 @@
 		"NAME": "Burning Sludge",
 		"FLAVOR": ".",
 		"DESCRIPTIONS": [
-			"At the end of combat, for each Spawned slime, heal #b4 HP. NL Certain #yRed cards can now be obtained."
+			"At the end of combat, for each Spawned slime, heal #b2 HP. NL Certain #yRed cards can now be obtained."
 		]
 	},
 	"m_SlimeRing": {
 		"NAME": "Ring of the Slime",
 		"FLAVOR": ".",
 		"DESCRIPTIONS": [
-			"Draw #b2 additional cards on the first turn of combat. NL At the end of combat, for each Spawned slime, heal #b3 HP. NL Certain #yGreen cards can now be obtained."
+			"Draw #b2 additional cards on the first turn of combat. NL Certain #yGreen cards can now be obtained."
+		]
+	},
+	"m_SnakeBloodCore": {
+		"NAME": "Snakeblood Core",
+		"FLAVOR": "The memories and experiences of three merge together... who are you, and what will you do?",
+		"DESCRIPTIONS": [
+			"Draw #b1 additional card and gain #b",
+			" orb slots on the first turn of combat. NL Heal #b",
+			" HP at the end of combat. NL Certain #yRed, #yGreen, and #yBlue cards can now be obtained."
 		]
 	},
 	"replay:Trail_Library": {

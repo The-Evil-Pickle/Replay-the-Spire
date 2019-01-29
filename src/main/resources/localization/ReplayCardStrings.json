@@ -226,7 +226,7 @@
   },
   "ReplayTheSpireMod:Omega Cannon": {
     "NAME": "Omega Cannon",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times. NL Add a Backfire to your draw & discard piles. NL Focus increases damage."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times. NL Add a Backfire to your draw & discard piles."
   },
   "ReplayTheSpireMod:Dual Polarity": {
     "NAME": "Dual Polarity",
@@ -305,6 +305,16 @@
     "NAME": "System Scan",
     "DESCRIPTION": "The next !M! Status cards you draw Exhaust and draw 1 card when drawn."
   },
+  "ReplayTheSpireMod:Reroute Power": {
+    "NAME": "Reroute Power",
+    "DESCRIPTION": "Swap your Strength and Focus. NL Draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Swap your Strength and Focus. NL Draw !M! card. NL Retain."
+  },
+  "ReplayTheSpireMod:Fabricate Wheel": {
+    "NAME": "Fabricate Wheel",
+    "DESCRIPTION": "Obtain a Prayer Wheel relic. NL Fleeting.",
+    "UPGRADE_DESCRIPTION": "Obtain a Prayer Wheel relic. NL You may choose 1 of 3 random Rare cards to permanently add to your deck. NL Fleeting."
+  },
   "ReplayTheSpireMod:Muscle Training": {
     "NAME": "Weight Training",
     "DESCRIPTION": "Gain 1 Strength. NL Lose !M! HP. NL Exhaustive !stslib:ex!."
@@ -374,8 +384,8 @@
   },
   "Replay:Dark Deal": {
     "NAME": "Dark Deal",
-    "DESCRIPTION": "Unplayable. NL Ethereal. NL Startup: add a random Black card to your draw pile.",
-	"UPGRADE_DESCRIPTION": "Unplayable. NL Ethereal. NL Grave. NL Startup: add a random Upgraded Black card to your draw pile."
+    "DESCRIPTION": "Unplayable. NL Startup: Choose 1 of !M! random Black cards to add to your draw pile.",
+	"UPGRADE_DESCRIPTION": "Unplayable. Grave. NL Startup: Choose 1 of !M! random Black cards to add to your draw pile."
   },
   "Replay:Resounding Blow": {
     "NAME": "Resounding Blow",
@@ -781,6 +791,49 @@
     "NAME": "Power Mimicry",
     "DESCRIPTION": "Copy 1 stack of a random enemy buff X times. NL Refund !M!. ",
     "UPGRADE_DESCRIPTION": "Copy 1 stack of a random enemy buff X times. NL Refund !M!. "
+  },
+  "Replay:SS_forest_1": {
+    "NAME": "Many Paths",
+    "DESCRIPTION": "Discard !M! card. NL Fetch !M! card.",
+    "UPGRADE_DESCRIPTION": "Discard !M! cards. NL Fetch !M! cards. "
+  },
+  "Replay:SS_forest_2": {
+    "NAME": "Forest Treasure",
+    "DESCRIPTION": "Gain a random Relic effect."
+  },
+  "Replay:SS_forest_3": {
+    "NAME": "Patience",
+    "DESCRIPTION": "Draw 1 card. NL Retain your hand this turn.",
+    "UPGRADE_DESCRIPTION": "Draw 1 card. NL Retain your hand this turn. NL Your Block is not lost at the end of this round. NL Gain [E] at the start of next turn."
+  },
+  "Replay:SS_forest_4": {
+    "NAME": "The Mists",
+    "DESCRIPTION": "Gain 1 Intangible. NL Keep your Block at the end of this turn. NL Apply !M! Weak to ALL enemies. NL Exhaust."
+  },
+  "Replay:SS_forest_5": {
+    "NAME": "Lost Forever",
+    "DESCRIPTION": "Apply to an enemy. NL For every !M! health they lose, they gain 1 Languid."
+  },
+  "Replay:SS_forest_6": {
+    "NAME": "Forest Fishers",
+    "DESCRIPTION": "Choose: Gain !M! Dexterity, or heal 10 HP."
+  },
+  "Replay:SS_fish_1": {
+    "NAME": "Drag to Hell",
+    "DESCRIPTION": "Apply !M! Drowning. NL Exhaust."
+  },
+  "Replay:SS_fish_2": {
+    "NAME": "Living Lantern",
+    "DESCRIPTION": "Heal !M! HP. NL If you are below 50% max HP, gain 1 Intangible. NL Exhaustive !stslib:ex!."
+  },
+  "Replay:SS_fish_3": {
+    "NAME": "Six Feet Under",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Gain 2 Weak. NL Exhaustive !stslib:ex!.",
+	"UPGRADE_DESCRIPTION": "Deal !D! damage !M! times. NL Exhaustive !stslib:ex!."
+  },
+  "Replay:SS_fish_4": {
+    "NAME": "Captain's Orders",
+    "DESCRIPTION": "Gain !B! Block. If you have <1 Strength, gain !M! Strength."
   },
   "m_BoundBlade": {
     "NAME": "Bound Blade",

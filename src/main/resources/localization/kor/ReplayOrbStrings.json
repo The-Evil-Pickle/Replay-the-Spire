@@ -1,0 +1,42 @@
+{
+  "Light": {
+    "DESCRIPTION": [
+      "#y지속: At the end of turn, heal #b",
+      ". NL #y발현: Gain #b",
+      " #yRegen."
+    ],
+    "NAME": "Light"
+  },
+  "Crystal": {
+    "DESCRIPTION": [
+      "#y지속: 양옆의 구체들에게 #b+",
+      " #y밀집 을 줍니다. NL #y발현: 구체 슬롯이 #b",
+      " 개보다 적으면, 구체 슬롯 1 개를 얻습니다. NL #y지속 효과는 #y밀집 에 영향받지 않습니다."
+    ],
+    "NAME": "수정"
+  },
+  "Hellfire": {
+    "DESCRIPTION": [
+      "#y지속: 턴 시작 시, 턴 종료까지 #y힘 을 #b",
+      " 얻습니다. NL #y발현: 턴 종료까지 #y힘 을 #b",
+      " 얻고 무작위 적 하나에게 #y취약 을 #b",
+	  " 부여합니다."
+    ],
+    "NAME": "지옥불"
+  },
+  "Acid": {
+    "DESCRIPTION": [
+      "#y지속: At the start of turn, apply #b",
+      " #yPoison to a random enemy. NL #y발현: Replace all #yPoison with #yNecrotic #yPoison."
+    ],
+    "NAME": "산"
+  },
+  "ManaSpark": {
+    "DESCRIPTION": [
+      "#y지속: At the start of turn, gain #b",
+      " #yCharge-Up. NL #y발현: Gain [E] and #b",
+      " #yCharge-Up."
+    ],
+    "NAME": "Manaspark"
+  }
+}

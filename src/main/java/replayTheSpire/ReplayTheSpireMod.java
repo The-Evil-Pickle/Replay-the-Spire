@@ -1015,12 +1015,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         if (Settings.language.toString().equals("RUS")) {
 			logger.info("Russian detected!");
 			jsonPath = "localization/rus/";
-	        /*BaseMod.addKeyword(new String[] {"Запуск","Автозапуск"}, "Эффект срабатывает в начале боя.");
-	        BaseMod.addKeyword(new String[] {"Временное ОЗ","Временных ОЗ","Временные ОЗ","Временного ОЗ"}, "Временное здоровье исчезает в конце боя.");
-	        BaseMod.addKeyword(new String[] {"Мимолётная","Мимолётность"}, "Когда вы разыгрываете данную карту, она #yИзгоняется и удаляется из колоды.");
-	        BaseMod.addKeyword(new String[] {"Сжигаемость","Тление"}, "Может быть разыграна несколько раз перед сжиганием");
-	        BaseMod.addKeyword(new String[] {"Возвратность"}, "При разыгрывании карты верните немного энергии.");
-	        BaseMod.addKeyword(new String[] {"Вялость"}, "Враги с эффектом #yВялости наносят на 1 урона от #yАтак меньше (за единицу эффекта). NL Уменьшается на #b1 в конце хода.");*/
+		}
+        if (Settings.language.toString().equals("KOR")) {
+			logger.info("Korean detected!");
+			jsonPath = "localization/kor/";
 		}
         final String json = Gdx.files.internal(jsonPath + "ReplayKeywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
         final Keyword[] keywords = (Keyword[])gson.fromJson(json, Keyword[].class);
@@ -1215,6 +1213,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new CalculationTraining());
 		//AddAndUnlockCard(new ReflectiveLens());
 		AddAndUnlockCard(new Crystallizer());
+		AddAndUnlockCard(new ReroutePower());
 		logger.info("adding colorless cards...");
 		//AddAndUnlockCard(new Improvise());
 		AddAndUnlockCard(new PoisonedStrike());
@@ -1651,6 +1650,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			jsonPath = "localization/rus/";
 			editStringsByLang(jsonPath);
 			SINGLE_SUFFIX = "a";
+			MULTI_SUFFIX = "";
+		} else if (Settings.language.toString().equals("KOR")) {
+			logger.info("Korean detected!");
+			jsonPath = "localization/kor/";
+			editStringsByLang(jsonPath);
+			SINGLE_SUFFIX = "";
 			MULTI_SUFFIX = "";
 		}
 		

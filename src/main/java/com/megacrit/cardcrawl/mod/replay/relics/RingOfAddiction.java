@@ -153,7 +153,7 @@ public class RingOfAddiction extends AbstractRelic
 	
     static {
 		greedlist = new ArrayList<String>();
-		greedlist.add(Cauldron.ID);
+		//greedlist.add(Cauldron.ID);
 		greedlist.add(PotionBelt.ID);
 		greedlist.add(ToyOrnithopter.ID);
 		greedlist.add(WhiteBeast.ID);

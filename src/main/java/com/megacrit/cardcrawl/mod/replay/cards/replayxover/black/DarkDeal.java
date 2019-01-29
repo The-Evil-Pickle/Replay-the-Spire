@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.mod.replay.actions.replayxover.DiscoverBlackCardToDeckAction;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -24,8 +25,9 @@ public class DarkDeal extends CustomCard implements StartupCard
     
     public DarkDeal() {
         super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.RARE, CardTarget.NONE);
-        this.isEthereal = true;
         this.tags.add(CardTags.HEALING);//let's not generate this in combat, that would be silly
+        this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber;
     }
     
     @Override
@@ -45,6 +47,7 @@ public class DarkDeal extends CustomCard implements StartupCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeMagicNumber(1);
             GraveField.grave.set(this, true);
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
@@ -60,11 +63,12 @@ public class DarkDeal extends CustomCard implements StartupCard
 
 	@Override
 	public boolean atBattleStartPreDraw() {
-		final AbstractCard c = infinitespire.helpers.CardHelper.getRandomBlackCard().makeCopy();
+		/*final AbstractCard c = infinitespire.helpers.CardHelper.getRandomBlackCard().makeCopy();
 		if (this.upgraded) {
 			c.upgrade();
 		}
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, 1, true, true));
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, 1, true, true));*/
+		AbstractDungeon.actionManager.addToBottom(new DiscoverBlackCardToDeckAction(null, this.magicNumber));
 		return true;
 	}
 }

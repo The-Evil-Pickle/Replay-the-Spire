@@ -1,0 +1,9 @@
+{
+  "Dead Branch": {
+    "NAME": "말라죽은 가지",
+    "FLAVOR": "The branch of a tree from a forgotten era.",
+    "DESCRIPTIONS": [
+      "카드가 #y소멸 될 때 마다, 무작위 카드를 가져옵니다. NL 휴식 장소에서 #y태울 수 있습니다."
+    ]
+  }
+}

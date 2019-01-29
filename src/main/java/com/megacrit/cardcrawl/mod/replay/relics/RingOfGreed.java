@@ -202,5 +202,9 @@ public class RingOfGreed extends AbstractRelic
 				greedlist.add("hubris:MobiusCoin");
 			}
 		}
+		if (Loader.isModLoaded("Halation")) {
+			greedlist.add("halation:IllGainedPizza");
+			greedlist.add("halation:ShiningIdol");
+		}
 	}
 }

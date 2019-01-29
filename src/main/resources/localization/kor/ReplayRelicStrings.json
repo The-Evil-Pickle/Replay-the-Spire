@@ -1,0 +1,1053 @@
+{
+	"Ancient Bracer": {
+	"NAME": "안티바이러스 소프트웨어",
+	"FLAVOR": "백신과 같은 로봇입니다.",
+    "DESCRIPTIONS": [
+	"덱을 섞을 때마다, #y인공물 을 #b1 얻습니다. NL #y상태이상 카드를 뽑을 때, #y인공물 을 #b1 소비해 #y소멸 시키고 다른 모든 #y상태이상 카드를 뽑습니다. 뽑을 때 마다 카드를 #b1 장 뽑습니다."
+	]
+  },
+  "Arrowhead": {
+	"NAME": "화살촉",
+	"FLAVOR": "당신이 처음으로 만든 것입니다.",
+    "DESCRIPTIONS": [
+	"재련 할 때마다 카드를 2 장 #y강화 합니다."
+	]
+  },
+  "Bandana": {
+	"NAME": "반다나",
+	"FLAVOR": "소매치기의 최고급품입니다.",
+    "DESCRIPTIONS": [
+	"#y도둑질 을  #b",
+	" 얻습니다 전투 시작 후 #b",
+	" 턴 간 지속됩니다. NL #ySynergy - ",
+	"활성화 된 동안, ",
+	" 회복하는 대신 #y임시 #y체력 을 얻습니다."
+	]
+  },
+  "Baseball": {
+	"NAME": "야구공",
+	"FLAVOR": "우리는 모두 좋아하는 선수가 있습니다.",
+    "DESCRIPTIONS": [
+	"획득 시 무작위로 카드 1 장의 비용이 #b0 이 됩니다."
+	]
+  },
+  "Chemical X": {
+	"NAME": "혼합물 X",
+	"FLAVOR": "WARNING: Do not combine with sugar, spice, and everything nice.",
+    "DESCRIPTIONS": [
+	"비용이 #bX 인 카드를 사용할 때, 그 카드의 효과가 번 더 발동 됩니다. #b"
+	]
+  },
+  "Divine Protection": {
+    "NAME": "신성한 보호",
+	"FLAVOR": "재판하는 동안 계속되는 힘입니다.",
+	"DESCRIPTIONS": [
+		"전투 시작 시 #y임시 #y체력 을 #b",
+		" #y방패 전투 시작 시.",
+		" 얻습니다."
+	]
+  },
+  "Electric Blood": {
+	"NAME": "파지직거리는 혈액",
+	"FLAVOR": "당신의 몸에 치솟는 힘을 느낍니다. 아픕니다.",
+    "DESCRIPTIONS": [
+	"매 턴 시작 시 [R] [R] 를 얻습니다. NL [R] 를 사용 할 때마다 체력 #b1 을 잃습니다. 매 턴 처음 사용하는 카드 #b",
+	" 장은 적용되지 않습니다."
+	]
+  },
+  "ReplayFunnel": {
+	"NAME": "깔때기",
+	"FLAVOR": "마지막 한 방울까지.",
+    "DESCRIPTIONS": [
+	"턴 종료 시, 사용하지 않은 [E] 마다 #y방어도 를 #b4 씩 얻습니다."
+	]
+  },
+  "Garlic": {
+	"NAME": "마늘",
+	"FLAVOR": "한모금 들이키면 눈물이 날 수 있습니다.",
+    "DESCRIPTIONS": [
+	"전투 시작 시, 적 전체에게 #y나른함 을 #b3 부여합니다."
+	]
+  },
+  "Iron Hammer": {
+	"NAME": "철 망치",
+	"FLAVOR": "유용하고 - 무거운 - 도구.",
+	"DESCRIPTIONS": [
+	"첫 턴에 뽑는 카드들은 #y강화 됩니다."
+	]
+  },
+  "Mirror": {
+	"NAME": "손거울",
+	"FLAVOR": "거울을 통해 당신을 볼 수 있습니다. 좋은 것과 나쁜 것까지.",
+    "DESCRIPTIONS": [
+	"#y취약 또는 #y약화 당할 때마다, 사용 한 적 또한 #y취약 또는 #y약화 를 얻습니다.",
+	"Reflected"
+	]
+  },
+  "Onion Ring": {
+	"NAME": "양파링",
+	"FLAVOR": "양파는 튀긴 빵안에 있습니다.",
+    "DESCRIPTIONS": [
+	"전투 시작 시, #y힘 을 3 얻습니다. NL 다음 3 턴 동안 #y힘 을 1 씩 잃습니다."
+	]
+  },
+  "ReplayTheSpireMod:Shallot": {
+	"NAME": "샬롯",
+	"FLAVOR": "샬롯입니다. 말 할 필요도 없습니다.",
+    "DESCRIPTIONS": [
+	"전투 시작 시, #y민첩 , #y금속화 를 3 얻습니다. NL 다음 3 턴 동안 #y민첩 , #y금속화 를 1 씩 잃습니다."
+	]
+  },
+  "Pet Ghost": {
+	"NAME": "애완 유령",
+	"FLAVOR": "애완동물의 유령은 한 번 기사에 속합니다.",
+    "DESCRIPTIONS": [
+	"매 턴 마다 #g환영 카드를 1 장 얻습니다. NL 최대 카드 보유 수가 #b1 증가합니다."
+	]
+  },
+  "Ring of Chaos": {
+	"NAME": "혼돈의 반지",
+	"FLAVOR": "거칠고 예측 할 수 없는 마법적 효과를 가진 반지입니다.",
+	"DESCRIPTIONS": [
+	"가끔 카드 보상이 무작위로 #y비용 , #y효과 , #y피해량 , #y방어도 등이 설정됩니다."
+	]
+  },
+  "Simple Rune": {
+	"NAME": "간단함의 룬",
+	"FLAVOR": "가끔은, 보이는 것만큼 복잡하진 않습니다.",
+	"DESCRIPTIONS": [
+		"#y타격 , #y수비 카드를 제한없이 #y강화 할 수 있습니다. NL 획득 시 무작위로 기본 카드를 #b",
+		" 장 #y강화 합니다."
+	]
+  },
+  "Snack Pack": {
+	"NAME": "간식 꾸러미",
+	"FLAVOR": "항상 간식과 함께 준비해옵니다.",
+    "DESCRIPTIONS": [
+	"한 턴에 #y공격 카드를 3 장 사용할 때마다 체력을 #b2 회복합니다."
+	]
+  },
+  "Snecko Scales": {
+	"NAME": "스네코의 비늘",
+	"FLAVOR": "스네코의 허물에서 얻은 비늘입니다. 희미하게 색을 반사하는 것처럼 보입니다.",
+    "DESCRIPTIONS": [
+	"매 턴 카드를 #b",
+	" 장 더 뽑습니다. NL 비용이 #b0 보다 높은 카드를 쓸 때마다, 카드를 #b1 장 버립니다."
+	]
+  },
+  "Snecko Heart": {
+	"NAME": "스네코의 심장",
+	"FLAVOR": "쓰러뜨린 스네코의 보존된 심장입니다.",
+    "DESCRIPTIONS": [
+	"모든 전투를 #y혼란 상태로 시작합니다. NL #y혼란 은 더 이상 카드 비용을 #b1 이상 증가시키지 않습니다. NL 매 턴 뽑은 첫 카드는 항상 비용이 #b0 입니다."
+	]
+  },
+  "Pondfish Scales": {
+	"NAME": "폰드피쉬의 비늘",
+	"FLAVOR": "이 비늘은 캡틴 아베를 제압한 사람들이 가지고 있습니다.",
+    "DESCRIPTIONS": [
+	"#y방어도 를 얻지 않는 #y스킬 카드를 사용할 때마다 #y방어도 를 #b",
+	" 얻습니다"
+	]
+  },
+  "Abe's Treasure": {
+	"NAME": "아베의 보물",
+	"FLAVOR": "Cursed?",
+    "DESCRIPTIONS": [
+	"매 턴 시작 시 [E] 를 얻습니다. NL 전투를 시작 할 때, #y익사 를 얻습니다. NL 획득 시 #r아베의 #r복수 카드를 1 장 얻습니다."
+	]
+  },
+  "Transient Totem": {
+	"NAME": "과도 토템",
+	"FLAVOR": "이 나무 토템은 희미한 숲을 지나온 사람만이 견딜 수 있습니다.",
+    "DESCRIPTIONS": [
+	"매 턴 시작 시 [E] 를 얻습니다. NL 매 전투마다 무작위 #y보스 #y유물 의 #r해로운 효과를 하나 얻습니다. NL ",
+	"#yOut #yof #yCombat: You're not in combat right now, but when you are, the negative effect of this relic will display here.",
+	"#yCursed #yKey: #b",
+	" random #rCurses have been shuffled into your deck (1 for each chest opened since you got this relic).",
+	"#yEctoplasm: You will not be able to obtain gold from this fight.",
+	"#ySozu: You will not be able to obtain potions during or as a reward for this fight.",
+	"#yMark #yof #yPain: #b2 #yWounds have been shuffled into your deck.",
+	"#yVelvet #yChoker: You may not play more than #b6 cards each turn.",
+	"#yRunic #yDome: You cannot see enemy intents.",
+	"#yPhilosopher's #yStone: All enemies have been given #b+2 #yStrength.",
+	"#yBusted #yCrown: Card rewards from this fight will give you #b2 fewer options to choose from.",
+	"#ySnecko #yEye: You are #yConfused.",
+	"#yRunic #yPyramid: You draw #b1 less card each turn.",
+	"#yHoney #yJar: You may not skip rewards from this combat.",
+	"#ySnecko #yScales: When you play a card that costs more than #b0, discard a card.",
+	"#yPandora's #yBox: #b5 random cards have been shuffled into your deck.",
+	"#yBlack #yStar: No negative effect. Lucky!",
+	"#yEternal #yFeather: No negative effect. Lucky!",
+	"#yWhite #yBeast #yStatue: No negative effect. Lucky!",
+	"#yTiny #yHouse: No negative effect. Lucky!",
+	"#yCalling #yBell: #b3 random #rCurses have been shuffled into your deck.",
+	"#yKintsugi: #b2 random #rCurses have been shuffled into your deck.",
+	"#yBlack #yBlood: Burning Blood will not trigger at the end of this combat."
+	]
+  },
+  "King of Hearts": {
+	"NAME": "킹 오브 하트",
+	"FLAVOR": "Traditionally drawn with his sword going through his head, is sometimes known as the Suicide King.",
+	"DESCRIPTIONS": [
+	"내 턴에 체력을 잃을 때마다, 그 두 배 만큼 #y방어도 를 얻습니다."
+	]
+  },
+  "Ooze Armor": {
+	"NAME": "슬라임 갑옷",
+	"FLAVOR": "살아있는 슬라임의 유연함과 강인함을 가진 갑옷입니다.",
+    "DESCRIPTIONS": [
+	" NL 전투 시작 시 #y탄성 을 #b4 , #y둔화 를 #b-3 얻습니다",
+	"매 턴 시작 시 [R] 를 얻습니다.", 
+	"매 턴 시작 시 [G] 를 얻습니다.",
+	"매 턴 시작 시 [E] 를 얻습니다."
+	]
+  },
+  "ChewingGum": {
+	"NAME": "씹는 껌",
+	"FLAVOR": "달콤하고 끈적거립니다.",
+    "DESCRIPTIONS": [
+	"매 턴 시작 시 [E] 를 얻습니다. NL 덱을 섞을 때마다, #y점액투성이 카드를 #b",
+	" 장 뽑을 카드 더미에 섞어 넣습니다."
+	]
+  },
+  "Gremlin Food": {
+	"NAME": "그렘린의 음식",
+	"FLAVOR": "몇 그렘린들은 사람에게서 음식을 훔쳐만 간다고 알려져 있지만, 모험가가 자는 사이에 호의를 돌려줍니다.",
+    "DESCRIPTIONS": [
+	"휴식 할 때마다, 무작위로 카드를 1 장 #y강화 합니다."
+	]
+  },
+  "BranchBurnRelic": {
+    "NAME": "불쏘시개",
+    "FLAVOR": "불은 밝게 타오릅니다.",
+    "DESCRIPTIONS": [
+      "휴식 장소를 거친 뒤의 첫 전투에서 #y재생 을 #b",
+	  " 얻습니다."
+    ]
+  },
+  "Guide Book": {
+	"NAME": "안내서",
+	"FLAVOR": "책은 첨탑의 \"관광 명소\" 를 자세하게 설명하고 있습니다. 상인이 쓴 책 같습니다.",
+    "DESCRIPTIONS": [
+	"획득 시 무작위로 카드를 ",
+	" 장 #y강화 합니다. NL 카드 희귀도에 따라 우선으로 #y강화 합니다."
+	]
+  },
+  "Painkiller Herb": {
+	"NAME": "달콤한 꽃",
+	"FLAVOR": "이 꽃의 달콤한 향은 당신을 어지럽게 만듭니다...",
+    "DESCRIPTIONS": [
+	"지도에서 정보가 적어집니다.",
+	"NL 매 턴 시작 시 [E] 를 얻습니다.",
+	" NL #ySynergy - ",
+	" Each time you climb a floor, heal #b",
+	" HP."
+	]
+  },
+  "Honey Jar": {
+	"NAME": "꿀단지",
+	"FLAVOR": "맜있다!",
+    "DESCRIPTIONS": [
+	"더 이상 보상을 넘길 수 없습니다.",
+	"For 1 Act, you cannot skip rewards.",
+	"매 턴 카드를 #b",
+	" 장 더",
+	" 뽑습니다.",
+	" ",
+	"카드를 #y보존 을 할 수 있습니다 #b",
+	"카드 보상에서 추가 선택지가 생깁니다.",
+	"획득 시 포션 슬롯을 #b",
+	" 개 얻습니다.",
+	" 개 얻습니다.",
+	"Increases Max Hand Size by #b",
+	"Gain ",
+	" at the start of each round."
+	]
+  },
+  "ReplayTheSpireMod:DimensionalGlitch": {
+	"NAME": "차원의 착오",
+	"FLAVOR": "텍스트를 입력하시오",
+    "DESCRIPTIONS": [
+	"매 턴 시작 시 [E] 를 얻습니다. NL 내가 주는 모든 #y비-공격 #y피해 가 #b1/2 로 #r감소 됩니다. 소수점은 #r내림 합니다. NL 내가 받는 모든 #y비-공격 #y피해 가 #b1/2 만큼 #r증가 됩니다. 소수점은 #r올림 합니다. NL 내가 받는 모든 #y전투 동안의 #y회복 효율이 #b1/2 로 #r감소 됩니다. 소수점은 #g올림 합니다."
+	]
+  },
+  "Replay_Grab Bag": {
+	"NAME": "손가방",
+	"FLAVOR": "장신구와 먹을 것. 무얼 선택할 건가요?",
+    "DESCRIPTIONS": [
+	"보스 #y에너지 유물을 #b1 개 얻고 보스 #y비-에너지 유물을 #b1 개를 얻습니다. NL 두 선택 모두 #b3 개의 무작위 유물 중 #b1 개를 고르는 것이며 넘길 수 없습니다."
+	]
+  },
+  "Sizzling Blood": {
+	"NAME": "지글거리는 혈액",
+	"FLAVOR": "불과 독으로 타오르고 있습니다.",
+    "DESCRIPTIONS": [
+	"전투 종료 시 체력을 #b",
+	" 회복합니다. NL 획득 시 최대 체력을 #b",
+	" 얻습니다."
+	]
+  },
+  "Chameleon Ring": {
+	"NAME": "카멜레온의 반지",
+	"FLAVOR": "천천히 변하는 색깔로 빛나는 반지입니다.",
+    "DESCRIPTIONS": [
+	"포션의 효과가 증가합니다. NL 휴식 장소에서 #y양조 를 할 수 있습니다."
+	]
+  },
+  "Grinning Jar": {
+    "NAME": "욕망의 항아리",
+	"FLAVOR": "\"난 욕망의 항아리를 사용하겠다. 덱에서 카드를 2 장 뽑을 수 있지!\"",
+    "DESCRIPTIONS": [
+		"카드를 2 장 뽑는 #y스킬 카드를 얻습니다. NL 덱에 있는 다른 카드 #b",
+		" 장마다 카드 2 장 뽑는 #y스킬 카드를 추가로 얻습니다.",
+		"항아리가 기뻐합니다."
+	]
+  },
+  "Durian": {
+    "NAME": "두리안",
+	"FLAVOR": "끔찍한 냄새. 멋진 맛.",
+    "DESCRIPTIONS": [
+		"Whenever you gain a #rDebuff, gain #yShielding equal to the amount. NL At the start of your turn, reduce your turn-based Debuffs to #b2. NL 획득 시, increase your max HP by #b",
+		"#r해로운 효과를 얻을 때마다, 같은 양의 #y임시 #y체력 을 얻습니다. NL 턴 시작 시, 내게 걸린 턴 기반 해로운 효과를 #b2 로 감소시킵니다. NL 획득 시 최대 체력 #b"
+	]
+  },
+  "Basket Of Snakes": {
+    "NAME": "뱀 바구니",
+	"FLAVOR": "걱정마십시오; 물지 않습니다. 뱀들이 물고 싶어 하지 않는 이상,",
+    "DESCRIPTIONS": [
+		"#b",
+		" 번째로 사용하는 #y공격 카드가 막히지 않을 피해를 줄 때마다 #y괴저독 을 #b",
+		" 씩 부여합니다."
+	]
+  },
+  "Counterbalance": {
+    "NAME": "평형력",
+	"FLAVOR": "모든 힘에는 약점이 있습니다.",
+    "DESCRIPTIONS": [
+		"보스, 엘리트와의 전투에서, 적이 얻는 #y힘 , #y방어도 , #y회복 을 1/2로 감소시킵니다."
+	]
+  },
+  "Golden Egg": {
+    "NAME": "황금 알",
+	"FLAVOR": "FDA에 의해 허용되지 않았습니다.",
+    "DESCRIPTIONS": [
+		"#y희귀 카드를 얻을 때마다 #y강화 됩니다. NL 상점에서 카드를 구매 할 때마다 #y강화 됩니다. "
+	]
+  },
+  "Quantum Egg": {
+    "NAME": "양자 알",
+	"FLAVOR": "이 맛은 마치 [편집됨].",
+    "DESCRIPTIONS": [
+		"전투 중에 카드가 생성될 때마다 #y강화 됩니다."
+	]
+  },
+  "Blue Doll": {
+    "NAME": "꼬리표 봉투",
+	"FLAVOR": "색색의 수집품입니다.",
+    "DESCRIPTIONS": [
+		"상점은 이제 3 가지의 판매 태그가 붙습니다. NL 판매 태그가 무색 카드에도 붙습니다. NL 할인 태그가 더 저렴해집니다."
+	]
+  },
+  "Byrd Skull": {
+    "NAME": "새의 해골",
+	"FLAVOR": "         The skull of a fallen Byrd.         ...이해했어? Fallen?",
+    "DESCRIPTIONS": [
+		"#y선천성 카드는 이제 #y환급 #b1 과 카드를 #b1 장 뽑습니다 를 가집니다."
+	]
+  },
+  "Vampiric Spirits": {
+    "NAME": "흡혈귀의 영혼",
+	"FLAVOR": "그림자에 대한 애정, 피에 대한 갈증; 도적과 뱀파이어가 가진 특성입니다.",
+    "DESCRIPTIONS": [
+		"첫 턴에 입힌 모든 막히지 않은 피해는 #b",
+		"% 만큼 체력으로 돌아옵니다."
+	]
+  },
+  "ReplayTheSpireMod:GhostHeart": {
+    "NAME": "유령의 심장",
+	"FLAVOR": "어떤 영혼의 남아있는 감사 표시입니다.",
+    "DESCRIPTIONS": [
+		"전투 중 1 번 사망 시, 최대 체력의 #b10% 만큼 #y방패 를 가지고 부활하고 #불가침 을 #b",
+		" 얻습니다. NL 전투 시작 시 체력을 1 이면 즉시 발동합니다."
+	]
+  },
+  "ReplayTheSpireMod:Lightbulb": {
+	"NAME": "전구",
+	"FLAVOR": "태양을 본 지 얼마나 됐지?",
+    "DESCRIPTIONS": [
+	"턴 종료 시, 사용하지 않은 [E] 만큼 다음 턴에 카드를 더 뽑습니다."
+	]
+  },
+  "ReplayTheSpireMod:CursedCoin": {
+	"NAME": "저주받은 동전",
+	"FLAVOR": "가진 자에게 불운을 가져오는 저주받은 동전입니다. 이걸 없애는 방법은 파는 수밖에 없습니다.",
+    "DESCRIPTIONS": [
+	"획득 시 #b",
+	" 골드를 얻고 무작위 #r저주 카드를 1 장 얻습니다."
+	]
+  },
+  "Replay:WaspNest": {
+	"NAME": "말벌 둥지",
+	"FLAVOR": "벌 둥지와 같지만, 더 악랄합니다.",
+    "DESCRIPTIONS": [
+	"전투 중 체력을 잃을 때마다 #y가시 #b",
+	" 얻습니다."
+	]
+  },
+  "Replay:Accelerometer": {
+	"NAME": "가속계",
+	"FLAVOR": "시간이 흐른다.",
+    "DESCRIPTIONS": [
+	" [#2aecd7]전투 [#2aecd7]중 [#2aecd7]1 [#2aecd7]번 [#2aecd7]사용 [#2aecd7]가능합니다.[] NL 내게 걸린 턴 기반 해로운 효과를 #b1 감소시킵니다. NL 적에게 걸린 턴 기반 해로운 효과를 #b1 증가시킵니다."
+	]
+  },
+  "Replay:Winged Headress": {
+	"NAME": "Winged Headdress",
+	"FLAVOR": "Poyo!",
+    "DESCRIPTIONS": [
+	" [#2aecd7]한 [#2aecd7]턴 [#2aecd7]에 [#2aecd7]1 [#2aecd7]번 [#2aecd7]사용 [#2aecd7]가능합니다.[] NL Replenish #b1 use of all #yWither cards in your hand, and #y소멸 them. NL [#2aecd7]Cannot [#2aecd7]be [#2aecd7]used [#2aecd7]once [#2aecd7]your [#2aecd7]deck [#2aecd7]has [#2aecd7]been [#2aecd7]shuffled [#2aecd7]on [#2aecd7]a [#2aecd7]previous [#2aecd7]turn [#2aecd7]this [#2aecd7]combat. NL [#2aecd7](Can [#2aecd7]be [#2aecd7]used [#2aecd7]the [#2aecd7]turn [#2aecd7]it [#2aecd7]is [#2aecd7]first [#2aecd7]shuffled, [#2aecd7]but [#2aecd7]not [#2aecd7]the [#2aecd7]turns [#2aecd7]after)"
+	]
+  },
+  "ReplayTheSpireMod:Onyx Gauntlets": {
+	"NAME": "쳇바퀴",
+	"FLAVOR": "계속해서 뜁니다.",
+    "DESCRIPTIONS": [
+	"카드를 뽑을 때마다 [E] 를 얻습니다. NL 뽑은 카드들은 이 턴 동안 비용이 #b1 증가합니다. NL 전투 시작 시, 내 덱에 있는 비용이 #bX 인 카드 1 장마다 무작위 #r저주 를 #b1 장씩 섞어 넣습니다."
+	]
+  },
+  "ReplayTheSpireMod:Ninjato": {
+	"NAME": "닌자도",
+	"FLAVOR": "찔러 찔러 찔러!",
+    "DESCRIPTIONS": [
+		"The third #yAttack you play each turn has #yRefund #b",
+		"한 턴에 #y공격 카드를 #b",
+		" 장 사용할 때마다 카드를 #b",
+		" 장 뽑습니다."
+	]
+  },
+  "ReplayTheSpireMod:EnergyBall": {
+	"NAME": "에너지 볼",
+	"FLAVOR": "강타!",
+    "DESCRIPTIONS": [
+		" [#2aecd7]전투 [#2aecd7]중 [#2aecd7]1 [#2aecd7]번 [#2aecd7]사용 [#2aecd7]가능합니다.[] NL 턴 종료 시 사용하지 않은 [E] 로 최대 #b",
+		" 까지 충전합니다. NL 충전을 #b",
+		" 사용해 캐릭터의 형상 #y파워 를 사용합니다."
+	]
+  },
+  "ReplayTheSpireMod:TigerMarble": {
+	"NAME": "호랑이 구슬",
+	"FLAVOR": "호랑이의 눈입니다",
+    "DESCRIPTIONS": [
+		"전투 시작 시, 무작위로 #y소멸 되는 카드를 1 장 얻습니다. NL 이 카드는 사용하기 전까지 비용이 #b0 입니다."
+	]
+  },
+  "ReplayTheSpireMod:asdfghhj": {
+	"NAME": "sdadgkfgjrtdf",
+	"FLAVOR": "---",
+    "DESCRIPTIONS": [
+		"획득 시 choose a #yPower that costs #b1 or less. NL You start combat with the chosen #yPower."
+	]
+  },
+  "ReplayTheSpireMod:Spearhead": {
+	"NAME": "창끝",
+	"FLAVOR": "---",
+    "DESCRIPTIONS": [
+		"턴 종료 시, 적들은 적 자신에게 걸린 #y취약 만큼 체력을 잃습니다."
+	]
+  },
+  "ReplayTheSpireMod:TinkerService": {
+	"NAME": "Tinker Service",
+	"FLAVOR": "The merchant is a strange man, but one of many skills.",
+    "DESCRIPTIONS": [
+		"#rDowngrade a card. NL #yUpgrade a card."
+	]
+  },
+  "ReplayTheSpireMod:SealedPack": {
+	"NAME": "밀봉된 팩",
+	"FLAVOR": "일반적인 5 장의 카드 부스터 팩입니다. 아마 운이 좋으시겠죠?",
+    "DESCRIPTIONS": [
+		"#y일반 카드를 1 장 선택하고 얻습니다. NL #y희귀 카드를 1 장 선택하고 얻습니다. NL #y무색 카드를 1 장 선택하고 얻습니다. NL #yBlack 카드를 1 장 선택하고 얻습니다. NL #r저주 카드를 1 장 선택하고 얻습니다. NL #r저주 카드는 #y영혼결속 되고 넘길 수 없습니다.",
+		"Let's see what's inside...",
+		"Pick your poison"
+	]
+  },
+  "ReplayTheSpireMod:ShopPack": {
+	"NAME": "카드 팩",
+	"FLAVOR": "3 개의 값싼 부스터 팩입니다. 아마도 상인에 의해 조작된 거 같습니다.",
+    "DESCRIPTIONS": [
+		"#y무색 카드를 #b",
+		" 장 선택해 얻습니다. NL 적어도 1 개의 #y희귀 카드가 보장됩니다.",
+		" NL Chance to get a super-rare #yShop-Specialty #yCard!",
+		"Let's see what's inside..."
+	]
+  },
+  "Another Sword": {
+    "NAME": "또 다른 검",
+	"FLAVOR": "두 번째 검입니다. 당신은 이제 2 개를 가졌습니다.",
+    "DESCRIPTIONS": [
+		"매 턴 처음 사용하는 \"타격\" 이라는 이름이 들어간 카드는 2 번 사용됩니다. NL 카드 사용에 쓴 [R] 마다 1 턴의 추가적인 재사용 대기시간이 있습니다."
+	]
+  },
+  "Kintsugi": {
+    "NAME": "킨트수기",
+	"FLAVOR": "부서진 것이 더 나아질 수도 있습니다.",
+    "DESCRIPTIONS": [
+		"덱에서 카드를 #b",
+		" 장 제거합니다. NL #y저주 를 #b",
+		" 장 선택해 얻습니다. NL (저주를 제거하는 첫 효과는 제거하는 대신 #y변환 합니다).",
+		"Choose cards to remove",
+		"Choose curses to obtain"
+	]
+  },
+  "ReplayTheSpireMod:Blightstone": {
+    "NAME": "어두운 돌",
+	"FLAVOR": "Ew",
+    "DESCRIPTIONS": [
+		"Gain [E] 매 턴 시작 시. NL 획득 시 choose a #rBlight to obtain."
+	]
+  },
+  "ReplayTheSpireMod:Blightapple": {
+    "NAME": "썩은 사과",
+	"FLAVOR": "Ew",
+    "DESCRIPTIONS": [
+		"Gain [E] 매 턴 시작 시. NL 획득 시 lose #b",
+		" Max HP."
+	]
+  },
+  "BargainBundle": {
+    "NAME": "할인 보따리",
+	"FLAVOR": "가격 좀 봐!",
+    "DESCRIPTIONS": [
+		"이 유물을 사면 남아 있는 이 상점의 카드, 포션의 가격이 #b",
+		"When you purchase this relic, the cost of the cards, relics, potions, and card removal service in the same shop are reduced by #b",
+		" 골드 만큼 감소합니다."
+	]
+  },
+  "ReplayTheSpireMod:Bottled Flurry": {
+    "NAME": "병 속의 눈보라",
+	"FLAVOR": "마치 스노우글로브 같습니다!",
+    "DESCRIPTIONS": [
+		"획득 시 카드를 하나 선택합니다. NL 그 카드는 #y보존 됩니다. NL 만약 카드가 #y휘발성 이면 #y소멸 하지 않고 버려집니다.",
+		"Choose card to Retain",
+		"You will #yRetain ",
+		" at the end of the turn (or if it is #yEthereal discard instead)."
+	]
+  },
+  "ReplayTheSpireMod:Bottled Steam": {
+    "NAME": "병 속의 간헐천",
+	"FLAVOR": "FWOOOOOOSH!",
+    "DESCRIPTIONS": [
+		"획득 시 카드를 하나 선택합니다. NL 덱을 섞을 때 마다, 그 카드를 뽑을 카드 더미 맨 위에 놓습니다.",
+		"Choose card to shuffle to top.",
+		"When you shuffle your deck, ",
+		" will be placed on top."
+	]
+  },
+  "ReplayTheSpireMod:Bottled Whirlpool": {
+    "NAME": "병 속의 소용돌이",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"획득 시 choose a card. NL Each time you draw that card, it is played immediately and you draw another card. NL The cost of the card is still paid; if you have less [E] than the cost, all your [E] is spent.",
+		"Choose card to auto-play",
+		"Each time you draw ",
+		" it is played immediately, and you draw another card."
+	]
+  },
+  "ReplayTheSpireMod:Bottled Firefly": {
+    "NAME": "Bottled Firefly",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"획득 시 choose a card. NL It gains #yRefund #b1.",
+		"Choose card to give Refund",
+		"",
+		" has #yRefund #b1."
+	]
+  },
+  "ReplayTheSpireMod:Bottled Eggs": {
+    "NAME": "Bottled Eggs",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"획득 시 choose a card. NL All copies of that card you have are #yUpgraded. NL All future copies of that card you obtain are #yUpgraded."
+	]
+  },
+  "ReplayTheSpireMod:Multitool": {
+    "NAME": "맥가이버 칼",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"휴식 장소에서 무작위로 #b2 개의 추가적인 선택지가 생깁니다."
+	]
+  },
+  "ReplayTheSpireMod:Pickaxe": {
+    "NAME": "곡괭이",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"휴식 장소에서 #y채굴 을 할 수 있습니다."
+	]
+  },
+  "minegem_1": {
+    "NAME": "루비",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"최대 체력을 #b",
+		" 증가 시킵니다. NL #ySell #yValue: #b"
+	]
+  },
+  "minegem_2": {
+    "NAME": "Emerald",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Heal #b",
+		" HP at the end of combat. NL #ySell #yValue: #b"
+	]
+  },
+  "minegem_3": {
+    "NAME": "Saphire",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Gain #b",
+		" #yShieling 전투 시작 시. NL #ySell #yValue: #b"
+	]
+  },
+  "minegem_4": {
+    "NAME": "Cursed Gem",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Add a #rCurse to your discard pile 전투 시작 시. NL #ySell #yValue: #b"
+	]
+  },
+  "minegem_5": {
+    "NAME": "Diamond",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Gain #b",
+		" #yBlock at the end of your turn. NL #ySell #yValue: #b"
+	]
+  },
+  "Solar Panel": {
+    "NAME": "태양광 패널",
+	"FLAVOR": "깨끗하고, 재생가능한 힘입니다.",
+    "DESCRIPTIONS": [
+		"전투 종료 시, 활성화된 #y전기 구체 1 개 당 체력을 #b",
+		" 회복합니다."
+	]
+  },
+  "Carrot": {
+    "NAME": "당근",
+	"FLAVOR": "힘으로 채워졌습니다.",
+    "DESCRIPTIONS": [
+		"전투 시작 시, #y밀집 을 #b3 얻습니다. NL 다음 3 턴 동안 #y밀집 을 1 씩 잃습니다."
+	]
+  },
+  "Backup Battery": {
+    "NAME": "Backup Battery",
+	"FLAVOR": "Emergency rations for robots.",
+    "DESCRIPTIONS": [
+		"At the end of each round, conserve up to #b",
+		" energy. NL Increase this effect by #b1 until end of combat each time you #yEvoke #yPlasma (up to #b",
+		" max)."
+	]
+  },
+  "Geode": {
+    "NAME": "지오드",
+	"FLAVOR": "부숴서 여세요!",
+    "DESCRIPTIONS": [
+		"전투에서 처음으로 체력을 잃을 때, #y영창 된 모든 구체의 지속효과를 발동시키고 #y수정 을 #b1 개 #y영창 합니다."
+	]
+  },
+  "Raider's Mask": {
+    "NAME": "레이더 마스크",
+	"FLAVOR": "살아남지 못하리라.",
+    "DESCRIPTIONS": [
+		"턴 종료 시, #y암흑 구체 피해량이 체력이 가장 적은 적보다 많이 쌓여있으면 #y발현 됩니다."
+	]
+  },
+  "Replay:Frozen Program": {
+    "NAME": "냉동 프로그램",
+	"FLAVOR": "FROST.exe 응답없음.",
+    "DESCRIPTIONS": [
+		"#y냉기 가 #y발현 될 때마다 #y반사 를 #b1 얻습니다."
+	]
+  },
+  "Replay:Sigil": {
+    "NAME": "보이지 않는 손의 인장",
+	"FLAVOR": "...",
+    "DESCRIPTIONS": [
+		"매 턴 시작 시 [E] 를 얻습니다. NL During combat, some of your cards will be obscured."
+	]
+  },
+  "Replay:Towering Pillar of Hats": {
+    "NAME": "모자탑",
+	"FLAVOR": "\"내 모자탑의 장엄함을 보아라!\"",
+    "DESCRIPTIONS": [
+		"최대 카드 보유 수가 #b",
+		" 증가합니다. NL 턴 종료 시, 가장 오른쪽 카드를 #b1 장 #y보존 합니다. 턴 종료 시 손에 있는 카드를 #b",
+		" 장당 #b1 장 #y보존 합니다.",
+		" NL #ySynergy - ",
+		"#ySlimy #yHat NL NL Max hand size increased by additional #b1.",
+		"#yTop #yHat NL NL If you end your turn with #b10 or more cards in hand, draw #b1 additional card next turn."
+	]
+  },
+  "Replay:Ringing Soul": {
+    "NAME": "울리는 영혼",
+	"FLAVOR": "이 얼마나 불쾌한가!",
+    "DESCRIPTIONS": [
+		"방마다 #b1 번, 카드를 덱으로 추가할 때마다, 최대 체력을 #b",
+		" 얻습니다."
+	]
+  },
+  "Replay:Gravy": {
+    "NAME": "묘",
+	"FLAVOR": "Goes great with large, flightless byrds.",
+    "DESCRIPTIONS": [
+		"획득 시 덱에서 카드를 #b",
+		" 장까지 선택합니다. NL 그 카드들은 #y무덤 을 얻습니다."
+	]
+  },
+  "Replay:Lucky Slots": {
+    "NAME": "럭키 슬롯",
+	"FLAVOR": "승리를 위해 돌리세요!",
+    "DESCRIPTIONS": [
+		"누구든 정확히 체력을 #b7 잃을 때마다 #y치명타 를 얻습니다. NL 한 전투에서 #b",
+		" 번 발동하면 #b",
+		" 골드를 얻습니다."
+	]
+  },
+  "Replay:Wanted Poster": {
+    "NAME": "현상수배지",
+	"FLAVOR": "골드와 피: 동등한 수준의 가치.",
+    "DESCRIPTIONS": [
+		"매 턴 시작 시 [E] 을 얻습니다. NL 매 #b",
+		" 골드마다 #b",
+		" 골드 이하에서 발동합니다. 적들은 최대 5개의 이로운 효과를 갖고 시작합니다. NL 획득 시 #b",
+		" 골드를 얻습니다.",
+		" NL While you have more than #b",
+		" gold, various #rthieves and #rbounty #rhunters may come after you."
+	]
+  },
+  "Replay:Byrd Feeder": {
+    "NAME": "새 모이",
+	"FLAVOR": "배고픔을... 느껴라?",
+    "DESCRIPTIONS": [
+		"전투에서 최대 체력을 넘어선 회복량은 #y임시 #y체력 으로 얻습니다."
+	]
+  },
+  "Replay:Rubber Ducky": {
+    "NAME": "러버덕",
+	"FLAVOR": "쥐어짜면 소리가 납니다.",
+    "DESCRIPTIONS": [
+		"#y파워 카드를 사용할 때마다, #y파워 카드에 소모된 [E] 마다 #y방어도 를 #b",
+		" 얻습니다."
+	]
+  },
+  "Replay:Wax Seal": {
+    "NAME": "밀랍 직인",
+	"FLAVOR": "봉투를 닫는데 쓰는 종류입니다. 바다 표범이 아니라요.",
+    "DESCRIPTIONS": [
+		"[#2aecd7]상점에서 [#2aecd7]오른쪽 [#2aecd7]클릭으로 [#2aecd7]활성화합니다 :[]",
+		" NL #b",
+		" 골드 만큼 빌립니다. 갚을 때까지 #r저주 카드를 1 장 덱에 넣습니다.",
+		"상점의 #y유물 비용이 #b",
+		"% 감소합니다. NL "
+	]
+  },
+  "Replay:Drink Me": {
+    "NAME": "축소 물약",
+	"FLAVOR": "라벨이 붙어있습니다 \"날 마셔.\"",
+    "DESCRIPTIONS": [
+		"매 턴 시작 시 에너지 [E] 를 잃고 카드를 #b",
+		" 장 뽑습니다. NL 전투 시작 시 #y민첩 이 #b",
+		" 증가합니다. NL 한 턴에 적어도 카드를 #b",
+		" 장 사용했다면, 다음 턴에 [E] 를 얻습니다. NL 획득 시 덱에서 카드를 #b",
+		" 장 제거하고 최대 체력을 #b",
+		"% 잃습니다. NL #ySynergy - #y작은 #y집",
+		"Choose cards to remove.",
+		"#y작은 #y집 을 가지고 있으면, 매 전투마다 #y방패 를 #b15 갖고 시작합니다."
+	]
+  },
+  "Replay:Bronze Core": {
+    "NAME": "청동 핵",
+	"FLAVOR": "지금까지도 첨탑을 방어하기 위해 작동합니다.",
+    "DESCRIPTIONS": [
+		"매 턴 시작 시 [E] 를 얻습니다. NL 매 전투마다 죽기 전까지 #y정지 를 사용하며 공격하지 않는 #r청동구체 #r하수인 #b1 개를 #r적 으로 소환합니다."
+	]
+  },
+  "Replay:Cursed D8": {
+    "NAME": "저주받은 D8",
+	"FLAVOR": "주사위를 굴려라, 네 운명을 마주해라.",
+    "DESCRIPTIONS": [
+		"매 턴 시작 시 [E] 를 얻고 카드를 1 장 뽑습니다. NL Shuffle an #yEcho of a random #rCurse into your draw pile at the end of your turn."
+	]
+  },
+  "Ring of Fury": {
+	"NAME": "분노의 반지",
+	"FLAVOR": "감각과 무감각을 모두 고조시키는 저주받은 반지입니다.",
+	"DESCRIPTIONS": [
+	"전투 시작 시 #y힘 을 #b",
+	" 얻고 #y민첩 을 #b",
+	" 잃습니다."
+	]
+  },
+  "Ring of Peace": {
+	"NAME": "평화의 반지",
+	"FLAVOR": "첨탑에서 평화는 지속되지 않습니다.",
+	"DESCRIPTIONS": [
+	"전투 시작 시 나를 포함한 모두에게 #y약화 를 #b",
+	" 부여하고 #y버퍼 를 #b",
+	" 얻습니다"
+	]
+  },
+  "Ring of Panic": {
+	"NAME": "공포의 반지",
+	"FLAVOR": "두려움은 목적에 도움이 됩니다.",
+	"DESCRIPTIONS": [
+	"전투 시작 시 #y혼란 을 #b",
+	" 턴 동안 얻습니다. NL 1, 2 턴 시작 시 [E] [E] 를 얻습니다. NL 3 턴 시작 시 [E] 를 얻습니다."
+	]
+  },
+  "Ring of Hypnosis": {
+	"NAME": "최면의 반지",
+	"FLAVOR": "이상한 색깔과 반사된 불빛이 마음을 떠돌아 다니는 길을 따라 내려가게 합니다.",
+	"DESCRIPTIONS": [
+	"전투 시작 시 적 전체는 #y혼란 을 #b",
+	" 갖고 시작합니다."
+	]
+  },
+  "Ring of Searing": {
+	"NAME": "타는 듯한 반지",
+	"FLAVOR": "주변 모든 것들을 태워 재로 만들어버리는 저주받은 반지입니다.",
+	"DESCRIPTIONS": [
+	"턴 시작 시, 최대 체력의 #b",
+	"% 이상인 모든 적들은 현재 체력의 #b",
+	"% 를 잃습니다. NL 매 턴 종료 시, 내 최대 체력의 #b",
+	"% 이상이면, 체력을 #b",
+	" 잃습니다."
+	]
+  },
+  "Ring of Burning": {
+	"NAME": "불타는 반지",
+	"FLAVOR": "감각과 무감각 모두 고조시키는 저주받은 반지입니다.",
+	"DESCRIPTIONS": [
+	"에너지를 다 사용하면 이번 턴 동안 손에 있는 카드들의 비용이 #b0 로 감소됩니다. NL Cards played while out of energy have a #b",
+	"% chance to #y소멸. NL Each time you spend energy, take that much damage."
+	]
+  },
+  "Ring of Fangs": {
+	"NAME": "송곳니의 반지",
+	"FLAVOR": "송곳니가 착용자에게 구멍을 뚫어, 무기를 휘두르는 것을 어렵게 만듭니다.",
+	"DESCRIPTIONS": [
+	"전투 시작 시 #y힘 을 #b",
+	" 잃습니다. NL 막히지 않은 피해를 줄 때마다, #y중독 을 #b1 부여합니다."
+	]
+  },
+  "Ring of Shattering": {
+	"NAME": "박살의 반지",
+	"FLAVOR": "부서진게 더 나을 수 있습니다.",
+	"DESCRIPTIONS": [
+	"전투 시작 시 #y밀집 을 #b",
+	" 얻고 구체 슬롯 을 #b",
+	" 개 잃습니다."
+	]
+  },
+  "Ring of Misfortune": {
+	"NAME": "불운의 반지",
+	"FLAVOR": "끼고 싶지 않습니다.",
+	"DESCRIPTIONS": [
+	"전투 시작 시 무작위 #r저주 카드를 1 장 뽑을 카드 더미에 섞어 넣습니다. NL #r저주 카드를 뽑을 때마다 [E] 를 얻고 #y임시 #y체력 을 #b",
+	" 얻습니다. NL #r상태이상 카드를 뽑을 때마다, #y방어도 를 #b",
+	" 얻습니다."
+	]
+  },
+  "Ring of Greed": {
+	"NAME": "탐욕의 반지",
+	"FLAVOR": "많은 부에는 종종 많은 절망이 따릅니다.",
+	"DESCRIPTIONS": [
+	"획득 시 #b",
+	" 골드를 얻고 골드나 상점과 관련된 무작위 유물을 #b",
+	" 개 얻습니다. NL #b",
+	" 골드를 얻을 때마다, 무작위 #r저주 카드를 #b1 장 얻습니다."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Addiction": {
+	"NAME": "중독의 반지",
+	"FLAVOR": "풍요로움은 악을 낳습니다.",
+	"DESCRIPTIONS": [
+	"획득 시 포션을 #b",
+	" 개 얻고 포션과 관련된 무작위 유물을 #b",
+	" 개 얻습니다. NL 포션을 사용하지 않고 방을 #b",
+	" 번 지나면, 최대 체력을 #b",
+	" 잃습니다."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Comfort": {
+	"NAME": "안락의 반지",
+	"FLAVOR": "안락한 보호처. 안락한 피난처, 안락한 잠복처.",
+	"DESCRIPTIONS": [
+	"모든 받는 회복 효율이 #b",
+	"% 증가합니다. NL 최대 체력의 #b",
+	"% 이하 일 때, 휴식 장소에서는 반드시 #y휴식 해야합니다."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Crippling": {
+	"NAME": "불구의 반지",
+	"FLAVOR": "\"Do unto others...\"",
+	"DESCRIPTIONS": [
+	" [#2aecd7]전투 [#2aecd7]중 [#2aecd7]1 [#2aecd7]번 [#2aecd7]사용 [#2aecd7]가능합니다.[] NL 나를 포함한 모두는 #y약화를 #b1 , #y나른함 을 #b2 , #y취약 을 #b3 얻습니다"
+	]
+  },
+  "ReplayTheSpireMod:Ring of Challenge": {
+	"NAME": "도전의 반지",
+	"FLAVOR": "There is a fine line between bravery and stupidity.",
+	"DESCRIPTIONS": [
+	"[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]the [#2aecd7]first [#2aecd7]turn [#2aecd7]of [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] [#2aecd7]Usable [#2aecd7]up [#2aecd7]to [#2aecd7]",
+	" [#2aecd7]times [#2aecd7]per [#2aecd7]combat.[] NL Apply random buffs to all enemies. NL Gain #b~",
+	" gold. NL Every #b",
+	" times you use this relic, you will obtain an random relic at the end of the fight."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Exchange": {
+	"NAME": "교환의 반지",
+	"FLAVOR": "당신이 가진 것의 가치는 잃어버리기 전까지 결코 알 수 없습니다.",
+	"DESCRIPTIONS": [
+	"상점 유물이 가끔 보스 상자에서 나옵니다. NL 보스 유물이 가끔 상점에서 나옵니다."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Collecting": {
+	"NAME": "수집의 반지",
+	"FLAVOR": "A full set is greater than the sum of its parts, yet not nessearily worth the cost.",
+	"DESCRIPTIONS": [
+	"보스 상자가 아닌 상자에서 무작위 반지 유물이 추가로 나옵니다. NL 상점에서 무작위 반지 유물을 팝니다."
+	]
+  },
+  "Iron Core": {
+    "NAME": "철 핵",
+	"FLAVOR": "끊임없는 불꽃과 분노로 작동합니다.",
+    "DESCRIPTIONS": [
+		"전투 시작 시, #y지옥불 을 #b1 개 #y영창 합니다.",
+		"전투 시작 시, 구체 슬롯을 #b2 개 얻습니다.",
+		" NL Certain #rRed cards can appear in future card reward screens.",
+		" NL Certain #bBlue cards can appear in future card reward screens.",
+		"전투 시작 시 #y지옥불 을 1 개 #y영창 하거나, 구체 슬롯이 없었다면 구체 슬롯을 #b2 개 얻습니다. NL 이제 카드 보상에서 #r빨강 카드와 #b파랑 카드 가 나타납니다."
+	]
+  },
+  "m_BlackCat":{
+		"NAME": "Curse Cat",
+		"FLAVOUR": "Woem",
+		"DESCRIPTIONS":["Shuffle a random Curse in your deck at the beginning of each fight."]
+	},
+	"m_Cross Pendant": {
+		"NAME": "Cross Pendant",
+		"FLAVOR": "A simple cross shaped pendant. Praying on it is said to bring good fortunes.",
+		"DESCRIPTIONS": [
+			"At the start of each combat, choose a card out of three and add it to your hand. It has Exhaust."
+		]
+	},
+	"m_ChemicalBlood": {
+		"NAME": "Chemical Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"Whenever you take damage during your turn, gain #b1 #yFuel. NL At the end of combat, gain HP equal to your total fuel, up to #b",
+			" max. NL Certain #rRed cards can now be obtained."
+		]
+	},
+	"m_ArcaneBlood": {
+		"NAME": "Arcane Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the end of combat, gain #b",
+			" HP for each different debuff you have. NL Certain #rRed cards can now be obtained."
+		]
+	},
+	"m_ScarletBlood": {
+		"NAME": "Scarlet Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"Each time you gain #yStrength, gain twice that many #yKnives. NL Certain #rRed cards can now be obtained."
+		]
+	},
+	"m_SnakeCloak": {
+		"NAME": "Cloak of the Snake",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"Draw #b2 additional cards on the first turn of combat. NL Certain #gGreen cards can now be obtained."
+		]
+	},
+	"m_BookOfShivs": {
+		"NAME": "Book of the Snake",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"Shuffle #b2 random #yCantrips into your draw pile 전투 시작 시. NL Certain #gGreen cards can now be obtained."
+		]
+	},
+	"m_MercuryCore": {
+		"NAME": "Mercury Core",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"전투 시작 시, #yReplicate 1 Mercury. NL Certain #bBlue cards can now be obtained."
+		]
+	},
+	"m_ByrdBlood": {
+		"NAME": "Byrd's Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the end of combat, heal #b6 HP. NL All other healing you recieve during combat is #b50% more effective. NL Gaining #yStrength also heals you. NL Certain #yRed cards can now be obtained."
+		]
+	},
+	"m_SeaBlood": {
+		"NAME": "Sea Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the end of combat, heal #b6 HP. NL Certain #yRed cards can now be obtained."
+		]
+	},
+	"m_SerpentRing": {
+		"NAME": "Ring of the Sea Serpent",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the start of each combat, add #b2 #yShivs to your hand. NL Certain #yGreen cards can now be obtained."
+		]
+	},
+	"m_SpellCore": {
+		"NAME": "Spell Core",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the start of each combat, gain #b3 orb slots and #yChannel #b1 #yManaspark. NL Certain #yBlue cards can now be obtained."
+		]
+	},
+	"m_TsuchinokoRing": {
+		"NAME": "Ring of the Tsuchinoko",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"Draw #b2 additional cards on the first turn of combat. NL Each time you play a #ySkill or #y0-Cost card, gain #b1 #yCharge-Up. NL Certain #yGreen cards can now be obtained."
+		]
+	},
+	"m_IronSupplements": {
+		"NAME": "Iron Supplements",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the end of combat, heal #b6 HP. NL Certain #yRed cards can now be obtained."
+		]
+	},
+	"m_BurningSludge": {
+		"NAME": "Burning Sludge",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the end of combat, for each Spawned slime, heal #b4 HP. NL Certain #yRed cards can now be obtained."
+		]
+	},
+	"m_SlimeRing": {
+		"NAME": "Ring of the Slime",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"Draw #b2 additional cards on the first turn of combat. NL At the end of combat, for each Spawned slime, heal #b3 HP. NL Certain #yGreen cards can now be obtained."
+		]
+	},
+	"replay:Trail_Library": {
+		"NAME": "도서관 약탈자",
+		"FLAVOR": "aight listen i KNOW its bad form to implement a custom run mod with a relic but y'know what sometimes you just gotta look urself in the mirror and ask \"do i really feel like dealing with patching shit when relics have a perfectly good hook for opening chests\" and sometimes the answer is no.",
+		"DESCRIPTIONS": [
+			"#b커스텀 #b모드 #b전용 NL 보스 상자가 아닌 상자를 열 때마다, 카드를 15 장 중에서 1 장 선택해 얻습니다.",
+			"Choose a card to obtain."
+		]
+	}
+}

@@ -5,6 +5,9 @@ import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.cards.curses.Hallucinations;
+import com.megacrit.cardcrawl.mod.replay.cards.curses.LoomingEvil;
+import com.megacrit.cardcrawl.mod.replay.cards.curses.SpreadingInfection;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.mod.replay.powers.relicPowers.*;
@@ -90,38 +93,51 @@ public class R_Hoarder extends AbstractMonster
     public void takeTurn() {
         switch (this.nextMove) {
             case 2: {
-                int limiter = 40;
-                if (AbstractDungeon.player.drawPile.size() < 30) {
-                	limiter -= 5;
-                }
-                if (AbstractDungeon.player.drawPile.size() <= 25) {
-                	limiter -= 5;
-                }
-                if (AbstractDungeon.player.drawPile.size() < 20) {
-                	limiter -= 5;
-                }
-                AbstractDungeon.actionManager.addToBottom(new ShoutAction(this, R_Hoarder.DIALOG[0], 1.0f, 2.0f));
-                AbstractDungeon.actionManager.addToBottom(new WaitAction(3.5f));
-                AbstractDungeon.actionManager.addToBottom(new ShoutAction(this, R_Hoarder.DIALOG[1] + limiter + R_Hoarder.DIALOG[2], 1.0f, 2.0f));
-                AbstractDungeon.actionManager.addToBottom(new WaitAction(3.0f));
-                int deckcount = limiter - AbstractDungeon.player.drawPile.size();
-                for (int i = 0; i < deckcount; i++) {
-                	  AbstractCard.CardRarity rarity = AbstractCard.CardRarity.COMMON;
-	      			  int r = MathUtils.random((AbstractDungeon.ascensionLevel >= 18) ? 9 : 8);
-	      			  if (r == 6 || r == 7)
-	      			  {
-	      				  rarity = AbstractCard.CardRarity.RARE;
-	      			  } else {
-	      				  if (r >= ((AbstractDungeon.ascensionLevel >= 18) ? 4 : 3)) {
-	      					  rarity = AbstractCard.CardRarity.UNCOMMON;
-	      				  }
-	      			  }
-	      			  AbstractCard c = AbstractDungeon.getCard(rarity).makeCopy();
-	      			  if (r > 6) {
-	      				  c = AbstractDungeon.getColorlessCardFromPool(rarity).makeCopy();
-    				  }
-	      			  AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, 1, true, false));
-                }
+            	if (AbstractDungeon.player.drawPile.size() >= 40) {
+            		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new LoomingEvil(), 1, true, true));
+            		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Hallucinations(), 2, true, true));
+            		if (AbstractDungeon.player.drawPile.size() >= 55) {
+            			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new SpreadingInfection(), 1, true, true));
+            			if (AbstractDungeon.player.drawPile.size() >= 70) {
+            				for (int i=0; i < (AbstractDungeon.player.drawPile.size() - 60)/10; i++) {
+            					AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.returnRandomCurse().makeCopy(), 1, true, true));
+            				}
+            			}
+            		}
+            	} else {
+            		int limiter = 40;
+                    if (AbstractDungeon.player.drawPile.size() < 30) {
+                    	limiter -= 5;
+                    }
+                    if (AbstractDungeon.player.drawPile.size() <= 25) {
+                    	limiter -= 5;
+                    }
+                    if (AbstractDungeon.player.drawPile.size() < 20) {
+                    	limiter -= 5;
+                    }
+                    AbstractDungeon.actionManager.addToBottom(new ShoutAction(this, R_Hoarder.DIALOG[0], 1.0f, 2.0f));
+                    AbstractDungeon.actionManager.addToBottom(new WaitAction(3.5f));
+                    AbstractDungeon.actionManager.addToBottom(new ShoutAction(this, R_Hoarder.DIALOG[1] + limiter + R_Hoarder.DIALOG[2], 1.0f, 2.0f));
+                    AbstractDungeon.actionManager.addToBottom(new WaitAction(3.0f));
+                    int deckcount = limiter - AbstractDungeon.player.drawPile.size();
+                    for (int i = 0; i < deckcount; i++) {
+                    	  AbstractCard.CardRarity rarity = AbstractCard.CardRarity.COMMON;
+    	      			  int r = MathUtils.random((AbstractDungeon.ascensionLevel >= 18) ? 9 : 8);
+    	      			  if (r == 6 || r == 7)
+    	      			  {
+    	      				  rarity = AbstractCard.CardRarity.RARE;
+    	      			  } else {
+    	      				  if (r >= ((AbstractDungeon.ascensionLevel >= 18) ? 4 : 3)) {
+    	      					  rarity = AbstractCard.CardRarity.UNCOMMON;
+    	      				  }
+    	      			  }
+    	      			  AbstractCard c = AbstractDungeon.getCard(rarity).makeCopy();
+    	      			  if (r > 6) {
+    	      				  c = AbstractDungeon.getColorlessCardFromPool(rarity).makeCopy();
+        				  }
+    	      			  AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, 1, true, false));
+                    }
+            	}
                 this.roared = true;
                 break;
             }

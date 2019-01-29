@@ -41,7 +41,7 @@ public class M_SlimeRing extends AbstractRelic
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 2, false));
     }
 
-    public void onVictory() {
+    /*public void onVictory() {
         this.flash();
         AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         final AbstractPlayer p = AbstractDungeon.player;
@@ -54,7 +54,7 @@ public class M_SlimeRing extends AbstractRelic
             }
             p.heal(slimeCount * 3);
         }
-    }
+    }*/
 	@Override
     public void onEquip() {
         final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
@@ -66,6 +66,7 @@ public class M_SlimeRing extends AbstractRelic
         tmpPool.add(new NoxiousFumes());
         tmpPool.add(new PoisonedStab());
         tmpPool.add(new PoisonSmokescreen());
+        tmpPool.add(new Backstab());
         for (final AbstractCard c : tmpPool) {
 			switch (c.rarity) {
 				case COMMON: {

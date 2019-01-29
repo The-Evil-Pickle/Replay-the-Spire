@@ -1,0 +1,18 @@
+{
+	"replay:Chaotic": {
+		"NAME": "혼란",
+		"DESCRIPTION": "\"혼돈의 반지\" 유물을 갖고 시작합니다. 카드들이 좀 더 자주 바뀝니다."
+	},
+	"replay:Library Looter": {
+		"NAME": "도서관 약탈자",
+		"DESCRIPTION": "보스 상자가 아닌 상자를 열 때마다, 카드를 15 장 중 1 장을 선택해 얻습니다."
+	},
+	"replay:Mists": {
+		"NAME": "안개",
+		"DESCRIPTION": "1 층에서 거울 안개 이벤트가 발생합니다."
+	},
+	"replay:ALWAYS": {
+		"NAME": "고래고래",
+		"DESCRIPTION": "니오우가 더 많이 나옵니다."
+	}
+}

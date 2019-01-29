@@ -1,0 +1,205 @@
+{
+  "Captain Abe": {
+    "MOVES": [
+      "The Collapse",
+      "Captain's Orders",
+      "Keel Haul",
+      "Rob 'em Blind",
+      "Final Trick",
+      "Beyond Hell"
+    ],
+    "NAME": "캡틴 아베",
+    "DIALOG": [
+      "@출항이다!@",
+      "@닻을@ @올려라!@",
+      "@AVAST@ @YE@ NL @SCURVEY@ @DOG!@",
+      "@SCUTTLE@ @THE@ @SHIPWRECK!@",
+      "죽어라, 풋내기!",
+      "All hands on deck!",
+      "Arg, I'll get ye fer' that one!",
+      "~eh?~ NL ~wha?~",
+      "Capt'n Abe NL sails once more!",
+      "Don't think ye can NL get past ~Capt'n~ ~Abe~ NL with yer limbs intact!",
+      "~난~ ~아직~ ~죽을~ ~수~ ~없다!~",
+      "잠깐.... I am dead.",
+      "~Arg!~ NL Flee now landlubber, or NL @BE@ @FOREVER@ #r@CURSED!@"
+    ]
+  },
+  "Pondfish": {
+    "MOVES": [
+      "Drag to Hell",
+      "Living Lantern",
+      "Teeth Rake",
+      "6 Feet Under",
+      "Splash"
+    ],
+    "NAME": "폰드피쉬",
+    "DIALOG": [
+      "...",
+      "o- >:["
+    ]
+  },
+  "FadingForestBoss": {
+    "MOVES": [
+		"잘왔네...",
+		"The Forest Guides",
+		"The Forest Renews",
+		"The Forest Protects",
+		"The Forest Fades"
+	],
+    "NAME": "파벨 - 스피너",
+    "DIALOG": [
+		"들어오거라, 들어와! NL 얘기해 줄 놀라운 이야기가 있단다.",
+		"잘 왔구나 친숙한 아이야! NL 이 늙은이의 이야기를 들어보겠느냐?",
+		"오, 이야기 할 사람이 왔구나! 이야기 하나 들어보겠느냐?",
+		"안녕하신가 방황하는 이여. NL 네가 좋아할 만한 이야기 하나 있는데, 들어보겠는가?",
+		"첫 시작은 신비한 숲에서였지...",
+		"옛날 옛적에, 마법의 숲이 있었단다...",
+		"먼 옛날에, 한 모험가가 숲 속에서 길을 잃었단다...",
+		"누군가 첨탑 안 어디가에는, 이상한 나무들이 자라는 숲이 있다고 말했지...",
+		"그 숲 속에서 사람들을 모든 종류의 ~이상하고~ ~놀라운~ ~것~ 을 찾을 수 있었지...",
+		"그 숲 속에서 사람들을 모든 종류의 ~이상하고~ ~무서운~ ~것~ 을 찾을 수 있었지...",
+		"하지만 숲은 ~끔찍한~ ~저주~ 를 가지고 있었단다...",
+		"숲의 생물들은 익숙했지만, 뭔가 ~이상했단다~ ...",
+		"이런 장소에서는 절대 혼자가 아니었지...",
+		"숲에는 많은 ~평범하지~ ~않아~ 보이는 생물들이 숨어있었단다...",
+		"들어줘서 고맙구나. 대부분 사람들은 이야기가 끝나기 전에 떠나지..",
+		"너는 친절한 모험자구나. NL 그리고 말을 굉장히 잘 들어주는구나!",
+		"말동무가 돼주어 고맙구나. 이야기를 즐겼길 바란다.",
+		"기쁘게 해줘서 고맙구나. 나는 이야기 하는걸 좋아한단다!",
+		"나는 더 많은 이야깃거리를 갖고 있으니 언제든지 오거라, 친숙한 아이야!",
+		"언젠가, 언제든지 다시 들러 주렴 새 이야기를 해주마."
+	]
+  },
+  "Replay:지옥의 기계": {
+    "MOVES": [
+		"Now Leaving",
+		"Hot Coals",
+		"Doors Closing",
+		"Runaway Train",
+		"Living Steel"
+    ],
+    "NAME": "Hell's Engine",
+    "DIALOG": [
+		""
+    ]
+  },
+  "Replay:Conductor": {
+    "MOVES": [
+		"Destination Nowhere",
+		"Please Remain Seated",
+		"Complementary Explosives",
+		"Rail Gunner",
+		"Cargo Hold"
+    ],
+    "NAME": "The Conductor",
+    "DIALOG": [
+		"CHOO CHOO MOTHERFUCKER"
+    ]
+  },
+  "Replay:ConductorBomb": {
+    "MOVES": [
+		""
+    ],
+    "NAME": "Dynamite",
+    "DIALOG": [
+		""
+    ]
+  },
+  "FF_ComboSlime_L": {
+    "MOVES": [
+      "Mixed Spit",
+      "Split",
+      "Lick"
+    ],
+    "NAME": "False Combo Slime (L)",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "J_louse_1": {
+    "MOVES": [
+      "Grow"
+    ],
+    "NAME": "Erik",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "J_louse_2": {
+    "MOVES": [
+      "Spit"
+    ],
+    "NAME": "Yu",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "J_louse_3": {
+    "MOVES": [
+      "Taunt",
+	  "Cry"
+    ],
+    "NAME": "Puro",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "J_louse_4": {
+    "MOVES": [
+      "Steal Pants",
+	  "Cry"
+    ],
+    "NAME": "Jer the Pantsless",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "R_Hoarder": {
+    "MOVES": [
+      "Overflow",
+	  "Relic Collector"
+    ],
+    "NAME": "Rhapsodic Hoarder",
+    "DIALOG": [
+      "My, your draw pile looks thin!",
+	  "Let's bump that up to, say, ",
+	  " cards?"
+    ]
+  },
+  "Replay:Snechameleon": {
+    "MOVES": [
+      "Paralyzing Gaze",
+	  "Graspers",
+	  "Chompers"
+    ],
+    "NAME": "Snechameleon",
+    "DIALOG": [
+		""
+    ]
+  },
+  "ReplayMimic": {
+    "MOVES": [
+      "Close Lid",
+      "Blade Mimicry",
+      "Mad Mimicry",
+      "BOO!"
+    ],
+    "NAME": "Mimic",
+    "DIALOG": [
+      "Off-guard"
+    ]
+  },
+  "GremlinCook": {
+    "MOVES": [
+      "Serve",
+      "Overcook"
+    ],
+    "NAME": "Gremlin Cook",
+    "DIALOG": [
+      "",
+      "Come and get it!",
+      "Eep!"
+    ]
+  }
+}

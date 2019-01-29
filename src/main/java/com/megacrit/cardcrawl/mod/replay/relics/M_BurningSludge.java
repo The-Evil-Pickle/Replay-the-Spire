@@ -36,7 +36,7 @@ public class M_BurningSludge extends AbstractRelic
                     ++slimeCount;
                 }
             }
-            p.heal(slimeCount * 4);
+            p.heal(slimeCount * 2);
         }
     }
 	@Override
