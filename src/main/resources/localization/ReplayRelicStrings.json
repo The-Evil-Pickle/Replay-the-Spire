@@ -974,7 +974,7 @@
 	},
 	"m_ChemicalBlood": {
 		"NAME": "Chemical Blood",
-		"FLAVOR": ".",
+		"FLAVOR": "The excruciating results of mad experimentation.",
 		"DESCRIPTIONS": [
 			"Whenever you take damage during your turn, gain #b1 #yFuel. NL At the end of combat, gain HP equal to your total fuel, up to #b",
 			" max. NL Certain #rRed cards can now be obtained."
@@ -990,21 +990,21 @@
 	},
 	"m_ScarletBlood": {
 		"NAME": "Scarlet Blood",
-		"FLAVOR": ".",
+		"FLAVOR": "As your rage builds and your senses sharpen, so does your blood.",
 		"DESCRIPTIONS": [
 			"Each time you gain #yStrength, gain twice that many #yKnives. NL Certain #rRed cards can now be obtained."
 		]
 	},
 	"m_SnakeCloak": {
 		"NAME": "Cloak of the Snake",
-		"FLAVOR": ".",
+		"FLAVOR": "Draping it over your shoulders, you hear a faint hissing sound where the clinking of knives once was.",
 		"DESCRIPTIONS": [
 			"Draw #b2 additional cards on the first turn of combat. NL Certain #gGreen cards can now be obtained."
 		]
 	},
 	"m_BookOfShivs": {
 		"NAME": "Book of the Snake",
-		"FLAVOR": ".",
+		"FLAVOR": "It's written in a strange language. When read out loud, only hissing can be heard.",
 		"DESCRIPTIONS": [
 			"Shuffle #b2 random #yCantrips into your draw pile at the start of combat. NL Certain #gGreen cards can now be obtained."
 		]
@@ -1018,7 +1018,7 @@
 	},
 	"m_ByrdBlood": {
 		"NAME": "Byrd's Blood",
-		"FLAVOR": ".",
+		"FLAVOR": "Your blood burns with righteous fury in the Awakened One's name.",
 		"DESCRIPTIONS": [
 			"At the end of combat, heal #b6 HP. NL All other healing you recieve during combat is #b50% more effective. NL Gaining #yStrength also heals you. NL Certain #yRed cards can now be obtained."
 		]
@@ -1032,7 +1032,7 @@
 	},
 	"m_SerpentRing": {
 		"NAME": "Ring of the Sea Serpent",
-		"FLAVOR": ".",
+		"FLAVOR": "Supposedly the remains of a great sea creature from times long past.",
 		"DESCRIPTIONS": [
 			"At the start of each combat, add #b2 #yShivs to your hand. NL Certain #yGreen cards can now be obtained."
 		]
@@ -1060,14 +1060,14 @@
 	},
 	"m_BurningSludge": {
 		"NAME": "Burning Sludge",
-		"FLAVOR": ".",
+		"FLAVOR": "Your entire being burns with rage.",
 		"DESCRIPTIONS": [
 			"At the end of combat, for each Spawned slime, heal #b2 HP. NL Certain #yRed cards can now be obtained."
 		]
 	},
 	"m_SlimeRing": {
 		"NAME": "Ring of the Slime",
-		"FLAVOR": ".",
+		"FLAVOR": "This part of you acts on its own, never completely split, and never completely merged.",
 		"DESCRIPTIONS": [
 			"Draw #b2 additional cards on the first turn of combat. NL Certain #yGreen cards can now be obtained."
 		]

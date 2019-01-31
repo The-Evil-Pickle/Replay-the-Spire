@@ -27,7 +27,7 @@ public class m_SnakeCloak extends AbstractRelic
     public static final String ID = "m_SnakeCloak";
     
     public m_SnakeCloak() {
-        super(ID, "snakeRing.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, "snakeRing.png", RelicTier.STARTER, LandingSound.MAGICAL);
     }
     
     @Override

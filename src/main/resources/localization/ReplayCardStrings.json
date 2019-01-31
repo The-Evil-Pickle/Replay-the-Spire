@@ -584,7 +584,8 @@
 		" NL Equip a 3/ !M! Weapon.",
 		" NL Add !M! Sparks to your hand. NL Amplify [E] : add a copy of this card to your discard pile.",
 		" NL Add !M! Cogs to your draw pile.",
-		" NL Split into a random Slime. NL Apply !M! Slimed to all enemies."
+		" NL Split into a random Slime. NL Apply !M! Slimed to all enemies.",
+		" NL Shuffle !M! random Letters into your draw pile."
 	]
   },
   "ReplayTheSpireMod:Necrogeddon": {

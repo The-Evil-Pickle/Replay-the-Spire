@@ -17,7 +17,7 @@ public class SizzlingBlood extends AbstractRelic
     private static final int MAX_HEALTH_AMT = 4;
     
     public SizzlingBlood() {
-        super("Sizzling Blood", "sizzlingBlood.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super("Sizzling Blood", "sizzlingBlood.png", RelicTier.STARTER, LandingSound.MAGICAL);
     }
     
     @Override

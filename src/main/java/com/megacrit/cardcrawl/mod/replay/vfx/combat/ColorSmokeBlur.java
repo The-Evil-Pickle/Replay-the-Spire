@@ -19,7 +19,7 @@ public class ColorSmokeBlur extends AbstractGameEffect
     private TextureAtlas.AtlasRegion img;
     
     public ColorSmokeBlur(final float x, final float y, Color color) {
-        this.color = color;
+        this.color = color.cpy();
         this.color.r = this.color.r * MathUtils.random(0.95f, 1.05f);
         this.color.g = this.color.g * MathUtils.random(0.95f, 1.05f);
         this.color.b = this.color.b * MathUtils.random(0.95f, 1.05f);

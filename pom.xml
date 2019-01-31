@@ -83,6 +83,13 @@
           <systemPath>${basedir}/../lib/Hubris.jar</systemPath>
 	      </dependency>
         <dependency>
+	        <groupId>halation</groupId>
+		      <artifactId>Halation</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/Halation.jar</systemPath>
+	      </dependency>
+        <dependency>
 	        <groupId>stslib</groupId>
 		      <artifactId>StSLib</artifactId>
 		      <version>1.0.0</version>
@@ -166,6 +173,13 @@
 		      <scope>system</scope>
           <systemPath>${basedir}/../lib/ClockworkMod.jar</systemPath>
 	      </dependency>
+        <dependency>
+	        <groupId>snekomod</groupId>
+		      <artifactId>SneckoMod</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/SneckoMod.jar</systemPath>
+	      </dependency>
     </dependencies>
   <build>
     <plugins>
@@ -188,5 +202,5 @@
     </plugins>
 	<finalName>${project.artifactId}</finalName>
   </build>
-  <version>1.3.20</version>
+  <version>1.3.21</version>
 </project>

@@ -5,12 +5,17 @@ import java.util.ArrayList;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.Shiv;
 import com.megacrit.cardcrawl.cards.green.*;
+import com.megacrit.cardcrawl.cards.red.*;
+import com.megacrit.cardcrawl.cards.blue.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.mod.replay.cards.green.*;
+import com.megacrit.cardcrawl.mod.replay.cards.red.*;
+import com.megacrit.cardcrawl.mod.replay.cards.blue.*;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.BoundBlade;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -22,51 +27,62 @@ import slimebound.orbs.SpawnedSlime;
 
 import com.megacrit.cardcrawl.relics.NinjaScroll;
 
-public class M_SlimeRing extends AbstractRelic
+public class M_SnakeBloodCore extends AbstractRelic
 {
-    public static final String ID = "m_SlimeRing";
+    public static final String ID = "m_SnakeBloodCore";
+    private static final int NUM_SLOTS = 2;
+    private static final int HEAL_AMT = 3;
     
-    public M_SlimeRing() {
+    public M_SnakeBloodCore() {
         super(ID, "snakeRing.png", RelicTier.STARTER, LandingSound.MAGICAL);
     }
     
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        return this.DESCRIPTIONS[0] + NUM_SLOTS + this.DESCRIPTIONS[1] + HEAL_AMT + this.DESCRIPTIONS[2];
     }
 
     @Override
     public void atBattleStart() {
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 2, false));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1, false));
+        AbstractDungeon.actionManager.addToTop(new IncreaseMaxOrbAction(NUM_SLOTS));
+        
     }
 
-    /*public void onVictory() {
+    public void onVictory() {
         this.flash();
         AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        final AbstractPlayer p = AbstractDungeon.player;
-        int slimeCount = 0;
-        if (p.orbs.get(0) != null) {
-            for (final AbstractOrb o : AbstractDungeon.player.orbs) {
-                if (o instanceof SpawnedSlime) {
-                    ++slimeCount;
-                }
-            }
-            p.heal(slimeCount * 3);
+        if (AbstractDungeon.player.currentHealth > 0) {
+        	AbstractDungeon.player.heal(HEAL_AMT);
         }
-    }*/
+    }
 	@Override
     public void onEquip() {
         final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
-        tmpPool.add(new Bane());
-        tmpPool.add(new BouncingFlask());
-        tmpPool.add(new CripplingPoison());
-        tmpPool.add(new DeadlyPoison());
-        tmpPool.add(new Envenom());
-        tmpPool.add(new NoxiousFumes());
-        tmpPool.add(new PoisonedStab());
-        tmpPool.add(new PoisonSmokescreen());
-        tmpPool.add(new Backstab());
+        tmpPool.add(new DualWield());
+        tmpPool.add(new InfernalBlade());
+        tmpPool.add(new Havoc());
+        tmpPool.add(new BurningPact());
+        tmpPool.add(new Offering());
+        tmpPool.add(new Eclipse());
+        tmpPool.add(new LeadingStrike());
+        tmpPool.add(new PerfectedStrike());
+        tmpPool.add(new Adrenaline());
+        tmpPool.add(new BulletTime());
+        tmpPool.add(new Distraction());
+        tmpPool.add(new Nightmare());
+        tmpPool.add(new Burst());
+        tmpPool.add(new Amplify());
+        tmpPool.add(new Reflex());
+        tmpPool.add(new DaggerThrow());
+        tmpPool.add(new HelloWorld());
+        tmpPool.add(new ReplayGoodbyeWorld());
+        tmpPool.add(new Reboot());
+        tmpPool.add(new Recycle());
+        tmpPool.add(new Reprogram());
+        tmpPool.add(new Seek());
+        tmpPool.add(new WhiteNoise());
         for (final AbstractCard c : tmpPool) {
 			switch (c.rarity) {
 				case COMMON: {
@@ -85,8 +101,8 @@ public class M_SlimeRing extends AbstractRelic
 					continue;
 				}
 				default: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
+					AbstractDungeon.commonCardPool.addToTop(c);
+					AbstractDungeon.srcCommonCardPool.addToBottom(c);
 					continue;
 				}
 			}
@@ -95,6 +111,6 @@ public class M_SlimeRing extends AbstractRelic
     
     @Override
     public AbstractRelic makeCopy() {
-        return new M_SlimeRing();
+        return new M_SnakeBloodCore();
     }
 }

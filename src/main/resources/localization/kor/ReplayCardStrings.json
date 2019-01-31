@@ -574,7 +574,8 @@
 		" NL Equip a 3/ !M! Weapon.",
 		" NL Add !M! Sparks to your hand. NL Amplify [E] : add a copy of this card to your 버린 카드 더미.",
 		" NL Add !M! Cogs to your 뽑을 카드 더미.",
-		" NL Split into a random Slime. NL Apply !M! Slimed to all enemies."
+		" NL Split into a random Slime. NL Apply !M! Slimed to all enemies.",
+		" NL Shuffle !M! random Letters to your 뽑을 카드 더미."
 	]
   },
   "ReplayTheSpireMod:Necrogeddon": {

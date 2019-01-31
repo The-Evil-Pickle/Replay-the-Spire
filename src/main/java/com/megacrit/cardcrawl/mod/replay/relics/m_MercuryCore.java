@@ -30,7 +30,7 @@ public class m_MercuryCore extends AbstractRelic
     public static final String ID = "m_MercuryCore";
     
     public m_MercuryCore() {
-        super(ID, "crackedOrb.png", RelicTier.SPECIAL, LandingSound.CLINK);
+        super(ID, "crackedOrb.png", RelicTier.STARTER, LandingSound.CLINK);
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
         //this.tips.add(new PowerTip("Replicate", "A #yReplica will float above your character, activating its effect every turn. When the countdown reaches 0, it will #yshatter and be removed."));

@@ -531,6 +531,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static boolean foundmod_marisa = false;
     public static boolean foundmod_glutton = false;
     public static boolean foundmod_slimebound = false;
+    public static boolean foundmod_snecko = false;
+    public static boolean foundmod_halation = false;
     
 	public static void initialize() {
     	logger.info("========================= ReplayTheSpireMod INIT =========================");
@@ -570,6 +572,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	    foundmod_marisa = Loader.isModLoaded("TS05_Marisa");
 	    foundmod_glutton = Loader.isModLoaded("GluttonMod");
 	    foundmod_slimebound = Loader.isModLoaded("Slimebound");
+	    foundmod_halation = Loader.isModLoaded("Halation");
+	    foundmod_snecko = Loader.isModLoaded("SneckoMod");
 		
 		logger.info("================================================================");
     }
@@ -1355,16 +1359,21 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Slimebound mod not detected");
 		}
+    	try {
+    		initializeSneckoMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Snecko mod not detected");
+		}
     }
 
 	private static void initializeScienceMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
-		//Class<MadScienceMod> madScienceMod = MadScienceMod.class;
+		Class<madsciencemod.patches.CardColorEnum> madScienceMod = madsciencemod.patches.CardColorEnum.class;
 		logger.info("ReplayTheSpireMod | Detected Mad Science Mod!");
 		foundmod_science = true;
 		
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for MadScience...");
-			BaseMod.addRelicToCustomPool((AbstractRelic)new ChemicalBlood(), madsciencemod.patches.CardColorEnum.MAD_SCIENCE);
+			BaseMod.addRelicToCustomPool(new ChemicalBlood(), madsciencemod.patches.CardColorEnum.MAD_SCIENCE);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for MadScience...");
@@ -1386,11 +1395,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		Class<ColoredMap> cmMod = ColoredMap.class;
 		logger.info("ReplayTheSpireMod | Detected Colored Map Mod!");
 		foundmod_colormap = true;
-	}
-	private static void initializeServantMod() throws ClassNotFoundException, NoClassDefFoundError {
-		Class<BlackRuseMod> servMod = BlackRuseMod.class;
-		logger.info("ReplayTheSpireMod | Detected Servant Mod!");
-		foundmod_servant = true;
 	}
 	private static void initializeHubrisMod() throws ClassNotFoundException, NoClassDefFoundError {
 		Class<HubrisMod> servMod = HubrisMod.class;
@@ -1446,6 +1450,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for Servant...");
 			BaseMod.addRelicToCustomPool(new m_SnakeCloak(), blackrusemod.patches.AbstractCardEnum.SILVER);
+			BaseMod.addRelicToCustomPool(new m_ScarletBlood(), blackrusemod.patches.AbstractCardEnum.SILVER);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Servant...");
@@ -1534,6 +1539,19 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Slimebound...");
+		}
+	}
+	private static void initializeSneckoMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
+		Class<sneckomod.patches.AbstractCardEnum> servMod = sneckomod.patches.AbstractCardEnum.class;
+		logger.info("ReplayTheSpireMod | Detected Snek Mod!");
+		foundmod_snecko = true;
+
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Snecko...");
+			BaseMod.addRelicToCustomPool(new M_SnakeBloodCore(), sneckomod.patches.AbstractCardEnum.SNECKO);
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for Snecko...");
 		}
 	}
 

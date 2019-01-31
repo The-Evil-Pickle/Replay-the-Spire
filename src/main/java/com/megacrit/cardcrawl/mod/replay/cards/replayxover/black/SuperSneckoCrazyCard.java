@@ -18,6 +18,9 @@ import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
+import HalationCode.cards.LetterOfAdmiration;
+import HalationCode.cards.LetterOfLove;
+import HalationCode.cards.LetterOfRespect;
 import ThMod.ThMod;
 import ThMod.cards.derivations.Spark;
 import beaked.actions.ReplenishWitherAction;
@@ -352,6 +355,26 @@ public class SuperSneckoCrazyCard extends BlackCard
 			return new SSCCE_Slimed();
 		}
     }
+    public static class SSCCE_Letters extends SSCCEffect {
+    	public SSCCE_Letters() {
+    		super(EXTENDED_DESCRIPTION[16]);
+    	}
+		@Override
+		public void use(AbstractPlayer p, AbstractCard c) {
+			ArrayList<AbstractCard> letterCards = new ArrayList<AbstractCard>();
+			letterCards.add(new LetterOfAdmiration());
+            letterCards.add(new LetterOfLove());
+            letterCards.add(new LetterOfRespect());
+			for (int i = 0; i < c.magicNumber; ++i) {
+	            final AbstractCard randomCantrip = letterCards.get(AbstractDungeon.cardRandomRng.random(letterCards.size() - 1)).makeCopy();
+	            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(randomCantrip, 1, true, true));
+	        }
+		}
+		@Override
+    	public SSCCEffect makeCopy() {
+			return new SSCCE_Letters();
+		}
+    }
     public SuperSneckoCrazyCard() {
         super(ID, NAME, "cards/replay/qmark.png", COST, DESCRIPTION + EXTENDED_DESCRIPTION[0], AbstractCard.CardType.SKILL, AbstractCard.CardTarget.SELF);
         this.purgeOnUse = true;
@@ -442,6 +465,9 @@ public class SuperSneckoCrazyCard extends BlackCard
         }
         if (Loader.isModLoaded("Slimebound")) {
             effects_src.add(new SSCCE_Slimed());
+        }
+        if (Loader.isModLoaded("Halation")) {
+            effects_src.add(new SSCCE_Letters());
         }
         effects_src.add(new SSCCE_Refund());
     }

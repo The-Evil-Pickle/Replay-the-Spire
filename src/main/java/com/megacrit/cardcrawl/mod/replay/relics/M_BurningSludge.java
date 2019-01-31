@@ -18,7 +18,7 @@ public class M_BurningSludge extends AbstractRelic
     public static final String ID = "m_BurningSludge";
     
     public M_BurningSludge() {
-        super(ID, "burningBlood_green.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, "burningBlood_green.png", RelicTier.STARTER, LandingSound.MAGICAL);
     }
     
     @Override

@@ -154,7 +154,9 @@ public class NeowRewardPatches {
 	public static class DrawbackPatch {
 		
 		public static ArrayList<NeowRewardDrawbackDef> Postfix(ArrayList<NeowRewardDrawbackDef> __result, NeowReward __instance) {
-			__result.add(new NeowRewardDrawbackDef(BASIC_CARDS, "[ #rObtain #r" + SETTING_BASIC_CARDS.value + " #rrandom #rbasic #rcards "));
+			if (SETTING_BASIC_CARDS.value > 0) {
+				__result.add(new NeowRewardDrawbackDef(BASIC_CARDS, "[ #rObtain #r" + SETTING_BASIC_CARDS.value + " #rrandom #rbasic #rcards "));
+			}
 			
 			return __result;
 		}

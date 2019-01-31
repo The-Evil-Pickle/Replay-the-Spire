@@ -19,7 +19,7 @@ public class M_ByrdBlood extends AbstractRelic
     public static final String ID = "m_ByrdBlood";
     
     public M_ByrdBlood() {
-        super(ID, "burningBlood_yellow.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, "burningBlood_yellow.png", RelicTier.STARTER, LandingSound.MAGICAL);
     }
     
     @Override

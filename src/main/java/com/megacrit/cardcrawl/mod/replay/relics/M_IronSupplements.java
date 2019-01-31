@@ -17,7 +17,7 @@ public class M_IronSupplements extends AbstractRelic
     public static final String ID = "m_IronSupplements";
     
     public M_IronSupplements() {
-        super(ID, "redPill.png", RelicTier.SPECIAL, LandingSound.FLAT);
+        super(ID, "redPill.png", RelicTier.STARTER, LandingSound.FLAT);
     }
     
     @Override

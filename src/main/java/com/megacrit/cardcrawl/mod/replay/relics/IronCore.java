@@ -52,7 +52,7 @@ public class IronCore extends AbstractRelic
     private boolean firstTurn;
     
     public IronCore() {
-        super("Iron Core", "ironCoreOrb.png", RelicTier.SPECIAL, LandingSound.CLINK);
+        super("Iron Core", "ironCoreOrb.png", RelicTier.STARTER, LandingSound.CLINK);
         this.hasReds = false;
         this.hasBlues = false;
         this.firstTurn = true;

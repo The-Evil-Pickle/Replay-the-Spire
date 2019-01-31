@@ -82,6 +82,7 @@ import com.megacrit.cardcrawl.helpers.*;
 
 import replayTheSpire.*;
 import slimebound.characters.SlimeboundCharacter;
+import sneckomod.characters.SneckoCharacter;
 import the_gatherer.character.TheGatherer;
 
 import com.megacrit.cardcrawl.unlock.*;
@@ -581,7 +582,12 @@ public class MirrorMist
 		this.imageEventText.setDialogOption(OPTIONS[10] + this.goldgain + OPTIONS[11] + this.searchcursechance + OPTIONS[12] + this.searchCurse.name + ".", this.searchCurse);
 		this.imageEventText.setDialogOption(OPTIONS[13] + this.searchCurse2.name + ".", this.searchCurse2);
 		this.thirdOption = false;
-		if (!(AbstractDungeon.player.hasRelic("hubris:DisguiseKit") && AbstractDungeon.player.hasRelic("PrismaticShard"))) {
+		if (ReplayTheSpireMod.foundmod_snecko && AbstractDungeon.player instanceof SneckoCharacter) {
+			this.searchrelicchance2 = 100;
+			this.imageEventText.setDialogOption(OPTIONS[14] + this.searchrelicchance2 + OPTIONS[15] + this.searchcursechance2 + OPTIONS[12] + "(Random)" + ".");
+			this.thirdOption = true;
+		}
+		else if (!(AbstractDungeon.player.hasRelic("hubris:DisguiseKit") && AbstractDungeon.player.hasRelic("PrismaticShard"))) {
 			this.imageEventText.setDialogOption(OPTIONS[14] + this.searchrelicchance2 + OPTIONS[15] + this.searchcursechance2 + OPTIONS[12] + "(Random)" + ".");
 			this.thirdOption = true;
 		}
@@ -884,7 +890,9 @@ public class MirrorMist
 					UnlockTracker.markCardAsSeen(curse.cardID);
 				}
 				if (AbstractDungeon.miscRng.randomBoolean(((float)this.searchrelicchance2) / 100.0F)) {
-					if (ReplayTheSpireMod.foundmod_hubris && !AbstractDungeon.player.hasRelic("hubris:DisguiseKit") && (AbstractDungeon.player.hasRelic("PrismaticShard") || AbstractDungeon.miscRng.randomBoolean(0.70f))) {
+					if (ReplayTheSpireMod.foundmod_snecko && AbstractDungeon.player instanceof SneckoCharacter) {
+						AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, new M_SnakeBloodCore());
+					} else if (ReplayTheSpireMod.foundmod_hubris && !AbstractDungeon.player.hasRelic("hubris:DisguiseKit") && (AbstractDungeon.player.hasRelic("PrismaticShard") || AbstractDungeon.miscRng.randomBoolean(0.70f))) {
 						AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, RelicLibrary.getRelic("hubris:DisguiseKit"));
 						AbstractDungeon.uncommonRelicPool.remove("hubris:DisguiseKit");
 					} else {

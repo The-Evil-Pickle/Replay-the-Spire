@@ -63,7 +63,7 @@ public class BoundBlade extends AbstractMysticCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.rawDescription = GhostFetch.UPGRADE_DESCRIPTION;
+            this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

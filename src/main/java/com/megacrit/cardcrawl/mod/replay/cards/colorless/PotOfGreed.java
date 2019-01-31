@@ -17,6 +17,8 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.core.*;
 import basemod.*;
 import basemod.abstracts.*;
+import replayTheSpire.ReplayTheSpireMod;
+import replayTheSpire.replayxover.sneckobs;
 
 public class PotOfGreed extends CustomCard
 {
@@ -36,6 +38,9 @@ public class PotOfGreed extends CustomCard
         super("Pot Of Greed", PotOfGreed.NAME, "cards/replay/greed.png", 0, PotOfGreed.DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
+        if (ReplayTheSpireMod.foundmod_snecko) {
+        	sneckobs.makeSneky(this);
+        }
     }
     
     @Override
@@ -83,6 +88,9 @@ public class PotOfGreed extends CustomCard
             	this.upgradeMagicNumber(1);
             }
             this.rawDescription = PotOfGreed.UPGRADE_DESCRIPTION;
+            if (ReplayTheSpireMod.foundmod_snecko) {
+            	sneckobs.makeSneky(this);
+            }
             this.initializeDescription();
         }
     }

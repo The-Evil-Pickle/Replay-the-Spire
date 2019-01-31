@@ -21,7 +21,7 @@ public class M_TsuchinokoRing extends AbstractRelic
     public static final String ID = "m_TsuchinokoRing";
     
     public M_TsuchinokoRing() {
-        super(ID, "snakeRing.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, "snakeRing.png", RelicTier.STARTER, LandingSound.MAGICAL);
     }
     
     @Override

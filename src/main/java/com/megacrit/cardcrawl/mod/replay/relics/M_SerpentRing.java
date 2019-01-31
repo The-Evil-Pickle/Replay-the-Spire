@@ -22,7 +22,7 @@ public class M_SerpentRing extends AbstractRelic
     public static final String ID = "m_SerpentRing";
     
     public M_SerpentRing() {
-        super(ID, "snakeRing.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, "snakeRing.png", RelicTier.STARTER, LandingSound.MAGICAL);
     }
     
     @Override

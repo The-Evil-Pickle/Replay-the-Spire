@@ -45,7 +45,7 @@ public class m_BookOfShivs extends AbstractRelic
     public static final String ID = "m_BookOfShivs";
     
     public m_BookOfShivs() {
-        super(ID, "betaRelic.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, "betaRelic.png", RelicTier.STARTER, LandingSound.MAGICAL);
     }
     
     @Override

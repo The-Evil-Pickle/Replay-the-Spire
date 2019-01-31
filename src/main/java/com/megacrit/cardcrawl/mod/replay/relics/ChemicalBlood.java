@@ -35,7 +35,7 @@ public class ChemicalBlood extends AbstractRelic
     boolean isChecking = false;
     
     public ChemicalBlood() {
-        super(ID, "sizzlingBlood.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, "sizzlingBlood.png", RelicTier.STARTER, LandingSound.MAGICAL);
     }
     
     @Override

@@ -30,7 +30,7 @@ public class M_SpellCore extends AbstractRelic
     public static final String ID = "m_SpellCore";
     
     public M_SpellCore() {
-        super(ID, "crackedOrb.png", RelicTier.SPECIAL, LandingSound.CLINK);
+        super(ID, "crackedOrb.png", RelicTier.STARTER, LandingSound.CLINK);
     }
     
     @Override
