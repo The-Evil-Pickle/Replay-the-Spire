@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.rewards.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.mod.replay.events.shrines.ChaosEvent;
 import com.megacrit.cardcrawl.relics.*;
 import java.util.*;
 
@@ -149,6 +150,10 @@ public class RingOfAddiction extends AbstractRelic
     @Override
     public AbstractRelic makeCopy() {
         return new RingOfAddiction();
+    }
+    @Override
+    public int getPrice() {
+    	return ChaosEvent.RING_SHOP_PRICE;
     }
 	
     static {

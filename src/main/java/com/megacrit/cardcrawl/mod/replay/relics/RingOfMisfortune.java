@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.cards.curses.*;
+import com.megacrit.cardcrawl.mod.replay.events.shrines.ChaosEvent;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -40,7 +41,11 @@ public class RingOfMisfortune extends AbstractRelic
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         this.flash();
     }
-    
+
+    @Override
+    public int getPrice() {
+    	return ChaosEvent.RING_SHOP_PRICE;
+    }
     public void onCardDraw(final AbstractCard drawnCard) {
         if (drawnCard.type == AbstractCard.CardType.CURSE || drawnCard.color == AbstractCard.CardColor.CURSE) {
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));

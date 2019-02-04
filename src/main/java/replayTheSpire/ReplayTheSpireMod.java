@@ -80,6 +80,7 @@ import replayTheSpire.replayxover.chronobs;
 import replayTheSpire.replayxover.constructbs;
 import replayTheSpire.replayxover.infinitebs;
 import replayTheSpire.replayxover.marisabs;
+import replayTheSpire.replayxover.slimeboundbs;
 import replayTheSpire.variables.MagicArithmatic;
 
 import java.lang.reflect.*;
@@ -533,6 +534,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static boolean foundmod_slimebound = false;
     public static boolean foundmod_snecko = false;
     public static boolean foundmod_halation = false;
+    public static boolean foundmod_jungle = false;
     
 	public static void initialize() {
     	logger.info("========================= ReplayTheSpireMod INIT =========================");
@@ -574,6 +576,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	    foundmod_slimebound = Loader.isModLoaded("Slimebound");
 	    foundmod_halation = Loader.isModLoaded("Halation");
 	    foundmod_snecko = Loader.isModLoaded("SneckoMod");
+	    foundmod_jungle = Loader.isModLoaded("TheJungle");
 		
 		logger.info("================================================================");
     }
@@ -1096,6 +1099,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new OnyxGauntlets(), RelicType.SHARED);
 		BaseMod.addRelic(new OozeArmor(), RelicType.RED);
 		BaseMod.addRelic(new PainkillerHerb(), RelicType.SHARED);
+		BaseMod.addRelic(new PocketPolymer(), RelicType.SHARED);
 		BaseMod.addRelic(new PondfishScales(), RelicType.SHARED);
 		BaseMod.addRelic(new PetGhost(), RelicType.SHARED);
 		BaseMod.addRelic(new QuantumEgg(), RelicType.SHARED);
@@ -1132,8 +1136,13 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfShattering(), AbstractPlayer.PlayerClass.DEFECT, false));
 		ChaosEvent.addRing(new RingOfHypnosis());
 		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfGreed(), new String[]{Ectoplasm.ID}));
+		ChaosEvent.addRing(new RingOfCollecting());
+		ChaosEvent.addRing(new RingOfExchange());
 		if (foundmod_stslib) {
 			ChaosEvent.addRing(new RingOfMisfortune());
+		}
+		if (foundmod_jungle) {
+			ChaosEvent.addRing(new RingOfSloth());
 		}
 		
 		initializeCrossoverRelics();
@@ -1158,6 +1167,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addDynamicVariable(new MagicArithmatic.MagicPlusTwo());
 		BaseMod.addDynamicVariable(new MagicArithmatic.MagicMinusTwo());
 		BaseMod.addDynamicVariable(new MagicArithmatic.MagicTimesTwo());
+		BaseMod.addDynamicVariable(new MagicArithmatic.MagicDivTwo());
+		BaseMod.addDynamicVariable(new MagicArithmatic.MagicDivTwoUp());
         try {
         	initializeInfiniteMod(LoadType.CARD);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
@@ -1287,6 +1298,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			AddAndUnlockCard(new ResoundingBlow());
 			AddAndUnlockCard(new WhispersOfEvil());
 		}
+		if (foundmod_slimebound) {
+			logger.info("adding slimebound cards...");
+			slimeboundbs.addBossCards();
+		}
 		logger.info("done editting cards");
 	}
 	
@@ -1313,6 +1328,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     		initializeScienceMod(LoadType.RELIC);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Mad Science Mod not detected");
+		}
+    	try {
+    		initializeInfiniteMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Infinite Spire Mod not detected");
 		}
     	try {
 			initializeFruityMod(LoadType.RELIC);
@@ -1364,8 +1384,26 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Snecko mod not detected");
 		}
+    	try {
+    		initializeJungleMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Jungle mod not detected");
+		}
     }
 
+	private static void initializeJungleMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
+		Class<theAct.TheActMod> madScienceMod = theAct.TheActMod.class;
+		logger.info("ReplayTheSpireMod | Detected Jungle Mod!");
+		foundmod_jungle = true;
+		
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Jungle...");
+			BaseMod.addRelic(new ChemicalBlood(), RelicType.SHARED);
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for MadScience...");
+		}
+	}
 	private static void initializeScienceMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
 		Class<madsciencemod.patches.CardColorEnum> madScienceMod = madsciencemod.patches.CardColorEnum.class;
 		logger.info("ReplayTheSpireMod | Detected Mad Science Mod!");
@@ -1380,42 +1418,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 	}
 
-	private static void initializeInfiniteMod() throws ClassNotFoundException, NoClassDefFoundError {
-		Class<InfiniteSpire> infiniteMod = InfiniteSpire.class;
-		logger.info("ReplayTheSpireMod | Detected Infinite Spire!");
-		foundmod_infinite = true;
-	}
-
-	private static void initializeFetchMod() throws ClassNotFoundException, NoClassDefFoundError {
-		Class<FetchMod> fetchMod = FetchMod.class;
-		logger.info("ReplayTheSpireMod | Detected Fetch Mod!");
-		foundmod_fetch = true;
-	}
 	private static void initializeColorMapMod() throws ClassNotFoundException, NoClassDefFoundError {
 		Class<ColoredMap> cmMod = ColoredMap.class;
 		logger.info("ReplayTheSpireMod | Detected Colored Map Mod!");
 		foundmod_colormap = true;
-	}
-	private static void initializeHubrisMod() throws ClassNotFoundException, NoClassDefFoundError {
-		Class<HubrisMod> servMod = HubrisMod.class;
-		logger.info("ReplayTheSpireMod | Detected Hubris Mod!");
-		foundmod_hubris = true;
-	}
-	private static void initializeStsLibMod() throws ClassNotFoundException, NoClassDefFoundError {
-		if (foundmod_stslib) {
-			return;
-		}
-		Class<StSLib> servMod = StSLib.class;
-		logger.info("ReplayTheSpireMod | Detected StSLib Mod!");
-		foundmod_stslib = true;
-	}
-	private static void initializeStsLibMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
-		Class<StSLib> servMod = StSLib.class;
-		if (!foundmod_stslib) {
-			logger.info("ReplayTheSpireMod | Detected StSLib Mod!");
-			foundmod_stslib = true;
-		}
-		
 	}
 	private static void initializeInfiniteMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
 		Class<InfiniteSpire> infiniteMod = InfiniteSpire.class;
@@ -1423,6 +1429,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		foundmod_infinite = true;
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for Infinite...");
+			BaseMod.addRelic(new BlankCodex(), RelicType.SHARED);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Infinite...");

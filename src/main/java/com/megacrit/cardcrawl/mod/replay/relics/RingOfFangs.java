@@ -3,6 +3,7 @@ package com.megacrit.cardcrawl.mod.replay.relics;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
+import com.megacrit.cardcrawl.mod.replay.events.shrines.ChaosEvent;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.powers.EnvenomPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -34,7 +35,11 @@ public class RingOfFangs extends AbstractRelic
 		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EnvenomPower(AbstractDungeon.player, 1), 1));
         AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
-    
+
+    @Override
+    public int getPrice() {
+    	return ChaosEvent.RING_SHOP_PRICE;
+    }
     @Override
     public AbstractRelic makeCopy() {
         return new RingOfFangs();

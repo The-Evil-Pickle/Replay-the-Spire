@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
+import com.megacrit.cardcrawl.mod.replay.events.shrines.ChaosEvent;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -42,7 +43,11 @@ public class RingOfHypnosis extends AbstractRelic
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, AbstractDungeon.player, new TPH_ConfusionPower(mo, RingOfHypnosis.CONF, false), RingOfHypnosis.CONF, true));
         }
     }
-    
+
+    @Override
+    public int getPrice() {
+    	return ChaosEvent.RING_SHOP_PRICE;
+    }
     @Override
     public AbstractRelic makeCopy() {
         return new RingOfHypnosis();

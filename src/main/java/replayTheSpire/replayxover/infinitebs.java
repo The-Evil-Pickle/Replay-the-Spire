@@ -24,6 +24,9 @@ public class infinitebs {
 		if (ReplayTheSpireMod.foundmod_glutton) {
 			infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.EchoChamber());
 		}
+		if (ReplayTheSpireMod.foundmod_slimebound) {
+			infinitespire.helpers.CardHelper.addCard(new com.megacrit.cardcrawl.mod.replay.cards.replayxover.black.BookOfNames());
+		}
 		ReplayTheSpireMod.AddAndUnlockCard(new DarkDeal());
 	}
 	public static void registerQuests() {

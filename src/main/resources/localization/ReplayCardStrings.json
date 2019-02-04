@@ -585,7 +585,8 @@
 		" NL Add !M! Sparks to your hand. NL Amplify [E] : add a copy of this card to your discard pile.",
 		" NL Add !M! Cogs to your draw pile.",
 		" NL Split into a random Slime. NL Apply !M! Slimed to all enemies.",
-		" NL Shuffle !M! random Letters into your draw pile."
+		" NL Shuffle !M! random Letters into your draw pile.",
+		"This card's effects are randomized each time it is drawn. The more [E] this card costs, the more effects it gets."
 	]
   },
   "ReplayTheSpireMod:Necrogeddon": {
@@ -603,8 +604,23 @@
   },
   "ReplayTheSpireMod:Black Plague": {
 	"NAME": "Black Plague",
-	"DESCRIPTION": "Apply !M! Poison. NL Apply !M! Necrotic Poison. NL Apply !M! Languid. NL Apply !M! Decrepit. NL Exhaust.",
-	"UPGRADE_DESCRIPTION": "Apply !M! Poison. NL Apply !M! Languid. NL Apply !M! Decrepit. NL When the target dies, play this on all other enemies. NL Exhaust."
+	"DESCRIPTION": "Draw !replay:M/2u! cards. NL Apply !M! Poison. NL Apply !M! Necrotic Poison. NL Apply !M! Languid. NL Apply !M! Decrepit. NL Exhaust.",
+	"EXTENDED_DESCRIPTION": [
+		"When played, this card Exhausts and creates two new cards with half the cost and effects.",
+		"Draw !replay:M/2u! cards. NL ",
+		"Draw !replay:M/2u! card. NL ",
+		"Apply !M! Poison. NL ",
+		"Apply !M! Necrotic Poison. NL ",
+		"Apply !M! Languid. NL ",
+		"Apply !M! Decrepit. NL ",
+		"Split this card in half.",
+		"Exhaust."
+	]
+  },
+  "ReplayTheSpireMod:Book of Names": {
+	"NAME": "Book of Names",
+	"DESCRIPTION": "Gain Slime/Orb slots until you have !M!. NL Add a random Spire Boss card to your hand at the start of your next !M! turns. NL After !M! turns, shuffle a copy of this card into your draw pile.",
+	"UPGRADE_DESCRIPTION": "Gain Slime/Orb slots until you have !M!. NL Add a random Spire Boss card to your hand at the start of your next !replay:M+1! turns. NL After !M! turns, shuffle a copy of this card into your draw pile."
   },
   "ReplayTheSpireMod:Chaos Vortex": {
 	"NAME": "Chaos Vortex",
@@ -829,12 +845,28 @@
   },
   "Replay:SS_fish_3": {
     "NAME": "Six Feet Under",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Gain 2 Weak. NL Exhaustive !stslib:ex!.",
-	"UPGRADE_DESCRIPTION": "Deal !D! damage !M! times. NL Exhaustive !stslib:ex!."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Gain 2 Weak. NL Exhaust.",
+	"UPGRADE_DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust."
   },
   "Replay:SS_fish_4": {
     "NAME": "Captain's Orders",
-    "DESCRIPTION": "Gain !B! Block. If you have <1 Strength, gain !M! Strength."
+    "DESCRIPTION": "Gain !B! Block. NL If you have <1 Strength, gain !M! Strength. NL If you have <1 Potency, gain !M! Potency."
+  },
+  "Replay:SS_hec_1": {
+    "NAME": "Forged in Hellfire",
+    "DESCRIPTION": "Gain !replay:M-1! Artifact. NL All non-attack damage you recieve is reduced by !M!."
+  },
+  "Replay:SS_hec_2": {
+    "NAME": "Steel Heart",
+    "DESCRIPTION": "Gain !M! Plated Armor."
+  },
+  "Replay:SS_hec_3": {
+    "NAME": "Run Them Down",
+    "DESCRIPTION": "Deal !D! damage and apply Surrounded to a random enemy."
+  },
+  "Replay:SS_hec_4": {
+    "NAME": "Dynamite!",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies after !M! turns."
   },
   "m_BoundBlade": {
     "NAME": "Bound Blade",

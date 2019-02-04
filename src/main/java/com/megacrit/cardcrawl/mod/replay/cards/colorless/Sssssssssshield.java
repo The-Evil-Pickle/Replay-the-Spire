@@ -26,10 +26,10 @@ public class Sssssssssshield extends CustomCard
     public static final String NAME;
     public static final String DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION;
-    private static final int COST = -1;
+    private static final int COST = 1;
     
     public Sssssssssshield() {
-        super(ID, Sssssssssshield.NAME, "cards/replay/replayBetaSkill.png", -1, Sssssssssshield.DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
+        super(ID, Sssssssssshield.NAME, "cards/replay/replayBetaSkill.png", COST, Sssssssssshield.DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
         SneckoField.snecko.set(this, true);
         this.baseBlock = 6;
         this.exhaust = true;

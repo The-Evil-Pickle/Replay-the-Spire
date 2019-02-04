@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.mod.replay.events.shrines.ChaosEvent;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.powers.DexterityPower;
@@ -32,7 +33,11 @@ public class RingOfFury
     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, -RingOfFury.DEX), -RingOfFury.DEX));
     AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
   }
-  
+
+  @Override
+  public int getPrice() {
+  	return ChaosEvent.RING_SHOP_PRICE;
+  }
   public AbstractRelic makeCopy()
   {
     return new RingOfFury();

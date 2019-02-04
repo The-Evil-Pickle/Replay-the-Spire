@@ -1,6 +1,7 @@
 package com.megacrit.cardcrawl.mod.replay.relics;
 
 import com.megacrit.cardcrawl.dungeons.*;
+import com.megacrit.cardcrawl.mod.replay.events.shrines.ChaosEvent;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.badlogic.gdx.math.MathUtils;
@@ -32,7 +33,11 @@ public class RingOfComfort extends AbstractRelic
     public void onNotBloodied() {
         this.stopPulse();
     }
-    
+
+    @Override
+    public int getPrice() {
+    	return ChaosEvent.RING_SHOP_PRICE;
+    }
     @Override
     public int onPlayerHeal(final int healAmount) {
         if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {

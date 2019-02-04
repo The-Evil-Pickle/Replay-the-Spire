@@ -18,16 +18,18 @@ public class DelayedLoseStrengthPower extends AbstractPower
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
     int delay;
+    private static int fedIDs = 0;
     
     public DelayedLoseStrengthPower(final AbstractCreature owner, final int newAmount) {
         this.name = DelayedLoseStrengthPower.NAME;
-        this.ID = POWER_ID;
+        this.ID = POWER_ID + ":" + fedIDs;
         this.owner = owner;
         this.amount = newAmount;
         this.type = PowerType.DEBUFF;
         this.updateDescription();
         this.loadRegion("flex");
         this.delay = 1;
+        fedIDs++;
     }
     public void stackPower(final int stackAmount) {
     	if (this.delay > 0) {

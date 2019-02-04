@@ -11,7 +11,7 @@ public class PolymerizeTransformOption extends AbstractCampfireOption
 {
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
-    private boolean makeFree;
+    public boolean makeFree;
     public PolymerizeTransformOption() {
     	this(false);
     }
@@ -28,7 +28,7 @@ public class PolymerizeTransformOption extends AbstractCampfireOption
     @Override
     public void useOption() {
         if (this.usable) {
-            AbstractDungeon.effectList.add(new CampfireTransformEffect());
+            AbstractDungeon.effectList.add(new CampfireTransformEffect(this));
         }
     }
     

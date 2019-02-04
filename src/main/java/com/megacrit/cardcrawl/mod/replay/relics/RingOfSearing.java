@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.actions.unique.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.events.shrines.ChaosEvent;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -41,7 +42,11 @@ public class RingOfSearing extends AbstractRelic
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0] + RingOfSearing.HP_FLOOR_ENEMY + this.DESCRIPTIONS[1] + RingOfSearing.HP_LOSS_ENEMY + this.DESCRIPTIONS[2] + RingOfSearing.HP_FLOOR_PLAYER + this.DESCRIPTIONS[3] + RingOfSearing.HP_LOSS_PLAYER + this.DESCRIPTIONS[4];
     }
-    
+
+    @Override
+    public int getPrice() {
+    	return ChaosEvent.RING_SHOP_PRICE;
+    }
     @Override
     public void atTurnStart() {
 		this.flash();

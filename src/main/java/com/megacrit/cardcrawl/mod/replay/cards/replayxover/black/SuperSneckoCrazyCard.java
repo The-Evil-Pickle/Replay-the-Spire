@@ -23,6 +23,7 @@ import HalationCode.cards.LetterOfLove;
 import HalationCode.cards.LetterOfRespect;
 import ThMod.ThMod;
 import ThMod.cards.derivations.Spark;
+import basemod.helpers.TooltipInfo;
 import beaked.actions.ReplenishWitherAction;
 import beaked.cards.AbstractWitherCard;
 import beaked.cards.Inspiration;
@@ -46,6 +47,7 @@ import com.megacrit.cardcrawl.core.*;
 
 import java.util.*;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.ModifyExhaustiveAction;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.ExhaustiveField;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SneckoField;
@@ -66,7 +68,7 @@ public class SuperSneckoCrazyCard extends BlackCard
     private static final String ID = "ReplayTheSpireMod:??????????????????????";
     private static final CardStrings cardStrings;
     private static final String NAME;
-    private static final int COST = -1;
+    private static final int COST = 0;
     private static final String DESCRIPTION;
     private static final String[] EXTENDED_DESCRIPTION;
     public static ArrayList<SSCCEffect> effects_src;
@@ -260,6 +262,7 @@ public class SuperSneckoCrazyCard extends BlackCard
 		    card.freeToPlayOnce = true;
 		    card.baseMagicNumber = c.magicNumber;
 		    card.magicNumber = c.magicNumber;
+            card.purgeOnUse = true;
             AbstractDungeon.player.limbo.addToTop(card);
             card.target_x = Settings.WIDTH / 2;
             card.target_y = Settings.HEIGHT / 2;
@@ -375,9 +378,14 @@ public class SuperSneckoCrazyCard extends BlackCard
 			return new SSCCE_Letters();
 		}
     }
+    private String renderRollDesc;
+    private int renderRollCountdown;
     public SuperSneckoCrazyCard() {
         super(ID, NAME, "cards/replay/qmark.png", COST, DESCRIPTION + EXTENDED_DESCRIPTION[0], AbstractCard.CardType.SKILL, AbstractCard.CardTarget.SELF);
         this.purgeOnUse = true;
+        this.tips = new ArrayList<TooltipInfo>();
+        this.renderRollCountdown = 0;
+        this.renderRollDesc = "";
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
         SneckoField.snecko.set(this, true);
@@ -426,6 +434,30 @@ public class SuperSneckoCrazyCard extends BlackCard
         for (SSCCEffect effect : this.effects) {
         	effect.use(p, this);
         }
+    }
+    public ArrayList<TooltipInfo> tips;
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+    	this.tips.clear();
+        this.tips.add(new TooltipInfo("???????", EXTENDED_DESCRIPTION[17]));
+        return this.tips;
+    }
+    @Override
+    public void render(SpriteBatch sb) {
+    	if (this.hb.hovered && this.rawDescription.equals(DESCRIPTION + EXTENDED_DESCRIPTION[0])) {
+    		this.renderRollCountdown--;
+    		if (this.renderRollCountdown <= 0) {
+    			this.renderRollDesc = DESCRIPTION + effects_src.get((AbstractDungeon.miscRng.random(effects_src.size()-1))).description;
+    			this.renderRollCountdown = 6;
+    		}
+    		this.rawDescription = this.renderRollDesc;
+    		this.initializeDescription();
+    		super.render(sb);
+    		this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
+    		this.initializeDescription();
+    	} else {
+    		super.render(sb);
+    	}
     }
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

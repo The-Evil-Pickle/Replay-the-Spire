@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.actions.defect.*;
+import com.megacrit.cardcrawl.mod.replay.events.shrines.ChaosEvent;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.powers.FocusPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -35,7 +36,11 @@ public class RingOfShattering extends AbstractRelic
     public void atPreBattle() {
         this.firstTurn = true;
     }
-    
+
+    @Override
+    public int getPrice() {
+    	return ChaosEvent.RING_SHOP_PRICE;
+    }
     @Override
     public void atTurnStart() {
         if (this.firstTurn) {

@@ -35,8 +35,10 @@ public class m_ScarletBlood extends AbstractRelic
     }
     
     public void onGainStrength(ApplyPowerAction __instance) {
-    	AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(__instance.target, __instance.source, new KnivesPower(__instance.target, __instance.amount * 2), __instance.amount * 2));
-		AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(__instance.target, this));
+    	if (__instance.amount > 0) {
+    		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(__instance.target, __instance.source, new KnivesPower(__instance.target, __instance.amount * 2), __instance.amount * 2));
+    		AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(__instance.target, this));
+    	}
     }
     
 	@Override

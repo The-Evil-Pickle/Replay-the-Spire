@@ -182,12 +182,14 @@ Abe's Revenge | Curse | Special | Curse | - | **Unplayable**. **Soulbound.** At 
 Name | Mod(s) | Color | Rarity | Type | Cost | Description (upgrade effect in parenthesis)
 --- | --- | --- | --- | --- | --- | ---
 Dual Polarity | Conspire | Blue | Uncommon | Skill | 2(1) | **Channel** 1 Lightning and Dark, Crystal and Frost, Water and Hellfire, or Glass and Plasma.
+Black Plague | Infinite Spire | Black | Black | Skill | 2 | Draw 2(3) cards. Apply 4(6) **Poison**. Apply 4(6) **Necrotic** **Poison**. Apply 4(6) **Languid**. Apply 4(6) **Decrepit**. Split this card in half.
+Book of Names | Infinite Spire + Slimebound | Black | Black | Power | 1 | Gain Orb/Slime slots until you have 3(4). Add a random spire boss card to your hand the next 3(5) turns. Return this to your draw pile after 3(4) turns.
 Chaos Vortex | Infinite Spire | Black | Black | Power | 0 | Gain 10(15) **Shielding.** (Gain 1 **Artifact**.) **Confuse** all enemies. 1 card you draw each turn has its stats and effects scrambled.
 Dark Transmutation | Infinite Spire | Black | Black | Skill | X | Add X random Black cards to your hand. They cost 1 less this turn. (**Refund** 1.) **Exhaust.**
 Echoes of Time | Infinite Spire | Black | Black | Skill | 1 | **Fetch** up to 3(8) cards you've **Exhausted** this combat. **Grave.** **Purge.**
 Haul | Infinite Spire | Black | Black | Skill | 0 | Draw your draw pile. You can't draw any more cards this turn (upgrade removes). **Exhaustive** 2.
 Fractal Strike | Infinite Spire | Black | Black | Attack | 0 | Deal 2(5) damage. Draw 1 card. Add a new Fractal Strike to your discard pile. **Exhaustive** 2(3).
-Dark Deal | Infinite Spire | Colorless | Rare | Skill | - | **Unplayable**. **Ethereal**. (**Grave**.) **Startup:** Add a random (**Upgraded**) **Black** card to your draw pile.
+Dark Deal | Infinite Spire | Colorless | Rare | Skill | - | **Unplayable**. (**Grave**.) **Startup:** Choose 1 of 2(3) random **Black** cards to add to your draw pile.
 Raven's Hex | Beaked | Beaked | Uncommon | Skill | 1 | Apply 6 **Languid** (and **Vulnerable**). **Wither** 1.
 Wings of Steel | Beaked | Beaked | Uncommon | Skill | 2 | Gain 8 **Shielding**, (8 **Block**,) and 6 **Plated** **Armor**. **Wither** 2.
 Owlgaze | Beaked | Beaked | Uncommon | Skill | 3 | **Stun** a random(all) enemy(ies). **Refund** 3. **Wither** 1.
@@ -209,6 +211,7 @@ Winged Headdress | Beaked | Beaked | Common | Can be used once per turn, before 
 Byrd Feeder | Beaked | Beaked | Rare | Healing beyond your max hp gives **Temporary** HP.
 Lucky Slots | Infinite Spire | All | Shop | When a fighter loses exactly 7 HP, gain **Critical**. If this triggers 3 times in a single combat, gain 7 gold.
 Sealed Pack | Infinite Spire | All | Boss | Chose 1 basic card to obtain. Choose 1 colorless card to obtain. Choose 1 rare card to obtain. Choose 1 black card to obtain. Choose 1 **Curse** to obtain. **Curse** cannot be skipped, and becomes **Soulbound**.
+Blank Codex | Infinite Spire | All | Event | At the start of combat and each time you shuffle your deck, you may choose 1 of 3 random **Black** cards to add to your discard pile. If you do, also add a random **Curse** to your discard pile.
 Cursed D8 | Glutton | All | Boss | Gain 1 energy and draw 1 card at the start of your turn. Shuffle an **Echo** of a random **Curse** into your draw pile at the end of your turn.
 
 # Keywords
@@ -363,6 +366,8 @@ Ring of Hypnosis | Dead Man's Rings | All enemies start with 5 **Confusion.**
 Ring of Misfortune | Dead Man's Rings | At the start of combat, add a random **Curse** to your discard pile. Each time you draw a curse, gain 1 energy and 3 **Temporary** **HP**. Each time you draw a **Status**, gain 3 **Block**.
 Ring of Greed | Dead Man's Rings | For every 150 gold you gain, obtain a random **Curse.** On pickup, gain 50 gold and 2 random relics related to gold or shops.
 Ring of Addiction | Dead Man's Rings | On pickup, obtain 3 potions and 2 random relics related to potions. Each time you go through 3 rooms without using a potion, lose 2 max hp.
+Ring of Collection | Dead Man's Rings | Non-boss chests now contain a random Ring in addition to thier normal contents. Shops sometimes sell Rings.
+Ring of Exchange | Dead Man's Rings | Shop items can now appear in boss chests. Boss items can now appear in shops.
 Ring of Searing | Dead Man's Rings (as Ironclad or modded) | At the start of your turn, ALL enemies above 50% max HP lose 10% of their HP, and you lose 5 HP if you are above 75% max HP.
 Ring of Fangs | Dead Man's Rings (as Silent or modded) | At the start of combat, lose 3 **Strength** and gain 1 **Envenom.**
 Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 3 **Focus** and lose 2 orb slots.

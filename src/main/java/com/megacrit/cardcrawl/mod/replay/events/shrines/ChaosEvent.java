@@ -36,6 +36,7 @@ public class ChaosEvent
   public static final String[] OPTIONS = eventStrings.OPTIONS;
   private static final String DIALOG_1 = DESCRIPTIONS[0];
   private static final String D_RESULT = DESCRIPTIONS[1];
+  public static final int RING_SHOP_PRICE = 100;
   private CurScreen screen = CurScreen.INTRO;
   private AbstractRelic ring;
   private AbstractRelic ring2;

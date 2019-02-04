@@ -65,6 +65,6 @@ public class LuckySlots extends AbstractRelic
 	}
 	@Override
 	public int getPrice() {
-		return 77;
+		return 177;
 	}
 }

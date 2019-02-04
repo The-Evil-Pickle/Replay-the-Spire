@@ -117,4 +117,48 @@ public class MagicArithmatic {
 	        return card.upgradedMagicNumber;
 	    }
 	}
+	public static class MagicDivTwo extends DynamicVariable
+	{
+	    public String key() {
+	        return "replay:M/2";
+	    }
+	    
+	    public boolean isModified(final AbstractCard card) {
+	        return card.isMagicNumberModified;
+	    }
+	    
+	    public int value(final AbstractCard card) {
+	        return card.magicNumber / 2;
+	    }
+	    
+	    public int baseValue(final AbstractCard card) {
+	        return card.baseMagicNumber / 2;
+	    }
+	    
+	    public boolean upgraded(final AbstractCard card) {
+	        return card.upgradedMagicNumber;
+	    }
+	}
+	public static class MagicDivTwoUp extends DynamicVariable
+	{
+	    public String key() {
+	        return "replay:M/2u";
+	    }
+	    
+	    public boolean isModified(final AbstractCard card) {
+	        return card.isMagicNumberModified;
+	    }
+	    
+	    public int value(final AbstractCard card) {
+	        return (card.magicNumber+1) / 2;
+	    }
+	    
+	    public int baseValue(final AbstractCard card) {
+	        return (card.baseMagicNumber+1) / 2;
+	    }
+	    
+	    public boolean upgraded(final AbstractCard card) {
+	        return card.upgradedMagicNumber;
+	    }
+	}
 }

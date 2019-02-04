@@ -152,6 +152,7 @@ public class FadingForestBoss extends CustomMonster
 		this.imageEventText.hide();
 		this.imageEventText.clear();
 		ForestEventAction.forest = this;
+		this.type = EnemyType.BOSS;
         this.turncount = 0;
 		this.savedDamage = 10;
 		this.savedDamage2 = 10;

@@ -16,9 +16,25 @@
     ]
   },
   "Replay:Enemy Life Bind": {
-    "NAME": "Coupled Souls",
+    "NAME": "Coupled Soul",
     "DESCRIPTIONS": [
 	"This enemy shares its health bar with other enemies that have this power."
+    ]
+  },
+  "Replay:Forged in Hellfire": {
+    "NAME": "Forged in Hellfire",
+    "DESCRIPTIONS": [
+	"All non-attack damage recieved is reduced",
+	" to #b",
+	" by #b"
+    ]
+  },
+  "Replay:Off the Rails": {
+    "NAME": "Off the Rails",
+    "DESCRIPTIONS": [
+	"Damage recieved that also hits ALL other enemies is reduced",
+	" to #b",
+	" by #b"
     ]
   },
   "Reflection": {
@@ -104,6 +120,14 @@
     "DESCRIPTIONS": [
 	"The next #b",
 	" times you play an Exhaustive card, the Exhaustive counter will not go down."
+	]
+  },
+  "replay:DelayedReturnCardPower": {
+	"NAME": "Return Card",
+    "DESCRIPTIONS": [
+	"In #b",
+	" turns, ",
+	" will be returned to your draw pile."
 	]
   },
   "ReplayTheSpireMod:SystemScan": {
@@ -412,13 +436,20 @@
 	  " each time."
     ]
   },
-  "Replay:Necro_Skullink": {
-    "NAME": "Skullink",
+  "replay:ss_fish": {
+    "NAME": "Study Pondfish",
     "DESCRIPTIONS": [
-      "When this enemy is killed, ",
-	  "'s #yCursed #yLife ability is reduced by #b",
-	  ". NL If ",
-      " is still alive, revives at full HP. NL Becomes more powerful each time it revives."
-    ]
+			"Gain a random Pondfish or Captain Abe card at the start of next turn.",
+			"Gain a random Pondfish or Captain Abe card at the start of your next ",
+			" turns."
+		]
+  },
+  "replay:ss_forest": {
+    "NAME": "Study Fable-Spinner",
+    "DESCRIPTIONS": [
+			"Gain a random Fable-Spinner card at the start of next turn.",
+			"Gain a random Fable-Spinner card at the start of your next ",
+			" turns."
+		]
   }
 }

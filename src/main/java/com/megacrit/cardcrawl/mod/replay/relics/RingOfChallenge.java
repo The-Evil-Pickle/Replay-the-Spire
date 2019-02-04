@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.unique.IncreaseMaxHpAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ModHelper;
+import com.megacrit.cardcrawl.mod.replay.events.shrines.ChaosEvent;
 import com.megacrit.cardcrawl.mod.replay.powers.TimeCollectorPower;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
@@ -74,7 +75,11 @@ public class RingOfChallenge extends ReplayAbstractRelic implements ClickableRel
     	this.isFirstTurn = false;
     	this.pulse = false;
     }
-    
+
+    @Override
+    public int getPrice() {
+    	return ChaosEvent.RING_SHOP_PRICE;
+    }
     
     @Override
     public void onPlayerEndTurn() {

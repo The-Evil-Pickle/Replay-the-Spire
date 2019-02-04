@@ -7,22 +7,15 @@ import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.helpers.*;
-import com.megacrit.cardcrawl.mod.replay.actions.*;
-import com.megacrit.cardcrawl.mod.replay.actions.common.*;
-import com.megacrit.cardcrawl.mod.replay.cards.*;
-import com.megacrit.cardcrawl.mod.replay.monsters.*;
-import com.megacrit.cardcrawl.mod.replay.powers.*;
-import com.megacrit.cardcrawl.mod.replay.vfx.*;
+import com.megacrit.cardcrawl.mod.replay.events.shrines.ChaosEvent;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.Courier;
 import com.megacrit.cardcrawl.relics.GoldenIdol;
-//import com.megacrit.cardcrawl.relics.LandingSound;
 import com.megacrit.cardcrawl.relics.MawBank;
 import com.megacrit.cardcrawl.relics.MealTicket;
 import com.megacrit.cardcrawl.relics.MembershipCard;
 import com.megacrit.cardcrawl.relics.OldCoin;
 import com.megacrit.cardcrawl.relics.RedCirclet;
-//import com.megacrit.cardcrawl.relics.RelicTier;
 import com.megacrit.cardcrawl.relics.SmilingMask;
 import com.megacrit.cardcrawl.relics.SsserpentHead;
 import com.megacrit.cardcrawl.relics.TinyChest;
@@ -43,7 +36,7 @@ public class RingOfGreed extends AbstractRelic
 	private int goldcount;
 	
     public RingOfGreed() {
-        super("Ring of Greed", "cring_greed.png", RelicTier.SPECIAL, LandingSound.FLAT);
+        super(ID, "cring_greed.png", RelicTier.SPECIAL, LandingSound.FLAT);
 		this.counter = GOLD_TRIGGER;
 		this.relicsLeft = 0;
 		this.goldcount = 0;
@@ -178,7 +171,10 @@ public class RingOfGreed extends AbstractRelic
     public AbstractRelic makeCopy() {
         return new RingOfGreed();
     }
-	
+    @Override
+    public int getPrice() {
+    	return ChaosEvent.RING_SHOP_PRICE;
+    }
     static {
 		greedlist = new ArrayList<String>();
 		greedlist.add(TinyChest.ID);

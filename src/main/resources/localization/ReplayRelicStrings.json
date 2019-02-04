@@ -592,6 +592,13 @@
 		"You can now #yMine at rest sites."
 	]
   },
+  "ReplayTheSpireMod:PocketPolymizer": {
+    "NAME": "Pocket Polymer",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"You can now #yTransform a card at rest sites as a #gfree #gaction."
+	]
+  },
   "minegem_1": {
     "NAME": "Ruby",
 	"FLAVOR": "",
@@ -790,7 +797,7 @@
     "NAME": "Blank Codex",
 	"FLAVOR": "Full of empty. Full of evil.",
     "DESCRIPTIONS": [
-		"Each time you shuffle your deck, you may choose 1 of 3 random #yBlack cards to add to your discard pile. If you do, also add a random #rCurse to your discard pile."
+		"At the start of combat and each time you shuffle your deck, you may choose 1 of 3 random #yBlack cards to add to your discard pile. If you do, also add a random #rCurse to your discard pile."
 	]
   },
   "Replay:Broken Controller": {
@@ -946,7 +953,15 @@
 	"NAME": "Ring of Collecting",
 	"FLAVOR": "A full set is greater than the sum of its parts, yet not nessearily worth the cost.",
 	"DESCRIPTIONS": [
-	"Non-boss chests contain a random ring relic in addition to thier normal contents. NL Shops will sell ring relics."
+	"Non-boss chests contain a random ring relic in addition to thier normal contents. NL Shops will sometimes sell ring relics."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Sloth": {
+	"NAME": "Ring of Sloth",
+	"FLAVOR": "Energy saved is too often energy wasted.",
+	"DESCRIPTIONS": [
+	"Start combat with #b",
+	" #rSlothful. NL Each time you shuffle your deck, gain [E] that turn and the next, and gain #b1 #rSlothful. NL All #yPowers in your deck have #yRefund #b"
 	]
   },
   "Iron Core": {
@@ -1011,7 +1026,7 @@
 	},
 	"m_MercuryCore": {
 		"NAME": "Mercury Core",
-		"FLAVOR": ".",
+		"FLAVOR": "The liquid inside sloshes around, ready to fulfill its timely purpose.",
 		"DESCRIPTIONS": [
 			"At the start of combat, #yReplicate 1 Mercury. NL Certain #bBlue cards can now be obtained."
 		]
@@ -1039,14 +1054,14 @@
 	},
 	"m_SpellCore": {
 		"NAME": "Spell Core",
-		"FLAVOR": ".",
+		"FLAVOR": "An orb of concentrated magical power. Its effects are slow, but consistent.",
 		"DESCRIPTIONS": [
 			"At the start of each combat, gain #b3 orb slots and #yChannel #b1 #yManaspark. NL Certain #yBlue cards can now be obtained."
 		]
 	},
 	"m_TsuchinokoRing": {
 		"NAME": "Ring of the Tsuchinoko",
-		"FLAVOR": ".",
+		"FLAVOR": "The charm hisses every time power is channeled through it.",
 		"DESCRIPTIONS": [
 			"Draw #b2 additional cards on the first turn of combat. NL Each time you play a #ySkill or #y0-Cost card, gain #b1 #yCharge-Up. NL Certain #yGreen cards can now be obtained."
 		]

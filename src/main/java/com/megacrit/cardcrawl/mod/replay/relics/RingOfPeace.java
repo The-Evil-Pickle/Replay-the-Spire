@@ -3,6 +3,7 @@ package com.megacrit.cardcrawl.mod.replay.relics;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
+import com.megacrit.cardcrawl.mod.replay.events.shrines.ChaosEvent;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -43,7 +44,11 @@ public class RingOfPeace extends AbstractRelic
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, AbstractDungeon.player, new WeakPower(mo, RingOfPeace.WEAK, false), RingOfPeace.WEAK, true));
         }
     }
-    
+
+    @Override
+    public int getPrice() {
+    	return ChaosEvent.RING_SHOP_PRICE;
+    }
     @Override
     public AbstractRelic makeCopy() {
         return new RingOfPeace();
