@@ -60,7 +60,7 @@ public class CrystallizerPower extends AbstractPower
 				filledslots++;
 			}
 		}
-		if (emptyslots > filledslots) {
+		if (emptyslots >= filledslots) {
 			this.flash();
 			for (int i=0; i < this.orbAmount; i++) {
 				AbstractDungeon.actionManager.addToTop(new ChannelAction(new CrystalOrb()));

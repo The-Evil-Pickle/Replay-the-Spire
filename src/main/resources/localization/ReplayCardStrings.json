@@ -579,7 +579,7 @@
 		" NL Shuffle !M! random Cores into your draw pile.",
 		" NL Shuffle !M! random Cantrips into your draw pile.",
 		" NL Heal !M! HP and Replenish !replay:M-1! uses of all Wither and/or Exhaustive cards in your hand and discard pile.",
-		" NL Replicate up to !M! of your relics and Retain !M! cards this turn.",
+		" NL Replicate !M! random relics and Retain !M! cards this turn.",
 		" NL Heal !M! HP and shuffle !M! Inspiration into your draw pile.",
 		" NL Equip a 3/ !M! Weapon.",
 		" NL Add !M! Sparks to your hand. NL Amplify [E] : add a copy of this card to your discard pile.",
@@ -769,6 +769,11 @@
     "NAME": "Mirror System",
     "DESCRIPTION": "[#ff9900]OVERHEAT: [#ff9900]< !construct:O! [#ff9900]> NL Cycle if you have < 1 Dexterity. NL Gain !M! Reflection."
   },
+  "ReplayTheSpireMod:Armaments MK-II-B": {
+    "NAME": "Armaments MK-II-B",
+    "DESCRIPTION": "Gain !B! Block. NL Upgrade a card in your hand. NL If the card is already Upgraded, Enhance it instead. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Upgrade ALL cards in your hand. NL Enhances cards that are already Upgraded. NL Exhaustive !stslib:ex!."
+  },
   "BackFire": {
     "NAME": "Backfire",
     "DESCRIPTION": "Unplayable. NL When drawn, gain 1 Vulnerable. NL At the end of your turn, take 6 damage. NL Exhaust.",
@@ -811,12 +816,12 @@
   },
   "Replay:SS_forest_1": {
     "NAME": "Many Paths",
-    "DESCRIPTION": "Discard !M! card. NL Fetch !M! card.",
-    "UPGRADE_DESCRIPTION": "Discard !M! cards. NL Fetch !M! cards. "
+    "DESCRIPTION": "Discard !M! card. NL Fetch !replay:M+1! cards. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Discard !M! cards. NL Fetch !replay:M+1! cards. NL Exhaustive !stslib:ex!."
   },
   "Replay:SS_forest_2": {
     "NAME": "Forest Treasure",
-    "DESCRIPTION": "Gain a random Relic effect."
+    "DESCRIPTION": "Gain !M! random Relic effects."
   },
   "Replay:SS_forest_3": {
     "NAME": "Patience",
@@ -833,7 +838,14 @@
   },
   "Replay:SS_forest_6": {
     "NAME": "Forest Fishers",
-    "DESCRIPTION": "Choose: Gain !M! Dexterity, or heal 10 HP."
+    "DESCRIPTION": "Choose: Gain !M! Dexterity, or heal 10 HP.",
+	"EXTENDED_DESCRIPTION": [
+		"Choose",
+		"Doughnut",
+		"Gain !M! Dexterity",
+		"Banana",
+		"Heal 10 HP"
+	]
   },
   "Replay:SS_fish_1": {
     "NAME": "Drag to Hell",

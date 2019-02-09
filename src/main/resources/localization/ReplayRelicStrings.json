@@ -31,13 +31,6 @@
 	"Upon pick up, a random card in your deck becomes free."
 	]
   },
-  "Chemical X": {
-	"NAME": "Chemical X",
-	"FLAVOR": "WARNING: Do not combine with sugar, spice, and everything nice.",
-    "DESCRIPTIONS": [
-	"Whenever you play a cost #bX card, its effects are increased by #b"
-	]
-  },
   "Divine Protection": {
     "NAME": "Divine Protection",
 	"FLAVOR": "The strength to carry on in times of trial.",
@@ -1085,6 +1078,25 @@
 		"FLAVOR": "This part of you acts on its own, never completely split, and never completely merged.",
 		"DESCRIPTIONS": [
 			"Draw #b2 additional cards on the first turn of combat. NL Certain #yGreen cards can now be obtained."
+		]
+	},
+	"m_RuneBlood": {
+		"NAME": "Ignis Sanguine",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"Each time you deal #b",
+			" damage in a single turn, gain #b",
+			" Ignis. NL Heal #b",
+			" HP at the end of combat. NL Certain #yRed cards can now be obtained."
+		]
+	},
+	"m_RuneCore": {
+		"NAME": "Runic Core",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"Gain #b",
+			" orb slots and #b1 #yFocus at the start of combat. NL All other #yFocus gained in combat also gives #yPotency, and vise-versa. NL Certain #yBlue cards can now be obtained. NL NL #gWhile #gyou #ghave #gat #gleast #b",
+			" #gactive #yRunes: NL  #g* #gWhen #gyou #gwould #yCraft #ga #yFirestone #grune, #ginstead #yChannel #yLightning. NL  #g* #gWhen #gyou #gwould #yCraft #ga #yProtectio #grune, #ginstead #yChannel #yFrost. NL  #g* #gWhen #gyou #gwould #yCraft #gan #yIndustria #grune, #ginstead #yChannel #yPlasma. NL  #g* #gWhen #gyou #gwould #yCraft #ga #yPotentia #grune, #ginstead #yChannel #yCrystal."
 		]
 	},
 	"m_SnakeBloodCore": {

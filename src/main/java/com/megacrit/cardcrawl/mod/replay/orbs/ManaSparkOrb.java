@@ -31,8 +31,8 @@ import com.megacrit.cardcrawl.core.*;
 public class ManaSparkOrb extends AbstractOrb
 {
     public static final String ORB_ID = "ManaSpark";
-    //private static final OrbStrings orbString;
-    public static final String[] DESC = {"#yPassive: At the start of turn, gain #b", " #yCharge-Up. NL #yEvoke: Gain [e] and #b", " Charge-Up."};
+    private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
+    public static final String[] DESC = orbString.DESCRIPTION;//{"#yPassive: At the start of turn, gain #b", " #yCharge-Up. NL #yEvoke: Gain [e] and #b", " Charge-Up."};
     private static final float ORB_BORDER_SCALE = 1.2f;
     private float vfxTimer;
     private static final float VFX_INTERVAL_TIME = 0.25f;
@@ -44,7 +44,7 @@ public class ManaSparkOrb extends AbstractOrb
         this.vfxTimer = 0.5f;
         this.ID = ORB_ID;
         this.img = ManaSparkOrb.ORB_TEXTURE;
-        this.name = "Mana-Spark";//HellFireOrb.orbString.NAME;
+        this.name = orbString.NAME;
         this.baseEvokeAmount = 5;
         this.evokeAmount = this.baseEvokeAmount;
         this.basePassiveAmount = 3;

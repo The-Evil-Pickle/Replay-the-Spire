@@ -1,6 +1,7 @@
 package com.megacrit.cardcrawl.mod.replay.monsters.replay;
 
 import com.megacrit.cardcrawl.monsters.*;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.cards.*;

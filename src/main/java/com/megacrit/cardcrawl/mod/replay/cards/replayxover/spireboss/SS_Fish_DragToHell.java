@@ -30,7 +30,7 @@ public class SS_Fish_DragToHell extends CustomCard
     private static final int COST = 0;
     
     public SS_Fish_DragToHell() {
-        super(ID, SS_Fish_DragToHell.NAME, SlimeboundMod.getResourcePath("cards/youaremine.png"), COST, SS_Fish_DragToHell.DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.ENEMY);
+        super(ID, SS_Fish_DragToHell.NAME, "cards/replay/ss_fish_drown.png", COST, SS_Fish_DragToHell.DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.ENEMY);
         this.tags.add(slimeboundbs.STUDY_PONDFISH);
         this.tags.add(SlimeboundMod.STUDY);
         this.magicNumber = this.baseMagicNumber = 5;

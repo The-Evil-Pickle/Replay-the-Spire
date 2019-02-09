@@ -7,6 +7,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.mod.replay.relics.RingOfCollecting;
+import com.megacrit.cardcrawl.mod.replay.relics.RingOfExchange;
 import com.megacrit.cardcrawl.mod.replay.relics.WaxSeal;
 import com.megacrit.cardcrawl.shop.ShopScreen;
 import com.megacrit.cardcrawl.shop.StoreRelic;
@@ -20,6 +21,15 @@ public class ShopInitPatch {
 			if (AbstractDungeon.player.hasRelic(WaxSeal.ID)) {
 				for (final StoreRelic r : (ArrayList<StoreRelic>)ReflectionHacks.getPrivate(__instance, ShopScreen.class, "relics")) {
 		            r.price = MathUtils.round(r.price * (1F - WaxSeal.DISCOUNT));
+		        }
+			}
+			if (AbstractDungeon.player.hasRelic(RingOfExchange.ID)) {
+				for (final StoreRelic r : (ArrayList<StoreRelic>)ReflectionHacks.getPrivate(__instance, ShopScreen.class, "relics")) {
+					if (r.price > 600) {
+						r.price = MathUtils.round(r.price * (0.275f));
+					} else if (r.price > 360) {
+						r.price = MathUtils.round(r.price * (0.75f));
+					}
 		        }
 			}
 		}

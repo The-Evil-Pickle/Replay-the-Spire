@@ -32,6 +32,7 @@ import blackbeard.actions.EquipAction;
 import blackbeard.orbs.CutlassOrb;
 import blackrusemod.powers.KnivesPower;
 import blackrusemod.powers.ProtectionPower;
+import chronomuncher.actions.RandomReplicaAction;
 import chronomuncher.cards.Facsimile;
 import chronomuncher.orbs.*;
 import chronomuncher.powers.RetainOncePower;
@@ -258,7 +259,7 @@ public class SuperSneckoCrazyCard extends BlackCard
     	}
 		@Override
 		public void use(AbstractPlayer p, AbstractCard c) {
-		    AbstractCard card = new Facsimile();
+		    /*AbstractCard card = new Facsimile();
 		    card.freeToPlayOnce = true;
 		    card.baseMagicNumber = c.magicNumber;
 		    card.magicNumber = c.magicNumber;
@@ -267,7 +268,10 @@ public class SuperSneckoCrazyCard extends BlackCard
             card.target_x = Settings.WIDTH / 2;
             card.target_y = Settings.HEIGHT / 2;
             card.targetDrawScale *= 1.2f;
-            AbstractDungeon.actionManager.addToBottom(new QueueCardAction(card, AbstractDungeon.getRandomMonster()));
+            AbstractDungeon.actionManager.addToBottom(new QueueCardAction(card, AbstractDungeon.getRandomMonster()));*/
+			for (int i=0; i<c.magicNumber; i++) {
+				AbstractDungeon.actionManager.addToBottom(new RandomReplicaAction());
+			}
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RetainOncePower(c.magicNumber), c.magicNumber));
 		}
 		@Override

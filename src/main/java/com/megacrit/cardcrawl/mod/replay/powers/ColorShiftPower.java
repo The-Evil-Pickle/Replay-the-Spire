@@ -41,7 +41,7 @@ public class ColorShiftPower extends AbstractPower
     private AbstractColorShiftColor colorShift;
     private static final ArrayList<AbstractColorShiftColor> colorList;
     private static int turnid = 0; 
-    public static Color mainShiftingColor = Color.RED;
+    public static Color mainShiftingColor = Color.RED.cpy();
     public static float mainShiftingCycle = 0;
     
     public ColorShiftPower(final AbstractCreature owner, int amount) {
@@ -178,7 +178,7 @@ public class ColorShiftPower extends AbstractPower
     	}
     	AbstractColorShiftColor(int id, Color color, ColorShiftPowerType type) {
     		this.id = id;
-    		this.color = color;
+    		this.color = color.cpy();
     		this.name = ColorShiftPower.powerStrings.DESCRIPTIONS[id * 3 + 2];
     		this.cardDesc = ColorShiftPower.powerStrings.DESCRIPTIONS[id * 3 + 3];
     		this.powerDesc = ColorShiftPower.powerStrings.DESCRIPTIONS[id * 3 + 4];

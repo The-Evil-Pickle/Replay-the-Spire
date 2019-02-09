@@ -575,7 +575,8 @@
 		" NL Add !M! Sparks to your hand. NL Amplify [E] : add a copy of this card to your 버린 카드 더미.",
 		" NL Add !M! Cogs to your 뽑을 카드 더미.",
 		" NL Split into a random Slime. NL Apply !M! Slimed to all enemies.",
-		" NL Shuffle !M! random Letters to your 뽑을 카드 더미."
+		" NL Shuffle !M! random Letters to your 뽑을 카드 더미.",
+		"This card's effects are randomized each time it is drawn. The more [E] this card costs, the more effects it gets."
 	]
   },
   "ReplayTheSpireMod:Necrogeddon": {

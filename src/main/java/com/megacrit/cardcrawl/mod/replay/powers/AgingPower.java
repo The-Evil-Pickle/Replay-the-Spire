@@ -21,6 +21,7 @@ public class AgingPower extends AbstractPower
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
     private int baseAmount;
+    private int langStacks;
     
     public AgingPower(final AbstractCreature owner, final int amount) {
         this.baseAmount = amount;
@@ -31,6 +32,7 @@ public class AgingPower extends AbstractPower
         this.updateDescription();
         this.img = ImageMaster.loadImage("images/powers/32/countdown.png");
         this.type = PowerType.DEBUFF;
+        this.langStacks = 1;
     }
     @Override
     public int onAttacked(final DamageInfo info, final int damageAmount) {
@@ -39,7 +41,7 @@ public class AgingPower extends AbstractPower
             int langamt = 0;
             while (this.amount <= 0) {
             	this.amount += this.baseAmount;
-            	langamt++;
+            	langamt += this.langStacks;
             }
             if (langamt > 0) {
             	AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.owner, this.owner, new LanguidPower(this.owner, langamt, this.owner.isPlayer), langamt));
@@ -52,7 +54,13 @@ public class AgingPower extends AbstractPower
     public void updateDescription() {
         this.description = AgingPower.DESCRIPTIONS[0] + this.baseAmount + AgingPower.DESCRIPTIONS[1] + this.owner.name + AgingPower.DESCRIPTIONS[2];
     }
-    
+
+    @Override
+    public void stackPower(final int stackAmount) {
+        this.fontScale = 8.0f;
+    	this.baseAmount = Math.min(this.baseAmount, stackAmount);
+    	this.langStacks += 1;
+    }
     static {
         powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
         NAME = AgingPower.powerStrings.NAME;

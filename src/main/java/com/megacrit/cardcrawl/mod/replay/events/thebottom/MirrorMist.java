@@ -45,6 +45,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.blue.*;
 import com.megacrit.cardcrawl.mod.replay.cards.curses.*;
 import com.megacrit.cardcrawl.mod.replay.cards.green.*;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.ArmamentsMkIIB;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.marisa.LightBash;
 import com.megacrit.cardcrawl.mod.replay.events.*;
 import com.megacrit.cardcrawl.mod.replay.modifiers.MistsModifier;
@@ -81,6 +82,7 @@ import mysticmod.character.*;
 import com.megacrit.cardcrawl.helpers.*;
 
 import replayTheSpire.*;
+import runesmith.character.player.RunesmithCharacter;
 import slimebound.characters.SlimeboundCharacter;
 import sneckomod.characters.SneckoCharacter;
 import the_gatherer.character.TheGatherer;
@@ -571,6 +573,21 @@ public class MirrorMist
 				this.loss_c_3 = CardLibrary.getCopy("Slimebound:Split");
 				this.gain_c_3 = new Chaos();
 				this.thirdOption = true;
+				break;
+			}
+			if (ReplayTheSpireMod.foundmod_runesmith && AbstractDungeon.player instanceof RunesmithCharacter) {
+				this.has_1 = AbstractDungeon.player.hasRelic("Runesmith:BrokenRuby");
+				this.loss_r_1 = RelicLibrary.getRelic("Runesmith:BrokenRuby").makeCopy();
+				this.gain_r_1 = new M_RuneBlood();
+				this.has_1b = CardHelper.hasCardWithID("Runesmith:CraftFirestone");
+				this.loss_c_1b = CardLibrary.getCopy("Runesmith:CraftFirestone");
+				this.gain_c_1b = new ArmamentsMkIIB();
+				this.has_2 = CardHelper.hasCardWithID("Runesmith:CraftFirestone");
+				this.loss_c_2 = CardLibrary.getCopy("Runesmith:CraftFirestone");
+				this.gain_c_2 = new Neutralize();
+				this.has_2b = CardHelper.hasCardWithID("Runesmith:Fortify");
+				this.loss_c_2b = CardLibrary.getCopy("Runesmith:Fortify");
+				this.gain_c_2b = new Survivor();
 				break;
 			}
 			

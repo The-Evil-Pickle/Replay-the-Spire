@@ -347,11 +347,13 @@ public class RingOfChaos
 						c.isCostModified = true;
 						break;
 					case MAGIC:
-						prevnum = MathUtils.ceilPositive((float)c.baseMagicNumber / downmult) - c.baseMagicNumber;
-						if (prevnum <= 0) {
+						prevnum = (invertMagic ? MathUtils.floor((float)c.baseMagicNumber * downmult) : MathUtils.ceilPositive(((float)c.baseMagicNumber / downmult))) - c.baseMagicNumber;
+						if (!invertMagic && prevnum <= 0) {
 							prevnum = 1;
+						} else if (invertMagic && prevnum >= 0) {
+							prevnum = -1;
 						}
-						c.baseMagicNumber += prevnum * (invertMagic ? -1 : 1);
+						c.baseMagicNumber += prevnum;
 						c.magicNumber = c.baseMagicNumber;
 						c.upgradedMagicNumber = true;
 						break;

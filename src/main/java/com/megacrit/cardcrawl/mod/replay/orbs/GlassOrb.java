@@ -27,8 +27,8 @@ import basemod.*;
 public class GlassOrb extends AbstractOrb
 {
     public static final String ORB_ID = "Glass";
-    //private static final OrbStrings orbString;
-    //public static final String[] DESC;
+    private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
+    public static final String[] DESC = orbString.DESCRIPTION;
     private static Texture img1;
     private static Texture img2;
 	private static final Color validEvokeColor = Color.GREEN.cpy();
@@ -45,8 +45,8 @@ public class GlassOrb extends AbstractOrb
         this.basePassiveAmount = 0;
         this.passiveAmount = this.basePassiveAmount;
         this.angle = MathUtils.random(360.0f);
-		this.ID = "Glass";
-        this.name = "Glass";//EmptyOrbSlot.orbString.NAME;
+		this.ID = ORB_ID;
+        this.name = orbString.NAME;
         this.cX = AbstractDungeon.player.drawX + AbstractDungeon.player.hb_x;
         this.cY = AbstractDungeon.player.drawY + AbstractDungeon.player.hb_y + AbstractDungeon.player.hb_h / 2.0f;
         this.updateDescription();
@@ -57,11 +57,11 @@ public class GlassOrb extends AbstractOrb
     public void updateDescription() {
 		this.applyFocus();
 		if (AbstractDungeon.player.hasPower("Reflective Lens")) {
-			this.description = "#yPassive: At the end of your turn, gain #b" + Integer.toString(this.passiveAmount + AbstractDungeon.player.getPower("Reflective Lens").amount) + " #yReflection.";
+			this.description = DESC[3] + Integer.toString(this.passiveAmount + AbstractDungeon.player.getPower("Reflective Lens").amount) + DESC[4];
 		} else {
-			this.description = "#yPassive: No effect.";
+			this.description = DESC[0];
 		}
-		this.description += " NL #yEvoke: If you have more than #b" + this.evokeAmount + " orb slots, consumes your leftmost orb slot and #yEvokes any non-glass orb occupying it.";//EmptyOrbSlot.DESC[0];
+		this.description += DESC[1] + this.evokeAmount + DESC[2];//EmptyOrbSlot.DESC[0];
     }
     
     @Override

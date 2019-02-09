@@ -31,7 +31,7 @@ public class SS_Fish_SixFeetUnder extends CustomCard
     private static final int COST = 0;
     
     public SS_Fish_SixFeetUnder() {
-        super(ID, SS_Fish_SixFeetUnder.NAME, SlimeboundMod.getResourcePath("cards/youaremine.png"), COST, SS_Fish_SixFeetUnder.DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.ENEMY);
+        super(ID, SS_Fish_SixFeetUnder.NAME, "cards/replay/ss_fish_attack.png", COST, SS_Fish_SixFeetUnder.DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.ENEMY);
         this.tags.add(slimeboundbs.STUDY_PONDFISH);
         this.tags.add(SlimeboundMod.STUDY);
         this.magicNumber = this.baseMagicNumber = 6;

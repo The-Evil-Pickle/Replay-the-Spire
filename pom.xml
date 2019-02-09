@@ -187,6 +187,13 @@
 		      <scope>system</scope>
           <systemPath>${basedir}/../lib/TheJungle.jar</systemPath>
 	      </dependency>
+        <dependency>
+	        <groupId>runesmith</groupId>
+		      <artifactId>TheRunesmith</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>${basedir}/../lib/TheRunesmith.jar</systemPath>
+	      </dependency>
     </dependencies>
   <build>
     <plugins>
@@ -209,5 +216,5 @@
     </plugins>
 	<finalName>${project.artifactId}</finalName>
   </build>
-  <version>1.3.22</version>
+  <version>1.3.23</version>
 </project>

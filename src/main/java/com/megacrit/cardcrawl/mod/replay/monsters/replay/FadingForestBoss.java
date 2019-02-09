@@ -30,6 +30,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.events.GenericEventDialog;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.blue.Strike_Blue;
@@ -70,7 +71,9 @@ import com.badlogic.gdx.graphics.g2d.*;
 import java.util.*;
 import basemod.*;
 import basemod.animations.*;
+import replayTheSpire.ReplayTheSpireMod;
 import replayTheSpire.patches.RenderHandPatch;
+import theAct.cards.fungalobungalofunguyfuntimes.*;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.CustomMonster;
 
@@ -96,6 +99,7 @@ public class FadingForestBoss extends CustomMonster
 	private int jax_str;
 	private int idol_damage;
 	private int mushroom_damage;
+	private int mushroom_chance;
 	private int tesseract_damage;
 	private int vampires_damage;
 	private int vampires_hploss;
@@ -182,6 +186,7 @@ public class FadingForestBoss extends CustomMonster
 			this.fish_healing = 10;
 			this.headache_amt = 2;
         }
+        this.mushroom_chance = 50;
         this.damage.add(new DamageInfo(this, this.jax_damage));
         this.damage.add(new DamageInfo(this, this.idol_damage));
         this.damage.add(new DamageInfo(this, this.mushroom_damage));
@@ -326,7 +331,10 @@ public class FadingForestBoss extends CustomMonster
 				this.savedDamage = this.damage.get(2).output;
                 this.imageEventText.updateBodyText(this.eDesc(0));
 				this.imageEventText.setDialogOption(this.eOp(1));
-				this.imageEventText.setDialogOption(this.eOp(2) + this.savedDamage + this.eOp(3), new SpreadingInfection());
+				this.imageEventText.setDialogOption(this.eOp(2) + this.savedDamage + this.eOp(3) + this.mushroom_chance + this.eOp(4), new SpreadingInfection());
+				if (ReplayTheSpireMod.foundmod_jungle) {
+					this.imageEventText.setDialogOption(this.eOp(5) + this.headache_amt + this.eOp(6));
+				}
 				AbstractDungeon.actionManager.addToBottom(new ForestEventAction());
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
 				break;
@@ -658,8 +666,32 @@ public class FadingForestBoss extends CustomMonster
 						//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new SporeCloudPower(m, 1), 1));
 						AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 						break;
+					case 2:
+						if (ReplayTheSpireMod.foundmod_jungle) {
+							for (int i=0; i < this.headache_amt; i++) {
+								AbstractCard c = null;
+						        switch (AbstractDungeon.miscRng.random(3)) {
+						            case 0: {
+						                c = CardLibrary.getCopy(SS_Clouding.ID);
+						                break;
+						            }
+						            case 1: {
+						            	c = CardLibrary.getCopy(SS_Leeching.ID);
+						                break;
+						            }
+						            default: {
+						            	c = CardLibrary.getCopy(SS_Toxin.ID);
+						                break;
+						            }
+						        }
+						        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(c, 1));
+							}
+							break;
+						}
 					default:
-						AbstractDungeon.actionManager.addToTop(new MakeTempCardInDiscardAction(new SpreadingInfection(), 1));
+						if (AbstractDungeon.miscRng.random(100) < this.mushroom_chance) {
+							AbstractDungeon.actionManager.addToTop(new MakeTempCardInDiscardAction(new SpreadingInfection(), 1));
+						}
 						AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.player, new DamageInfo(this, this.savedDamage), AbstractGameAction.AttackEffect.POISON));
 						break;
 				}

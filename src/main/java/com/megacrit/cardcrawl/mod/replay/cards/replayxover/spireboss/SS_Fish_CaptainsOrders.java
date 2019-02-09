@@ -32,7 +32,7 @@ public class SS_Fish_CaptainsOrders extends CustomCard
     private static final int COST = 0;
     
     public SS_Fish_CaptainsOrders() {
-        super(ID, SS_Fish_CaptainsOrders.NAME, SlimeboundMod.getResourcePath("cards/youaremine.png"), COST, SS_Fish_CaptainsOrders.DESCRIPTION, AbstractCard.CardType.POWER, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.SELF);
+        super(ID, SS_Fish_CaptainsOrders.NAME, "cards/replay/ss_fish_orders.png", COST, SS_Fish_CaptainsOrders.DESCRIPTION, AbstractCard.CardType.POWER, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.SELF);
         this.tags.add(slimeboundbs.STUDY_PONDFISH);
         this.tags.add(SlimeboundMod.STUDY);
         this.magicNumber = this.baseMagicNumber = 1;

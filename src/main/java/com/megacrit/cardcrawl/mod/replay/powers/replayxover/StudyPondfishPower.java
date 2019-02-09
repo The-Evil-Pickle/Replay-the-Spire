@@ -24,7 +24,7 @@ public class StudyPondfishPower extends AbstractPower
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.img = new Texture(SlimeboundMod.getResourcePath("powers/StudyAwakenedS.png"));
+        this.img = new Texture("images/powers/32/ss_fish.png");
         this.amount = amount;
         this.updateDescription();
     }

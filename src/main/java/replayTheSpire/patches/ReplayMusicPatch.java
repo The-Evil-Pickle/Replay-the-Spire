@@ -7,6 +7,9 @@ import com.badlogic.gdx.audio.*;
 public class ReplayMusicPatch {
 	
 	public static Music Postfix(Music __result, TempMusic __instance, final String key) {
+		if (key.contains("replay/")) {
+			return MainMusic.newMusic("audio/music/" + key);
+		}
 		switch (key) {
             case "replay/NRG_Stratosphere_Smackdown.ogg": {
                 return MainMusic.newMusic("audio/music/replay/NRG_Stratosphere_Smackdown.ogg");

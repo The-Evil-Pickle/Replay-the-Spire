@@ -21,8 +21,8 @@ import com.megacrit.cardcrawl.core.*;
 public class CrystalOrb extends AbstractOrb
 {
     public static final String ORB_ID = "Crystal";
-    //private static final OrbStrings orbString;
-    public static final String[] DESC = {"#yPassive: Adjacent orbs have #b+", " #yFocus. NL #yEvoke: If you have less than #b", " orb slots, gain an orb slot. NL #yPassive effect is not affected by other Crystal orbs."};;
+    private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
+    public static final String[] DESC = orbString.DESCRIPTION;//{"#yPassive: Adjacent orbs have #b+", " #yFocus. NL #yEvoke: If you have less than #b", " orb slots, gain an orb slot. NL #yPassive effect is not affected by other Crystal orbs."};;
     private static final float PI_DIV_16 = 0.19634955f;
     private static final float ORB_WAVY_DIST = 0.05f;
     private static final float PI_4 = 12.566371f;
@@ -50,9 +50,9 @@ public class CrystalOrb extends AbstractOrb
         }
         this.hFlip1 = MathUtils.randomBoolean();
         this.hFlip2 = MathUtils.randomBoolean();
-        this.ID = "Crystal";
+        this.ID = ORB_ID;
         //this.img = ImageMaster.ORB_LIGHTNING;
-        this.name = "Crystal";//CrystalOrb.orbString.NAME;
+        this.name = CrystalOrb.orbString.NAME;
         this.baseEvokeAmount = 3;
         this.evokeAmount = this.baseEvokeAmount;
         this.basePassiveAmount = 2;
@@ -144,10 +144,4 @@ public class CrystalOrb extends AbstractOrb
 			FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.passiveAmount), this.cX + AbstractOrb.NUM_X_OFFSET, this.cY + this.bobEffect.y / 2.0f + AbstractOrb.NUM_Y_OFFSET, this.c, this.fontScale);
 		}
     }
-    /*
-    static {
-        //orbString = CardCrawlGame.languagePack.getOrbString("Crystal");
-        DESC = {"#yPassive: Adjacent orbs have #b+", " #yFocus. NL #yEvoke: If you have less than #b", " orb slots, gain an orb slot. NL #yPassive effect is not affected by other Crystal orbs."};//CrystalOrb.orbString.DESCRIPTION;
-    }
-	*/
 }

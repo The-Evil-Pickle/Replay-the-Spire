@@ -123,7 +123,10 @@
 			"[계속]",
 			"[짓밟는다] #r버섯들을 #r화나게 #r합니다.",
 			"[식사] #r피해를 #r",
-			" #r받습니다. #r버린 #r카드 #r더미에 #r확산되는 #r감염 #r카드를 #r1 #r장 #r섞어 #r넣습니다.",
+			" #r받습니다. #r",
+			"%: #r버린 #r카드 #r더미에 #r확산되는 #r감염 #r카드를 #r1 #r장 #r섞어 #r넣습니다.",
+			"[Run] #rAdd #r",
+			" #rrandom #rSpores #rto #ryour #rdiscard #rpile."
 		]
 	},
 	"FF_SensoryStone": {

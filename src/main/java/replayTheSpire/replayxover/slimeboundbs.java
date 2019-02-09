@@ -9,6 +9,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.spireboss.*;
+import com.megacrit.cardcrawl.mod.replay.powers.replayxover.StudyFableSpinnerPower;
 import com.megacrit.cardcrawl.mod.replay.powers.replayxover.StudyPondfishPower;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -23,6 +24,10 @@ public class slimeboundbs {
 		BaseMod.addCard(new SS_Fish_LivingLantern());
 		BaseMod.addCard(new SS_Fish_SixFeetUnder());
 		BaseMod.addCard(new SS_Fish_CaptainsOrders());
+		BaseMod.addCard(new SS_Forest_ManyPaths());
+		BaseMod.addCard(new SS_Forest_Treasure());
+		BaseMod.addCard(new SS_Forest_LostForever());
+		BaseMod.addCard(new SS_Forest_Fishers());
 	}
 	
 	
@@ -38,6 +43,7 @@ public class slimeboundbs {
 		@SpireInsertPatch(rloc = 8, localvars = { "powers" })
 	    public static void Insert(final StudyTheSpire __instance, final AbstractPlayer p, final AbstractMonster m, @ByRef final ArrayList<AbstractPower>[] powers) {
 	        powers[0].add(new StudyPondfishPower(p, p, __instance.magicNumber));
+	        powers[0].add(new StudyFableSpinnerPower(p, p, __instance.magicNumber));
 	    }
 	}
 }

@@ -15,6 +15,16 @@
     ],
     "NAME": "Crystal"
   },
+  "Glass": {
+    "DESCRIPTION": [
+      "#yPassive: No effect.",
+      " NL #yEvoke: If you have more than #b",
+	  " orb slots, consumes your leftmost orb slot and #yEvokes any non-glass orb occupying it.",
+      "#yPassive: At the end of your turn, gain #b",
+	  " #yReflection."
+    ],
+    "NAME": "Glass"
+  },
   "Hellfire": {
     "DESCRIPTION": [
       "#yPassive: At the start of turn, gain #b",

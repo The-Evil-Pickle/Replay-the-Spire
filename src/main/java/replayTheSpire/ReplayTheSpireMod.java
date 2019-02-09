@@ -535,6 +535,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static boolean foundmod_snecko = false;
     public static boolean foundmod_halation = false;
     public static boolean foundmod_jungle = false;
+    public static boolean foundmod_runesmith = false;
     
 	public static void initialize() {
     	logger.info("========================= ReplayTheSpireMod INIT =========================");
@@ -577,6 +578,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	    foundmod_halation = Loader.isModLoaded("Halation");
 	    foundmod_snecko = Loader.isModLoaded("SneckoMod");
 	    foundmod_jungle = Loader.isModLoaded("TheJungle");
+	    foundmod_runesmith = Loader.isModLoaded("therunesmith");
 		
 		logger.info("================================================================");
     }
@@ -1389,6 +1391,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Jungle mod not detected");
 		}
+    	try {
+    		initializeRunesmithMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Runesmith mod not detected");
+		}
     }
 
 	private static void initializeJungleMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
@@ -1561,6 +1568,18 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			logger.info("ReplayTheSpireMod | Initializing Cards for Snecko...");
 		}
 	}
+	private static void initializeRunesmithMod(LoadType type)throws ClassNotFoundException, NoClassDefFoundError {
+		Class<runesmith.patches.AbstractCardEnum> ccolor = runesmith.patches.AbstractCardEnum.class;
+		logger.info("ReplayTheSpireMod | Detected Runesmith!");
+		foundmod_runesmith = true;
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Runesmith...");
+			BaseMod.addRelicToCustomPool(new M_RuneBlood(), runesmith.patches.AbstractCardEnum.RUNESMITH_BEIGE);
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for Runesmith...");
+		}
+	}
 
 	private static void initializeFruityMod(LoadType type)throws ClassNotFoundException, NoClassDefFoundError {
 		Class<FruityMod> fruityMod = FruityMod.class;
@@ -1646,11 +1665,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         String rmStrings = Gdx.files.internal(jsonPath + "ReplayRunModStrings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(RunModStrings.class, rmStrings);
         // OrbStrings
-		/*
         String orbStrings = Gdx.files.internal(jsonPath + "ReplayOrbStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(OrbStrings.class, orbStrings);
-		*/
 	}
 	
 	@Override

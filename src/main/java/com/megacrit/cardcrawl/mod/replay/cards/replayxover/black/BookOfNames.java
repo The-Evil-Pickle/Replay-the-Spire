@@ -32,7 +32,7 @@ public class BookOfNames extends BlackCard
     private static final String UPGRADE_DESCRIPTION;
     
     public BookOfNames() {
-        super(ID, NAME, "cards/replay/replayBetaPowerDark.png", COST, DESCRIPTION, AbstractCard.CardType.POWER, AbstractCard.CardTarget.SELF);
+        super(ID, NAME, "cards/replay/studyspire.png", COST, DESCRIPTION, AbstractCard.CardType.POWER, AbstractCard.CardTarget.SELF);
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
     }

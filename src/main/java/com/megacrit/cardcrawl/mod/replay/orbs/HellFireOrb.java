@@ -27,8 +27,8 @@ import com.megacrit.cardcrawl.core.*;
 public class HellFireOrb extends AbstractOrb
 {
     public static final String ORB_ID = "Hellfire";
-    //private static final OrbStrings orbString;
-    public static final String[] DESC = {"#yPassive: At the start of turn, gain #b", " #yStrength until end of turn. NL #yEvoke: Apply #yVulnerable to a random enemy #b", " time(s)."};
+    private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
+    public static final String[] DESC = orbString.DESCRIPTION;//{"#yPassive: At the start of turn, gain #b", " #yStrength until end of turn. NL #yEvoke: Apply #yVulnerable to a random enemy #b", " time(s)."};
     private static final float ORB_BORDER_SCALE = 1.2f;
     private float vfxTimer;
     private static final float VFX_INTERVAL_TIME = 0.25f;
@@ -40,7 +40,7 @@ public class HellFireOrb extends AbstractOrb
         this.vfxTimer = 0.5f;
         this.ID = "Hellfire";
         this.img = HellFireOrb.ORB_HELLFIRE;
-        this.name = "Hellfire";//HellFireOrb.orbString.NAME;
+        this.name = orbString.NAME;
         this.baseEvokeAmount = 1;
         this.evokeAmount = this.baseEvokeAmount;
         this.basePassiveAmount = 2;

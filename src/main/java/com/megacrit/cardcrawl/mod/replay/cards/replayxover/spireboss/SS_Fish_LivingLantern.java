@@ -31,7 +31,7 @@ public class SS_Fish_LivingLantern extends CustomCard
     private static final int COST = 0;
     
     public SS_Fish_LivingLantern() {
-        super(ID, SS_Fish_LivingLantern.NAME, SlimeboundMod.getResourcePath("cards/youaremine.png"), COST, SS_Fish_LivingLantern.DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.SELF);
+        super(ID, SS_Fish_LivingLantern.NAME, "cards/replay/ss_fish_light.png", COST, SS_Fish_LivingLantern.DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.SELF);
         this.tags.add(slimeboundbs.STUDY_PONDFISH);
         this.tags.add(SlimeboundMod.STUDY);
         this.magicNumber = this.baseMagicNumber = 7;
