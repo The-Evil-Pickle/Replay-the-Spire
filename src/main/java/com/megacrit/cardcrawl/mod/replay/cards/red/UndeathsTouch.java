@@ -3,6 +3,8 @@ package com.megacrit.cardcrawl.mod.replay.cards.red;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.ExhaustiveField;
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -32,6 +34,7 @@ public class UndeathsTouch extends CustomCard
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION;
     private static final int COST = 0;
     
     public UndeathsTouch() {
@@ -60,6 +63,11 @@ public class UndeathsTouch extends CustomCard
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(1);
+            this.exhaust = false;
+            ExhaustiveVariable.setBaseValue(this, 2);
+            ExhaustiveField.ExhaustiveFields.isExhaustiveUpgraded.set(this, true);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
     
@@ -67,5 +75,6 @@ public class UndeathsTouch extends CustomCard
         cardStrings = CardCrawlGame.languagePack.getCardStrings(UndeathsTouch.ID);
         NAME = UndeathsTouch.cardStrings.NAME;
         DESCRIPTION = UndeathsTouch.cardStrings.DESCRIPTION;
+        UPGRADE_DESCRIPTION = UndeathsTouch.cardStrings.UPGRADE_DESCRIPTION;
     }
 }

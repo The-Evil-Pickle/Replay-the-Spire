@@ -183,7 +183,8 @@
   },
   "Replay:Undeath's Touch": {
     "NAME": "Undeath's Touch",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Apply 1 Decrepit. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Apply 1 Decrepit. NL Exhaust.",
+	"UPGRADE_DESCRIPTION": "Deal !D! damage !M! times. NL Apply 1 Decrepit. NL Exhaustive !stslib:ex!."
   },
   "Eclipse": {
     "NAME": "Eclipse",

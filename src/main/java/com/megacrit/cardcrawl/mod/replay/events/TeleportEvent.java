@@ -1,6 +1,7 @@
 package com.megacrit.cardcrawl.mod.replay.events;
 
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.map.MapEdge;
 import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.mod.replay.events.*;
 import com.megacrit.cardcrawl.mod.replay.rooms.*;
@@ -24,17 +25,43 @@ public class TeleportEvent extends AbstractImageEvent
     private static final String DIALOG_1;
     private CurScreen screen;
 	private MapRoomNode teleDest;
-    
+    public static boolean hasWarped = false;
+    private boolean warpedTo;
     public TeleportEvent(MapRoomNode teleDest) {
     	super(NAME, DIALOG_1, null);
     	this.screen = CurScreen.INTRO;
         this.imageEventText.setDialogOption(TeleportEvent.OPTIONS[0]);
         this.teleDest = teleDest;
+        this.warpedTo = hasWarped;
+        if (hasWarped) {
+        	hasWarped = false;
+        	AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+        	this.openMap();
+        	imageEventText.clear();
+        }
     }
     
     protected void buttonEffect(final int buttonPressed) {
+    	if (this.warpedTo) {
+    		return;
+    	}
+    	MapRoomNode room = AbstractDungeon.getCurrMapNode();
+    	MapEdge edge = new MapEdge(room.x, room.y, room.offsetX, room.offsetY, teleDest.x, teleDest.y, teleDest.offsetX, teleDest.offsetY, false);
+    	room.addEdge(edge);
+    	edge.markAsTaken();
     	AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
-    	AbstractDungeon.currMapNode = teleDest;
+    	AbstractDungeon.nextRoom = teleDest;
+        AbstractDungeon.pathX.add(teleDest.x);
+        AbstractDungeon.pathY.add(teleDest.y);
+        CardCrawlGame.metricData.path_taken.add(AbstractDungeon.nextRoom.getRoom().getMapSymbol());
+        hasWarped = true;
+        if (!AbstractDungeon.isDungeonBeaten) {
+            AbstractDungeon.nextRoomTransitionStart();
+            CardCrawlGame.music.fadeOutTempBGM();
+        }
+    	//AbstractDungeon.setCurrMapNode(teleDest);
+    	//AbstractDungeon.currMapNode = teleDest;
+    	AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
     	this.openMap();
     	imageEventText.clear();
         //if (ReplayTheSpireMod.foundmod_infinite) {

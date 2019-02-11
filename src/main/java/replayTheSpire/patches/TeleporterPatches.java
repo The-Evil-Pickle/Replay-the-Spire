@@ -4,6 +4,7 @@ import java.util.*;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.daily.mods.CertainFuture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractEvent;
@@ -34,12 +35,14 @@ public class TeleporterPatches {
 			if (ReplayTheSpireMod.SETTING_ROOMS_PORTAL.testChance(AbstractDungeon.mapRng) && !ModHelper.isModEnabled(CertainFuture.ID)) {
 				
 				int overRow = AbstractDungeon.mapRng.random(2, AbstractDungeon.map.size() - 1);
-				
 				ArrayList<MapRoomNode> teleporterRow = new ArrayList<MapRoomNode>();
-				for (MapRoomNode node : AbstractDungeon.map.get(overRow)) {
-					
+				int lowestnull = AbstractDungeon.map.size() + 1;
+				for (int i=0; i < AbstractDungeon.map.get(overRow).size(); i++) {
+					MapRoomNode node = AbstractDungeon.map.get(overRow).get(i);
 					if (node != null && node.room != null && node.hasEdges()) {
 						teleporterRow.add(node);
+					} else if (i < lowestnull) {
+						lowestnull = i;
 					}
 					
 				}
@@ -57,8 +60,11 @@ public class TeleporterPatches {
 				MapRoomNode underRoomLeft = underRow.get(0);
 				MapRoomNode underRoomRight = underRow.get(underRow.size() - 1);
 				
-	            teleporterLeft = new MapRoomNode(roomLeft.x - 1, roomLeft.y);
+	            teleporterLeft = new MapRoomNode(lowestnull, roomLeft.y);
+	            teleporterLeft.offsetX -= (lowestnull - (roomLeft.x - 1)) * Settings.scale * 128.0f;
+	            teleporterLeft.offsetY = roomLeft.offsetY;
 	            teleporterRight = new MapRoomNode(roomRight.x + 1, roomRight.y);
+	            teleporterRight.offsetY = roomRight.offsetY;
 	            teleporterLeft.room = new TeleportRoom(teleporterRight);
 	            teleporterRight.room = new TeleportRoom(teleporterLeft);
 				
@@ -71,10 +77,20 @@ public class TeleporterPatches {
 	            
 	            
 	            
-	            final ArrayList<MapRoomNode> visibleMapNodes = (ArrayList<MapRoomNode>)ReflectionHacks.getPrivate((Object)AbstractDungeon.dungeonMapScreen, (Class)DungeonMapScreen.class, "visibleMapNodes");
-	            
-	            AbstractDungeon.map.get(overRow).add(teleporterLeft);
-	            AbstractDungeon.map.get(overRow).add(teleporterRight);
+	            //final ArrayList<MapRoomNode> visibleMapNodes = (ArrayList<MapRoomNode>)ReflectionHacks.getPrivate((Object)AbstractDungeon.dungeonMapScreen, (Class)DungeonMapScreen.class, "visibleMapNodes");
+	            if (teleporterRight.x >= AbstractDungeon.map.get(overRow).size() || AbstractDungeon.map.get(overRow).get(teleporterRight.x) != null && AbstractDungeon.map.get(overRow).get(teleporterRight.x).hasEdges()) {
+	            	AbstractDungeon.map.get(overRow).add(teleporterRight);
+	            } else {
+	            	AbstractDungeon.map.get(overRow).set(teleporterRight.x, teleporterRight);
+	            }
+	            if (teleporterLeft.x <= 0 || teleporterLeft.x >= AbstractDungeon.map.get(overRow).size() || AbstractDungeon.map.get(overRow).get(teleporterLeft.x) != null && AbstractDungeon.map.get(overRow).get(teleporterLeft.x).hasEdges()) {
+	            	AbstractDungeon.map.get(overRow).add(teleporterLeft);
+	            } else {
+	            	AbstractDungeon.map.get(overRow).set(teleporterLeft.x, teleporterLeft);
+	            }
+
+	            ReplayTheSpireMod.logger.debug("Poral A : (" + teleporterLeft.x + ", " + teleporterLeft.y + ")");
+	            ReplayTheSpireMod.logger.debug("Poral B : (" + teleporterRight.x + ", " + teleporterRight.y + ")");
 	            
 				if (!AbstractDungeon.player.hasRelic("Painkiller Herb")) {
 					teleporterLeft.room.setMapImg(ReplayTheSpireMod.portalIcon, ReplayTheSpireMod.portalBG);

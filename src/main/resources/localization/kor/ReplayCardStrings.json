@@ -183,7 +183,8 @@
   },
   "Replay:Undeath's Touch": {
     "NAME": "언데드의 손길",
-    "DESCRIPTION": "피해를 !D! 만큼 !M! 번 줍니다. NL 노쇠 를 1 부여합니다. NL 소멸"
+    "DESCRIPTION": "피해를 !D! 만큼 !M! 번 줍니다. NL 노쇠 를 1 부여합니다. NL 소멸",
+	"UPGRADE_DESCRIPTION": "피해를 !D! 만큼 !M! 번 줍니다. NL 노쇠 를 1 부여합니다. NL 고갈 !stslib:ex!"
   },
   "Eclipse": {
     "NAME": "일식",

@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.actions.defect.*;
+import com.megacrit.cardcrawl.mod.replay.actions.unique.DiscoverPerminantAction;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.mod.replay.orbs.*;
@@ -44,7 +45,10 @@ public class FabricateWheel extends CustomCard
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-		
+    	AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, new PrayerWheel());
+    	if (this.upgraded) {
+    		AbstractDungeon.actionManager.addToBottom(new DiscoverPerminantAction(this.color, CardRarity.RARE));
+    	}
     }
     
     @Override

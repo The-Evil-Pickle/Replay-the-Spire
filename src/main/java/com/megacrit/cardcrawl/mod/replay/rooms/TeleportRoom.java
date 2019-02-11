@@ -18,7 +18,6 @@ public class TeleportRoom extends AbstractRoom
 {
     private EventRoom fakeRoom;
     private MapRoomNode teleDest;
-    
     public TeleportRoom() {
     	super();
 		ReplayTheSpireMod.portalIcon = ImageMaster.loadImage("images/ui/map/replay_portal.png");

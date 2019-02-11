@@ -30,6 +30,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.colorless.*;
 import com.megacrit.cardcrawl.mod.replay.cards.curses.*;
 import com.megacrit.cardcrawl.mod.replay.cards.green.*;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.ArmamentsMkIIB;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.DualPolarity;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.ResoundingBlow;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.curses.WhispersOfEvil;
@@ -49,6 +50,8 @@ import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.J_louse_1;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.J_louse_2;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.J_louse_3;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.R_Hoarder;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.hec.Conductor;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.hec.HellsEngine;
 import com.megacrit.cardcrawl.mod.replay.potions.*;
 import com.megacrit.cardcrawl.mod.replay.powers.RidThyselfOfStatusCardsPower;
 import com.megacrit.cardcrawl.mod.replay.powers.TheWorksPower;
@@ -792,7 +795,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static final ReplayIntSliderSetting SETTING_TAG_DOUBLE_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Double", "2 For 1 Tag Chance", 1, 0, 5);
 	public static final ReplayIntSliderSetting SETTING_TAG_SCRAMBLE_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Scramble", "Special Edition Stat Scramble Chance", 25, 0, 100, "%");
 	public static final ReplayIntSliderSetting SETTING_ROOMS_BONFIRE = new ReplayIntSliderSetting("Bonfire_Chance", "Bonfire Chance", 100, 0, 100, "%");
-	public static final ReplayIntSliderSetting SETTING_ROOMS_PORTAL = new ReplayIntSliderSetting("Portal_Chance", "Portal Chance", 33, 0, 100, "%");
+	public static final ReplayIntSliderSetting SETTING_ROOMS_PORTAL = new ReplayIntSliderSetting("Portal_Chance", "Portal Chance", 66, 0, 100, "%");
 	public static final ReplayBooleanSetting SETTING_REBOTTLE_V_ENABLE = new ReplayBooleanSetting("Rebottle_V_Enable", "Enabled for Vanilla's Bottles", true);
 	public static final ReplayBooleanSetting SETTING_REBOTTLE_V_FREE = new ReplayBooleanSetting("Rebottle_V_Free", "Free Action for Vanilla's Bottles", false);
 	public static final ReplayBooleanSetting SETTING_REBOTTLE_R_ENABLE = new ReplayBooleanSetting("Rebottle_R_Enable", "Enabled for Replay's Bottles", true);
@@ -966,6 +969,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BuildSettings(new BargainBundle());
 		BuildSettings(new Bandana());
 		BuildSettings(new EnergyBall());
+		BuildSettings(new GrabBag());
 		
 		loadSettingsData();
 		/*
@@ -1096,6 +1100,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new LightBulb(), RelicType.SHARED);
 		BaseMod.addRelic(new Mirror(), RelicType.SHARED);
 		BaseMod.addRelic(new Multitool(), RelicType.SHARED);
+		BaseMod.addRelic(new MysteryMachine(), RelicType.SHARED);
 		BaseMod.addRelic(new Ninjato(), RelicType.SHARED);
 		BaseMod.addRelic(new OnionRing(), RelicType.SHARED);
 		BaseMod.addRelic(new OnyxGauntlets(), RelicType.SHARED);
@@ -1231,6 +1236,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		//AddAndUnlockCard(new ReflectiveLens());
 		AddAndUnlockCard(new Crystallizer());
 		AddAndUnlockCard(new ReroutePower());
+		if (foundmod_hubris || foundmod_conspire || Loader.isModLoaded("jedi") || Loader.isModLoaded("StrawberrySpire")) {
+			AddAndUnlockCard(new FabricateWheel());
+		}
 		logger.info("adding colorless cards...");
 		//AddAndUnlockCard(new Improvise());
 		AddAndUnlockCard(new PoisonedStrike());
@@ -1304,6 +1312,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			logger.info("adding slimebound cards...");
 			slimeboundbs.addBossCards();
 		}
+		if (foundmod_runesmith) {
+			logger.info("adding Runesmith cards...");
+			AddAndUnlockCard(new ArmamentsMkIIB());
+		}
 		logger.info("done editting cards");
 	}
 	
@@ -1316,6 +1328,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         BaseMod.addMonster("Replay:Snechameleon", () -> new MonsterGroup(new AbstractMonster[] {new Snechameleon()}));
         BaseMod.addBoss("Exordium", "Fading Forest", "images/ui/map/boss/FableSpinner.png", "images/ui/map/bossOutline/FableSpinner.png");
         BaseMod.addEliteEncounter("TheCity", new MonsterInfo("Replay:Snechameleon", 0.9f));
+        BaseMod.addMonster(HellsEngine.ID, () -> new MonsterGroup(new AbstractMonster[] {new HellsEngine(), new Conductor()}));
 	}
 
     private enum LoadType {

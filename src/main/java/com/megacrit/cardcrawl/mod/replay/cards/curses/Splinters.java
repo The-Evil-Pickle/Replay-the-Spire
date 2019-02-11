@@ -29,7 +29,7 @@ public class Splinters extends CustomCard implements StartupCard
 	{
 		super(ID, NAME, "cards/replay/betaCurse.png", COST, DESCRIPTION, AbstractCard.CardType.CURSE, AbstractCard.CardColor.CURSE, AbstractCard.CardRarity.CURSE, AbstractCard.CardTarget.NONE);
 		ExhaustiveVariable.setBaseValue(this, 2);
-		this.baseMagicNumber = 3;
+		this.baseMagicNumber = 2;
 		this.magicNumber = this.baseMagicNumber;
 	}
 	

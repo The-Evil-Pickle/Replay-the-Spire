@@ -332,9 +332,9 @@ public class FadingForestBoss extends CustomMonster
                 this.imageEventText.updateBodyText(this.eDesc(0));
 				this.imageEventText.setDialogOption(this.eOp(1));
 				this.imageEventText.setDialogOption(this.eOp(2) + this.savedDamage + this.eOp(3) + this.mushroom_chance + this.eOp(4), new SpreadingInfection());
-				if (ReplayTheSpireMod.foundmod_jungle) {
-					this.imageEventText.setDialogOption(this.eOp(5) + this.headache_amt + this.eOp(6));
-				}
+				/*if (ReplayTheSpireMod.foundmod_jungle) {
+					this.imageEventText.setDialogOption(this.eOp(5) + (this.headache_amt * 2) + this.eOp(6));
+				}*/
 				AbstractDungeon.actionManager.addToBottom(new ForestEventAction());
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
 				break;
@@ -668,7 +668,7 @@ public class FadingForestBoss extends CustomMonster
 						break;
 					case 2:
 						if (ReplayTheSpireMod.foundmod_jungle) {
-							for (int i=0; i < this.headache_amt; i++) {
+							for (int i=0; i < this.headache_amt * 2; i++) {
 								AbstractCard c = null;
 						        switch (AbstractDungeon.miscRng.random(3)) {
 						            case 0: {

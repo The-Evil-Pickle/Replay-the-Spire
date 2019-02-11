@@ -1,19 +1,32 @@
 package com.megacrit.cardcrawl.mod.replay.monsters.replay.hec;
 
+import java.util.ArrayList;
+
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.common.SetMoveAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.mod.replay.actions.utility.MoveCreaturesAction;
+import com.megacrit.cardcrawl.mod.replay.actions.utility.MoveMonsterAction;
+import com.megacrit.cardcrawl.mod.replay.actions.utility.StartParalaxAction;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.CaptainAbe;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.PondfishBoss;
+import com.megacrit.cardcrawl.mod.replay.vfx.paralax.ParalaxController;
+import com.megacrit.cardcrawl.mod.replay.vfx.paralax.ParalaxObject;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster.EnemyType;
 import com.megacrit.cardcrawl.monsters.AbstractMonster.Intent;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import replayTheSpire.ReplayTheSpireMod;
+import replayTheSpire.patches.BeyondScenePatch;
 
 public class HellsEngine extends AbstractMonster {
 	public static final String ID = "Replay:Hell Engine";
@@ -52,7 +65,7 @@ public class HellsEngine extends AbstractMonster {
     private static final byte HEARTBEAT = 6;
     private static final byte STARTUP = 7;
     public HellsEngine() {
-        super(NAME, ID, 999, -1400.0f, 50.0f, 400.0f, 300.0f, "images/monsters/beyond/HEC/e_placeholder.png", 1200.0f, 50.0f);
+        super(NAME, ID, 999, -900.0f, 50.0f, 400.0f, 600.0f, "images/monsters/beyond/HEC/e_placeholder.png", 1200.0f, -50.0f);
 		ReplayTheSpireMod.logger.info("init Engine");
         this.isFirstTurn = true;
         this.type = EnemyType.BOSS;
@@ -84,6 +97,45 @@ public class HellsEngine extends AbstractMonster {
 		this.conductor = (Conductor)AbstractDungeon.getMonsters().getMonster(Conductor.ID);
 		int artifact = AbstractDungeon.ascensionLevel >= 19 ? ARTIFACT_INIT_A : ARTIFACT_INIT;
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, artifact), artifact));
+		
+		
+		ArrayList<Float> levelSpeeds = new ArrayList<Float>();
+		levelSpeeds.add(1900.0f);//0 - floor
+		levelSpeeds.add(200.0f);//1 - true bg
+		levelSpeeds.add(400.0f);//2 - bg addons
+		levelSpeeds.add(700.0f);//3 - shapes
+		levelSpeeds.add(1400.0f);//4 - thin pillars
+		levelSpeeds.add(1850.0f);//5 - a few shapes
+		
+		BeyondScenePatch.bg_controller = new ParalaxController(levelSpeeds, 4500.0f);
+
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/bg_2.png"), 1);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/bg_1.png"), 1);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/bg_3.png"), 1);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/wl_2.png"), 2);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/wl_4.png"), 2);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/wl_1.png"), 2);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/pl_1.png"), 4);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/pl_3.png"), 4);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/pl_2.png"), 4);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/pl_1.png", true), 4);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/sh_2.png", true), 4);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/sh_3.png"), 3);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/sh_1.png"), 3);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/wl_3.png"), 3);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/sh_3.png"), 3);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/sh_1.png"), 3);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/sh_4.png"), 5);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/sh_5.png"), 5);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/sh_2.png"), 5);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/fg_1.png"), 5);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/sh_4.png"), 5);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/sh_5.png"), 5);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("images/monsters/beyond/HEC/paralax/sh_1.png", true), 5);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, "images/monsters/beyond/HEC/paralax/fl_1.png"), 0);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, "images/monsters/beyond/HEC/paralax/fl_1.png"), 0);
+		BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, "images/monsters/beyond/HEC/paralax/fl_1.png"), 0);
+		BeyondScenePatch.bg_controller.DistributeObjects();
 	}
     
 	private void setMoveNow(byte nextTurn) {
@@ -104,6 +156,21 @@ public class HellsEngine extends AbstractMonster {
     public void takeTurn() {
         switch (this.nextMove) {
 			case STARTUP: {
+				if (this.isFirstTurn) {
+					ArrayList<AbstractCreature> mylist = new ArrayList<AbstractCreature>();
+					mylist.add(this);
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -1800, 0, 0.8f));
+					ArrayList<AbstractCreature> mylist2 = new ArrayList<AbstractCreature>();
+					mylist2.add(AbstractDungeon.player);
+					AbstractDungeon.actionManager.addToBottom(new StartParalaxAction(BeyondScenePatch.bg_controller));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, 0, 0.05f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, 80, 0.05f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, 50, 0.05f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, -10, 0.05f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, -20, 0.05f));
+					this.hb_x += 325.0f;
+					this.hb_w += 50.0f;
+				}
 				this.isFirstTurn = false;
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
 			}
@@ -133,5 +200,13 @@ public class HellsEngine extends AbstractMonster {
         if (this.currentHealth > this.conductor.currentHealth) {
     		this.conductor.currentHealth = this.currentHealth;
     	}
+    }
+    
+    @Override
+    public void render(final SpriteBatch sb) {
+        super.render(sb);
+		if (!this.isDying && !this.isEscaping && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.player.isDead && !this.isFirstTurn) {
+			AbstractDungeon.player.render(sb);
+		}
     }
 }

@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Random;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -13,26 +14,37 @@ import com.megacrit.cardcrawl.rewards.chests.BossChest;
 import com.megacrit.cardcrawl.rooms.TreasureRoomBoss;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
+import replayTheSpire.ReplayAbstractRelic;
 import replayTheSpire.ReplayTheSpireMod;
+import replayTheSpire.panelUI.ReplayBooleanSetting;
+import replayTheSpire.panelUI.ReplayRelicSetting;
 
-public class GrabBag extends AbstractRelic
+public class GrabBag extends ReplayAbstractRelic
 {
-    public static final String ID = "Replay_Grab Bag";
-    
+    public static final String ID = "Replay:Grab Bag";
+
     boolean hasRelicOne;
     boolean hasRelicTwo;
+    boolean hasRelicThree;
+    boolean hasRelicFour;
     public static ArrayList<String> energyRelics = new ArrayList<String>();
     public static ArrayList<String> nonEnergyRelics = new ArrayList<String>();
-    
-    
+    public static ReplayBooleanSetting DOUBLE_RELICS = new ReplayBooleanSetting("grabBag_double", "Double relics, lose 1 energy", true);
+    public ArrayList<ReplayRelicSetting> BuildRelicSettings() {
+    	ArrayList<ReplayRelicSetting> settings = new ArrayList<ReplayRelicSetting>();
+    	settings.add(DOUBLE_RELICS);
+		return settings;
+	}
     public GrabBag() {
         super(ID, "grabBag.png", AbstractRelic.RelicTier.BOSS, AbstractRelic.LandingSound.FLAT);
         this.hasRelicOne = true;
         this.hasRelicTwo = true;
+        this.hasRelicThree = true;
+        this.hasRelicFour = true;
     }
     
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        return this.DESCRIPTIONS[DOUBLE_RELICS.value ? 2 : 0];
     }
     
     public static String getRandomKey(ArrayList<String> whiteList) {
@@ -55,7 +67,7 @@ public class GrabBag extends AbstractRelic
     
     public void update() {
     	super.update();
-    	if (!this.hasRelicTwo && AbstractDungeon.isScreenUp == false && AbstractDungeon.player.relics.get(AbstractDungeon.player.relics.size()-1).isDone) {
+    	if ((DOUBLE_RELICS.value ? !this.hasRelicFour : !this.hasRelicTwo) && AbstractDungeon.isScreenUp == false && AbstractDungeon.player.relics.get(AbstractDungeon.player.relics.size()-1).isDone) {
     		if (!this.hasRelicOne) {
     			ReplayTheSpireMod.noSkipRewardsRoom = true;
     			if (AbstractDungeon.getCurrRoom() instanceof TreasureRoomBoss) {
@@ -67,6 +79,18 @@ public class GrabBag extends AbstractRelic
     	            }
     	            AbstractDungeon.bossRelicScreen.open(chest.relics);
     	            this.hasRelicOne = true;
+    	        }
+    		} else if (!this.hasRelicThree) {
+    			ReplayTheSpireMod.noSkipRewardsRoom = true;
+    			if (AbstractDungeon.getCurrRoom() instanceof TreasureRoomBoss) {
+    	        	TreasureRoomBoss cRoom = (TreasureRoomBoss)AbstractDungeon.getCurrRoom();
+    	        	BossChest chest = (BossChest) cRoom.chest;
+    	        	chest.relics.clear();
+    	            for (int i = 0; i < 3; ++i) {
+    	            	chest.relics.add(RelicLibrary.getRelic(GrabBag.getRandomKey(GrabBag.energyRelics)));
+    	            }
+    	            AbstractDungeon.bossRelicScreen.open(chest.relics);
+    	            this.hasRelicThree = true;
     	        }
     		} else if (!this.hasRelicTwo) {
     			ReplayTheSpireMod.noSkipRewardsRoom = true;
@@ -80,13 +104,38 @@ public class GrabBag extends AbstractRelic
     	            AbstractDungeon.bossRelicScreen.open(chest.relics);
     	            this.hasRelicTwo = true;
     	        }
+    		} else if (!this.hasRelicFour) {
+    			ReplayTheSpireMod.noSkipRewardsRoom = true;
+    			if (AbstractDungeon.getCurrRoom() instanceof TreasureRoomBoss) {
+    	        	TreasureRoomBoss cRoom = (TreasureRoomBoss)AbstractDungeon.getCurrRoom();
+    	        	BossChest chest = (BossChest) cRoom.chest;
+    	        	chest.relics.clear();
+    	            for (int i = 0; i < 3; ++i) {
+    	            	chest.relics.add(RelicLibrary.getRelic(GrabBag.getRandomKey(GrabBag.nonEnergyRelics)));
+    	            }
+    	            AbstractDungeon.bossRelicScreen.open(chest.relics);
+    	            this.hasRelicFour = true;
+    	        }
     		}
     	}
     }
-    
+    @Override
+    public void onUnequip() {
+        if (DOUBLE_RELICS.value) {
+	    	final EnergyManager energy = AbstractDungeon.player.energy;
+	        ++energy.energyMaster;
+        }
+    }
+    @Override
     public void onEquip() {
         this.hasRelicOne = false;
         this.hasRelicTwo = false;
+        if (DOUBLE_RELICS.value) {
+        	this.hasRelicThree = false;
+            this.hasRelicFour = false;
+            final EnergyManager energy = AbstractDungeon.player.energy;
+            --energy.energyMaster;
+        }
         GrabBag.energyRelics.clear();
         GrabBag.nonEnergyRelics.clear();
         String ckd = ((new CursedKey()).DESCRIPTIONS[1]) + ((new CursedKey()).DESCRIPTIONS[0]);
@@ -124,5 +173,10 @@ public class GrabBag extends AbstractRelic
     
     public AbstractRelic makeCopy() {
         return new GrabBag();
+    }
+    
+    @Override
+    public int getPrice() {
+    	return 0;
     }
 }

@@ -265,11 +265,13 @@
 	"Gain [E] at the start of each turn. NL All #ynon-attack #ydamage you deal is #rreduced to #bhalf, rounding #rdown. NL All #ynon-attack #ydamage you recieve is #rincreased by #bhalf, rounding #rup. NL All #yin-combat #yhealing you recieve is #rreduced to #bhalf, rounding #gup."
 	]
   },
-  "Replay_Grab Bag": {
+  "Replay:Grab Bag": {
 	"NAME": "Grab Bag",
 	"FLAVOR": "Trinkets and treats. What will you get?",
     "DESCRIPTIONS": [
-	"Choose #b1 #yEnergy Boss Relic and #b1 #yNon-Energy Boss Relic to obtain. NL Both choices will be out of #b3 random relics, and cannot be skipped."
+	"Choose #b1 #yEnergy Boss Relic and #b1 #yNon-Energy Boss Relic to obtain. NL Both choices will be out of #b3 random relics, and cannot be skipped.",
+	"Double relics, lose 1 energy.",
+	"Lose [E] at the start of each turn. NL On pick up, choose #b2 #yEnergy Boss Relics and #b2 #yNon-Energy Boss Relics to obtain. NL All choices will be out of #b3 random relics, and cannot be skipped."
 	]
   },
   "Sizzling Blood": {
@@ -799,14 +801,14 @@
     "DESCRIPTIONS": [
 		"When you die in combat, revive with #b",
 		" HP. NL All active #yPowers are lost on revival. NL Half your cards are #yExhausted at random on revival. NL Can revive you up to #b",
-		" times be combat."
+		" times per combat."
 	]
   },
   "Replay:Mystery Machine": {
     "NAME": "Mystery Machine",
 	"FLAVOR": "?",
     "DESCRIPTIONS": [
-		"Gains #b1 charge each time you enter a #y? room, loses #b1 charge each time you enter another type of room. NL Start combat with #b1 random #yStrength or #yDexterity for each charge this has."
+		"Gains #b1 charge each time you enter a #y? room. NL Loses #b1 charge each time you go between two #rnon-? rooms. NL Start combat with #b1 random #yStrength or #yDexterity for each charge this has."
 	]
   },
   "Ring of Fury": {
