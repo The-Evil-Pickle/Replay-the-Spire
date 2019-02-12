@@ -54,7 +54,6 @@ public class NeowRewardPatches {
 	public static class BannedStartingRelics {
 		
 		static ArrayList<String> startingRelicBlacklist = new ArrayList<String>();//you can't get these relics from neow
-		static ArrayList<String> outOfPlaceRelicBlacklist = new ArrayList<String>();//you can't get these boss/shop relics outside the correct rooms for any reason
 		static {
 			startingRelicBlacklist.add(Ectoplasm.ID);
 			startingRelicBlacklist.add(BottledFlame.ID);
@@ -62,8 +61,6 @@ public class NeowRewardPatches {
 			startingRelicBlacklist.add(BottledTornado.ID);
 			startingRelicBlacklist.add(BottledSteam.ID);
 			startingRelicBlacklist.add(BottledFlurry.ID);
-			outOfPlaceRelicBlacklist.add(GrabBag.ID);//uses the boss chest, so doesn't work outside boss treasure rooms
-			outOfPlaceRelicBlacklist.add(BargainBundle.ID);//directly impacts shop purchased from, so won't work if obtained outside a shop
 		}
 		
 		
@@ -74,25 +71,8 @@ public class NeowRewardPatches {
 			AbstractRoom room = AbstractDungeon.getCurrRoom();
 			if (room != null) {
 				if (room instanceof NeowRoom) {
-					if (startingRelicBlacklist.contains(__Result) || outOfPlaceRelicBlacklist.contains(__Result)) {
+					if (startingRelicBlacklist.contains(__Result)) {
 						return AbstractDungeon.returnRandomRelicKey(tier);
-					}
-				} else {
-					switch (tier) {
-						case SHOP:
-							if (!(room instanceof ShopRoom)) {
-								if (outOfPlaceRelicBlacklist.contains(__Result)) {
-									return AbstractDungeon.returnRandomRelicKey(tier);
-								}
-							}
-							break;
-						case BOSS:
-							if (!(room instanceof TreasureRoomBoss)) {
-								if (outOfPlaceRelicBlacklist.contains(__Result)) {
-									return AbstractDungeon.returnRandomRelicKey(tier);
-								}
-							}
-							break;
 					}
 				}
 			}
@@ -138,8 +118,8 @@ public class NeowRewardPatches {
 		possibleEvents.add(GremlinMatchGame.ID);
 		possibleEvents.add(SensoryStone.ID);
 		if (Loader.isModLoaded("infinitespire")) {
-			possibleEvents.add("Empty Rest Site");
-			possibleEvents.add("Prism of Light");
+			possibleEvents.add("infinitespire:Empty Rest Site");
+			possibleEvents.add("infinitespire:Prism of Light");
 		}
 		if (Loader.isModLoaded("hubris")) {
 			possibleEvents.add("hubris:UPDATEBODYTEXT");

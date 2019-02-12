@@ -58,6 +58,12 @@ public class MoveCreaturesAction extends AbstractGameAction
 			//target.hb_y += ty;
 			target.drawX += tx;
 			target.drawY += ty;
+			if (target instanceof AbstractPlayer) {
+				AbstractPlayer p = (AbstractPlayer)target;
+				for (int i = 0; i < p.orbs.size(); ++i) {
+		            p.orbs.get(i).setSlot(i, p.maxOrbs);
+		        }
+			}
 			//target.hb.move(target.hb.cX + tx, target.hb.cY + ty);
 			//target.healthHb.move(target.healthHb.cX + tx, target.healthHb.cY + ty);
 			//target.intentHb.move(target.intentHb.cX + tx, target.intentHb.cY + ty);

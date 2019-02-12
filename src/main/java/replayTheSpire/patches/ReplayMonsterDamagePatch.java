@@ -4,6 +4,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
+import com.megacrit.cardcrawl.mod.replay.powers.ForgedInHellfirePower;
+import com.megacrit.cardcrawl.mod.replay.powers.OffTheRailsPower;
 import com.megacrit.cardcrawl.mod.replay.relics.DimensionalGlitch;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
@@ -25,15 +27,23 @@ public class ReplayMonsterDamagePatch {
 	public static void Prefix(AbstractMonster m, DamageInfo info) {
 		starthp = m.currentHealth;
 		altered = false;
-		if (AbstractDungeon.player != null && (info.owner == null || info.owner == AbstractDungeon.player) && info.type != DamageInfo.DamageType.NORMAL && !m.hasPower(IntangiblePower.POWER_ID) && !m.hasPower(IntangiblePlayerPower.POWER_ID)) {
+		if (AbstractDungeon.player != null && (info.owner == null || info.owner == AbstractDungeon.player) && !m.hasPower(IntangiblePower.POWER_ID) && !m.hasPower(IntangiblePlayerPower.POWER_ID)) {
 			ReplayMonsterDamagePatch.initialDamage = info.output;
-			if (AbstractDungeon.player.hasPower("Specialist")) {
-				altered = true;
-				info.output += AbstractDungeon.player.getPower("Specialist").amount;
+			if (info.type != DamageInfo.DamageType.NORMAL) {
+				if (AbstractDungeon.player.hasPower("Specialist")) {
+					altered = true;
+					info.output += AbstractDungeon.player.getPower("Specialist").amount;
+				}
+				if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(DimensionalGlitch.ID)) {
+					altered=true;
+					info.output = Math.max(0, MathUtils.floor((float)info.output / 2.0f));
+				}
+				if (m.hasPower(ForgedInHellfirePower.POWER_ID)) {
+					altered = ((ForgedInHellfirePower)m.getPower(ForgedInHellfirePower.POWER_ID)).patchAttacked(info) || altered;
+				}
 			}
-			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(DimensionalGlitch.ID)) {
-				altered=true;
-				info.output = Math.max(0, MathUtils.floor((float)info.output / 2.0f));
+			if (m.hasPower(OffTheRailsPower.POWER_ID)) {
+				altered = ((OffTheRailsPower)m.getPower(OffTheRailsPower.POWER_ID)).patchAttacked(info) || altered;
 			}
 		}
 	}

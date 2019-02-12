@@ -26,15 +26,21 @@
     "DESCRIPTIONS": [
 	"All non-attack damage recieved is reduced",
 	" to #b",
-	" by #b"
+	" by #b",
+	" if below #b",
+	", or reduced",
+	" if above #b"
     ]
   },
   "Replay:Off the Rails": {
     "NAME": "Off the Rails",
     "DESCRIPTIONS": [
-	"Damage recieved that also hits ALL other enemies is reduced",
+	"Damage recieved that hits ALL enemies is reduced",
 	" to #b",
-	" by #b"
+	" by #b",
+	" if below #b",
+	", or reduced",
+	" if above #b"
     ]
   },
   "Reflection": {

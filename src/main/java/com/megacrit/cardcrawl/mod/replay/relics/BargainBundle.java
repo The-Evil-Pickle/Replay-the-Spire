@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.AbstractRelic.LandingSound;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
+import com.megacrit.cardcrawl.rooms.TreasureRoomBoss;
 import com.megacrit.cardcrawl.shop.*;
 
 import basemod.ReflectionHacks;
@@ -73,7 +75,10 @@ public class BargainBundle extends ReplayAbstractRelic
     public AbstractRelic makeCopy() {
         return new BargainBundle();
     }
-    
+    @Override
+    public boolean canSpawn() {
+    	return (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+    }
     @Override
     public int getPrice() {
     	return SETTING_PRICE.value;

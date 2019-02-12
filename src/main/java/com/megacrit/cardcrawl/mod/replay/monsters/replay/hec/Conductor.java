@@ -2,6 +2,7 @@ package com.megacrit.cardcrawl.mod.replay.monsters.replay.hec;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.common.SetMoveAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -9,11 +10,16 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.PondfishBoss;
+import com.megacrit.cardcrawl.mod.replay.powers.EnemyLifeBindPower;
+import com.megacrit.cardcrawl.mod.replay.powers.OffTheRailsPower;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster.EnemyType;
 import com.megacrit.cardcrawl.monsters.AbstractMonster.Intent;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
+import com.megacrit.cardcrawl.powers.SurroundedPower;
+import com.megacrit.cardcrawl.vfx.combat.HealEffect;
+import com.megacrit.cardcrawl.vfx.combat.StrikeEffect;
 
 import replayTheSpire.ReplayTheSpireMod;
 
@@ -33,7 +39,6 @@ public class Conductor extends AbstractMonster {
     public static final int ARMOR_INIT_A = 20;
     
     
-	private boolean isFirstTurn;
     
     private int startDmg;
     private int coalsDmg;
@@ -55,7 +60,6 @@ public class Conductor extends AbstractMonster {
     public Conductor() {
         super(NAME, ID, 999, 25.0f, 25.0f, 180.0f, 250.0f, "images/monsters/TheCity/abe.png", -75.0f, -75.0f);
 		ReplayTheSpireMod.logger.info("init Conductor");
-        this.isFirstTurn = true;
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(HellsEngine.HP_A);
@@ -81,6 +85,8 @@ public class Conductor extends AbstractMonster {
     public void usePreBattleAction() {
 		this.engine = (HellsEngine)AbstractDungeon.getMonsters().getMonster(HellsEngine.ID);
 		int armor = AbstractDungeon.ascensionLevel >= 19 ? ARMOR_INIT_A : ARMOR_INIT;
+		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this, this, new EnemyLifeBindPower(this)));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new OffTheRailsPower(this, -1, 1), 1));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PlatedArmorPower(this, armor), armor));
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, armor));
 	}
@@ -98,12 +104,19 @@ public class Conductor extends AbstractMonster {
 		}
 	}
 	
-
     @Override
     public void takeTurn() {
         switch (this.nextMove) {
 			case STARTUP: {
-				this.isFirstTurn = false;
+				int partif = 0;
+				if (AbstractDungeon.player.hasPower(ArtifactPower.POWER_ID)) {
+					partif = AbstractDungeon.player.getPower(ArtifactPower.POWER_ID).amount;
+					AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, this, ArtifactPower.POWER_ID));
+				}
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new SurroundedPower(AbstractDungeon.player)));
+				if (partif > 0) {
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new ArtifactPower(AbstractDungeon.player, partif), partif));
+				}
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
 			}
         }
@@ -112,18 +125,19 @@ public class Conductor extends AbstractMonster {
 
     @Override
     protected void getMove(final int num) {
-		if (this.isFirstTurn) {
+		if (this.engine.isFirstTurn || !AbstractDungeon.player.hasPower(SurroundedPower.POWER_ID)) {
 			this.setMoveNow(STARTUP);
 			return;
 		}
     }
     
-
     @Override
     public void damage(final DamageInfo info) {
     	super.damage(info);
     	if (this.currentHealth < this.engine.currentHealth) {
+    		AbstractDungeon.effectList.add(new StrikeEffect(this.engine, this.engine.hb.cX, this.engine.hb.cY, this.engine.currentHealth - this.currentHealth));
     		this.engine.currentHealth = this.currentHealth;
+    		this.engine.healthBarUpdatedEvent();
     	}
     }
 
@@ -131,7 +145,17 @@ public class Conductor extends AbstractMonster {
     public void heal(int healAmount) {
         super.heal(healAmount);
         if (this.currentHealth > this.engine.currentHealth) {
+        	AbstractDungeon.effectList.add(new HealEffect(this.engine.hb.cX - this.engine.animX, this.engine.hb.cY, this.currentHealth - this.engine.currentHealth));
     		this.engine.currentHealth = this.currentHealth;
+    		this.engine.healthBarUpdatedEvent();
     	}
+    }
+    
+    @Override
+    public void die() {
+        super.die();
+        if (!this.engine.isDeadOrEscaped() && !this.engine.isDying) {
+        	this.engine.die();
+        }
     }
 }

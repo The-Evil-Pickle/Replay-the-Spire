@@ -52,7 +52,12 @@ public class CampfireExploreEffect extends AbstractGameEffect
 
     public static String generateEventName() {
     	if (AbstractDungeon.getCurrRoom() instanceof NeowRoom) {
-    		return NeowRewardPatches.possibleEvents.get(NeowEvent.rng.random(NeowRewardPatches.possibleEvents.size() - 1));
+    		String evnt = "hriepglb8y3hp89bwhnyohgphoue";
+    		while (!AbstractDungeon.eventList.contains(evnt)) {
+    			evnt = NeowRewardPatches.possibleEvents.get(NeowEvent.rng.random(NeowRewardPatches.possibleEvents.size() - 1));
+    		}
+    		AbstractDungeon.eventList.remove(evnt);
+    		return evnt;
     	}
         if (AbstractDungeon.eventRng.random(1.0f) < 0.25f) {
             if (!AbstractDungeon.shrineList.isEmpty() || !AbstractDungeon.specialOneTimeEventList.isEmpty()) {

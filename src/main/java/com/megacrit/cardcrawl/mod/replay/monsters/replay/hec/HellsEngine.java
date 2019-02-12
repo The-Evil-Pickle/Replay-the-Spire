@@ -2,21 +2,32 @@ package com.megacrit.cardcrawl.mod.replay.monsters.replay.hec;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.common.SetMoveAction;
+import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.ScreenShake.ShakeDur;
+import com.megacrit.cardcrawl.helpers.ScreenShake.ShakeIntensity;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.MoveCreaturesAction;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.MoveMonsterAction;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.StartParalaxAction;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.CaptainAbe;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.PondfishBoss;
+import com.megacrit.cardcrawl.mod.replay.powers.EnemyLifeBindPower;
+import com.megacrit.cardcrawl.mod.replay.powers.ForgedInHellfirePower;
 import com.megacrit.cardcrawl.mod.replay.vfx.paralax.ParalaxController;
 import com.megacrit.cardcrawl.mod.replay.vfx.paralax.ParalaxObject;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -24,7 +35,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster.EnemyType;
 import com.megacrit.cardcrawl.monsters.AbstractMonster.Intent;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.combat.HealEffect;
+import com.megacrit.cardcrawl.vfx.combat.StrikeEffect;
 
+import basemod.ReflectionHacks;
 import replayTheSpire.ReplayTheSpireMod;
 import replayTheSpire.patches.BeyondScenePatch;
 
@@ -34,8 +48,14 @@ public class HellsEngine extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
+    private static final AbstractCard STATUS_CARD_1;
+    private static final AbstractCard STATUS_CARD_2; 
+    static {
+    	STATUS_CARD_1 = new Burn();
+    	(STATUS_CARD_2 = new Burn()).upgrade();
+    }
     private Conductor conductor;
-
+    private AbstractCard plannedCard;
     public static final int HP = 450;
     public static final int HP_A = 500;
     public static final int START_DMG = 20;
@@ -45,7 +65,7 @@ public class HellsEngine extends AbstractMonster {
     public static final int ARTIFACT_INIT = 20;
     public static final int ARTIFACT_INIT_A = 20;
     
-	private boolean isFirstTurn;
+	public boolean isFirstTurn;
     
     private int startDmg;
     private int coalsDmg;
@@ -68,6 +88,7 @@ public class HellsEngine extends AbstractMonster {
         super(NAME, ID, 999, -900.0f, 50.0f, 400.0f, 600.0f, "images/monsters/beyond/HEC/e_placeholder.png", 1200.0f, -50.0f);
 		ReplayTheSpireMod.logger.info("init Engine");
         this.isFirstTurn = true;
+        this.plannedCard = null;
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(HP_A);
@@ -95,6 +116,10 @@ public class HellsEngine extends AbstractMonster {
 		AbstractDungeon.scene.fadeOutAmbiance();
 		AbstractDungeon.getCurrRoom().playBgmInstantly("replay/No_Train_No_Game.mp3");
 		this.conductor = (Conductor)AbstractDungeon.getMonsters().getMonster(Conductor.ID);
+		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this, this, new EnemyLifeBindPower(this)));
+		int forgeamtby = 2;
+		int forgeamtto = 5;
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ForgedInHellfirePower(this, forgeamtby, forgeamtto), -forgeamtby));
 		int artifact = AbstractDungeon.ascensionLevel >= 19 ? ARTIFACT_INIT_A : ARTIFACT_INIT;
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, artifact), artifact));
 		
@@ -139,6 +164,11 @@ public class HellsEngine extends AbstractMonster {
 	}
     
 	private void setMoveNow(byte nextTurn) {
+		this.plannedCard = null;
+		STATUS_CARD_1.current_x = this.intentHb.cX - 64.0f;
+		STATUS_CARD_1.current_y =  this.intentHb.cY - 0.0f;
+		STATUS_CARD_2.current_x =  STATUS_CARD_1.current_x;
+		STATUS_CARD_2.current_y =  STATUS_CARD_1.current_y;
 		switch (nextTurn) {
             case STARTUP: {
 				this.setMove(nextTurn, Intent.ATTACK, this.damage.get(0).base);
@@ -151,7 +181,6 @@ public class HellsEngine extends AbstractMonster {
 		}
 	}
 	
-
     @Override
     public void takeTurn() {
         switch (this.nextMove) {
@@ -159,13 +188,19 @@ public class HellsEngine extends AbstractMonster {
 				if (this.isFirstTurn) {
 					ArrayList<AbstractCreature> mylist = new ArrayList<AbstractCreature>();
 					mylist.add(this);
-					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -1800, 0, 0.8f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -1575, 0, 0.7f));
+					AbstractDungeon.actionManager.addToBottom(new ShakeScreenAction(0.0f, ShakeDur.MED, ShakeIntensity.HIGH));
+					AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.NONE, true));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.1f));
 					ArrayList<AbstractCreature> mylist2 = new ArrayList<AbstractCreature>();
+					ArrayList<AbstractCreature> mylist3 = new ArrayList<AbstractCreature>();
 					mylist2.add(AbstractDungeon.player);
+					mylist3.add(AbstractDungeon.player);
+					mylist3.add(this.conductor);
 					AbstractDungeon.actionManager.addToBottom(new StartParalaxAction(BeyondScenePatch.bg_controller));
 					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, 0, 0.05f));
-					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, 80, 0.05f));
-					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, 50, 0.05f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist3, 100, 80, 0.05f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist3, 100, 50, 0.05f));
 					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, -10, 0.05f));
 					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, -20, 0.05f));
 					this.hb_x += 325.0f;
@@ -186,20 +221,41 @@ public class HellsEngine extends AbstractMonster {
 		}
     }
     
+    //////////////////render sorta stuff//////////////
     @Override
-    public void damage(final DamageInfo info) {
-    	super.damage(info);
-    	if (this.currentHealth < this.conductor.currentHealth) {
-    		this.conductor.currentHealth = this.currentHealth;
-    	}
+    public void applyPowers() {
+        boolean backAttack = AbstractDungeon.player.hasPower("Surrounded") && ((AbstractDungeon.player.flipHorizontal && AbstractDungeon.player.drawX < this.drawX) || (!AbstractDungeon.player.flipHorizontal && AbstractDungeon.player.drawX > this.drawX));
+        if (backAttack) {
+        	if (this.intent == Intent.DEBUFF) {
+        		this.intent = Intent.STRONG_DEBUFF;
+        	}
+        } else {
+        	if (this.intent == Intent.STRONG_DEBUFF) {
+        		this.intent = Intent.DEBUFF;
+        	}
+        }
+        super.applyPowers();
+        if (this.plannedCard != null) {
+        	this.plannedCard = backAttack ? STATUS_CARD_2 : STATUS_CARD_1;
+        }
     }
-
     @Override
-    public void heal(int healAmount) {
-        super.heal(healAmount);
-        if (this.currentHealth > this.conductor.currentHealth) {
-    		this.conductor.currentHealth = this.currentHealth;
+    public Texture getAttackIntent() {
+    	int dmg = (int)ReflectionHacks.getPrivate(this, AbstractMonster.class, "intentDmg");
+    	if ((boolean)ReflectionHacks.getPrivate(this, AbstractMonster.class, "isMultiDmg")) {
+    		dmg *= (int)ReflectionHacks.getPrivate(this, AbstractMonster.class, "intentMultiAmt");
     	}
+    	if (dmg > 35 || this.isFirstTurn && dmg >= 20) {
+    		return ImageMaster.loadImage("images/ui/replay/intent/attack_intent_train.png");
+    	}
+    	return super.getAttackIntent();
+    }
+    @Override
+    public Texture getAttackIntent(int dmg) {
+    	if (dmg > 35 || this.isFirstTurn && dmg >= 20) {
+    		return ImageMaster.loadImage("images/ui/replay/intent/attack_intent_train.png");
+    	}
+    	return super.getAttackIntent(dmg);
     }
     
     @Override
@@ -207,6 +263,39 @@ public class HellsEngine extends AbstractMonster {
         super.render(sb);
 		if (!this.isDying && !this.isEscaping && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.player.isDead && !this.isFirstTurn) {
 			AbstractDungeon.player.render(sb);
+			if (this.plannedCard != null && !AbstractDungeon.player.hasRelic("Runic Dome") && !Settings.hideCombatElements) {
+				this.plannedCard.render(sb);
+			}
 		}
+    }
+    
+    
+    //////////////////[[linked hp stuff]]/////////////
+    @Override
+    public void damage(final DamageInfo info) {
+    	super.damage(info);
+    	if (this.currentHealth < this.conductor.currentHealth) {
+    		AbstractDungeon.effectList.add(new StrikeEffect(this.conductor, this.conductor.hb.cX, this.conductor.hb.cY, this.conductor.currentHealth - this.currentHealth));
+    		this.conductor.currentHealth = this.currentHealth;
+    		this.conductor.healthBarUpdatedEvent();
+    	}
+    }
+
+    @Override
+    public void heal(int healAmount) {
+        super.heal(healAmount);
+        if (this.currentHealth > this.conductor.currentHealth) {
+        	AbstractDungeon.effectList.add(new HealEffect(this.conductor.hb.cX - this.conductor.animX, this.conductor.hb.cY, this.currentHealth - this.conductor.currentHealth));
+    		this.conductor.currentHealth = this.currentHealth;
+    		this.conductor.healthBarUpdatedEvent();
+    	}
+    }
+    
+    @Override
+    public void die() {
+        super.die();
+        if (!this.conductor.isDeadOrEscaped() && !this.conductor.isDying) {
+        	this.conductor.die();
+        }
     }
 }

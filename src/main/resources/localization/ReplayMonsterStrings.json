@@ -106,6 +106,16 @@
 		""
     ]
   },
+  "Replay:GhostMerchant": {
+    "MOVES": [
+		""
+    ],
+    "NAME": "Ghost Merchant",
+    "DIALOG": [
+		"~PAYBACK...~",
+		"@...@"
+    ]
+  },
   "FF_ComboSlime_L": {
     "MOVES": [
       "Mixed Spit",
