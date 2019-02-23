@@ -806,9 +806,19 @@
   },
   "Replay:Mystery Machine": {
     "NAME": "Mystery Machine",
-	"FLAVOR": "?",
+	"FLAVOR": "For those who like to wander.",
     "DESCRIPTIONS": [
 		"Gains #b1 charge each time you enter a #y? room. NL Loses #b1 charge each time you go between two #rnon-? rooms. NL Start combat with #b1 random #yStrength or #yDexterity for each charge this has."
+	]
+  },
+  "Replay:Fungal Core": {
+    "NAME": "Fungal Core",
+	"FLAVOR": "Composed of living fungi that scatter spores around.",
+    "DESCRIPTIONS": [
+		"Gain [E] at the start of each turn. NL At the start of combat, #b",
+		" random #rSpores are shuffled into your draw pile.",
+		"Spores",
+		"Spores are #rStatus cards that #bcost #b0 to play and #bdraw #b1 #bcard, but have some minor #rnegative effect."
 	]
   },
   "Ring of Fury": {

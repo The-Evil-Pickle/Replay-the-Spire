@@ -199,6 +199,15 @@
     "NAME": "Limb From Limb",
     "DESCRIPTION": "Deal !D! damage. NL If this deals at least !M! unblocked damage, Refund 2 and draw 2 cards."
   },
+  "Replay:Sporebomb": {
+    "NAME": "Sporebomb",
+    "DESCRIPTION": "Apply 1 Vulnerable to a random enemy !M! times. NL Add 2 random Spores to your hand. NL Exhaust.",
+	"UPGRADE_DESCRIPTION": "Apply 1 Vulnerable to ALL enemies !M! times. NL Add 2 random Spores to your hand. NL Exhaust.",
+	"EXTENDED_DESCRIPTION" : [
+		"Spores",
+		"Spores are #rStatus cards that cost 0 to play and draw 1 card, but have some minor negative effect."
+	]
+  },
   "ReplayScrap": {
     "NAME": "Scrap",
     "DESCRIPTION": "Deal !D! damage. NL If this kills a (non-minion) enemy, heal 6 HP and permanently increase this card's Damage by !M!."
@@ -227,7 +236,7 @@
   },
   "ReplayTheSpireMod:Omega Cannon": {
     "NAME": "Omega Cannon",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times. NL Add a Backfire to your draw & discard piles."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times. NL Add 2 Backfires to your discard pile."
   },
   "ReplayTheSpireMod:Dual Polarity": {
     "NAME": "Dual Polarity",

@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAndDeckAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -30,7 +31,7 @@ public static final String ID = "ReplayTheSpireMod:Omega Cannon";
 private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 public static final String NAME = cardStrings.NAME;
 public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-private static final int COST = 3;
+private static final int COST = 2;
 
 public ReplayOmegaCannon()
 {
@@ -48,7 +49,7 @@ public void use(final AbstractPlayer p, final AbstractMonster m) {
     for (int i=0; i < this.magicNumber; i++) {
     	AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
     }
-    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAndDeckAction(new BackFire()));
+    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new BackFire(), 2));
 }
 
 public AbstractCard makeCopy()

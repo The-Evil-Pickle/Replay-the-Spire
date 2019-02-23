@@ -227,7 +227,7 @@
   },
   "ReplayTheSpireMod:Omega Cannon": {
     "NAME": "오메가 캐논",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 만큼 !M! 번 줍니다. NL 뽑을 카드 더미와 버린 카드 더미에 역화 카드를 1 장씩 섞어 넣습니다."
+    "DESCRIPTION": "적 전체에게 피해를 !D! 만큼 !M! 번 줍니다. NL 버린 카드 더미에 역화 카드를 2 장 섞어 넣습니다."
   },
   "ReplayTheSpireMod:Dual Polarity": {
     "NAME": "이중 극성",

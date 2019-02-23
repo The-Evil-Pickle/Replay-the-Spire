@@ -30,9 +30,15 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.potions.*;
 import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.mod.replay.cards.colorless.GhostDefend;
+import com.megacrit.cardcrawl.mod.replay.cards.colorless.GhostSwipe;
+import com.megacrit.cardcrawl.mod.replay.cards.curses.Hallucinations;
+import com.megacrit.cardcrawl.mod.replay.cards.curses.Voices;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.CaptainAbe;
 import com.evacipated.cardcrawl.mod.hubris.blights.*;
 import com.megacrit.cardcrawl.blights.*;
 import java.io.*;
@@ -47,25 +53,32 @@ public class GhostMerchant extends AbstractMonster
     public static final String[] DIALOG = monsterStrings.DIALOG;
     private static final float DRAW_X;
     private static final float DRAW_Y;
-    private static final int START_HP = 10;
-    public static final int REAL_HP = 200;
-    private static final float TIME_SCALE = 4.0f;
+    public static final int HP = 200;
+    public static final int A_HP = 230;
+    public static final int BASE_ARMOR = 35;
+    public static final int A_BASE_ARMOR = 40;
+    public static final int ARTIFACT_AMT = 5;
+    public static final int A_ARTIFACT_AMT = 7;
     private static byte ESCAPE = 0;
     private static byte ATTACK = 1;
     private static byte STRENGTH_UP = 2;
     private static byte ATTACK_STRENGTH_UP = 3;
+    private static byte GHOST_CARDS = 4;
     private static byte HALF_DEAD = 7;
-    private static final int METALLICIZE_AMT = 35;
-    private static final int ARTIFACT_AMT = 5;
     private static final Map<Byte, Integer> throwAmounts;
     private boolean doEscape;
+    private boolean hasDoneDebuff;
+    private int metal_amt;
+    private int artifact_amt;
+    private int slash_count;
+    private int buffslash_amt;
     private int turn;
     private boolean thresholdReached;
     private int abuse;
     private boolean boss;
     
     public GhostMerchant(float x, float y) {
-        super(NAME, ID, 10, -10.0f, -30.0f, 180.0f, 150.0f, (String)null, x, y);
+        super(NAME, ID, 200, -10.0f, -30.0f, 180.0f, 150.0f, (String)null, x, y);
         this.doEscape = true;
         this.thresholdReached = false;
         this.boss = true;
@@ -75,13 +88,33 @@ public class GhostMerchant extends AbstractMonster
         e.setTimeScale(1.0f);
         this.flipHorizontal = this.drawX < AbstractDungeon.player.drawX;
         this.type = AbstractMonster.EnemyType.ELITE;
-        this.gold = 300;
+        this.gold = 0;
         this.halfDead = false;
+        this.hasDoneDebuff = false;
         this.damage.add(new DamageInfo(this, 1));
         this.turn = 0;
-        this.maxHealth = 200;
-        this.maxHealth *= (int)((this.abuse >= 3) ? 1.5f : 1.0f);
-        this.currentHealth = this.maxHealth;
+        if (AbstractDungeon.ascensionLevel >= 3) {
+        	GhostMerchant.throwAmounts.clear();
+        	GhostMerchant.throwAmounts.put(GhostMerchant.ATTACK, 23);
+            GhostMerchant.throwAmounts.put(GhostMerchant.ATTACK_STRENGTH_UP, 16);
+        } else {
+        	GhostMerchant.throwAmounts.clear();
+        	GhostMerchant.throwAmounts.put(GhostMerchant.ATTACK, 20);
+            GhostMerchant.throwAmounts.put(GhostMerchant.ATTACK_STRENGTH_UP, 15);
+        }
+        if (AbstractDungeon.ascensionLevel >= 8) {
+            this.setHp(A_HP);
+			this.metal_amt = A_BASE_ARMOR;
+        }
+        else {
+            this.setHp(HP);
+			this.metal_amt = BASE_ARMOR;
+        }
+        if (AbstractDungeon.ascensionLevel >= 18) {
+			this.artifact_amt = A_ARTIFACT_AMT;
+        } else {
+			this.artifact_amt = ARTIFACT_AMT;
+        }
     }
     
     public void render(final SpriteBatch sb) {
@@ -93,15 +126,15 @@ public class GhostMerchant extends AbstractMonster
     }
     
     public void usePreBattleAction() {
-        final int artifact_amt = 5;
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this, this, new ArtifactPower(this, artifact_amt), artifact_amt));
-        final int metal_amt = 35;
-        AbstractDungeon.actionManager.addToTop(new GainBlockAction(this, this, metal_amt, true));
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this, this, new GoldShieldPower(this, metal_amt), metal_amt));
+    	if (AbstractDungeon.ascensionLevel >= 18) AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this, this, new IntangiblePower(this, 1), 1));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this, this, new ArtifactPower(this, this.artifact_amt), this.artifact_amt));
+        AbstractDungeon.actionManager.addToTop(new GainBlockAction(this, this, this.metal_amt, true));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this, this, new GoldShieldPower(this, this.metal_amt), this.metal_amt));
         AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this, this, new GhostlyPower(this)));
         AbstractDungeon.actionManager.addToTop(new TalkAction(this, GhostMerchant.DIALOG[0], 0.5f, 3.0f));
         AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, this, new SurroundedPower(AbstractDungeon.player)));
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+        this.setMove(GhostMerchant.ESCAPE, AbstractMonster.Intent.BUFF);
     }
     
     public void takeTurn() {
@@ -116,10 +149,22 @@ public class GhostMerchant extends AbstractMonster
             	}
         		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new GoldShieldPower(this, armor), armor));
         	}
+    		AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, armor + 10));
         	this.doEscape = false;
         }
         else if (this.nextMove == GhostMerchant.STRENGTH_UP) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, 2), 2));
+        }
+        else if (this.nextMove == GhostMerchant.GHOST_CARDS) {
+        	this.hasDoneDebuff = true;
+        	AbstractDungeon.actionManager.addToBottom(new TalkAction(this, GhostMerchant.DIALOG[2], 0.5f, 3.0f));
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAndDeckAction(new GhostDefend()));
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAndDeckAction(new GhostSwipe()));
+            AbstractCard upgradedHals = new Hallucinations();
+            upgradedHals.upgrade();
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(upgradedHals, 1, true, true));
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Voices(), 2));
+            --this.turn;
         }
         else {
             final Integer throwAmount = GhostMerchant.throwAmounts.get(this.nextMove);
@@ -145,6 +190,10 @@ public class GhostMerchant extends AbstractMonster
             this.setMove(GhostMerchant.ESCAPE, AbstractMonster.Intent.BUFF);
             return;
         }
+        if (num < 67 && !this.hasDoneDebuff && (!this.lastMove(ESCAPE) || num < 20)) {
+        	this.setMove(GHOST_CARDS, AbstractMonster.Intent.STRONG_DEBUFF);
+        	return;
+        }
         if (this.turn == 1) {
             this.setMove(GhostMerchant.ATTACK, AbstractMonster.Intent.ATTACK, 1, (int)GhostMerchant.throwAmounts.get(GhostMerchant.ATTACK), true);
             return;
@@ -160,10 +209,14 @@ public class GhostMerchant extends AbstractMonster
             }
             this.setMove(StrengthPotion.NAME, GhostMerchant.STRENGTH_UP, AbstractMonster.Intent.BUFF);
         }
-        else if (num < 60) {
+        else if (num < 66 && !this.lastMove(GhostMerchant.ATTACK_STRENGTH_UP)) {
             this.setMove(GhostMerchant.ATTACK_STRENGTH_UP, AbstractMonster.Intent.ATTACK_BUFF, 1, (int)GhostMerchant.throwAmounts.get(GhostMerchant.ATTACK_STRENGTH_UP), true);
         }
         else {
+        	if (this.lastMove(GhostMerchant.ATTACK) && !this.hasDoneDebuff) {
+        		this.setMove(GHOST_CARDS, AbstractMonster.Intent.STRONG_DEBUFF);
+            	return;
+        	}
             this.setMove(GhostMerchant.ATTACK, AbstractMonster.Intent.ATTACK, 1, (int)GhostMerchant.throwAmounts.get(GhostMerchant.ATTACK), true);
         }
     }
@@ -216,7 +269,6 @@ public class GhostMerchant extends AbstractMonster
     static {
         DRAW_X = Settings.WIDTH * 0.5f + 34.0f * Settings.scale;
         DRAW_Y = AbstractDungeon.floorY - 109.0f * Settings.scale;
-        (throwAmounts = new HashMap<Byte, Integer>()).put(GhostMerchant.ATTACK, 20);
-        GhostMerchant.throwAmounts.put(GhostMerchant.ATTACK_STRENGTH_UP, 15);
+        throwAmounts = new HashMap<Byte, Integer>();
     }
 }

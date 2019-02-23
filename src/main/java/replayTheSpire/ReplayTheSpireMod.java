@@ -1418,10 +1418,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for Jungle...");
-			BaseMod.addRelic(new ChemicalBlood(), RelicType.SHARED);
+			BaseMod.addRelic(new FungalCore(), RelicType.SHARED);
 		}
 		if(type == LoadType.CARD) {
-			logger.info("ReplayTheSpireMod | Initializing Cards for MadScience...");
+			logger.info("ReplayTheSpireMod | Initializing Cards for Jungle...");
 		}
 	}
 	private static void initializeScienceMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {

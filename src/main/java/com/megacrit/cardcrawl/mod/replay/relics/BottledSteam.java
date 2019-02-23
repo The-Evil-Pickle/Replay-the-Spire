@@ -107,7 +107,6 @@ public class BottledSteam extends AbstractRelic implements CustomBottleRelic
 		return BottlePatches.BottleFields.inBottleSteam::get;
 	}
 	
-
 	public static void save(final SpireConfig config) {
         if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(ID)) {
             final BottledSteam relic = (BottledSteam)AbstractDungeon.player.getRelic(ID);

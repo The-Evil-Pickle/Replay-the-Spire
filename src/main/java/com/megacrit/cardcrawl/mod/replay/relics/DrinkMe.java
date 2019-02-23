@@ -57,7 +57,7 @@ public class DrinkMe extends ReplayAbstractRelic
 
     private boolean cardSelected;
     public DrinkMe() {
-        super(ID, "betaRelic.png", RelicTier.BOSS, LandingSound.CLINK);
+        super(ID, "ShrinkingDraught.png", RelicTier.BOSS, LandingSound.CLINK);
         this.cardSelected = true;
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));

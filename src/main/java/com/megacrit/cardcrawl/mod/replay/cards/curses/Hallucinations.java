@@ -80,5 +80,11 @@ public class Hallucinations
     return new Hallucinations();
   }
   
-  public void upgrade() {}
+  public void upgrade() {
+	  if (!this.upgraded) {
+		  this.upgradeName();
+		  ExhaustiveVariable.upgrade(this, 2);
+		  this.upgradeMagicNumber(1);
+	  }
+  }
 }

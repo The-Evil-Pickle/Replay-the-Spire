@@ -113,7 +113,8 @@
     "NAME": "Ghost Merchant",
     "DIALOG": [
 		"~PAYBACK...~",
-		"@...@"
+		"@...@",
+		"~On~ ~the~ ~house...~"
     ]
   },
   "FF_ComboSlime_L": {
