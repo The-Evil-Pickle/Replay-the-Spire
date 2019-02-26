@@ -31,17 +31,17 @@ public class Conductor extends AbstractMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     private HellsEngine engine;
 
-    public static final int START_DMG = 20;
-    public static final int START_DMG_A = 25;
-    public static final int COALS_DMG = 4;
-    public static final int COALS_DMG_A = 5;
+    public static final int GUN_DMG = 12;
+    public static final int GUN_DMG_A = 14;
+    public static final int DYN_DMG = 25;
+    public static final int DYN_DMG_A = 30;
     public static final int ARMOR_INIT = 20;
     public static final int ARMOR_INIT_A = 20;
     
     
     
-    private int startDmg;
-    private int coalsDmg;
+    private int railgunnerDmg;
+    private int dynamiteDmg;
     
     
     
@@ -50,8 +50,8 @@ public class Conductor extends AbstractMonster {
     
     
     //move id bytes
-    private static final byte HOT_COALS = 1;
-    private static final byte DOORS_CLOSING = 2;
+    private static final byte RAIL_GUNNER = 1;
+    private static final byte DYNAMITE = 2;
     private static final byte RUNAWAY_TRAIN = 3;
     private static final byte LIVING_STEEL = 4;
     private static final byte STOKE_THE_ENGINE = 5;
@@ -68,15 +68,15 @@ public class Conductor extends AbstractMonster {
             this.setHp(HellsEngine.HP);
         }
         if (AbstractDungeon.ascensionLevel >= 4) {
-            this.startDmg = START_DMG_A;
-            this.coalsDmg = COALS_DMG_A;
+            this.railgunnerDmg = GUN_DMG_A;
+            this.dynamiteDmg = DYN_DMG_A;
         }
         else {
-        	this.startDmg = START_DMG;
-            this.coalsDmg = COALS_DMG;
+        	this.railgunnerDmg = GUN_DMG;
+            this.dynamiteDmg = DYN_DMG;
         }
-        this.damage.add(new DamageInfo(this, this.startDmg));
-        this.damage.add(new DamageInfo(this, this.coalsDmg));
+        this.damage.add(new DamageInfo(this, this.railgunnerDmg));
+        this.damage.add(new DamageInfo(this, this.dynamiteDmg));
         //this.loadAnimation("images/monsters/theBottom/boss/guardian/skeleton.atlas", "images/monsters/theBottom/boss/guardian/skeleton.json", 2.0f);
         //this.state.setAnimation(0, "idle", true);
     }
@@ -93,14 +93,22 @@ public class Conductor extends AbstractMonster {
     
 	private void setMoveNow(byte nextTurn) {
 		switch (nextTurn) {
-            case STARTUP: {
-				this.setMove(nextTurn, Intent.UNKNOWN);
-				break;
-			}
-			default: {
-				this.setMove(nextTurn, Intent.NONE);	
-				break;	
-			}
+        case STARTUP: {
+			this.setMove(nextTurn, Intent.UNKNOWN);
+			break;
+		}
+        case RAIL_GUNNER: {
+			this.setMove(nextTurn, Intent.ATTACK, this.damage.get(0).base);
+			break;
+		}
+        case DYNAMITE: {
+			this.setMove(nextTurn, Intent.UNKNOWN, this.damage.get(1).base);
+			break;
+		}
+		default: {
+			this.setMove(nextTurn, Intent.NONE);	
+			break;	
+		}
 		}
 	}
 	

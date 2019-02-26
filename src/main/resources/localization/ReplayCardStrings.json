@@ -890,6 +890,54 @@
     "NAME": "Dynamite!",
     "DESCRIPTION": "Deal !D! damage to ALL enemies after !M! turns."
   },
+  "Replay:Jungle:SS_maw_1": {
+    "NAME": "Spore Cloud",
+    "DESCRIPTION": "Apply 1 Vulnerable to a random enemy !M! times. NL Exhaust."
+  },
+  "Replay:Jungle:SS_maw_2": {
+    "NAME": "Assymilate",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Does double damage to Minions. NL Heal for unblocked damage dealt. NL Exhaust."
+  },
+  "Replay:Jungle:SS_maw_3": {
+    "NAME": "Mending Spores",
+    "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Exhaustive !stslib:ex!."
+  },
+  "Replay:Jungle:SS_maw_4": {
+    "NAME": "Grow",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Strength."
+  },
+  "Replay:Jungle:SS_spyder_1": {
+    "NAME": "Web Wall",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak to all enemies that intend to attack. NL Exhaust."
+  },
+  "Replay:Jungle:SS_spyder_2": {
+    "NAME": "Guarding Spyder",
+    "DESCRIPTION": "Gain !B! Shielding and !M! Buffer. NL Exhaust."
+  },
+  "Replay:Jungle:SS_spyder_3": {
+    "NAME": "Attacking Spyder",
+    "DESCRIPTION": "Gain !B! Shielding. NL Deal !D! damage to a random enemy. NL Exhaust."
+  },
+  "Replay:Jungle:SS_spyder_4": {
+    "NAME": "Wrap",
+    "DESCRIPTION": "Apply to an enemy. NL They take !M! damage at the end of thier turns."
+  },
+  "Replay:Jungle:SS_totem_1": {
+    "NAME": "Guarding Totem",
+    "DESCRIPTION": "Gain !B! Shielding. NL Gain !M! Block each turn."
+  },
+  "Replay:Jungle:SS_totem_2": {
+    "NAME": "Totemic Response",
+    "DESCRIPTION": "Gain !M! Thorns."
+  },
+  "Replay:Jungle:SS_totem_3": {
+    "NAME": "Encouraging Totem",
+    "DESCRIPTION": "Gain !B! Shielding. NL Gain !M! Strength each turn."
+  },
+  "Replay:Jungle:SS_totem_4": {
+    "NAME": "Snekomania",
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times. NL Confuse all enemies. NL Exhaust. NL Ethereal."
+  },
   "m_BoundBlade": {
     "NAME": "Bound Blade",
     "DESCRIPTION": "Cantrip. NL Add a Shiv to your hand. NL Draw a card.",

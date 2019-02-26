@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.*;
 
-public class SlowPower extends AbstractPower
+public class SlowPower2 extends AbstractPower
 {
     public static final String POWER_ID = "Slow";
     private static final PowerStrings powerStrings;
@@ -19,11 +19,11 @@ public class SlowPower extends AbstractPower
     public static final String[] DESCRIPTIONS;
 	private int baseAmount;
     
-    public SlowPower(final AbstractCreature owner, final int amount) {
+    public SlowPower2(final AbstractCreature owner, final int amount) {
         this(owner, amount, 0);
     }
 	
-    public SlowPower(final AbstractCreature owner, final int amount, final int baseAmount) {
+    public SlowPower2(final AbstractCreature owner, final int amount, final int baseAmount) {
         this.name = SlowPower.NAME;
         this.ID = "Slow";
 		this.baseAmount = baseAmount;
@@ -77,7 +77,7 @@ public class SlowPower extends AbstractPower
     
     static {
         powerStrings = CardCrawlGame.languagePack.getPowerStrings("Slow");
-        NAME = SlowPower.powerStrings.NAME;
-        DESCRIPTIONS = SlowPower.powerStrings.DESCRIPTIONS;
+        NAME = powerStrings.NAME;
+        DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     }
 }
