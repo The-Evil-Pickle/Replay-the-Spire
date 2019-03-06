@@ -1111,6 +1111,13 @@
 			" #gactive #yRunes: NL  #g* #gWhen #gyou #gwould #yCraft #ga #yFirestone #grune, #ginstead #yChannel #yLightning. NL  #g* #gWhen #gyou #gwould #yCraft #ga #yProtectio #grune, #ginstead #yChannel #yFrost. NL  #g* #gWhen #gyou #gwould #yCraft #gan #yIndustria #grune, #ginstead #yChannel #yPlasma. NL  #g* #gWhen #gyou #gwould #yCraft #ga #yPotentia #grune, #ginstead #yChannel #yCrystal."
 		]
 	},
+	"m_GuardianBlood": {
+		"NAME": "Overheated Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the end of combat, heal #b6 HP. NL Certain #yRed cards can now be obtained."
+		]
+	},
 	"m_SnakeBloodCore": {
 		"NAME": "Snakeblood Core",
 		"FLAVOR": "The memories and experiences of three merge together... who are you, and what will you do?",

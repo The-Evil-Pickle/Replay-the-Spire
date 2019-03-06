@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.mod.replay.powers.AgingPower;
 import com.megacrit.cardcrawl.mod.replay.powers.ColorShiftPower;
 import com.megacrit.cardcrawl.mod.replay.powers.StoryPower;
+import com.megacrit.cardcrawl.mod.replay.powers.TPH_ConfusionPower;
 import com.badlogic.gdx.math.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.events.AbstractEvent;
@@ -16,9 +17,6 @@ import com.megacrit.cardcrawl.vfx.*;
 import com.megacrit.cardcrawl.actions.utility.*;
 import com.badlogic.gdx.graphics.*;
 import com.megacrit.cardcrawl.vfx.combat.*;
-
-import tobyspowerhouse.powers.TPH_ConfusionPower;
-
 import com.megacrit.cardcrawl.actions.animations.*;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.actions.common.*;

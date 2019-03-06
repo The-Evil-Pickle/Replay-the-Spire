@@ -7,6 +7,9 @@ import com.megacrit.cardcrawl.mod.replay.actions.defect.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.orbs.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 import com.megacrit.cardcrawl.dungeons.*;
 
 import org.apache.logging.log4j.*;
@@ -17,7 +20,7 @@ import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.*;
 
-public class ForgedInHellfirePower extends TwoAmountPower
+public class ForgedInHellfirePower extends TwoAmountPower implements CloneablePowerInterface
 {
     private static final Logger logger;
     public static final String POWER_ID = "Replay:Forged in Hellfire";
@@ -100,4 +103,9 @@ public class ForgedInHellfirePower extends TwoAmountPower
         NAME = ForgedInHellfirePower.powerStrings.NAME;
         DESCRIPTIONS = ForgedInHellfirePower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new ForgedInHellfirePower(owner, amount, amount2);
+	}
 }

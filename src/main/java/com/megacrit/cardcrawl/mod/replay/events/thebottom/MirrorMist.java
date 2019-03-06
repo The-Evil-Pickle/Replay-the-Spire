@@ -34,6 +34,7 @@ import com.megacrit.cardcrawl.cards.red.Inflame;
 import com.megacrit.cardcrawl.cards.red.RecklessCharge;
 import com.megacrit.cardcrawl.cards.red.SearingBlow;
 import com.megacrit.cardcrawl.cards.red.SpotWeakness;
+import com.megacrit.cardcrawl.cards.red.TwinStrike;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.*;
@@ -46,6 +47,8 @@ import com.megacrit.cardcrawl.mod.replay.cards.curses.*;
 import com.megacrit.cardcrawl.mod.replay.cards.green.*;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.ArmamentsMkIIB;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.guardian.GuardianBash;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.guardian.GuardianCast;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.marisa.LightBash;
 import com.megacrit.cardcrawl.mod.replay.events.*;
 import com.megacrit.cardcrawl.mod.replay.modifiers.MistsModifier;
@@ -77,6 +80,9 @@ import constructmod.relics.ClockworkPhoenix;
 import constructmod.relics.Cogwheel;
 import fruitymod.seeker.characters.*;
 import gluttonmod.characters.GluttonCharacter;
+import guardian.cards.CurlUp;
+import guardian.cards.TwinSlam;
+import guardian.characters.GuardianCharacter;
 import mysticmod.character.*;
 
 import com.megacrit.cardcrawl.helpers.*;
@@ -588,6 +594,26 @@ public class MirrorMist
 				this.has_2b = CardHelper.hasCardWithID("Runesmith:Fortify");
 				this.loss_c_2b = CardLibrary.getCopy("Runesmith:Fortify");
 				this.gain_c_2b = new Survivor();
+				break;
+			}
+			if (ReplayTheSpireMod.foundmod_guardian && AbstractDungeon.player instanceof GuardianCharacter) {
+				this.has_1 = AbstractDungeon.player.hasRelic("Guardian:ModeShifter");
+				this.loss_r_1 = RelicLibrary.getRelic("Guardian:ModeShifter").makeCopy();
+				this.gain_r_1 = new M_GuardianBlood();
+				this.has_1b = CardHelper.hasCardWithID(CurlUp.ID);
+				this.loss_c_1b = CardLibrary.getCopy(CurlUp.ID);
+				this.gain_c_1b = new GuardianBash();
+				this.has_2 = CardHelper.hasCardWithID(TwinSlam.ID);
+				this.has_2b = this.has_2;
+				this.loss_c_2 = CardLibrary.getCopy(TwinSlam.ID);
+				this.gain_c_2 = new Survivor();
+				this.gain_c_2b = new Neutralize();
+				this.has_3 = AbstractDungeon.player.hasRelic("Guardian:ModeShifter");
+				this.loss_r_3 = RelicLibrary.getRelic("Guardian:ModeShifter").makeCopy();
+				this.gain_r_3 = new CrackedCore();
+				this.has_3b = this.has_3;
+				this.gain_c_3b = new GuardianCast();
+				this.thirdOption = true;
 				break;
 			}
 			

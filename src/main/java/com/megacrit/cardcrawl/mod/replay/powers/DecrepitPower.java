@@ -2,13 +2,16 @@ package com.megacrit.cardcrawl.mod.replay.powers;
 
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.powers.*;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.*;
 
-public class DecrepitPower extends AbstractPower
+public class DecrepitPower extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "Decrepit";
     public static final String NAME = "Decrepit";
@@ -60,4 +63,9 @@ public class DecrepitPower extends AbstractPower
         }
         return damage;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new DecrepitPower(owner, amount, justApplied);
+	}
 }

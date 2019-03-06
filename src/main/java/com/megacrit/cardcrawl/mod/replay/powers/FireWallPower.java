@@ -7,6 +7,9 @@ import com.megacrit.cardcrawl.mod.replay.actions.defect.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.orbs.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 import com.megacrit.cardcrawl.dungeons.*;
 
 import org.apache.logging.log4j.*;
@@ -16,7 +19,7 @@ import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.*;
 
-public class FireWallPower extends AbstractPower
+public class FireWallPower extends AbstractPower implements CloneablePowerInterface
 {
     private static final Logger logger;
     public static final String POWER_ID = "Firewall";
@@ -70,4 +73,9 @@ public class FireWallPower extends AbstractPower
         NAME = FireWallPower.powerStrings.NAME;
         DESCRIPTIONS = FireWallPower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new FireWallPower(owner, amount);
+	}
 }

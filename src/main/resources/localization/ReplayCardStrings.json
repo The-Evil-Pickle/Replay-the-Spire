@@ -114,8 +114,8 @@
   },
   "Replay:Poison Smokescreen": {
     "NAME": "Poison Smokescreen",
-    "DESCRIPTION": "Gain !B! Block. NL Apply that much Poison randomly split among all enemies.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Apply that much Poison to all enemies."
+    "DESCRIPTION": "Gain !B! Block. NL Apply that much Poison randomly split among all enemies. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Apply that much Poison randomly split among all enemies."
   },
   "Abandon": {
     "NAME": "Abandon",
@@ -734,6 +734,23 @@
   "Replay:Spark Circuitry": {
     "NAME": "Spark Circuitry",
     "DESCRIPTION": "Channel !M! Manaspark. NL Amplify [E] : Channel !M! Crystal first. NL Exhaust."
+  },
+  "Replay:GuardianBash": {
+    "NAME": "B.A.S.H.",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
+  },
+  "Replay:GuardianCast": {
+    "NAME": "Monocast",
+    "DESCRIPTION": "Evoke ALL your Lightning orbs. NL Evokes the first Lightning orb 1 extra time for each Gem in this card. NL Exhaust. Ethereal.",
+	"UPGRADE_DESCRIPTION": "Evoke ALL your Lightning orbs. NL Evokes the first Lightning orb 1 extra time for each Gem in this card. NL Exhaust. Retain.",
+	"EXTENDED_DESCRIPTION": [
+		"Monocast",
+		"Twincast",
+		"Tricast",
+		"Quadcast",
+		"Pentacast",
+		"Core Discharge"
+	]
   },
   "ReplayTheSpireMod:RavenHex": {
     "NAME": "Raven's Hex",

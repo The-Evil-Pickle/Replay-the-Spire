@@ -23,9 +23,10 @@ import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.*;
 import basemod.*;
+import basemod.interfaces.CloneablePowerInterface;
 import replayTheSpire.*;
 
-public class PondfishDrowning extends AbstractPower
+public class PondfishDrowning extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "PondfishDrowning";
     private static final PowerStrings powerStrings;
@@ -171,4 +172,9 @@ public class PondfishDrowning extends AbstractPower
         NAME = PondfishDrowning.powerStrings.NAME;
         DESCRIPTIONS = PondfishDrowning.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new PondfishDrowning(owner, amount);
+	}
 }

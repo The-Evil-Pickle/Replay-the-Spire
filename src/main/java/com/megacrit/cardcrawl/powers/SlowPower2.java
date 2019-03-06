@@ -2,6 +2,9 @@ package com.megacrit.cardcrawl.powers;
 
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 //import com.megacrit.cardcrawl.powers.PowerType;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.dungeons.*;
@@ -11,7 +14,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.*;
 
-public class SlowPower2 extends AbstractPower
+public class SlowPower2 extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "Slow";
     private static final PowerStrings powerStrings;
@@ -80,4 +83,9 @@ public class SlowPower2 extends AbstractPower
         NAME = powerStrings.NAME;
         DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new SlowPower2(owner, amount, baseAmount);
+	}
 }

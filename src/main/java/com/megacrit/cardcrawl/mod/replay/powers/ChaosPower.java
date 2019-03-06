@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
 
-import tobyspowerhouse.powers.TPH_ConfusionPower;
+import basemod.interfaces.CloneablePowerInterface;
 
-public class ChaosPower extends AbstractPower
+public class ChaosPower extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "ReplayChaosPower";
     private static final PowerStrings powerStrings;
@@ -54,4 +54,9 @@ public class ChaosPower extends AbstractPower
         NAME = ChaosPower.powerStrings.NAME;
         DESCRIPTIONS = ChaosPower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new ChaosPower(owner, amount);
+	}
 }

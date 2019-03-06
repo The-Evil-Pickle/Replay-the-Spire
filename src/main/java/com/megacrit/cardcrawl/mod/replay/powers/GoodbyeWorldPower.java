@@ -10,7 +10,9 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class GoodbyeWorldPower extends AbstractPower
+import basemod.interfaces.CloneablePowerInterface;
+
+public class GoodbyeWorldPower extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "GoodbyeWorld";
     private static final PowerStrings powerStrings;
@@ -46,4 +48,9 @@ public class GoodbyeWorldPower extends AbstractPower
         NAME = GoodbyeWorldPower.powerStrings.NAME;
         DESCRIPTIONS = GoodbyeWorldPower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new GoodbyeWorldPower(owner, amount);
+	}
 }

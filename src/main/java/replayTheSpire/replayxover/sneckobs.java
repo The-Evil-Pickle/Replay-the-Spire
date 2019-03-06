@@ -16,4 +16,10 @@ public class sneckobs {
 			c.initializeDescription();
 		}
 	}
+	public static boolean isSneky(AbstractCard c) {
+		if (!ReplayTheSpireMod.foundmod_snecko) {
+			return false;
+		}
+		return (c.tags.contains(SneckoMod.SNEKPROOF));
+	}
 }

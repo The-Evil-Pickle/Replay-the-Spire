@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import basemod.ReflectionHacks;
+import basemod.interfaces.CloneablePowerInterface;
 import replayTheSpire.patches.BottlePatches;
 
 import com.megacrit.cardcrawl.dungeons.*;
@@ -25,7 +26,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.*;
 
-public class OffTheRailsPower extends TwoAmountPower
+public class OffTheRailsPower extends TwoAmountPower implements CloneablePowerInterface
 {
     private static final Logger logger;
     public static final String POWER_ID = "Replay:Off the Rails";
@@ -128,4 +129,8 @@ public class OffTheRailsPower extends TwoAmountPower
         NAME = OffTheRailsPower.powerStrings.NAME;
         DESCRIPTIONS = OffTheRailsPower.powerStrings.DESCRIPTIONS;
     }
+	@Override
+	public AbstractPower makeCopy() {
+		return new OffTheRailsPower(owner, amount, amount2);
+	}
 }

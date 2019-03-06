@@ -65,5 +65,12 @@
     "TEXT": [
       "Reduce Cost"
     ]
+  },
+  "PlannedCardIntent": {
+    "TEXT": [
+      "Intent: Status",
+	  " intends to give you ",
+	  "."
+    ]
   }
 }

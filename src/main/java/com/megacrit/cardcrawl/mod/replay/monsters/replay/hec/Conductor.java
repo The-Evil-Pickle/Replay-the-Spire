@@ -1,6 +1,8 @@
 package com.megacrit.cardcrawl.mod.replay.monsters.replay.hec;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
@@ -9,18 +11,24 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.mod.replay.actions.unique.SpawnForestMonsterAction;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.PondfishBoss;
 import com.megacrit.cardcrawl.mod.replay.powers.EnemyLifeBindPower;
+import com.megacrit.cardcrawl.mod.replay.powers.MightPower;
 import com.megacrit.cardcrawl.mod.replay.powers.OffTheRailsPower;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster.EnemyType;
 import com.megacrit.cardcrawl.monsters.AbstractMonster.Intent;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.powers.BackAttackPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.SurroundedPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.HealEffect;
 import com.megacrit.cardcrawl.vfx.combat.StrikeEffect;
 
+import basemod.ReflectionHacks;
 import replayTheSpire.ReplayTheSpireMod;
 
 public class Conductor extends AbstractMonster {
@@ -30,6 +38,7 @@ public class Conductor extends AbstractMonster {
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
     private HellsEngine engine;
+    public AbstractMonster dynamite;
 
     public static final int GUN_DMG = 12;
     public static final int GUN_DMG_A = 14;
@@ -37,11 +46,17 @@ public class Conductor extends AbstractMonster {
     public static final int DYN_DMG_A = 30;
     public static final int ARMOR_INIT = 20;
     public static final int ARMOR_INIT_A = 20;
+    public static final int STOKE_AMT = 1;
+    public static final int STOKE_AMT_A = 2;
+    public static final int STOKE_BLK = 10;
+    public static final int STOKE_BLK_A = 15;
     
     
     
     private int railgunnerDmg;
     private int dynamiteDmg;
+    private int stokeAmt;
+    private int stokeBlk;
     
     
     
@@ -52,7 +67,7 @@ public class Conductor extends AbstractMonster {
     //move id bytes
     private static final byte RAIL_GUNNER = 1;
     private static final byte DYNAMITE = 2;
-    private static final byte RUNAWAY_TRAIN = 3;
+    private static final byte CARGO_HOLD = 3;
     private static final byte LIVING_STEEL = 4;
     private static final byte STOKE_THE_ENGINE = 5;
     private static final byte HEARTBEAT = 6;
@@ -63,9 +78,11 @@ public class Conductor extends AbstractMonster {
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(HellsEngine.HP_A);
+            this.stokeBlk = STOKE_BLK_A;
         }
         else {
             this.setHp(HellsEngine.HP);
+            this.stokeBlk = STOKE_BLK_A;
         }
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.railgunnerDmg = GUN_DMG_A;
@@ -74,6 +91,11 @@ public class Conductor extends AbstractMonster {
         else {
         	this.railgunnerDmg = GUN_DMG;
             this.dynamiteDmg = DYN_DMG;
+        }
+        if (AbstractDungeon.ascensionLevel >= 19) {
+        	this.stokeAmt = STOKE_AMT_A;
+        } else {
+        	this.stokeAmt = STOKE_AMT;
         }
         this.damage.add(new DamageInfo(this, this.railgunnerDmg));
         this.damage.add(new DamageInfo(this, this.dynamiteDmg));
@@ -98,11 +120,19 @@ public class Conductor extends AbstractMonster {
 			break;
 		}
         case RAIL_GUNNER: {
-			this.setMove(nextTurn, Intent.ATTACK, this.damage.get(0).base);
+			this.setMove(MOVES[3], nextTurn, Intent.ATTACK, this.damage.get(0).base);
 			break;
 		}
         case DYNAMITE: {
 			this.setMove(nextTurn, Intent.UNKNOWN, this.damage.get(1).base);
+			break;
+		}
+        case CARGO_HOLD: {
+			this.setMove(MOVES[4], nextTurn, this.hasPower(BackAttackPower.POWER_ID) ? Intent.STRONG_DEBUFF : Intent.DEBUFF);
+			break;
+		}
+        case STOKE_THE_ENGINE: {
+			this.setMove(MOVES[5], nextTurn, this.hasPower(BackAttackPower.POWER_ID) ? Intent.DEFEND_BUFF : Intent.BUFF);
 			break;
 		}
 		default: {
@@ -126,17 +156,62 @@ public class Conductor extends AbstractMonster {
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new ArtifactPower(AbstractDungeon.player, partif), partif));
 				}
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+				break;
+			}
+			case RAIL_GUNNER: {
+				AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+				break;
+			}
+			case DYNAMITE: {
+				this.dynamite = new Dynamite(-200.0f, 100.0f, (int)ReflectionHacks.getPrivate(this, AbstractMonster.class, "intentDmg"));
+				AbstractDungeon.actionManager.addToBottom(new SpawnForestMonsterAction(this.dynamite, true, 2));
+				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+				break;
+			}
+			case CARGO_HOLD: {
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 2, true), 2));
+				if (this.hasPower(BackAttackPower.POWER_ID)) {
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, 2, true), 2));
+				}
+				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+				break;
+			}
+			case STOKE_THE_ENGINE: {
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.engine, this, new MightPower(this.engine, this.stokeAmt, true), this.stokeAmt));
+				if (this.hasPower(BackAttackPower.POWER_ID)) {
+					AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.engine, this, this.stokeBlk));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PlatedArmorPower(this, 5), 5));
+				}
+				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+				break;
 			}
         }
     }
     
-
     @Override
     protected void getMove(final int num) {
-		if (this.engine.isFirstTurn || !AbstractDungeon.player.hasPower(SurroundedPower.POWER_ID)) {
+    	if (this.engine != null)
+    		this.engine.moveRoll(num);
+		this.moveRoll(num);
+    }
+    
+    public void moveRoll(final int num) {
+    	if (this.engine == null || this.engine.isFirstTurn || !AbstractDungeon.player.hasPower(SurroundedPower.POWER_ID)) {
 			this.setMoveNow(STARTUP);
 			return;
 		}
+    	if (num % 3 == 1 && !this.isDynamiteOut()) {
+    		this.setMoveNow(DYNAMITE);
+    		return;
+    	}
+    	if (!this.lastMove(RAIL_GUNNER) && num < 33 || this.lastMove(CARGO_HOLD) && num <= 66 ) {
+    		this.setMoveNow(RAIL_GUNNER);
+    	} else if (num > 66 && !this.lastMove(STOKE_THE_ENGINE)) {
+    		this.setMoveNow(STOKE_THE_ENGINE);
+    	} else {
+    		this.setMoveNow(CARGO_HOLD);
+    	}
     }
     
     @Override
@@ -165,5 +240,32 @@ public class Conductor extends AbstractMonster {
         if (!this.engine.isDeadOrEscaped() && !this.engine.isDying) {
         	this.engine.die();
         }
+    }
+    
+    @Override
+    public void applyPowers() {
+        boolean backAttack = AbstractDungeon.player.hasPower("Surrounded") && ((AbstractDungeon.player.flipHorizontal && AbstractDungeon.player.drawX < this.drawX) || (!AbstractDungeon.player.flipHorizontal && AbstractDungeon.player.drawX > this.drawX));
+        if (backAttack) {
+        	if (this.intent == Intent.DEBUFF) {
+        		this.intent = Intent.STRONG_DEBUFF;
+        	} else if (this.intent == Intent.BUFF) {
+        		this.intent = Intent.DEFEND_BUFF;
+        	}
+        } else {
+        	if (this.intent == Intent.STRONG_DEBUFF) {
+        		this.intent = Intent.DEBUFF;
+        	} else if (this.intent == Intent.DEFEND_BUFF) {
+        		this.intent = Intent.BUFF;
+        	}
+        }
+        super.applyPowers();
+    }
+    
+    public boolean isDynamiteOut() {
+    	if (this.dynamite == null) {
+    		return false;
+    	} else {
+    		return (!this.dynamite.isDeadOrEscaped());
+    	}
     }
 }

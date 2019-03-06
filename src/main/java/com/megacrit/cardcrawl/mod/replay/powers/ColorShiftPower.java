@@ -29,7 +29,6 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import basemod.ReflectionHacks;
 import replayTheSpire.ReplayTheSpireMod;
-import tobyspowerhouse.powers.TPH_ConfusionPower;
 
 public class ColorShiftPower extends AbstractPower
 {

@@ -4,13 +4,16 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 //import com.megacrit.cardcrawl.powers.PowerType;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.*;
 
-public class RidThyselfOfStatusCardsPower extends AbstractPower
+public class RidThyselfOfStatusCardsPower extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "ReplayTheSpireMod:SystemScan";
     private static final PowerStrings powerStrings;
@@ -52,4 +55,9 @@ public class RidThyselfOfStatusCardsPower extends AbstractPower
         NAME = RidThyselfOfStatusCardsPower.powerStrings.NAME;
         DESCRIPTIONS = RidThyselfOfStatusCardsPower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new RidThyselfOfStatusCardsPower(owner, amount);
+	}
 }

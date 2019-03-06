@@ -1,10 +1,6 @@
 package com.megacrit.cardcrawl.mod.replay.relics;
 
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.mod.replay.actions.*;
-import com.megacrit.cardcrawl.mod.replay.actions.common.*;
-import com.megacrit.cardcrawl.mod.replay.monsters.*;
-import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
@@ -12,17 +8,11 @@ import theAct.powers.SlothfulPower;
 
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.RefundFields;
 import com.evacipated.cardcrawl.mod.stslib.variables.RefundVariable;
-//import com.megacrit.cardcrawl.relics.LandingSound;
-//import com.megacrit.cardcrawl.relics.RelicTier;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
-import com.megacrit.cardcrawl.core.*;
-
-import java.util.*;
-import tobyspowerhouse.powers.*;
 
 public class RingOfSloth extends AbstractRelic
 {

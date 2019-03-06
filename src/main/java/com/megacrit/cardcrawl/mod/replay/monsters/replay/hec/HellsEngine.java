@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.common.SetMoveAction;
 import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
@@ -18,9 +21,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.ScreenShake.ShakeDur;
 import com.megacrit.cardcrawl.helpers.ScreenShake.ShakeIntensity;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.MoveCreaturesAction;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.MoveMonsterAction;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.StartParalaxAction;
@@ -33,8 +39,12 @@ import com.megacrit.cardcrawl.mod.replay.vfx.paralax.ParalaxObject;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster.EnemyType;
 import com.megacrit.cardcrawl.monsters.AbstractMonster.Intent;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.powers.BackAttackPower;
+import com.megacrit.cardcrawl.powers.ReflectionPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.BobEffect;
 import com.megacrit.cardcrawl.vfx.combat.HealEffect;
 import com.megacrit.cardcrawl.vfx.combat.StrikeEffect;
 
@@ -50,25 +60,38 @@ public class HellsEngine extends AbstractMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     private static final AbstractCard STATUS_CARD_1;
     private static final AbstractCard STATUS_CARD_2; 
+    private static final UIStrings plannedStrings = CardCrawlGame.languagePack.getUIString("PlannedCardIntent");
     static {
     	STATUS_CARD_1 = new Burn();
     	(STATUS_CARD_2 = new Burn()).upgrade();
     }
     private Conductor conductor;
     private AbstractCard plannedCard;
+    private BobEffect cardBob;
     public static final int HP = 450;
     public static final int HP_A = 500;
     public static final int START_DMG = 20;
     public static final int START_DMG_A = 25;
     public static final int COALS_DMG = 4;
     public static final int COALS_DMG_A = 5;
+    public static final int COALS_AMT = 2;
+    public static final int RUN_DMG = 15;
+    public static final int RUN_DMG_A = 19;
     public static final int ARTIFACT_INIT = 20;
     public static final int ARTIFACT_INIT_A = 20;
+    public static final int STEEL_AMT = 2;
+    public static final int STEEL_AMT_A = 3;
+    public static final int STEEL_BLK = 10;
+    public static final int STEEL_BLK_A = 15;
     
 	public boolean isFirstTurn;
     
     private int startDmg;
     private int coalsDmg;
+    private int coalsAmt;
+    private int runDmg;
+    private int steelBlk;
+    private int steelAmt;
     
     
     
@@ -90,6 +113,7 @@ public class HellsEngine extends AbstractMonster {
         this.isFirstTurn = true;
         this.plannedCard = null;
         this.type = EnemyType.BOSS;
+        this.cardBob = new BobEffect();
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(HP_A);
         }
@@ -99,13 +123,17 @@ public class HellsEngine extends AbstractMonster {
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.startDmg = START_DMG_A;
             this.coalsDmg = COALS_DMG_A;
+            this.runDmg = RUN_DMG_A;
         }
         else {
         	this.startDmg = START_DMG;
             this.coalsDmg = COALS_DMG;
+            this.runDmg = RUN_DMG;
         }
+        this.coalsAmt = 2;
         this.damage.add(new DamageInfo(this, this.startDmg));
         this.damage.add(new DamageInfo(this, this.coalsDmg));
+        this.damage.add(new DamageInfo(this, this.runDmg));
         //this.loadAnimation("images/monsters/theBottom/boss/guardian/skeleton.atlas", "images/monsters/theBottom/boss/guardian/skeleton.json", 2.0f);
         //this.state.setAnimation(0, "idle", true);
     }
@@ -165,13 +193,30 @@ public class HellsEngine extends AbstractMonster {
     
 	private void setMoveNow(byte nextTurn) {
 		this.plannedCard = null;
-		STATUS_CARD_1.current_x = this.intentHb.cX - 64.0f;
+		STATUS_CARD_1.target_x = this.intentHb.cX - (128.0f * Settings.scale);
+		STATUS_CARD_1.target_y =  this.intentHb.cY - 0.0f;
+		STATUS_CARD_1.current_x = this.intentHb.cX - (128.0f * Settings.scale);
 		STATUS_CARD_1.current_y =  this.intentHb.cY - 0.0f;
 		STATUS_CARD_2.current_x =  STATUS_CARD_1.current_x;
 		STATUS_CARD_2.current_y =  STATUS_CARD_1.current_y;
+		STATUS_CARD_2.target_x =  STATUS_CARD_1.target_x;
+		STATUS_CARD_2.target_y =  STATUS_CARD_1.target_y;
 		switch (nextTurn) {
-            case STARTUP: {
+	        case STARTUP: {
 				this.setMove(nextTurn, Intent.ATTACK, this.damage.get(0).base);
+				break;
+			}
+	        case HOT_COALS: {
+	        	this.plannedCard = STATUS_CARD_1;
+				this.setMove(MOVES[1], nextTurn, Intent.ATTACK, this.damage.get(1).base, this.coalsAmt, true);
+				break;
+			}
+	        case RUNAWAY_TRAIN: {
+				this.setMove(nextTurn, Intent.ATTACK, this.damage.get(2).base);
+				break;
+			}
+	        case LIVING_STEEL: {
+				this.setMove(MOVES[4], nextTurn, Intent.DEFEND);
 				break;
 			}
 			default: {
@@ -208,6 +253,29 @@ public class HellsEngine extends AbstractMonster {
 				}
 				this.isFirstTurn = false;
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+				break;
+			}
+			case HOT_COALS: {
+				for (int i=0; i<this.coalsAmt; i++) {
+					AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.FIRE));
+				}
+				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(this.plannedCard != null ? this.plannedCard.makeStatEquivalentCopy() : new Burn(), this.coalsAmt, true, true));//this.plannedCard != null ? this.plannedCard.makeStatEquivalentCopy() : new Burn()
+				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+				break;
+			}
+			case LIVING_STEEL: {
+				AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, this.steelBlk));
+				if (this.hasPower(BackAttackPower.POWER_ID)) {
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, this.steelAmt), this.steelAmt));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ReflectionPower(this, this.steelAmt), this.steelAmt));
+				}
+				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+				break;
+			}
+			case RUNAWAY_TRAIN: {
+				AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+				break;
 			}
         }
     }
@@ -215,10 +283,31 @@ public class HellsEngine extends AbstractMonster {
 
     @Override
     protected void getMove(final int num) {
-		if (this.isFirstTurn) {
+    	if (this.conductor != null && !this.conductor.hasPower(StunMonsterPower.POWER_ID))
+    		return;
+		this.moveRoll(num);
+    }
+    
+    public void moveRoll(final int num) {
+    	if (this.isFirstTurn) {
 			this.setMoveNow(STARTUP);
 			return;
 		}
+    	if (num % 3 == 1 && this.conductor != null && !this.conductor.isDynamiteOut()) {
+    		if (this.lastMove(RUNAWAY_TRAIN) || num < 45 && !this.lastMove(HOT_COALS)) {
+    			this.setMoveNow(HOT_COALS);
+    		} else {
+    			this.setMoveNow(RUNAWAY_TRAIN);
+    		}
+    		return;
+    	}
+    	if (!this.lastMove(HOT_COALS) && num < 33 || this.lastMove(RUNAWAY_TRAIN) && num <= 66 ) {
+    		this.setMoveNow(HOT_COALS);
+    	} else if (num > 66 && !this.lastMove(LIVING_STEEL)) {
+    		this.setMoveNow(LIVING_STEEL);
+    	} else {
+    		this.setMoveNow(RUNAWAY_TRAIN);
+    	}
     }
     
     //////////////////render sorta stuff//////////////
@@ -228,10 +317,14 @@ public class HellsEngine extends AbstractMonster {
         if (backAttack) {
         	if (this.intent == Intent.DEBUFF) {
         		this.intent = Intent.STRONG_DEBUFF;
+        	} else if (this.intent == Intent.DEFEND) {
+        		this.intent = Intent.DEFEND_BUFF;
         	}
         } else {
         	if (this.intent == Intent.STRONG_DEBUFF) {
         		this.intent = Intent.DEBUFF;
+        	} else if (this.intent == Intent.DEFEND_BUFF) {
+        		this.intent = Intent.DEFEND;
         	}
         }
         super.applyPowers();
@@ -259,16 +352,48 @@ public class HellsEngine extends AbstractMonster {
     }
     
     @Override
+    public void update() {
+    	super.update();
+    	if (this.plannedCard != null) {
+    		this.plannedCard.update();
+    	}
+    	this.cardBob.update();
+    }
+    
+    @Override
     public void render(final SpriteBatch sb) {
         super.render(sb);
 		if (!this.isDying && !this.isEscaping && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.player.isDead && !this.isFirstTurn) {
 			AbstractDungeon.player.render(sb);
 			if (this.plannedCard != null && !AbstractDungeon.player.hasRelic("Runic Dome") && !Settings.hideCombatElements) {
+				if (!this.hb.hovered) {
+					this.plannedCard.targetDrawScale = 0.4f;
+					this.plannedCard.current_y = this.intentHb.cY + this.cardBob.y;
+					this.plannedCard.target_y = this.plannedCard.current_y;
+				} else {
+					this.plannedCard.targetDrawScale = 0.75f;
+					this.plannedCard.target_y = this.intentHb.cY + (30.0f * Settings.scale);
+				}
 				this.plannedCard.render(sb);
 			}
 		}
     }
-    
+    @Override
+    public void renderTip(final SpriteBatch sb) {
+    	super.renderTip(sb);
+        
+        if (this.plannedCard != null) {
+            final ArrayList<PowerTip> tips = (ArrayList<PowerTip>)ReflectionHacks.getPrivateStatic(TipHelper.class, "POWER_TIPS");
+            tips.add(new PowerTip(plannedStrings.TEXT[0],this.name + plannedStrings.TEXT[1] + this.plannedCard.name + plannedStrings.TEXT[2]));
+        	final float offsetY = (tips.size() - 1) * AbstractMonster.MULTI_TIP_Y_OFFSET + AbstractMonster.TIP_OFFSET_Y;
+        	if (this.hb.cX + this.hb.width / 2.0f < AbstractMonster.TIP_X_THRESHOLD) {
+                TipHelper.queuePowerTips(this.hb.cX + this.hb.width / 2.0f + AbstractMonster.TIP_OFFSET_R_X, this.hb.cY + offsetY, tips);
+            }
+            else {
+                TipHelper.queuePowerTips(this.hb.cX - this.hb.width / 2.0f + AbstractMonster.TIP_OFFSET_L_X, this.hb.cY + offsetY, tips);
+            }
+        }
+    }
     
     //////////////////[[linked hp stuff]]/////////////
     @Override

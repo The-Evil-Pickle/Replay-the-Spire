@@ -81,9 +81,11 @@ import replayTheSpire.patches.NeowRewardPatches;
 import replayTheSpire.replayxover.beakedbs;
 import replayTheSpire.replayxover.chronobs;
 import replayTheSpire.replayxover.constructbs;
+import replayTheSpire.replayxover.guardianbs;
 import replayTheSpire.replayxover.infinitebs;
 import replayTheSpire.replayxover.marisabs;
 import replayTheSpire.replayxover.slimeboundbs;
+import replayTheSpire.replayxover.sneckobs;
 import replayTheSpire.variables.MagicArithmatic;
 
 import java.lang.reflect.*;
@@ -539,6 +541,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static boolean foundmod_halation = false;
     public static boolean foundmod_jungle = false;
     public static boolean foundmod_runesmith = false;
+    public static boolean foundmod_guardian = false;
     
 	public static void initialize() {
     	logger.info("========================= ReplayTheSpireMod INIT =========================");
@@ -582,6 +585,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	    foundmod_snecko = Loader.isModLoaded("SneckoMod");
 	    foundmod_jungle = Loader.isModLoaded("TheJungle");
 	    foundmod_runesmith = Loader.isModLoaded("therunesmith");
+	    foundmod_guardian = Loader.isModLoaded("Guardian");
 		
 		logger.info("================================================================");
     }
@@ -1316,6 +1320,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			logger.info("adding Runesmith cards...");
 			AddAndUnlockCard(new ArmamentsMkIIB());
 		}
+		if (foundmod_guardian) {
+			logger.info("adding guardian cards...");
+			guardianbs.addCards();
+		}
 		logger.info("done editting cards");
 	}
 	
@@ -1408,6 +1416,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     		initializeRunesmithMod(LoadType.RELIC);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Runesmith mod not detected");
+		}
+    	try {
+    		initializeGuardianMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Guardian mod not detected");
 		}
     }
 
@@ -1593,6 +1606,18 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			logger.info("ReplayTheSpireMod | Initializing Cards for Runesmith...");
 		}
 	}
+	private static void initializeGuardianMod(LoadType type)throws ClassNotFoundException, NoClassDefFoundError {
+		Class<guardian.patches.AbstractCardEnum> ccolor = guardian.patches.AbstractCardEnum.class;
+		logger.info("ReplayTheSpireMod | Detected Guardian!");
+		foundmod_guardian = true;
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Guardian...");
+			BaseMod.addRelicToCustomPool(new M_GuardianBlood(), guardian.patches.AbstractCardEnum.GUARDIAN);
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for Guardian...");
+		}
+	}
 
 	private static void initializeFruityMod(LoadType type)throws ClassNotFoundException, NoClassDefFoundError {
 		Class<FruityMod> fruityMod = FruityMod.class;
@@ -1724,7 +1749,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				AbstractDungeon.player.getPower("ReplayChaosPower").updateDescription();
 			}
 		}
-		if (AbstractDungeon.player.hasPower("TPH_Confusion") && c.cost > -1 && c.color != AbstractCard.CardColor.CURSE && c.type != AbstractCard.CardType.STATUS) {
+		if (AbstractDungeon.player.hasPower("TPH_Confusion") && c.cost > -1 && c.color != AbstractCard.CardColor.CURSE && c.type != AbstractCard.CardType.STATUS && !(foundmod_snecko && sneckobs.isSneky(c))) {
 			if (BypassStupidBasemodRelicRenaming_hasRelic("Snecko Heart")) {
 				SneckoHeart snek = (SneckoHeart)BypassStupidBasemodRelicRenaming_getRelic("Snecko Heart");
 				if (snek.checkCard(c)) {

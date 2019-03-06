@@ -49,6 +49,14 @@
 	"Whenever you completely block damage, deal that much damage to the attacker."
     ]
   },
+  "Replay:Might": {
+    "NAME": "Might",
+    "DESCRIPTIONS": [
+	"All attack damage dealt is increased by #b25% for the next ",
+	" turns.",
+	" turn."
+    ]
+  },
   "Necrotic Poison": {
     "NAME": "Necrotic Poison",
     "DESCRIPTIONS": [

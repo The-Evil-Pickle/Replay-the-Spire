@@ -2,7 +2,6 @@ package com.megacrit.cardcrawl.mod.replay.cards.replayxover.black;
 
 import infinitespire.abstracts.*;
 import slimebound.cards.StudyTheSpire;
-import tobyspowerhouse.powers.TPH_ConfusionPower;
 
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.dungeons.*;
@@ -14,6 +13,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.mod.replay.powers.ChaosPower;
 import com.megacrit.cardcrawl.mod.replay.powers.DelayedAddCardPower;
+import com.megacrit.cardcrawl.mod.replay.powers.TPH_ConfusionPower;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.core.*;
