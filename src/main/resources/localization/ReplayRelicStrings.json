@@ -745,7 +745,7 @@
     "NAME": "Rubber Ducky",
 	"FLAVOR": "When you squeeze it, it makes noise.",
     "DESCRIPTIONS": [
-		"Each time you play a #yPower, gain #yBlock equal to #b",
+		"Each time you play a #yPower, gain #yShielding equal to #b",
 		" times its [E] cost."
 	]
   },

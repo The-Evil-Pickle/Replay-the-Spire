@@ -77,6 +77,7 @@ import fruitymod.seeker.patches.*;
 import infinitespire.InfiniteSpire;
 import mysticmod.MysticMod;
 import replayTheSpire.panelUI.*;
+import replayTheSpire.patches.CreatureHealthPatches;
 import replayTheSpire.patches.NeowRewardPatches;
 import replayTheSpire.replayxover.beakedbs;
 import replayTheSpire.replayxover.chronobs;
@@ -166,6 +167,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static Texture rebottleButton;
 	public static int playerShielding = 0;
 	public static ArrayList<Integer> monsterShielding = new ArrayList<Integer>();
+	public static boolean monstersUsingShielding = false;
 	public static boolean noSkipRewardsRoom;
 	public static boolean useBakuSkeleton = true;
 	
@@ -173,27 +175,27 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		if (creature == null) {
 			return 0;
 		}
-		if (creature instanceof AbstractPlayer) {
+		return CreatureHealthPatches.ReplayCreatureFields.shielding.get(creature);
+		/*if (creature instanceof AbstractPlayer) {
 			return ReplayTheSpireMod.playerShielding;
 		}
-		for (int i = 0; i < AbstractDungeon.getMonsters().monsters.size(); i++) {
+		for (int i = 0; i < AbstractDungeon.getMonsters().monsters.size() && i < ReplayTheSpireMod.monsterShielding.size(); i++) {
 			if (AbstractDungeon.getMonsters().monsters.get(i) != null && AbstractDungeon.getMonsters().monsters.get(i) == creature) {
-				while (ReplayTheSpireMod.monsterShielding.size() <= i) {
-					ReplayTheSpireMod.monsterShielding.add(0);
-				}
 				return ReplayTheSpireMod.monsterShielding.get(i);
 			}
 		}
-		return 0;
+		return 0;*/
 	}
 	public static void addShielding(AbstractCreature creature, int amt) {
 		if (creature == null) {
 			return;
 		}
-		if (creature instanceof AbstractPlayer) {
+		CreatureHealthPatches.ReplayCreatureFields.shielding.set(creature, CreatureHealthPatches.ReplayCreatureFields.shielding.get(creature) + amt);
+		/*if (creature instanceof AbstractPlayer) {
 			ReplayTheSpireMod.playerShielding += amt;
 			return;
 		}
+		ReplayTheSpireMod.monstersUsingShielding = true;
 		for (int i = 0; i < AbstractDungeon.getMonsters().monsters.size(); i++) {
 			if (AbstractDungeon.getMonsters().monsters.get(i) != null && AbstractDungeon.getMonsters().monsters.get(i) == creature) {
 				while (ReplayTheSpireMod.monsterShielding.size() <= i) {
@@ -201,14 +203,15 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				}
 				ReplayTheSpireMod.monsterShielding.set(i, ReplayTheSpireMod.monsterShielding.get(i) + amt);
 			}
-		}
+		}*/
 		
 	}
 	public static void clearShielding(AbstractCreature creature) {
 		if (creature == null) {
 			return;
 		}
-		if (creature instanceof AbstractPlayer) {
+		CreatureHealthPatches.ReplayCreatureFields.shielding.set(creature, 0);
+		/*if (creature instanceof AbstractPlayer) {
 			ReplayTheSpireMod.playerShielding = 0;
 			return;
 		}
@@ -221,12 +224,15 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				ReplayTheSpireMod.monsterShielding.set(i, 0);
 				return;
 			}
-		}
+		}*/
 		
 	}
 	public static void clearShielding() {
+		if (AbstractDungeon.player != null)
+			CreatureHealthPatches.ReplayCreatureFields.shielding.set(AbstractDungeon.player, 0);
 		ReplayTheSpireMod.playerShielding = 0;
 		ReplayTheSpireMod.monsterShielding = new ArrayList<Integer>();
+		ReplayTheSpireMod.monstersUsingShielding = false;
 	}
 	
 	public static boolean BypassStupidBasemodRelicRenaming_hasRelic(String targetID) {
@@ -1258,6 +1264,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Sssssssssstrike());
 		AddAndUnlockCard(new Sssssssssshield());
 		AddAndUnlockCard(new Necrogeddon());
+		AddAndUnlockCard(new BasicMightCard());
 		if (Loader.isModLoaded("Friendly_Minions_0987678")) {
 			AddAndUnlockCard(new GrembosGang());
 		}

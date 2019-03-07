@@ -1,5 +1,9 @@
 package com.megacrit.cardcrawl.mod.replay.monsters.replay.hec;
 
+import java.util.ArrayList;
+
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -10,7 +14,11 @@ import com.megacrit.cardcrawl.actions.common.SetMoveAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.mod.replay.actions.unique.SpawnForestMonsterAction;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.PondfishBoss;
 import com.megacrit.cardcrawl.mod.replay.powers.EnemyLifeBindPower;
@@ -39,6 +47,8 @@ public class Conductor extends AbstractMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     private HellsEngine engine;
     public AbstractMonster dynamite;
+    private static final UIStrings bombStrings = CardCrawlGame.languagePack.getUIString("Replay:BombIntent");
+    private static final Texture BOMB_INTENT_TEXTURE = ImageMaster.loadImage("images/ui/replay/intent/attack_intent_bomb.png");
 
     public static final int GUN_DMG = 12;
     public static final int GUN_DMG_A = 14;
@@ -50,6 +60,8 @@ public class Conductor extends AbstractMonster {
     public static final int STOKE_AMT_A = 2;
     public static final int STOKE_BLK = 10;
     public static final int STOKE_BLK_A = 15;
+    public static final int HOLD_AMT = 2;
+    public static final int HOLD_AMT_A = 3;
     
     
     
@@ -57,6 +69,7 @@ public class Conductor extends AbstractMonster {
     private int dynamiteDmg;
     private int stokeAmt;
     private int stokeBlk;
+    private int holdAmt;
     
     
     
@@ -94,8 +107,10 @@ public class Conductor extends AbstractMonster {
         }
         if (AbstractDungeon.ascensionLevel >= 19) {
         	this.stokeAmt = STOKE_AMT_A;
+        	this.holdAmt = HOLD_AMT_A;
         } else {
         	this.stokeAmt = STOKE_AMT;
+        	this.holdAmt = HOLD_AMT;
         }
         this.damage.add(new DamageInfo(this, this.railgunnerDmg));
         this.damage.add(new DamageInfo(this, this.dynamiteDmg));
@@ -124,7 +139,7 @@ public class Conductor extends AbstractMonster {
 			break;
 		}
         case DYNAMITE: {
-			this.setMove(nextTurn, Intent.UNKNOWN, this.damage.get(1).base);
+			this.setMove(nextTurn, Intent.ATTACK, this.damage.get(1).base);
 			break;
 		}
         case CARGO_HOLD: {
@@ -181,6 +196,12 @@ public class Conductor extends AbstractMonster {
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.engine, this, new MightPower(this.engine, this.stokeAmt, true), this.stokeAmt));
 				if (this.hasPower(BackAttackPower.POWER_ID)) {
 					AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.engine, this, this.stokeBlk));
+					int armor = 5;
+					if (!this.hasPower(PlatedArmorPower.POWER_ID)) {
+						armor = 10;
+					} else {
+						armor = Math.max(armor, 10 - this.getPower(PlatedArmorPower.POWER_ID).amount);
+					}
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PlatedArmorPower(this, 5), 5));
 				}
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
@@ -267,5 +288,39 @@ public class Conductor extends AbstractMonster {
     	} else {
     		return (!this.dynamite.isDeadOrEscaped());
     	}
+    }
+    
+    //////////render stuff//////////////////
+    
+    @Override
+    public Texture getAttackIntent() {
+    	if (this.nextMove == DYNAMITE) {
+    		return BOMB_INTENT_TEXTURE;
+    	}
+    	return super.getAttackIntent();
+    }
+    @Override
+    public Texture getAttackIntent(int dmg) {
+    	if (this.nextMove == DYNAMITE) {
+    		return BOMB_INTENT_TEXTURE;
+    	}
+    	return super.getAttackIntent(dmg);
+    }
+    @Override
+    public void renderTip(final SpriteBatch sb) {
+    	super.renderTip(sb);
+        if (this.nextMove == DYNAMITE && this.intentAlphaTarget == 1.0f && !AbstractDungeon.player.hasRelic("Runic Dome")) {
+            final ArrayList<PowerTip> tips = (ArrayList<PowerTip>)ReflectionHacks.getPrivateStatic(TipHelper.class, "POWER_TIPS");
+            tips.get(0).header = bombStrings.TEXT[0];
+            tips.get(0).body = bombStrings.TEXT[1] + (int)ReflectionHacks.getPrivate(this, AbstractMonster.class, "intentDmg") + bombStrings.TEXT[2];
+            tips.get(0).img = BOMB_INTENT_TEXTURE;
+        	final float offsetY = (tips.size() - 1) * AbstractMonster.MULTI_TIP_Y_OFFSET + AbstractMonster.TIP_OFFSET_Y;
+        	if (this.hb.cX + this.hb.width / 2.0f < AbstractMonster.TIP_X_THRESHOLD) {
+                TipHelper.queuePowerTips(this.hb.cX + this.hb.width / 2.0f + AbstractMonster.TIP_OFFSET_R_X, this.hb.cY + offsetY, tips);
+            }
+            else {
+                TipHelper.queuePowerTips(this.hb.cX - this.hb.width / 2.0f + AbstractMonster.TIP_OFFSET_L_X, this.hb.cY + offsetY, tips);
+            }
+        }
     }
 }

@@ -676,6 +676,10 @@
 	"NAME": "Heavy Armor",
 	"DESCRIPTION": "Gain !M! Plated Armor. NL Exhaustive !stslib:ex!"
   },
+  "Replay:BasicMightCard": {
+	"NAME": "Might",
+	"DESCRIPTION": "For X turns, your Attacks deal 25% more damage. NL Refund !stslib:refund!."
+  },
   "Ghost Swipe": {
     "NAME": "Ghost Swipe",
     "DESCRIPTION": "Deal !D! damage. NL Exhaust. NL Ethereal."

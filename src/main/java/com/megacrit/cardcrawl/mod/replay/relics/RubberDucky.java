@@ -24,7 +24,7 @@ public class RubberDucky extends ReplayAbstractRelic
 {
     public static final String ID = "Replay:Rubber Ducky";
 
-    public static final ReplayIntSliderSetting SETTING_BLOCK = new ReplayIntSliderSetting("Ducky_Block", "Block", 3, 1, 5);
+    public static final ReplayIntSliderSetting SETTING_BLOCK = new ReplayIntSliderSetting("Ducky_Block", "Shielding", 3, 1, 5);
     
     public ArrayList<ReplayRelicSetting> BuildRelicSettings() {
     	ArrayList<ReplayRelicSetting> settings = new ArrayList<ReplayRelicSetting>();
@@ -45,7 +45,7 @@ public class RubberDucky extends ReplayAbstractRelic
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
         if (card.type == AbstractCard.CardType.POWER && !card.freeToPlayOnce && card.costForTurn > 0) {
             this.flash();
-            AbstractDungeon.actionManager.addToTop(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, SETTING_BLOCK.value * card.costForTurn));
+            AbstractDungeon.actionManager.addToTop(new ReplayGainShieldingAction(AbstractDungeon.player, AbstractDungeon.player, SETTING_BLOCK.value * card.costForTurn));
         }
     }
     

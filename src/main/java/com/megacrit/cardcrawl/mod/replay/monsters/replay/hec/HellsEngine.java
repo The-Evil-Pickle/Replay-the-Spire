@@ -21,12 +21,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.ScreenShake.ShakeDur;
 import com.megacrit.cardcrawl.helpers.ScreenShake.ShakeIntensity;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.mod.replay.actions.common.ReplayGainShieldingAction;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.MoveCreaturesAction;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.MoveMonsterAction;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.StartParalaxAction;
@@ -61,6 +63,7 @@ public class HellsEngine extends AbstractMonster {
     private static final AbstractCard STATUS_CARD_1;
     private static final AbstractCard STATUS_CARD_2; 
     private static final UIStrings plannedStrings = CardCrawlGame.languagePack.getUIString("PlannedCardIntent");
+    private static final Texture TRAIN_INTENT_TEXTURE = ImageMaster.loadImage("images/ui/replay/intent/attack_intent_train.png");
     static {
     	STATUS_CARD_1 = new Burn();
     	(STATUS_CARD_2 = new Burn()).upgrade();
@@ -194,9 +197,9 @@ public class HellsEngine extends AbstractMonster {
 	private void setMoveNow(byte nextTurn) {
 		this.plannedCard = null;
 		STATUS_CARD_1.target_x = this.intentHb.cX - (128.0f * Settings.scale);
-		STATUS_CARD_1.target_y =  this.intentHb.cY - 0.0f;
+		STATUS_CARD_1.target_y =  this.intentHb.cY - (60.0f * Settings.scale);
 		STATUS_CARD_1.current_x = this.intentHb.cX - (128.0f * Settings.scale);
-		STATUS_CARD_1.current_y =  this.intentHb.cY - 0.0f;
+		STATUS_CARD_1.current_y =  this.intentHb.cY - (60.0f * Settings.scale);
 		STATUS_CARD_2.current_x =  STATUS_CARD_1.current_x;
 		STATUS_CARD_2.current_y =  STATUS_CARD_1.current_y;
 		STATUS_CARD_2.target_x =  STATUS_CARD_1.target_x;
@@ -208,7 +211,7 @@ public class HellsEngine extends AbstractMonster {
 			}
 	        case HOT_COALS: {
 	        	this.plannedCard = STATUS_CARD_1;
-				this.setMove(MOVES[1], nextTurn, Intent.ATTACK, this.damage.get(1).base, this.coalsAmt, true);
+				this.setMove(MOVES[1], nextTurn, Intent.ATTACK_DEBUFF, this.damage.get(1).base, this.coalsAmt, true);
 				break;
 			}
 	        case RUNAWAY_TRAIN: {
@@ -217,6 +220,10 @@ public class HellsEngine extends AbstractMonster {
 			}
 	        case LIVING_STEEL: {
 				this.setMove(MOVES[4], nextTurn, Intent.DEFEND);
+				break;
+			}
+	        case HEARTBEAT: {
+				this.setMove(nextTurn, this.hasPower(BackAttackPower.POWER_ID) ? Intent.STRONG_DEBUFF : Intent.DEBUFF);
 				break;
 			}
 			default: {
@@ -259,7 +266,7 @@ public class HellsEngine extends AbstractMonster {
 				for (int i=0; i<this.coalsAmt; i++) {
 					AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.FIRE));
 				}
-				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(this.plannedCard != null ? this.plannedCard.makeStatEquivalentCopy() : new Burn(), this.coalsAmt, true, true));//this.plannedCard != null ? this.plannedCard.makeStatEquivalentCopy() : new Burn()
+				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(this.plannedCard, this.coalsAmt, true, true));//this.plannedCard != null ? this.plannedCard.makeStatEquivalentCopy() : new Burn()
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
 				break;
 			}
@@ -339,14 +346,14 @@ public class HellsEngine extends AbstractMonster {
     		dmg *= (int)ReflectionHacks.getPrivate(this, AbstractMonster.class, "intentMultiAmt");
     	}
     	if (dmg > 35 || this.isFirstTurn && dmg >= 20) {
-    		return ImageMaster.loadImage("images/ui/replay/intent/attack_intent_train.png");
+    		return TRAIN_INTENT_TEXTURE;
     	}
     	return super.getAttackIntent();
     }
     @Override
     public Texture getAttackIntent(int dmg) {
     	if (dmg > 35 || this.isFirstTurn && dmg >= 20) {
-    		return ImageMaster.loadImage("images/ui/replay/intent/attack_intent_train.png");
+    		return TRAIN_INTENT_TEXTURE;
     	}
     	return super.getAttackIntent(dmg);
     }
@@ -368,11 +375,12 @@ public class HellsEngine extends AbstractMonster {
 			if (this.plannedCard != null && !AbstractDungeon.player.hasRelic("Runic Dome") && !Settings.hideCombatElements) {
 				if (!this.hb.hovered) {
 					this.plannedCard.targetDrawScale = 0.4f;
-					this.plannedCard.current_y = this.intentHb.cY + this.cardBob.y;
+					this.plannedCard.current_y = this.intentHb.cY + this.cardBob.y - (25.0f * Settings.scale);
 					this.plannedCard.target_y = this.plannedCard.current_y;
 				} else {
 					this.plannedCard.targetDrawScale = 0.75f;
-					this.plannedCard.target_y = this.intentHb.cY + (30.0f * Settings.scale);
+					this.plannedCard.target_y = this.intentHb.cY - (100.0f * Settings.scale);
+					this.plannedCard.current_y = MathHelper.cardLerpSnap(this.plannedCard.current_y, this.plannedCard.target_y);
 				}
 				this.plannedCard.render(sb);
 			}

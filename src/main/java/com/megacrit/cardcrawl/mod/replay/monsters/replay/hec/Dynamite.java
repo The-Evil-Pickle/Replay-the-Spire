@@ -26,7 +26,7 @@ public class Dynamite extends AbstractMonster
     private int attackDmg;
     
     public Dynamite(final float x, final float y, final int dmg) {
-        super(Dynamite.NAME, ID, 30, -8.0f, -10.0f, 150.0f, 150.0f, null, x, y + 10.0f);
+        super(Dynamite.NAME, ID, A_HP, -8.0f, -10.0f, 150.0f, 150.0f, null, x, y + 10.0f);
         this.turnCount = 0;
         this.loadAnimation("images/monsters/theForest/exploder/skeleton.atlas", "images/monsters/theForest/exploder/skeleton.json", 1.0f);
         final AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
@@ -44,6 +44,7 @@ public class Dynamite extends AbstractMonster
     @Override
     public void usePreBattleAction() {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ReplayExplosivePower(this, 3, this.attackDmg), this.attackDmg));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, 1), 1));
     }
     
     @Override
@@ -57,11 +58,11 @@ public class Dynamite extends AbstractMonster
     
     @Override
     protected void getMove(final int num) {
-    	if (!this.hasPower(ReplayExplosivePower.POWER_ID)) {
+    	if (this.turnCount > 0 && !this.hasPower(ReplayExplosivePower.POWER_ID)) {
     		this.setMove((byte)3, Intent.BUFF);
     		return;
     	}
-        if (this.getPower(ReplayExplosivePower.POWER_ID).amount > 1) {
+        if (!this.hasPower(ReplayExplosivePower.POWER_ID) || this.getPower(ReplayExplosivePower.POWER_ID).amount > 1) {
             this.setMove((byte)1, Intent.SLEEP);
         }
         else {
