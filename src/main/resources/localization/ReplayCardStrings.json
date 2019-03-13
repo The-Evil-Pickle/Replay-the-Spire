@@ -963,5 +963,13 @@
     "NAME": "Bound Blade",
     "DESCRIPTION": "Cantrip. NL Add a Shiv to your hand. NL Draw a card.",
     "UPGRADE_DESCRIPTION": "Cantrip. NL Add an Upgraded Shiv to your hand. NL Draw a card."
+  },
+  "Replay:NecroticArchetypeSelectCard": {
+    "NAME": "Necrotic Poison",
+    "DESCRIPTION": "Necrotic Poison cards."
+  },
+  "Replay:ThickDeckSelectCard": {
+    "NAME": "Thick Deck / Status",
+    "DESCRIPTION": "Cards that work well with thick decks or Status cards."
   }
 }

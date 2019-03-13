@@ -602,7 +602,7 @@ public class MirrorMist
 				this.gain_r_1 = new M_GuardianBlood();
 				this.has_1b = CardHelper.hasCardWithID(CurlUp.ID);
 				this.loss_c_1b = CardLibrary.getCopy(CurlUp.ID);
-				this.gain_c_1b = new GuardianBash();
+				this.gain_c_1b = CardLibrary.getCopy(GuardianBash.ID);
 				this.has_2 = CardHelper.hasCardWithID(TwinSlam.ID);
 				this.has_2b = this.has_2;
 				this.loss_c_2 = CardLibrary.getCopy(TwinSlam.ID);
@@ -612,7 +612,7 @@ public class MirrorMist
 				this.loss_r_3 = RelicLibrary.getRelic("Guardian:ModeShifter").makeCopy();
 				this.gain_r_3 = new CrackedCore();
 				this.has_3b = this.has_3;
-				this.gain_c_3b = new GuardianCast();
+				this.gain_c_3b = CardLibrary.getCopy(GuardianCast.ID);
 				this.thirdOption = true;
 				break;
 			}

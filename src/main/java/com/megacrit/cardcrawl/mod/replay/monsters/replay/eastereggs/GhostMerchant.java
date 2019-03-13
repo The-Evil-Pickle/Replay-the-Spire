@@ -249,6 +249,9 @@ public class GhostMerchant extends AbstractMonster
     public void die() {
         if (!AbstractDungeon.getCurrRoom().cannotLose) {
             super.die();
+            if (this.gold > 0) {
+                AbstractDungeon.getCurrRoom().addStolenGoldToRewards(this.gold);
+            }
             if (!this.boss) {
                 AbstractDungeon.getCurrRoom().spawnRelicAndObtain(this.hb.cX, this.hb.cY, RelicLibrary.getRelic("hubris:NiceRug").makeCopy());
             }

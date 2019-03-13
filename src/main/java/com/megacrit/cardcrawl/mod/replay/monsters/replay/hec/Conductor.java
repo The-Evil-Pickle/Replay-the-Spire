@@ -123,7 +123,7 @@ public class Conductor extends AbstractMonster {
 		this.engine = (HellsEngine)AbstractDungeon.getMonsters().getMonster(HellsEngine.ID);
 		int armor = AbstractDungeon.ascensionLevel >= 19 ? ARMOR_INIT_A : ARMOR_INIT;
 		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this, this, new EnemyLifeBindPower(this)));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new OffTheRailsPower(this, -1, 1), 1));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new OffTheRailsPower(this, 1), 1));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PlatedArmorPower(this, armor), armor));
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, armor));
 	}

@@ -563,7 +563,10 @@
     "NAME": "Bottled Eggs",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
-		"On pick up, choose a card. NL All copies of that card you have are #yUpgraded. NL All future copies of that card you obtain are #yUpgraded."
+		"On pick up, choose a card. NL All copies of that card you have are #yUpgraded. NL All future copies of that card you obtain are #yUpgraded.",
+		"Choose card to Upgrade",
+		"All copies of ",
+		" are #yUpgraded."
 	]
   },
   "ReplayTheSpireMod:Bottled Snecko": {

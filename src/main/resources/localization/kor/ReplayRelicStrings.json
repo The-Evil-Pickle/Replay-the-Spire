@@ -570,7 +570,10 @@
     "NAME": "Bottled Eggs",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
-		"획득 시 choose a card. NL All copies of that card you have are #yUpgraded. NL All future copies of that card you obtain are #yUpgraded."
+		"획득 시 choose a card. NL All copies of that card you have are #yUpgraded. NL All future copies of that card you obtain are #yUpgraded.",
+		"Choose card to Upgrade",
+		"All copies of ",
+		" are #yUpgraded."
 	]
   },
   "ReplayTheSpireMod:Multitool": {

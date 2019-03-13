@@ -1,0 +1,11 @@
+{
+  "Replay:SilentShivs": { // While you can separate different Json objects in 1 file with ID's,
+                         // the mod loads the *whole* file. So use different files for different archetypes.
+    "NAME": "Silent Shivs Extension", //The name of the archetype. This, like the ID, isn't actually used/displayed anywhere, 
+                    //but is useful for keeping track of archetypes.
+    "CARD_IDS": [
+      "ReplayTheSpireMod:Shiv Toss",
+	  "Hidden Blade"
+    ]
+  }
+}

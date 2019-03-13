@@ -25,6 +25,7 @@ public class BottlePatches {
 	    public static SpireField<Boolean> inBottleSteam = new SpireField<>(() -> false);
 	    public static SpireField<Boolean> inBottleWhirlpool = new SpireField<>(() -> false);
 	    public static SpireField<Boolean> inBottleFirefly = new SpireField<>(() -> false);
+	    public static SpireField<Boolean> inBottleSnecko = new SpireField<>(() -> false);
 	}
     @SpirePatch(cls="com.megacrit.cardcrawl.cards.AbstractCard", method="makeStatEquivalentCopy")
     public static class StatEquivCopyPatch {
@@ -33,6 +34,7 @@ public class BottlePatches {
     		BottlePatches.BottleFields.inBottleSteam.set(__Result, BottlePatches.BottleFields.inBottleSteam.get(__Instance));
     		BottlePatches.BottleFields.inBottleWhirlpool.set(__Result, BottlePatches.BottleFields.inBottleWhirlpool.get(__Instance));
     		BottlePatches.BottleFields.inBottleFirefly.set(__Result, BottlePatches.BottleFields.inBottleFirefly.get(__Instance));
+    		BottlePatches.BottleFields.inBottleSnecko.set(__Result, BottlePatches.BottleFields.inBottleSnecko.get(__Instance));
     		
     		return __Result;
     	}

@@ -148,9 +148,7 @@ public class HellsEngine extends AbstractMonster {
 		AbstractDungeon.getCurrRoom().playBgmInstantly("replay/No_Train_No_Game.mp3");
 		this.conductor = (Conductor)AbstractDungeon.getMonsters().getMonster(Conductor.ID);
 		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this, this, new EnemyLifeBindPower(this)));
-		int forgeamtby = 2;
-		int forgeamtto = 5;
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ForgedInHellfirePower(this, forgeamtby, forgeamtto), -forgeamtby));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ForgedInHellfirePower(this, 50)));
 		int artifact = AbstractDungeon.ascensionLevel >= 19 ? ARTIFACT_INIT_A : ARTIFACT_INIT;
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, artifact), artifact));
 		

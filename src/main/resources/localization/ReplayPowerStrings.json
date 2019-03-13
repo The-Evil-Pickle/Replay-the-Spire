@@ -24,23 +24,15 @@
   "Replay:Forged in Hellfire": {
     "NAME": "Forged in Hellfire",
     "DESCRIPTIONS": [
-	"All non-attack damage recieved is reduced",
-	" to #b",
-	" by #b",
-	" if below #b",
-	", or reduced",
-	" if above #b"
+	"All #rnon-attack damage recieved is reduced by #b",
+	"%"
     ]
   },
   "Replay:Off the Rails": {
     "NAME": "Off the Rails",
     "DESCRIPTIONS": [
-	"Damage recieved that hits ALL enemies is reduced",
-	" to #b",
-	" by #b",
-	" if below #b",
-	", or reduced",
-	" if above #b"
+	"Damage that hits #yALL enemies deals only #b",
+	" damage to #rTHIS enemy."
     ]
   },
   "Reflection": {

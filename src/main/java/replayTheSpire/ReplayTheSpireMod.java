@@ -87,6 +87,7 @@ import replayTheSpire.replayxover.infinitebs;
 import replayTheSpire.replayxover.marisabs;
 import replayTheSpire.replayxover.slimeboundbs;
 import replayTheSpire.replayxover.sneckobs;
+import replayTheSpire.replayxover.archetypeAPI.archetypebs;
 import replayTheSpire.variables.MagicArithmatic;
 
 import java.lang.reflect.*;
@@ -1030,6 +1031,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		
 		ReplayTheSpireMod.receiveEditUnlocks();
 		
+		if (Loader.isModLoaded("archetypeapi")) {
+			archetypebs.postInit();
+		}
+		
     }
 	
     public void receiveEditKeywords() {
@@ -1082,8 +1087,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new Bandana(), RelicType.SHARED);
 		BaseMod.addRelic(new BargainBundle(), RelicType.SHARED);
 		BaseMod.addRelic(new Baseball(), RelicType.SHARED);
+		BaseMod.addRelic(new BottledEggs(), RelicType.SHARED);
 		BaseMod.addRelic(new BottledFlurry(), RelicType.SHARED);
 		BaseMod.addRelic(new BottledSteam(), RelicType.SHARED);
+		//BaseMod.addRelic(new BottledSnecko(), RelicType.SHARED);
 		BaseMod.addRelic(new BronzeCore(), RelicType.SHARED);
 		BaseMod.addRelic(new ByrdSkull(), RelicType.GREEN);
 		BaseMod.addRelic(new ChameleonRing(), RelicType.SHARED);
@@ -1945,6 +1952,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
             final SpireConfig config = new SpireConfig("ReplayTheSpireMod", "SaveData");
             BottledFlurry.load(config);
             BottledSteam.load(config);
+            BottledEggs.load(config);
             Baseball.load(config);
             ReplayMapScoutEvent.load(config);
             DrinkMe.load(config);
@@ -1960,6 +1968,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
             final SpireConfig config = new SpireConfig("ReplayTheSpireMod", "SaveData");
             BottledFlurry.save(config);
             BottledSteam.save(config);
+            BottledEggs.save(config);
             Baseball.save(config);
             ReplayMapScoutEvent.save(config);
             config.save();
@@ -1977,6 +1986,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
             config.save();
             BottledFlurry.clear();
             BottledSteam.clear();
+            BottledEggs.clear();
             Baseball.clear();
             ReplayMapScoutEvent.clear();
         }
