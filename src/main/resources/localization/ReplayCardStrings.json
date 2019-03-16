@@ -10,8 +10,8 @@
   },
   "Draining Mist": {
     "NAME": "Draining Mist",
-    "DESCRIPTION": "Apply 3 Necrotic Poison to a random enemy !M! times. NL Apply -1 Strength to ALL enemies. NL Exhaust.",
-	"UPGRADE_DESCRIPTION": "Apply 3 Necrotic Poison to a random enemy !M! times. NL Apply -2 Strength to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Apply 3 Necrotic Poison and 1 Languid to a random enemy !M! times. NL Apply -1 Strength to ALL enemies. NL Exhaust.",
+	"UPGRADE_DESCRIPTION": "Apply 3 Necrotic Poison and 1 Languid to a random enemy !M! times. NL Apply -2 Strength to ALL enemies. NL Exhaust."
   },
   "Toxin Wave": {
     "NAME": "Toxin Wave",
@@ -966,10 +966,14 @@
   },
   "Replay:NecroticArchetypeSelectCard": {
     "NAME": "Necrotic Poison",
-    "DESCRIPTION": "Necrotic Poison cards."
+    "DESCRIPTION": "Adds Necrotic Poison cards to the rewards pool."
   },
   "Replay:ThickDeckSelectCard": {
     "NAME": "Thick Deck / Status",
-    "DESCRIPTION": "Cards that work well with thick decks or Status cards."
+    "DESCRIPTION": "Adds cards that work well with thick decks or Status cards."
+  },
+  "Replay:SilentWeakSelectCard": {
+    "NAME": "Weakness",
+    "DESCRIPTION": "Adds cards that apply or synergize with Weakness to the rewards pool."
   }
 }

@@ -3,6 +3,7 @@ package replayTheSpire.patches;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SneckoField;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
@@ -35,7 +36,9 @@ public class BottlePatches {
     		BottlePatches.BottleFields.inBottleWhirlpool.set(__Result, BottlePatches.BottleFields.inBottleWhirlpool.get(__Instance));
     		BottlePatches.BottleFields.inBottleFirefly.set(__Result, BottlePatches.BottleFields.inBottleFirefly.get(__Instance));
     		BottlePatches.BottleFields.inBottleSnecko.set(__Result, BottlePatches.BottleFields.inBottleSnecko.get(__Instance));
-    		
+    		if (BottlePatches.BottleFields.inBottleSnecko.get(__Result)) {
+    			SneckoField.snecko.set(__Result, true);
+    		}
     		return __Result;
     	}
     }

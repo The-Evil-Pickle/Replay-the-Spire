@@ -86,7 +86,7 @@ public class Conductor extends AbstractMonster {
     private static final byte HEARTBEAT = 6;
     private static final byte STARTUP = 7;
     public Conductor() {
-        super(NAME, ID, 999, 25.0f, 25.0f, 180.0f, 250.0f, "images/monsters/TheCity/abe.png", -75.0f, -75.0f);
+        super(NAME, ID, 999, 25.0f, 25.0f, 180.0f, 250.0f, "images/monsters/beyond/HEC/c_placeholder.png", -75.0f, -75.0f);
 		ReplayTheSpireMod.logger.info("init Conductor");
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 9) {

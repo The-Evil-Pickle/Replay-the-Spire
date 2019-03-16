@@ -39,6 +39,7 @@ public class BagOfTricksAction extends AbstractGameAction
     public BagOfTricksAction(final AbstractPlayer p, final AbstractMonster m, final AbstractCard card, final int poison, final int shivs, final int block, final int draw, final int energyGain, final boolean freeToPlayOnce, final int energyOnUse) {
         this.actionType = ActionType.SPECIAL;
         this.p = p;
+        this.m = m;
 		this.poison = poison;
 		this.shivs = shivs;
 		this.block = block;

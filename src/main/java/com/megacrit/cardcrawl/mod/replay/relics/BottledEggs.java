@@ -1,13 +1,18 @@
 package com.megacrit.cardcrawl.mod.replay.relics;
 
+import java.util.ArrayList;
+
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 public class BottledEggs extends AbstractRelic
 {
@@ -45,11 +50,17 @@ public class BottledEggs extends AbstractRelic
         if (!this.cardSelected && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             this.cardSelected = true;
             this.card = AbstractDungeon.gridSelectScreen.selectedCards.get(0).cardID;
+            ArrayList<AbstractCard> upgradedCards = new ArrayList<AbstractCard>();
             for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             	if (c != null && c.cardID.equals(this.card) && c.canUpgrade()) {
             		c.upgrade();
+            		upgradedCards.add(c);
             	}
             }
+            for (int i=0; i < upgradedCards.size(); i++) {
+            	AbstractDungeon.topLevelEffects.add(new ShowCardBrieflyEffect(upgradedCards.get(i).makeStatEquivalentCopy(), Settings.WIDTH / 2.0f - (AbstractCard.IMG_WIDTH / 2.0f) * (upgradedCards.size()-1) + AbstractCard.IMG_WIDTH * i - ((upgradedCards.size()-1) * -20.0f + i * 40.0f) * Settings.scale, Settings.HEIGHT / 2.0f));
+            }
+            AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect(Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             this.description = this.DESCRIPTIONS[2] + FontHelper.colorString(this.card, "y") + this.DESCRIPTIONS[3];

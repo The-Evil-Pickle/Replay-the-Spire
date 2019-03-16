@@ -14,6 +14,7 @@ import archetypeAPI.archetypes.theIronclad.ExhaustIronclad;
 import archetypeAPI.archetypes.theIronclad.SelfDamageIronclad;
 import archetypeAPI.archetypes.theIronclad.StrengthIronclad;
 import archetypeAPI.archetypes.theIronclad.StrikeIronclad;
+import archetypeAPI.archetypes.theSilent.BasicSilent;
 import archetypeAPI.archetypes.theSilent.BlockSilent;
 import archetypeAPI.archetypes.theSilent.DiscardSilent;
 import archetypeAPI.archetypes.theSilent.PoisonSilent;
@@ -25,6 +26,8 @@ public class archetypebs {
 
 			NecroSet.necroticArchetypeFiles.add("APIJsons/Replay/NecroSet.json");
             abstractArchetype.silentArchetypeSelectCards.addToTop(new NecroticSelectCard().makeCopy());
+			SilentWeakSet.weakArchetypeFiles.add("APIJsons/Replay/SilentWeak.json");
+            abstractArchetype.silentArchetypeSelectCards.addToTop(new SilentWeakSelectCard().makeCopy());
 			ThiccSet.thiccArchetypeFiles.add("APIJsons/Replay/DefectThicc.json");
             abstractArchetype.defectArchetypeSelectCards.addToTop(new ThiccSelectCard().makeCopy());
             
@@ -32,6 +35,7 @@ public class archetypebs {
             DiscardSilent.discardSilentArchetypeFiles.add("APIJsons/Replay/SilentDiscard.json");
             BlockSilent.blockSilentArchetypeFiles.add("APIJsons/Replay/SilentBlock.json");
             ShivSilent.shivSilentArchetypeFiles.add("APIJsons/Replay/SilentShivs.json");
+            BasicSilent.basicSilentArchetypeFiles.add("APIJsons/Replay/SilentBasic.json");
             
             BlockIronclad.blockIroncladArchetypeFiles.add("APIJsons/Replay/IronBlock.json");
             ExhaustIronclad.exhaustIroncladArchetypeFiles.add("APIJsons/Replay/IronExhaust.json");

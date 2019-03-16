@@ -1013,7 +1013,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			BaseMod.addEvent(GremboTheGreat.ID, GremboTheGreat.class, "TheCity");
 		}
 		
-		
 		if (foundmod_infinite) {
 			infinitebs.NeowEventNonsense();
 			logger.info("Replay | Registering Quests");
@@ -1090,7 +1089,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new BottledEggs(), RelicType.SHARED);
 		BaseMod.addRelic(new BottledFlurry(), RelicType.SHARED);
 		BaseMod.addRelic(new BottledSteam(), RelicType.SHARED);
-		//BaseMod.addRelic(new BottledSnecko(), RelicType.SHARED);
+		BaseMod.addRelic(new BottledSnecko(), RelicType.SHARED);
 		BaseMod.addRelic(new BronzeCore(), RelicType.SHARED);
 		BaseMod.addRelic(new ByrdSkull(), RelicType.GREEN);
 		BaseMod.addRelic(new ChameleonRing(), RelicType.SHARED);
@@ -1233,7 +1232,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new ShivToss());
 		AddAndUnlockCard(new SpeedTraining());
 		AddAndUnlockCard(new TripWire());
-		//AddAndUnlockCard(new BagOfTricks());//coming soon yo
+		AddAndUnlockCard(new BagOfTricks());//coming soon yo
 		AddAndUnlockCard(new PoisonSmokescreen());
 		logger.info("adding cards for Defect...");
 		AddAndUnlockCard(new com.megacrit.cardcrawl.mod.replay.cards.blue.PanicButton());

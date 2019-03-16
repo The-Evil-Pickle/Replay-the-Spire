@@ -5,7 +5,8 @@
                     //but is useful for keeping track of archetypes.
     "CARD_IDS": [
       "ReplayTheSpireMod:Shiv Toss",
-	  "Hidden Blade"
+	  "Hidden Blade",
+	  "Replay:Bag of Tricks"
     ]
   }
 }

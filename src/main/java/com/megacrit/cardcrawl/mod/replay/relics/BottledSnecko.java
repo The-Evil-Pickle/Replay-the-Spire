@@ -43,7 +43,7 @@ public class BottledSnecko extends AbstractRelic implements CustomBottleRelic
             AbstractDungeon.previousScreen = AbstractDungeon.screen;
         }
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
-        AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck), 1, "", false, false, true, false);
+        AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck), 1, "", false, false, true, true);
     }
     
     @Override
@@ -59,15 +59,16 @@ public class BottledSnecko extends AbstractRelic implements CustomBottleRelic
     @Override
     public void update() {
         super.update();
-        if (!this.cardSelected && !AbstractDungeon.isScreenUp) {
+        if (!this.cardSelected && AbstractDungeon.screen != AbstractDungeon.CurrentScreen.GRID) {
             this.cardSelected = true;
             if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             	this.card = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
                 BottlePatches.BottleFields.inBottleSnecko.set(card, true);
                 SneckoField.snecko.set(card, true);
-                AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+                card.cost = card.costForTurn = -1;
                 AbstractDungeon.gridSelectScreen.selectedCards.clear();
             }
+            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
         }
     }
     

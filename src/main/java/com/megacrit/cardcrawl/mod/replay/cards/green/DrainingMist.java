@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
+import com.megacrit.cardcrawl.mod.replay.powers.LanguidPower;
 import com.megacrit.cardcrawl.mod.replay.powers.NecroticPoisonPower;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
@@ -57,6 +58,7 @@ public class DrainingMist
 	for (int i=0; i < this.magicNumber; i++) {
 		AbstractMonster mo = AbstractDungeon.getMonsters().getRandomMonster(true);
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new NecroticPoisonPower(mo, p, 3), 3, AbstractGameAction.AttackEffect.POISON));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new LanguidPower(mo, 1, false), 1));
 		if (!Settings.FAST_MODE) {
 			AbstractDungeon.actionManager.addToBottom(new WaitAction(0.2f));
 		}
