@@ -98,7 +98,7 @@ public class NeowRewardPatches {
 	public static final int NUM_BASIC_CARDS = 3;
 	public static final int NUM_BOSS_CURSES = 2;
 	
-	public static ReplayIntSliderSetting SETTING_BASIC_CARDS = new ReplayIntSliderSetting("Neow_Basic_Cards_Amt", "Random Basic Cards", 3, 5);
+	public static ReplayIntSliderSetting SETTING_BASIC_CARDS = new ReplayIntSliderSetting("Neow_Basic_Cards_Amt", "Random Basic Cards", 2, 5);
 	static final List<String> settingBossStrings = new ArrayList<String>();
 	public static final ReplayOptionsSetting SETTING_BOSS_OPTIONS_ENABLED;
 	public static ReplayIntSliderSetting SETTING_BOSS_CURSES = new ReplayIntSliderSetting("Neow_Boss_Curses_Amt", "Curses for Boss Relic (0 disables)", 2, 5);

@@ -663,8 +663,6 @@ public class FadingForestBoss extends CustomMonster
 				switch(p0) {
 					case 0:
 						AbstractMonster m = new FF_FungiBeast(-350f, 0f);
-						//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new FadingPower(m, 3), 3));
-						//AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, new SporeCloudPower(m, 1), 1));
 						AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 						break;
 					case 2:

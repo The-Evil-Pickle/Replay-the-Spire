@@ -18,12 +18,15 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.*;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 
 public class NecroticPoisonPower
-  extends AbstractPower implements HealthBarRenderPower
+  extends AbstractPower implements HealthBarRenderPower, CloneablePowerInterface
 {
   public static final String POWER_ID = "Necrotic Poison";
   private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("Necrotic Poison");
@@ -94,5 +97,10 @@ public class NecroticPoisonPower
 	@Override
 	public int getHealthBarAmount() {
 		return this.amount * 2;
+	}
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new NecroticPoisonPower(owner, source, amount);
 	}
 }

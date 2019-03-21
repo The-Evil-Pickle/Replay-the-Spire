@@ -24,29 +24,29 @@
   "Replay:Forged in Hellfire": {
     "NAME": "Forged in Hellfire",
     "DESCRIPTIONS": [
-	"All non-attack damage recieved is reduced",
-	" to #b",
-	" by #b",
-	" if below #b",
-	", or reduced",
-	" if above #b"
+	"All #rnon-attack damage recieved is reduced by #b",
+	"%"
     ]
   },
   "Replay:Off the Rails": {
     "NAME": "Off the Rails",
     "DESCRIPTIONS": [
-	"Damage recieved that hits ALL enemies is reduced",
-	" to #b",
-	" by #b",
-	" if below #b",
-	", or reduced",
-	" if above #b"
+	"Damage that hits #yALL enemies deals only #b",
+	" damage to #rTHIS enemy."
     ]
   },
   "Reflection": {
     "NAME": "Reflection",
     "DESCRIPTIONS": [
 	"Whenever you completely block damage, deal that much damage to the attacker."
+    ]
+  },
+  "Replay:Might": {
+    "NAME": "Might",
+    "DESCRIPTIONS": [
+	"All attack damage dealt is increased by #b25% for the next ",
+	" turns.",
+	" turn."
     ]
   },
   "Necrotic Poison": {

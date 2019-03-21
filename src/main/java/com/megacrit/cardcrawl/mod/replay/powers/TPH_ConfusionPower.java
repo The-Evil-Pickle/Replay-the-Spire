@@ -1,4 +1,4 @@
-package tobyspowerhouse.powers;
+package com.megacrit.cardcrawl.mod.replay.powers;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;

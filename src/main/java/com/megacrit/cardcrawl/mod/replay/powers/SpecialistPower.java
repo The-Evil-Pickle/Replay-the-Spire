@@ -9,13 +9,16 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 //import com.megacrit.cardcrawl.powers.PowerType;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.unlock.*;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.*;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
 
-public class SpecialistPower extends AbstractPower
+public class SpecialistPower extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "Specialist";
     private static final PowerStrings powerStrings;
@@ -104,4 +107,8 @@ public class SpecialistPower extends AbstractPower
         NAME = SpecialistPower.powerStrings.NAME;
         DESCRIPTIONS = SpecialistPower.powerStrings.DESCRIPTIONS;
     }
+	@Override
+	public AbstractPower makeCopy() {
+		return new SpecialistPower(owner, amount);
+	}
 }

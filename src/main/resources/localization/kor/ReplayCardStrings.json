@@ -10,8 +10,8 @@
   },
   "Draining Mist": {
     "NAME": "안개 방출",
-    "DESCRIPTION": "무작위 적에게 괴저독 을 3 만큼 !M! 번 부여합니다. NL 적 전체에게 힘 -1 을 부여합니다. NL 소멸",
-	"UPGRADE_DESCRIPTION": "무작위 적에게 괴저독 을 3 만큼 !M! 번 부여합니다. NL 적 전체에게 힘 -2 을 부여합니다. NL 소멸"
+    "DESCRIPTION": "무작위 적에게 괴저독 을 3 & 을 1 나른함 만큼 !M! 번 부여합니다. NL 적 전체에게 힘 -1 을 부여합니다. NL 소멸",
+	"UPGRADE_DESCRIPTION": "무작위 적에게 괴저독 을 3 & 을 1 만큼 !M! 번 부여합니다. NL 적 전체에게 힘 -2 을 부여합니다. NL 소멸"
   },
   "Toxin Wave": {
     "NAME": "맹독파",
@@ -114,8 +114,8 @@
   },
   "Replay:Poison Smokescreen": {
     "NAME": "독 연막",
-    "DESCRIPTION": "방어도 를 !B! 얻습니다. NL 무작위 적들에게 이 카드로 얻은 방어도 만큼 중독 을 나눠서 부여합니다.",
-    "UPGRADE_DESCRIPTION": "방어도 를 !B! 얻습니다. NL 적 전체에게 이 카드로 얻은 방어도 만큼 중독 을 부여합니다."
+    "DESCRIPTION": "방어도 를 !B! 얻습니다. NL 무작위 적들에게 이 카드로 얻은 방어도 만큼 중독 을 나눠서 부여합니다. NL 고갈 !stslib:ex!",
+    "UPGRADE_DESCRIPTION": "방어도 를 !B! 얻습니다. NL 무작위 적들에게 이 카드로 얻은 방어도 만큼 중독 을 나눠서 부여합니다."
   },
   "Abandon": {
     "NAME": "유기",

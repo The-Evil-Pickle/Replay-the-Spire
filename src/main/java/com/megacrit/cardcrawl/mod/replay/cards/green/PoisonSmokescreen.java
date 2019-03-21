@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.powers.PoisonPower;
 
 import java.util.ArrayList;
 
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -28,6 +29,7 @@ public class PoisonSmokescreen extends CustomCard
         super(ID, PoisonSmokescreen.NAME, "cards/replay/replayBetaSkill.png", PoisonSmokescreen.COST, PoisonSmokescreen.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         this.baseBlock = 6;
         this.block = this.baseBlock;
+        ExhaustiveVariable.setBaseValue(this, 2);
     }
     
     @Override
@@ -56,9 +58,10 @@ public class PoisonSmokescreen extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBlock(2);
-            //this.rawDescription = UPGRADE_DESCRIPTION;
-            //this.initializeDescription();
+            //this.upgradeBlock(2);
+            ExhaustiveVariable.upgrade(this, -3);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
     

@@ -14,7 +14,9 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
-public class TheWorksPower extends AbstractPower
+import basemod.interfaces.CloneablePowerInterface;
+
+public class TheWorksPower extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "The Works";
     private static final PowerStrings powerStrings;
@@ -24,14 +26,17 @@ public class TheWorksPower extends AbstractPower
     private static final int RESET_AMT = 3;
     private int damage;
     private int energy;
-    
+
     public TheWorksPower(final AbstractCreature owner, final int damage) {
+        this(owner, damage, 1);
+    }
+    public TheWorksPower(final AbstractCreature owner, final int damage, final int energy) {
         this.name = TheWorksPower.NAME;
         this.ID = TheWorksPower.POWER_ID;
         this.owner = owner;
         this.amount = RESET_AMT;
         this.damage = damage;
-        this.energy = 1;
+        this.energy = energy;
         this.updateDescription();
         this.img = ImageMaster.loadImage("images/powers/32/drawCard.png");
         this.isActive = true;
@@ -75,4 +80,9 @@ public class TheWorksPower extends AbstractPower
         NAME = TheWorksPower.powerStrings.NAME;
         DESCRIPTIONS = TheWorksPower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new TheWorksPower(owner, damage, energy);
+	}
 }

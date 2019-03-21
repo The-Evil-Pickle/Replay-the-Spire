@@ -10,22 +10,35 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 import java.util.*;
 import com.megacrit.cardcrawl.core.*;
 
-public class TimeCollectorPower extends AbstractPower
+public class TimeCollectorPower extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "TimeCollector";
     private static final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESC;
     private int maxAmount;
-    
+
     public TimeCollectorPower(final AbstractCreature owner, final int maxAmount) {
         this.name = TimeCollectorPower.NAME;
         this.ID = TimeCollectorPower.POWER_ID;
         this.owner = owner;
         this.amount = maxAmount;
+        this.maxAmount = maxAmount;
+        this.updateDescription();
+        this.loadRegion("time");
+        this.type = PowerType.BUFF;
+    }
+    public TimeCollectorPower(final AbstractCreature owner, final int amount, final int maxAmount) {
+        this.name = TimeCollectorPower.NAME;
+        this.ID = TimeCollectorPower.POWER_ID;
+        this.owner = owner;
+        this.amount = amount;
         this.maxAmount = maxAmount;
         this.updateDescription();
         this.loadRegion("time");
@@ -72,4 +85,9 @@ public class TimeCollectorPower extends AbstractPower
         NAME = TimeCollectorPower.powerStrings.NAME;
         DESC = TimeCollectorPower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new TimeCollectorPower(owner, amount, maxAmount);
+	}
 }

@@ -7,13 +7,14 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.monsters.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import basemod.interfaces.CloneablePowerInterface;
 import gluttonmod.actions.MakeEchoAction;
 
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.core.*;
 
-public class EchoChamberPower extends AbstractPower
+public class EchoChamberPower extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "Replay:Echo Chamber";
     private static final PowerStrings powerStrings;
@@ -66,4 +67,9 @@ public class EchoChamberPower extends AbstractPower
         NAME = EchoChamberPower.powerStrings.NAME;
         DESCRIPTIONS = EchoChamberPower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new EchoChamberPower(owner, amount, upgraded);
+	}
 }

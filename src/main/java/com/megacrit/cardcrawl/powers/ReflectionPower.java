@@ -13,12 +13,15 @@ import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 import com.megacrit.cardcrawl.dungeons.*;
 import com.badlogic.gdx.graphics.*;
 import replayTheSpire.*;
 
 public class ReflectionPower
-  extends AbstractPower
+  extends AbstractPower implements CloneablePowerInterface
 {
 	public static final String POWER_ID = "Reflection";
 	private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("Reflection");
@@ -80,4 +83,8 @@ public class ReflectionPower
         }
         return damageAmount;
     }
+	@Override
+	public AbstractPower makeCopy() {
+		return new ReflectionPower(this.owner, this.amount, justApplied);
+	}
 }

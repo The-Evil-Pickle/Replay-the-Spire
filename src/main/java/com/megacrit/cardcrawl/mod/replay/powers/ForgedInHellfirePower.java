@@ -7,17 +7,15 @@ import com.megacrit.cardcrawl.mod.replay.actions.defect.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.orbs.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.dungeons.*;
+
+import basemod.interfaces.CloneablePowerInterface;
 
 import org.apache.logging.log4j.*;
 
-import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.*;
 
-public class ForgedInHellfirePower extends TwoAmountPower
+public class ForgedInHellfirePower extends AbstractPower implements CloneablePowerInterface
 {
     private static final Logger logger;
     public static final String POWER_ID = "Replay:Forged in Hellfire";
@@ -25,67 +23,24 @@ public class ForgedInHellfirePower extends TwoAmountPower
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
     
-    public ForgedInHellfirePower(final AbstractCreature owner, final int reduceBy, final int reduceTo) {
+    public ForgedInHellfirePower(final AbstractCreature owner, final int amt) {
         this.name = ForgedInHellfirePower.NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = reduceBy;
-        this.amount2 = reduceTo;
+        this.amount = amt;
         this.updateDescription();
         this.loadRegion("flameBarrier");
     }
 
     @Override
     public void updateDescription() {
-        this.description = "";
-        if (this.amount > 0) {
-        	this.description += DESCRIPTIONS[0] + DESCRIPTIONS[2] + this.amount + ((this.amount2 > 0) ? DESCRIPTIONS[3] + (this.amount2 + this.amount) : ".");
-        }
-        if (this.amount2 > 0) {
-        	this.description += ((this.amount > 0) ? DESCRIPTIONS[4] : DESCRIPTIONS[0]) + DESCRIPTIONS[1] + this.amount2 + ((this.amount > 0) ? DESCRIPTIONS[5] + (this.amount2 + this.amount) : ".");
-        }
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
         
     }
-    
-    @Override
-    public void stackPower(final int stackAmount) {
-        if (this.amount == -1) {
-            ForgedInHellfirePower.logger.info(this.name + " does not stack");
-            return;
-        }
-        this.fontScale = 8.0f;
-        if (stackAmount > 0) {
-        	this.amount2 = Math.min(amount2, stackAmount);
-        } else {
-        	this.amount -= stackAmount;
-        }
-        this.updateDescription();
-    }
-    /*@Override
-    public float atDamageReceive(final float damageAmount, final DamageInfo.DamageType type) {
-        if (type == DamageInfo.DamageType.THORNS && damageAmount > 0) {
-        	float dmg = damageAmount;
-        	if (this.amount > 0) {
-        		dmg = Math.max(0, dmg - this.amount);
-        	}
-        	if (this.amount2 < dmg) {
-        		dmg = this.amount2;
-        	}
-        	if (dmg != damageAmount) {
-        		this.flash();
-        		return dmg;
-        	}
-        }
-        return damageAmount;
-    }*/
     public boolean patchAttacked(final DamageInfo info) {
     	int dmg = info.output;
-    	if (this.amount > 0) {
-    		dmg = Math.max(0, dmg - this.amount);
-    	}
-    	if (this.amount2 < dmg) {
-    		dmg = this.amount2;
-    	}
+    	dmg *= 100;
+    	dmg /= this.amount;
     	if (dmg != info.output) {
     		info.output = dmg;
     		this.flash();
@@ -100,4 +55,9 @@ public class ForgedInHellfirePower extends TwoAmountPower
         NAME = ForgedInHellfirePower.powerStrings.NAME;
         DESCRIPTIONS = ForgedInHellfirePower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new ForgedInHellfirePower(owner, amount);
+	}
 }

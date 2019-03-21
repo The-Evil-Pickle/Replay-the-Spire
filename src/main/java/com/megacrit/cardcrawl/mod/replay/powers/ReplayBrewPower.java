@@ -8,13 +8,14 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.PotionSlot;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import basemod.interfaces.CloneablePowerInterface;
 import replayTheSpire.ReplayTheSpireMod;
 
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.core.*;
 
-public class ReplayBrewPower extends AbstractPower
+public class ReplayBrewPower extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "ReplayBrewPower";
     private static final PowerStrings powerStrings;
@@ -71,4 +72,9 @@ public class ReplayBrewPower extends AbstractPower
         NAME = ReplayBrewPower.powerStrings.NAME;
         DESCRIPTIONS = ReplayBrewPower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new ReplayBrewPower(owner, amount);
+	}
 }

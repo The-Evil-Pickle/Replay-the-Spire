@@ -3,11 +3,13 @@ package com.megacrit.cardcrawl.mod.replay.powers;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import basemod.interfaces.CloneablePowerInterface;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -25,7 +27,7 @@ public class SoulStealer extends AbstractPower
         this.owner = owner;
         this.amount = amt;
         this.updateDescription();
-        this.loadRegion("unawakened");
+        this.loadRegion("noPain");
     }
 
     @Override
@@ -33,15 +35,21 @@ public class SoulStealer extends AbstractPower
         if (damageAmount > 0 && target != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
             ArrayList<AbstractPower> buffs = new ArrayList<AbstractPower>();
             for (AbstractPower p : target.powers) {
-            	if (p.type == AbstractPower.PowerType.BUFF && p.amount > 0) {
+            	if ((p instanceof CloneablePowerInterface) && p.type == AbstractPower.PowerType.BUFF && p.amount > 0) {
             		buffs.add(p);
             	}
             }
             for (int i=0; i < this.amount; i++) {
             	Collections.shuffle(buffs);
             	for (AbstractPower p : buffs) {
-            		if (p.amount > 0) {
-            			
+            		AbstractCreature originOwner = p.owner;
+            		p.owner = this.owner;
+            		AbstractPower pc = ((CloneablePowerInterface)p).makeCopy();
+            		p.owner = originOwner;
+            		AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(target, this.owner, p.ID, 1));
+            		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, pc, 1));
+            		if (pc.amount > 1 && !this.owner.hasPower(pc.ID)) {
+            			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, pc.ID, pc.amount - 1));
             		}
             	}
             }

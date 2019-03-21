@@ -15,6 +15,9 @@ import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
 import org.apache.logging.log4j.LogManager;

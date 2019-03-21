@@ -4,27 +4,14 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.helpers.input.*;
-import com.megacrit.cardcrawl.mod.replay.actions.*;
-import com.megacrit.cardcrawl.mod.replay.actions.common.*;
-import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
-import com.megacrit.cardcrawl.mod.replay.ui.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-//import com.megacrit.cardcrawl.relics.LandingSound;
-//import com.megacrit.cardcrawl.relics.RelicTier;
-
-import replayTheSpire.*;
-import tobyspowerhouse.powers.*;
 import com.megacrit.cardcrawl.unlock.*;
-import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
-import java.util.*;
-import java.io.*;
 import com.megacrit.cardcrawl.screens.mainMenu.*;
 import basemod.*;
 

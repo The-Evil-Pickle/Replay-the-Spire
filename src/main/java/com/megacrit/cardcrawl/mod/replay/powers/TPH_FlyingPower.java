@@ -1,4 +1,4 @@
-package tobyspowerhouse.powers;
+package com.megacrit.cardcrawl.mod.replay.powers;
 
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;

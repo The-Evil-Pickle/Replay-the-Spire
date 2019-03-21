@@ -6,6 +6,9 @@ import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -15,7 +18,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.*;
 
-public class SnakeVenomPower extends AbstractPower
+public class SnakeVenomPower extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "Snake Venom";
     private static final PowerStrings powerStrings;
@@ -57,4 +60,9 @@ public class SnakeVenomPower extends AbstractPower
         NAME = SnakeVenomPower.powerStrings.NAME;
         DESCRIPTIONS = SnakeVenomPower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new SnakeVenomPower(owner, amount);
+	}
 }

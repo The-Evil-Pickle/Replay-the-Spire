@@ -9,12 +9,15 @@ import com.megacrit.cardcrawl.mod.replay.orbs.*;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.helpers.*;
 
-public class CrystallizerPower extends AbstractPower
+public class CrystallizerPower extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "Crystallizer";
     private static final PowerStrings powerStrings;
@@ -23,11 +26,14 @@ public class CrystallizerPower extends AbstractPower
     private int orbAmount;
     
     public CrystallizerPower(final AbstractCreature owner, final int amount) {
-        this.name = CrystallizerPower.NAME;
-        this.ID = "Crystallizer";
+        this(owner, amount, 1);
+    }
+    public CrystallizerPower(final AbstractCreature owner, final int amount, final int orbAmount) {
+    	this.name = CrystallizerPower.NAME;
+        this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.orbAmount = 1;
+        this.orbAmount = orbAmount;
         this.updateDescription();
 		//this.img = ImageMaster.loadImage("images/powers/32/xanatos.png");
         this.loadRegion("crystallizer");
@@ -74,4 +80,9 @@ public class CrystallizerPower extends AbstractPower
         NAME = CrystallizerPower.powerStrings.NAME;
         DESCRIPTIONS = CrystallizerPower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new CrystallizerPower(owner, amount, orbAmount);
+	}
 }

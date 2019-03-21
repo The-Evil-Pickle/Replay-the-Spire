@@ -77,13 +77,17 @@ import fruitymod.seeker.patches.*;
 import infinitespire.InfiniteSpire;
 import mysticmod.MysticMod;
 import replayTheSpire.panelUI.*;
+import replayTheSpire.patches.CreatureHealthPatches;
 import replayTheSpire.patches.NeowRewardPatches;
 import replayTheSpire.replayxover.beakedbs;
 import replayTheSpire.replayxover.chronobs;
 import replayTheSpire.replayxover.constructbs;
+import replayTheSpire.replayxover.guardianbs;
 import replayTheSpire.replayxover.infinitebs;
 import replayTheSpire.replayxover.marisabs;
 import replayTheSpire.replayxover.slimeboundbs;
+import replayTheSpire.replayxover.sneckobs;
+import replayTheSpire.replayxover.archetypeAPI.archetypebs;
 import replayTheSpire.variables.MagicArithmatic;
 
 import java.lang.reflect.*;
@@ -164,6 +168,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static Texture rebottleButton;
 	public static int playerShielding = 0;
 	public static ArrayList<Integer> monsterShielding = new ArrayList<Integer>();
+	public static boolean monstersUsingShielding = false;
 	public static boolean noSkipRewardsRoom;
 	public static boolean useBakuSkeleton = true;
 	
@@ -171,27 +176,27 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		if (creature == null) {
 			return 0;
 		}
-		if (creature instanceof AbstractPlayer) {
+		return CreatureHealthPatches.ReplayCreatureFields.shielding.get(creature);
+		/*if (creature instanceof AbstractPlayer) {
 			return ReplayTheSpireMod.playerShielding;
 		}
-		for (int i = 0; i < AbstractDungeon.getMonsters().monsters.size(); i++) {
+		for (int i = 0; i < AbstractDungeon.getMonsters().monsters.size() && i < ReplayTheSpireMod.monsterShielding.size(); i++) {
 			if (AbstractDungeon.getMonsters().monsters.get(i) != null && AbstractDungeon.getMonsters().monsters.get(i) == creature) {
-				while (ReplayTheSpireMod.monsterShielding.size() <= i) {
-					ReplayTheSpireMod.monsterShielding.add(0);
-				}
 				return ReplayTheSpireMod.monsterShielding.get(i);
 			}
 		}
-		return 0;
+		return 0;*/
 	}
 	public static void addShielding(AbstractCreature creature, int amt) {
 		if (creature == null) {
 			return;
 		}
-		if (creature instanceof AbstractPlayer) {
+		CreatureHealthPatches.ReplayCreatureFields.shielding.set(creature, CreatureHealthPatches.ReplayCreatureFields.shielding.get(creature) + amt);
+		/*if (creature instanceof AbstractPlayer) {
 			ReplayTheSpireMod.playerShielding += amt;
 			return;
 		}
+		ReplayTheSpireMod.monstersUsingShielding = true;
 		for (int i = 0; i < AbstractDungeon.getMonsters().monsters.size(); i++) {
 			if (AbstractDungeon.getMonsters().monsters.get(i) != null && AbstractDungeon.getMonsters().monsters.get(i) == creature) {
 				while (ReplayTheSpireMod.monsterShielding.size() <= i) {
@@ -199,14 +204,15 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				}
 				ReplayTheSpireMod.monsterShielding.set(i, ReplayTheSpireMod.monsterShielding.get(i) + amt);
 			}
-		}
+		}*/
 		
 	}
 	public static void clearShielding(AbstractCreature creature) {
 		if (creature == null) {
 			return;
 		}
-		if (creature instanceof AbstractPlayer) {
+		CreatureHealthPatches.ReplayCreatureFields.shielding.set(creature, 0);
+		/*if (creature instanceof AbstractPlayer) {
 			ReplayTheSpireMod.playerShielding = 0;
 			return;
 		}
@@ -219,12 +225,15 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				ReplayTheSpireMod.monsterShielding.set(i, 0);
 				return;
 			}
-		}
+		}*/
 		
 	}
 	public static void clearShielding() {
+		if (AbstractDungeon.player != null)
+			CreatureHealthPatches.ReplayCreatureFields.shielding.set(AbstractDungeon.player, 0);
 		ReplayTheSpireMod.playerShielding = 0;
 		ReplayTheSpireMod.monsterShielding = new ArrayList<Integer>();
+		ReplayTheSpireMod.monstersUsingShielding = false;
 	}
 	
 	public static boolean BypassStupidBasemodRelicRenaming_hasRelic(String targetID) {
@@ -539,6 +548,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static boolean foundmod_halation = false;
     public static boolean foundmod_jungle = false;
     public static boolean foundmod_runesmith = false;
+    public static boolean foundmod_guardian = false;
     
 	public static void initialize() {
     	logger.info("========================= ReplayTheSpireMod INIT =========================");
@@ -582,6 +592,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	    foundmod_snecko = Loader.isModLoaded("SneckoMod");
 	    foundmod_jungle = Loader.isModLoaded("TheJungle");
 	    foundmod_runesmith = Loader.isModLoaded("therunesmith");
+	    foundmod_guardian = Loader.isModLoaded("Guardian");
 		
 		logger.info("================================================================");
     }
@@ -1002,7 +1013,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			BaseMod.addEvent(GremboTheGreat.ID, GremboTheGreat.class, "TheCity");
 		}
 		
-		
 		if (foundmod_infinite) {
 			infinitebs.NeowEventNonsense();
 			logger.info("Replay | Registering Quests");
@@ -1019,6 +1029,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         Settings.isDemo = false;
 		
 		ReplayTheSpireMod.receiveEditUnlocks();
+		
+		if (Loader.isModLoaded("archetypeapi")) {
+			archetypebs.postInit();
+		}
 		
     }
 	
@@ -1072,8 +1086,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new Bandana(), RelicType.SHARED);
 		BaseMod.addRelic(new BargainBundle(), RelicType.SHARED);
 		BaseMod.addRelic(new Baseball(), RelicType.SHARED);
+		BaseMod.addRelic(new BottledEggs(), RelicType.SHARED);
 		BaseMod.addRelic(new BottledFlurry(), RelicType.SHARED);
 		BaseMod.addRelic(new BottledSteam(), RelicType.SHARED);
+		BaseMod.addRelic(new BottledSnecko(), RelicType.SHARED);
 		BaseMod.addRelic(new BronzeCore(), RelicType.SHARED);
 		BaseMod.addRelic(new ByrdSkull(), RelicType.GREEN);
 		BaseMod.addRelic(new ChameleonRing(), RelicType.SHARED);
@@ -1216,7 +1232,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new ShivToss());
 		AddAndUnlockCard(new SpeedTraining());
 		AddAndUnlockCard(new TripWire());
-		//AddAndUnlockCard(new BagOfTricks());//coming soon yo
+		AddAndUnlockCard(new BagOfTricks());//coming soon yo
 		AddAndUnlockCard(new PoisonSmokescreen());
 		logger.info("adding cards for Defect...");
 		AddAndUnlockCard(new com.megacrit.cardcrawl.mod.replay.cards.blue.PanicButton());
@@ -1254,6 +1270,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Sssssssssstrike());
 		AddAndUnlockCard(new Sssssssssshield());
 		AddAndUnlockCard(new Necrogeddon());
+		AddAndUnlockCard(new BasicMightCard());
 		if (Loader.isModLoaded("Friendly_Minions_0987678")) {
 			AddAndUnlockCard(new GrembosGang());
 		}
@@ -1315,6 +1332,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		if (foundmod_runesmith) {
 			logger.info("adding Runesmith cards...");
 			AddAndUnlockCard(new ArmamentsMkIIB());
+		}
+		if (foundmod_guardian) {
+			logger.info("adding guardian cards...");
+			guardianbs.addCards();
 		}
 		logger.info("done editting cards");
 	}
@@ -1408,6 +1429,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     		initializeRunesmithMod(LoadType.RELIC);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Runesmith mod not detected");
+		}
+    	try {
+    		initializeGuardianMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Guardian mod not detected");
 		}
     }
 
@@ -1593,6 +1619,18 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			logger.info("ReplayTheSpireMod | Initializing Cards for Runesmith...");
 		}
 	}
+	private static void initializeGuardianMod(LoadType type)throws ClassNotFoundException, NoClassDefFoundError {
+		Class<guardian.patches.AbstractCardEnum> ccolor = guardian.patches.AbstractCardEnum.class;
+		logger.info("ReplayTheSpireMod | Detected Guardian!");
+		foundmod_guardian = true;
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Guardian...");
+			BaseMod.addRelicToCustomPool(new M_GuardianBlood(), guardian.patches.AbstractCardEnum.GUARDIAN);
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for Guardian...");
+		}
+	}
 
 	private static void initializeFruityMod(LoadType type)throws ClassNotFoundException, NoClassDefFoundError {
 		Class<FruityMod> fruityMod = FruityMod.class;
@@ -1724,7 +1762,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				AbstractDungeon.player.getPower("ReplayChaosPower").updateDescription();
 			}
 		}
-		if (AbstractDungeon.player.hasPower("TPH_Confusion") && c.cost > -1 && c.color != AbstractCard.CardColor.CURSE && c.type != AbstractCard.CardType.STATUS) {
+		if (AbstractDungeon.player.hasPower("TPH_Confusion") && c.cost > -1 && c.color != AbstractCard.CardColor.CURSE && c.type != AbstractCard.CardType.STATUS && !(foundmod_snecko && sneckobs.isSneky(c))) {
 			if (BypassStupidBasemodRelicRenaming_hasRelic("Snecko Heart")) {
 				SneckoHeart snek = (SneckoHeart)BypassStupidBasemodRelicRenaming_getRelic("Snecko Heart");
 				if (snek.checkCard(c)) {
@@ -1913,6 +1951,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
             final SpireConfig config = new SpireConfig("ReplayTheSpireMod", "SaveData");
             BottledFlurry.load(config);
             BottledSteam.load(config);
+            BottledEggs.load(config);
             Baseball.load(config);
             ReplayMapScoutEvent.load(config);
             DrinkMe.load(config);
@@ -1928,6 +1967,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
             final SpireConfig config = new SpireConfig("ReplayTheSpireMod", "SaveData");
             BottledFlurry.save(config);
             BottledSteam.save(config);
+            BottledEggs.save(config);
             Baseball.save(config);
             ReplayMapScoutEvent.save(config);
             config.save();
@@ -1945,6 +1985,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
             config.save();
             BottledFlurry.clear();
             BottledSteam.clear();
+            BottledEggs.clear();
             Baseball.clear();
             ReplayMapScoutEvent.clear();
         }

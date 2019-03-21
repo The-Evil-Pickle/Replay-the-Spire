@@ -6,6 +6,9 @@ import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 //import com.megacrit.cardcrawl.powers.PowerType;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
@@ -14,7 +17,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.*;
 
-public class DelayedAddCardPower extends AbstractPower
+public class DelayedAddCardPower extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "replay:DelayedReturnCardPower";
     private static final PowerStrings powerStrings;
@@ -55,4 +58,9 @@ public class DelayedAddCardPower extends AbstractPower
         NAME = DelayedAddCardPower.powerStrings.NAME;
         DESCRIPTIONS = DelayedAddCardPower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new DelayedAddCardPower(owner, amount, card.makeCopy());
+	}
 }

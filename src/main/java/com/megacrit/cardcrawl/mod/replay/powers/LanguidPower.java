@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import basemod.interfaces.CloneablePowerInterface;
 import replayTheSpire.ReplayTheSpireMod;
 
 //import com.megacrit.cardcrawl.powers.PowerType;
@@ -15,7 +16,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.*;
 
-public class LanguidPower extends AbstractPower
+public class LanguidPower extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "LanguidPower";
     private static final PowerStrings powerStrings;
@@ -77,4 +78,9 @@ public class LanguidPower extends AbstractPower
         NAME = LanguidPower.powerStrings.NAME;
         DESCRIPTIONS = LanguidPower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new LanguidPower(owner, amount, justApplied);
+	}
 }

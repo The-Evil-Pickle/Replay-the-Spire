@@ -8,11 +8,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.mod.replay.actions.common.EchoToDrawAction;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
-public class WhispersOfEvilPower extends AbstractPower
+public class WhispersOfEvilPower extends AbstractPower implements CloneablePowerInterface
 {
 	public static final String POWER_ID = "Replay:Whispers Of Evil";
 	private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -64,5 +67,10 @@ public class WhispersOfEvilPower extends AbstractPower
 			final AbstractCard card = AbstractDungeon.returnRandomCurse().makeStatEquivalentCopy();
 	        AbstractDungeon.actionManager.addToBottom(new EchoToDrawAction(card, 1));
 		}
+	}
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new WhispersOfEvilPower(owner, amount);
 	}
 }

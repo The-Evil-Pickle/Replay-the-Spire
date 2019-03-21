@@ -45,6 +45,8 @@ public class Baseball extends AbstractRelic
     }
     @Override
     public void onUnequip() {
+    	if (this.card == null)
+    		return;
     	this.card.cost = this.card.makeCopy().cost;
     	this.card.costForTurn = this.card.cost;
     }

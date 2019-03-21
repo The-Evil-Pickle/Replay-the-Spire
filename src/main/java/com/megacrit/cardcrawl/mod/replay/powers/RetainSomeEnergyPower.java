@@ -12,7 +12,9 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.ui.panels.*;
 
-public class RetainSomeEnergyPower extends AbstractPower
+import basemod.interfaces.CloneablePowerInterface;
+
+public class RetainSomeEnergyPower extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "Retain Some Energy";
     private static final PowerStrings powerStrings;
@@ -48,4 +50,9 @@ public class RetainSomeEnergyPower extends AbstractPower
         NAME = RetainSomeEnergyPower.powerStrings.NAME;
         DESCRIPTIONS = RetainSomeEnergyPower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new RetainSomeEnergyPower(owner, amount);
+	}
 }

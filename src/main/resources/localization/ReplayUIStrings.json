@@ -65,5 +65,19 @@
     "TEXT": [
       "Reduce Cost"
     ]
+  },
+  "PlannedCardIntent": {
+    "TEXT": [
+      "Intent: Status",
+	  " intends to give you ",
+	  "."
+    ]
+  },
+  "Replay:BombIntent": {
+    "TEXT": [
+      "Intent: Bomb",
+	  "This enemy intends to throw a bomb that will deal #b",
+	  " damage if not destroyed within #b3 turns."
+    ]
   }
 }

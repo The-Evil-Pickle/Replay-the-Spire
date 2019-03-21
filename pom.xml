@@ -194,6 +194,20 @@
 		      <scope>system</scope>
           <systemPath>${basedir}/../lib/TheRunesmith.jar</systemPath>
 	      </dependency>
+        <dependency>
+	        <groupId>guardian</groupId>
+		      <artifactId>Guardian</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1667117805/GuardianMod.jar</systemPath>
+	      </dependency>
+        <dependency>
+	        <groupId>ArchetypeAPI</groupId>
+		      <artifactId>ArchetypeAPI</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1679402002/ArchetypeAPI.jar</systemPath>
+	      </dependency>
     </dependencies>
   <build>
     <plugins>
@@ -216,5 +230,5 @@
     </plugins>
 	<finalName>${project.artifactId}</finalName>
   </build>
-  <version>1.3.25</version>
+  <version>1.3.27</version>
 </project>

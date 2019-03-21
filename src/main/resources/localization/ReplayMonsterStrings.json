@@ -90,7 +90,8 @@
 		"Please Remain Seated",
 		"Complementary Explosives",
 		"Rail Gunner",
-		"Cargo Hold"
+		"Cargo Hold",
+		"Stoke the Engine"
     ],
     "NAME": "The Conductor",
     "DIALOG": [

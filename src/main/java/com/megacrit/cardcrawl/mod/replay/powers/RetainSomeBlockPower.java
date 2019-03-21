@@ -11,10 +11,13 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.vfx.combat.*;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 import com.megacrit.cardcrawl.core.*;
 import java.lang.*;
 
-public class RetainSomeBlockPower extends AbstractPower
+public class RetainSomeBlockPower extends AbstractPower implements CloneablePowerInterface
 {
     public static final String POWER_ID = "Retain Some Block";
     private static final PowerStrings powerStrings;
@@ -57,4 +60,9 @@ public class RetainSomeBlockPower extends AbstractPower
         NAME = RetainSomeBlockPower.powerStrings.NAME;
         DESCRIPTIONS = RetainSomeBlockPower.powerStrings.DESCRIPTIONS;
     }
+
+	@Override
+	public AbstractPower makeCopy() {
+		return new RetainSomeBlockPower(owner, amount);
+	}
 }

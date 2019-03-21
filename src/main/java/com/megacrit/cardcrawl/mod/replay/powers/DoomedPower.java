@@ -10,26 +10,33 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import basemod.interfaces.CloneablePowerInterface;
+
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 
 public class DoomedPower
-  extends AbstractPower
+  extends AbstractPower implements CloneablePowerInterface
 {
   public static final String POWER_ID = "Doomed";
   private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("Doomed");
   public static final String NAME = powerStrings.NAME;
   public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
   private int damage;
-  
+
   public DoomedPower(AbstractCreature owner, int amnt)
+  {
+    this(owner, amnt, 999);
+  }
+  public DoomedPower(AbstractCreature owner, int amnt, int dmg)
   {
     this.name = NAME;
     this.ID = "Doomed";
     this.owner = owner;
     this.amount = amnt;
     this.type = AbstractPower.PowerType.DEBUFF;
-    this.damage = 999;
+    this.damage = dmg;
     updateDescription();
     loadRegion("corruption");
   }
@@ -64,4 +71,8 @@ public class DoomedPower
 	  updateDescription();
 	}
   }
+@Override
+public AbstractPower makeCopy() {
+	return new DoomedPower(owner, amount, damage);
+}
 }
