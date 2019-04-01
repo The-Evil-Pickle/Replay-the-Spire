@@ -14,5 +14,9 @@
 	"replay:ALWAYS": {
 		"NAME": "ALWAYS WHALE",
 		"DESCRIPTION": "Neow shows up a lot."
+	},
+	"replay:honeycakes": {
+		"NAME": "Honeycakes",
+		"DESCRIPTION": "Start with Honey Jar and Cat-Face Cupcake"
 	}
 }

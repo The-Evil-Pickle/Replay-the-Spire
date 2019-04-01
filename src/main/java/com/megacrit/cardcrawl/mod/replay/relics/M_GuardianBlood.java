@@ -17,7 +17,7 @@ public class M_GuardianBlood extends M_MistRelic
     public static final String ID = "m_GuardianBlood";
     
     public M_GuardianBlood() {
-        super(ID, "burningBlood_orange.png", RelicTier.STARTER, LandingSound.MAGICAL, guardian.patches.AbstractCardEnum.GUARDIAN, CardColor.RED);
+        super(ID, "burningBlood_orange.png", LandingSound.MAGICAL, guardian.patches.AbstractCardEnum.GUARDIAN, CardColor.RED);
     }
     
     @Override

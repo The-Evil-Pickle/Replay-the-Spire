@@ -7,19 +7,23 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.red.*;
 import com.megacrit.cardcrawl.rooms.*;
+
+import beaked.cards.*;
+
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
 import com.megacrit.cardcrawl.relics.*;
 
-public class M_ByrdBlood extends AbstractRelic
+public class M_ByrdBlood extends M_MistRelic
 {
     public static final String ID = "m_ByrdBlood";
     
     public M_ByrdBlood() {
-        super(ID, "burningBlood_yellow.png", RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, "burningBlood_yellow.png", LandingSound.MAGICAL, beaked.patches.AbstractCardEnum.BEAKED_YELLOW, CardColor.RED);
     }
     
     @Override
@@ -36,42 +40,7 @@ public class M_ByrdBlood extends AbstractRelic
 	@Override
     public void onEquip() {
 		AbstractDungeon.rareRelicPool.add("Magic Flower");
-        final long startTime = System.currentTimeMillis();
-        final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
-        tmpPool.add(new Reaper());
-        tmpPool.add(new Feed());
-        tmpPool.add(new Hemogenesis());
-        tmpPool.add(new Flex());
-        tmpPool.add(new HeavyBlade());
-        tmpPool.add(new Massacre());
-        tmpPool.add(new Inflame());
-        tmpPool.add(new SpotWeakness());
-        tmpPool.add(new DemonForm());
-        tmpPool.add(new MuscleTraining());
-        for (final AbstractCard c : tmpPool) {
-			switch (c.rarity) {
-				case COMMON: {
-					AbstractDungeon.commonCardPool.addToTop(c);
-					AbstractDungeon.srcCommonCardPool.addToBottom(c);
-					continue;
-				}
-				case UNCOMMON: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-				case RARE: {
-					AbstractDungeon.rareCardPool.addToTop(c);
-					AbstractDungeon.srcRareCardPool.addToBottom(c);
-					continue;
-				}
-				default: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-			}
-        }
+        super.onEquip();
     }
 	@Override
     public int onPlayerHeal(final int healAmount) {
@@ -95,5 +64,31 @@ public class M_ByrdBlood extends AbstractRelic
     public AbstractRelic makeCopy() {
         return new M_ByrdBlood();
     }
+
+	@Override
+	ArrayList<AbstractCard> getNewCards() {
+		final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
+        tmpPool.add(new Reaper());
+        tmpPool.add(new Feed());
+        tmpPool.add(new Hemogenesis());
+        tmpPool.add(new Flex());
+        tmpPool.add(new HeavyBlade());
+        tmpPool.add(new Massacre());
+        tmpPool.add(new Inflame());
+        tmpPool.add(new SpotWeakness());
+        tmpPool.add(new DemonForm());
+        tmpPool.add(new MuscleTraining());
+        
+        tmpPool.add(new BloodRitual());
+        tmpPool.add(new WarriorEssence());
+        tmpPool.add(new DesperateSwing());
+        tmpPool.add(new Resilience());
+        tmpPool.add(new SacrificialScars());
+        tmpPool.add(new WildInstinct());
+        tmpPool.add(new BloodForTheGods());
+        tmpPool.add(new DigDeeper());
+        tmpPool.add(new FeelMyPain());
+		return tmpPool;
+	}
 }
 

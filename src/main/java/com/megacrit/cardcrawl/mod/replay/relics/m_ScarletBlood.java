@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.red.DemonForm;
 import com.megacrit.cardcrawl.cards.red.DoubleTap;
 import com.megacrit.cardcrawl.cards.red.Flex;
@@ -21,12 +22,12 @@ import com.megacrit.cardcrawl.relics.*;
 
 import blackrusemod.powers.*;
 
-public class m_ScarletBlood extends AbstractRelic
+public class m_ScarletBlood extends M_MistRelic
 {
     public static final String ID = "m_ScarletBlood";
     
     public m_ScarletBlood() {
-        super(ID, "burningBlood.png", RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, "burningBlood.png", LandingSound.MAGICAL, blackrusemod.patches.AbstractCardEnum.SILVER, CardColor.RED);
     }
     
     @Override
@@ -44,8 +45,17 @@ public class m_ScarletBlood extends AbstractRelic
 	@Override
     public void onEquip() {
 		AbstractDungeon.rareRelicPool.add("Red Skull");
-        final long startTime = System.currentTimeMillis();
-        final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
+		super.onEquip();
+    }
+    
+    @Override
+    public AbstractRelic makeCopy() {
+        return new m_ScarletBlood();
+    }
+
+	@Override
+	ArrayList<AbstractCard> getNewCards() {
+		final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
         tmpPool.add(new Flex());
         tmpPool.add(new HeavyBlade());
         tmpPool.add(new Inflame());
@@ -55,35 +65,7 @@ public class m_ScarletBlood extends AbstractRelic
         tmpPool.add(new DoubleTap());
         tmpPool.add(new LimitBreak());
         tmpPool.add(new MuscleTraining());
-        for (final AbstractCard c : tmpPool) {
-			switch (c.rarity) {
-				case COMMON: {
-					AbstractDungeon.commonCardPool.addToTop(c);
-					AbstractDungeon.srcCommonCardPool.addToBottom(c);
-					continue;
-				}
-				case UNCOMMON: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-				case RARE: {
-					AbstractDungeon.rareCardPool.addToTop(c);
-					AbstractDungeon.srcRareCardPool.addToBottom(c);
-					continue;
-				}
-				default: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-			}
-        }
-    }
-    
-    @Override
-    public AbstractRelic makeCopy() {
-        return new m_ScarletBlood();
-    }
+		return tmpPool;
+	}
 }
 

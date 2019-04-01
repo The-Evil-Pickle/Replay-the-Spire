@@ -23,7 +23,7 @@ public class M_RuneBlood extends M_MistRelic
     private static final int DAMAGE_AMT = 20;
     
     public M_RuneBlood() {
-        super(ID, "burningBlood_orange.png", RelicTier.STARTER, LandingSound.MAGICAL, runesmith.patches.AbstractCardEnum.RUNESMITH_BEIGE, CardColor.RED);
+        super(ID, "burningBlood_orange.png", LandingSound.MAGICAL, runesmith.patches.AbstractCardEnum.RUNESMITH_BEIGE, CardColor.RED);
     }
     
     @Override

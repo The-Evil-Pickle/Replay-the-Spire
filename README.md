@@ -40,14 +40,17 @@ Gremlin Food | All | Common | Whenever you rest, **Upgrade** a random card.
 Grinning Jar | All | Common | On pickup, add a Grinning Jar card to your deck. Obtain another copy for every 12 cards added to your deck.
 King of Hearts | Ironclad | Common | When you lose HP during your turn, gain twice that much block.
 Lightbulb | All | Common | If you have leftover energy at the end of your turn, draw that many cards at the start of your next turn.
+Mystery Machine | All | Common | Gains 1 charge each time you enter a ? room. Loses 1 charge each time you move between two non-? rooms. At the start of combat, randomly gain **Strength** and **Dexterity** equal to charges.
 Rune of Simplicity | All | Common | Strikes and Defends can be **Upgraded** any number of times. On pickup, **Upgrade** 2 randomly.
 Tag Bag | All | Common | Shops have all 3 kinds of sale tags. Sale tags can appear on colorless cards. On-sale cards are slightly cheaper
 Tiger Marble | All | Common | At the start of combat, add a random card that **Exhausts** to your hand. It costs 0 this turn.
 Pet Ghost | All | Common | At the start of each turn, add a Ghost Swipe, Ghost Defend, or Ghost Fetch to your hand (chosen randomly). Max hand size is increased by 1.
 Accelerometer | All | Uncommon | Can be used once per combat. Decrease your turn-based debuffs by 1, and increase all enemy turn-based debuffs by 1.
 Basket of Snakes | Silent | Uncommon | Every 5th **Attack** you play applies 2 **Necrotic** **Poison** upon dealing unblocked damage.
+Bottled Eggs | All | Uncommon | On pick up, choose a card. **Upgrade** all copies of that card you have. When you add a new copy of that card to your deck, it is **Upgraded**.
 Bottled Flurry | All | Uncommon | On pick up, choose a card. You **Retain** that card at the end of your turn, or Discard it if it is **Ethereal.**
 Bottled Geyser | All | Uncommon | On pick up, choose a card. Each time you shuffle your deck, that card is placed on top.
+Bottled Snecko | All | Uncommon | On pick up, you may choose a card. It gains **Snecko**. If you do not choose a card, you may choose one at a later rest site.
 Carrot | Defect | Uncommon | Gain 3 **Focus** at the start of combat, then lose 1 **Focus** on the next 3 turns.
 Chameleon Ring | All | Uncommon | Potions are ~50% more potent. You may brew 2 random potions at rest sites.
 Divine Protection | All | Uncommon | Gain 8 **Shielding** at the start of combat.
@@ -145,6 +148,7 @@ Time Bomb | Blue | Uncommon | Skill | 1 | Gain 2 orb slots. **Channel** 2 **Glas
 Mirror Shield | Blue | Rare | Skill | 2 | **Channel** 1 **Crystal.** **Channel** 1 **Frost.** Gain 5(8) **Block.** Gain 1(2) **Reflection.**
 RNG | Blue | Rare | Skill | X | **Channel** X(+1) random orbs.
 Omega Cannon | Blue | Rare | Attack | 2 | Deal 7(6) damage to ALL enemies 4(5) times. Add 1 **Backfire** to your draw and discard piles. **Focus** increases damage."
+Might | Colorless | Uncommon | Power | X | Your attacks deal 25% extra damage for X turns. **Refund** 1(2).
 Poisoned Strike | Colorless | Uncommon | Skill | 0 | Apply 3(4) **Poison**. Is affected by damage modifiers.
 Specialist | Colorless | Uncommon | Power | 0 | Lose 1 Focus. All non-attack damage you deal is increased by 2. (**Innate.**)
 Ssssshield | Colorless | Uncommon | Skill | ? | Gain 6 **Block**. Gain 6 **Shielding** for each energy this cost. (**Refund** 1). **Snecko**. **Exhaust**.
@@ -379,6 +383,7 @@ Ring of Shattering | Dead Man's Rings (as Defect) | At the start of combat gain 
  * If you have Honey Jar and Singing Bowl at the same time, using Singing Bowl's max hp gain option also picks a reward card at random.
  * Burning Branch can now be exchanged for a different relic at rest sites.
  * Fire Breathing now increases damage based on number of attacks played.
+ * If a Bottled card is removed from your deck, you may choose a new card to bottle at rest sites (free action).
  * You can never get Ectoplasm from Neow.
 
 

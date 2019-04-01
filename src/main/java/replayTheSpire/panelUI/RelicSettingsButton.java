@@ -126,4 +126,18 @@ public class RelicSettingsButton implements IUIElement
     public int updateOrder() {
         return 1;
     }
+    
+    public void addSetting(ReplayRelicSetting setting) {
+    	float ly = ReplayTheSpireMod.setting_start_y;
+    	float lx = ReplayTheSpireMod.setting_start_x;
+    	for (ReplayRelicSetting ls : this.settings) {
+    		ly -= ls.elementHeight;
+    		if (ly <= 0f) {
+    			ly = ReplayTheSpireMod.setting_start_y + (lx >= 600.0f ? 80.0f : 0f);
+    			lx += 300.0f;
+    		}
+    	}
+    	settings.add(setting);
+		elements.addAll(setting.GenerateElements(lx, ly));
+    }
 }

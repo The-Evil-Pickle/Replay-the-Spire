@@ -40,6 +40,7 @@ import com.megacrit.cardcrawl.mod.replay.events.thecity.GremboTheGreat;
 import com.megacrit.cardcrawl.mod.replay.events.thecity.ReplayMapScoutEvent;
 import com.megacrit.cardcrawl.mod.replay.modifiers.ALWAYSwhaleModifier;
 import com.megacrit.cardcrawl.mod.replay.modifiers.ChaoticModifier;
+import com.megacrit.cardcrawl.mod.replay.modifiers.HoneycakeModifier;
 import com.megacrit.cardcrawl.mod.replay.modifiers.LibraryLooterModifier;
 import com.megacrit.cardcrawl.mod.replay.modifiers.MistsModifier;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.CaptainAbe;
@@ -841,8 +842,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	}
 	public static HashMap<String, ReplayRelicSetting> ConfigSettings = new HashMap<String, ReplayRelicSetting>();
 	public static HashMap<ReplayAbstractRelic, ArrayList<ReplayRelicSetting>> RelicSettings = new HashMap<ReplayAbstractRelic, ArrayList<ReplayRelicSetting>>();
-	static final float setting_start_x = 350.0f;
-	static final float setting_start_y = 550.0f;
+	public static final float setting_start_x = 350.0f;
+	public static final float setting_start_y = 550.0f;
 	public static void BuildSettings(ReplayAbstractRelic relic) {
 		ReplayTheSpireMod.RelicSettings.put(relic, relic.BuildRelicSettings());
 		for (ReplayRelicSetting setting : ReplayTheSpireMod.RelicSettings.get(relic)) {
@@ -912,44 +913,17 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         settingsPanel = new ModPanel();
 		final List<RelicSettingsButton> settingsButtons = new ArrayList<RelicSettingsButton>();
 		ArrayList<IUIElement> settingElements = new ArrayList<IUIElement>();
-		
-		
-		settingElements.add(new ModLabel("Custom Room Settings", setting_start_x + 150.0f, setting_start_y, settingsPanel, (me) -> {}));
-		settingElements.addAll(SETTING_ROOMS_BONFIRE.GenerateElements(setting_start_x, setting_start_y - 50.0f));
-		settingElements.addAll(SETTING_ROOMS_PORTAL.GenerateElements(setting_start_x, setting_start_y - 100.0f));
+
+		//CARD FILTER
+		settingsButtons.add(FILTER_BUTTONS.get(AbstractCard.CardColor.RED));
+		settingsButtons.add(FILTER_BUTTONS.get(AbstractCard.CardColor.GREEN));
+		settingsButtons.add(FILTER_BUTTONS.get(AbstractCard.CardColor.BLUE));
+		settingsButtons.add(FILTER_BUTTONS.get(AbstractCard.CardColor.COLORLESS));
+		settingsButtons.add(FILTER_BUTTONS.get(AbstractCard.CardColor.CURSE));
+
+		//BOSS FILTER
+		settingElements = new ArrayList<IUIElement>();
 		ArrayList<ReplayRelicSetting> roomSettings = new ArrayList<ReplayRelicSetting>();
-		roomSettings.add(SETTING_ROOMS_BONFIRE);
-		roomSettings.add(SETTING_ROOMS_PORTAL);
-		settingsButtons.add(new RelicSettingsButton(ImageMaster.loadImage("images/ui/map/replay_bonfire.png"), ImageMaster.loadImage("images/ui/map/replay_bonfire.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings));
-		ReplayTheSpireMod.ConfigSettings.put(SETTING_ROOMS_BONFIRE.settingsId, SETTING_ROOMS_BONFIRE);
-		ReplayTheSpireMod.ConfigSettings.put(SETTING_ROOMS_PORTAL.settingsId, SETTING_ROOMS_PORTAL);
-		//settingElements = new ArrayList<IUIElement>();
-		
-		settingElements = new ArrayList<IUIElement>();
-		settingElements.add(new ModLabel("Neow Reward Settings", setting_start_x + 150.0f, setting_start_y, settingsPanel, (me) -> {}));
-		settingElements.addAll(NeowRewardPatches.SETTING_COLORLESS_OPTION.GenerateElements(setting_start_x, setting_start_y - 40.0f));
-		settingElements.addAll(NeowRewardPatches.SETTING_EVENT_OPTION.GenerateElements(setting_start_x, setting_start_y - 80.0f));
-		settingElements.addAll(NeowRewardPatches.SETTING_BASIC_CARDS.GenerateElements(setting_start_x, setting_start_y - 120.0f));
-		settingElements.addAll(NeowRewardPatches.SETTING_BOSS_CURSES.GenerateElements(setting_start_x, setting_start_y - 160.0f));
-		settingElements.addAll(NeowRewardPatches.SETTING_SOULBOUND_CURSES.GenerateElements(setting_start_x, setting_start_y - 200.0f));
-		settingElements.addAll(NeowRewardPatches.SETTING_BOSS_OPTIONS_ENABLED.GenerateElements(setting_start_x, setting_start_y - 250.0f));
-		roomSettings = new ArrayList<ReplayRelicSetting>();
-		roomSettings.add(NeowRewardPatches.SETTING_COLORLESS_OPTION);
-		roomSettings.add(NeowRewardPatches.SETTING_EVENT_OPTION);
-		roomSettings.add(NeowRewardPatches.SETTING_BASIC_CARDS);
-		roomSettings.add(NeowRewardPatches.SETTING_BOSS_CURSES);
-		roomSettings.add(NeowRewardPatches.SETTING_SOULBOUND_CURSES);
-		roomSettings.add(NeowRewardPatches.SETTING_BOSS_OPTIONS_ENABLED);
-		settingsButtons.add(new RelicSettingsButton(ImageMaster.loadImage("images/relics/lament.png"), ImageMaster.loadImage("images/relics/outline/lament.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings));
-		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_COLORLESS_OPTION.settingsId, NeowRewardPatches.SETTING_COLORLESS_OPTION);
-		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_EVENT_OPTION.settingsId, NeowRewardPatches.SETTING_EVENT_OPTION);
-		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_BASIC_CARDS.settingsId, NeowRewardPatches.SETTING_BASIC_CARDS);
-		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_BOSS_CURSES.settingsId, NeowRewardPatches.SETTING_BOSS_CURSES);
-		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_SOULBOUND_CURSES.settingsId, NeowRewardPatches.SETTING_SOULBOUND_CURSES);
-		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_BOSS_OPTIONS_ENABLED.settingsId, NeowRewardPatches.SETTING_BOSS_OPTIONS_ENABLED);
-		
-		settingElements = new ArrayList<IUIElement>();
-		roomSettings = new ArrayList<ReplayRelicSetting>();
 		settingElements.add(new ModLabel("Disable Custom Bosses", setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
 		HashMap<String, List<BossInfo>> customBosses = (HashMap<String, List<BossInfo>>)ReflectionHacks.getPrivateStatic(BaseMod.class, "customBosses");
 		float ymod = 0f;
@@ -973,6 +947,43 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			}
 		}
 		
+		//ROOM SETTINGS
+		settingElements.add(new ModLabel("Custom Room Settings", setting_start_x + 150.0f, setting_start_y, settingsPanel, (me) -> {}));
+		settingElements.addAll(SETTING_ROOMS_BONFIRE.GenerateElements(setting_start_x, setting_start_y - 50.0f));
+		settingElements.addAll(SETTING_ROOMS_PORTAL.GenerateElements(setting_start_x, setting_start_y - 100.0f));
+		roomSettings = new ArrayList<ReplayRelicSetting>();
+		roomSettings.add(SETTING_ROOMS_BONFIRE);
+		roomSettings.add(SETTING_ROOMS_PORTAL);
+		settingsButtons.add(new RelicSettingsButton(ImageMaster.loadImage("images/ui/map/replay_bonfire.png"), ImageMaster.loadImage("images/ui/map/replay_bonfire.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings));
+		ReplayTheSpireMod.ConfigSettings.put(SETTING_ROOMS_BONFIRE.settingsId, SETTING_ROOMS_BONFIRE);
+		ReplayTheSpireMod.ConfigSettings.put(SETTING_ROOMS_PORTAL.settingsId, SETTING_ROOMS_PORTAL);
+		
+		//NEOW SETTINGS
+		settingElements = new ArrayList<IUIElement>();
+		settingElements.add(new ModLabel("Neow Reward Settings", setting_start_x + 150.0f, setting_start_y, settingsPanel, (me) -> {}));
+		settingElements.addAll(NeowRewardPatches.SETTING_COLORLESS_OPTION.GenerateElements(setting_start_x, setting_start_y - 40.0f));
+		settingElements.addAll(NeowRewardPatches.SETTING_EVENT_OPTION.GenerateElements(setting_start_x, setting_start_y - 80.0f));
+		settingElements.addAll(NeowRewardPatches.SETTING_BASIC_CARDS.GenerateElements(setting_start_x, setting_start_y - 120.0f));
+		settingElements.addAll(NeowRewardPatches.SETTING_BOSS_CURSES.GenerateElements(setting_start_x, setting_start_y - 160.0f));
+		settingElements.addAll(NeowRewardPatches.SETTING_SOULBOUND_CURSES.GenerateElements(setting_start_x, setting_start_y - 200.0f));
+		settingElements.addAll(NeowRewardPatches.SETTING_BOSS_OPTIONS_ENABLED.GenerateElements(setting_start_x, setting_start_y - 250.0f));
+		roomSettings = new ArrayList<ReplayRelicSetting>();
+		roomSettings.add(NeowRewardPatches.SETTING_COLORLESS_OPTION);
+		roomSettings.add(NeowRewardPatches.SETTING_EVENT_OPTION);
+		roomSettings.add(NeowRewardPatches.SETTING_BASIC_CARDS);
+		roomSettings.add(NeowRewardPatches.SETTING_BOSS_CURSES);
+		roomSettings.add(NeowRewardPatches.SETTING_SOULBOUND_CURSES);
+		roomSettings.add(NeowRewardPatches.SETTING_BOSS_OPTIONS_ENABLED);
+		settingsButtons.add(new RelicSettingsButton(ImageMaster.loadImage("images/relics/lament.png"), ImageMaster.loadImage("images/relics/outline/lament.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings));
+		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_COLORLESS_OPTION.settingsId, NeowRewardPatches.SETTING_COLORLESS_OPTION);
+		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_EVENT_OPTION.settingsId, NeowRewardPatches.SETTING_EVENT_OPTION);
+		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_BASIC_CARDS.settingsId, NeowRewardPatches.SETTING_BASIC_CARDS);
+		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_BOSS_CURSES.settingsId, NeowRewardPatches.SETTING_BOSS_CURSES);
+		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_SOULBOUND_CURSES.settingsId, NeowRewardPatches.SETTING_SOULBOUND_CURSES);
+		ReplayTheSpireMod.ConfigSettings.put(NeowRewardPatches.SETTING_BOSS_OPTIONS_ENABLED.settingsId, NeowRewardPatches.SETTING_BOSS_OPTIONS_ENABLED);
+		
+		
+		////RELIC SETTINGS
 		BuildSettings(new RingOfChaos());
 		BuildSettings(new Ninjato());
 		BuildSettings(new TagBag());
@@ -1177,14 +1188,90 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         logger.info("done editting relics");
 	}
 	
+	public static HashMap<AbstractCard.CardColor, ArrayList<AbstractCard>> REPLAY_CARDS = new HashMap<AbstractCard.CardColor, ArrayList<AbstractCard>>();
+	public static HashMap<AbstractCard.CardColor, HashMap<String, ReplayBooleanSetting>> CARD_FILTER = new HashMap<AbstractCard.CardColor, HashMap<String, ReplayBooleanSetting>>();
+	public static HashMap<AbstractCard.CardColor, RelicSettingsButton> FILTER_BUTTONS = new HashMap<AbstractCard.CardColor, RelicSettingsButton>();
 	public static void AddAndUnlockCard(AbstractCard c)
 	{
+		if (!REPLAY_CARDS.containsKey(c.color)) {
+			REPLAY_CARDS.put(c.color, new ArrayList<AbstractCard>());
+			CARD_FILTER.put(c.color, new HashMap<String, ReplayBooleanSetting>());
+		}
+		REPLAY_CARDS.get(c.color).add(c);
+		if (c.rarity != AbstractCard.CardRarity.BASIC && c.rarity != AbstractCard.CardRarity.SPECIAL) {
+			ReplayBooleanSetting cardsetting = new ReplayBooleanSetting("ReplayCardFilter-"+c.cardID, c.name, true);
+			CARD_FILTER.get(c.color).put(c.cardID, cardsetting);
+			if (FILTER_BUTTONS.containsKey(c.color)) {
+				FILTER_BUTTONS.get(c.color).addSetting(cardsetting);
+				ReplayTheSpireMod.ConfigSettings.put(cardsetting.settingsId, cardsetting);
+				if (config.has(cardsetting.settingsId)) {
+					cardsetting.LoadFromData(config);
+					if (!cardsetting.value) {
+						if (Loader.isModLoaded("archetypeapi")) {
+							c.rarity = AbstractCard.CardRarity.SPECIAL;
+						} else {
+							return;
+						}
+					}
+				}
+			}
+		}
+		
 		BaseMod.addCard(c);
 		UnlockTracker.unlockCard(c.cardID);
 	}
 	
+	private void makeFilterButtons() {
+
+		try {
+			config = new SpireConfig("ReplayTheSpireMod", "replaySettingsData");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		RelicSettingsButton setbutt;
+		ArrayList<IUIElement> settingElements;
+		ArrayList<ReplayRelicSetting> roomSettings;
+		
+		settingElements = new ArrayList<IUIElement>();
+		roomSettings = new ArrayList<ReplayRelicSetting>();
+		settingElements.add(new ModLabel("Card Filter: Red", setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
+		setbutt = new RelicSettingsButton(ImageMaster.loadImage("images/ui/run_mods/red.png"), ImageMaster.loadImage("images/ui/run_mods/red.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings);
+		FILTER_BUTTONS.put(AbstractCard.CardColor.RED, setbutt);
+		
+		settingElements = new ArrayList<IUIElement>();
+		roomSettings = new ArrayList<ReplayRelicSetting>();
+		settingElements.add(new ModLabel("Card Filter: Blue", setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
+		setbutt = new RelicSettingsButton(ImageMaster.loadImage("images/ui/run_mods/blue.png"), ImageMaster.loadImage("images/ui/run_mods/blue.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings);
+		FILTER_BUTTONS.put(AbstractCard.CardColor.BLUE, setbutt);
+		
+		settingElements = new ArrayList<IUIElement>();
+		roomSettings = new ArrayList<ReplayRelicSetting>();
+		settingElements.add(new ModLabel("Card Filter: Green", setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
+		setbutt = new RelicSettingsButton(ImageMaster.loadImage("images/ui/run_mods/green.png"), ImageMaster.loadImage("images/ui/run_mods/green.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings);
+		FILTER_BUTTONS.put(AbstractCard.CardColor.GREEN, setbutt);
+		
+		settingElements = new ArrayList<IUIElement>();
+		roomSettings = new ArrayList<ReplayRelicSetting>();
+		settingElements.add(new ModLabel("Card Filter: Colorless", setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
+		setbutt = new RelicSettingsButton(ImageMaster.loadImage("images/ui/run_mods/colorless.png"), ImageMaster.loadImage("images/ui/run_mods/colorless.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings);
+		FILTER_BUTTONS.put(AbstractCard.CardColor.COLORLESS, setbutt);
+		
+		settingElements = new ArrayList<IUIElement>();
+		roomSettings = new ArrayList<ReplayRelicSetting>();
+		settingElements.add(new ModLabel("Card Filter: Curse", setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
+		setbutt = new RelicSettingsButton(ImageMaster.loadImage("images/ui/run_mods/cursed_run.png"), ImageMaster.loadImage("images/ui/run_mods/cursed_run.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings);
+		FILTER_BUTTONS.put(AbstractCard.CardColor.CURSE, setbutt);
+		
+	}
+	
 	@Override
 	public void receiveEditCards() {
+		
+		makeFilterButtons();
+		
+		
 		BaseMod.addDynamicVariable(new MagicArithmatic.MagicMinusOne());
 		BaseMod.addDynamicVariable(new MagicArithmatic.MagicPlusOne());
 		BaseMod.addDynamicVariable(new MagicArithmatic.MagicPlusTwo());
@@ -1338,6 +1425,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			guardianbs.addCards();
 		}
 		logger.info("done editting cards");
+		//loadSettingsData();
 	}
 	
 	private void InitializeMonsters() {
@@ -1791,9 +1879,28 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         l.add(new CustomMod(ChaoticModifier.ID, "b", true));
         l.add(new CustomMod(MistsModifier.ID, "b", true));
         l.add(new CustomMod(ALWAYSwhaleModifier.ID, "b", true));
+        if (foundmod_halation) {
+        	l.add(new CustomMod(HoneycakeModifier.ID, "g", true));
+        }
     }
+    
+    private void filterCards(AbstractCard.CardColor color) {
+    	for (AbstractCard c : REPLAY_CARDS.get(color)) {
+    		if (c != null && CARD_FILTER.get(color).containsKey(c.cardID)) {
+    			if (!(CARD_FILTER.get(color).get(c.cardID)).value) {
+        			BaseMod.removeCard(c.cardID, color);
+        		}
+    		}
+    	}
+    }
+    
     @Override
     public void receivePostDungeonInitialize() {
+    	/*filterCards(AbstractCard.CardColor.RED);
+    	filterCards(AbstractCard.CardColor.GREEN);
+    	filterCards(AbstractCard.CardColor.BLUE);
+    	filterCards(AbstractCard.CardColor.COLORLESS);
+    	filterCards(AbstractCard.CardColor.CURSE);*/
         if (CardCrawlGame.trial != null) {
         	if( CardCrawlGame.trial.dailyModIDs().contains(ChaoticModifier.ID)) {
         		RelicLibrary.getRelic(RingOfChaos.ID).makeCopy().instantObtain();
@@ -1809,6 +1916,18 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         	}
         	if( CardCrawlGame.trial.dailyModIDs().contains(MistsModifier.ID)) {
         		MistsModifier.hasGottenEvent = false;
+        	}
+        	if (foundmod_halation) {
+            	if( CardCrawlGame.trial.dailyModIDs().contains(HoneycakeModifier.ID)) {
+            		RelicLibrary.getRelic(HoneyJar.ID).makeCopy().instantObtain();
+            		RelicLibrary.getRelic("halation:CatFaceCupcake").makeCopy().instantObtain();
+                    for (AbstractRelic relicInBossPool : RelicLibrary.bossList) {
+                        if (relicInBossPool.relicId.equals(HoneyJar.ID) || relicInBossPool.relicId.equals("halation:CatFaceCupcake")) {
+                            RelicLibrary.bossList.remove(relicInBossPool);
+                            break;
+                        }
+                    }
+            	}
         	}
         }
     }
