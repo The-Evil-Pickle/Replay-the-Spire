@@ -392,6 +392,11 @@
     "DESCRIPTION": "Gain !B! Block. NL Gain !B! Shielding for each [E] this cost. NL Snecko. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !B! Shielding for each [E] this cost. NL Refund !stslib:refund!. NL Snecko. NL Exhaust."
   },
+  "Replay:Parry": {
+    "NAME": "Parry",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Reflection if target intends to attack. NL Ethereal. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gain !M! Reflection if target intends to attack. NL Exhaustive !stslib:ex!."
+  },
   "Replay:Dark Deal": {
     "NAME": "Dark Deal",
     "DESCRIPTION": "Unplayable. NL Startup: Choose 1 of !M! random Black cards to add to your draw pile.",

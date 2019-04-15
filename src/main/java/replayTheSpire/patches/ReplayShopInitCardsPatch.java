@@ -20,9 +20,9 @@ import java.util.*;
 @SpirePatch(cls = "com.megacrit.cardcrawl.shop.ShopScreen", method = "initCards")
 public class ReplayShopInitCardsPatch {
 	
-	public static final String NORMAL_TAG = "images/npcs/sale_tag/eng.png";
-	public static final String DOUBLE_TAG = "images/npcs/sale_tag/2for1Tag.png";
-	public static final String SPECIAL_TAG = "images/npcs/sale_tag/specialEditionTag.png";
+	public static String NORMAL_TAG = "images/npcs/sale_tag/eng.png";
+	public static String DOUBLE_TAG = "images/npcs/sale_tag/2for1Tag.png";
+	public static String SPECIAL_TAG = "images/npcs/sale_tag/specialEditionTag.png";
 	
 	public static AbstractCard doubleCard;
 	public static ArrayList<OnSaleTag> dollTags;
@@ -50,18 +50,15 @@ public class ReplayShopInitCardsPatch {
 		String tagtype = tagList.get(AbstractDungeon.merchantRng.random(0, tagList.size() - 1));
 		OnSaleTag.img = ImageMaster.loadImage(tagtype);
 		
-		switch(tagtype) {
-			case ReplayShopInitCardsPatch.DOUBLE_TAG:
+		if (tagtype == ReplayShopInitCardsPatch.DOUBLE_TAG) {
 				ReplayShopInitCardsPatch.doubleCard = saleCard;
 				saleCard.price *= 3;
 				saleCard.price /= 4;
-				break;
-			case ReplayShopInitCardsPatch.SPECIAL_TAG:
+		} else if (tagtype == ReplayShopInitCardsPatch.SPECIAL_TAG) {
 				saleCard.upgrade();
 				saleCard.price *= 3;
 				saleCard.price /= 4;
-				break;
-			default:
+		} else {
 				saleCard.price /= 2;
 		}
 		

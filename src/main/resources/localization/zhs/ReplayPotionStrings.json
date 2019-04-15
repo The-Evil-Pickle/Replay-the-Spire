@@ -1,0 +1,146 @@
+{
+  "Adrenaline Potion": {
+	"NAME": "肾上腺素",
+    "DESCRIPTIONS": [
+			"抽 #b",
+			" 张牌",
+			" 并获得 #b",
+			" 点能量。"
+	]
+  },
+  "Death Potion": {
+	"NAME": "死灵药水",
+    "DESCRIPTIONS": [
+			"造成 #b",
+			" 点伤害。 失去 #b",
+			" 点生命。"
+	]
+  },
+  "Doom Potion": {
+	"NAME": "真菌药水",
+    "DESCRIPTIONS": [
+			"在 #b",
+			" 回合后杀死一名敌人。"
+	]
+  },
+  "Elixir": {
+	"NAME": "万能药",
+    "DESCRIPTIONS": [
+			"#y消耗 全部的 #y状态牌 和 #y诅咒牌 。",
+			"#y消耗 你手牌中的全部的 #y状态牌 和 #y诅咒牌 。",
+			"",
+			"好像没有效果……"
+	]
+  },
+  "Spirit Potion": {
+	"NAME": "幽魂药水",
+    "DESCRIPTIONS": [
+			"获得 #b",
+			" 层 #y无实体 。"
+	]
+  },
+  "Thorns Potion": {
+	"NAME": "荆棘药水",
+    "DESCRIPTIONS": [
+			"获得 #b",
+			" 层 #y荆棘 。"
+	]
+  },
+  "Toxic Potion": {
+	"NAME": "毒性药水",
+    "DESCRIPTIONS": [
+			"给予所有敌人 #b",
+			" 层 #y坏死毒药 。",
+			" 层 #y易伤 和 #b",
+			" 层 #y脆弱 。"
+	]
+  },
+  "Venom Potion": {
+	"NAME": "荼毒药剂",
+    "DESCRIPTIONS": [
+			"当你对其造成伤害时，给予 #b",
+			" 层 #y中毒。",
+			" 失去 #b",
+			" 点 #y力量 。"
+	]
+  },
+  "Ironskin Potion": {
+	"NAME": "铁甲药水",
+    "DESCRIPTIONS": [
+			"每回合结束时获得 #b",
+			" 点 #y格挡 。"
+	]
+  },
+  "Inspiration Potion": {
+	"NAME": "潜能药水",
+    "DESCRIPTIONS": [
+			"在你的手牌中加入一张随机已升级的能力牌。",
+			"在你的手牌中加入一张随机能力牌。",
+			" NL 它的费用为零。"
+	]
+  },
+  "Milkshake": {
+	"NAME": "奶昔",
+    "DESCRIPTIONS": [
+			"直到本场战斗结束前，你可以在每回合保留 #b",
+			" 点 #y能量 。"
+	]
+  },
+  "Cursed Concoction": {
+	"NAME": "诅咒复合体",
+    "DESCRIPTIONS": [
+			"获得 #b",
+			" 点 #y力量 和 #b",
+			" 点 #y敏捷 。 NL 在抽牌堆和弃牌堆加入一张随机 #y诅咒牌 。"
+	]
+  },
+  "Confusion Potion": {
+	"NAME": "混乱药水",
+    "DESCRIPTIONS": [
+			"获得 #b",
+			" 点 #y混乱。"
+	]
+  },
+  "Salt Potion": {
+	"NAME": "盐汽水",
+    "DESCRIPTIONS": [
+			"重启本次战斗。 NL 敌人可能不一样。"
+	]
+  },
+  "ReplayShieldPotion": {
+	"NAME": "护盾药水",
+    "DESCRIPTIONS": [
+			"获得 #b",
+			" 层 #y护盾 。"
+	]
+  },
+  "LifebloodPotion": {
+	"NAME": "命脉药水",
+    "DESCRIPTIONS": [
+			"获得 #b",
+			" 点 #y临时生命 。"
+	]
+  },
+  "Languid Potion": {
+	"NAME": "乏力药水",
+    "DESCRIPTIONS": [
+			"给予 #b",
+			" 层 #y乏力."
+	]
+  },
+  "Reflective Coating": {
+	"NAME": "反射涂料",
+    "DESCRIPTIONS": [
+			"获得 #b",
+			" 层 #y残影 。 NL 获得 #b",
+			" 层 #y反射 。"
+	]
+  },
+  "Flashbang": {
+	"NAME": "闪光弹",
+    "DESCRIPTIONS": [
+			"#y眩晕 一名敌人。",
+			"#y眩晕 所有敌人。"
+	]
+  }
+}

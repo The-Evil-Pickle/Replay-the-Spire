@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.events.exordium.LivingWall;
 import com.megacrit.cardcrawl.events.shrines.GoldShrine;
 import com.megacrit.cardcrawl.events.shrines.GremlinMatchGame;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.cards.blue.*;
 import com.megacrit.cardcrawl.mod.replay.cards.curses.FaultyEquipment;
@@ -26,6 +27,7 @@ import com.megacrit.cardcrawl.mod.replay.vfx.campfire.CampfireExploreEffect;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.blue.Dualcast;
 import com.megacrit.cardcrawl.cards.blue.Zap;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.neow.*;
 import com.megacrit.cardcrawl.neow.NeowReward.*;
@@ -97,7 +99,8 @@ public class NeowRewardPatches {
 
 	public static final int NUM_BASIC_CARDS = 3;
 	public static final int NUM_BOSS_CURSES = 2;
-	
+	public static UIStrings N_SETTING_STRINGS;// = CardCrawlGame.languagePack.getUIString("Replay:NeowSettings");
+	public static UIStrings N_OPTION_STRINGS;// = CardCrawlGame.languagePack.getUIString("Replay:NeowOptions");
 	public static ReplayIntSliderSetting SETTING_BASIC_CARDS = new ReplayIntSliderSetting("Neow_Basic_Cards_Amt", "Random Basic Cards", 2, 5);
 	static final List<String> settingBossStrings = new ArrayList<String>();
 	public static final ReplayOptionsSetting SETTING_BOSS_OPTIONS_ENABLED;
@@ -129,13 +132,25 @@ public class NeowRewardPatches {
 		settingBossStrings.add("Enabled on all characters");
 		SETTING_BOSS_OPTIONS_ENABLED = new ReplayOptionsSetting("Neow_Boss_Options_Enabled", "Starter relic -> boss relic option replacements", 1, settingBossStrings);
 	}
-	
+	public static void localizeConfigOptions() {
+		N_SETTING_STRINGS = CardCrawlGame.languagePack.getUIString("Replay:NeowSettings");
+		N_OPTION_STRINGS = CardCrawlGame.languagePack.getUIString("Replay:NeowOptions");
+		SETTING_BASIC_CARDS.name = N_SETTING_STRINGS.TEXT[0];
+		SETTING_BOSS_CURSES.name = N_SETTING_STRINGS.TEXT[1];
+		SETTING_SOULBOUND_CURSES.name = N_SETTING_STRINGS.TEXT[2];
+		SETTING_COLORLESS_OPTION.name = N_SETTING_STRINGS.TEXT[3];
+		SETTING_EVENT_OPTION.name = N_SETTING_STRINGS.TEXT[4];
+		SETTING_BOSS_OPTIONS_ENABLED.name = N_SETTING_STRINGS.TEXT[5];
+		SETTING_BOSS_OPTIONS_ENABLED.optionStrings.set(0, N_SETTING_STRINGS.TEXT[6]);
+		SETTING_BOSS_OPTIONS_ENABLED.optionStrings.set(1, N_SETTING_STRINGS.TEXT[7]);
+		SETTING_BOSS_OPTIONS_ENABLED.optionStrings.set(2, N_SETTING_STRINGS.TEXT[8]);
+	}
 	@SpirePatch(cls = "com.megacrit.cardcrawl.neow.NeowReward", method = "getRewardDrawbackOptions")
 	public static class DrawbackPatch {
 		
 		public static ArrayList<NeowRewardDrawbackDef> Postfix(ArrayList<NeowRewardDrawbackDef> __result, NeowReward __instance) {
 			if (SETTING_BASIC_CARDS.value > 0) {
-				__result.add(new NeowRewardDrawbackDef(BASIC_CARDS, "[ #rObtain #r" + SETTING_BASIC_CARDS.value + " #rrandom #rbasic #rcards "));
+				__result.add(new NeowRewardDrawbackDef(BASIC_CARDS, N_OPTION_STRINGS.TEXT[0] + SETTING_BASIC_CARDS.value + N_OPTION_STRINGS.TEXT[1]));
 			}
 			
 			return __result;
@@ -145,18 +160,17 @@ public class NeowRewardPatches {
 	public static class RewardsPatch {
 		
 		public static ArrayList<NeowRewardDef> Postfix(ArrayList<NeowRewardDef> __result, NeowReward __instance, final int category) {
-
 			if (category == 0 && SETTING_COLORLESS_OPTION.value) {
-				__result.add(new NeowRewardDef(COLORLESS_CARD, "[ #gObtain #ga #grandom #gcolorless #gCard ]"));
+				__result.add(new NeowRewardDef(COLORLESS_CARD, N_OPTION_STRINGS.TEXT[2]));
 			} else if (category == 1 && SETTING_EVENT_OPTION.value) {
-				__result.add(new NeowRewardDef(RANDOM_EVENT, "[ #gEncounter #ga #grandom #gevent. ]"));
+				__result.add(new NeowRewardDef(RANDOM_EVENT, N_OPTION_STRINGS.TEXT[3]));
 			} else if (category == 3 &&
 					(SETTING_BOSS_OPTIONS_ENABLED.value == 2 || SETTING_BOSS_OPTIONS_ENABLED.value == 1 && (AbstractDungeon.player.hasRelic("construct:ClockworkPhoenix") || AbstractDungeon.player.hasRelic("beaked:MendingPlumage") || AbstractDungeon.player.hasRelic("MiniHakkero") || AbstractDungeon.player.hasRelic("Slimebound:AbsorbEndCombat")))
 					) {
 				if (SETTING_BOSS_CURSES.value > 0) {
-					__result.add(new NeowRewardDef(CURSED_BOSS_RELIC, "[ #rObtain #r" + SETTING_BOSS_CURSES.value + (SETTING_SOULBOUND_CURSES.value ? " #rSoulbound" : "") + " #rCurses #gObtain #ga #grandom #gboss #gRelic ]"));
+					__result.add(new NeowRewardDef(CURSED_BOSS_RELIC, N_OPTION_STRINGS.TEXT[0] + SETTING_BOSS_CURSES.value + (SETTING_SOULBOUND_CURSES.value ? N_OPTION_STRINGS.TEXT[4] : "") + N_OPTION_STRINGS.TEXT[5]));
 				}
-				__result.add(new NeowRewardDef(DOUBLE_BOSS_RELIC, "[ #rLose [E] #rat #rthe #rstart #rof #reach #rturn #gObtain #g2 #grandom #gboss #gRelics ]"));
+				__result.add(new NeowRewardDef(DOUBLE_BOSS_RELIC, N_OPTION_STRINGS.TEXT[6]));
 			}
 			
 			if (__instance.drawback == BASIC_CARDS) {

@@ -2,6 +2,8 @@ package com.megacrit.cardcrawl.mod.replay.relics;
 
 import java.util.ArrayList;
 
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 //import com.megacrit.cardcrawl.relics.LandingSound;
 //import com.megacrit.cardcrawl.relics.RelicTier;
@@ -15,13 +17,13 @@ public class TagBag extends ReplayAbstractRelic
     public static final String ID = "Blue Doll";
     
     public TagBag() {
-        super("Blue Doll", "blueDoll.png", RelicTier.COMMON, LandingSound.FLAT);
+        super("Blue Doll", Settings.language.toString().equals("ZHS") ? "blueDoll_zhs.png" : "blueDoll.png", RelicTier.COMMON, LandingSound.FLAT);
         this.SettingsPriorety = 0;
     }
     
     public ArrayList<String> GetSettingStrings() {
   		ArrayList<String> s = new ArrayList<String>();
-  		s.add("Sale Tag Settings");
+  		s.add(CardCrawlGame.languagePack.getUIString("Replay:SettingsNames").TEXT[14]);
   		return s;
   	}
     public ArrayList<ReplayRelicSetting> BuildRelicSettings() {

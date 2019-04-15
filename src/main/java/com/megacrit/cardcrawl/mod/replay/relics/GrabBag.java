@@ -126,22 +126,14 @@ public class GrabBag extends ReplayAbstractRelic
 	        ++energy.energyMaster;
         }
     }
-    @Override
-    public void onEquip() {
-        this.hasRelicOne = false;
-        this.hasRelicTwo = false;
-        if (DOUBLE_RELICS.value) {
-        	this.hasRelicThree = false;
-            this.hasRelicFour = false;
-            final EnergyManager energy = AbstractDungeon.player.energy;
-            --energy.energyMaster;
-        }
-        GrabBag.energyRelics.clear();
+    
+    public static void buildLists() {
+    	GrabBag.energyRelics.clear();
         GrabBag.nonEnergyRelics.clear();
         String ckd = ((new CursedKey()).DESCRIPTIONS[1]) + ((new CursedKey()).DESCRIPTIONS[0]);
         String akd = "Gain [E] at the start of each turn.";
         String energyDesc = (ckd.substring(0, ckd.indexOf("[")));
-        String energyDesc2 = (ckd.substring(ckd.indexOf("]") + 2, ckd.indexOf(".")));
+        String energyDesc2 = (ckd.substring(ckd.indexOf("]") + 2, ckd.indexOf(ReplayTheSpireMod.LOC_FULLSTOP)));
         String energyDescAlt = (akd.substring(0, akd.indexOf("[")));
         String energyDescAlt2 = (akd.substring(akd.indexOf("]") + 2, akd.indexOf(".")));
         for (AbstractRelic r : RelicLibrary.bossList) {
@@ -173,6 +165,19 @@ public class GrabBag extends ReplayAbstractRelic
         }
     }
     
+    @Override
+    public void onEquip() {
+        this.hasRelicOne = false;
+        this.hasRelicTwo = false;
+        if (DOUBLE_RELICS.value) {
+        	this.hasRelicThree = false;
+            this.hasRelicFour = false;
+            final EnergyManager energy = AbstractDungeon.player.energy;
+            --energy.energyMaster;
+        }
+        GrabBag.buildLists();
+    }
+    
     public AbstractRelic makeCopy() {
         return new GrabBag();
     }
@@ -184,6 +189,11 @@ public class GrabBag extends ReplayAbstractRelic
     
     @Override
     public boolean canSpawn() {
-    	return (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof TreasureRoomBoss);
+    	if (!(AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof TreasureRoomBoss))
+    		return false;
+
+    	GrabBag.buildLists();
+    	int numcheck = DOUBLE_RELICS.value ? 6 : 3;
+    	return (GrabBag.energyRelics.size() >= numcheck && GrabBag.nonEnergyRelics.size() >= numcheck);
     }
 }

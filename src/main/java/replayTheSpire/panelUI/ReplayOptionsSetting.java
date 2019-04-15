@@ -15,7 +15,7 @@ import replayTheSpire.ReplayTheSpireMod;
 public class ReplayOptionsSetting extends ReplayRelicSetting {
 
 	public int value;
-	List<String> optionStrings;
+	public List<String> optionStrings;
 	ArrayList<ModToggleButton> buttons;
 	
 	public ReplayOptionsSetting(String id, String name, int defaultProperty, List<String> options) {

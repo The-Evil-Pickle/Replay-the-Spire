@@ -80,6 +80,7 @@ import mysticmod.MysticMod;
 import replayTheSpire.panelUI.*;
 import replayTheSpire.patches.CreatureHealthPatches;
 import replayTheSpire.patches.NeowRewardPatches;
+import replayTheSpire.patches.ReplayShopInitCardsPatch;
 import replayTheSpire.replayxover.beakedbs;
 import replayTheSpire.replayxover.chronobs;
 import replayTheSpire.replayxover.constructbs;
@@ -879,7 +880,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static void postPostInit() {
 		
 	}
-	
+	public static UIStrings SETTING_STRINGS;// = CardCrawlGame.languagePack.getUIString("Replay:SettingsNames");
 	@Override
     public void receivePostInitialize() {
 		ReplayTheSpireMod.powerAtlas = new com.badlogic.gdx.graphics.g2d.TextureAtlas(Gdx.files.internal("powers/replayPowers.atlas"));
@@ -913,18 +914,31 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         settingsPanel = new ModPanel();
 		final List<RelicSettingsButton> settingsButtons = new ArrayList<RelicSettingsButton>();
 		ArrayList<IUIElement> settingElements = new ArrayList<IUIElement>();
-
+		SETTING_STRINGS = CardCrawlGame.languagePack.getUIString("Replay:SettingsNames");
+		/*public static final ReplayIntSliderSetting SETTING_TAG_NORMAL_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Normal", "Normal Sale Tag Chance", 3, 1, 5);
+		public static final ReplayIntSliderSetting SETTING_TAG_SPECIAL_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Special", "Special Edition Tag Chance", 1, 0, 5);
+		public static final ReplayIntSliderSetting SETTING_TAG_DOUBLE_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Double", "2 For 1 Tag Chance", 1, 0, 5);
+		public static final ReplayIntSliderSetting SETTING_TAG_SCRAMBLE_CHANCE = new ReplayIntSliderSetting("Tag_Chance_Scramble", "Special Edition Stat Scramble Chance", 25, 0, 100, "%");
+		public static final ReplayIntSliderSetting SETTING_ROOMS_BONFIRE = new ReplayIntSliderSetting("Bonfire_Chance", "Bonfire Chance", 100, 0, 100, "%");
+		public static final ReplayIntSliderSetting SETTING_ROOMS_PORTAL = new ReplayIntSliderSetting("Portal_Chance", "Portal Chance", 66, 0, 100, "%");*/
+		SETTING_TAG_NORMAL_CHANCE.name = SETTING_STRINGS.TEXT[3];
+		SETTING_TAG_SPECIAL_CHANCE.name = SETTING_STRINGS.TEXT[4];
+		SETTING_TAG_DOUBLE_CHANCE.name = SETTING_STRINGS.TEXT[5];
+		SETTING_TAG_SCRAMBLE_CHANCE.name = SETTING_STRINGS.TEXT[6];
+		SETTING_ROOMS_BONFIRE.name = SETTING_STRINGS.TEXT[7];
+		SETTING_ROOMS_PORTAL.name = SETTING_STRINGS.TEXT[8];
+		NeowRewardPatches.localizeConfigOptions();
 		//CARD FILTER
 		settingsButtons.add(FILTER_BUTTONS.get(AbstractCard.CardColor.RED));
 		settingsButtons.add(FILTER_BUTTONS.get(AbstractCard.CardColor.GREEN));
 		settingsButtons.add(FILTER_BUTTONS.get(AbstractCard.CardColor.BLUE));
 		settingsButtons.add(FILTER_BUTTONS.get(AbstractCard.CardColor.COLORLESS));
 		settingsButtons.add(FILTER_BUTTONS.get(AbstractCard.CardColor.CURSE));
-
+		
 		//BOSS FILTER
 		settingElements = new ArrayList<IUIElement>();
 		ArrayList<ReplayRelicSetting> roomSettings = new ArrayList<ReplayRelicSetting>();
-		settingElements.add(new ModLabel("Disable Custom Bosses", setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
+		settingElements.add(new ModLabel(SETTING_STRINGS.TEXT[0], setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
 		HashMap<String, List<BossInfo>> customBosses = (HashMap<String, List<BossInfo>>)ReflectionHacks.getPrivateStatic(BaseMod.class, "customBosses");
 		float ymod = 0f;
 		float xmod = 0f;
@@ -948,7 +962,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 		
 		//ROOM SETTINGS
-		settingElements.add(new ModLabel("Custom Room Settings", setting_start_x + 150.0f, setting_start_y, settingsPanel, (me) -> {}));
+		settingElements = new ArrayList<IUIElement>();
+		settingElements.add(new ModLabel(SETTING_STRINGS.TEXT[1], setting_start_x + 150.0f, setting_start_y, settingsPanel, (me) -> {}));
 		settingElements.addAll(SETTING_ROOMS_BONFIRE.GenerateElements(setting_start_x, setting_start_y - 50.0f));
 		settingElements.addAll(SETTING_ROOMS_PORTAL.GenerateElements(setting_start_x, setting_start_y - 100.0f));
 		roomSettings = new ArrayList<ReplayRelicSetting>();
@@ -960,7 +975,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		
 		//NEOW SETTINGS
 		settingElements = new ArrayList<IUIElement>();
-		settingElements.add(new ModLabel("Neow Reward Settings", setting_start_x + 150.0f, setting_start_y, settingsPanel, (me) -> {}));
+		settingElements.add(new ModLabel(SETTING_STRINGS.TEXT[2], setting_start_x + 150.0f, setting_start_y, settingsPanel, (me) -> {}));
 		settingElements.addAll(NeowRewardPatches.SETTING_COLORLESS_OPTION.GenerateElements(setting_start_x, setting_start_y - 40.0f));
 		settingElements.addAll(NeowRewardPatches.SETTING_EVENT_OPTION.GenerateElements(setting_start_x, setting_start_y - 80.0f));
 		settingElements.addAll(NeowRewardPatches.SETTING_BASIC_CARDS.GenerateElements(setting_start_x, setting_start_y - 120.0f));
@@ -1057,6 +1072,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         if (Settings.language.toString().equals("KOR")) {
 			logger.info("Korean detected!");
 			jsonPath = "localization/kor/";
+		}
+        if (Settings.language.toString().equals("ZHS")) {
+			logger.info("ZHS detected!");
+			jsonPath = "localization/zhs/";
 		}
         final String json = Gdx.files.internal(jsonPath + "ReplayKeywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
         final Keyword[] keywords = (Keyword[])gson.fromJson(json, Keyword[].class);
@@ -1191,7 +1210,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static HashMap<AbstractCard.CardColor, ArrayList<AbstractCard>> REPLAY_CARDS = new HashMap<AbstractCard.CardColor, ArrayList<AbstractCard>>();
 	public static HashMap<AbstractCard.CardColor, HashMap<String, ReplayBooleanSetting>> CARD_FILTER = new HashMap<AbstractCard.CardColor, HashMap<String, ReplayBooleanSetting>>();
 	public static HashMap<AbstractCard.CardColor, RelicSettingsButton> FILTER_BUTTONS = new HashMap<AbstractCard.CardColor, RelicSettingsButton>();
-	public static void AddAndUnlockCard(AbstractCard c)
+	public static void AddAndUnlockCard(AbstractCard c) {
+		AddAndUnlockCard(c, true);
+	}
+	public static void AddAndUnlockCard(AbstractCard c, boolean defaultEnable)
 	{
 		if (!REPLAY_CARDS.containsKey(c.color)) {
 			REPLAY_CARDS.put(c.color, new ArrayList<AbstractCard>());
@@ -1199,7 +1221,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 		REPLAY_CARDS.get(c.color).add(c);
 		if (c.rarity != AbstractCard.CardRarity.BASIC && c.rarity != AbstractCard.CardRarity.SPECIAL) {
-			ReplayBooleanSetting cardsetting = new ReplayBooleanSetting("ReplayCardFilter-"+c.cardID, c.name, true);
+			ReplayBooleanSetting cardsetting = new ReplayBooleanSetting("ReplayCardFilter-"+c.cardID, c.name, defaultEnable);
 			CARD_FILTER.get(c.color).put(c.cardID, cardsetting);
 			if (FILTER_BUTTONS.containsKey(c.color)) {
 				FILTER_BUTTONS.get(c.color).addSetting(cardsetting);
@@ -1229,38 +1251,38 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		SETTING_STRINGS = CardCrawlGame.languagePack.getUIString("Replay:SettingsNames");
 		RelicSettingsButton setbutt;
 		ArrayList<IUIElement> settingElements;
 		ArrayList<ReplayRelicSetting> roomSettings;
 		
 		settingElements = new ArrayList<IUIElement>();
 		roomSettings = new ArrayList<ReplayRelicSetting>();
-		settingElements.add(new ModLabel("Card Filter: Red", setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
+		settingElements.add(new ModLabel(SETTING_STRINGS.TEXT[9], setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
 		setbutt = new RelicSettingsButton(ImageMaster.loadImage("images/ui/run_mods/red.png"), ImageMaster.loadImage("images/ui/run_mods/red.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings);
 		FILTER_BUTTONS.put(AbstractCard.CardColor.RED, setbutt);
 		
 		settingElements = new ArrayList<IUIElement>();
 		roomSettings = new ArrayList<ReplayRelicSetting>();
-		settingElements.add(new ModLabel("Card Filter: Blue", setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
+		settingElements.add(new ModLabel(SETTING_STRINGS.TEXT[10], setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
 		setbutt = new RelicSettingsButton(ImageMaster.loadImage("images/ui/run_mods/blue.png"), ImageMaster.loadImage("images/ui/run_mods/blue.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings);
 		FILTER_BUTTONS.put(AbstractCard.CardColor.BLUE, setbutt);
 		
 		settingElements = new ArrayList<IUIElement>();
 		roomSettings = new ArrayList<ReplayRelicSetting>();
-		settingElements.add(new ModLabel("Card Filter: Green", setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
+		settingElements.add(new ModLabel(SETTING_STRINGS.TEXT[11], setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
 		setbutt = new RelicSettingsButton(ImageMaster.loadImage("images/ui/run_mods/green.png"), ImageMaster.loadImage("images/ui/run_mods/green.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings);
 		FILTER_BUTTONS.put(AbstractCard.CardColor.GREEN, setbutt);
 		
 		settingElements = new ArrayList<IUIElement>();
 		roomSettings = new ArrayList<ReplayRelicSetting>();
-		settingElements.add(new ModLabel("Card Filter: Colorless", setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
+		settingElements.add(new ModLabel(SETTING_STRINGS.TEXT[12], setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
 		setbutt = new RelicSettingsButton(ImageMaster.loadImage("images/ui/run_mods/colorless.png"), ImageMaster.loadImage("images/ui/run_mods/colorless.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings);
 		FILTER_BUTTONS.put(AbstractCard.CardColor.COLORLESS, setbutt);
 		
 		settingElements = new ArrayList<IUIElement>();
 		roomSettings = new ArrayList<ReplayRelicSetting>();
-		settingElements.add(new ModLabel("Card Filter: Curse", setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
+		settingElements.add(new ModLabel(SETTING_STRINGS.TEXT[13], setting_start_x + 500.0f, setting_start_y + 150f, settingsPanel, (me) -> {}));
 		setbutt = new RelicSettingsButton(ImageMaster.loadImage("images/ui/run_mods/cursed_run.png"), ImageMaster.loadImage("images/ui/run_mods/cursed_run.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings);
 		FILTER_BUTTONS.put(AbstractCard.CardColor.CURSE, setbutt);
 		
@@ -1358,6 +1380,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Sssssssssshield());
 		AddAndUnlockCard(new Necrogeddon());
 		AddAndUnlockCard(new BasicMightCard());
+		AddAndUnlockCard(new Parry());
 		if (Loader.isModLoaded("Friendly_Minions_0987678")) {
 			AddAndUnlockCard(new GrembosGang());
 		}
@@ -1735,6 +1758,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	
 	public static String SINGLE_SUFFIX = "";
 	public static String MULTI_SUFFIX = "s";
+	public static String LOC_FULLSTOP = ".";
 	private static void doStringOverrides(final Type stringType, final String jsonString) {
 		
 		HashMap<Type, String> typeMaps = (HashMap<Type, String>)ReflectionHacks.getPrivateStatic(BaseMod.class, "typeMaps");
@@ -1838,6 +1862,16 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			editStringsByLang(jsonPath);
 			SINGLE_SUFFIX = "";
 			MULTI_SUFFIX = "";
+		} else if (Settings.language.toString().equals("ZHS")) {
+			logger.info("Chinese detected!");
+			jsonPath = "localization/zhs/";
+			editStringsByLang(jsonPath);
+			SINGLE_SUFFIX = "";
+			MULTI_SUFFIX = "";
+			LOC_FULLSTOP = "。";
+			ReplayShopInitCardsPatch.NORMAL_TAG = "images/npcs/sale_tag/zhs.png";
+			ReplayShopInitCardsPatch.DOUBLE_TAG = "images/npcs/sale_tag/2for1Tag_zhs.png";
+			ReplayShopInitCardsPatch.SPECIAL_TAG = "images/npcs/sale_tag/specialEditionTag_zhs.png";
 		}
 		
 		logger.info("done editting strings");

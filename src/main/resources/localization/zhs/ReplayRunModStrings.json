@@ -1,0 +1,22 @@
+{
+	"replay:Chaotic": {
+		"NAME": "混沌",
+		"DESCRIPTION": "开局拥有遗物 \"混沌之环\" 。卡片的效果将会被打乱。"
+	},
+	"replay:Library Looter": {
+		"NAME": "图书馆劫掠者",
+		"DESCRIPTION": "每当你打开一个非boss宝箱，从 15 张牌中选择获得 1 张牌。"
+	},
+	"replay:Mists": {
+		"NAME": "迷雾",
+		"DESCRIPTION": "第一层将会是镜像迷雾事件。"
+	},
+	"replay:ALWAYS": {
+		"NAME": "又是鲸鱼",
+		"DESCRIPTION": "涅奥会频繁出现。"
+	},
+	"replay:honeycakes": {
+		"NAME": "蜂蜜蛋糕",
+		"DESCRIPTION": "初始遗物替换为蜂蜜罐子和猫脸纸杯蛋糕"
+	}
+}
