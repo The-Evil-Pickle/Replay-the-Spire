@@ -79,5 +79,48 @@
 	  "This enemy intends to throw a bomb that will deal #b",
 	  " damage if not destroyed within #b3 turns."
     ]
+  },
+  "Replay:SettingsNames": {
+	"TEXT": [
+		"Disable Custom Bosses",
+		"Custom Room Settings",
+		"Neow Reward Settings",
+		"Normal Sale Tag Chance",
+		"Special Edition Tag Chance",
+		"2 For 1 Tag Chance",
+		"Special Edition Stat Scramble Chance",
+		"Bonfire Chance",
+		"Portal Chance",
+		"Card Filter: Red",
+		"Card Filter: Blue",
+		"Card Filter: Green",
+		"Card Filter: Colorless",
+		"Card Filter: Curse",
+		"Sale Tag Settings"
+	]
+  },
+  "Replay:NeowSettings": {
+	"TEXT": [
+		"Random Basic Cards",
+		"Curses for Boss Relic (0 disables)",
+		"Curses for Boss Relic are Soulbound",
+		"Colorless card option",
+		"Random event option",
+		"Starter relic -> boss relic option replacements",
+		"Disabled",
+		"Enabled on characters with important starting relics",
+		"Enabled on all characters"
+	]
+  },
+  "Replay:NeowOptions": {
+	"TEXT": [
+		"[ #rObtain #r",
+		" #rrandom #rbasic #rcards ",
+		"[ #gObtain #ga #grandom #gcolorless #gCard ]",
+		"[ #gEncounter #ga #grandom #gevent. ]",
+		" #rSoulbound",
+		" #rCurses #gObtain #ga #grandom #gboss #gRelic ]",
+		"[ #rLose [E] #rat #rthe #rstart #rof #reach #rturn #gObtain #g2 #grandom #gboss #gRelics ]"
+	]
   }
 }

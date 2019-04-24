@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.green.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -16,12 +17,12 @@ import com.megacrit.cardcrawl.relics.WristBlade;
 
 import ThMod.powers.Marisa.ChargeUpPower;
 
-public class M_TsuchinokoRing extends AbstractRelic
+public class M_TsuchinokoRing extends M_MistRelic
 {
     public static final String ID = "m_TsuchinokoRing";
     
     public M_TsuchinokoRing() {
-        super(ID, "snakeRing.png", RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, "snakeRing.png", LandingSound.MAGICAL, ThMod.patches.AbstractCardEnum.MARISA_COLOR, CardColor.GREEN);
     }
     
     @Override
@@ -34,12 +35,30 @@ public class M_TsuchinokoRing extends AbstractRelic
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 2));
     }
-    
+    @Override
+	public void onUseCard(final AbstractCard card, final UseCardAction action) {
+        final AbstractPlayer p = AbstractDungeon.player;
+        final Boolean available = (card.type == AbstractCard.CardType.SKILL || card.costForTurn == 0 || card.freeToPlayOnce);
+        int div = 8;
+        if (p.hasRelic("SimpleLauncher")) {
+            div = 6;
+        }
+        if (available) {
+            this.flash();
+            //ThMod.logger.info("MiniHakkero : Applying ChargeUpPower for using card : " + card.cardID);
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ChargeUpPower(AbstractDungeon.player, 1), 1));
+            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        }
+    }
+	
+    @Override
+    public AbstractRelic makeCopy() {
+        return new M_TsuchinokoRing();
+    }
+
 	@Override
-    public void onEquip() {
-		AbstractDungeon.bossRelicPool.add(WristBlade.ID);
-        final long startTime = System.currentTimeMillis();
-        final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
+	ArrayList<AbstractCard> getNewCards() {
+		final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
         tmpPool.add(new AThousandCuts());
         tmpPool.add(new Accuracy());
         tmpPool.add(new Adrenaline());
@@ -72,49 +91,6 @@ public class M_TsuchinokoRing extends AbstractRelic
         tmpPool.add(new StormOfSteel());
         tmpPool.add(new ToolsOfTheTrade());
         tmpPool.add(new WellLaidPlans());
-        for (final AbstractCard c : tmpPool) {
-			switch (c.rarity) {
-				case COMMON: {
-					AbstractDungeon.commonCardPool.addToTop(c);
-					AbstractDungeon.srcCommonCardPool.addToBottom(c);
-					continue;
-				}
-				case UNCOMMON: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-				case RARE: {
-					AbstractDungeon.rareCardPool.addToTop(c);
-					AbstractDungeon.srcRareCardPool.addToBottom(c);
-					continue;
-				}
-				default: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-			}
-        }
-    }
-    @Override
-	public void onUseCard(final AbstractCard card, final UseCardAction action) {
-        final AbstractPlayer p = AbstractDungeon.player;
-        final Boolean available = (card.type == AbstractCard.CardType.SKILL || card.costForTurn == 0 || card.freeToPlayOnce);
-        int div = 8;
-        if (p.hasRelic("SimpleLauncher")) {
-            div = 6;
-        }
-        if (available) {
-            this.flash();
-            //ThMod.logger.info("MiniHakkero : Applying ChargeUpPower for using card : " + card.cardID);
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ChargeUpPower(AbstractDungeon.player, 1), 1));
-            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        }
-    }
-	
-    @Override
-    public AbstractRelic makeCopy() {
-        return new M_TsuchinokoRing();
-    }
+		return tmpPool;
+	}
 }

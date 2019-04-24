@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.blue.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -25,12 +26,12 @@ import ThMod.powers.Marisa.ChargeUpPower;
 import replayTheSpire.ReplayTheSpireMod;
 
 
-public class M_SpellCore extends AbstractRelic
+public class M_SpellCore extends M_MistRelic
 {
     public static final String ID = "m_SpellCore";
     
     public M_SpellCore() {
-        super(ID, "crackedOrb.png", RelicTier.STARTER, LandingSound.CLINK);
+        super(ID, "crackedOrb.png", LandingSound.CLINK, ThMod.patches.AbstractCardEnum.MARISA_COLOR, CardColor.BLUE);
     }
     
     @Override
@@ -47,10 +48,14 @@ public class M_SpellCore extends AbstractRelic
     	AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ChargeUpPower(AbstractDungeon.player, o.passiveAmount), o.passiveAmount));
     }
     
+    @Override
+    public AbstractRelic makeCopy() {
+        return new M_SpellCore();
+    }
+
 	@Override
-    public void onEquip() {
-        final long startTime = System.currentTimeMillis();
-        final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
+	ArrayList<AbstractCard> getNewCards() {
+		final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
         tmpPool.add(new Aggregate());
         tmpPool.add(new AllForOne());
         tmpPool.add(new Barrage());
@@ -98,34 +103,6 @@ public class M_SpellCore extends AbstractRelic
         if (ReplayTheSpireMod.foundmod_conspire) {
         	tmpPool.add(new DualPolarity());
         }
-        for (final AbstractCard c : tmpPool) {
-			switch (c.rarity) {
-				case COMMON: {
-					AbstractDungeon.commonCardPool.addToTop(c);
-					AbstractDungeon.srcCommonCardPool.addToBottom(c);
-					continue;
-				}
-				case UNCOMMON: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-				case RARE: {
-					AbstractDungeon.rareCardPool.addToTop(c);
-					AbstractDungeon.srcRareCardPool.addToBottom(c);
-					continue;
-				}
-				default: {
-					AbstractDungeon.commonCardPool.addToTop(c);
-					AbstractDungeon.srcCommonCardPool.addToBottom(c);
-					continue;
-				}
-			}
-        }
-    }
-    
-    @Override
-    public AbstractRelic makeCopy() {
-        return new M_SpellCore();
-    }
+		return tmpPool;
+	}
 }

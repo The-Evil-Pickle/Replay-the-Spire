@@ -2,21 +2,23 @@ package com.megacrit.cardcrawl.mod.replay.relics;
 
 import java.util.ArrayList;
 
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
 public abstract class M_MistRelic extends AbstractRelic
 {
 	CardColor mainColor;
 	CardColor baseColor;
 	int orbSlots;
-    public M_MistRelic(String setId, String imgName, RelicTier tier, LandingSound sfx, CardColor mainColor, CardColor baseColor) {
-    	this(setId, imgName, tier, sfx, mainColor, baseColor, 0);
+    public M_MistRelic(String setId, String imgName, LandingSound sfx, CardColor mainColor, CardColor baseColor) {
+    	this(setId, imgName, sfx, mainColor, baseColor, 0);
     }
-    public M_MistRelic(String setId, String imgName, RelicTier tier, LandingSound sfx, CardColor mainColor, CardColor baseColor, int orbSlots) {
-		super(setId, imgName, tier, sfx);
+    public M_MistRelic(String setId, String imgName, LandingSound sfx, CardColor mainColor, CardColor baseColor, int orbSlots) {
+		super(setId, imgName, RelicTier.STARTER, sfx);
 		this.mainColor = mainColor;
 		this.baseColor = baseColor;
 		this.orbSlots = orbSlots;
@@ -75,4 +77,17 @@ public abstract class M_MistRelic extends AbstractRelic
         this.addCardsToPools();
         AbstractDungeon.player.masterMaxOrbs = Math.max(this.orbSlots, AbstractDungeon.player.masterMaxOrbs);
     }
+	
+	@SpirePatch(cls = "com.megacrit.cardcrawl.helpers.CardLibrary", method = "initialize")
+	public static class PatchThisShit {
+		public static void Postfix() {
+			if (AbstractDungeon.player != null) {
+				for (AbstractRelic r : AbstractDungeon.player.relics) {
+					if (r instanceof M_MistRelic) {
+						((M_MistRelic)r).addCardsToPools();
+					}
+				}
+			}
+		}
+	}
 }

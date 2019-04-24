@@ -51,7 +51,7 @@ public class WantedPoster extends AbstractRelic
     }
     
     private void giveRandomBuff(AbstractMonster m) {
-    	switch (AbstractDungeon.miscRng.random(15)) {
+    	switch (AbstractDungeon.miscRng.random(16)) {
     	case 0:
     	case 1:
     	case 2:
@@ -98,6 +98,9 @@ public class WantedPoster extends AbstractRelic
     		break;
     	case 15:
     		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new CuriosityPower(m, 1), 1));
+    		break;
+    	case 16:
+    		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new MightPower(m, 2, false), 2));
     		break;
     	}
     }

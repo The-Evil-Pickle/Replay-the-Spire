@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.green.Acrobatics;
 import com.megacrit.cardcrawl.cards.green.AllOutAttack;
 import com.megacrit.cardcrawl.cards.green.CalculatedGamble;
@@ -22,12 +23,12 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.AbstractRelic.LandingSound;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
-public class m_SnakeCloak extends AbstractRelic
+public class m_SnakeCloak extends M_MistRelic
 {
     public static final String ID = "m_SnakeCloak";
     
     public m_SnakeCloak() {
-        super(ID, "snakeRing.png", RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, "snakeRing.png", LandingSound.MAGICAL, blackrusemod.patches.AbstractCardEnum.SILVER, CardColor.GREEN);
     }
     
     @Override
@@ -45,8 +46,17 @@ public class m_SnakeCloak extends AbstractRelic
     public void onEquip() {
 		AbstractDungeon.rareRelicPool.add("Tough Bandages");
 		AbstractDungeon.rareRelicPool.add("Tingsha");
-        final long startTime = System.currentTimeMillis();
-        final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
+        super.onEquip();
+    }
+    
+    @Override
+    public AbstractRelic makeCopy() {
+        return new m_SnakeCloak();
+    }
+
+	@Override
+	ArrayList<AbstractCard> getNewCards() {
+		final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
         tmpPool.add(new Prepared());
         tmpPool.add(new Acrobatics());
         tmpPool.add(new AllOutAttack());
@@ -59,34 +69,6 @@ public class m_SnakeCloak extends AbstractRelic
         tmpPool.add(new ToolsOfTheTrade());
         //tmpPool.add(new UnderhandedStrike());
         tmpPool.add(new Unload());
-        for (final AbstractCard c : tmpPool) {
-			switch (c.rarity) {
-				case COMMON: {
-					AbstractDungeon.commonCardPool.addToTop(c);
-					AbstractDungeon.srcCommonCardPool.addToBottom(c);
-					continue;
-				}
-				case UNCOMMON: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-				case RARE: {
-					AbstractDungeon.rareCardPool.addToTop(c);
-					AbstractDungeon.srcRareCardPool.addToBottom(c);
-					continue;
-				}
-				default: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-			}
-        }
-    }
-    
-    @Override
-    public AbstractRelic makeCopy() {
-        return new m_SnakeCloak();
-    }
+		return tmpPool;
+	}
 }

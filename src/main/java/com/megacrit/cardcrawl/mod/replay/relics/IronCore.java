@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.blue.BeamCell;
 import com.megacrit.cardcrawl.cards.blue.Capacitor;
 import com.megacrit.cardcrawl.cards.blue.Claw;
@@ -44,7 +45,7 @@ import com.megacrit.cardcrawl.cards.red.Warcry;
 import com.megacrit.cardcrawl.cards.red.Whirlwind;
 import com.megacrit.cardcrawl.characters.*;
 
-public class IronCore extends AbstractRelic
+public class IronCore extends M_MistRelic
 {
     public static final String ID = "Iron Core";
     private boolean hasBlues;
@@ -52,7 +53,7 @@ public class IronCore extends AbstractRelic
     private boolean firstTurn;
     
     public IronCore() {
-        super("Iron Core", "ironCoreOrb.png", RelicTier.STARTER, LandingSound.CLINK);
+        super("Iron Core", "ironCoreOrb.png", LandingSound.CLINK, CardColor.RED, CardColor.BLUE, 2);
         this.hasReds = false;
         this.hasBlues = false;
         this.firstTurn = true;
@@ -106,7 +107,6 @@ public class IronCore extends AbstractRelic
 	
 	@Override
     public void onEquip() {
-        final long startTime = System.currentTimeMillis();
         final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
         if (!(AbstractDungeon.player instanceof Ironclad)) {
     		AbstractDungeon.rareRelicPool.add("Magic Flower");
@@ -184,4 +184,50 @@ public class IronCore extends AbstractRelic
 			}
         }
     }
+
+	@Override
+	ArrayList<AbstractCard> getNewCards() {
+        final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
+        tmpPool.add(new Anger());
+		tmpPool.add(new Barricade());
+		tmpPool.add(new Clash());
+		tmpPool.add(new DoubleTap());
+		tmpPool.add(new DualWield());
+		tmpPool.add(new FireBreathing());
+		tmpPool.add(new Flex());
+		tmpPool.add(new Headbutt());
+		tmpPool.add(new HeavyBlade());
+		tmpPool.add(new Inflame());
+		tmpPool.add(new IronWave());
+		tmpPool.add(new Juggernaut());
+		tmpPool.add(new LimitBreak());
+		tmpPool.add(new Offering());
+		tmpPool.add(new Reaper());
+		tmpPool.add(new SeeingRed());
+		tmpPool.add(new Warcry());
+		tmpPool.add(new Whirlwind());
+		tmpPool.add(new MuscleTraining());tmpPool.add(new BeamCell());
+    	tmpPool.add(new Capacitor());
+    	tmpPool.add(new Claw());
+    	tmpPool.add(new ColdSnap());
+    	tmpPool.add(new Defragment());
+    	tmpPool.add(new FTL());
+    	tmpPool.add(new ForceField());
+    	tmpPool.add(new GeneticAlgorithm());
+    	tmpPool.add(new Glacier());
+    	tmpPool.add(new Hologram());
+    	tmpPool.add(new Overclock());
+    	tmpPool.add(new Rebound());
+    	tmpPool.add(new Recycle());
+    	tmpPool.add(new RipAndTear());
+    	tmpPool.add(new Turbo());
+    	tmpPool.add(new ReplayGoodbyeWorld());
+    	tmpPool.add(new ReplayRepulse());
+    	tmpPool.add(new MirrorShield());
+    	tmpPool.add(new SystemScan());
+    	tmpPool.add(new WeaponsOverheat());
+    	tmpPool.add(new IC_ScorchingBeam());
+    	tmpPool.add(new IC_FireWall());
+		return tmpPool;
+	}
 }

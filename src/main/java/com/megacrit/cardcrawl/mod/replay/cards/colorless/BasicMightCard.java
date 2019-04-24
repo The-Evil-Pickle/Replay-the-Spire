@@ -22,7 +22,7 @@ public class BasicMightCard
   
   public BasicMightCard()
   {
-    super(ID, NAME, "cards/replay/replayBetaPower.png", BasicMightCard.COST, DESCRIPTION, AbstractCard.CardType.POWER, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.NONE);
+    super(ID, NAME, "cards/replay/replayBetaPower.png", BasicMightCard.COST, DESCRIPTION, AbstractCard.CardType.POWER, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.NONE);
     RefundVariable.setBaseValue(this, 1);
   }
   

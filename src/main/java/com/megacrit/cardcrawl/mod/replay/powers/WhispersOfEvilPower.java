@@ -1,12 +1,15 @@
 package com.megacrit.cardcrawl.mod.replay.powers;
 
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AutoplayField;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SoulboundField;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.mod.replay.actions.common.EchoToDrawAction;
+import com.megacrit.cardcrawl.mod.replay.cards.curses.LoomingEvil;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import basemod.interfaces.CloneablePowerInterface;
@@ -14,6 +17,7 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 
 public class WhispersOfEvilPower extends AbstractPower implements CloneablePowerInterface
 {
@@ -59,12 +63,22 @@ public class WhispersOfEvilPower extends AbstractPower implements CloneablePower
 			this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
 		}
 	}
+	//ban certain types of curses
+	private boolean isCurseValid(AbstractCard card) {
+		if (FleetingField.fleeting.get(card) || SoulboundField.soulbound.get(card) || (AutoplayField.autoplay.get(card) && card.type != CardType.POWER) || card.cardID.equals("conspire:Blindness") || card.cardID.equals("hubris:Disease") || card.cardID.equals(LoomingEvil.ID))
+			return false;
+		return true;
+	}
+	
 	@Override
 	public void atEndOfTurn(boolean isPlayer)
 	{
 		this.flash();
 		for (int i = 0; i < this.amount; i++) {
-			final AbstractCard card = AbstractDungeon.returnRandomCurse().makeStatEquivalentCopy();
+			AbstractCard card = AbstractDungeon.returnRandomCurse().makeStatEquivalentCopy();
+			while (!isCurseValid(card)) {
+				card = AbstractDungeon.returnRandomCurse().makeStatEquivalentCopy();
+			}
 	        AbstractDungeon.actionManager.addToBottom(new EchoToDrawAction(card, 1));
 		}
 	}

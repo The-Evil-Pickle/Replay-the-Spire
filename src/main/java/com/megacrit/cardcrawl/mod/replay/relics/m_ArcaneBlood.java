@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.red.Berserk;
 import com.megacrit.cardcrawl.cards.red.Brutality;
 import com.megacrit.cardcrawl.cards.red.Carnage;
@@ -25,15 +26,16 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.AbstractRelic.LandingSound;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
+import fruitymod.seeker.patches.AbstractCardEnum;
 import replayTheSpire.ReplayTheSpireMod;
 
-public class m_ArcaneBlood extends AbstractRelic
+public class m_ArcaneBlood extends M_MistRelic
 {
     public static final String ID = "m_ArcaneBlood";
     private static final int HEALTH_AMT = 3;
     
     public m_ArcaneBlood() {
-        super(ID, "burningBlood_purple.png", RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, "burningBlood_purple.png", LandingSound.MAGICAL, AbstractCardEnum.SEEKER_PURPLE, CardColor.RED);
     }
     
     @Override
@@ -56,11 +58,15 @@ public class m_ArcaneBlood extends AbstractRelic
         }
     }
 
+    
+    @Override
+    public AbstractRelic makeCopy() {
+        return new m_ArcaneBlood();
+    }
+
 	@Override
-    public void onEquip() {
-		//AbstractDungeon.rareRelicPool.add("Magic Flower");
-        final long startTime = System.currentTimeMillis();
-        final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
+	ArrayList<AbstractCard> getNewCards() {
+		final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
         tmpPool.add(new Headbutt());
         tmpPool.add(new Warcry());
         tmpPool.add(new Carnage());
@@ -72,34 +78,6 @@ public class m_ArcaneBlood extends AbstractRelic
         tmpPool.add(new DarkEmbrace());
         tmpPool.add(new Exhume());
         tmpPool.add(new Rampage());
-        for (final AbstractCard c : tmpPool) {
-			switch (c.rarity) {
-				case COMMON: {
-					AbstractDungeon.commonCardPool.addToTop(c);
-					AbstractDungeon.srcCommonCardPool.addToBottom(c);
-					continue;
-				}
-				case UNCOMMON: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-				case RARE: {
-					AbstractDungeon.rareCardPool.addToTop(c);
-					AbstractDungeon.srcRareCardPool.addToBottom(c);
-					continue;
-				}
-				default: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-			}
-        }
-    }
-    
-    @Override
-    public AbstractRelic makeCopy() {
-        return new m_ArcaneBlood();
-    }
+		return tmpPool;
+	}
 }

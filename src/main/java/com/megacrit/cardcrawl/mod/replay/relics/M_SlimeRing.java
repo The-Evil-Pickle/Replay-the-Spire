@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.colorless.Shiv;
 import com.megacrit.cardcrawl.cards.green.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -22,12 +23,12 @@ import slimebound.orbs.SpawnedSlime;
 
 import com.megacrit.cardcrawl.relics.NinjaScroll;
 
-public class M_SlimeRing extends AbstractRelic
+public class M_SlimeRing extends M_MistRelic
 {
     public static final String ID = "m_SlimeRing";
     
     public M_SlimeRing() {
-        super(ID, "snakeRing.png", RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, "snakeRing.png", LandingSound.MAGICAL, slimebound.patches.AbstractCardEnum.SLIMEBOUND, CardColor.GREEN);
     }
     
     @Override
@@ -40,24 +41,15 @@ public class M_SlimeRing extends AbstractRelic
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 2, false));
     }
+    
+    @Override
+    public AbstractRelic makeCopy() {
+        return new M_SlimeRing();
+    }
 
-    /*public void onVictory() {
-        this.flash();
-        AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        final AbstractPlayer p = AbstractDungeon.player;
-        int slimeCount = 0;
-        if (p.orbs.get(0) != null) {
-            for (final AbstractOrb o : AbstractDungeon.player.orbs) {
-                if (o instanceof SpawnedSlime) {
-                    ++slimeCount;
-                }
-            }
-            p.heal(slimeCount * 3);
-        }
-    }*/
 	@Override
-    public void onEquip() {
-        final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
+	ArrayList<AbstractCard> getNewCards() {
+		final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
         tmpPool.add(new Bane());
         tmpPool.add(new BouncingFlask());
         tmpPool.add(new CripplingPoison());
@@ -67,34 +59,6 @@ public class M_SlimeRing extends AbstractRelic
         tmpPool.add(new PoisonedStab());
         tmpPool.add(new PoisonSmokescreen());
         tmpPool.add(new Backstab());
-        for (final AbstractCard c : tmpPool) {
-			switch (c.rarity) {
-				case COMMON: {
-					AbstractDungeon.commonCardPool.addToTop(c);
-					AbstractDungeon.srcCommonCardPool.addToBottom(c);
-					continue;
-				}
-				case UNCOMMON: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-				case RARE: {
-					AbstractDungeon.rareCardPool.addToTop(c);
-					AbstractDungeon.srcRareCardPool.addToBottom(c);
-					continue;
-				}
-				default: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-			}
-        }
-    }
-    
-    @Override
-    public AbstractRelic makeCopy() {
-        return new M_SlimeRing();
-    }
+		return tmpPool;
+	}
 }

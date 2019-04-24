@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.red.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,12 +14,12 @@ import com.megacrit.cardcrawl.relics.*;
 
 import slimebound.orbs.SpawnedSlime;
 
-public class M_BurningSludge extends AbstractRelic
+public class M_BurningSludge extends M_MistRelic
 {
     public static final String ID = "m_BurningSludge";
     
     public M_BurningSludge() {
-        super(ID, "burningBlood_green.png", RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, "burningBlood_green.png", LandingSound.MAGICAL, slimebound.patches.AbstractCardEnum.SLIMEBOUND, CardColor.RED);
     }
     
     @Override
@@ -39,9 +40,15 @@ public class M_BurningSludge extends AbstractRelic
             p.heal(slimeCount * 2);
         }
     }
+    
+    @Override
+    public AbstractRelic makeCopy() {
+        return new M_BurningSludge();
+    }
+
 	@Override
-    public void onEquip() {
-        final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
+	ArrayList<AbstractCard> getNewCards() {
+		final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
         tmpPool.add(new Offering());
         tmpPool.add(new Hemogenesis());
         tmpPool.add(new Pummel());
@@ -52,35 +59,7 @@ public class M_BurningSludge extends AbstractRelic
         tmpPool.add(new BloodForBlood());
         tmpPool.add(new Rupture());
         tmpPool.add(new Evolve());
-        for (final AbstractCard c : tmpPool) {
-			switch (c.rarity) {
-				case COMMON: {
-					AbstractDungeon.commonCardPool.addToTop(c);
-					AbstractDungeon.srcCommonCardPool.addToBottom(c);
-					continue;
-				}
-				case UNCOMMON: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-				case RARE: {
-					AbstractDungeon.rareCardPool.addToTop(c);
-					AbstractDungeon.srcRareCardPool.addToBottom(c);
-					continue;
-				}
-				default: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-			}
-        }
-    }
-    
-    @Override
-    public AbstractRelic makeCopy() {
-        return new M_BurningSludge();
-    }
+		return tmpPool;
+	}
 }
 

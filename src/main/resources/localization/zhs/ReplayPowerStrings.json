@@ -1,0 +1,461 @@
+{
+  "Doomed": {
+    "NAME": "注定的",
+    "DESCRIPTIONS": [
+	"将会失去 #b",
+	" 生命 持续 #b", 
+	" 个回合。", 
+	" 个回合。"
+    ]
+  },
+  "Life Bind": {
+    "NAME": "生命约束",
+    "DESCRIPTIONS": [
+	"每当你失去生命时， 受到 #y生命约束 的敌人也会受到等量伤害。", 
+	"每当你失去生命时受到伤害。"
+    ]
+  },
+  "Replay:Enemy Life Bind": {
+    "NAME": "灵魂连接",
+    "DESCRIPTIONS": [
+	"拥有这个能力的敌人共享血条。"
+    ]
+  },
+  "Replay:Forged in Hellfire": {
+    "NAME": "地狱锻造",
+    "DESCRIPTIONS": [
+	"所有你受到的 #r非攻击伤害降低 #b",
+	"%"
+    ]
+  },
+  "Replay:Off the Rails": {
+    "NAME": "偏离轨道",
+    "DESCRIPTIONS": [
+	" #y群体伤害 变成 只对 #y这名敌人 造成 #b",
+	" 点伤害。"
+    ]
+  },
+  "Reflection": {
+    "NAME": "反射",
+    "DESCRIPTIONS": [
+	"每当你完全格挡下了伤害， 对攻击者造成等量伤害。"
+    ]
+  },
+  "Replay:Might": {
+    "NAME": "强力",
+    "DESCRIPTIONS": [
+	"接下来 ",
+	" 个回合。所有攻击伤害增加b25%",
+	" 个回合。所有攻击伤害增加b25%"
+    ]
+  },
+  "Necrotic Poison": {
+    "NAME": "坏死",
+    "DESCRIPTIONS": [
+	"在你的回合开始时， 失去 #b",
+	" 生命， 并减半 #y坏死 的层数。", 
+	"在他的回合开始时， #b",
+	" NL 常规 #y中毒 将不会下降。"
+    ]
+  },
+  "Retain Some Block": {
+    "NAME": "保留格挡",
+    "DESCRIPTIONS": [
+	"每回合结束时，保留 #b",
+	" 点 #y格挡 。"
+    ]
+  },
+  "Retain Some Energy": {
+    "NAME": "保留能量",
+    "DESCRIPTIONS": [
+	"每回合结束时，保留 #b",
+	" 点 #y能量 。"
+    ]
+  },
+  "Scrap Shanks": {
+    "NAME": "刀片回收",
+    "DESCRIPTIONS": [
+	"每当你丢弃一张牌，增加 #b", 
+	" 小刀",
+	" 小刀",
+	" 并 #b",
+	" 升级，",
+	" 加入到你的手牌。"
+    ]
+  },
+  "The Works": {
+    "NAME": "工厂",
+    "DESCRIPTIONS": [
+	"本回合开始时，每当你抽到抽 #b", 
+	" 张牌， 获得 ",
+	" 并对随机一名敌人造成 #b",
+	" 点伤害。"
+    ]
+  },
+  "Specialist": {
+    "NAME": "专家",
+    "DESCRIPTIONS": [
+	"提高 非攻击伤害 #b", 
+	"降低 非攻击伤害 #b"
+    ]
+  },
+  "Awakened Ritual": {
+    "NAME": "觉醒仪式",
+    "DESCRIPTIONS": [
+	"如果你的手牌中有至少 #b5 张 #y仪式组件 ，他们将被替换为攻击牌 #y黑暗回音 。", 
+	" NL （手牌中还需要 #b",
+	" 张）"
+    ]
+  },
+  "Reflective Lens": {
+    "NAME": "反射镜",
+    "DESCRIPTIONS": [
+	"你的回合结束时，你每拥有一个 #y玻璃 充能球，获得 #b",
+	" 层 #y反射 。"
+	]
+  },
+  "ReplayTheSpireMod:RefundNext": {
+    "NAME": "回馈下张牌",
+    "DESCRIPTIONS": [
+	"下一张你打出的牌，它将 #y回馈 #b",
+	" 。"
+	]
+  },
+  "replay:ExhaustiveNegationPower": {
+	"NAME": "零消耗性",
+    "DESCRIPTIONS": [
+	"下 #b",
+	" 次你打出的 消耗性 牌，其次数不会减少。"
+	]
+  },
+  "replay:DelayedReturnCardPower": {
+	"NAME": "返回牌",
+    "DESCRIPTIONS": [
+	"在 #b",
+	" 个回合后， ",
+	" 将会返回到你的抽牌堆。"
+	]
+  },
+  "ReplayTheSpireMod:SystemScan": {
+    "NAME": "系统检索",
+    "DESCRIPTIONS": [
+	"The next #b",
+	" 你抽到的 #y状态牌 被 #y消耗 ，并抽 1 张牌 。",
+	" 你抽到的 #y状态牌 被 #y消耗 ，并抽 1 张牌 。"
+	]
+  },
+  "Snake Venom": {
+    "NAME": "蛇毒",
+    "DESCRIPTIONS": [
+	"下一张你打出的攻击牌给予未被格挡的目标 #b",
+	" 层 坏死 。"
+    ]
+  },
+  "GoodbyeWorld": {
+    "NAME": "清空回收站",
+    "DESCRIPTIONS": [
+	"在你的回合结束时，每回合 #y消耗 手牌所有的 #y普通牌 ，每张获得 #b",
+	" 点 #y格挡 。"
+    ]
+  },
+  "Firewall": {
+    "NAME": "火焰高墙",
+    "DESCRIPTIONS": [
+	"每当你格挡了伤害， #y生成 #b",
+	" 个 #y狱炎 。"
+    ]
+  },
+  "Crystallizer": {
+    "NAME": "结晶器",
+    "DESCRIPTIONS": [
+	"水晶充能球给予你邻近的充能球额外的 #b",
+	" 点 #y集中 。 NL 在你的回合结束时，如果你至少有一半的充能球栏位是空的， #y生成 #b",
+	" 个 #y水晶 充能球。 NL 将 #y玻璃 充能球 视为空置栏位。"
+    ]
+  },
+  "LanguidPower": {
+    "NAME": "乏力",
+    "DESCRIPTIONS": [
+	" ",
+	" 造成的所有攻击伤害降低 #b",
+	" 。持续 #b",
+	" 个回合。"
+    ]
+  },
+  "ReplayChaosPower": {
+    "NAME": "混沌！",
+    "DESCRIPTIONS": [
+	"每回合，你抽到的 #b",
+	" 张牌，他们在本场战斗的数据和效果将会被打乱。 NL 本回合还剩 #b",
+	" 张牌、"
+    ]
+  },
+  "ReplayBrewPower": {
+    "NAME": "炼制大师",
+    "DESCRIPTIONS": [
+	"在回合开始时，获得 #b",
+	" 个随机药水。",
+	" 个随机药水。"
+    ]
+  },
+  "Friendly": {
+    "NAME": "友好",
+    "DESCRIPTIONS": [
+	"这个角色是你这边的， 会攻击敌人或者帮助你。"
+    ]
+  },
+  "Drowning": {
+    "NAME": "溺水",
+    "DESCRIPTIONS": [
+	"你的回合结束时，失去 #b",
+	"你的回合结束时，获得 #b",
+	" 生命。 NL 你受到未被格挡的时候增加，你造成未被格挡的伤害时减少。 NL 范围从 #b",
+	" 到 ",
+	" #b"
+    ]
+  },
+  "AbePower": {
+    "NAME": "旱鸭子",
+    "DESCRIPTIONS": [
+	"#y艾比船长 无法攻击到在水下的你 （当你的下沉在 #b",
+	" 或更低时）。 NL NL 什么样的海盗不会游泳呢？"
+    ]
+  },
+  "TimeCollector": {
+    "NAME": "时间收藏家",
+    "DESCRIPTIONS": [
+	"每当你在一回合打出 #b",
+	" 张开，你的回合结束。 NL #y时间收藏家 一张战斗只触发一次。"
+    ]
+  },
+  "Replay:Storyteller": {
+    "NAME": "寓言讲述者",
+    "DESCRIPTIONS": [
+	"她只是想让你听听她讲故事。 NL 在 #b",
+	" 回合她讲完了故事之后, 你便可以离开。"
+    ]
+  },
+  "Replay:Aging": {
+    "NAME": "衰老",
+    "DESCRIPTIONS": [
+	"每受到 #b",
+	" 点伤害， ",
+	" 获得 #b1 层 #y乏力 。"
+    ]
+  },
+  "Replay:Tripwire": {
+    "NAME": "绊网",
+    "DESCRIPTIONS": [
+	"回合开始时，随机 #y眩晕 一名敌人 #b",
+	" 次。"
+    ]
+  },
+  "Replay:Fed": {
+    "NAME": "饱食",
+    "DESCRIPTIONS": [
+	"获得 #b",
+	" #y力量。 NL 在回合结束时，失去 #b",
+	" 点 #y力量 。"
+    ]
+  },
+  "Replay:Whispers Of Evil": {
+    "NAME": "恶魔密语",
+    "DESCRIPTIONS": [
+	"在回合开始时， 抽 #b",
+	" 张牌。 NL 回合结束时， 增加 #b",
+	" 张随机 #y诅咒 #y回响 到你的抽牌堆。",
+	" 张牌。 NL 回合结束时， 增加 #b",
+	" 张随机 #y诅咒 #y回响 到你的抽牌堆。"
+    ]
+  },
+  "Replay:Echo Chamber": {
+    "NAME": "回音室",
+    "DESCRIPTIONS": [
+	"你每回合打出的，前 #b",
+	" 张非虚无非能力 ",
+	" 牌 生成一个 #y回响 。"
+    ]
+  },
+  "Replay:Color Shift": {
+    "NAME": "色相偏移",
+    "DESCRIPTIONS": [
+	"每回合，三选一一个随机效果。 NL 效果持续 #b", 
+	" 个回合。",
+	"黄色偏移",
+	"混乱",
+	"被 #y混乱，持续回合数 #b",
+	"绿色偏移",
+	"中毒",
+	"#y中毒 ， 持续回合数 #b",
+	"红色偏移",
+	"易伤",
+	"#y易伤 ，持续回合数 #b",
+	"橙色偏移",
+	"回火",
+	"在你的回合开始时在你的抽牌堆加入，持续回合数 #b",
+	"蓝色偏移",
+	"邪咒",
+	"被 #y邪咒 ，持续回合数 #b",
+	"紫色偏移",
+	"缓慢",
+	"#y缓慢 ， 持续回合数 for #b",
+	"白色偏移",
+	"无实体",
+	"#y无实体 ， 持续回合数 #b",
+	"铜色偏移",
+	"荆棘",
+	"#y荆棘 ， 持续回合数 #b",
+	"黑色偏移",
+	"死亡律动",
+	"#y死亡律动 ， 持续回合数 #b"
+    ]
+  },
+  "Sleeping": {
+    "NAME": "熟睡",
+    "DESCRIPTIONS": [
+	"不会做任何事情。 受到 #b",
+	" 点伤害将醒来。"
+    ]
+  },
+  "FF_Spore Cloud": {
+    "NAME": "孢子云",
+    "DESCRIPTIONS": [
+      "在死亡时，给予你 #b",
+      " 回合的 #y易伤 。"
+    ]
+  },
+  "FF_Thievery": {
+    "NAME": "灵魂窃取",
+    "DESCRIPTIONS": [
+      "每当 ",
+	  " 造成了未被格挡的伤害， 他们从目标中随机窃取 #b",
+	  " 个增益效果。"
+    ]
+  },
+  "FF_Rage": {
+    "NAME": "狂暴怒火",
+    "DESCRIPTIONS": [
+      "每一个敌人死亡， 获得 #b",
+	  " 点 #y力量 。"
+    ]
+  },
+  "RP_HourglassPower": {
+    "NAME": "水银沙漏",
+    "DESCRIPTIONS": [
+      "你的回合开始时，对所有敌人造成 #b",
+	  " 点伤害。",
+      "在 ",
+	  " 的回合开始时， 对你造成 #b",
+	  " 点伤害。"
+    ]
+  },
+  "RP_ThreadPower": {
+    "NAME": "针线包",
+    "DESCRIPTIONS": [
+      "获得 #b5 层 #y多层护甲 。"
+    ]
+  },
+  "RP_OrichalcumPower": {
+    "NAME": "奥利哈钢",
+    "DESCRIPTIONS": [
+      "如果你本回合没有 #y格挡 ， 给予 #b",
+	  " #y格挡 。"
+    ]
+  },
+  "RP_SmoothStonePower": {
+    "NAME": "意外光滑的石头",
+    "DESCRIPTIONS": [
+      "获得 #b1 点 #y敏捷 。"
+    ]
+  },
+  "RP_VajraPower": {
+    "NAME": "金刚杵",
+    "DESCRIPTIONS": [
+      "获得 #b1 点 #y力量。"
+    ]
+  },
+  "RP_GiryaPower": {
+    "NAME": "壶铃",
+    "DESCRIPTIONS": [
+      "回合开始时获得 #b1 点 #y力量 。 NL 剩下 #b",
+	  " 。"
+    ]
+  },
+  "RP_KunaiPower": {
+    "NAME": "苦无",
+      "DESCRIPTIONS": [
+      "本回合你再打出 #b",
+      " 张 #y攻击牌 ， 获得 #b",
+      " 点 #y敏捷。",
+      " 张 #y攻击牌 ， 获得 #b"
+    ]
+  },
+  "RP_LetterOpenerPower": {
+    "NAME": "开信刀",
+	"DESCRIPTIONS": [
+      "本回合你再打出 #b",
+      " 张 #y技能牌 ，对所有敌人造成 #b",
+      " 点伤害。",
+      " 张 #y技能牌 ，对所有敌人造成 #b"
+    ]
+  },
+  "RP_Mango": {
+    "NAME": "芒果",
+	"DESCRIPTIONS": [
+      "最大生命增加 #b",
+      " 点。"
+    ]
+  },
+  "RP_BronzeScales": {
+    "NAME": "铜制鳞片",
+	"DESCRIPTIONS": [
+      "每当你受到 #y攻击 伤害时, 反弹 #b",
+      " 点伤害。"
+    ]
+  },
+  "RP_SelfFormingClay": {
+    "NAME": "自成型黏土",
+	"DESCRIPTIONS": [
+      "当受到未被格挡的 #y攻击 伤害时， 下一个回合给予 #b",
+	  " 点 #y格挡。"
+    ]
+  },
+  "RP_IncenseBurner": {
+    "NAME": "香炉",
+	"DESCRIPTIONS": [
+      "每 #b6 回合获得 #b1 层 #y无实体 。"
+    ]
+  },
+  "Fire Breathing": {
+    "NAME": "火焰吐息",
+    "DESCRIPTIONS": [
+      "在你的回合结束时。 你这一回合每出过一张 #y攻击牌 ，就对所有敌人造成 #b",
+      " 点伤害，每次提高 #b",
+	  " 点伤害。"
+    ]
+  },
+  "GremboCoward": {
+    "NAME": "怯懦",
+    "DESCRIPTIONS": [
+      "在你的回合结束时， 你每打出一张 #y攻击牌 ，对所有敌人造成 #b",
+      " 点伤害，每次增加 #b",
+	  " 点伤害。"
+    ]
+  },
+  "replay:ss_fish": {
+    "NAME": "学习池中鱼",
+    "DESCRIPTIONS": [
+			"在你的下个回合开始时获得一张随机池鱼牌或者艾比船长牌。",
+			"在你的下 ",
+			" 个回合开始时获得一张随机池鱼牌或者艾比船长牌。"
+		]
+  },
+  "replay:ss_forest": {
+    "NAME": "学习 Fable-Spinner",
+    "DESCRIPTIONS": [
+			"在你的下个回合开始时获得一张随机Fable-Spinner牌。",
+			"在你的下",
+			" 个回合开始时获得一张随机Fable-Spinner牌。"
+		]
+  }
+}

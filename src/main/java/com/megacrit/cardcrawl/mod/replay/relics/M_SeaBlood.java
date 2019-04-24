@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.red.*;
 import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,12 +18,12 @@ import com.megacrit.cardcrawl.relics.*;
 
 import blackrusemod.powers.*;
 
-public class M_SeaBlood extends AbstractRelic
+public class M_SeaBlood extends M_MistRelic
 {
     public static final String ID = "m_SeaBlood";
     
     public M_SeaBlood() {
-        super(ID, "burningBlood_blue.png", RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, "burningBlood_blue.png", LandingSound.MAGICAL, blackbeard.enums.AbstractCardEnum.BLACKBEARD_BLACK, CardColor.RED);
     }
     
     @Override
@@ -31,8 +32,22 @@ public class M_SeaBlood extends AbstractRelic
     }
     
 	@Override
-    public void onEquip() {
-        final long startTime = System.currentTimeMillis();
+    public void onVictory() {
+        this.flash();
+        AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        final AbstractPlayer p = AbstractDungeon.player;
+        if (p.currentHealth > 0) {
+            p.heal(6);
+        }
+    }
+    
+    @Override
+    public AbstractRelic makeCopy() {
+        return new M_SeaBlood();
+    }
+
+	@Override
+	ArrayList<AbstractCard> getNewCards() {
         final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
         tmpPool.add(new Hemokinesis());
         tmpPool.add(new Offering());
@@ -48,44 +63,7 @@ public class M_SeaBlood extends AbstractRelic
         tmpPool.add(new MuscleTraining());
         tmpPool.add(new FireBreathing());
         tmpPool.add(new Whirlwind());
-        for (final AbstractCard c : tmpPool) {
-			switch (c.rarity) {
-				case COMMON: {
-					AbstractDungeon.commonCardPool.addToTop(c);
-					AbstractDungeon.srcCommonCardPool.addToBottom(c);
-					continue;
-				}
-				case UNCOMMON: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-				case RARE: {
-					AbstractDungeon.rareCardPool.addToTop(c);
-					AbstractDungeon.srcRareCardPool.addToBottom(c);
-					continue;
-				}
-				default: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-			}
-        }
-    }
-	@Override
-    public void onVictory() {
-        this.flash();
-        AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        final AbstractPlayer p = AbstractDungeon.player;
-        if (p.currentHealth > 0) {
-            p.heal(6);
-        }
-    }
-    
-    @Override
-    public AbstractRelic makeCopy() {
-        return new M_SeaBlood();
-    }
+		return tmpPool;
+	}
 }
 

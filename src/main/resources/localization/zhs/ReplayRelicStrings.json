@@ -1,0 +1,1141 @@
+{
+	"Ancient Bracer": {
+	"NAME": "反病毒软件",
+	"FLAVOR": "如同疫苗一般的软件。",
+    "DESCRIPTIONS": [
+	"每次洗牌时, 获得 #b1 层 #y人工制品 。 NL 每当你抽到一张 #y状态牌 时， 失去 #b1 层 #y人工制品 来 #y消耗 所有本回合的 #y状态牌 ， 每消耗一张抽 #b1 张牌。"
+	]
+  },
+  "Arrowhead": {
+	"NAME": "箭头",
+	"FLAVOR": "这是你打造的第一件东西.",
+    "DESCRIPTIONS": [
+	"你锻造的时候能 #y升级 2 张牌。"
+	]
+  },
+  "Bandana": {
+	"NAME": "蒙面方巾",
+	"FLAVOR": "完美的小偷制服。",
+    "DESCRIPTIONS": [
+	"获得 #b",
+	" 你每场战斗开始时的前 #b",
+	" 回合  #y打劫 。 NL #y协同 - ",
+	" 当触发的时候, ",
+	" 给予 #y暂时性生命 而不是回复生命。"
+	]
+  },
+  "Baseball": {
+	"NAME": "棒球",
+	"FLAVOR": "我们每个人都有自己最喜欢的球员。",
+    "DESCRIPTIONS": [
+	"拾起时, 卡组中的随机一张牌，费用为零。"
+	]
+  },
+  "Divine Protection": {
+    "NAME": "圣佑术",
+	"FLAVOR": "在试练中继续前进的力量",
+	"DESCRIPTIONS": [
+		"在战斗开始时，获得 #b",
+		" 层 #y护盾 。",
+		" #y暂时性生命 。"
+	]
+  },
+  "Electric Blood": {
+	"NAME": "电流之血",
+	"FLAVOR": "你感觉你的身体流淌着巨大的力量。 虽然很疼。",
+    "DESCRIPTIONS": [
+	"每回合获得 [R] [R] 。 NL 每使用 [R] ， 失去 #b1 生命 ， 除了每回合的前 #b",
+	" 个。"
+	]
+  },
+  "ReplayFunnel": {
+	"NAME": "漏斗",
+	"FLAVOR": "仅用最后一滴。",
+    "DESCRIPTIONS": [
+	"每回合结束时, 未被使用的能量转换为 #b4 点 #y格挡 。"
+	]
+  },
+  "Garlic": {
+	"NAME": "大蒜",
+	"FLAVOR": "闻一下都会泪流满面。",
+    "DESCRIPTIONS": [
+	"每场战斗开始时，给予所有敌人 #b3 层 #y乏力 。"
+	]
+  },
+  "Iron Hammer": {
+	"NAME": "铁锤",
+	"FLAVOR": "一件很趁手的，沉重的工具。",
+	"DESCRIPTIONS": [
+	"第一回合，抽一张牌并升级。"
+	]
+  },
+  "Mirror": {
+	"NAME": "手镜",
+	"FLAVOR": "你能通过这面镜子看见你自己。好的坏的一览无遗。",
+    "DESCRIPTIONS": [
+	"每当你获得了 #y易伤 或 #y虚弱 ， 也给予给与的敌人。",
+	"反射"
+	]
+  },
+  "Onion Ring": {
+	"NAME": "洋葱圈",
+	"FLAVOR": "洋葱裹上面包糠，炸至两面金黄",
+    "DESCRIPTIONS": [
+	"每场战斗开始时，获得 3 点 #y力量 。接下来的 3个回合，每回合失去 1 点 #y力量 。"
+	]
+  },
+  "ReplayTheSpireMod:Shallot": {
+	"NAME": "葱",
+	"FLAVOR": "这是一个小葱。 没有什么好说的。",
+    "DESCRIPTIONS": [
+	"每场战斗开始时，获得 3 点 #y敏捷 和 #y金属化 。 NL 接下来的 3个回合，每回合失去 1 点 #y敏捷 和 #y金属化 。"
+	]
+  },
+  "Pet Ghost": {
+	"NAME": "宠物幽灵",
+	"FLAVOR": "这只幽灵曾经是骑士的宠物。",
+    "DESCRIPTIONS": [
+	"每回合在你的手牌中加入一张幽灵牌。 NL 你的手牌最大数量提高 #b1 。"
+	]
+  },
+  "Ring of Chaos": {
+	"NAME": "混沌戒指",
+	"FLAVOR": "一个具有狂野和不可预测的魔法效果的戒指。",
+	"DESCRIPTIONS": [
+	"一些卡牌奖励随机改变了效果。"
+	]
+  },
+  "Simple Rune": {
+	"NAME": "质朴符文",
+	"FLAVOR": "有时候，事情并不像看上去那么地复杂。",
+	"DESCRIPTIONS": [
+		"打击和防御能被 #y多次升级 。 NL 拾起时，随机 #y升级 #b",
+		" 张牌。"
+	]
+  },
+  "Snack Pack": {
+	"NAME": "快餐包",
+	"FLAVOR": "里面似乎总是准备好了小吃。",
+    "DESCRIPTIONS": [
+	"一回合内，每打出 3 张 #y攻击牌 ，回复 2 生命。"
+	]
+  },
+  "Snecko Scales": {
+	"NAME": "异蛇鳞片",
+	"FLAVOR": "从异蛇蜕皮中得到的鳞片。 他们似乎反射出闪烁的颜色。",
+    "DESCRIPTIONS": [
+	"每回合多抽 #b",
+	" 张牌。 NL 每当你打出一张非0费牌时，丢弃一张牌。"
+	]
+  },
+  "Snecko Heart": {
+	"NAME": "异蛇之心",
+	"FLAVOR": "从一条死亡的异蛇中保存下来的心脏。",
+    "DESCRIPTIONS": [
+	"战斗开始时获得 #y混乱 。 NL #y混乱 不能在增加牌的费用超过 #b1 。 NL 你抽到的第一张牌费用为 #b0 。"
+	]
+  },
+  "Pondfish Scales": {
+	"NAME": "鱼鳞",
+	"FLAVOR": "在战斗中打败了艾比船长的家伙才会带着的鳞片。",
+    "DESCRIPTIONS": [
+	"每当你打出一张不获得 #y格挡 的 #y技能牌 ，获得 #b",
+	" 点 #y格挡 。"
+	]
+  },
+  "Abe's Treasure": {
+	"NAME": "艾比的宝藏",
+	"FLAVOR": "诅咒?",
+    "DESCRIPTIONS": [
+	"每回合开始时，获得 [E] 。 NL 战斗开始时获得 #y溺水 。 NL 拾起时， 在你的卡组中增加一张 #r艾比的复仇 。"
+	]
+  },
+  "Transient Totem": {
+	"NAME": "短暂图腾",
+	"FLAVOR": "这个木制图腾只有穿过迷雾森林的人才能得到。",
+    "DESCRIPTIONS": [
+	"每回合开始时，获得 [E] 。 NL 每场战斗随机模拟一个 #yboss遗物 的 #r负面效果 。 NL ",
+	"#y战斗之外 ： 你现在没有在战斗之中， 但是当你在战斗时，负面效果将会显示在这里。",
+	"#y诅咒钥匙:将 #b",
+	" 张 随机 #r诅咒 放入你的抽牌堆。（从获得这个遗物开始每打开一个宝箱获得一张）。",
+	"#y灵体外质：本场战斗你不能再获得任何 #y金币 。",
+	"#y添水: 本场战斗你无法再获得药水。",
+	"#y痛楚印记： 将 #b2 张 #r伤口 放入你的抽牌堆。",
+	"#y天鹅绒颈圈： 你每回合不能打出超过 #b6 张牌",
+	"#y符文圆顶： 你无法再看见敌人的 #b意图 。",
+	"#y贤者之石: 所有敌人获得 #b2 点 #y力量 。",
+	"#y破碎金冠: 在卡牌奖励画面，可供选择的牌数减少 #b2 张。",
+	"#y异蛇之眼： 获得 #y混乱 效果。",
+	"#y符文金字塔: 每回合抽牌减少 #b1 张。",
+	"#y蜂蜜罐子: 本场战斗的奖励不能被跳过",
+	"#y异蛇鳞片： 每当你打出的牌费用超过 #b0 ， 丢弃一张牌。",
+	"#y潘多拉的魔盒： 在你的卡组洗入 #b5 张随机牌 。",
+	"#y黑星: 没有负面效果，真走运!",
+	"#y永恒羽毛: 没有负面效果，真走运!",
+	"#y白兽雕像: 没有负面效果，真走运!",
+	"#y小屋子: 没有负面效果，真走运!",
+	"#y召唤铃铛: 将 #b3 张 随机 #r诅咒 放入你的抽牌堆。",
+	"#y金继: 将 #b2 张 随机 #r诅咒 放入你的抽牌堆。",
+	"#y黑暗之血： 本场战斗 燃烧之血 失效。"
+	]
+  },
+  "King of Hearts": {
+	"NAME": "红桃K",
+	"FLAVOR": "经典的用剑刺穿自己的头部的设计。有时还被称为自杀之王。",
+	"DESCRIPTIONS": [
+	"每当你在你的回合损失生命时，获得两倍的等量格挡。"
+	]
+  },
+  "Ooze Armor": {
+	"NAME": "软泥装甲",
+	"FLAVOR": "带有柔软又富含韧性的活物史莱姆的装甲。",
+    "DESCRIPTIONS": [
+	" NL 在战斗开始时，获得 #b4 层 #y柔韧 和 #b-3 层 #y缓慢 ",
+	"每回合获得 [R] 。", 
+	"每回合获得 [G] 。",
+	"每回合获得 [E] 。"
+	]
+  },
+  "ChewingGum": {
+	"NAME": "口香糖",
+	"FLAVOR": "又粘又甜。",
+    "DESCRIPTIONS": [
+	"每回合获得 [E] 。 NL 每次洗牌， 在你的抽牌堆增加 #b",
+	" 张 #r粘液 。"
+	]
+  },
+  "Gremlin Food": {
+	"NAME": "地精食品",
+	"FLAVOR": "众所周知，有些地精会从人身上窃取食物。但作为回报，在冒险家睡觉时会给予帮助。",
+    "DESCRIPTIONS": [
+	"每当你休息， 随机 #y升级 一张牌。"
+	]
+  },
+  "BranchBurnRelic": {
+    "NAME": "点燃",
+    "FLAVOR": "火焰明亮。",
+    "DESCRIPTIONS": [
+      "每当你进入休息处， 下一场战斗获得 #b",
+	  " 层 #y再生 。"
+    ]
+  },
+  "Guide Book": {
+	"NAME": "导览册",
+	"FLAVOR": "一本详细描述高塔 \"旅游景点\" 的书籍。 似乎是由商人撰写的。",
+    "DESCRIPTIONS": [
+	"拾起时，按照稀有度随机 #y升级 ",
+	" 牌。"
+	]
+  },
+  "Painkiller Herb": {
+	"NAME": "甜蜜花朵",
+	"FLAVOR": "这朵花病态的芳香使你感到头晕...",
+    "DESCRIPTIONS": [
+	" NL  Lessmap information.",
+	"每回合开始时，获得 [E] 。",
+	" NL #y协同 - ",
+	" 每当你进入下一层， 回复 #b",
+	" 生命。"
+	]
+  },
+  "Honey Jar": {
+	"NAME": "蜂蜜罐子",
+	"FLAVOR": "甜美！",
+    "DESCRIPTIONS": [
+	"你不能跳过奖励。",
+	"在一个阶段内，你不能跳过奖励。",
+	"每回合多抽 #b",
+	" 张 ",
+	" 牌。 ",
+	" 牌。 ",
+	"#y保留 #b",
+	"卡牌奖励提供额外的选择。",
+	"拾起时，获得 #b",
+	" 额外的药水栏位",
+	" 额外的药水栏位",
+	"增加最大手牌上限 #b",
+	"每回合开始获得 ",
+	" "
+	]
+  },
+  "ReplayTheSpireMod:DimensionalGlitch": {
+	"NAME": "尺寸误差",
+	"FLAVOR": "更新正文文本",
+    "DESCRIPTIONS": [
+	"每回合开始时获得 [E] 。 NL 所有你造成的 #y非攻击伤害 #r减半 （向下取整）。 NL 所有你受到的 #y非攻击伤害 #b提高50% （向上取整）。 NL 所有你受到的 #y战斗中的治疗效果 #r减半（向上取整）。"
+	]
+  },
+  "Replay:Grab Bag": {
+	"NAME": "福袋",
+	"FLAVOR": "小号礼品或大号奖励。 你会得到什么呢？",
+    "DESCRIPTIONS": [
+	"选择获得 #b1 个 #y加费 boss遗物 和 #b1 个 #y非加费 boss遗物 。 NL 两个选择都是从三个遗物中选择一个， 不能被跳过。",
+	"双份的遗物， 失去 1 点能量。",
+	"每回合开始时失去 [E] 。 NL 拾起时， 选择获得 #b2 个 #y加费 boss遗物 和 #b2 个 #y非加费 boss遗物 。NL 两个选择都是从三个遗物中选择一个， 不能被跳过。"
+	]
+  },
+  "Sizzling Blood": {
+	"NAME": "溅射之血",
+	"FLAVOR": "它燃烧着火焰和毒素。",
+    "DESCRIPTIONS": [
+	"每场战斗结束， 回复 #b",
+	" 生命。 NL 拾起时，获得 #b",
+	" 点最大生命。"
+	]
+  },
+  "Chameleon Ring": {
+	"NAME": "变色戒指",
+	"FLAVOR": "这枚戒指闪烁着、缓慢地变换到不同的颜色。",
+    "DESCRIPTIONS": [
+	"你的药剂效果加强。 NL 你现在能够在休息处 #y炼制 药剂。"
+	]
+  },
+  "Grinning Jar": {
+    "NAME": "强欲之壶",
+	"FLAVOR": "\"我发动了强欲之壶， 我能从我的卡组里面抽 2 张牌！\"",
+    "DESCRIPTIONS": [
+		"获得 抽 2 张牌的一张技能牌. NL 每当你向卡组加入 #b",
+		" 张牌时，获得这张牌的复制。",
+		"这个罐子似乎很高兴"
+	]
+  },
+  "Durian": {
+    "NAME": "榴莲",
+	"FLAVOR": "闻着臭，吃着香。",
+    "DESCRIPTIONS": [
+		"每当你获得一个 #r负面效果 ， 获得等量的 #y护盾 。 NL 你的回合开始时， 降低你的 以层数计数的负面效果到 #b2 层。 NL 拾起时， 增加你的最大生命 #b",
+		"每当你获得一个 #r负面效果 ， 获得等量的 #y暂时性生命 。 NL 你的回合开始时， 降低你的 以层数计数的负面效果到 #b2 层。 NL 拾起时， 增加你的最大生命 #b"
+	]
+  },
+  "Basket Of Snakes": {
+    "NAME": "一篮蛇",
+	"FLAVOR": "别担心，他们不会咬人的。至少，他们不会咬你。",
+    "DESCRIPTIONS": [
+		"每第 #b",
+		" 次 你打出的 #y攻击牌 给予等于未被格挡次数的 #b",
+		" 层 #y坏死中毒 。"
+	]
+  },
+  "Counterbalance": {
+    "NAME": "抗衡",
+	"FLAVOR": "每个强者都有弱点。",
+    "DESCRIPTIONS": [
+		"每场精英和boss战，敌人获得的 #y力量、 #y格挡 #y回复生命 效果减半。"
+	]
+  },
+  "Golden Egg": {
+    "NAME": "金蛋",
+	"FLAVOR": "未经检疫。",
+    "DESCRIPTIONS": [
+		"每当你向卡组加入一张 #y稀有 牌，将它 升级 。 NL 每当你从商人处购买一张牌，将它 升级 。 "
+	]
+  },
+  "Quantum Egg": {
+    "NAME": "量子蛋",
+	"FLAVOR": "尝起来像 [编译] 的味道。",
+    "DESCRIPTIONS": [
+		"每当你在战斗中增加的牌， 将它 升级 。"
+	]
+  },
+  "Blue Doll": {
+    "NAME": "标签袋",
+	"FLAVOR": "一个多彩的收藏。",
+    "DESCRIPTIONS": [
+		"商店现在有 3 种 打折标签。 NL 打折标签将会出现在无色牌上。 NL 打折的牌将会更便宜。"
+	]
+  },
+  "Byrd Skull": {
+    "NAME": "异鸟头骨",
+	"FLAVOR": "一个落地异鸟的头骨。...获得它？ 落地？",
+    "DESCRIPTIONS": [
+		"你的 #y固有 牌 增加 #y回馈 #b1 和 抽一张牌。"
+	]
+  },
+  "Vampiric Spirits": {
+    "NAME": "吸血意志",
+	"FLAVOR": "对阴影的喜爱，对血液的渴望；流氓和吸血鬼共性。",
+    "DESCRIPTIONS": [
+		"每场战斗的第一回合，#b",
+		"% 的你造成的未被格挡的攻击伤害等量回复你的生命"
+	]
+  },
+  "ReplayTheSpireMod:GhostHeart": {
+    "NAME": "幽魂之心",
+	"FLAVOR": "某种精神的挥之不去的感激。",
+    "DESCRIPTIONS": [
+		"每场战斗一次， 当你要被杀死时, 免死并获得最大生命 #b10% 的 #y护盾 和 #b",
+		" 层 #y无实体 。 NL 如果战斗开始时你的生命只有 1 ，直接触发效果。"
+	]
+  },
+  "ReplayTheSpireMod:Lightbulb": {
+	"NAME": "灯泡",
+	"FLAVOR": "你是多久没见过太阳了？",
+    "DESCRIPTIONS": [
+	"如果你回合结束时仍有未使用的 [E] ，下回合开始时抽等量的牌"
+	]
+  },
+  "ReplayTheSpireMod:CursedCoin": {
+	"NAME": "诅咒硬币",
+	"FLAVOR": "给它的主人带来不幸的被诅咒的硬币。唯一摆脱它的方法就是卖掉它。",
+    "DESCRIPTIONS": [
+	"拾起时，获得 #b",
+	" 金币和一张随机 #r诅咒 。"
+	]
+  },
+  "Replay:WaspNest": {
+	"NAME": "黄蜂巢",
+	"FLAVOR": "像蜂巢，但更邪恶。",
+    "DESCRIPTIONS": [
+	"每当你在战斗中失去生命， 获得 #b",
+	" 层 #y荆棘 。"
+	]
+  },
+  "Replay:Accelerometer": {
+	"NAME": "加速度计",
+	"FLAVOR": "随着时间的推移。",
+    "DESCRIPTIONS": [
+	" [#2aecd7]每场战斗一次[] 。 NL 降低你以回合计数的负面效果 #b1 层。 NL 增加全部敌人的负面效果 #b1 层。"
+	]
+  },
+  "Replay:Winged Headress": {
+	"NAME": "带翼头饰",
+	"FLAVOR": "啵哟！",
+    "DESCRIPTIONS": [
+	" [#2aecd7]每回合一次[] 。NL Replenish #b1 use of all #yWither cards in your hand, 并 #y消耗 他们。  NL [#2aecd7]本场战斗上一回合洗牌则本回合不能被打出[]. NL [#2aecd7]（第一次被洗牌时能被使用，之后不行）[] "
+	]
+  },
+  "ReplayTheSpireMod:Onyx Gauntlets": {
+	"NAME": "仓鼠轮",
+	"FLAVOR": "跑下去吧。",
+    "DESCRIPTIONS": [
+	"你每抽一张牌，获得 [E]  NL 抽到的牌本回合费用增加 #b1 。 NL 战斗开始时， 你的卡组每有一张x费卡，增加一张随机 #r诅咒 到你的抽牌堆。"
+	]
+  },
+  "ReplayTheSpireMod:Ninjato": {
+	"NAME": "忍者刀",
+	"FLAVOR": "刺 刺 刺",
+    "DESCRIPTIONS": [
+		"每回合打出的第三张 #y攻击牌  #y回馈 #b",
+		"每当你在一回合内打出 #b",
+		" 张 #y攻击牌， 抽 #b",
+		" 张牌。"
+	]
+  },
+  "ReplayTheSpireMod:EnergyBall": {
+	"NAME": "能量球",
+	"FLAVOR": "粉碎！",
+    "DESCRIPTIONS": [
+		" [#2aecd7]每场战斗一次[] 。 NL 叠加你每回合未被使用的 [E] 以充能， 最多 #b",
+		" 。 NL 使用 #b",
+		" 充能来打出本角色的 形态牌。"
+	]
+  },
+  "ReplayTheSpireMod:TigerMarble": {
+	"NAME": "虎纹大理岩",
+	"FLAVOR": "老虎的眼睛",
+    "DESCRIPTIONS": [
+		"每场战斗开始时， 增加一张随机 #y消耗牌 到你的手牌。 NL 它在打出钱费用为 #b0 。"
+	]
+  },
+  "ReplayTheSpireMod:asdfghhj": {
+	"NAME": "sdadgkfgjrtdf",
+	"FLAVOR": "---",
+    "DESCRIPTIONS": [
+		"拾起时，选择一张 不大于 #b1 费的 #y能力牌 。 NL 每场战斗开始时获得选择的 #y能力。"
+	]
+  },
+  "ReplayTheSpireMod:Spearhead": {
+	"NAME": "矛头",
+	"FLAVOR": "---",
+    "DESCRIPTIONS": [
+		"你的回合结束时，所有敌人失去他们 #y易伤 层数的生命。"
+	]
+  },
+  "ReplayTheSpireMod:TinkerService": {
+	"NAME": "修补服务",
+	"FLAVOR": "商人虽然有些古怪，但是会的技能还挺多的。",
+    "DESCRIPTIONS": [
+		"#r降级 一张牌。 NL #y升级 一张牌。"
+	]
+  },
+  "ReplayTheSpireMod:SealedPack": {
+	"NAME": "密封卡包",
+	"FLAVOR": "一个标准的5卡增强包。 或许这次会很幸运？",
+    "DESCRIPTIONS": [
+		"选择获得： NL 一张 #y基础 牌 。 NL  一张 #y稀有 牌 。 NL 一张 #y无色 牌 。 NL 一张 #y黑色 牌 。 NL  一张 #r诅咒 牌 。 NL #r诅咒 不能被跳过， 同时 #y无法逃脱 。",
+		"让我看看里面有什么...",
+		"选择获得药水"
+	]
+  },
+  "ReplayTheSpireMod:ShopPack": {
+	"NAME": "商店卡包",
+	"FLAVOR": "一个便宜的3可增强包。 可能是由商人制作并发行的。",
+    "DESCRIPTIONS": [
+		"选择获得 #b",
+		" 张 #y无色 牌 。 NL 保底一张 #y稀有 牌！",
+		" NL 概率获得 SR #y商店限定牌 ！",
+		"让我看看里面有什么..."
+	]
+  },
+  "Another Sword": {
+    "NAME": "另一把剑",
+	"FLAVOR": "第二把剑。 你现在有两把了。",
+    "DESCRIPTIONS": [
+		"每回合你打出的第一张 \"打击\" 牌将会打出两次。 NL 每消耗 [R]，经过 #b1 回合充能。"
+	]
+  },
+  "Kintsugi": {
+    "NAME": "金继",
+	"FLAVOR": "越碎越值钱。",
+    "DESCRIPTIONS": [
+		"移除卡组里 #b",
+		" 张牌。 NL 选择获得 #b",
+		" 张 #y诅咒 。 NL (本移除效果将 #y变化 诅咒而不是不会移除).",
+		"选择移除的牌",
+		"选择获得诅咒"
+	]
+  },
+  "ReplayTheSpireMod:Blightstone": {
+    "NAME": "枯萎结石",
+	"FLAVOR": "口区",
+    "DESCRIPTIONS": [
+		"每回合开始时获得 [E] 。 NL 拾起时，选择获得一个 #r荒疫 。"
+	]
+  },
+  "ReplayTheSpireMod:Blightapple": {
+    "NAME": "枯萎苹果",
+	"FLAVOR": "口区",
+    "DESCRIPTIONS": [
+		"每回合开始时获得 [E] 。 NL 拾起时，失去 #b",
+		" 最大生命"
+	]
+  },
+  "BargainBundle": {
+    "NAME": "同捆打折",
+	"FLAVOR": "捡了个大便宜！",
+    "DESCRIPTIONS": [
+		"当你买到这个遗物时， 本店的卡牌、药水、卡牌移除服务要价降低 #b",
+		"当你买到这个遗物时， 本店的卡牌、遗物、药水、卡牌移除服务要价降低 #b",
+		" 金币。"
+	]
+  },
+  "ReplayTheSpireMod:Bottled Flurry": {
+    "NAME": "瓶装阵风",
+	"FLAVOR": "就像个雪球!",
+    "DESCRIPTIONS": [
+		"拾起时，选择一张牌。 NL 你在回合结束时 #y保留 这张牌。 NL 如果这张牌因为 #y虚无 而 #y消耗，则变为丢弃。",
+		"选择一张牌保留",
+		"你将在回合结束时 #y保留 ",
+		" （如果 #y虚无 则丢弃）。"
+	]
+  },
+  "ReplayTheSpireMod:Bottled Steam": {
+    "NAME": "瓶装喷泉",
+	"FLAVOR": "噗！",
+    "DESCRIPTIONS": [
+		"拾起时，选择一张牌。 NL 每次洗牌，将它放到抽牌堆顶部。",
+		"选择一张牌洗入牌堆顶部",
+		"每当你洗牌， ",
+		" 将会被放到抽牌堆顶部。"
+	]
+  },
+  "ReplayTheSpireMod:Bottled Whirlpool": {
+    "NAME": "瓶装旋窝",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"拾起时， 选择一张牌。 NL 每当你抽到这张牌，立刻打出并抽一张牌。 NL 仍需费用； 如果你的 [E] 比需要的少， 用掉你的全部 [E] 。",
+		"选择一张牌自动打出",
+		"每当你抽到 ",
+		" 立刻打出并抽一张牌。"
+	]
+  },
+  "ReplayTheSpireMod:Bottled Firefly": {
+    "NAME": "瓶装萤火虫",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"拾起时，选择一张牌。 NL 附加 #y回馈 #b1.",
+		"选择一张牌附加回馈",
+		"",
+		"  #y回馈 #b1 。"
+	]
+  },
+  "ReplayTheSpireMod:Bottled Eggs": {
+    "NAME": "瓶装蛋",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"拾起时，选择一张牌。NL #y升级 这张牌 所有的相同牌 。",
+		"选择一张牌升级",
+		"所有 ",
+		" 的相同牌都会被 #y升级 。"
+	]
+  },
+  "ReplayTheSpireMod:Bottled Snecko": {
+    "NAME": "瓶装异蛇",
+	"FLAVOR": "尽管成年之后体形庞大，但是幼崽却小到能装到口袋里 - 而且它们很可爱！",
+    "DESCRIPTIONS": [
+		"拾起时，能选择一张牌。 NL 附加 #y异蛇。 NL 如果你 #r没有 当场选择，你能在之后的 #y休息处 的自由动作中选择。"
+	]
+  },
+  "ReplayTheSpireMod:Multitool": {
+    "NAME": "多刀工具",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"你的休息处有额外的 #b2 个选项，随机选择一个。"
+	]
+  },
+  "ReplayTheSpireMod:Pickaxe": {
+    "NAME": "鹤嘴锄",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"你现在能在休息处 #y开采 了。"
+	]
+  },
+  "ReplayTheSpireMod:PocketPolymizer": {
+    "NAME": "口袋聚合物",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"你现在可以在休息处 #y变化 一张牌 （自由动作）"
+	]
+  },
+  "minegem_1": {
+    "NAME": "红宝石",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"增加 #b",
+		" 最大生命。 NL #y转让价： #b"
+	]
+  },
+  "minegem_2": {
+    "NAME": "绿宝石",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"战斗结束时回复 #b",
+		" 生命。 NL #y转让价: #b"
+	]
+  },
+  "minegem_3": {
+    "NAME": "蓝宝石",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"战斗开始时获得 #b",
+		" 层 #y护盾 。 NL #y转让价: #b"
+	]
+  },
+  "minegem_4": {
+    "NAME": "诅咒宝石",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"在战斗开始时，将一张 #r诅咒 洗入你的弃牌堆。 NL #y转让价: #b"
+	]
+  },
+  "minegem_5": {
+    "NAME": "钻石",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"回合结束时获得 #b",
+		" 点 #y格挡 。 NL #y转让价: #b"
+	]
+  },
+  "Solar Panel": {
+    "NAME": "太阳能电池板",
+	"FLAVOR": "清洁、可再生能源。",
+    "DESCRIPTIONS": [
+		"每场战斗结束，每有一个闪电充能球，回复 #b",
+		" 生命"
+	]
+  },
+  "Carrot": {
+    "NAME": "胡萝卜",
+	"FLAVOR": "充满了能量。",
+    "DESCRIPTIONS": [
+		"每场战斗开始时，获得 #b3 点 #y集中 。 #b3 回合，每回合失去 #b1 点 #y集中 。"
+	]
+  },
+  "Backup Battery": {
+    "NAME": "备用电池",
+	"FLAVOR": "机器人的紧急口粮。",
+    "DESCRIPTIONS": [
+		"每回合结束时， 保留 #b",
+		" 点能量。 NL 本场战斗你每次 #y激发等离子充能球 ，提高本效果 #b1 点 （最多 #b",
+		" ）。"
+	]
+  },
+  "Geode": {
+    "NAME": "晶胞",
+	"FLAVOR": "敲开它！",
+    "DESCRIPTIONS": [
+		"每场战斗你第一次数去生命，触发所有充能球的被动效果并 #y生成 #b1 个 #y水晶 充能球 。"
+	]
+  },
+  "Raider's Mask": {
+    "NAME": "掠夺者面具",
+	"FLAVOR": "绝不留活口",
+    "DESCRIPTIONS": [
+		"你的回合结束时， 如果你的 #y黑暗 充能球 积攒了超过血量最少的敌人的伤害， #y激发 。"
+	]
+  },
+  "Replay:Frozen Program": {
+    "NAME": "冻结程序",
+	"FLAVOR": "冻结.exe 已停止响应。",
+    "DESCRIPTIONS": [
+		"每当你 #y激发 #y冰霜 充能球， 获得 #b1 层 #y反射 。"
+	]
+  },
+  "Replay:Sigil": {
+    "NAME": "无形之手",
+	"FLAVOR": "……",
+    "DESCRIPTIONS": [
+		"每回合开始时获得 [E] 。 NL 在战斗中，一些卡将会被遮挡。"
+	]
+  },
+  "Replay:Towering Pillar of Hats": {
+    "NAME": " 高耸帽柱",
+	"FLAVOR": "\"不要玷污我帽子塔的威严！\"",
+    "DESCRIPTIONS": [
+		"手牌最大数量提高 #b",
+		" 。 NL 你的回合结束时， #y保留手牌最右的牌。 #y你每有 #b",
+		" 张手牌，保留 #b1 张牌。",
+		" NL #y协同 - ",
+		"#ySlimy #yHat NL NL 手牌最大数量额外提高 #b1.",
+		"#yTop #yHat NL NL 如果你回合结束时手牌数量大于等于 #b10 ， 下一回合额外抽  #b1 张牌。"
+	]
+  },
+  "Replay:Ringing Soul": {
+    "NAME": "振铃灵魂",
+	"FLAVOR": "多么讨厌啊！",
+    "DESCRIPTIONS": [
+		"一层一次， 当你向卡组增加一张牌时， 获得 #b",
+		" 最大生命。"
+	]
+  },
+  "Replay:Gravy": {
+    "NAME": "肉汁",
+	"FLAVOR": "与大只的，不会飞的 异鸟搭配更佳.",
+    "DESCRIPTIONS": [
+		"拾起时，选择卡组中的 #b",
+		" 张牌。 NL 附加 #y墓地 。"
+	]
+  },
+  "Replay:Lucky Slots": {
+    "NAME": "幸运槽",
+	"FLAVOR": "赢得胜利！",
+    "DESCRIPTIONS": [
+		"如果一名单位正好失去 #b7 生命， 获得 #y暴击 。 NL 如果这个在一场战斗中触发 #b",
+		" 次， 获得 #b",
+		" 金币。"
+	]
+  },
+  "Replay:Wanted Poster": {
+    "NAME": "通缉令",
+	"FLAVOR": "拿命换钱，等价交换。",
+    "DESCRIPTIONS": [
+		"每回合开始时获得 [E] 。 NL 你每少 #b",
+		" 金币 （低于 #b",
+		" ）， 敌人开场获得随机效果。 NL 拾起时获得 #b",
+		" 金币。",
+		" NL 当你拥有超过 #b",
+		" 金币， 不同的 #r小偷 和 #r赏金猎人 可能会尾随你。"
+	]
+  },
+  "Replay:Byrd Feeder": {
+    "NAME": "异鸟饲养员",
+	"FLAVOR": "感觉…… 有点饿？",
+    "DESCRIPTIONS": [
+		"战斗中， 超过最大生命的回复生命将会变为 #y暂时性生命 。"
+	]
+  },
+  "Replay:Rubber Ducky": {
+    "NAME": "橡皮鸭",
+	"FLAVOR": "当你挤压它时，会发出声音。",
+    "DESCRIPTIONS": [
+		"每当你打出 #y能力牌 ， 获得它费用 #b",
+		" 倍的用 #y护盾 。"
+	]
+  },
+  "Replay:Wax Seal": {
+    "NAME": "蜡封",
+	"FLAVOR": "用于封存信封，而不是某种海洋生物。",
+    "DESCRIPTIONS": [
+		"[#2aecd7]商店右键触发：[]",
+		" NL 借 #b",
+		" 金币。 直到还清前在你的牌组增加一张 #r诅咒 。",
+		" 商店的 #y遗物 减价 #b",
+		"% 。 NL "
+	]
+  },
+  "Replay:Drink Me": {
+    "NAME": "Shrinking Draught",
+	"FLAVOR": "标签上写着： \"快点喝掉我。\"",
+    "DESCRIPTIONS": [
+		"每回合开始时，失去 [E] 并抽 #b",
+		" 张牌。 NL 战斗开始时获得 #b",
+		" 点 #y敏捷 。 NL 如果你在一回合打出至少 #b",
+		" 张牌， 下一个回合开始时获得 [E] 。 NL 拾起时，移除卡组里的 #b",
+		" 张牌并失去 #b",
+		"% 的最大生命。 NL #y协同 - #y小屋子",
+		"选择牌来移除",
+		"如果你拥有 #y小屋子，每场战斗开始时获得 #b15 层 #y护盾。"
+	]
+  },
+  "Replay:Bronze Core": {
+    "NAME": "铜制核心",
+	"FLAVOR": "即使是现在，它仍然起着保护高塔的作用。",
+    "DESCRIPTIONS": [
+		"每回合开始时获得 [E] 。 NL 每场战斗携带一个不会攻击的铜制圆球，但是直到被杀死前将会凝滞你的牌。 "
+	]
+  },
+  "Replay:Cursed D8": {
+    "NAME": "诅咒 D8",
+	"FLAVOR": "掷出骰子，直面命运。",
+    "DESCRIPTIONS": [
+		"每回合开始时获得 [E] 并抽一张牌。 NL 回合结束时，想你的抽牌堆中洗入一张随机的 #r诅咒 的 #yEcho 。"
+	]
+  },
+  "Replay:Blank Codex": {
+    "NAME": "空白法典",
+	"FLAVOR": "充满空虚。充满邪恶。",
+    "DESCRIPTIONS": [
+		"At the start of combat and each time you shuffle your deck, you may choose 1 of 3 random #yBlack cards to add to your discard pile. If you do, also add a random #r诅咒 to your discard pile."
+	]
+  },
+  "Replay:Broken Controller": {
+    "NAME": "破碎控制器",
+	"FLAVOR": "一个差劲的工匠埋怨着他的工具。但你发誓这一个确实被弄坏了。",
+    "DESCRIPTIONS": [
+		"当你要被杀死时，免死并回复 #b",
+		" 生命。 NL 复活时失去全部的 #y能力 并随机 #消耗 一半的牌 。 NL 它每场战斗最多能复活你 #b",
+		" 次"
+	]
+  },
+  "Replay:Mystery Machine": {
+    "NAME": "神秘机器",
+	"FLAVOR": "为那些喜欢漫步的所设计。",
+    "DESCRIPTIONS": [
+		"每进入一个问号房获得 #b1 充能。 NL 在两个非问号房则损失 #b1 充能。 NL 每拥有 #b1 点充能，战斗开始时随机获得 #b1 点 #y力量 或 #y敏捷 。"
+	]
+  },
+  "Replay:Fungal Core": {
+    "NAME": "真菌核心",
+	"FLAVOR": "由散布孢子的活真菌组成。",
+    "DESCRIPTIONS": [
+		"每回合开始时获得 [E] 。NL 战斗开始时，将#b",
+		" 张随机 #r孢子 洗入你的抽牌堆。",
+		"孢子",
+		"孢子是 0 费抽 1 的 #r状态牌 ，虽然有些带有负面效果。"
+	]
+  },
+  "Ring of Fury": {
+	"NAME": "愤怒戒指",
+	"FLAVOR": "一个被诅咒的戒指，它同时加强了人的感觉获得和丢失。",
+	"DESCRIPTIONS": [
+	"每场战斗开始时，获得 #b",
+	" 点 #y力量并失去 #b",
+	" 点 #y敏捷"
+	]
+  },
+  "Ring of Peace": {
+	"NAME": "和平戒指",
+	"FLAVOR": "高塔的和平不会持续太久。",
+	"DESCRIPTIONS": [
+	"每场战斗开始时，给予所有敌人 #b",
+	"层 #y虚弱 并获得 #b",
+	" 层 #y增益效果 。"
+	]
+  },
+  "Ring of Panic": {
+	"NAME": "恐慌戒指",
+	"FLAVOR": "恐惧是有原因。",
+	"DESCRIPTIONS": [
+	"每场战斗开始时，获得 #b",
+	" 回合的 #y混乱 。 NL 前两回合开始时获得 [E] [E] 。 NL 第三回合开始时获得 [E] 。"
+	]
+  },
+  "Ring of Hypnosis": {
+	"NAME": "催眠戒指",
+	"FLAVOR": "奇异的色彩和反光十分引人入胜。",
+	"DESCRIPTIONS": [
+	"所有敌人开始时获得 #b",
+	" 层 #y混乱 。"
+	]
+  },
+  "Ring of Searing": {
+	"NAME": "灼热戒指",
+	"FLAVOR": "一枚被诅咒的戒指，把它周围的一切都烧成灰烬。",
+	"DESCRIPTIONS": [
+	"你的回合开始时， 所有血量超过 #b",
+	"% 最大生命的敌人，失去 #b",
+	"% 的生命 。 NL 每回合结束时， 如果你的血量超过 #b",
+	"% 的最大生命， 失去 #b",
+	" 生命。"
+	]
+  },
+  "Ring of Burning": {
+	"NAME": "燃烧戒指",
+	"FLAVOR": "一个被诅咒的戒指，它同时加强了人的感觉获得和丢失。",
+	"DESCRIPTIONS": [
+	"当你用光了你的能量时，本回合你的手牌的费用降低到 #b0 。 NL 超出费用打出的牌会有 #b",
+	"% 的概率 #y消耗 。 NL 每当你使用能量，受到等量的伤害。"
+	]
+  },
+  "Ring of Fangs": {
+	"NAME": "尖牙戒指",
+	"FLAVOR": "尖牙刺入佩带者，让使用武器变得困难。",
+	"DESCRIPTIONS": [
+	"每场战斗开始时，失去 #b",
+	" 点 #y力量。 NL 每当你造成了未被格挡的伤害，给予 #b1 层 #y中毒 。"
+	]
+  },
+  "Ring of Shattering": {
+	"NAME": "破碎戒指",
+	"FLAVOR": "越碎越好。",
+	"DESCRIPTIONS": [
+	"每场战斗开始时，获得 #b",
+	" 点 #y集中 并失去 #b",
+	" 个充能球栏位。"
+	]
+  },
+  "Ring of Misfortune": {
+	"NAME": "厄运戒指",
+	"FLAVOR": "疲劳磨损.",
+	"DESCRIPTIONS": [
+	"每场战斗开始时，向你的弃牌堆增加一张随机 #r诅咒 。 NL 每当你抽到一张 #r诅咒 牌， 获得 [E] 和 #b",
+	" 点 #y暂时性生命 。 NL 每当你抽到一张 #r状态 牌，获得 #b",
+	" 点 #y格挡 。"
+	]
+  },
+  "Ring of Greed": {
+	"NAME": "贪婪戒指",
+	"FLAVOR": "巨大的财富往往伴随着巨大的冷静。",
+	"DESCRIPTIONS": [
+	"拾起时，获得 #b",
+	" 金币并根据金币或商店获得 #b",
+	" 个随机遗物。 NL 你每获得 #b",
+	" 金币，向你的卡组增加 #b1 张随机 #r诅咒 。"
+	]
+  },
+  "ReplayTheSpireMod:Ring of Addiction": {
+	"NAME": "上瘾戒指",
+	"FLAVOR": "善有善报，恶有恶报。",
+	"DESCRIPTIONS": [
+	"拾起时，获得 #b",
+	" 药水并根据金币或商店获得 #b",
+	" 个随机遗物。NL 每当你通过 #b",
+	" 层时未使用药水， 失去 #b",
+	" 最大生命。"
+	]
+  },
+  "ReplayTheSpireMod:Ring of Comfort": {
+	"NAME": "舒适戒指",
+	"FLAVOR": "舒适保护。舒适的庇护所。舒适百叶窗。",
+	"DESCRIPTIONS": [
+	"你获得的治疗效果提高 #b",
+	"%. NL 当低于 #b",
+	"% 最大生命时，你在休息处必须 #y休息 。"
+	]
+  },
+  "ReplayTheSpireMod:Ring of Crippling": {
+	"NAME": "残废戒指",
+	"FLAVOR": "\"推己及人……\"",
+	"DESCRIPTIONS": [
+	" [#2aecd7]每场战斗一次[]  。NL 所有单位获得 #b1 点 #y虚弱 ， #b2 层 #y乏力 ， 和 #b3 层 #y易伤 。"
+	]
+  },
+  "ReplayTheSpireMod:Ring of Challenge": {
+	"NAME": "挑战戒指",
+	"FLAVOR": "勇敢和愚蠢只有一念之差。",
+	"DESCRIPTIONS": [
+	"[#2aecd7]在每场战斗的第一回合右键激活[] 。 [#2aecd7]每场战斗能使用[]",
+	" [#2aecd7]次[]。 NL 给予所有敌人随机增益效果。 NL 获得 #b~",
+	" 金币。 NL 你每 #b",
+	" 次使用这个遗物，在战斗结束是获得一个随机遗物。"
+	]
+  },
+  "ReplayTheSpireMod:Ring of Exchange": {
+	"NAME": "交换戒指",
+	"FLAVOR": "身在福中不知福。",
+	"DESCRIPTIONS": [
+	"商店遗物有时会出现在boss宝箱。 NL Boss 遗物有时也会出现在商店里。"
+	]
+  },
+  "ReplayTheSpireMod:Ring of Collecting": {
+	"NAME": "连接戒指",
+	"FLAVOR": "一套完整的产品比其零部件的总和还要好，但显然不值得花这么多钱。",
+	"DESCRIPTIONS": [
+	"非boss宝箱里除了通常的的东西以外还有一枚随机戒指。 NL 商店有时候也会卖戒指。"
+	]
+  },
+  "ReplayTheSpireMod:Ring of Sloth": {
+	"NAME": "懒惰戒指",
+	"FLAVOR": "节省的能源往往是浪费的能源。",
+	"DESCRIPTIONS": [
+	"战斗开始时，获得 #b",
+	" 层 #r乏力 。 NL 每次洗牌， 本回合和下回合获得 [E] ，并获得 #b1 层 #r乏力 。 NL 你卡组里的 #y能力 牌 附加 #y回馈 #b"
+	]
+  },
+  "Iron Core": {
+    "NAME": "钢铁核心",
+	"FLAVOR": "由不断燃烧的火焰和愤怒驱动。",
+    "DESCRIPTIONS": [
+		"每场战斗开始时， 生成 #b1 个 #y狱炎充能球 。",
+		"每场战斗开始时，获得 #b2 个充能球栏位。",
+		" NL #r红色 牌将会出现在你以后的卡牌和奖励里。",
+		" NL #b蓝色 牌将会出现在你以后的卡牌和奖励里。",
+		"每场战斗开始时，如果你没有充能球栏位，获得 #b2 个，否则 #y生成 #b1 个 #y狱炎充能球 。 NL #r红色 牌 和 #b蓝色 牌将会出现在你以后的卡牌和奖励里。"
+	]
+  },
+  "m_BlackCat":{
+		"NAME": "诅咒猫",
+		"FLAVOUR": "Woem",
+		"DESCRIPTIONS":["每场战斗开始时，向你的牌堆洗入一张随机 #r诅咒 。"]
+	},
+	"m_Cross Pendant": {
+		"NAME": "十字吊坠",
+		"FLAVOR": "一个简单的十字形吊坠。据说祈祷能带来好运。",
+		"DESCRIPTIONS": [
+			"每场战斗开始时，从三张牌中选择一张加入你的手牌。附加 #y消耗 。"
+		]
+	},
+	"m_ChemicalBlood": {
+		"NAME": "化学之血",
+		"FLAVOR": "疯狂实验令人痛苦的结果。",
+		"DESCRIPTIONS": [
+			"每当你在你的回合损失生命， 获得 #b1 升 #y燃料. NL 每场战斗结束时，获得等于你全部燃料体积的生命，最多 #b",
+			" 。 NL #r红色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_ArcaneBlood": {
+		"NAME": "神秘之血",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"每场战斗结束时，你每有一种不同的负面效果，回复 #b",
+			" 生命。 NL #r红色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_ScarletBlood": {
+		"NAME": "绯红之血",
+		"FLAVOR": "当你的愤怒建立起来，你的感官变得敏锐，你的血液是如此。",
+		"DESCRIPTIONS": [
+			"每当你获得 #y力量 时，获得两倍等量的 #y小刀 。 NL #r红色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_SnakeCloak": {
+		"NAME": "长蛇斗篷",
+		"FLAVOR": "当把它挂在你的肩膀上时，你会听到刀子叮当作响的微弱嘶嘶声。",
+		"DESCRIPTIONS": [
+			"每场战斗开始时，额外抽 #b2 张牌。 #g绿色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_BookOfShivs": {
+		"NAME": "长蛇之书",
+		"FLAVOR": "它是用一种奇怪的语言写的。当大声朗读时，只能听到嘶嘶声。",
+		"DESCRIPTIONS": [
+			"每场战斗开始时，在你的抽牌堆洗入 #b2 张 随机 #yCantrips 牌。 NL #g绿色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_MercuryCore": {
+		"NAME": "水银之心",
+		"FLAVOR": "里面的液体四处流动，准备及时达到它的目的。",
+		"DESCRIPTIONS": [
+			"每场战斗开始时， #y复制 1 Mercury. NL #b蓝色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_ByrdBlood": {
+		"NAME": "异鸟之血",
+		"FLAVOR": "以觉醒者之名号，你的鲜血在义愤中燃烧。",
+		"DESCRIPTIONS": [
+			"每场战斗开始时， 回复 #b6 点生命。 NL 战斗中的回复效果提升 #b50% 。 NL 获得 #y力量 同时也给予你治疗。 NL #r红色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_SeaBlood": {
+		"NAME": "海洋之血",
+		"FLAVOR": "你的血液与遥远海洋的愤怒融合在一起。",
+		"DESCRIPTIONS": [
+			"每场战斗结束后， 回复 #b6 点生命。 NL #r红色 牌将会出现在你以后的卡牌和奖励里"
+		]
+	},
+	"m_SerpentRing": {
+		"NAME": "海蛇戒指",
+		"FLAVOR": "据说是很久以前一个巨大海洋生物的遗骸。",
+		"DESCRIPTIONS": [
+			"每场战斗开始时， 向你的手牌中加入 #b2 张 #y小刀 。 NL #g绿色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_SpellCore": {
+		"NAME": "符卡核心",
+		"FLAVOR": "一团集中的魔力。作用缓慢，始终如一。",
+		"DESCRIPTIONS": [
+			"每场战斗开始时， 获得 #b3 个充能球栏位并 #y生成 #b1 个 #y魔力火花. NL #b蓝色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_TsuchinokoRing": {
+		"NAME": "槌蛇戒指",
+		"FLAVOR": "每次力量通过它时，魔力就会嘶嘶作响。",
+		"DESCRIPTIONS": [
+			"每场战斗开始时，额外抽 #b2 张牌。 NL 每当你打出一张 #y技能 牌 或 #y0费 牌时， 获得 #b1 点 #yCharge-Up. NL #g绿色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_IronSupplements": {
+		"NAME": "铁补充剂",
+		"FLAVOR": "噬咬的饥饿消退了，只不过被燃烧的愤怒所取代…",
+		"DESCRIPTIONS": [
+			"每场战斗结束后，回复 #b6 点生命。 #r红色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_BurningSludge": {
+		"NAME": "燃烧污泥",
+		"FLAVOR": "你整个人都在愤怒中燃烧。",
+		"DESCRIPTIONS": [
+			"每场战斗结束后，每分裂出一只史莱姆， 回复 #b2 点生命。 NL #r红色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_SlimeRing": {
+		"NAME": "粘液戒指",
+		"FLAVOR": "你们中的这一部分独立行动，从未完全分裂，也从未完全融合。",
+		"DESCRIPTIONS": [
+			"每场战斗开始时，额外抽 #b2 张牌。 NL #g绿色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_RuneBlood": {
+		"NAME": "灯盏细辛",
+		"FLAVOR": "。",
+		"DESCRIPTIONS": [
+			"每当你在同一回合造成 #b",
+			" 点伤害， 获得 #b",
+			" 点 #y火素 。 NL 每场战斗结束后，回复 #b",
+			" HP 点生命。 NL #r红色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_RuneCore": {
+		"NAME": "符文核心",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"每场战斗开始时，获得 #b",
+			" 充能球栏位和 #b1 点 #y集中 。 NL 战斗中获得的 #y集中 同时获得 #y动能 ，反之亦然。 NL #b蓝色 牌将会出现在你以后的卡牌和奖励里。 NL NL #g当你至少拥有 #b",
+			" #g个激活了的 #y符文： NL  #g*每当你打造一个 #y火石 #g符文时，#g替换为 #y生成闪电充能球 。 NL  #g*每当你打造一个 #y保护 #g符文时，#g替换为 #y生成冰霜充能球。 NL  #g*每当你打造一个 #y工业 #g符文时，#g替换为 #y生成等离子充能球。 NL  #g*每当你打造一个 #y动力 #g符文时，替换为 #y生成 #y水晶充能球。"
+		]
+	},
+	"m_GuardianBlood": {
+		"NAME": "过热之血",
+		"FLAVOR": "。",
+		"DESCRIPTIONS": [
+			"在战斗结束时，回复 #b6 点生命。 NL #r红色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_SnakeBloodCore": {
+		"NAME": "蛇血核心",
+		"FLAVOR": "三个人的记忆和经历融合在一起…你是谁，你要干什么？",
+		"DESCRIPTIONS": [
+			"每场战斗开始时，额外抽 #b1 张牌并获得 #b",
+			" 个充能球栏位。 NL 每场战斗结束后回复 #b",
+			" 点生命。 NL #r红色 、#g绿色 和 #b蓝色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"replay:Trail_Library": {
+		"NAME": "图书馆劫掠者",
+		"FLAVOR": "好吧，听着。我知道用遗物来强行加一个新的自定模式选项挺傻逼的。但是你想啊，有时候你就得照照镜子问问自己： \"只要用一个遗物就能完美监视打开的宝箱的情况下，我真的要去搞那一堆麻烦的封包么？\" 然后得到了否定的答案。",
+		"DESCRIPTIONS": [
+			"#b每日挑战 NL 每当你打开一个非boss宝箱，从15张牌中选择获得一张。",
+			"选择获得一张牌。"
+		]
+	}
+}

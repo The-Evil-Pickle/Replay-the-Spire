@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.green.AThousandCuts;
 import com.megacrit.cardcrawl.cards.green.Acrobatics;
 import com.megacrit.cardcrawl.cards.green.Adrenaline;
@@ -40,12 +41,12 @@ import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 import mysticmod.MysticMod;
 import replayTheSpire.ReplayTheSpireMod;
 
-public class m_BookOfShivs extends AbstractRelic
+public class m_BookOfShivs extends M_MistRelic
 {
     public static final String ID = "m_BookOfShivs";
     
     public m_BookOfShivs() {
-        super(ID, "m_snakebook.png", RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, "m_snakebook.png", LandingSound.MAGICAL, mysticmod.patches.AbstractCardEnum.MYSTIC_PURPLE, CardColor.GREEN);
     }
     
     @Override
@@ -64,6 +65,16 @@ public class m_BookOfShivs extends AbstractRelic
     public void onEquip() {
 		AbstractDungeon.bossRelicPool.add(WristBlade.ID);
 		MysticMod.cantripsGroup.add(new BoundBlade());
+        super.onEquip();
+    }
+    
+    @Override
+    public AbstractRelic makeCopy() {
+        return new m_BookOfShivs();
+    }
+
+	@Override
+	ArrayList<AbstractCard> getNewCards() {
         final ArrayList<AbstractCard> tmpPool = new ArrayList<AbstractCard>();
         tmpPool.add(new AThousandCuts());
         tmpPool.add(new Adrenaline());
@@ -86,34 +97,6 @@ public class m_BookOfShivs extends AbstractRelic
         tmpPool.add(new ScrapShanks());
         tmpPool.add(new TheWorks());
         tmpPool.add(new HiddenBlade());
-        for (final AbstractCard c : tmpPool) {
-			switch (c.rarity) {
-				case COMMON: {
-					AbstractDungeon.commonCardPool.addToTop(c);
-					AbstractDungeon.srcCommonCardPool.addToBottom(c);
-					continue;
-				}
-				case UNCOMMON: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-				case RARE: {
-					AbstractDungeon.rareCardPool.addToTop(c);
-					AbstractDungeon.srcRareCardPool.addToBottom(c);
-					continue;
-				}
-				default: {
-					AbstractDungeon.uncommonCardPool.addToTop(c);
-					AbstractDungeon.srcUncommonCardPool.addToBottom(c);
-					continue;
-				}
-			}
-        }
-    }
-    
-    @Override
-    public AbstractRelic makeCopy() {
-        return new m_BookOfShivs();
-    }
+        return tmpPool;
+	}
 }

@@ -30,6 +30,8 @@ public class Pagination implements IUIElement
         this.elementsPerPage = rows * columns;
         for (int i = 0; i < elements.size(); ++i) {
             final RelicSettingsButton element = elements.get(i);
+            if (element == null)
+            	continue;
             final RelicSettingsButton newElement;
             if (element.relic != null) {
             	newElement = new RelicSettingsButton(element.relic, element.x + width * (i % columns), element.y - height * ((i % this.elementsPerPage - i % columns) / columns), width, height, element.elements);
