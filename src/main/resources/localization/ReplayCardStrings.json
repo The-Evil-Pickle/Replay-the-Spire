@@ -331,7 +331,7 @@
   },
   "ReplayTheSpireMod:Speed Training": {
     "NAME": "Speed Training",
-    "DESCRIPTION": "Gain !M! Dexterity. NL Discard a random card. NL Refund !stslib:refund!. NL Exhaustive !stslib:ex!."
+    "DESCRIPTION": "Gain !M! Dexterity. NL Discard a random card. NL Exhaustive !stslib:ex!."
   },
   "ReplayTheSpireMod:Calculation Training": {
     "NAME": "Calculation Training",

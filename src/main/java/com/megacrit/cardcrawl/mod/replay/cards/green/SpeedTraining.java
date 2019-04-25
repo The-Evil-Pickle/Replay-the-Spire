@@ -24,14 +24,13 @@ public class SpeedTraining extends CustomCard
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
-    private static final int COST = 2;
+    private static final int COST = 0;
     
     public SpeedTraining() {
         super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF);
 		this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
         ExhaustiveVariable.setBaseValue(this, 2);
-        RefundVariable.setBaseValue(this, 3);
     }
     
     @Override
@@ -50,7 +49,6 @@ public class SpeedTraining extends CustomCard
         if (!this.upgraded) {
             this.upgradeName();
             ExhaustiveVariable.upgrade(this, 1);
-            this.upgradeBaseCost(1);
         }
     }
     
