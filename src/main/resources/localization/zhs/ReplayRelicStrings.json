@@ -324,7 +324,7 @@
 	]
   },
   "Golden Egg": {
-    "NAME": "金蛋",
+    "NAME": "黄金之蛋",
 	"FLAVOR": "未经检疫。",
     "DESCRIPTIONS": [
 		"每当你向卡组加入一张 #y稀有 牌，将它 升级 。 NL 每当你从商人处购买一张牌，将它 #y升级 。 "
@@ -520,8 +520,8 @@
 	]
   },
   "ReplayTheSpireMod:Bottled Flurry": {
-    "NAME": "瓶装阵风",
-	"FLAVOR": "就像个雪球！",
+    "NAME": "瓶装飓风",
+	"FLAVOR": "就像滚雪球！",
     "DESCRIPTIONS": [
 		"拾起时，选择一张牌。 NL 你在回合结束时 #y保留 这张牌。 NL 如果这张牌因为 #y虚无 而 #y消耗，则变为丢弃。",
 		"选择一张牌保留",
@@ -577,7 +577,7 @@
 	]
   },
   "ReplayTheSpireMod:Multitool": {
-    "NAME": "多刀工具",
+    "NAME": "瑞士军刀",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
 		"你的休息处有额外的 #b2 个选项，随机选择一个。"
