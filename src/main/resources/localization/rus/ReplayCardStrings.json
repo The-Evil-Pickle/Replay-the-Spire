@@ -300,7 +300,7 @@
   "FIFO Queue": { 
     "NAME": "Принцип FIFO", 
     "DESCRIPTION": "Получите !M! слотов для сфер.", 
-    "UPGRADE_DESCRIPTION": "Получите 2X слотов для сфер. NL Зарядите 1 сферу Стекла. NL Возвратность." 
+    "UPGRADE_DESCRIPTION": "Начальная. NL Получите !M! слотов для сфер." 
   },
   "ReplayTheSpireMod:System Scan": {
     "NAME": "Скан системы",

@@ -309,7 +309,7 @@
   "FIFO Queue": { 
     "NAME": "优化内存", 
     "DESCRIPTION": "获得 !M! 个充能球栏位。", 
-    "UPGRADE_DESCRIPTION": "获得 2X 个充能球栏位。 NL 生成 1 个 玻璃 充能球。 NL 回馈 !stslib:refund! 。" 
+    "UPGRADE_DESCRIPTION": " 固有 。 获得 !M! 个充能球栏位。" 
   },
   "ReplayTheSpireMod:System Scan": {
     "NAME": "系统自检",
@@ -331,7 +331,7 @@
   },
   "ReplayTheSpireMod:Speed Training": {
     "NAME": "速度训练",
-    "DESCRIPTION": "获得 !M! 点 敏捷。 NL 随机丢弃一张牌。 NL 回馈 !stslib:refund! 。 NL 消耗性 !stslib:ex! 。"
+    "DESCRIPTION": "获得 !M! 点 敏捷。 NL 随机丢弃一张牌。 NL 消耗性 !stslib:ex! 。"
   },
   "ReplayTheSpireMod:Calculation Training": {
     "NAME": "算力训练",

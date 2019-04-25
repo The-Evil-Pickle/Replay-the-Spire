@@ -300,7 +300,7 @@
   "FIFO Queue": { 
     "NAME": "FIFO Queue", 
     "DESCRIPTION": "구체 슬롯 !M! 개를 얻습니다.", 
-    "UPGRADE_DESCRIPTION": "유리 를 1 번 영창 합니다. NL 구체 슬롯 2X 개를 얻습니다. NL 환급 !stslib:refund!" 
+    "UPGRADE_DESCRIPTION": "선천성. NL 구체 슬롯 !M! 개를 얻습니다." 
   },
   "ReplayTheSpireMod:System Scan": {
     "NAME": "시스템 점검",
