@@ -312,7 +312,7 @@
   },
   "ReplayTheSpireMod:Speed Training": {
     "NAME": "Общая физ. подготовка",
-    "DESCRIPTION": "Получите !M! Ловкости. NL Сбросьте случайную карту. NL Возвратность. NL Сжигаемость !stslib:ex!."
+    "DESCRIPTION": "Получите !M! Ловкости. NL Сбросьте случайную карту. NL Сжигаемость !stslib:ex!."
   },
   "ReplayTheSpireMod:Calculation Training": {
     "NAME": "Перерасчёт",

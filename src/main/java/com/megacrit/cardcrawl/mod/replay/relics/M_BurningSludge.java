@@ -31,7 +31,7 @@ public class M_BurningSludge extends M_MistRelic
         AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         final AbstractPlayer p = AbstractDungeon.player;
         int slimeCount = 0;
-        if (p.orbs.get(0) != null) {
+        if (p.maxOrbs > 0 && p.orbs.get(0) != null) {
             for (final AbstractOrb o : AbstractDungeon.player.orbs) {
                 if (o instanceof SpawnedSlime) {
                     ++slimeCount;

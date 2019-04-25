@@ -312,7 +312,7 @@
   },
   "ReplayTheSpireMod:Speed Training": {
     "NAME": "속도 훈련",
-    "DESCRIPTION": "민첩 을 !M! 얻습니다. NL 무작위로 카드를 1 장 버립니다. NL 환급 !stslib:refund! NL 고갈 !stslib:ex!"
+    "DESCRIPTION": "민첩 을 !M! 얻습니다. NL 무작위로 카드를 1 장 버립니다. NL 고갈 !stslib:ex!"
   },
   "ReplayTheSpireMod:Calculation Training": {
     "NAME": "계산 훈련",
