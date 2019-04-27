@@ -132,17 +132,33 @@ public class GrabBag extends ReplayAbstractRelic
         GrabBag.nonEnergyRelics.clear();
         String ckd = ((new CursedKey()).DESCRIPTIONS[1]) + ((new CursedKey()).DESCRIPTIONS[0]);
         String akd = "Gain [E] at the start of each turn.";
+        String bkd = (new ChewingGum()).DESCRIPTIONS[0];
         String energyDesc = (ckd.substring(0, ckd.indexOf("[")));
-        String energyDesc2 = (ckd.substring(ckd.indexOf("]") + 2, ckd.indexOf(ReplayTheSpireMod.LOC_FULLSTOP)));
-        String energyDescAlt = (akd.substring(0, akd.indexOf("[")));
-        String energyDescAlt2 = (akd.substring(akd.indexOf("]") + 2, akd.indexOf(".")));
+        int endex = ckd.indexOf(ReplayTheSpireMod.LOC_FULLSTOP);
+        int stardex = 0;
+        boolean orthz = false;
+        String energyDesc2 = "[E]";
+        if (endex < 0) {
+        	endex = ckd.indexOf("]") + 2;
+        	stardex = 1;
+        	orthz = true;
+        	if (endex < 0) {
+        		return;
+        	}
+        } else {
+        	energyDesc2 = (ckd.substring(ckd.indexOf("]") + 1, endex));
+        }
+
+        String energyDescAlt = (akd.substring(stardex, akd.indexOf("[")));
+        String energyDescAlt2 = (akd.substring(akd.indexOf("]") + 1, akd.indexOf(".")));
+        String energyDescB = (bkd.substring(0, bkd.indexOf("[")));
         for (AbstractRelic r : RelicLibrary.bossList) {
         	if (!(r instanceof GrabBag)) {
         		if (r.canSpawn()) {
             		boolean g1 = false;
                 	boolean g2 = false;
                 	for (String d : r.DESCRIPTIONS) {
-                		if (d.contains(energyDesc) || d.contains(energyDescAlt)) {
+                		if (d.contains(energyDesc) || d.contains(energyDescAlt) || d.contains(energyDescB)) {
                 			g1 = true;
                 		}
                 		if (d.contains(energyDesc2) || d.contains(energyDescAlt2)) {
@@ -160,7 +176,9 @@ public class GrabBag extends ReplayAbstractRelic
                 			}
                 		}
                 	} else {
-                		GrabBag.nonEnergyRelics.add(r.relicId);
+                		if (!(orthz && g2)) {
+                			GrabBag.nonEnergyRelics.add(r.relicId);
+                		}
                 	}
             	}
         	}
@@ -191,10 +209,6 @@ public class GrabBag extends ReplayAbstractRelic
     
     @Override
     public boolean canSpawn() {
-    	if (!ReplayTheSpireMod.LOC_FULLSTOP.equals(".")) {
-    		return false;
-    		///just fukin disable this until i figure it out
-    	}
     	if (!(AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof TreasureRoomBoss))
     		return false;
     	
