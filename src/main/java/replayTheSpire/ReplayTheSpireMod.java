@@ -1461,6 +1461,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         BaseMod.addBoss("Exordium", "Fading Forest", "images/ui/map/boss/FableSpinner.png", "images/ui/map/bossOutline/FableSpinner.png");
         BaseMod.addEliteEncounter("TheCity", new MonsterInfo("Replay:Snechameleon", 0.9f));
         BaseMod.addMonster(HellsEngine.ID, () -> new MonsterGroup(new AbstractMonster[] {new HellsEngine(), new Conductor()}));
+        BaseMod.addBoss("Beyond", HellsEngine.ID, "images/ui/map/boss/HEC.png", "images/ui/map/bossOutline/HEC.png");
 	}
 
     private enum LoadType {

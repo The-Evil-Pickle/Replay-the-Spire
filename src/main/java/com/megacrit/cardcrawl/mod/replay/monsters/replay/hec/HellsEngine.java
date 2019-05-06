@@ -75,8 +75,8 @@ public class HellsEngine extends AbstractMonster {
     public static final int HP_A = 500;
     public static final int START_DMG = 20;
     public static final int START_DMG_A = 25;
-    public static final int COALS_DMG = 4;
-    public static final int COALS_DMG_A = 5;
+    public static final int COALS_DMG = 3;
+    public static final int COALS_DMG_A = 4;
     public static final int COALS_AMT = 2;
     public static final int RUN_DMG = 15;
     public static final int RUN_DMG_A = 19;
@@ -84,7 +84,7 @@ public class HellsEngine extends AbstractMonster {
     public static final int ARTIFACT_INIT_A = 20;
     public static final int STEEL_AMT = 2;
     public static final int STEEL_AMT_A = 3;
-    public static final int STEEL_BLK = 10;
+    public static final int STEEL_BLK = 12;
     public static final int STEEL_BLK_A = 15;
     
 	public boolean isFirstTurn;
@@ -119,9 +119,11 @@ public class HellsEngine extends AbstractMonster {
         this.cardBob = new BobEffect();
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(HP_A);
+            this.steelBlk = STEEL_BLK_A;
         }
         else {
             this.setHp(HP);
+            this.steelBlk = STEEL_BLK;
         }
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.startDmg = START_DMG_A;
@@ -132,6 +134,11 @@ public class HellsEngine extends AbstractMonster {
         	this.startDmg = START_DMG;
             this.coalsDmg = COALS_DMG;
             this.runDmg = RUN_DMG;
+        }
+        if (AbstractDungeon.ascensionLevel >= 19) {
+        	this.steelAmt = STEEL_AMT_A;
+        } else {
+        	this.steelAmt = STEEL_AMT;
         }
         this.coalsAmt = 2;
         this.damage.add(new DamageInfo(this, this.startDmg));
@@ -272,7 +279,7 @@ public class HellsEngine extends AbstractMonster {
 				AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, this.steelBlk));
 				if (this.hasPower(BackAttackPower.POWER_ID)) {
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, this.steelAmt), this.steelAmt));
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ReflectionPower(this, this.steelAmt), this.steelAmt));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ReflectionPower(this, this.steelAmt, true), this.steelAmt));
 				}
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
 				break;

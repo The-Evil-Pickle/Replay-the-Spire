@@ -22,7 +22,7 @@ public class ReplayOrbIntPatch {
 @SpirePatch(cls = "com.megacrit.cardcrawl.orbs.AbstractOrb", method = "applyFocus")
 	public static class ReplayAbstractOrbIntPatch {
 		public static void Postfix(AbstractOrb __Instance) {
-			final AbstractPower power = AbstractDungeon.player.getPower("Focus");
+			/*final AbstractPower power = AbstractDungeon.player.getPower("Focus");
 	        if (power == null) {
 				final int basePassiveAmount = (int)ReflectionHacks.getPrivate((Object)__Instance, (Class)AbstractOrb.class, "basePassiveAmount");
 				final int baseEvokeAmount = (int)ReflectionHacks.getPrivate((Object)__Instance, (Class)AbstractOrb.class, "baseEvokeAmount");
@@ -30,7 +30,7 @@ public class ReplayOrbIntPatch {
 				if (!__Instance.ID.equals("Dark")) {
 					__Instance.evokeAmount = Math.max(0, baseEvokeAmount);
 				}
-	        }
+	        }*/
 			int mypos = AbstractDungeon.player.orbs.indexOf(__Instance);
 			if (mypos > -1 && !__Instance.ID.equals("Plasma")) {
 				if (mypos > 0) {
