@@ -114,8 +114,8 @@ public class Conductor extends AbstractMonster {
         }
         this.damage.add(new DamageInfo(this, this.railgunnerDmg));
         this.damage.add(new DamageInfo(this, this.dynamiteDmg));
-        //this.loadAnimation("images/monsters/theBottom/boss/guardian/skeleton.atlas", "images/monsters/theBottom/boss/guardian/skeleton.json", 2.0f);
-        //this.state.setAnimation(0, "idle", true);
+        this.loadAnimation("images/monsters/beyond/HEC/Conductor/Conductor.atlas", "images/monsters/beyond/HEC/Conductor/Conductor.json", 1.0f);
+        this.state.setAnimation(0, "Idle", true);
     }
     
     @Override

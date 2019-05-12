@@ -1,0 +1,132 @@
+
+Conductor.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+c_placeholder
+  rotate: false
+  xy: 1, 1
+  size: 668, 755
+  orig: 668, 755
+  offset: 0, 0
+  index: -1
+foot_r
+  rotate: false
+  xy: 254, 989
+  size: 44, 33
+  orig: 44, 33
+  offset: 0, 0
+  index: -1
+leg_r_1
+  rotate: false
+  xy: 1, 939
+  size: 64, 71
+  orig: 64, 71
+  offset: 0, 0
+  index: -1
+leg_r_2
+  rotate: false
+  xy: 167, 852
+  size: 42, 92
+  orig: 42, 92
+  offset: 0, 0
+  index: -1
+foot_l
+  rotate: false
+  xy: 209, 989
+  size: 43, 34
+  orig: 43, 34
+  offset: 0, 0
+  index: -1
+leg_l_1
+  rotate: false
+  xy: 194, 758
+  size: 40, 85
+  orig: 40, 85
+  offset: 0, 0
+  index: -1
+leg_l_2
+  rotate: false
+  xy: 149, 758
+  size: 43, 92
+  orig: 43, 92
+  offset: 0, 0
+  index: -1
+Arm_R_1
+  rotate: false
+  xy: 209, 946
+  size: 61, 41
+  orig: 61, 41
+  offset: 0, 0
+  index: -1
+Arm_R_2
+  rotate: false
+  xy: 211, 845
+  size: 36, 61
+  orig: 36, 61
+  offset: 0, 0
+  index: -1
+BAR
+  rotate: false
+  xy: 102, 758
+  size: 45, 174
+  orig: 45, 174
+  offset: 0, 0
+  index: -1
+hand_r
+  rotate: false
+  xy: 326, 989
+  size: 28, 23
+  orig: 28, 23
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 1, 758
+  size: 99, 179
+  orig: 99, 179
+  offset: 0, 0
+  index: -1
+hand_l
+  rotate: false
+  xy: 300, 989
+  size: 24, 29
+  orig: 24, 29
+  offset: 0, 0
+  index: -1
+arm_l_2
+  rotate: false
+  xy: 67, 939
+  size: 33, 68
+  orig: 33, 68
+  offset: 0, 0
+  index: -1
+arm_l_1
+  rotate: false
+  xy: 167, 946
+  size: 40, 74
+  orig: 40, 74
+  offset: 0, 0
+  index: -1
+hair
+  rotate: false
+  xy: 236, 758
+  size: 27, 67
+  orig: 27, 67
+  offset: 0, 0
+  index: -1
+mask
+  rotate: false
+  xy: 102, 934
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+light
+  rotate: false
+  xy: 149, 852
+  size: 12, 19
+  orig: 12, 19
+  offset: 0, 0
+  index: -1

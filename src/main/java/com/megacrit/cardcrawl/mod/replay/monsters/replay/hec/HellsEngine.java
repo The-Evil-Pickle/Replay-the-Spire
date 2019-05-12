@@ -111,7 +111,7 @@ public class HellsEngine extends AbstractMonster {
     private static final byte HEARTBEAT = 6;
     private static final byte STARTUP = 7;
     public HellsEngine() {
-        super(NAME, ID, 999, -900.0f, 50.0f, 400.0f, 600.0f, "images/monsters/beyond/HEC/e_placeholder.png", 1200.0f, -50.0f);
+        super(NAME, ID, 999, -1150.0f, 50.0f, 400.0f, 600.0f, "images/monsters/beyond/HEC/e_placeholder.png", 1200.0f, 200.0f);
 		ReplayTheSpireMod.logger.info("init Engine");
         this.isFirstTurn = true;
         this.plannedCard = null;
@@ -144,8 +144,8 @@ public class HellsEngine extends AbstractMonster {
         this.damage.add(new DamageInfo(this, this.startDmg));
         this.damage.add(new DamageInfo(this, this.coalsDmg));
         this.damage.add(new DamageInfo(this, this.runDmg));
-        //this.loadAnimation("images/monsters/theBottom/boss/guardian/skeleton.atlas", "images/monsters/theBottom/boss/guardian/skeleton.json", 2.0f);
-        //this.state.setAnimation(0, "idle", true);
+        this.loadAnimation("images/monsters/beyond/HEC/HellsEngine/HellsEngine.atlas", "images/monsters/beyond/HEC/HellsEngine/HellsEngine.json", 1.0f);
+        this.state.setAnimation(0, "idle", true);
     }
     
     @Override
@@ -243,9 +243,19 @@ public class HellsEngine extends AbstractMonster {
         switch (this.nextMove) {
 			case STARTUP: {
 				if (this.isFirstTurn) {
+					this.state.setAnimation(0, "startup", false);
+	                this.state.addAnimation(0, "running", true, 0.0f);
+					this.conductor.state.setAnimation(0, "Startup", false);
+	                this.conductor.state.addAnimation(0, "Running", true, 0.0f);
 					ArrayList<AbstractCreature> mylist = new ArrayList<AbstractCreature>();
 					mylist.add(this);
-					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -1575, 0, 0.7f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.16f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.15f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.14f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.13f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.12f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.1f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.1f));
 					AbstractDungeon.actionManager.addToBottom(new ShakeScreenAction(0.0f, ShakeDur.MED, ShakeIntensity.HIGH));
 					AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.NONE, true));
 					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.1f));

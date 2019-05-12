@@ -1,0 +1,104 @@
+
+HellsEngine.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+e_placeholder
+  rotate: false
+  xy: 1, 1
+  size: 2477, 680
+  orig: 2477, 737
+  offset: 0, 0
+  index: -1
+engine_backrail
+  rotate: false
+  xy: 1161, 683
+  size: 384, 440
+  orig: 384, 440
+  offset: 0, 0
+  index: -1
+engine_base
+  rotate: false
+  xy: 2480, 1
+  size: 828, 579
+  orig: 832, 586
+  offset: 1, 6
+  index: -1
+heart
+  rotate: false
+  xy: 3551, 597
+  size: 394, 524
+  orig: 394, 524
+  offset: 0, 0
+  index: -1
+engine_front
+  rotate: false
+  xy: 2480, 582
+  size: 568, 490
+  orig: 832, 558
+  offset: 32, 68
+  index: -1
+engine_wheel
+  rotate: false
+  xy: 933, 683
+  size: 208, 209
+  orig: 231, 220
+  offset: 7, 11
+  index: -1
+engine_pusher
+  rotate: false
+  xy: 1, 683
+  size: 309, 310
+  orig: 312, 310
+  offset: 3, 0
+  index: -1
+platform_wheel
+  rotate: false
+  xy: 933, 990
+  size: 75, 78
+  orig: 75, 78
+  offset: 0, 0
+  index: -1
+platform_under
+  rotate: false
+  xy: 1, 995
+  size: 930, 49
+  orig: 930, 49
+  offset: 0, 0
+  index: -1
+platform_bed
+  rotate: false
+  xy: 1, 1074
+  size: 1158, 151
+  orig: 1196, 154
+  offset: 37, 2
+  index: -1
+backwheel
+  rotate: false
+  xy: 933, 894
+  size: 94, 94
+  orig: 95, 94
+  offset: 0, 0
+  index: -1
+backbox
+  rotate: false
+  xy: 3050, 597
+  size: 499, 509
+  orig: 501, 512
+  offset: 2, 2
+  index: -1
+engline_lighton
+  rotate: false
+  xy: 1010, 990
+  size: 19, 54
+  orig: 19, 54
+  offset: 0, 0
+  index: -1
+engine_foreground
+  rotate: false
+  xy: 3310, 1
+  size: 783, 594
+  orig: 786, 595
+  offset: 0, 1
+  index: -1
