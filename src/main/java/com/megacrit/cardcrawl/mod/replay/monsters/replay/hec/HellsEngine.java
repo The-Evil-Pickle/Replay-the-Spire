@@ -111,7 +111,7 @@ public class HellsEngine extends AbstractMonster {
     private static final byte HEARTBEAT = 6;
     private static final byte STARTUP = 7;
     public HellsEngine() {
-        super(NAME, ID, 999, -1150.0f, 50.0f, 400.0f, 600.0f, "images/monsters/beyond/HEC/e_placeholder.png", 1200.0f, 200.0f);
+        super(NAME, ID, 999, -900.0f, -300.0f, 400.0f, 600.0f, "images/monsters/beyond/HEC/e_placeholder.png", 1200.0f, 300.0f);
 		ReplayTheSpireMod.logger.info("init Engine");
         this.isFirstTurn = true;
         this.plannedCard = null;
@@ -265,11 +265,12 @@ public class HellsEngine extends AbstractMonster {
 					mylist3.add(AbstractDungeon.player);
 					mylist3.add(this.conductor);
 					AbstractDungeon.actionManager.addToBottom(new StartParalaxAction(BeyondScenePatch.bg_controller));
-					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, 0, 0.05f));
-					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist3, 100, 80, 0.05f));
-					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist3, 100, 50, 0.05f));
-					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, -10, 0.05f));
-					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, -20, 0.05f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist3, 395, -10, 0.2f));
+					/*AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist3, 100, 0, 0.05f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist3, 100, -10, 0.05f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist3, 100, -20, 0.05f));*/
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 55, 50, 0.025f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 50, 60, 0.025f));
 					this.hb_x += 325.0f;
 					this.hb_w += 50.0f;
 				}
