@@ -34,7 +34,7 @@ public class MightPower extends AbstractPower
         }
         this.isTurnBased = true;
     }
-
+    
 	@Override
     protected void loadRegion(final String fileName) {
         this.region48 = ReplayTheSpireMod.powerAtlas.findRegion("48/" + fileName);

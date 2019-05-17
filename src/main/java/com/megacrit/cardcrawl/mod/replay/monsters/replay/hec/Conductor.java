@@ -86,7 +86,7 @@ public class Conductor extends AbstractMonster {
     private static final byte HEARTBEAT = 6;
     private static final byte STARTUP = 7;
     public Conductor() {
-        super(NAME, ID, 999, 25.0f, 25.0f, 180.0f, 250.0f, "images/monsters/beyond/HEC/c_placeholder.png", -75.0f, -75.0f);
+        super(NAME, ID, 999, 0.0f, -150.0f, 180.0f, 250.0f, "images/monsters/beyond/HEC/c_placeholder.png", -100.0f, 100.0f);
 		ReplayTheSpireMod.logger.info("init Conductor");
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 9) {
@@ -114,8 +114,8 @@ public class Conductor extends AbstractMonster {
         }
         this.damage.add(new DamageInfo(this, this.railgunnerDmg));
         this.damage.add(new DamageInfo(this, this.dynamiteDmg));
-        //this.loadAnimation("images/monsters/theBottom/boss/guardian/skeleton.atlas", "images/monsters/theBottom/boss/guardian/skeleton.json", 2.0f);
-        //this.state.setAnimation(0, "idle", true);
+        this.loadAnimation("images/monsters/beyond/HEC/Conductor/Conductor.atlas", "images/monsters/beyond/HEC/Conductor/Conductor.json", 1.2f);
+        this.state.setAnimation(0, "Idle", true);
     }
     
     @Override

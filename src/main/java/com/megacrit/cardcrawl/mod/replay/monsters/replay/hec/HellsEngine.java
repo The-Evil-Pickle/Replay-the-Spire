@@ -75,8 +75,8 @@ public class HellsEngine extends AbstractMonster {
     public static final int HP_A = 500;
     public static final int START_DMG = 20;
     public static final int START_DMG_A = 25;
-    public static final int COALS_DMG = 4;
-    public static final int COALS_DMG_A = 5;
+    public static final int COALS_DMG = 3;
+    public static final int COALS_DMG_A = 4;
     public static final int COALS_AMT = 2;
     public static final int RUN_DMG = 15;
     public static final int RUN_DMG_A = 19;
@@ -84,7 +84,7 @@ public class HellsEngine extends AbstractMonster {
     public static final int ARTIFACT_INIT_A = 20;
     public static final int STEEL_AMT = 2;
     public static final int STEEL_AMT_A = 3;
-    public static final int STEEL_BLK = 10;
+    public static final int STEEL_BLK = 12;
     public static final int STEEL_BLK_A = 15;
     
 	public boolean isFirstTurn;
@@ -111,7 +111,7 @@ public class HellsEngine extends AbstractMonster {
     private static final byte HEARTBEAT = 6;
     private static final byte STARTUP = 7;
     public HellsEngine() {
-        super(NAME, ID, 999, -900.0f, 50.0f, 400.0f, 600.0f, "images/monsters/beyond/HEC/e_placeholder.png", 1200.0f, -50.0f);
+        super(NAME, ID, 999, -900.0f, -300.0f, 400.0f, 600.0f, "images/monsters/beyond/HEC/e_placeholder.png", 1200.0f, 300.0f);
 		ReplayTheSpireMod.logger.info("init Engine");
         this.isFirstTurn = true;
         this.plannedCard = null;
@@ -119,9 +119,11 @@ public class HellsEngine extends AbstractMonster {
         this.cardBob = new BobEffect();
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(HP_A);
+            this.steelBlk = STEEL_BLK_A;
         }
         else {
             this.setHp(HP);
+            this.steelBlk = STEEL_BLK;
         }
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.startDmg = START_DMG_A;
@@ -133,12 +135,17 @@ public class HellsEngine extends AbstractMonster {
             this.coalsDmg = COALS_DMG;
             this.runDmg = RUN_DMG;
         }
+        if (AbstractDungeon.ascensionLevel >= 19) {
+        	this.steelAmt = STEEL_AMT_A;
+        } else {
+        	this.steelAmt = STEEL_AMT;
+        }
         this.coalsAmt = 2;
         this.damage.add(new DamageInfo(this, this.startDmg));
         this.damage.add(new DamageInfo(this, this.coalsDmg));
         this.damage.add(new DamageInfo(this, this.runDmg));
-        //this.loadAnimation("images/monsters/theBottom/boss/guardian/skeleton.atlas", "images/monsters/theBottom/boss/guardian/skeleton.json", 2.0f);
-        //this.state.setAnimation(0, "idle", true);
+        this.loadAnimation("images/monsters/beyond/HEC/HellsEngine/HellsEngine.atlas", "images/monsters/beyond/HEC/HellsEngine/HellsEngine.json", 1.0f);
+        this.state.setAnimation(0, "idle", true);
     }
     
     @Override
@@ -236,9 +243,19 @@ public class HellsEngine extends AbstractMonster {
         switch (this.nextMove) {
 			case STARTUP: {
 				if (this.isFirstTurn) {
+					this.state.setAnimation(0, "startup", false);
+	                this.state.addAnimation(0, "running", true, 0.0f);
+					this.conductor.state.setAnimation(0, "Startup", false);
+	                this.conductor.state.addAnimation(0, "Running", true, 0.0f);
 					ArrayList<AbstractCreature> mylist = new ArrayList<AbstractCreature>();
 					mylist.add(this);
-					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -1575, 0, 0.7f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.16f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.15f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.14f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.13f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.12f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.1f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.1f));
 					AbstractDungeon.actionManager.addToBottom(new ShakeScreenAction(0.0f, ShakeDur.MED, ShakeIntensity.HIGH));
 					AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.NONE, true));
 					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist, -225, 0, 0.1f));
@@ -248,11 +265,12 @@ public class HellsEngine extends AbstractMonster {
 					mylist3.add(AbstractDungeon.player);
 					mylist3.add(this.conductor);
 					AbstractDungeon.actionManager.addToBottom(new StartParalaxAction(BeyondScenePatch.bg_controller));
-					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, 0, 0.05f));
-					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist3, 100, 80, 0.05f));
-					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist3, 100, 50, 0.05f));
-					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, -10, 0.05f));
-					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 100, -20, 0.05f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist3, 395, -10, 0.2f));
+					/*AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist3, 100, 0, 0.05f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist3, 100, -10, 0.05f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist3, 100, -20, 0.05f));*/
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 55, 50, 0.025f));
+					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 50, 60, 0.025f));
 					this.hb_x += 325.0f;
 					this.hb_w += 50.0f;
 				}
@@ -272,7 +290,7 @@ public class HellsEngine extends AbstractMonster {
 				AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, this.steelBlk));
 				if (this.hasPower(BackAttackPower.POWER_ID)) {
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, this.steelAmt), this.steelAmt));
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ReflectionPower(this, this.steelAmt), this.steelAmt));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ReflectionPower(this, this.steelAmt, true), this.steelAmt));
 				}
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
 				break;
