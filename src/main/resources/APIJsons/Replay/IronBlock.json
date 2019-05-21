@@ -1,11 +1,12 @@
 {
-  "Replay:IronBlock": { // While you can separate different Json objects in 1 file with ID's,
-                         // the mod loads the *whole* file. So use different files for different archetypes.
-    "NAME": "Ironclad Block Extension", //The name of the archetype. This, like the ID, isn't actually used/displayed anywhere, 
-                    //but is useful for keeping track of archetypes.
-    "CARD_IDS": [
-      "ReplayReversal",
-	  "ReplayTheSpireMod:Stacked"
-    ]
-  }
+  "CHARACTER": "IRONCLAD",
+  "NAME": "Ironclad Block Extension",
+  "ARCHETYPE_NAME": "Block",
+  "CARD_TYPE": "POWER",
+  "IMG": "red/power/barricade",
+  "TAGS": [],
+  "CARD_IDS": [
+    "ReplayReversal",
+    "ReplayTheSpireMod:Stacked"
+  ]
 }
