@@ -1,24 +1,32 @@
 {
-  "Replay:DefectThick": { // While you can separate different Json objects in 1 file with ID's,
-                         // the mod loads the *whole* file. So use different files for different archetypes.
-    "NAME": "Thick Deck / Status", //The name of the archetype. This, like the ID, isn't actually used/displayed anywhere, 
-                    //but is useful for keeping track of archetypes.
-    "CARD_IDS": [
-      "ReplayTheSpireMod:GoodbyeWorld",
-	  "ReplayTheSpireMod:Fabricate Wheel",
-	  "ReplayTheSpireMod:Omega Cannon",
-	  "ReplaySort",
-	  "ReplaySolidLightProjector",
-	  "ReplayTheSpireMod:System Scan",
-	  "Aggregate",
-	  "Creative AI",
-	  "Hello World",
-	  "Steam Power",
-	  "Recycle",
-	  "Reprogram",
-	  "Seek",
-	  "Stack",
-	  "Turbo"
-    ]
-  }
+  "CHARACTER": "DEFECT",
+  "NAME": "Thick Deck / Status",
+  "ARCHETYPE_NAME": "ThickDefect",
+  "CARD_TYPE": "ATTACK",
+  "IMG": "cards/replay/omegaCannon.png",
+  "TAGS": [
+    "SINGLE"
+  ],
+  "FEATURES": [
+    "ReplayTheSpireMod:GoodbyeWorld",
+    "Creative AI",
+    "ReplayTheSpireMod:Omega Cannon"
+  ],
+  "CARD_IDS": [
+    "ReplayTheSpireMod:GoodbyeWorld",
+    "ReplayTheSpireMod:Fabricate Wheel",
+    "ReplayTheSpireMod:Omega Cannon",
+    "ReplaySort",
+    "ReplaySolidLightProjector",
+    "ReplayTheSpireMod:System Scan",
+    "Aggregate",
+    "Creative AI",
+    "Hello World",
+    "Steam Power",
+    "Recycle",
+    "Reprogram",
+    "Seek",
+    "Stack",
+    "Turbo"
+  ]
 }

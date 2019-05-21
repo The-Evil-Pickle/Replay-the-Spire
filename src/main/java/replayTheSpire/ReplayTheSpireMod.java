@@ -89,7 +89,6 @@ import replayTheSpire.replayxover.infinitebs;
 import replayTheSpire.replayxover.marisabs;
 import replayTheSpire.replayxover.slimeboundbs;
 import replayTheSpire.replayxover.sneckobs;
-import replayTheSpire.replayxover.archetypeAPI.archetypebs;
 import replayTheSpire.variables.MagicArithmatic;
 
 import java.lang.reflect.*;
@@ -108,6 +107,8 @@ import com.megacrit.cardcrawl.screens.custom.CustomMod;
 
 import java.util.*;
 import java.util.function.*;
+
+import static archetypeAPI.ArchetypeAPI.loadArchetypes;
 //SetUnlocksSubscriber, 
 
 @SpireInitializer
@@ -883,7 +884,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static UIStrings SETTING_STRINGS;// = CardCrawlGame.languagePack.getUIString("Replay:SettingsNames");
 	@Override
     public void receivePostInitialize() {
-		ReplayTheSpireMod.powerAtlas = new com.badlogic.gdx.graphics.g2d.TextureAtlas(Gdx.files.internal("powers/replayPowers.atlas"));
+		ReplayTheSpireMod.powerAtlas = new TextureAtlas(Gdx.files.internal("powers/replayPowers.atlas"));
 
 		ReplayTheSpireMod.forestBG = ImageMaster.loadImage("images/monsters/fadingForest/fadingForest_bg.png");
 		ReplayTheSpireMod.shieldingIcon = ImageMaster.loadImage("images/ui/replay/shielding.png");
@@ -1057,7 +1058,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.receiveEditUnlocks();
 		
 		if (Loader.isModLoaded("archetypeapi")) {
-			archetypebs.postInit();
+			loadArchetypes("APIJsons/");
 		}
 		
     }
