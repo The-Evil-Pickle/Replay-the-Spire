@@ -3,6 +3,17 @@
   <groupId>ReplayTheSpireMod</groupId>
   <artifactId>ReplayTheSpireMod</artifactId>
   <name>ReplayTheSpireMod</name>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<SlayTheSpire.version>01-23-2019</SlayTheSpire.version>
+		<ModTheSpire.version>3.9.0</ModTheSpire.version>
+		<!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
+		<!--Also change the path at the very bottom of the file.-->
+		<Steam.path>C:/My Stuff/Games/Steam/steamapps</Steam.path>
+	</properties>
+
   <description>Content mod for Slay the Spire</description>
     <dependencies>
         <dependency>
@@ -10,203 +21,203 @@
             <artifactId>slaythespire</artifactId>
             <version>016</version>
             <scope>system</scope>
-            <systemPath>${basedir}/../lib/desktop-1.0.jar</systemPath>
+			<systemPath>${Steam.path}/common/SlayTheSpire/desktop-1.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>basemod</groupId>
             <artifactId>basemod</artifactId>
             <version>2.10.0</version>
             <scope>system</scope>
-            <systemPath>${basedir}/../lib/BaseMod.jar</systemPath>
+			<systemPath>${Steam.path}/workshop/content/646570/1605833019/BaseMod.jar</systemPath>
         </dependency>
         <dependency>
 	        <groupId>com.evacipated.cardcrawl</groupId>
 		      <artifactId>ModTheSpire</artifactId>
 		      <version>2.6.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/ModTheSpire.jar</systemPath>
+			<systemPath>${Steam.path}/workshop/content/646570/1605060445/ModTheSpire.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>madsciencemod</groupId>
 		      <artifactId>MadScienceMod</artifactId>
 		      <version>0.1.8</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/MadScienceMod.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1616050930/MadScienceMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>fruitymod</groupId>
 		      <artifactId>FruityMod</artifactId>
 		      <version>0.1.8</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/FruityMod.jar</systemPath>
+          <systemPath>C:/My Stuff/Coding/ModdingSlayTheSpire/other_mods/git/FruityMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>fetchmod</groupId>
 		      <artifactId>FetchMod</artifactId>
 		      <version>0.1.8</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/FetchMod.jar</systemPath>
+          <systemPath>C:/My Stuff/Coding/ModdingSlayTheSpire/other_mods/git/FetchMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>infinitespire</groupId>
 		      <artifactId>InfiniteSpire</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/InfiniteSpire.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1610128058/InfiniteSpire.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>coloredmap</groupId>
 		      <artifactId>ColoredMap</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/ColoredMap.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1611666859/ColoredMap.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>blackrusemod</groupId>
 		      <artifactId>BlackRuseMod</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/BlackRuseMod.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1615745539/BlackRuseMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>friendlyminions</groupId>
 		      <artifactId>FriendlyMinions</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/FriendlyMinions.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1612426481/FriendlyMinions.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>hubris</groupId>
 		      <artifactId>Hubris</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/Hubris.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1609159603/Hubris.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>halation</groupId>
 		      <artifactId>Halation</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/Halation.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1609810237/Halation.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>stslib</groupId>
 		      <artifactId>StSLib</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/StSLib.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1609158507/StSLib.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>mystic</groupId>
 		      <artifactId>TheMystic</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/TheMystic.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1609848111/TheMystic.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>deciple</groupId>
 		      <artifactId>TheDisciple</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/TheDisciple.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1609846039/TheDisciple.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>beaked</groupId>
 		      <artifactId>BeakedTheCultist</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/BeakedTheCultist.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1609820830/BeakedTheCultist.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>construct</groupId>
 		      <artifactId>Construct</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/ConstructMod.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1612725037/ConstructMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>gatherer</groupId>
 		      <artifactId>Gatherer</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/GathererMod.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1611788501/GathererMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>blackbeard</groupId>
 		      <artifactId>Blackbeard</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/TheBlackbeardMod.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1612105245/TheBlackbeardMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>conspire</groupId>
 		      <artifactId>Conspire</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/Conspire.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1612329757/Conspire.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>marisa</groupId>
 		      <artifactId>Marisa</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/TS05_Marisa_v0.14.4.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1614104912/TS05_Marisa.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>glutton</groupId>
 		      <artifactId>Glutton</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/GluttonMod.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1613729300/GluttonMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>slimebound</groupId>
 		      <artifactId>Slimebound</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/SlimeboundMod.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1610056683/SlimeboundMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>clockwork</groupId>
 		      <artifactId>Clockwork</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/ClockworkMod.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1643253215/ClockworkMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>snekomod</groupId>
 		      <artifactId>SneckoMod</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/SneckoMod.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1617257048/SneckoMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>theJungle</groupId>
 		      <artifactId>TheJungle</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/TheJungle.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1632754046/TheJungle.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>runesmith</groupId>
 		      <artifactId>TheRunesmith</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>${basedir}/../lib/TheRunesmith.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1633549612/TheRunesmith.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>guardian</groupId>
 		      <artifactId>Guardian</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1667117805/GuardianMod.jar</systemPath>
+          <systemPath>${Steam.path}/workshop/content/646570/1667117805/GuardianMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>ArchetypeAPI</groupId>
 		      <artifactId>ArchetypeAPI</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1679402002/ArchetypeAPI.jar</systemPath>
+          <systemPath>C:/My Stuff/Games/Steam/steamapps/common/SlayTheSpire/mods/ArchetypeAPI.jar</systemPath>
 	      </dependency>
     </dependencies>
   <build>
@@ -224,11 +235,11 @@
         <artifactId>maven-jar-plugin</artifactId>
         <version>2.3.1</version>
         <configuration>
-          <outputDirectory>D:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/mods</outputDirectory>
+          <outputDirectory>${Steam.path}/common/SlayTheSpire/mods/</outputDirectory>
         </configuration>
       </plugin>
     </plugins>
 	<finalName>${project.artifactId}</finalName>
   </build>
-  <version>1.4.3</version>
+  <version>1.4.4</version>
 </project>
