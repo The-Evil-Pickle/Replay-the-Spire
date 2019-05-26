@@ -1,6 +1,7 @@
 {
   "CHARACTER": "DEFECT",
   "NAME": "Defect Orb Support Extension",
+  "ARCHETYPE_NAME": "Orb Support",
   "CARD_TYPE": "ATTACK",
   "IMG": "blue/attack/barrage",
   "TAGS": [
