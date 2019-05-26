@@ -240,7 +240,7 @@
   },
   "ReplayTheSpireMod:Dual Polarity": {
     "NAME": "二极性",
-    "DESCRIPTION": "生成 !M! 个 ：闪电 和 黑暗 充能球；晶体 和 冰霜 充能球；流水 和 狱炎 充能球； 玻璃 和 等离子 充能球。",
+    "DESCRIPTION": "生成 !M! 个 ：闪电 和 黑暗 充能球；晶体 和 冰霜 充能球；雨水 和 狱炎 充能球； 玻璃 和 等离子 充能球。",
 	"EXTENDED_DESCRIPTION": [
 		"选择",
 		"光与暗",
@@ -248,7 +248,7 @@
 		"石与冰",
 		"生成 !M! 晶体充能球。 NL 生成 !M! 冰霜。",
 		"水与火",
-		"生成 !M! 流水充能球。 NL 生成 !M! 狱炎 充能球。",
+		"生成 !M! 雨水充能球。 NL 生成 !M! 狱炎 充能球。",
 		"熵与能",
 		"生成 !M! 玻璃充能球。 NL 生成 !M! 等离子充能球。"
 	]
@@ -364,11 +364,11 @@
   },
   "Poisoned Strike": {
     "NAME": "毒素打击",
-    "DESCRIPTION": "给予 !D! 层 中毒 。 NL 受到伤害修正。"
+    "DESCRIPTION": "给予 !D! 层 中毒 。 NL 数值按造成攻击计算。"
   },
   "ReplayTheSpireMod:Trickstab": {
     "NAME": "骗局",
-    "DESCRIPTION": "造成 !D! 点 !M! 次。 NL 受到 格挡 修正。"
+    "DESCRIPTION": "造成 !D! 点 !M! 次。 NL 数值按获得 格挡 计算。"
   },
   "Specialist": {
     "NAME": "专家",
@@ -391,6 +391,11 @@
     "NAME": "防防防防防御",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 这张牌的能耗每多 [E] ，则增加额外的 !D! 层 护盾 。 NL 异蛇 。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 这张牌的能耗每多 [E] ，则增加额外的 !D! 层 护盾 。 NL 回馈 !stslib:refund! 。 NL 异蛇 。 NL 消耗 。"
+  },
+    "Replay:Parry": {
+    "NAME": "招架",
+    "DESCRIPTION": "虚无 。NL 造成 !D! 点伤害。 NL 如果这名敌人的意图是攻击，获得 !M! 层 反射 。NL 消耗性 !stslib:ex! 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果这名敌人的意图是攻击，获得 !M! 层 反射 。NL 消耗性 !stslib:ex! 。"
   },
   "Replay:Dark Deal": {
     "NAME": "黑暗交易",
@@ -536,9 +541,9 @@
 	"DESCRIPTION": " 墓地 。 NL 抽 1 张牌。 NL 消耗 。 NL 转变为 火烧眉毛 。"
   },
   "ReplayTheSpireMod:Meltdown Sequence": {
-	"NAME": "熔化顺序",
+	"NAME": "熔化序列",
 	"DESCRIPTION": " 不能被打出 。 NL 循环 。 当 循环 时: NL 向你的弃牌堆增加 1 张 滞后 。 消耗性 !stslib:ex! 。 NL 起动 ：在你的弃牌堆增加 !M! 张 滞后+ 。",
-	"UPGRADE_DESCRIPTION": " 不能被打出 。 NL 过热：< !construct:O! > NL 循环 。 循环时： NL 在你的弃牌堆增加 1 张 滞后 。 消耗性 !stslib:ex! 。 NL 起动 ：在你的弃牌堆增加 !M! 张 滞后+ 。"
+	"UPGRADE_DESCRIPTION": " 不能被打出 。 NL 过热：< !construct:O! > NL 循环 。 循环 时： NL 在你的弃牌堆增加 1 张 滞后 。 消耗性 !stslib:ex! 。 NL 起动 ：在你的弃牌堆增加 !M! 张 滞后+ 。"
   },
   "ReplayTheSpireMod:Lagged": {
 	"NAME": "滞后",

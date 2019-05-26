@@ -56,7 +56,7 @@
 	]
   },
   "Venom Potion": {
-	"NAME": "荼毒药剂",
+	"NAME": "涂毒药剂",
     "DESCRIPTIONS": [
 			"当你对其造成伤害时，给予 #b",
 			" 层 #y中毒。",
