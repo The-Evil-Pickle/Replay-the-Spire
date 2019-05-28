@@ -208,6 +208,13 @@
 		      <scope>system</scope>
           <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1679402002/ArchetypeAPI.jar</systemPath>
 	      </dependency>
+        <dependency>
+	        <groupId>bard</groupId>
+		      <artifactId>bard</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1744254855/Bard.jar</systemPath>
+	      </dependency>
     </dependencies>
   <build>
     <plugins>

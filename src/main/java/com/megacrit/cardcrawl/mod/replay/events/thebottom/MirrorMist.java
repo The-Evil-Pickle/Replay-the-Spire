@@ -95,6 +95,11 @@ import the_gatherer.character.TheGatherer;
 
 import com.megacrit.cardcrawl.unlock.*;
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.mod.bard.cards.Inspire;
+import com.evacipated.cardcrawl.mod.bard.cards.Riposte;
+import com.evacipated.cardcrawl.mod.bard.characters.Bard;
+import com.evacipated.cardcrawl.mod.bard.relics.PitchPipe;
+
 import java.util.ArrayList;
 
 public class MirrorMist
@@ -613,6 +618,28 @@ public class MirrorMist
 				this.gain_r_3 = new CrackedCore();
 				this.has_3b = this.has_3;
 				this.gain_c_3b = CardLibrary.getCopy(GuardianCast.ID);
+				this.thirdOption = true;
+				break;
+			}
+			if (ReplayTheSpireMod.foundmod_bard && AbstractDungeon.player instanceof Bard) {
+				this.has_1 = AbstractDungeon.player.hasRelic(PitchPipe.ID);
+				this.loss_r_1 = RelicLibrary.getRelic(PitchPipe.ID).makeCopy();
+				this.gain_r_1 = new M_CorellonBlood();
+				this.has_1b = CardHelper.hasCardWithID(Inspire.ID);
+				this.loss_c_1b = CardLibrary.getCopy(Inspire.ID);
+				this.gain_c_1b = CardLibrary.getCopy(Bash.ID);
+				this.has_2 = AbstractDungeon.player.hasRelic(PitchPipe.ID);
+				this.loss_r_2 = RelicLibrary.getRelic(PitchPipe.ID).makeCopy();
+				this.gain_r_2 = new M_ChordRing();
+				this.has_2b = CardHelper.hasCardWithID(Riposte.ID);
+				this.loss_c_2b = CardLibrary.getCopy(Riposte.ID);
+				this.gain_c_2b = CardLibrary.getCopy(Neutralize.ID);
+				this.has_3 = AbstractDungeon.player.hasRelic(PitchPipe.ID);
+				this.loss_r_3 = RelicLibrary.getRelic(PitchPipe.ID).makeCopy();
+				this.gain_r_3 = new M_MusicBoxCore();
+				this.has_3b = CardHelper.hasCardWithID(Inspire.ID);
+				this.loss_c_3b = CardLibrary.getCopy(Inspire.ID);
+				this.gain_c_3b = CardLibrary.getCopy(Zap.ID);
 				this.thirdOption = true;
 				break;
 			}

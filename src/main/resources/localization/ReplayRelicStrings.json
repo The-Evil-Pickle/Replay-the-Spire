@@ -1121,6 +1121,27 @@
 			"At the end of combat, heal #b6 HP. NL Certain #yRed cards can now be obtained."
 		]
 	},
+	"m_CorellonBlood": {
+		"NAME": "Larethian Blood",
+		"FLAVOR": "Blood of the ancient god Corellon Larethian.",
+		"DESCRIPTIONS": [
+			"At the start of combat, gain #b6 #yTemporary #yHP. NL Certain #yRed cards can now be obtained."
+		]
+	},
+	"m_ChordRing": {
+		"NAME": "Chord Ring",
+		"FLAVOR": "This ring is composed of a series of rotating metal bands, each sporting carvings of notes.",
+		"DESCRIPTIONS": [
+			"Draw #b2 additional cards on the first turn of combat. NL Certain #yGreen cards can now be obtained."
+		]
+	},
+	"m_MusicBox": {
+		"NAME": "Music Box",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the start of combat, gain #b3 orb slots and #ybard:Queue a [OrbNote] [REMOVE_SPACE]. NL Certain #yBlue cards can now be obtained."
+		]
+	},
 	"m_SnakeBloodCore": {
 		"NAME": "Snakeblood Core",
 		"FLAVOR": "The memories and experiences of three merge together... who are you, and what will you do?",
