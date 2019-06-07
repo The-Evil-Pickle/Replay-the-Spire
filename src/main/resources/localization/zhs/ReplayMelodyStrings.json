@@ -1,0 +1,37 @@
+{
+  "Replay:FocusUpMelody": {
+    "NAME": "集中提升",
+    "DESCRIPTION": "获得 1 点 集中 。",
+	"NOTES": [
+		"U", "O", "O"
+	]
+  },
+  "Replay:LightningMelody": {
+    "NAME": "闪电",
+    "DESCRIPTION": "生成 1 个 闪电 充能球。",
+	"NOTES": [
+		"O", "A", "A"
+	]
+  },
+  "Replay:FrostMelody": {
+    "NAME": "冰霜",
+    "DESCRIPTION": "生成 1 个 冰霜 充能球。",
+	"NOTES": [
+		"O", "B", "B"
+	]
+  },
+  "Replay:PlasmaMelody": {
+    "NAME": "等离子",
+    "DESCRIPTION": "生成 1 个 等离子 充能球。",
+	"NOTES": [
+		"O", "U", "U", "O"
+	]
+  },
+  "Replay:ReflectMelody": {
+    "NAME": "反射",
+    "DESCRIPTION": "获得 1 层 反射 。",
+	"NOTES": [
+		"B", "A", "B", "A"
+	]
+  }
+}
