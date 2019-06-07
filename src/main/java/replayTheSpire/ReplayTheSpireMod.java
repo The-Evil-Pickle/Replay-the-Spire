@@ -9,6 +9,7 @@ import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.mod.bard.helpers.MelodyManager;
 import com.evacipated.cardcrawl.mod.hubris.HubrisMod;
 import com.evacipated.cardcrawl.mod.hubris.events.thebeyond.TheBottler;
 import com.evacipated.cardcrawl.mod.stslib.*;
@@ -89,7 +90,7 @@ import replayTheSpire.replayxover.infinitebs;
 import replayTheSpire.replayxover.marisabs;
 import replayTheSpire.replayxover.slimeboundbs;
 import replayTheSpire.replayxover.sneckobs;
-import replayTheSpire.replayxover.archetypeAPI.archetypebs;
+import replayTheSpire.replayxover.bard.bardbs;
 import replayTheSpire.variables.MagicArithmatic;
 
 import java.lang.reflect.*;
@@ -108,6 +109,8 @@ import com.megacrit.cardcrawl.screens.custom.CustomMod;
 
 import java.util.*;
 import java.util.function.*;
+
+import static archetypeAPI.ArchetypeAPI.loadArchetypes;
 //SetUnlocksSubscriber, 
 
 @SpireInitializer
@@ -131,6 +134,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	
 	public static final Logger logger = LogManager.getLogger(ReplayTheSpireMod.class.getName());
 	public static TextureAtlas powerAtlas;
+	public static TextureAtlas replayxover_note;
 	
 	private static final String MODNAME = "ReplayTheSpireMod";
     private static final String AUTHOR = "The_Evil_Pickle, AstroPenguin642, Bakuhaku, Slimer509, Stewartisme";
@@ -551,6 +555,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static boolean foundmod_jungle = false;
     public static boolean foundmod_runesmith = false;
     public static boolean foundmod_guardian = false;
+    public static boolean foundmod_bard = false;
     
 	public static void initialize() {
     	logger.info("========================= ReplayTheSpireMod INIT =========================");
@@ -595,6 +600,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	    foundmod_jungle = Loader.isModLoaded("TheJungle");
 	    foundmod_runesmith = Loader.isModLoaded("therunesmith");
 	    foundmod_guardian = Loader.isModLoaded("Guardian");
+	    foundmod_bard = Loader.isModLoaded("bard");
+	    
+	    if (foundmod_bard) {
+	    	bardbs.AddNote();
+	    }
 		
 		logger.info("================================================================");
     }
@@ -883,8 +893,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static UIStrings SETTING_STRINGS;// = CardCrawlGame.languagePack.getUIString("Replay:SettingsNames");
 	@Override
     public void receivePostInitialize() {
-		ReplayTheSpireMod.powerAtlas = new com.badlogic.gdx.graphics.g2d.TextureAtlas(Gdx.files.internal("powers/replayPowers.atlas"));
-
+		ReplayTheSpireMod.powerAtlas = new TextureAtlas(Gdx.files.internal("powers/replayPowers.atlas"));
+		if (foundmod_bard) {
+			ReplayTheSpireMod.replayxover_note = new TextureAtlas(Gdx.files.internal("images/replayxover/orbnote.atlas"));
+		}
 		ReplayTheSpireMod.forestBG = ImageMaster.loadImage("images/monsters/fadingForest/fadingForest_bg.png");
 		ReplayTheSpireMod.shieldingIcon = ImageMaster.loadImage("images/ui/replay/shielding.png");
 		ReplayTheSpireMod.bonfireIcon = ImageMaster.loadImage("images/ui/map/replay_bonfire.png");
@@ -1057,7 +1069,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.receiveEditUnlocks();
 		
 		if (Loader.isModLoaded("archetypeapi")) {
-			archetypebs.postInit();
+			loadArchetypes("APIJsons/");
 		}
 		
     }
@@ -1461,7 +1473,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         BaseMod.addBoss("Exordium", "Fading Forest", "images/ui/map/boss/FableSpinner.png", "images/ui/map/bossOutline/FableSpinner.png");
         BaseMod.addEliteEncounter("TheCity", new MonsterInfo("Replay:Snechameleon", 0.9f));
         BaseMod.addMonster(HellsEngine.ID, () -> new MonsterGroup(new AbstractMonster[] {new HellsEngine(), new Conductor()}));
-        BaseMod.addBoss("Beyond", HellsEngine.ID, "images/ui/map/boss/HEC.png", "images/ui/map/bossOutline/HEC.png");
+        //BaseMod.addBoss("Beyond", HellsEngine.ID, "images/ui/map/boss/HEC.png", "images/ui/map/bossOutline/HEC.png");
 	}
 
     private enum LoadType {
@@ -1544,6 +1556,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
     	try {
     		initializeGuardianMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Guardian mod not detected");
+		}
+    	try {
+    		initializeBardMod(LoadType.RELIC);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Guardian mod not detected");
 		}
@@ -1704,6 +1721,21 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Slimebound...");
+		}
+	}
+	private static void initializeBardMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
+		Class<com.evacipated.cardcrawl.mod.bard.characters.Bard> servMod = com.evacipated.cardcrawl.mod.bard.characters.Bard.class;
+		logger.info("ReplayTheSpireMod | Detected Bard Mod!");
+		foundmod_slimebound = true;
+
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Bard...");
+			BaseMod.addRelicToCustomPool(new M_CorellonBlood(), com.evacipated.cardcrawl.mod.bard.characters.Bard.Enums.COLOR);
+			BaseMod.addRelicToCustomPool(new M_ChordRing(), com.evacipated.cardcrawl.mod.bard.characters.Bard.Enums.COLOR);
+			BaseMod.addRelicToCustomPool(new M_MusicBoxCore(), com.evacipated.cardcrawl.mod.bard.characters.Bard.Enums.COLOR);
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for Bard...");
 		}
 	}
 	private static void initializeSneckoMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
@@ -1874,7 +1906,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			ReplayShopInitCardsPatch.DOUBLE_TAG = "images/npcs/sale_tag/2for1Tag_zhs.png";
 			ReplayShopInitCardsPatch.SPECIAL_TAG = "images/npcs/sale_tag/specialEditionTag_zhs.png";
 		}
-		
+		if (foundmod_bard) {
+			bardbs.AddMelodyStrings(jsonPath);
+		}
 		logger.info("done editting strings");
 	}
 	

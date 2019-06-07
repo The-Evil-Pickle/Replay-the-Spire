@@ -1,11 +1,12 @@
 {
-  "Replay:DefectFrost": { // While you can separate different Json objects in 1 file with ID's,
-                         // the mod loads the *whole* file. So use different files for different archetypes.
-    "NAME": "Defect Frost Extension", //The name of the archetype. This, like the ID, isn't actually used/displayed anywhere, 
-                    //but is useful for keeping track of archetypes.
-    "CARD_IDS": [
-      "Mirror Shield",
-	  "ReplayTheSpireMod:Repulse"
-    ]
-  }
+  "CHARACTER": "DEFECT",
+  "NAME": "Defect Frost Extension",
+  "ARCHETYPE_NAME": "Frost",
+  "CARD_TYPE": "ATTACK",
+  "IMG": "blue/attack/blizzard",
+  "TAGS": [],
+  "CARD_IDS": [
+    "Mirror Shield",
+    "ReplayTheSpireMod:Repulse"
+  ]
 }

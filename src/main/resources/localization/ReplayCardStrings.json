@@ -309,7 +309,7 @@
   "FIFO Queue": { 
     "NAME": "FIFO Queue", 
     "DESCRIPTION": "Gain !M! Orb Slots.", 
-    "UPGRADE_DESCRIPTION": "Gain 2X Orb Slots. NL Channel 1 Glass. NL Refund !stslib:refund!." 
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain !M! Orb Slots." 
   },
   "ReplayTheSpireMod:System Scan": {
     "NAME": "System Scan",

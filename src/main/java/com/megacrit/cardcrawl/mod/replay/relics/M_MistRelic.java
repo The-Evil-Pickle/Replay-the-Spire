@@ -8,12 +8,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public abstract class M_MistRelic extends AbstractRelic
 {
 	CardColor mainColor;
 	CardColor baseColor;
 	int orbSlots;
+	boolean hasbuilt = false;
     public M_MistRelic(String setId, String imgName, LandingSound sfx, CardColor mainColor, CardColor baseColor) {
     	this(setId, imgName, sfx, mainColor, baseColor, 0);
     }
@@ -70,14 +72,29 @@ public abstract class M_MistRelic extends AbstractRelic
 				}
         	}
         }
+		hasbuilt = true;
 	}
-	
+
 	@Override
     public void onEquip() {
         this.addCardsToPools();
         AbstractDungeon.player.masterMaxOrbs = Math.max(this.orbSlots, AbstractDungeon.player.masterMaxOrbs);
     }
-	
+	@Override
+    public void onEnterRoom(final AbstractRoom room) {
+		if (!this.hasbuilt) {
+			this.addCardsToPools();
+			 AbstractDungeon.player.masterMaxOrbs = Math.max(this.orbSlots, AbstractDungeon.player.masterMaxOrbs);
+		}
+    }
+
+    @Override
+    public void atPreBattle() {
+    	if (!this.hasbuilt) {
+			this.addCardsToPools();
+			 AbstractDungeon.player.masterMaxOrbs = Math.max(this.orbSlots, AbstractDungeon.player.masterMaxOrbs);
+		}
+    }
 	@SpirePatch(cls = "com.megacrit.cardcrawl.helpers.CardLibrary", method = "initialize")
 	public static class PatchThisShit {
 		public static void Postfix() {

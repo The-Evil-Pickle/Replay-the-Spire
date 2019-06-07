@@ -14,8 +14,8 @@ import replayTheSpire.ReplayTheSpireMod;
 
 public class PortalQuest extends Quest{
     private static final Color COLOR;
-    public int gold;
-
+    private static final int REWARD_AMOUNT = 1;
+    
 	public PortalQuest() {
 		super(PortalQuest.class.getName(), PortalQuest.COLOR, 1, QuestType.BLUE, (ReplayTheSpireMod.SETTING_ROOMS_PORTAL.value <= 20) ? QuestRarity.SPECIAL : ((ReplayTheSpireMod.SETTING_ROOMS_BONFIRE.value < 75) ? QuestRarity.RARE : (QuestRarity.COMMON)));
 	}
@@ -27,19 +27,13 @@ public class PortalQuest extends Quest{
     }
 
 	@Override
-	public Quest createNew() {
-        this.gold = QuestHelper.makeRandomCost(75);
-		return this;
-	}
-
-	@Override
 	public Quest getCopy() {
 		return new PortalQuest();
 	}
 
 	@Override
 	public String getRewardString() {
-		return "Gain " + this.gold + " Gold.";
+		return this.voidShardStrings.TEXT[2] + REWARD_AMOUNT + this.voidShardStrings.TEXT[4];
 	}
 
 	@Override
@@ -49,11 +43,16 @@ public class PortalQuest extends Quest{
 
 	@Override
 	public void giveReward() {
-		CardCrawlGame.sound.play("GOLD_GAIN");
-        AbstractDungeon.player.gainGold(this.gold);
+		InfiniteSpire.gainVoidShards(REWARD_AMOUNT);
 	}
 
+	@Override
+	public Quest createNew() {
+		return this;
+	}
+	
     static {
         COLOR = new Color(0.25f, 0.25f, 1.0f, 1.0f);
     }
+
 }

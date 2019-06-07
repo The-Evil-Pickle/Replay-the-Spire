@@ -1,10 +1,11 @@
 {
-  "Replay:DefectDark": { // While you can separate different Json objects in 1 file with ID's,
-                         // the mod loads the *whole* file. So use different files for different archetypes.
-    "NAME": "Defect Dark Extension", //The name of the archetype. This, like the ID, isn't actually used/displayed anywhere, 
-                    //but is useful for keeping track of archetypes.
-    "CARD_IDS": [
-      "Time Bomb"
-    ]
-  }
+  "CHARACTER": "DEFECT",
+  "NAME": "Defect Dark Extension",
+  "ARCHETYPE_NAME": "Dark",
+  "CARD_TYPE": "SKILL",
+  "IMG": "blue/skill/darkness",
+  "TAGS": [],
+  "CARD_IDS": [
+    "Time Bomb"
+  ]
 }
