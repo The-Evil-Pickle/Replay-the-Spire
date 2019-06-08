@@ -4,51 +4,51 @@
     "DESCRIPTION": "造成 !D! 点伤害。 NL 给予所有单位 !M! 层 中毒 。 NL 消耗 。"
   },
   "Poison Darts": {
-    "NAME": "致命毒镖",
-    "DESCRIPTION": "给予 !M! 层 坏死 X 次。 NL 给予所有敌人 X 层 中毒 。",
-	"UPGRADE_DESCRIPTION": "给予 !M! 层 坏死 X 次。 NL 给予所有敌人 X 层 坏死 。"
+    "NAME": "淬毒飞镖",
+    "DESCRIPTION": "给予 !M! 层 暗毒 X 次。 NL 给予所有敌人 X 层 中毒 。",
+	"UPGRADE_DESCRIPTION": "给予 !M! 层 暗毒 X 次。 NL 给予所有敌人 X 层 暗毒 。"
   },
   "Draining Mist": {
-    "NAME": "流失迷雾",
-    "DESCRIPTION": "给与随机一名敌人 3 层 坏死 和 1 层 乏力 !M! 次。 NL 对所有敌人给予 -1 点 力量 。 NL 消耗 。",
-	"UPGRADE_DESCRIPTION": "给与随机一名敌人 3 层 坏死 和 1 层 乏力 !M! 次。 NL 对所有敌人给予 -2 点 力量 。 NL 消耗 。"
+    "NAME": "耗竭毒雾",
+    "DESCRIPTION": "给与随机一名敌人 3 层 暗毒 和 1 层 乏力 !M! 次。 NL 对所有敌人给予 -1 点 力量 。 NL 消耗 。",
+	"UPGRADE_DESCRIPTION": "给与随机一名敌人 3 层 暗毒 和 1 层 乏力 !M! 次。 NL 对所有敌人给予 -2 点 力量 。 NL 消耗 。"
   },
   "Toxin Wave": {
     "NAME": "毒素波",
-    "DESCRIPTION": "给予所有敌人 !M! 层 坏死 。"
+    "DESCRIPTION": "给予所有敌人 !M! 层 暗毒 。"
   },
   "Hidden Blade": {
     "NAME": "隐秘刀刃",
     "DESCRIPTION": "增加 1 张 小刀 到你的手牌，抽 !M! 张牌。"
   },
   "Fluid Movement": {
-    "NAME": "流体运动",
+    "NAME": "流畅动作",
     "DESCRIPTION": "每回合至多保留 !M! 点格挡。"
   },
   "Combo Extender": {
-    "NAME": "拓展连击",
+    "NAME": "延续连击",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 如果是在开始回合时被抽到，则这张牌在被打出之前，耗能变为0。"
   },
   "Sneak Up": {
-    "NAME": "潜行",
+    "NAME": "蛰伏",
     "DESCRIPTION": " 固有 。 虚无 。NL 获得 !M! 层 无实体 。 NL 丢弃所有攻击牌。 NL 回馈 !stslib:refund! 。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": " 固有 。 虚无 。NL 获得 !M! 层 无实体 。 NL 回馈 !stslib:refund! 。 NL 消耗 。"
   },
   "ReplayTheSpireMod:Necrosis": {
-    "NAME": "坏死",
-    "DESCRIPTION": "将所有敌人的 中毒 变为 坏死 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "敌人失去所有的 中毒 ，并给予所有敌人失去 中毒 总量的 坏死 。 NL 消耗 。",
+    "NAME": "暗蚀",
+    "DESCRIPTION": "将所有敌人的 中毒 变为 暗毒 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "敌人失去所有的 中毒 ，并给予所有敌人失去 中毒 总量的 暗毒 。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "那个敌人没有中毒。"
     ]
   },
   "ReplayTheSpireMod:Extra Pockets": {
-    "NAME": "扩展背包",
-    "DESCRIPTION": "丢弃一张牌。 NL 增加等于被丢弃牌能耗值数量的 小刀 到你的手牌。",
-    "UPGRADE_DESCRIPTION": "丢弃一张牌。 NL 增加等于被丢弃牌能耗值数量的已 升级 的 小刀 到你的手牌。"
+    "NAME": "额外背包",
+    "DESCRIPTION": "丢弃一张牌。 NL 增加等于被丢弃牌耗能值数量的 小刀 到你的手牌。",
+    "UPGRADE_DESCRIPTION": "丢弃一张牌。 NL 增加等于被丢弃牌耗能值数量的已 升级 的 小刀 到你的手牌。"
   },
   "ReplayTheSpireMod:Scrap Shanks": {
-    "NAME": "废钢回收",
+    "NAME": "废刃再用",
     "DESCRIPTION": "你每在你的回合丢弃一张牌，增加 !M! 小刀 到你的手牌。",
     "UPGRADE_DESCRIPTION": "你每在你的回合丢弃一张牌，增加 !M! 已 升级 的 小刀 到你的手牌。"
   },
@@ -74,7 +74,7 @@
     ]
   },
   "ReplayTheSpireMod:From All Sides": {
-    "NAME": "刀阵",
+    "NAME": "全向攻击",
     "DESCRIPTION": "给予随机一名敌人 1 层 虚弱 并 造成 !D! 点伤害 2X + !M! 次。",
     "UPGRADE_DESCRIPTION": "丢弃任意张牌， NL 每丢弃一张牌，给予随机一名敌人 1 层 虚弱 并 造成 !D! 点伤害。"
   },
@@ -113,30 +113,30 @@
     ]
   },
   "Replay:Poison Smokescreen": {
-    "NAME": "毒气烟幕",
+    "NAME": "带毒烟幕",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 给予相同层数的 中毒 ，随机分配给所有敌人。 NL 消耗性 !stslib:ex! 。",
     "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 给予相同层数的 中毒 ，随机分配给所有敌人。"
   },
   "Abandon": {
-    "NAME": "抛弃",
-    "DESCRIPTION": "虚无 ，NL 最多消耗 !M! 张牌 。 NL 每张抽 1 张牌。 NL  将一张 虚空 加入你的弃牌堆。 NL 消耗性 !stslib:ex! 。",
-    "UPGRADE_DESCRIPTION": "虚无 ，NL 最多消耗 !M! 张牌 。 NL 每张抽 1 张牌。 NL  将一张 眩晕 加入你的弃牌堆。 NL 消耗性 !stslib:ex! 。"
+    "NAME": "舍弃",
+    "DESCRIPTION": "虚无 ，NL 消耗至多 !M! 张牌 。 NL 每消耗一张牌，抽 1 张牌。 NL  将一张 虚空 加入你的弃牌堆。 NL 消耗性 !stslib:ex! 。",
+    "UPGRADE_DESCRIPTION": "虚无 ，NL 消耗至多 !M! 张牌 。 NL 每消耗一张牌，抽 1 张牌。 NL  将一张 眩晕 加入你的弃牌堆。 NL 消耗性 !stslib:ex! 。"
   },
   "Defy Death": {
-    "NAME": "无惧死亡",
+    "NAME": "反抗死亡",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 你每在战斗中 消耗 一张牌，这张牌的耗能就减少1 [R] 。 NL 墓地 。"
   },
   "Life Link": {
     "NAME": "生命链接",
-    "DESCRIPTION": "选定一个目标敌人。 当你失去生命时， 该名敌人受到等量的伤害。"
+    "DESCRIPTION": "选定一个目标敌人。 当你失去生命时， 选中的敌人受到等量的伤害。"
   },
   "Massacre": {
     "NAME": "屠戮",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 失去所有的 力量 。 NL 力量 在本牌发挥 !M! 倍效果。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 失去所有的 力量 。 NL 力量 在本牌上发挥 !M! 倍效果。"
   },
   "Hemogenesis": {
     "NAME": "造血",
-    "DESCRIPTION": "造成 !D! 点伤害。 获得 !B! 点 格挡 。 回复 !M! 生命。 当在手牌中时，你每次失去生命，将这张牌 升级 。 NL  消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 获得 !B! 点 格挡 。 回复 !M! 生命。 当在手牌中时，每当你失去生命，将这张牌 升级 。 NL  消耗 。"
   },
   "Run Through": {
     "NAME": "贯穿",
@@ -152,12 +152,12 @@
     "UPGRADE_DESCRIPTION": "选择你手牌中的一张攻击牌或技能牌，将其 升级  X+ !M! 次。 NL 回馈 !stslib:refund! 。 NL 消耗 。"
   },
   "Single Out": {
-    "NAME": "甄选",
+    "NAME": "遴选",
     "DESCRIPTION": "给予 !M! 层 易伤 。 NL 抽 1 张牌，如果抽到的不是攻击牌或能力牌，将其 消耗 。"
   },
   "Cursed Blade": {
     "NAME": "诅咒之刃",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 当它在你的手牌时，你不能打出其他牌。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 当它在你的手牌时，你不能打出其它牌。"
   },
   "ReplayReversal": {
     "NAME": "逆转",
@@ -169,7 +169,7 @@
     "DESCRIPTION": "造成 !D! 点伤害。 NL 在这个回合将你手中的一张攻击牌耗能降低为 !M! 。"
   },
   "ReplayTheSpireMod:Stacked": {
-    "NAME": "幻影铠甲",
+    "NAME": "幻影之盾",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 消耗性 !stslib:ex! 。"
   },
   "ReplayTheSpireMod:Corrosion Curse": {
@@ -187,7 +187,7 @@
 	"UPGRADE_DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 给予 1 层 衰老 。 NL 消耗性 !stslib:ex! 。"
   },
   "Eclipse": {
-    "NAME": "日食",
+    "NAME": "日蚀",
     "DESCRIPTION": "消耗 你的手牌， 替换为减少 1 费的随机牌。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "消耗 你的手牌， 替换为减少 1 费的随机牌。 NL 回馈 !stslib:refund! 。 NL 消耗 。"
   },
@@ -197,7 +197,7 @@
   },
   "ReplayTheSpireMod:Limb From Limb": {
     "NAME": "肢解",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果他造成了不少于 !M! 点的未被格挡的伤害， 回馈 2 并抽 2 张牌。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果它造成了不少于 !M! 点的未被格挡的伤害， 回馈 2 并抽 2 张牌。"
   },
   "Replay:Sporebomb": {
     "NAME": "孢子炸弹",
@@ -209,7 +209,7 @@
 	]
   },
   "ReplayScrap": {
-    "NAME": "钢碎屑",
+    "NAME": "废铁",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 如果杀死了一个非爪牙敌人， 回复 6 生命，它在本局游戏中的伤害永久性增加 !M! 。"
   },
   "ReplayGash": {
@@ -227,7 +227,7 @@
     "UPGRADE_DESCRIPTION": " 固有 。 NL 你的回合结束时， 消耗 手牌中所有普通牌， 每张获得 !M! 点 格挡 。"
   },
   "Mirror Shield": {
-    "NAME": "镜像防御",
+    "NAME": "镜盾",
     "DESCRIPTION": "生成一个 晶体 充能球 和一个 冰霜 充能球 。NL 获得 !B! 点 格挡 。 NL 获得 !M! 层 反射 。"
   },
   "ReplayTheSpireMod:Repulse": {
@@ -239,7 +239,7 @@
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害 !M! 次。 NL 将 2 张 回火 加入你的弃牌堆。"
   },
   "ReplayTheSpireMod:Dual Polarity": {
-    "NAME": "二极性",
+    "NAME": "双极性",
     "DESCRIPTION": "生成 !M! 个 ：闪电 和 黑暗 充能球；晶体 和 冰霜 充能球；雨水 和 狱炎 充能球； 玻璃 和 等离子 充能球。",
 	"EXTENDED_DESCRIPTION": [
 		"选择",
@@ -263,18 +263,18 @@
     "UPGRADE_DESCRIPTION": " 保留 。 NL 激发 你所有的充能球。 NL 抽 !M! 张牌。 NL 消耗 。 "
   },
   "ReplayRNGCard": {
-    "NAME": "随机",
+    "NAME": "随机数",
     "DESCRIPTION": "生成 X 个随机充能球。",
     "UPGRADE_DESCRIPTION": "生成 X+1 个随机充能球"
   },
   "BasicCrystalCard": {
-    "NAME": "水晶导管",
+    "NAME": "晶体导管",
     "DESCRIPTION": "生成 1 个 晶体 充能球。",
     "UPGRADE_DESCRIPTION": "生成 1 个 晶体 充能球。 NL 生成 1 个随机充能球。"
   },
   "ReplayIlluminate": {
     "NAME": "光辉",
-    "DESCRIPTION": "生成 1 个 圣光 充能球 。 NL 消耗 。"
+    "DESCRIPTION": "生成 1 个 光明 充能球 。 NL 消耗 。"
   },
   "ReplaySort": {
     "NAME": "排序",
@@ -286,12 +286,12 @@
 		"将弃牌堆的所有稀有牌加入抽牌堆， NL 抽 !M! 张牌。",
 		"类型",
 		"将弃牌堆的所有非状态牌加入抽牌堆。 NL 抽 !M! 张牌。",
-		"能耗",
+		"耗能",
 		"将弃牌堆的所有0费牌加入抽牌堆。 NL 抽 !M! 张牌。"
 	]
   },
   "ReplaySolidLightProjector": {
-    "NAME": "强光投影仪",
+    "NAME": "固态光投影仪",
     "DESCRIPTION": "你的弃牌堆每有 !M! 张牌，获得 !B! 点护盾。 NL 消耗性 !stslib:ex! 。",
 	"EXTENDED_DESCRIPTION": [
 		" NL （总共获得 ",
@@ -303,11 +303,11 @@
     "DESCRIPTION": "获得 !M! 点 集中 。 NL 你的回合结束时，失去 !M! 点 集中 。"
   },
   "Time Bomb": {
-    "NAME": "时间炸弹",
-    "DESCRIPTION": "获得 2 个充能球栏位。 NL 生成 2 个 玻璃 充能球。 NL 生成一个 黑暗 充能球 并触发他的被动 !M! 次。 NL 消耗 。"
+    "NAME": "定时炸弹",
+    "DESCRIPTION": "获得 2 个充能球栏位。 NL 生成 2 个 玻璃 充能球。 NL 生成一个 黑暗 充能球 并触发它的被动 !M! 次。 NL 消耗 。"
   },
   "FIFO Queue": { 
-    "NAME": "优化内存", 
+    "NAME": "FIFO队列", 
     "DESCRIPTION": "获得 !M! 个充能球栏位。", 
     "UPGRADE_DESCRIPTION": " 固有 。 获得 !M! 个充能球栏位。" 
   },
@@ -344,9 +344,9 @@
 	"UPGRADE_DESCRIPTION": "选择：失去 !M! 点 力量 ， 敏捷 或 集中 。 NL 选择： 获得 !M! 点 力量，敏捷 或 集中 。 NL 消耗 。"
   },
   "Improvise": {
-    "NAME": "即兴创作",
-    "DESCRIPTION": "从3张随机牌中选择1张加入你的手牌。 他的能耗降低1。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "从3张随机牌中选择1张加入你的手牌。 他的能耗降低1 。 NL 消耗 。"
+    "NAME": "凑合",
+    "DESCRIPTION": "从3张随机牌中选择1张加入你的手牌。 它的耗能降低1。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "从3张随机牌中选择1张加入你的手牌。 它的耗能降低1 。 NL 消耗 。"
   },
   "Midas Touch": {
     "NAME": "点金手",
@@ -364,11 +364,11 @@
   },
   "Poisoned Strike": {
     "NAME": "毒素打击",
-    "DESCRIPTION": "给予 !D! 层 中毒 。 NL 数值按造成攻击计算。"
+    "DESCRIPTION": "给予 !D! 层 中毒 。 NL 伤害受影响伤害的效果加成。"
   },
   "ReplayTheSpireMod:Trickstab": {
-    "NAME": "骗局",
-    "DESCRIPTION": "造成 !D! 点 !M! 次。 NL 数值按获得 格挡 计算。"
+    "NAME": "诡骗刺击",
+    "DESCRIPTION": "造成 !D! 点 !M! 次。 NL 伤害受影响 格挡 的效果加成。"
   },
   "Specialist": {
     "NAME": "专家",
@@ -384,13 +384,13 @@
 	"UPGRADE_DESCRIPTION": "获得 !M! 层 人工制品 。 NL 获得 !M! 点 敏捷 。 NL 获得 1 层 无实体 。 NL 获得 5 层 多层护甲 。 NL 获得 !B! 层 护盾 。"
   },
   "Replay:Sssssssssstrike": {
-    "NAME": "打打打打打击",
-    "DESCRIPTION": "造成 !D! 点伤害。 这张牌的能耗每多 [E] ，则增加额外的 !D! 点伤害。 NL 回馈 !stslib:refund! 。 NL 异蛇 。"
+    "NAME": "嘶嘶打击",
+    "DESCRIPTION": "造成 !D! 点伤害。 这张牌的耗能每多 [E] ，造成的伤害增加 !D! 。 NL 回馈 !stslib:refund! 。 NL 异蛇 。"
   },
   "Replay:Sssssssssshield": {
-    "NAME": "防防防防防御",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 这张牌的能耗每多 [E] ，则增加额外的 !D! 层 护盾 。 NL 异蛇 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 这张牌的能耗每多 [E] ，则增加额外的 !D! 层 护盾 。 NL 回馈 !stslib:refund! 。 NL 异蛇 。 NL 消耗 。"
+    "NAME": "嘶嘶护盾",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 这张牌的耗能每多 [E] ，则增加额外的 !D! 层 护盾 。 NL 异蛇 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 这张牌的耗能每多 [E] ，则增加额外的 !D! 层 护盾 。 NL 回馈 !stslib:refund! 。 NL 异蛇 。 NL 消耗 。"
   },
     "Replay:Parry": {
     "NAME": "招架",
@@ -433,10 +433,10 @@
   },
   "Crow Ritual": {
     "NAME": "觉醒仪式",
-    "DESCRIPTION": "在你的抽牌堆和弃牌堆加入 !M! 张 仪式组件。 NL 如果手牌中同时拥有 5 张仪式组件，他们变成一张造成 !D! 点伤害的攻击牌。",
+    "DESCRIPTION": "在你的抽牌堆和弃牌堆加入 !M! 张 仪式组件。 NL 如果手牌中同时拥有 5 张仪式组件，将它们变为一张造成 !D! 点伤害的攻击牌。",
 	"EXTENDED_DESCRIPTION": [
 		"仪式组件",
-		"零费抽 1 技能牌。"
+		"耗费为 0 并抽 1 张牌的技能牌。"
 	]
   },
   "Ritual Component": {
@@ -449,11 +449,11 @@
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
   },
   "Looming Evil": {
-	"NAME": "恶魔降临",
-	"DESCRIPTION": " 消耗 。 NL 你的回合结束时，将一张诅咒牌加入你的抽牌堆并降低能耗。",
+	"NAME": "邪恶迫近",
+	"DESCRIPTION": " 消耗 。 NL 你的回合结束时，将一张诅咒牌加入你的抽牌堆并降低耗能。",
     	"EXTENDED_DESCRIPTION": [
     	"用 ",
-    	" 点能量 消耗 。 NL 你的回合结束时，将一张诅咒牌加入你的抽牌堆并降低能耗。"
+    	" 点能量 消耗 。 NL 你的回合结束时，将一张诅咒牌加入你的抽牌堆并降低耗能。"
 		]
   },
   "Hallucinations": {
@@ -461,15 +461,15 @@
 	"DESCRIPTION": " 不能被打出 。 NL 你的回合结束时，将 !M! 张随机牌加入你的抽牌堆。 NL 消耗性 !stslib:ex! 。"
   },
   "Sickly": {
-	"NAME": "病态",
+	"NAME": "病弱",
 	"DESCRIPTION": " 不能被打出 。 NL 你的回合结束时，失去 !M! 点 格挡 。"
   },
   "Languid": {
-	"NAME": "抑郁",
+	"NAME": "消沉",
 	"DESCRIPTION": " 不能被打出 。 NL 每当你抽到这张牌，获得 !M! 层 乏力 并抽 1 张牌。"
   },
   "CommonCold": {
-	"NAME": "感冒",
+	"NAME": "普通感冒",
 	"DESCRIPTION": "啊啾!",
 	"EXTENDED_DESCRIPTION": [
 		" NL 能被医疗箱消耗而不是蓝蜡烛。"
@@ -485,14 +485,14 @@
   },
   "Spreading Infection": {
 	"NAME": "传染",
-	"DESCRIPTION": " 不能被打出 。 NL 你的回合结束时， 复制你手牌中其他所有的状态和诅咒。"
+	"DESCRIPTION": " 不能被打出 。 NL 你的回合结束时， 复制你手牌中其它所有的状态和诅咒。"
   },
   "Amnesia": {
 	"NAME": "失忆",
 	"DESCRIPTION": " 不能被打出 。 NL 你的回合结束时， 消耗 你的手牌 。"
   },
   "AbeCurse": {
-	"NAME": "艾比的愤怒",
+	"NAME": "艾比的报复",
 	"DESCRIPTION": " 不能被打出 。 NL 你的回合结束时， 获得 !M! 层 脆弱 。 NL  虚无 。灵魂绑定 。"
   },
   "MirrorMistCurse": {
@@ -500,20 +500,20 @@
 	"DESCRIPTION": " 不能被打出 。 NL 你不知何故没有可转换的牌，所以你得到了这个。"
   },
   "Overencumbered": {
-	"NAME": "过度负担",
+	"NAME": "重负",
 	"DESCRIPTION": " 不能被打出 。 NL 每当你抽到这张牌，将 !M! 张 眩晕 加入你的手牌并抽 1 张牌。"
   },
   "ReplayTheSpireMod:Doomed": {
-	"NAME": "命定",
+	"NAME": "定数",
 	"DESCRIPTION": "死亡 。 NL 即逝 。 NL 虚无 。 NL 墓地 。"
   },
   "ReplayTheSpireMod:Faulty Equipment": {
-	"NAME": "故障设备",
+	"NAME": "残次设备",
 	"DESCRIPTION": " 不能被打出 。 NL 灵魂绑定 。",
 	"UPGRADE_DESCRIPTION": " 即逝 。"
   },
   "ReplayTheSpireMod:Restless Dread": {
-	"NAME": "躁动恐惧",
+	"NAME": "不息恐惧",
 	"DESCRIPTION": "自动打出 。 NL 抽 1 张牌。 NL 将 !M! 随机诅咒牌加入你的弃牌堆。 NL 消耗 。 NL 墓地 。"
   },
   "ReplayTheSpireMod:Splinters": {
@@ -525,23 +525,23 @@
 	"DESCRIPTION": "支付 !M! 金币来打出。 NL 即逝 。 NL 灵魂绑定 。"
   },
   "ReplayTheSpireMod:Whispers of Evil": {
-	"NAME": "恶魔密语",
+	"NAME": "邪恶低语",
 	"DESCRIPTION": " 自动打出 。 NL 在你的回合开始时， 多抽 !M! 张牌。 NL 你的回合结束时，将 !M! 张随机诅咒牌的 回响 加入你的抽牌堆。"
   },
   "ReplayTheSpireMod:Misquitos": {
-	"NAME": "蚊子群",
+	"NAME": "蚊群",
 	"DESCRIPTION": " 自动打出 。 NL 对所有人造成 !M! 点伤害。"
   },
   "ReplayTheSpireMod:Imminent Threat": {
-	"NAME": "火烧眉毛",
-	"DESCRIPTION": " 固有 。 NL 受到 !M! 点伤害。 NL 消耗 。 NL 转变为 图谋不轨 。"
+	"NAME": "凶兆临头",
+	"DESCRIPTION": " 固有 。 NL 受到 !M! 点伤害。 NL 消耗 。 NL 转变为 凶兆将至 。"
   },
   "ReplayTheSpireMod:Vengeful Threat": {
-	"NAME": "图谋不轨",
-	"DESCRIPTION": " 墓地 。 NL 抽 1 张牌。 NL 消耗 。 NL 转变为 火烧眉毛 。"
+	"NAME": "凶兆将至",
+	"DESCRIPTION": " 墓地 。 NL 抽 1 张牌。 NL 消耗 。 NL 转变为 凶兆临头 。"
   },
   "ReplayTheSpireMod:Meltdown Sequence": {
-	"NAME": "熔化序列",
+	"NAME": "熔毁序列",
 	"DESCRIPTION": " 不能被打出 。 NL 循环 。 当 循环 时: NL 向你的弃牌堆增加 1 张 滞后 。 消耗性 !stslib:ex! 。 NL 起动 ：在你的弃牌堆增加 !M! 张 滞后+ 。",
 	"UPGRADE_DESCRIPTION": " 不能被打出 。 NL 过热：< !construct:O! > NL 循环 。 循环 时： NL 在你的弃牌堆增加 1 张 滞后 。 消耗性 !stslib:ex! 。 NL 起动 ：在你的弃牌堆增加 !M! 张 滞后+ 。"
   },
@@ -551,7 +551,7 @@
 	"UPGRADE_DESCRIPTION": " 不能被打出 。 NL 过热：< !construct:O! > 。 NL 循环 。"
   },
   "ReplayTheSpireMod:Compounding Headache": {
-	"NAME": "复合性头痛",
+	"NAME": "加剧头痛",
 	"DESCRIPTION": "抽 1 张牌。 NL 失去 !beaked:wI! 点生命 。 NL 消耗 。 NL wither -1 。",
 	"EXTENDED_DESCRIPTION": [
 	"增加血量流逝。"
@@ -569,7 +569,7 @@
 	"DESCRIPTION": " 不能被打出 。 NL 自我保留 。 NL 你的回合结束时，转变为 犹豫的悔恨。"
   },
   "ReplayTheSpireMod:Greater Regret": {
-	"NAME": "犹豫的悔恨",
+	"NAME": "拖延悔恨",
 	"DESCRIPTION": " 不能被打出 。 NL 你的回合结束时，造成 !M! Fibonacci 伤害。 NL 转变为 优柔寡断 。"
   },
   "Replay:Sluggish": {
@@ -605,7 +605,7 @@
 	]
   },
   "ReplayTheSpireMod:Necrogeddon": {
-	"NAME": "尸首",
+	"NAME": "亡灵浩劫",
 	"DESCRIPTION": "造成你本场战斗所 消耗 的牌数值的伤害。 NL  墓地 。",
 	"UPGRADE_DESCRIPTION": "对所有敌人造成你本场战斗所 消耗 的牌数值的伤害。 NL  墓地 。",
 	"EXTENDED_DESCRIPTION": [
@@ -613,19 +613,19 @@
     ]
   },
   "ReplayTheSpireMod:Haul": {
-	"NAME": "运送",
+	"NAME": "拖拽",
 	"DESCRIPTION": "抽光你整个的抽牌堆。 NL 你本回合不能再抽牌。 NL 消耗性 !stslib:ex! 。",
 	"UPGRADE_DESCRIPTION": "抽光你整个的抽牌堆。 NL 消耗性 !stslib:ex! 。"
   },
   "ReplayTheSpireMod:Black Plague": {
 	"NAME": "黑死病",
-	"DESCRIPTION": "抽 !replay:M/2u! 张牌。 NL 给予 !M! 层 中毒 。 NL 给予 !M! 层 坏死 。 NL 给予 !M! 层 乏力 。 NL 给予 !M! 层 衰老 。 NL 消耗 。",
+	"DESCRIPTION": "抽 !replay:M/2u! 张牌。 NL 给予 !M! 层 中毒 。 NL 给予 !M! 层 暗毒 。 NL 给予 !M! 层 乏力 。 NL 给予 !M! 层 衰老 。 NL 消耗 。",
 	"EXTENDED_DESCRIPTION": [
 		"打出时，这张牌消耗并增加两站新的只有一半属性的相同牌。",
 		"抽 !replay:M/2u! 张牌。 NL ",
 		"抽 !replay:M/2u! 张牌。 NL ",
 		"给予 !M! 层 中毒 。 NL ",
-		"给予 !M! 层 坏死 。 NL ",
+		"给予 !M! 层 暗毒 。 NL ",
 		"给予 !M! 层 乏力 。 NL ",
 		"给予 !M! 层 衰老 。 NL ",
 		"对半分裂这张牌。",
@@ -643,19 +643,19 @@
 	"UPGRADE_DESCRIPTION": "获得 !B! 层 护盾 。 NL 获得 !M! 人工制品。 NL 混乱 全部敌人。 在每回合你抽到的前 !M! 张牌的效果将被打乱。"
   },
   "ReplayTheSpireMod:Echo Chamber": {
-	"NAME": "回响室",
-	"DESCRIPTION": "在每回合你打出的前 !M! 张非虚无牌非能力牌，将他的 回响 加入你的手牌。",
-	"UPGRADE_DESCRIPTION": "在每回合你打出的前 !M! 张牌，将他的 回响 加入你的手牌。"
+	"NAME": "回响腔",
+	"DESCRIPTION": "在每回合你打出的前 !M! 张非虚无牌非能力牌，将它的 回响 加入你的手牌。",
+	"UPGRADE_DESCRIPTION": "在每回合你打出的前 !M! 张牌，将它的 回响 加入你的手牌。"
   },
   "ReplayTheSpireMod:Brewmster": {
-	"NAME": "炼制大师",
+	"NAME": "炼药大师",
 	"DESCRIPTION": "在你的回合开始时，获得一瓶随机药水。",
 	"UPGRADE_DESCRIPTION": "在你的回合开始时，获得一瓶随机药水。"
   },
   "ReplayTheSpireMod:Dark Transmutation": {
-	"NAME": "黑暗嬗变",
-	"DESCRIPTION": "在你的手牌中增加 X 张随机黑色牌。 NL 本回合他们的能耗降低 1 。 NL 抹除 。",
-	"UPGRADE_DESCRIPTION": "在你的手牌中增加 X 张随机黑色牌。 NL 本回合他们的能耗降低 1 。 NL 回馈 !stslib:refund! 。 NL 抹除 。"
+	"NAME": "黑暗转化",
+	"DESCRIPTION": "在你的手牌中增加 X 张随机黑色牌。 NL 本回合它们的耗能降低 1 。 NL 抹除 。",
+	"UPGRADE_DESCRIPTION": "在你的手牌中增加 X 张随机黑色牌。 NL 本回合它们的耗能降低 1 。 NL 回馈 !stslib:refund! 。 NL 抹除 。"
   },
   "Replay:Fractal Strike": {
     "NAME": "分形打击",
@@ -682,7 +682,7 @@
 	"DESCRIPTION": "获得 !M! 层 多层护甲 。 NL 消耗性 !stslib:ex!"
   },
   "Replay:BasicMightCard": {
-	"NAME": "强力",
+	"NAME": "威猛",
 	"DESCRIPTION": "之后 X 个回合， 你的攻击伤害增加 25% 。 NL 回馈 !stslib:refund! 。"
   },
   "Ghost Swipe": {
@@ -696,7 +696,7 @@
   "Ghost Fetch": {
     "NAME": "幽灵抓取",
     "DESCRIPTION": "虚无 。 NL 从抽牌堆中选择一张基础牌到你的手牌中。 NL 消耗 。",
-	"UPGRADE_DESCRIPTION": "虚无 。 NL 从抽牌堆中选择一张基础牌到你的手牌中。 NL 本回合能耗为零。 NL 消耗 。",
+	"UPGRADE_DESCRIPTION": "虚无 。 NL 从抽牌堆中选择一张基础牌到你的手牌中。 NL 本回合耗能为零。 NL 消耗 。",
 	"EXTENDED_DESCRIPTION": [
     	"我的抽牌堆中没有基础牌。"
     ]
@@ -724,7 +724,7 @@
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 生成 !M! 个 狱炎 充能球。"
   },
   "Firewall": {
-    "NAME": "火焰高墙",
+    "NAME": "火墙",
     "DESCRIPTION": "获得  !B!  点 格挡 。 NL 本回合内，你每完全格挡住伤害时，生成 !M! 个 狱炎 充能球。"
   },
   "IC_BasicHellfireCard": {
@@ -742,7 +742,7 @@
   },
   "Replay:Spark Circuitry": {
     "NAME": "火花回路",
-    "DESCRIPTION": "生成 !M! 个 魔力火花 。 NL 增幅 [E] : 优先 生成 !M! 个 水晶 充能球。 NL 消耗 。"
+    "DESCRIPTION": "生成 !M! 个 魔力火花 充能球 。 NL 增幅 [E] : 先 生成 !M! 个 水晶 充能球。 NL 消耗 。"
   },
   "Replay:GuardianBash": {
     "NAME": "猛！击！",
@@ -794,21 +794,21 @@
 	]
   },
   "ReplayTheSpireMod:Armaments MK-II": {
-    "NAME": "军备 MK-II",
-    "DESCRIPTION": "获得 !B!  格挡 。 NL 升级一张你的手牌。 NL 能 超升级 牌。",
-    "UPGRADE_DESCRIPTION": "获得 !B!点 格挡 。 NL 升级你全部的手牌。 NL 能 超升级 牌。",
+    "NAME": "武装 MK-II",
+    "DESCRIPTION": "获得 !B!  格挡 。 NL 在本场战斗中 升级 手牌中的一张牌。 NL 能 超升级 牌。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 在本场战斗中 升级 你的所有手牌。 NL 能 超升级 牌。",
 	"EXTENDED_DESCRIPTION": [
 		"获得 !B! 点 格挡 。 NL 超升级 你的全部手牌。"
 	]
   },
   "ReplayTheSpireMod:Mirror System": {
-    "NAME": "爪牙系统",
+    "NAME": "镜像系统",
     "DESCRIPTION": " 过热：< !construct:O! >   NL 循环 。 如果你有小于 1 的 敏捷 。 NL 获得 !M! 层 反射 。"
   },
   "ReplayTheSpireMod:Armaments MK-II-B": {
-    "NAME": "军备 MK-II-B",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 升级 一张你的手牌。 NL 如果这张牌已经被升级，则 强化 。 NL 消耗性 !stslib:ex! 。",
-    "UPGRADE_DESCRIPTION": "获得  !B! 点 格挡 。 NL 升级 你全部的手牌。 NL 如果这张牌已经被升级，则 强化 。 NL 消耗性 !stslib:ex! 。"
+    "NAME": "武装 MK-II-B",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 在本场战斗中 升级 手牌中的一张牌。 NL 如果这张牌已经被升级，则 强化 。 NL 消耗性 !stslib:ex! 。",
+    "UPGRADE_DESCRIPTION": "获得  !B! 点 格挡 。 NL 在本场战斗中 升级 你的所有手牌。 NL 已 升级 的牌将会被 强化 。 NL 消耗性 !stslib:ex! 。"
   },
   "BackFire": {
     "NAME": "回火",
@@ -856,7 +856,7 @@
     "UPGRADE_DESCRIPTION": "丢弃 !M! 张牌。 NL 取出 !replay:M+1! 张牌。 NL 消耗性 !stslib:ex! 。"
   },
   "Replay:SS_forest_2": {
-    "NAME": "森林珍宝",
+    "NAME": "林中宝藏",
     "DESCRIPTION": "获得 !M! 个随机遗物的效果。"
   },
   "Replay:SS_forest_3": {
@@ -870,10 +870,10 @@
   },
   "Replay:SS_forest_5": {
     "NAME": "永远迷失",
-    "DESCRIPTION": "指定一名敌人。 NL 它每失去 !M! 生命，他们获得 1 层 乏力 。"
+    "DESCRIPTION": "指定一名敌人。 NL 它每失去 !M! 生命，它们获得 1 层 乏力 。"
   },
   "Replay:SS_forest_6": {
-    "NAME": "丛林垂钓",
+    "NAME": "林中垂钓",
     "DESCRIPTION": "选择： 获得 !M! 点 敏捷 或 回复 10 生命。",
 	"EXTENDED_DESCRIPTION": [
 		"选择",
@@ -888,11 +888,11 @@
     "DESCRIPTION": "给予 !M! 层 溺水 。 NL 消耗 。"
   },
   "Replay:SS_fish_2": {
-    "NAME": "生命吊灯",
+    "NAME": "复生灯笼",
     "DESCRIPTION": "回复 !M! 生命。 NL 如果你的生命小于一半， 获得 1 层 无实体 。 NL 消耗性 !stslib:ex! 。"
   },
   "Replay:SS_fish_3": {
-    "NAME": "坟墓",
+    "NAME": "深埋海底",
     "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 获得 2 层 虚弱 。 NL 消耗 。",
 	"UPGRADE_DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 消耗 。"
   },
@@ -909,7 +909,7 @@
     "DESCRIPTION": "获得 !M! 多层护甲 。"
   },
   "Replay:SS_hec_3": {
-    "NAME": "碾压他们！",
+    "NAME": "碾压它们！",
     "DESCRIPTION": "造成 !D! 点伤害并同时对周围随机一名敌人实行一次。"
   },
   "Replay:SS_hec_4": {
@@ -921,7 +921,7 @@
     "DESCRIPTION": "对随机一名敌人你给予 1 层 易伤 !M! 次。 NL 消耗 。"
   },
   "Replay:Jungle:SS_maw_2": {
-    "NAME": "亚甲基酯",
+    "NAME": "消化吸收",
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 对爪牙造成双倍伤害。 NL 回复未被格挡伤害的生命。 NL 消耗 。"
   },
   "Replay:Jungle:SS_maw_3": {
@@ -929,35 +929,35 @@
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 1 张牌。 NL 消耗性 !stslib:ex! 。"
   },
   "Replay:Jungle:SS_maw_4": {
-    "NAME": "成长",
+    "NAME": "长大",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 点 力量 。"
   },
   "Replay:Jungle:SS_spyder_1": {
-    "NAME": "网络高墙",
+    "NAME": "蛛网之墙",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 给予意图为攻击的敌人 !M! 层 虚弱 。 NL 消耗 。"
   },
   "Replay:Jungle:SS_spyder_2": {
-    "NAME": "守卫间谍",
+    "NAME": "蜘蛛守卫",
     "DESCRIPTION": "获得 !B! 层 护盾 和 !M! 层 增益 。 NL 消耗 。"
   },
   "Replay:Jungle:SS_spyder_3": {
-    "NAME": "攻击间谍",
+    "NAME": "蜘蛛打手",
     "DESCRIPTION": "获得 !B! 层 护盾 。 NL 对随机一名敌人造成 !D! 点伤害。 NL 消耗 。"
   },
   "Replay:Jungle:SS_spyder_4": {
-    "NAME": "包裹",
-    "DESCRIPTION": "选定一个目标敌人。 NL 他们在他们的回合结束时受到 !M! 点伤害。"
+    "NAME": "裹紧蛛网",
+    "DESCRIPTION": "选定一个目标敌人。 NL 它们在它们的回合结束时受到 !M! 点伤害。"
   },
   "Replay:Jungle:SS_totem_1": {
-    "NAME": "防御图腾",
+    "NAME": "守护图腾",
     "DESCRIPTION": "获得 !B! 层 护盾。 NL 每回合获得 !M! 点 格挡 。"
   },
   "Replay:Jungle:SS_totem_2": {
-    "NAME": "图腾反应",
+    "NAME": "图腾响应",
     "DESCRIPTION": "获得 !M! 层 荆棘 。"
   },
   "Replay:Jungle:SS_totem_3": {
-    "NAME": "振奋图腾",
+    "NAME": "激励图腾",
     "DESCRIPTION": "获得 !B! 层 护盾。 NL 每回合获得 !M! 点 力量 。"
   },
   "Replay:Jungle:SS_totem_4": {
@@ -970,8 +970,8 @@
     "UPGRADE_DESCRIPTION": "戏法 。 NL 增加一张已升级的 小刀 到你的手牌中。 NL 抽 1 张牌。"
   },
   "Replay:NecroticArchetypeSelectCard": {
-    "NAME": "坏死",
-    "DESCRIPTION": "在你的奖励池中增加一张坏死牌。"
+    "NAME": "暗毒",
+    "DESCRIPTION": "在你的奖励池中增加一张 暗毒 牌。"
   },
   "Replay:ThickDeckSelectCard": {
     "NAME": "大牌组 / 状态牌",
@@ -979,6 +979,6 @@
   },
   "Replay:SilentWeakSelectCard": {
     "NAME": "弱点",
-    "DESCRIPTION": "在你的奖励池中增加能给予虚弱或能与虚弱配合的牌。"
+    "DESCRIPTION": "在你的奖励池中增加能给予 虚弱 或能与 虚弱 配合的牌。"
   }
 }
