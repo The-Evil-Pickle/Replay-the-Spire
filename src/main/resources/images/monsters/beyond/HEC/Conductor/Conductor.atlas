@@ -6,7 +6,7 @@ filter: Linear,Linear
 repeat: none
 foot_r
   rotate: false
-  xy: 259, 200
+  xy: 252, 198
   size: 44, 33
   orig: 44, 33
   offset: 0, 0
@@ -27,7 +27,7 @@ leg_r_2
   index: -1
 foot_l
   rotate: false
-  xy: 259, 164
+  xy: 226, 162
   size: 43, 34
   orig: 43, 34
   offset: 0, 0
@@ -49,16 +49,16 @@ leg_l_2
 Arm_R_1
   rotate: false
   xy: 167, 189
-  size: 61, 41
+  size: 57, 38
   orig: 61, 41
-  offset: 0, 0
+  offset: 2, 1
   index: -1
 Arm_R_2
   rotate: false
-  xy: 236, 1
-  size: 36, 61
+  xy: 226, 198
+  size: 24, 53
   orig: 36, 61
-  offset: 0, 0
+  offset: 1, 3
   index: -1
 BAR
   rotate: false
@@ -69,7 +69,7 @@ BAR
   index: -1
 hand_r
   rotate: false
-  xy: 167, 232
+  xy: 167, 229
   size: 28, 23
   orig: 28, 23
   offset: 0, 0
@@ -83,7 +83,7 @@ body
   index: -1
 hand_l
   rotate: false
-  xy: 305, 200
+  xy: 252, 70
   size: 24, 29
   orig: 24, 29
   offset: 0, 0
@@ -91,20 +91,20 @@ hand_l
 arm_l_2
   rotate: false
   xy: 67, 182
-  size: 33, 68
+  size: 29, 64
   orig: 33, 68
-  offset: 0, 0
+  offset: 3, 1
   index: -1
 arm_l_1
   rotate: false
   xy: 211, 88
-  size: 40, 74
+  size: 39, 72
   orig: 40, 74
-  offset: 0, 0
+  offset: 1, 1
   index: -1
 hair
   rotate: false
-  xy: 230, 164
+  xy: 236, 1
   size: 27, 67
   orig: 27, 67
   offset: 0, 0
@@ -118,7 +118,7 @@ mask
   index: -1
 light
   rotate: false
-  xy: 211, 164
+  xy: 211, 162
   size: 12, 19
   orig: 12, 19
   offset: 0, 0

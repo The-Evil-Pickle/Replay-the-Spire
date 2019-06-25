@@ -273,6 +273,8 @@ public class HellsEngine extends AbstractMonster {
 					AbstractDungeon.actionManager.addToBottom(new MoveCreaturesAction(mylist2, 50, 60, 0.025f));
 					this.hb_x += 325.0f;
 					this.hb_w += 50.0f;
+					this.conductor.hb_y += 85.0f;
+					this.conductor.hb_h += 25.0f;
 				}
 				this.isFirstTurn = false;
 				AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));

@@ -5,12 +5,17 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.bard.notes.AbstractNote;
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardTags;
 import com.megacrit.cardcrawl.core.Settings;
 
 import replayTheSpire.ReplayTheSpireMod;
 
 public class OrbNote extends AbstractNote
 {
+	@SpireEnum(name = "BARD_ORB_NOTE_TAG")
+    public static AbstractCard.CardTags TAG;
     private static OrbNote singleton;
     
     public static OrbNote get() {
@@ -43,4 +48,9 @@ public class OrbNote extends AbstractNote
     public void render(final SpriteBatch sb, final float x, final float y) {
         super.render(sb, x, y + 16.0f * Settings.scale);
     }
+
+	@Override
+	public CardTags cardTag() {
+		return OrbNote.TAG;
+	}
 }
