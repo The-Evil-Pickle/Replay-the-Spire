@@ -57,7 +57,7 @@ public class DiscoverPatch {
 	}
 
 	private static AbstractCard getTrulyRandomCard() {
-		AbstractCard card = CardLibrary.getAllCards().get(AbstractDungeon.cardRng.random(0, CardLibrary.getAllCards().size()));
+		AbstractCard card = CardLibrary.getAllCards().get(AbstractDungeon.cardRng.random(0, CardLibrary.getAllCards().size()-1));
 
 		if(card == null) {
 			card = new Madness();
