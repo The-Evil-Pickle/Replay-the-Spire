@@ -9,7 +9,7 @@
 	]
   },
   "Death Potion": {
-	"NAME": "死灵药水",
+	"NAME": "死亡药水",
     "DESCRIPTIONS": [
 			"造成 #b",
 			" 点伤害。 失去 #b",
@@ -17,7 +17,7 @@
 	]
   },
   "Doom Potion": {
-	"NAME": "真菌药水",
+	"NAME": "毁灭药水",
     "DESCRIPTIONS": [
 			"在 #b",
 			" 回合后杀死一名敌人。"
@@ -26,8 +26,8 @@
   "Elixir": {
 	"NAME": "万能药",
     "DESCRIPTIONS": [
-			"#y消耗 全部的 #y状态牌 和 #y诅咒牌 。",
-			"#y消耗 你手牌中的全部的 #y状态牌 和 #y诅咒牌 。",
+			"#y消耗 所有的的 #y状态牌 和 #y诅咒牌 。",
+			"#y消耗 你手牌中的的所有 #y状态牌 和 #y诅咒牌 。",
 			"",
 			"好像没有效果……"
 	]
@@ -47,7 +47,7 @@
 	]
   },
   "Toxic Potion": {
-	"NAME": "毒性药水",
+	"NAME": "烈毒药水",
     "DESCRIPTIONS": [
 			"给予所有敌人 #b",
 			" 层 #y坏死毒药 。",
@@ -87,7 +87,7 @@
 	]
   },
   "Cursed Concoction": {
-	"NAME": "诅咒复合体",
+	"NAME": "诅咒合剂",
     "DESCRIPTIONS": [
 			"获得 #b",
 			" 点 #y力量 和 #b",
@@ -104,7 +104,7 @@
   "Salt Potion": {
 	"NAME": "盐汽水",
     "DESCRIPTIONS": [
-			"重启本次战斗。 NL 敌人可能不一样。"
+			"重启本次战斗。 NL 敌人可能会改变。"
 	]
   },
   "ReplayShieldPotion": {
@@ -129,7 +129,7 @@
 	]
   },
   "Reflective Coating": {
-	"NAME": "反射涂料",
+	"NAME": "反光涂料",
     "DESCRIPTIONS": [
 			"获得 #b",
 			" 层 #y残影 。 NL 获得 #b",
