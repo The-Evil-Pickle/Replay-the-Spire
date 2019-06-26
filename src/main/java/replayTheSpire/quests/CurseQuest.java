@@ -33,9 +33,9 @@ public class CurseQuest extends PickUpCardQuest
     
     @Override
     public void giveReward() {
-    	//InfiniteSpire.gainVoidShards(REWARD_AMOUNT);
-    	final ArrayList<AbstractCard> randomBlackCards = CardHelper.getBlackRewardCards();
-        AbstractDungeon.cardRewardScreen.open(randomBlackCards, null, "Select a Card.");
+    	InfiniteSpire.gainVoidShards(REWARD_AMOUNT);
+    	//final ArrayList<AbstractCard> randomBlackCards = CardHelper.getBlackRewardCards();
+        //AbstractDungeon.cardRewardScreen.open(randomBlackCards, null, "Select a Card.");
     }
     
     @Override
@@ -51,8 +51,8 @@ public class CurseQuest extends PickUpCardQuest
     
     @Override
     public String getRewardString() {
-    	//return this.voidShardStrings.TEXT[2] + REWARD_AMOUNT + this.voidShardStrings.TEXT[4];
-        return "Choose a Black card to obtain.";
+    	return this.voidShardStrings.TEXT[2] + REWARD_AMOUNT + this.voidShardStrings.TEXT[4];
+        //return "Choose a Black card to obtain.";
     }
     
     @Override

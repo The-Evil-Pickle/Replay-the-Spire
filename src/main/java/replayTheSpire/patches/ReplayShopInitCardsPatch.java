@@ -8,8 +8,10 @@ import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
+import com.megacrit.cardcrawl.mod.replay.relics.M_MistRelic;
 import com.megacrit.cardcrawl.mod.replay.relics.RingOfChaos;
 import com.megacrit.cardcrawl.mod.replay.rooms.*;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import replayTheSpire.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -49,7 +51,6 @@ public class ReplayShopInitCardsPatch {
 		}
 		String tagtype = tagList.get(AbstractDungeon.merchantRng.random(0, tagList.size() - 1));
 		OnSaleTag.img = ImageMaster.loadImage(tagtype);
-		
 		if (tagtype == ReplayShopInitCardsPatch.DOUBLE_TAG) {
 				ReplayShopInitCardsPatch.doubleCard = saleCard;
 				saleCard.price *= 3;

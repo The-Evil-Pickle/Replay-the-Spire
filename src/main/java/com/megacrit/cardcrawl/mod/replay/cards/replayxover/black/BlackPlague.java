@@ -37,7 +37,7 @@ public class BlackPlague extends BlackCard {
 	private static final int E_DEC = 3;
 
 	public BlackPlague() {
-		super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, CardType.SKILL, CardTarget.ENEMY);
+		super(ID, NAME, "cards/replay/replayBetaSkillDark.png", COST, DESCRIPTION, CardType.SKILL, CardTarget.ENEMY);
 		this.baseMagicNumber = 4;
 		this.magicNumber = this.baseMagicNumber;
 		this.exhaust = true;

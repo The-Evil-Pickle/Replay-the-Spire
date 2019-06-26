@@ -28,7 +28,7 @@ public class ChaosVortex extends BlackCard
     private static final String UPGRADE_DESCRIPTION;
     
     public ChaosVortex() {
-        super(ID, NAME, "cards/replay/replayBetaPowerDark.png", COST, DESCRIPTION, AbstractCard.CardType.POWER, AbstractCard.CardTarget.SELF);
+        super(ID, NAME, "cards/replay/chaos_vortex.png", COST, DESCRIPTION, AbstractCard.CardType.POWER, AbstractCard.CardTarget.SELF);
         this.baseBlock = 10;
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;

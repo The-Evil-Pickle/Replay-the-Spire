@@ -29,7 +29,7 @@ public class FractalStrike extends BlackCard
     private static final String DESCRIPTION;
     
     public FractalStrike() {
-        super(ID, NAME, "cards/replay/replayBetaAttackDark.png", COST, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardTarget.ENEMY);
+        super(ID, NAME, "cards/replay/fractal_strike.png", COST, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardTarget.ENEMY);
         ExhaustiveVariable.setBaseValue(this, 2);
         this.baseDamage = 2;
         this.damage = this.baseDamage;

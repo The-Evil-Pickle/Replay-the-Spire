@@ -49,6 +49,7 @@ public abstract class M_MistRelic extends AbstractRelic
         	if (!cardIsInPool(c)) {
         		switch (c.rarity) {
 					case BASIC:
+						c.rarity = AbstractCard.CardRarity.COMMON;
 					case COMMON: {
 						AbstractDungeon.commonCardPool.addToTop(c);
 						AbstractDungeon.srcCommonCardPool.addToBottom(c);

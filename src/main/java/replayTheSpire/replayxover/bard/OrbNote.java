@@ -14,7 +14,7 @@ import replayTheSpire.ReplayTheSpireMod;
 
 public class OrbNote extends AbstractNote
 {
-	@SpireEnum(name = "BARD_ORB_NOTE_TAG")
+	//@SpireEnum(name = "BARD_ORB_NOTE_TAG", optional = true)
     public static AbstractCard.CardTags TAG;
     private static OrbNote singleton;
     

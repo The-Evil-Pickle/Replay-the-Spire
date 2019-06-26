@@ -14,7 +14,7 @@ import replayTheSpire.ReplayTheSpireMod;
 public class BonfireQuest extends Quest{
     private static final Color COLOR;
     private static final int REWARD_AMOUNT = 1;
-    private int hp_amt;
+    //private int hp_amt;
 
 	public BonfireQuest() {
 		super(BonfireQuest.class.getName(), BonfireQuest.COLOR, 1, QuestType.BLUE, (ReplayTheSpireMod.SETTING_ROOMS_BONFIRE.value <= 20) ? QuestRarity.SPECIAL : (QuestRarity.RARE));
@@ -28,8 +28,8 @@ public class BonfireQuest extends Quest{
 
 	@Override
 	public Quest createNew() {
-		this.hp_amt = AbstractDungeon.player.maxHealth / 20;
-		this.hp_amt = Math.min(5, this.hp_amt);
+		//this.hp_amt = AbstractDungeon.player.maxHealth / 20;
+		//this.hp_amt = Math.min(5, this.hp_amt);
 		return this;
 	}
 
@@ -40,8 +40,8 @@ public class BonfireQuest extends Quest{
 
 	@Override
 	public String getRewardString() {
-		return "Gain " + this.hp_amt + " Max HP.";
-		//return this.voidShardStrings.TEXT[2] + REWARD_AMOUNT + this.voidShardStrings.TEXT[4];
+		//return "Gain " + this.hp_amt + " Max HP.";
+		return this.voidShardStrings.TEXT[2] + REWARD_AMOUNT + this.voidShardStrings.TEXT[4];
 	}
 
 	@Override
@@ -51,8 +51,8 @@ public class BonfireQuest extends Quest{
 
 	@Override
 	public void giveReward() {
-		AbstractDungeon.player.increaseMaxHp(this.hp_amt, true);
-		//InfiniteSpire.gainVoidShards(REWARD_AMOUNT);
+		//AbstractDungeon.player.increaseMaxHp(this.hp_amt, true);
+		InfiniteSpire.gainVoidShards(REWARD_AMOUNT);
 	}
 
     static {
