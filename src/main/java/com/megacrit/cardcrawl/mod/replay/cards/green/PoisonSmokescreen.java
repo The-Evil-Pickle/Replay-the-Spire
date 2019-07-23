@@ -26,7 +26,7 @@ public class PoisonSmokescreen extends CustomCard
     private static final int COST = 2;
     
     public PoisonSmokescreen() {
-        super(ID, PoisonSmokescreen.NAME, "cards/replay/replayBetaSkill.png", PoisonSmokescreen.COST, PoisonSmokescreen.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
+        super(ID, PoisonSmokescreen.NAME, "cards/replay/Poison_Smokescreen.png", PoisonSmokescreen.COST, PoisonSmokescreen.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         this.baseBlock = 6;
         this.block = this.baseBlock;
         ExhaustiveVariable.setBaseValue(this, 2);

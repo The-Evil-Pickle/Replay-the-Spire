@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.ui.panels.TopPanel;
 import basemod.ReflectionHacks;
 
 import com.megacrit.cardcrawl.screens.*;
+import com.megacrit.cardcrawl.screens.mainMenu.MenuCancelButton;
 import com.megacrit.cardcrawl.screens.select.BossRelicSelectScreen;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
@@ -49,7 +50,8 @@ public class ReplayRewardSkipPatches {
 	public static class BossRelicScreenPatch {
 		public static void Postfix(BossRelicSelectScreen __Instance, final ArrayList<AbstractRelic> chosenRelics) {
 			if (ReplayTheSpireMod.noSkipRewardsRoom) {
-				__Instance.cancelButton.hide();
+				((MenuCancelButton)ReflectionHacks.getPrivate(__Instance, BossRelicSelectScreen.class, "cancelButton")).hide();
+				//__Instance.cancelButton.hide();
 				AbstractDungeon.overlayMenu.cancelButton.hide();
 			}
 		}
@@ -58,7 +60,8 @@ public class ReplayRewardSkipPatches {
 	public static class BossRelicScreenPatch2 {
 		public static void Postfix(BossRelicSelectScreen __Instance) {
 			if (ReplayTheSpireMod.noSkipRewardsRoom) {
-				__Instance.cancelButton.hide();
+				((MenuCancelButton)ReflectionHacks.getPrivate(__Instance, BossRelicSelectScreen.class, "cancelButton")).hide();
+				//__Instance.cancelButton.hide();
 				AbstractDungeon.overlayMenu.cancelButton.hide();
 			}
 		}
@@ -67,7 +70,8 @@ public class ReplayRewardSkipPatches {
 	public static class BossRelicScreenPatch3 {
 		public static void Postfix(BossRelicSelectScreen __Instance) {
 			if (ReplayTheSpireMod.noSkipRewardsRoom) {
-				__Instance.cancelButton.hide();
+				((MenuCancelButton)ReflectionHacks.getPrivate(__Instance, BossRelicSelectScreen.class, "cancelButton")).hide();
+				//__Instance.cancelButton.hide();
 				AbstractDungeon.overlayMenu.cancelButton.hide();
 			}
 		}

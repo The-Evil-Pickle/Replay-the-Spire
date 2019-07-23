@@ -42,12 +42,10 @@ public class CommonCold
   public void use(AbstractPlayer p, AbstractMonster m)
   {
 	if (p.hasRelic("Medical Kit")) {
-	    this.useMedicalKit(p);
+	    p.getRelic("Medical Kit").flash();
+	    this.exhaust = true;
 	}
-	else
-	{
-		AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "ah- @CHOO!@", 2.0f, 2.0f));
-	}
+	AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "ah- @CHOO!@", 2.0f, 2.0f));
   }
 
   public boolean canUse(final AbstractPlayer p, final AbstractMonster m) {

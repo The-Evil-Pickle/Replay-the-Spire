@@ -122,5 +122,12 @@
 		" #rCurses #gObtain #ga #grandom #gboss #gRelic ]",
 		"[ #rLose [E] #rat #rthe #rstart #rof #reach #rturn #gObtain #g2 #grandom #gboss #gRelics ]"
 	]
+  },
+  "Replay:SettingWarnings": {
+	"TEXT": [
+		"Game must be restarted for changes to take effect!",
+		"If a boss does not appear in the list, ",
+		"drag Replay to the bottom of the mod list in the launcher."
+	]
   }
 }

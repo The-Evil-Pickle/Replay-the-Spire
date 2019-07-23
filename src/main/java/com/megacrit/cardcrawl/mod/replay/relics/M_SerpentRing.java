@@ -23,7 +23,7 @@ public class M_SerpentRing extends M_MistRelic
     public static final String ID = "m_SerpentRing";
     
     public M_SerpentRing() {
-        super(ID, "snakeRing.png", LandingSound.FLAT, blackbeard.enums.AbstractCardEnum.BLACKBEARD_BLACK, CardColor.GREEN);
+        super(ID, "snakeRing.png", LandingSound.FLAT, blackbeard.enums.CardColorEnum.BLACKBEARD_BLACK, CardColor.GREEN);
     }
     
     @Override

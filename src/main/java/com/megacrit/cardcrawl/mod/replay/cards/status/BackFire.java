@@ -1,5 +1,6 @@
 package com.megacrit.cardcrawl.mod.replay.cards.status;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -21,6 +22,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.*;
 import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class BackFire extends AbstractCard
@@ -35,10 +37,31 @@ public class BackFire extends AbstractCard
     private int actualBurnDamage;
     
     public BackFire() {
-        super(ID, NAME, "status/burn", "status/burn", -2, DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
-        this.actualBurnDamage = 6;
-        this.UPG_DAMAGE = 8;
+        super(ID, NAME, "status/burn", "status/burn", -2, DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.SELF);
+        this.actualBurnDamage = 4;
+        this.UPG_DAMAGE = 6;
+        this.baseDamage = 4;
         this.exhaust = true;
+    }
+    
+    @Override
+    public void calculateCardDamage(final AbstractMonster mo) {
+        final AbstractPlayer player = AbstractDungeon.player;
+        this.isDamageModified = false;
+            float tmp = this.baseDamage;
+            for (final AbstractPower p : player.powers) {
+                tmp = p.atDamageGive(tmp, this.damageTypeForTurn);
+            }
+            for (final AbstractPower p : player.powers) {
+                tmp = p.atDamageFinalGive(tmp, this.damageTypeForTurn);
+            }
+            if (tmp < 0.0f) {
+                tmp = 0.0f;
+            }
+            if (this.baseDamage != MathUtils.floor(tmp)) {
+                this.isDamageModified = true;
+            }
+            this.damage = MathUtils.floor(tmp);
     }
     
     @Override
@@ -54,11 +77,9 @@ public class BackFire extends AbstractCard
     
     @Override
     public void triggerWhenDrawn() {
-        if (AbstractDungeon.player.hasPower("Evolve") && !AbstractDungeon.player.hasPower("No Draw")) {
-            AbstractDungeon.player.getPower("Evolve").flash();
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, AbstractDungeon.player.getPower("Evolve").amount));
+        if (this.upgraded) {
+        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, 1, true), 1));
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, 1, true), 1));
     }
     
     @Override
@@ -76,6 +97,7 @@ public class BackFire extends AbstractCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeDamage(2);
             this.actualBurnDamage = this.UPG_DAMAGE;
             this.rawDescription = Burn.UPGRADE_DESCRIPTION;
             this.initializeDescription();

@@ -193,7 +193,8 @@
   },
   "ReplayTheSpireMod:Strike From Hell": {
     "NAME": "地狱打击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 每当这张牌被 消耗 时，增加 !M! 点伤害并返回手牌。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 每当这张牌被 消耗 时，增加 !M! 点伤害并返回手牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 每当这张牌被 消耗 时，增加 !M! 点伤害并返回手牌。 NL 并且在其被打出之前，其耗能变为0。"
   },
   "ReplayTheSpireMod:Limb From Limb": {
     "NAME": "肢解",
@@ -812,8 +813,8 @@
   },
   "BackFire": {
     "NAME": "回火",
-    "DESCRIPTION": " 不能被打出 。 NL 被抽到时， 获得 1 层 易伤 。 NL 你的回合结束时，受到 6 点伤害。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": " 不能被打出 。 NL 被抽到时，获得 1  层 易伤 。 NL 你的回合结束时，受到 8 点伤害。 NL 消耗 。"
+    "DESCRIPTION": " 不能被打出 。 NL 你的回合结束时，受到 !D! 点伤害。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " 不能被打出 。 NL 被抽到时，获得 1  层 易伤 。 NL 你的回合结束时，受到 !D! 点伤害。 NL 消耗 。"
   },
   "MimicStatus": {
     "NAME": "疯狂拟态",

@@ -193,7 +193,8 @@
   },
   "ReplayTheSpireMod:Strike From Hell": {
     "NAME": "지옥에서의 타격",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL 이 카드가 소멸되면, 피해가 !M! 증가하고 손으로 다시 가져옵니다."
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 이 카드가 소멸되면, 피해가 !M! 증가하고 손으로 다시 가져옵니다.",
+	"UPGRADE_DESCRIPTION": "피해를 !D! 줍니다. NL 이 카드가 소멸되면, 피해가 !M! 증가하고 손으로 다시 가져옵니다. NL 사용 전까지 그 카드의 비용이 0이 됩니다."
   },
   "ReplayTheSpireMod:Limb From Limb": {
     "NAME": "사지에서 사지로",
@@ -741,8 +742,8 @@
   },
   "BackFire": {
     "NAME": "역화",
-    "DESCRIPTION": "사용불가 NL 이 카드를 뽑을 때, 취약 을 1 얻습니다. NL 턴 종료 시, 피해를 6 받습니다. NL 소멸",
-    "UPGRADE_DESCRIPTION": "사용불가. NL 이 카드를 뽑을 때, 취약 을 1 얻습니다. NL 턴 종료 시, 피해를 8 받습니다 NL 소멸"
+    "DESCRIPTION": "사용불가. NL 턴 종료 시, 피해를 !D! 받습니다. NL 소멸",
+    "UPGRADE_DESCRIPTION": "사용불가. NL 이 카드를 뽑을 때, 취약 을 1 얻습니다. NL 턴 종료 시, 피해를 !D! 받습니다 NL 소멸"
   },
   "MimicStatus": {
     "NAME": "광적인 흉내",

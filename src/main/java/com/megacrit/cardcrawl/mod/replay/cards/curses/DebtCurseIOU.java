@@ -3,6 +3,7 @@ package com.megacrit.cardcrawl.mod.replay.cards.curses;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SoulboundField;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardTags;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -27,6 +28,7 @@ public class DebtCurseIOU extends CustomCard
 			this.magicNumber = this.baseMagicNumber;
 			SoulboundField.soulbound.set(this, true);
 			FleetingField.fleeting.set(this, true);
+			this.tags.add(CardTags.HEALING);//doesn't heal but we don't really want to generate it in combat
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m)

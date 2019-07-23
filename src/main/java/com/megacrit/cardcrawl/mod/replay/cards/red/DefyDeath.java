@@ -34,10 +34,7 @@ public class DefyDeath extends CustomCard
     public DefyDeath() {
         super("Defy Death", DefyDeath.NAME, "cards/replay/defyDeath.png", DefyDeath.COST, DefyDeath.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseBlock = DefyDeath.DEFENSE_GAINED;
-        if (ReplayTheSpireMod.foundmod_stslib) {
-        	GraveField.grave.set(this, true);
-        	this.rawDescription += " NL Grave.";
-        }
+        GraveField.grave.set(this, true);
     }
     
 	public void updateDynamicCost() {

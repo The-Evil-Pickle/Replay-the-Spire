@@ -118,8 +118,8 @@ public class ReplayTheSpireMod implements PostInitializeSubscriber,
 EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscriber, PotionGetSubscriber, StartGameSubscriber, EditKeywordsSubscriber, PostDungeonInitializeSubscriber, AddCustomModeModsSubscriber
 {
 	public static void InitCardTitle(AbstractCard c) {
-		FontHelper.cardTitleFont_L.getData().setScale(1.0f);
-        final GlyphLayout gl = new GlyphLayout(FontHelper.cardTitleFont_L, c.name, new Color(), 0.0f, 1, false);
+		FontHelper.cardTitleFont.getData().setScale(1.0f);
+        final GlyphLayout gl = new GlyphLayout(FontHelper.cardTitleFont, c.name, new Color(), 0.0f, 1, false);
         if (c.cost > 0 || c.cost == -1) {
             if (gl.width > AbstractCard.IMG_WIDTH * 0.6f) {
                 //c.useSmallTitleFont = true;
@@ -954,8 +954,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		HashMap<String, List<BossInfo>> customBosses = (HashMap<String, List<BossInfo>>)ReflectionHacks.getPrivateStatic(BaseMod.class, "customBosses");
 		float ymod = 0f;
 		float xmod = 0f;
+		float maxymod = 0f;
+		float baseymod = 0f;
 		for (String dungeonid : customBosses.keySet()) {
-			ymod = 0f;
+			ymod = baseymod;
 			settingElements.add(new ModLabel(dungeonid + ":", setting_start_x + xmod + 150.0f, setting_start_y + ymod, settingsPanel, (me) -> {}));
 			ymod += -40f;
 			for (BossInfo boss : customBosses.get(dungeonid)) {
@@ -964,7 +966,14 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				ymod += -40f;
 				roomSettings.add(bosssetting);
 			}
+			if (ymod < maxymod) {
+				maxymod = ymod;
+			}
 			xmod += 450f;
+			if (xmod > 1000f) {
+				xmod = 0;
+				baseymod = maxymod - 50f;
+			}
 		}
 		settingsButtons.add(new RelicSettingsButton(ImageMaster.loadImage("images/relics/test5.png"), ImageMaster.loadImage("images/relics/outline/test5.png"), RelicSettingsButton.DEFAULT_X, RelicSettingsButton.DEFAULT_Y, RelicSettingsButton.DEFAULT_W, RelicSettingsButton.DEFAULT_H, settingElements, roomSettings));
 		for (String dungeonid : SETTING_BOSSTOGGLES.keySet()) {
@@ -1157,6 +1166,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new Kintsugi(), RelicType.SHARED);
 		BaseMod.addRelic(new LightBulb(), RelicType.SHARED);
 		BaseMod.addRelic(new Mirror(), RelicType.SHARED);
+		BaseMod.addRelic(new MirrorPendant(), RelicType.SHARED);
 		BaseMod.addRelic(new Multitool(), RelicType.SHARED);
 		BaseMod.addRelic(new MysteryMachine(), RelicType.SHARED);
 		BaseMod.addRelic(new Ninjato(), RelicType.SHARED);
@@ -1353,7 +1363,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new ShivToss());
 		AddAndUnlockCard(new SpeedTraining());
 		AddAndUnlockCard(new TripWire());
-		AddAndUnlockCard(new BagOfTricks());//coming soon yo
+		AddAndUnlockCard(new BagOfTricks());
 		AddAndUnlockCard(new PoisonSmokescreen());
 		logger.info("adding cards for Defect...");
 		AddAndUnlockCard(new com.megacrit.cardcrawl.mod.replay.cards.blue.PanicButton());
@@ -1370,14 +1380,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new SystemScan());
 		AddAndUnlockCard(new SolidLightProjector());
 		AddAndUnlockCard(new CalculationTraining());
-		//AddAndUnlockCard(new ReflectiveLens());
+		AddAndUnlockCard(new ReflectiveLens(), false);
 		AddAndUnlockCard(new Crystallizer());
 		AddAndUnlockCard(new ReroutePower());
-		if (foundmod_hubris || foundmod_conspire || Loader.isModLoaded("jedi") || Loader.isModLoaded("StrawberrySpire")) {
-			AddAndUnlockCard(new FabricateWheel());
-		}
+		AddAndUnlockCard(new FabricateWheel(), foundmod_hubris || foundmod_conspire || Loader.isModLoaded("jedi") || Loader.isModLoaded("StrawberrySpire"));
 		logger.info("adding colorless cards...");
-		//AddAndUnlockCard(new Improvise());
+		AddAndUnlockCard(new Improvise(), false);
 		AddAndUnlockCard(new PoisonedStrike());
 		AddAndUnlockCard(new PrivateReserves());
 		AddAndUnlockCard(new Specialist());
@@ -1473,7 +1481,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         BaseMod.addBoss("Exordium", "Fading Forest", "images/ui/map/boss/FableSpinner.png", "images/ui/map/bossOutline/FableSpinner.png");
         BaseMod.addEliteEncounter("TheCity", new MonsterInfo("Replay:Snechameleon", 0.9f));
         BaseMod.addMonster(HellsEngine.ID, () -> new MonsterGroup(new AbstractMonster[] {new HellsEngine(), new Conductor()}));
-        //BaseMod.addBoss("Beyond", HellsEngine.ID, "images/ui/map/boss/HEC.png", "images/ui/map/bossOutline/HEC.png");
+        BaseMod.addBoss("TheBeyond", HellsEngine.ID, "images/ui/map/boss/HEC.png", "images/ui/map/bossOutline/HEC.png");
 	}
 
     private enum LoadType {
@@ -1658,8 +1666,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for Blackbeard...");
-			BaseMod.addRelicToCustomPool(new M_SeaBlood(), blackbeard.enums.AbstractCardEnum.BLACKBEARD_BLACK);
-			BaseMod.addRelicToCustomPool(new M_SerpentRing(), blackbeard.enums.AbstractCardEnum.BLACKBEARD_BLACK);
+			BaseMod.addRelicToCustomPool(new M_SeaBlood(), blackbeard.enums.CardColorEnum.BLACKBEARD_BLACK);
+			BaseMod.addRelicToCustomPool(new M_SerpentRing(), blackbeard.enums.CardColorEnum.BLACKBEARD_BLACK);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Blackbeard...");
@@ -1726,7 +1734,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	private static void initializeBardMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
 		Class<com.evacipated.cardcrawl.mod.bard.characters.Bard> servMod = com.evacipated.cardcrawl.mod.bard.characters.Bard.class;
 		logger.info("ReplayTheSpireMod | Detected Bard Mod!");
-		foundmod_slimebound = true;
+		foundmod_bard = true;
 
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for Bard...");

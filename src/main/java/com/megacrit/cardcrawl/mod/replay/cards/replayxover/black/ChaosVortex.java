@@ -29,7 +29,7 @@ public class ChaosVortex extends BlackCard
     
     public ChaosVortex() {
         super(ID, NAME, "cards/replay/chaos_vortex.png", COST, DESCRIPTION, AbstractCard.CardType.POWER, AbstractCard.CardTarget.SELF);
-        this.baseBlock = 10;
+        this.baseBlock = 15;
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
     }

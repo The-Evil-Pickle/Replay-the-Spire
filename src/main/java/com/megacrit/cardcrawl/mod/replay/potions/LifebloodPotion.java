@@ -23,7 +23,7 @@ public class LifebloodPotion extends AbstractPotion
         this.description = LifebloodPotion.DESCRIPTIONS[0] + this.potency + LifebloodPotion.DESCRIPTIONS[1];
         this.isThrown = false;
         this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip(TipHelper.capitalize("temporary"), GameDictionary.keywords.get("temporary")));
+        this.tips.add(new PowerTip(TipHelper.capitalize("temporary"), GameDictionary.keywords.get("temporary_hp")));
     }
     
     @Override

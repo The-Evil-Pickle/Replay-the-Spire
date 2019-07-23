@@ -36,13 +36,8 @@ public class Amnesia
   
   public void use(AbstractPlayer p, AbstractMonster m)
   {
-    if ((!this.dontTriggerOnUseCard) && (p.hasRelic("Blue Candle")))
+    if (this.dontTriggerOnUseCard)
     {
-      useBlueCandle(p);
-    }
-    else
-    {
-	  
 		final int count = AbstractDungeon.player.hand.size();
 		for (int i = 0; i < count; ++i) {
 			AbstractDungeon.actionManager.addToTop(new ExhaustAction(AbstractDungeon.player, AbstractDungeon.player, 1, true, true));

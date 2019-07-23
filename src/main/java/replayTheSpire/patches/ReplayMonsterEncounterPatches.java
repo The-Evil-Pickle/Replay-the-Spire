@@ -23,34 +23,6 @@ import java.util.*;
 
 public class ReplayMonsterEncounterPatches {
 	
-	//@SpirePatch(cls = "com.megacrit.cardcrawl.helpers.MonsterHelper", method = "getEncounter")
-	/*public static class ReplayEncounterPatch {
-		public static MonsterGroup Postfix(MonsterGroup __result, final String key) {
-			switch (key) {
-				case "Pondfish": {
-					if (ReplayTheSpireMod.useBakuSkeleton) {
-						return new MonsterGroup(new AbstractMonster[] {new CaptainAbe(170.0f, -80.0f), new PondfishBoss(0.0f, -650.0f)});
-					} else {
-						return new MonsterGroup(new AbstractMonster[] {new CaptainAbe(170.0f, -55.0f), new PondfishBoss(0.0f, -650.0f)});
-					}
-				}
-				case "Fading Forest": {
-					return new MonsterGroup(new AbstractMonster[] {new FadingForestBoss()});
-				}
-				case "Erikyupuro Louse Elite": case "Erikyupuro": {
-					return new MonsterGroup(new AbstractMonster[] { new J_louse_1(-350.0f, 25.0f), new J_louse_2(-125.0f, 10.0f), new J_louse_3(80.0f, 30.0f) });
-				}
-				case "R_Hoarder": {
-					return new MonsterGroup(new AbstractMonster[] {new R_Hoarder(0, 10)});
-				}
-				default: {
-					return __result;
-				}
-			}
-			
-		}
-	}*/
-	
 	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.AbstractDungeon", method = "setBoss")
 	public static class ReplaySetBossPatch {
 		public static void Postfix(AbstractDungeon __Instance, final String key) {
@@ -109,15 +81,8 @@ public class ReplayMonsterEncounterPatches {
 	public static class ReplayExordiumElitePatch {
 		public static void Prefix(AbstractDungeon __Instance, final ArrayList<MonsterInfo> monsters, final int numMonsters, final boolean elites) {
 			if (elites) {
-				if (__Instance instanceof Exordium) {
-					//ReplayTheSpireMod.logger.info("_SPIRITS");
-					//ReplayTheSpireMod.logger.info(CardCrawlGame.playerPref.getInteger(AbstractDungeon.player.chosenClass.name() + "_SPIRITS", 0));
-					if ((CardCrawlGame.playerPref.getInteger(AbstractDungeon.player.chosenClass.name() + "_SPIRITS", 0) > 0 && Settings.isStandardRun()) || AbstractDungeon.player.name.equals("Jrmiah")) {
-					monsters.add(new MonsterInfo("Erikyupuro", monsters.get(0).weight * ((float)(5 + AbstractDungeon.ascensionLevel) / 25f)));
-					ReplayMonsterEncounterPatches.normalizeWeights(monsters);
-					}
-				} else if (__Instance instanceof TheBeyond) {
-					if (AbstractDungeon.player.masterDeck.size() < Math.min((AbstractDungeon.player.relics.size() * 2) + 5, 40) || (AbstractDungeon.player.name.equals("Rhapsody") && AbstractDungeon.player.masterDeck.size() < 40)) {
+				if (__Instance instanceof TheBeyond) {
+					if (AbstractDungeon.player.masterDeck.size() < (AbstractDungeon.player.relics.size() * 2) + 5 || (AbstractDungeon.player.name.equals("Rhapsody") && AbstractDungeon.player.masterDeck.size() < 40)) {
 						monsters.add(new MonsterInfo("R_Hoarder", monsters.get(0).weight * (((float)(AbstractDungeon.player.relics.size())) / Math.min((float)AbstractDungeon.player.masterDeck.size() / 2f, 12f))));
 						ReplayMonsterEncounterPatches.normalizeWeights(monsters);
 					}

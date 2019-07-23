@@ -285,7 +285,7 @@ public class SuperSneckoCrazyCard extends BlackCard
     	}
 		@Override
 		public void use(AbstractPlayer p, AbstractCard c) {
-			AbstractDungeon.actionManager.addToBottom(new EquipAction(new CutlassOrb(3, c.magicNumber, false)));
+			AbstractDungeon.actionManager.addToBottom(new EquipAction(new CutlassOrb(4, c.magicNumber, false)));
 		}
 		@Override
     	public SSCCEffect makeCopy() {

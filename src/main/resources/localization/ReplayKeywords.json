@@ -46,7 +46,7 @@
 			"backfire",
 			"backfires"
 		],
-		"DESCRIPTION": "#yStatus: Gives #b1 #yVulnerable when drawn. NL Deals #b6 damage and #yExhausts at the end of your turn."
+		"DESCRIPTION": "#yStatus: Deals #b4 damage and #yExhausts at the end of your turn. NL Affected by your own damage modifiers."
 	},
 	{
 		"NAMES": [

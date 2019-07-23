@@ -47,10 +47,7 @@ public class AbeCurse extends CustomCard
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        if (!this.dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
-            this.useBlueCandle(p);
-        }
-        else {
+        if (this.dontTriggerOnUseCard) {
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FrailPower(AbstractDungeon.player, this.magicNumber, true), this.magicNumber));
         }
     }

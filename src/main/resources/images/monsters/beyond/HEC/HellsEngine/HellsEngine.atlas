@@ -41,17 +41,17 @@ platform_wheel
   index: -1
 platform_under
   rotate: false
-  xy: 1, 1722
-  size: 930, 49
+  xy: 1, 1721
+  size: 928, 47
   orig: 930, 49
-  offset: 0, 0
+  offset: 2, 0
   index: -1
 platform_bed
   rotate: false
   xy: 1, 1579
-  size: 1158, 141
+  size: 1157, 140
   orig: 1158, 141
-  offset: 0, 0
+  offset: 1, 0
   index: -1
 backwheel
   rotate: false

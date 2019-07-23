@@ -23,7 +23,7 @@ public class M_SeaBlood extends M_MistRelic
     public static final String ID = "m_SeaBlood";
     
     public M_SeaBlood() {
-        super(ID, "burningBlood_blue.png", LandingSound.MAGICAL, blackbeard.enums.AbstractCardEnum.BLACKBEARD_BLACK, CardColor.RED);
+        super(ID, "burningBlood_blue.png", LandingSound.MAGICAL, blackbeard.enums.CardColorEnum.BLACKBEARD_BLACK, CardColor.RED);
     }
     
     @Override

@@ -76,9 +76,11 @@ public class GhostMerchant extends AbstractMonster
     private boolean thresholdReached;
     private int abuse;
     private boolean boss;
+    private String bdwisafuckingnightmare;
     
     public GhostMerchant(float x, float y) {
         super(NAME, ID, 200, -10.0f, -30.0f, 180.0f, 150.0f, (String)null, x, y);
+        this.bdwisafuckingnightmare = (new StrengthPotion()).name;
         this.doEscape = true;
         this.thresholdReached = false;
         this.boss = true;
@@ -207,7 +209,7 @@ public class GhostMerchant extends AbstractMonster
                 this.rollMove();
                 return;
             }
-            this.setMove(StrengthPotion.NAME, GhostMerchant.STRENGTH_UP, AbstractMonster.Intent.BUFF);
+            this.setMove(this.bdwisafuckingnightmare, GhostMerchant.STRENGTH_UP, AbstractMonster.Intent.BUFF);
         }
         else if (num < 66 && !this.lastMove(GhostMerchant.ATTACK_STRENGTH_UP)) {
             this.setMove(GhostMerchant.ATTACK_STRENGTH_UP, AbstractMonster.Intent.ATTACK_BUFF, 1, (int)GhostMerchant.throwAmounts.get(GhostMerchant.ATTACK_STRENGTH_UP), true);

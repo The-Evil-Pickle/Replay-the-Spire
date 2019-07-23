@@ -592,7 +592,7 @@
   },
   "ReplayTheSpireMod:PocketPolymizer": {
     "NAME": "Pocket Polymer",
-	"FLAVOR": "",
+	"FLAVOR": "The power of SCIENCE! Probably.",
     "DESCRIPTIONS": [
 		"You can now #yTransform a card at rest sites as a #gfree #gaction."
 	]
@@ -822,6 +822,13 @@
 		" random #rSpores are shuffled into your draw pile.",
 		"Spores",
 		"Spores are #rStatus cards that #bcost #b0 to play and #bdraw #b1 #bcard, but have some minor #rnegative effect."
+	]
+  },
+  "Replay:Kaleidoscope": {
+    "NAME": "Kaleidoscope",
+	"FLAVOR": "Colors, distorts, and reflects light.",
+    "DESCRIPTIONS": [
+		"When you play #b3 cards that give #yBlock in a single turn, gain #b1 #yReflection."
 	]
   },
   "Ring of Fury": {
@@ -1097,7 +1104,7 @@
 	},
 	"m_RuneBlood": {
 		"NAME": "Ignis Sanguine",
-		"FLAVOR": ".",
+		"FLAVOR": "Where the broken gem once was, only the intense heat of a forge remains.",
 		"DESCRIPTIONS": [
 			"Each time you deal #b",
 			" damage in a single turn, gain #b",
@@ -1116,7 +1123,7 @@
 	},
 	"m_GuardianBlood": {
 		"NAME": "Overheated Blood",
-		"FLAVOR": ".",
+		"FLAVOR": "You feel your internal machinery steadily boil in fury.",
 		"DESCRIPTIONS": [
 			"At the end of combat, heal #b6 HP. NL Certain #yRed cards can now be obtained."
 		]

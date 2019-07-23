@@ -193,7 +193,8 @@
   },
   "ReplayTheSpireMod:Strike From Hell": {
     "NAME": "Strike From Hell",
-    "DESCRIPTION": "Deal !D! damage. NL If this card is Exhausted, increase its damage by !M! and place it back into your hand."
+    "DESCRIPTION": "Deal !D! damage. NL If this card is Exhausted, increase its damage by !M! and place it back into your hand.",
+	"UPGRADE_DESCRIPTION": "Deal !D! damage. NL If this card is Exhausted, increase its damage by !M! and place it back into your hand. It costs 0 until played."
   },
   "ReplayTheSpireMod:Limb From Limb": {
     "NAME": "Limb From Limb",
@@ -812,8 +813,8 @@
   },
   "BackFire": {
     "NAME": "Backfire",
-    "DESCRIPTION": "Unplayable. NL When drawn, gain 1 Vulnerable. NL At the end of your turn, take 6 damage. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, gain 1 Vulnerable. NL At the end of your turn, take 8 damage. NL Exhaust."
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, take !D! damage. NL Affected by your own damage modifiers. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, gain 1 Vulnerable. NL At the end of your turn, take !D! damage. NL Affected by your own damage modifiers. NL Exhaust."
   },
   "MimicStatus": {
     "NAME": "Mad Mimicry",

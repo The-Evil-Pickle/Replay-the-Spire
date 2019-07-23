@@ -26,9 +26,10 @@ public class StrikeFromHell extends CustomCard
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 8;
-    private static final int DMG_INC = 2;
+    private static final int DMG_INC = 4;
     
     public StrikeFromHell() {
         super(StrikeFromHell.ID, StrikeFromHell.NAME, "cards/replay/strikeFromHell.png", StrikeFromHell.COST, StrikeFromHell.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.COMMON, CardTarget.ENEMY);
@@ -47,6 +48,9 @@ public class StrikeFromHell extends CustomCard
     public void triggerOnExhaust() {
     	AbstractDungeon.actionManager.addToTop(new UnExhaustAction(this));
     	AbstractDungeon.actionManager.addToTop(new ModifyDamageAction(this.uuid, this.magicNumber));
+    	if (this.upgraded) {
+    		this.freeToPlayOnce = true;
+    	}
     }
     
     @Override
@@ -58,8 +62,10 @@ public class StrikeFromHell extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(1);
-            this.upgradeMagicNumber(1);
+            //this.upgradeDamage(1);
+            //this.upgradeMagicNumber(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
     
@@ -67,5 +73,6 @@ public class StrikeFromHell extends CustomCard
         cardStrings = CardCrawlGame.languagePack.getCardStrings(StrikeFromHell.ID);
         NAME = StrikeFromHell.cardStrings.NAME;
         DESCRIPTION = StrikeFromHell.cardStrings.DESCRIPTION;
+        UPGRADE_DESCRIPTION = StrikeFromHell.cardStrings.UPGRADE_DESCRIPTION;
     }
 }
