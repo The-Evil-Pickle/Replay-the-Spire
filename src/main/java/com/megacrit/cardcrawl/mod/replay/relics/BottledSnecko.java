@@ -15,7 +15,7 @@ import replayTheSpire.patches.BottlePatches;
 
 public class BottledSnecko extends AbstractRelic implements CustomBottleRelic
 {
-    public static final String ID = "ReplayTheSpireMod:Bottled Snecko";
+    public static final String ID = "Replay:Bottled Snecko";
     private boolean cardSelected;
     public AbstractCard card;
     

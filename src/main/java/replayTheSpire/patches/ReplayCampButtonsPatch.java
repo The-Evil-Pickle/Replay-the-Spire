@@ -12,6 +12,9 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.BottledFlame;
 import com.megacrit.cardcrawl.relics.BottledLightning;
 import com.megacrit.cardcrawl.relics.BottledTornado;
+import com.megacrit.cardcrawl.relics.DeadBranch;
+import com.megacrit.cardcrawl.relics.PeacePipe;
+import com.megacrit.cardcrawl.relics.Shovel;
 import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import com.megacrit.cardcrawl.ui.campfire.DigOption;
@@ -46,19 +49,19 @@ public class ReplayCampButtonsPatch
 		if ((!ModHelper.isModEnabled("Midas") && !AbstractDungeon.player.hasRelic("Fusion Hammer")  && AbstractDungeon.currMapNode == BonfirePatches.bonfireNode) || ((ModHelper.isModEnabled("Midas") || AbstractDungeon.player.hasRelic("Fusion Hammer")) && AbstractDungeon.player.hasRelic(Multitool.ID))) {
 			optionsYo.add(new SmithOption(AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 0));
 		}
-		if (!AbstractDungeon.player.hasRelic("Peace Pipe") ) {
+		if (!AbstractDungeon.player.hasRelic(PeacePipe.ID) ) {
 			optionsYo.add(new TokeOption(true));
 		}
-		if (!AbstractDungeon.player.hasRelic("Shovel")) {
+		if (!AbstractDungeon.player.hasRelic(Shovel.ID)) {
 			optionsYo.add(new DigOption());
 		}
-		if (!AbstractDungeon.player.hasRelic("Chameleon Ring")) {
+		if (!AbstractDungeon.player.hasRelic(ChameleonRing.ID)) {
 			optionsYo.add(new ChameleonBrewOption());
 		}
-		if (!AbstractDungeon.player.hasRelic("ReplayTheSpireMod:Pickaxe")) {
+		if (!AbstractDungeon.player.hasRelic("Replay:Pickaxe")) {
 			optionsYo.add(new PickMineOption());
 		}
-		if (!AbstractDungeon.player.hasRelic("ReplayTheSpireMod:PocketPolymizer")) {
+		if (!AbstractDungeon.player.hasRelic(PocketPolymer.ID)) {
 			optionsYo.add(new PolymerizeTransformOption());
 		}
 		if (!AbstractDungeon.player.hasRelic(GremlinFood.ID)) {
@@ -72,7 +75,7 @@ public class ReplayCampButtonsPatch
 	
     public static void Postfix(final Object meObj) {
 
-		if (AbstractDungeon.player.hasRelic("Chameleon Ring")) {
+		if (AbstractDungeon.player.hasRelic(ChameleonRing.ID)) {
 			final CampfireUI campfire = (CampfireUI)meObj;
 			try {
 				final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");
@@ -92,7 +95,7 @@ public class ReplayCampButtonsPatch
 				//e.printStackTrace();
 			}
 		}
-		if (AbstractDungeon.player.hasRelic("ReplayTheSpireMod:Pickaxe")) {
+		if (AbstractDungeon.player.hasRelic("Replay:Pickaxe")) {
 			final CampfireUI campfire = (CampfireUI)meObj;
 			try {
 				final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");
@@ -112,7 +115,7 @@ public class ReplayCampButtonsPatch
 				//e.printStackTrace();
 			}
 		}
-		if (AbstractDungeon.player.hasRelic("ReplayTheSpireMod:PocketPolymizer")) {
+		if (AbstractDungeon.player.hasRelic(PocketPolymer.ID)) {
 			final CampfireUI campfire = (CampfireUI)meObj;
 			try {
 				final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");
@@ -132,7 +135,7 @@ public class ReplayCampButtonsPatch
 				//e.printStackTrace();
 			}
 		}
-		if (AbstractDungeon.currMapNode == BonfirePatches.bonfireNode || ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Multitool")) {
+		if (AbstractDungeon.currMapNode == BonfirePatches.bonfireNode || AbstractDungeon.player.hasRelic(Multitool.ID)) {
 			final CampfireUI campfire = (CampfireUI)meObj;
 			try {
 				final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");
@@ -200,7 +203,7 @@ public class ReplayCampButtonsPatch
 				//e.printStackTrace();
 			}
 		}
-		if (AbstractDungeon.player.hasRelic("Dead Branch")) {
+		if (AbstractDungeon.player.hasRelic(DeadBranch.ID)) {
 			final CampfireUI campfire = (CampfireUI)meObj;
 			try {
 				final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");

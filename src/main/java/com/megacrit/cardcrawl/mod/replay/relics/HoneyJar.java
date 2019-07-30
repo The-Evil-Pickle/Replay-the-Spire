@@ -127,4 +127,9 @@ public class HoneyJar extends ReplayAbstractRelic
             energy.energyMaster -= SETTING_ENERGY.value;
         }
     }
+    
+    @Override
+    public int changeNumberOfCardsInReward(final int numberOfCards) {
+    	return ((SETTING_CHOICE.value) ? numberOfCards + 1 : numberOfCards);
+    }
 }

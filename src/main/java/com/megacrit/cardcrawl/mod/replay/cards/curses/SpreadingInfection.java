@@ -37,11 +37,7 @@ public class SpreadingInfection extends CustomCard
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        if (!this.dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
-            this.useBlueCandle(p);
-        }
-        else {
-            //AbstractDungeon.actionManager.addToBottom(new UseCardAction(this));
+        if (this.dontTriggerOnUseCard) {
 			for (AbstractCard c : this.cardsToCopy) {
 				AbstractDungeon.actionManager.addToTop(new MakeTempCardInDiscardAction(c, 1));
 			}

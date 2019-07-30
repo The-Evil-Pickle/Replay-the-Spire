@@ -39,11 +39,7 @@ public class Hallucinations
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m)
 	{
-		if ((!this.dontTriggerOnUseCard) && (p.hasRelic("Blue Candle")))
-		{
-		  useBlueCandle(p);
-		}
-		else
+		if (this.dontTriggerOnUseCard)
 		{
 			for (int i =0; i < this.magicNumber; i++) {
 				AbstractCard.CardRarity rarity = AbstractCard.CardRarity.COMMON;
@@ -59,7 +55,6 @@ public class Hallucinations
 				  AbstractCard c = AbstractDungeon.getCard(rarity).makeCopy();
 				  AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, 1, true, false));
 			}
-		  //Exhaustive.increment(this);
 		}
 	}
   
@@ -71,7 +66,6 @@ public class Hallucinations
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
         this.dontTriggerOnUseCard = true;
-        //AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
 		AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
     

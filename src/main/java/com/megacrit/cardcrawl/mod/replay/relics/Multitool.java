@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
 public class Multitool extends AbstractRelic
 {
-    public static final String ID = "ReplayTheSpireMod:Multitool";
+    public static final String ID = "Replay:Multitool";
     
     public Multitool() {
         super(ID, "multiTool.png", RelicTier.RARE, LandingSound.CLINK);

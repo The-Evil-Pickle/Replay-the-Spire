@@ -586,7 +586,7 @@
 	"DESCRIPTION": "Snecko. Purge.",
 	"EXTENDED_DESCRIPTION": [
 		" NL ???????",
-		" NL Exhaust up to !M! cards in your hand.",
+		" NL Exhaust up to !M! cards in your hand and draw 1 for each.",
 		" NL Add !M! Upgraded Shivs to your hand.",
 		" NL Channel !M! random orbs.",
 		" NL Gain [E].",

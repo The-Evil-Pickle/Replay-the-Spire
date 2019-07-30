@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 public class BottledEggs extends AbstractRelic
 {
-    public static final String ID = "ReplayTheSpireMod:Bottled Eggs";
+    public static final String ID = "Replay:Bottled Eggs";
     private boolean cardSelected;
     public String card;
     

@@ -39,12 +39,6 @@ public class Overencumbered extends CustomCard
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        if (p.hasRelic("Blue Candle")) {
-            this.useBlueCandle(p);
-        }
-        else {
-            AbstractDungeon.actionManager.addToBottom(new UseCardAction(this));
-        }
     }
 	
     @Override

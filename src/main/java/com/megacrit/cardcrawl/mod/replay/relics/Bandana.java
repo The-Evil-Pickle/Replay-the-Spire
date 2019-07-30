@@ -34,7 +34,7 @@ import com.badlogic.gdx.graphics.*;
 
 public class Bandana extends ReplayAbstractRelic
 {
-    public static final String ID = "Bandana";
+    public static final String ID = "Replay:Bandana";
 	public static final ReplayIntSliderSetting SETTING_DURATION = new ReplayIntSliderSetting("Bandana_Duration", "Effect Duration", 3, 10);
 	public static final ReplayIntSliderSetting SETTING_POWER = new ReplayIntSliderSetting("Bandana_Power", "Effect Strength", 2, 5);
 	public ArrayList<ReplayRelicSetting> BuildRelicSettings() {

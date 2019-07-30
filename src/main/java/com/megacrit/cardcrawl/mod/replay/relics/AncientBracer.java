@@ -19,12 +19,12 @@ import com.megacrit.cardcrawl.characters.*;
 public class AncientBracer
   extends AbstractRelic
 {
-  public static final String ID = "Ancient Bracer";
+  public static final String ID = "Replay:Antivirus Software";
   private static final int ARTIF = 1;
   
   public AncientBracer()
   {
-    super("Ancient Bracer", "antivirusSoft.png", AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.CLINK);
+    super(ID, "antivirusSoft.png", AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.CLINK);
   }
   
   public String getUpdatedDescription()

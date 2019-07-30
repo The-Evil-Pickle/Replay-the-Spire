@@ -16,7 +16,7 @@ import replayTheSpire.patches.BottlePatches;
 
 public class BottledSteam extends AbstractRelic implements CustomBottleRelic
 {
-    public static final String ID = "ReplayTheSpireMod:Bottled Steam";
+    public static final String ID = "Replay:Bottled Steam";
     private boolean cardSelected;
     public AbstractCard card;
     public boolean isActive;

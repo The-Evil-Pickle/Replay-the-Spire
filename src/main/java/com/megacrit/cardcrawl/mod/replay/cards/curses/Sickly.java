@@ -37,15 +37,9 @@ public class Sickly
   
   public void use(AbstractPlayer p, AbstractMonster m)
   {
-    if ((!this.dontTriggerOnUseCard) && (p.hasRelic("Blue Candle")))
-    {
-      useBlueCandle(p);
-    }
-    else
+    if (this.dontTriggerOnUseCard)
     {
       AbstractDungeon.actionManager.addToTop(new LoseBlockAction(p, p, this.magicNumber));
-      
-      //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
     }
   }
   
@@ -57,7 +51,6 @@ public class Sickly
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
         this.dontTriggerOnUseCard = true;
-        //AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
 		AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
   

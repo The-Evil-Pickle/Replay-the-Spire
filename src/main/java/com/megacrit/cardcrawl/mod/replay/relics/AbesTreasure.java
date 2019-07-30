@@ -30,7 +30,7 @@ public class AbesTreasure extends AbstractRelic
     public static final String ID = "Abe's Treasure";
     
     public AbesTreasure() {
-        super("Abe's Treasure", "abeTreasure.png", RelicTier.BOSS, LandingSound.SOLID);
+        super(ID, "abeTreasure.png", RelicTier.BOSS, LandingSound.SOLID);
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
         this.tips.add(new PowerTip("Drowning", "#yDebuff that causes HP loss. Taking unblocked #yAttack damage increases #yDrowning, dealing unblocked #yAttack damage lowers it."));

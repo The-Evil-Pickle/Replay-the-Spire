@@ -41,6 +41,7 @@ import clockworkmod.actions.CreateCogInDeckAction;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.mod.replay.actions.common.ReplayRefundAction;
+import com.megacrit.cardcrawl.mod.replay.actions.unique.AbandonAction;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -89,7 +90,7 @@ public class SuperSneckoCrazyCard extends BlackCard
     	}
 		@Override
 		public void use(AbstractPlayer p, AbstractCard c) {
-			AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p, p, c.magicNumber, false, true, true));
+			AbstractDungeon.actionManager.addToBottom(new AbandonAction(p, p, c.magicNumber, true));
 		}
 		@Override
     	public SSCCEffect makeCopy() {

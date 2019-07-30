@@ -7,6 +7,7 @@ import java.util.List;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -119,8 +120,8 @@ public class BlackPlague extends BlackCard {
 				e1.add(this.effects.get(2));
 				e2.add(this.effects.get(3));
 			}
-			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new BlackPlague(Math.max(this.cost - 1, 0), e1, Math.max((this.magicNumber+1)/2, 1), this.splits+1, this.upgraded), 1));
-			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new BlackPlague(Math.max(this.cost - 1, 0), e2, Math.max((this.magicNumber+1)/2, 1), this.splits+1, this.upgraded), 1));
+			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new BlackPlague(Math.max(this.cost - 1, 0), e1, Math.max((this.magicNumber+1)/2, 1), this.splits+1, this.upgraded), 1));
+			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new BlackPlague(Math.max(this.cost - 1, 0), e2, Math.max((this.magicNumber+1)/2, 1), this.splits+1, this.upgraded), 1));
 		}
 	}
 

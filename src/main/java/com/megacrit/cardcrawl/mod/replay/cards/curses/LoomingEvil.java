@@ -43,15 +43,7 @@ public class LoomingEvil
   {
     if (!this.dontTriggerOnUseCard)
     {
-	  if (p.hasRelic("Blue Candle"))
-	  {
-        useBlueCandle(p);
-	  }
-	  else
-	  {
-		  //this.cost = 0;
 		  this.exhaust = true;
-	  }
     }
     else
     {
@@ -79,7 +71,6 @@ public class LoomingEvil
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
         this.dontTriggerOnUseCard = true;
-        //AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
 		AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
   

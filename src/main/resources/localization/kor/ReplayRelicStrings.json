@@ -1,19 +1,19 @@
 {
-	"Ancient Bracer": {
+	"Replay:Ancient Bracer": {
 	"NAME": "안티바이러스 소프트웨어",
 	"FLAVOR": "백신과 같은 로봇입니다.",
     "DESCRIPTIONS": [
 	"덱을 섞을 때마다, #y인공물 을 #b1 얻습니다. NL #y상태이상 카드를 뽑을 때, #y인공물 을 #b1 소비해 #y소멸 시키고 다른 모든 #y상태이상 카드를 뽑습니다. 뽑을 때 마다 카드를 #b1 장 뽑습니다."
 	]
   },
-  "Arrowhead": {
+  "Replay:Arrowhead": {
 	"NAME": "화살촉",
 	"FLAVOR": "당신이 처음으로 만든 것입니다.",
     "DESCRIPTIONS": [
 	"재련 할 때마다 카드를 2 장 #y강화 합니다."
 	]
   },
-  "Bandana": {
+  "Replay:Bandana": {
 	"NAME": "반다나",
 	"FLAVOR": "소매치기의 최고급품입니다.",
     "DESCRIPTIONS": [
@@ -24,18 +24,11 @@
 	" 회복하는 대신 #y임시 #y체력 을 얻습니다."
 	]
   },
-  "Baseball": {
+  "Replay:Baseball": {
 	"NAME": "야구공",
 	"FLAVOR": "우리는 모두 좋아하는 선수가 있습니다.",
     "DESCRIPTIONS": [
 	"획득 시 무작위로 카드 1 장의 비용이 #b0 이 됩니다."
-	]
-  },
-  "Chemical X": {
-	"NAME": "혼합물 X",
-	"FLAVOR": "WARNING: Do not combine with sugar, spice, and everything nice.",
-    "DESCRIPTIONS": [
-	"비용이 #bX 인 카드를 사용할 때, 그 카드의 효과가 번 더 발동 됩니다. #b"
 	]
   },
   "Divine Protection": {
@@ -526,7 +519,7 @@
 		" 골드 만큼 감소합니다."
 	]
   },
-  "ReplayTheSpireMod:Bottled Flurry": {
+  "Replay:Bottled Flurry": {
     "NAME": "병 속의 눈보라",
 	"FLAVOR": "마치 스노우글로브 같습니다!",
     "DESCRIPTIONS": [
@@ -536,7 +529,7 @@
 		" at the end of the turn (or if it is #yEthereal discard instead)."
 	]
   },
-  "ReplayTheSpireMod:Bottled Steam": {
+  "Replay:Bottled Steam": {
     "NAME": "병 속의 간헐천",
 	"FLAVOR": "FWOOOOOOSH!",
     "DESCRIPTIONS": [
@@ -546,7 +539,7 @@
 		" will be placed on top."
 	]
   },
-  "ReplayTheSpireMod:Bottled Whirlpool": {
+  "Replay:Bottled Whirlpool": {
     "NAME": "병 속의 소용돌이",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
@@ -556,7 +549,7 @@
 		" it is played immediately, and you draw another card."
 	]
   },
-  "ReplayTheSpireMod:Bottled Firefly": {
+  "Replay:Bottled Firefly": {
     "NAME": "Bottled Firefly",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
@@ -566,7 +559,7 @@
 		" has #yRefund #b1."
 	]
   },
-  "ReplayTheSpireMod:Bottled Eggs": {
+  "Replay:Bottled Eggs": {
     "NAME": "Bottled Eggs",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
@@ -576,14 +569,14 @@
 		" are #yUpgraded."
 	]
   },
-  "ReplayTheSpireMod:Multitool": {
+  "Replay:Multitool": {
     "NAME": "맥가이버 칼",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
 		"휴식 장소에서 무작위로 #b2 개의 추가적인 선택지가 생깁니다."
 	]
   },
-  "ReplayTheSpireMod:Pickaxe": {
+  "Replay:Pickaxe": {
     "NAME": "곡괭이",
 	"FLAVOR": "",
     "DESCRIPTIONS": [

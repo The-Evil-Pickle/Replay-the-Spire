@@ -1,19 +1,19 @@
 {
-	"Ancient Bracer": {
+	"Replay:Ancient Bracer": {
 	"NAME": "杀毒软件",
 	"FLAVOR": "等价于机器用的疫苗。",
     "DESCRIPTIONS": [
 	"每次洗牌时, 获得 #b1 层 #y人工制品 。 NL 每当你抽到一张 #y状态牌 时， 失去 #b1 层 #y人工制品 来 #y消耗 所有本回合的 #y状态牌 ， 每消耗一张抽 #b1 张牌。"
 	]
   },
-  "Arrowhead": {
+  "Replay:Arrowhead": {
 	"NAME": "箭头",
 	"FLAVOR": "这是你打造的第一件东西.",
     "DESCRIPTIONS": [
 	"你锻造的时候能 #y升级 2 张牌。"
 	]
   },
-  "Bandana": {
+  "Replay:Bandana": {
 	"NAME": "蒙面方巾",
 	"FLAVOR": "完美的小偷制服。",
     "DESCRIPTIONS": [
@@ -24,7 +24,7 @@
 	" 给予 #y暂时性生命 而不是回复生命。"
 	]
   },
-  "Baseball": {
+  "Replay:Baseball": {
 	"NAME": "棒球",
 	"FLAVOR": "我们每个人都有自己最喜欢的球员。",
     "DESCRIPTIONS": [
@@ -519,7 +519,7 @@
 		" 金币。"
 	]
   },
-  "ReplayTheSpireMod:Bottled Flurry": {
+  "Replay:Bottled Flurry": {
     "NAME": "瓶装飓风",
 	"FLAVOR": "看起来就像是雪花球！",
     "DESCRIPTIONS": [
@@ -529,7 +529,7 @@
 		" （如果 #y虚无 则丢弃）。"
 	]
   },
-  "ReplayTheSpireMod:Bottled Steam": {
+  "Replay:Bottled Steam": {
     "NAME": "瓶装喷泉",
 	"FLAVOR": "噗！",
     "DESCRIPTIONS": [
@@ -539,7 +539,7 @@
 		" 将会被放到抽牌堆顶部。"
 	]
   },
-  "ReplayTheSpireMod:Bottled Whirlpool": {
+  "Replay:Bottled Whirlpool": {
     "NAME": "瓶装漩涡",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
@@ -549,7 +549,7 @@
 		" 立刻打出并抽一张牌。"
 	]
   },
-  "ReplayTheSpireMod:Bottled Firefly": {
+  "Replay:Bottled Firefly": {
     "NAME": "瓶装萤火虫",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
@@ -559,7 +559,7 @@
 		"  #y回馈 #b1 效果。"
 	]
   },
-  "ReplayTheSpireMod:Bottled Eggs": {
+  "Replay:Bottled Eggs": {
     "NAME": "瓶装蛋",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
@@ -569,28 +569,28 @@
 		" 的相同牌都会被 #y升级 。"
 	]
   },
-  "ReplayTheSpireMod:Bottled Snecko": {
+  "Replay:Bottled Snecko": {
     "NAME": "瓶装异蛇",
 	"FLAVOR": "尽管成年之后体形庞大，但是幼崽却小到能装到口袋里 - 并且还很可爱！",
     "DESCRIPTIONS": [
 		"拾起时，能选择一张牌。 NL 附加 #y异蛇。 NL 如果你 #r没有 当场选择，你能在之后的 #y休息处 的自由动作中选择。"
 	]
   },
-  "ReplayTheSpireMod:Multitool": {
+  "Replay:Multitool": {
     "NAME": "瑞士军刀",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
 		"你在休息处会有 #b2 个额外的随机可选项。"
 	]
   },
-  "ReplayTheSpireMod:Pickaxe": {
+  "Replay:Pickaxe": {
     "NAME": "鹤嘴锄",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
 		"你现在能在休息处 #y开采 了。"
 	]
   },
-  "ReplayTheSpireMod:PocketPolymizer": {
+  "Replay:PocketPolymizer": {
     "NAME": "袖珍变化器",
 	"FLAVOR": "",
     "DESCRIPTIONS": [

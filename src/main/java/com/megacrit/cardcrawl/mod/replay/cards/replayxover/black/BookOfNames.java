@@ -27,7 +27,7 @@ public class BookOfNames extends BlackCard
     private static final String ID = "ReplayTheSpireMod:Book of Names";
     private static final CardStrings cardStrings;
     private static final String NAME;
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final String DESCRIPTION;
     private static final String UPGRADE_DESCRIPTION;
     

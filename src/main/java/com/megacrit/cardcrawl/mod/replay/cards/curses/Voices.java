@@ -44,29 +44,8 @@ public class Voices extends CustomCard implements StartupCard
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        if (!this.dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
-            this.useBlueCandle(p);
-        }
-        else {
-			//AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Dazed(), this.magicNumber));
-			//AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.limbo));
-			//AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.discardPile));
-            //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
-        }
+        
     }
-    /*
-    @Override
-    public void triggerWhenDrawn() {
-        AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
-    }
-    
-    @Override
-    public void triggerOnEndOfTurnForPlayingCard() {
-        this.dontTriggerOnUseCard = true;
-        //AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
-		AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
-    }
-    */
     @Override
     public AbstractCard makeCopy() {
         return new Voices();

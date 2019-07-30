@@ -2,6 +2,7 @@ package replayTheSpire.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.mod.replay.relics.Arrowhead;
 import com.megacrit.cardcrawl.mod.replay.vfx.campfire.*;
 import com.megacrit.cardcrawl.vfx.campfire.CampfireSmithEffect;
 
@@ -37,7 +38,7 @@ public class ArrowheadPatches {
 		
 		public static void Postfix(CampfireSmithEffect __Instance) {
 			ArrowheadPatches.didSecondUpgrade = false;
-			if (AbstractDungeon.player.hasRelic("Arrowhead") && AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 1) {
+			if (AbstractDungeon.player.hasRelic(Arrowhead.ID) && AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 1) {
 				ArrowheadPatches.hasSecondUpgrade = true;
 	        }
 	        else {

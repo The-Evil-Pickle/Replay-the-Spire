@@ -28,12 +28,8 @@ public class Delirium extends CustomCard
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        if (!this.dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
-            this.useBlueCandle(p);
-        }
-        else {
+        if (this.dontTriggerOnUseCard) {
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TPH_ConfusionPower(AbstractDungeon.player, 1, true), 1));
-            //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
         }
     }
     
@@ -45,7 +41,6 @@ public class Delirium extends CustomCard
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
         this.dontTriggerOnUseCard = true;
-        //AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
 		AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
     

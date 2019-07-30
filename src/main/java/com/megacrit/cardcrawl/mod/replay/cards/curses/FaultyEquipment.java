@@ -37,12 +37,7 @@ public class FaultyEquipment extends CustomCard
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        if (!this.upgraded && p.hasRelic("Blue Candle")) {
-            this.useBlueCandle(p);
-        }
-        else {
-            //AbstractDungeon.actionManager.addToBottom(new UseCardAction(this));
-        }
+        
     }
 
     public boolean canUse(final AbstractPlayer p, final AbstractMonster m) {

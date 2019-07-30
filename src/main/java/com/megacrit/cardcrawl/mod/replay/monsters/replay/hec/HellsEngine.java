@@ -111,7 +111,7 @@ public class HellsEngine extends AbstractMonster {
     private static final byte HEARTBEAT = 6;
     private static final byte STARTUP = 7;
     public HellsEngine() {
-        super(NAME, ID, 999, -900.0f, -300.0f, 400.0f, 600.0f, "images/monsters/beyond/HEC/e_placeholder.png", 1200.0f, 300.0f);
+        super(NAME, ID, 999, -900.0f, -300.0f, 400.0f, 550.0f, "images/monsters/beyond/HEC/e_placeholder.png", 1200.0f, 300.0f);
 		ReplayTheSpireMod.logger.info("init Engine");
         this.isFirstTurn = true;
         this.plannedCard = null;

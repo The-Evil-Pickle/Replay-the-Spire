@@ -10,10 +10,10 @@ import replayTheSpire.patches.ArrowheadPatches;
 
 public class Arrowhead extends AbstractRelic
 {
-    public static final String ID = "Arrowhead";
+    public static final String ID = "Replay:Arrowhead";
     
     public Arrowhead() {
-        super("Arrowhead", "arrowhead.png", AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.HEAVY);
+        super(ID, "arrowhead.png", AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.HEAVY);
     }
     
     public String getUpdatedDescription() {

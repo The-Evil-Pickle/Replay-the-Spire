@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
 public class PocketPolymer extends AbstractRelic
 {
-    public static final String ID = "ReplayTheSpireMod:PocketPolymizer";
+    public static final String ID = "Replay:PocketPolymizer";
     
     public PocketPolymer() {
         super(ID, "betaRelic.png", RelicTier.RARE, LandingSound.MAGICAL);

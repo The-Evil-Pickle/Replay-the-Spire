@@ -39,8 +39,8 @@ public class ForgedInHellfirePower extends AbstractPower implements CloneablePow
     }
     public boolean patchAttacked(final DamageInfo info) {
     	int dmg = info.output;
-    	dmg *= 100;
-    	dmg /= this.amount;
+    	dmg *= this.amount;
+    	dmg /= 100;
     	if (dmg != info.output) {
     		info.output = dmg;
     		this.flash();

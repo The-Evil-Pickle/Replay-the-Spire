@@ -1,19 +1,19 @@
 {
-	"Ancient Bracer": {
+	"Replay:Antivirus Software": {
 	"NAME": "Antivirus Software",
 	"FLAVOR": "The robotic equivalent to a vaccine.",
     "DESCRIPTIONS": [
 	"Every time you shuffle your deck, gain #b1 #yArtifact. NL When you draw a #yStatus, consumes #b1 #yArtifact to #yExhaust it and all other #yStatus cards drawn that turn, drawing #b1 card each time."
 	]
   },
-  "Arrowhead": {
+  "Replay:Arrowhead": {
 	"NAME": "Arrowhead",
 	"FLAVOR": "The first thing you ever forged.",
     "DESCRIPTIONS": [
 	"You may #yUpgrade 2 cards whenever you smith."
 	]
   },
-  "Bandana": {
+  "Replay:Bandana": {
 	"NAME": "Bandana",
 	"FLAVOR": "The finest article of pick-pocketing attire.",
     "DESCRIPTIONS": [
@@ -24,7 +24,7 @@
 	" gives #yTemporary #yHP instead of healing."
 	]
   },
-  "Baseball": {
+  "Replay:Baseball": {
 	"NAME": "Baseball",
 	"FLAVOR": "We all have our favorite player.",
     "DESCRIPTIONS": [
@@ -519,7 +519,7 @@
 		" gold."
 	]
   },
-  "ReplayTheSpireMod:Bottled Flurry": {
+  "Replay:Bottled Flurry": {
     "NAME": "Bottled Flurry",
 	"FLAVOR": "It's like a snowglobe!",
     "DESCRIPTIONS": [
@@ -529,7 +529,7 @@
 		" at the end of the turn (or if it is #yEthereal discard instead)."
 	]
   },
-  "ReplayTheSpireMod:Bottled Steam": {
+  "Replay:Bottled Steam": {
     "NAME": "Bottled Geyser",
 	"FLAVOR": "FWOOOOOOSH!",
     "DESCRIPTIONS": [
@@ -539,7 +539,7 @@
 		" will be placed on top."
 	]
   },
-  "ReplayTheSpireMod:Bottled Whirlpool": {
+  "Replay:Bottled Whirlpool": {
     "NAME": "Bottled Whirlpool",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
@@ -549,7 +549,7 @@
 		" it is played immediately, and you draw another card."
 	]
   },
-  "ReplayTheSpireMod:Bottled Firefly": {
+  "Replay:Bottled Firefly": {
     "NAME": "Bottled Firefly",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
@@ -559,7 +559,7 @@
 		" has #yRefund #b1."
 	]
   },
-  "ReplayTheSpireMod:Bottled Eggs": {
+  "Replay:Bottled Eggs": {
     "NAME": "Bottled Eggs",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
@@ -569,28 +569,28 @@
 		" are #yUpgraded."
 	]
   },
-  "ReplayTheSpireMod:Bottled Snecko": {
+  "Replay:Bottled Snecko": {
     "NAME": "Bottled Snecko",
 	"FLAVOR": "Despite how large the adults are, baby sneckos are small enough to fit in your pocket - and they're cute!",
     "DESCRIPTIONS": [
 		"On pick up, you may choose a card. NL It gains #ySnecko. NL If you do #rnot choose a card, you may choose one at a later #yrest #ysite as a #gfree #gaction."
 	]
   },
-  "ReplayTheSpireMod:Multitool": {
+  "Replay:Multitool": {
     "NAME": "Multitool",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
 		"You have #b2 additional options at rest sites, chosen randomly."
 	]
   },
-  "ReplayTheSpireMod:Pickaxe": {
+  "Replay:Pickaxe": {
     "NAME": "Pickaxe",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
 		"You can now #yMine at rest sites."
 	]
   },
-  "ReplayTheSpireMod:PocketPolymizer": {
+  "Replay:PocketPolymizer": {
     "NAME": "Pocket Polymer",
 	"FLAVOR": "The power of SCIENCE! Probably.",
     "DESCRIPTIONS": [

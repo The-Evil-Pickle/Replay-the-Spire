@@ -15,7 +15,7 @@ public class MirrorPendant extends AbstractRelic {
 	public static final String ID = "Replay:Kaleidoscope";
     
     public MirrorPendant() {
-        super(ID, "kaleidoscope.png", RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, "kaleidoscope.png", RelicTier.RARE, LandingSound.MAGICAL);
     }
 
 	@Override
@@ -39,7 +39,7 @@ public class MirrorPendant extends AbstractRelic {
 
     @Override
     public void onUseCard(final AbstractCard targetCard, final UseCardAction useCardAction) {
-		if (targetCard != null && targetCard.baseBlock > 0) {
+		if (targetCard != null && targetCard.baseBlock > 0 && targetCard.rawDescription.contains("!B!")) {
 			this.counter++;
 			if (this.counter >= 3) {
 				this.counter = 0;

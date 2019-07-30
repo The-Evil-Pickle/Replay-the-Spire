@@ -1,19 +1,19 @@
 {
-	"Ancient Bracer": {
+	"Replay:Ancient Bracer": {
 	"NAME": "Антивирусная Программа",
 	"FLAVOR": "Компьютерная замена обычной аптечки.",
     "DESCRIPTIONS": [
 	"Каждый раз, когда вы перетасовываете свою колоду, получите #b1 #yАртифакт. NL Когда вы вытаскиваете #yСтатус, тратит #b1 #yАртифакт, #yСжигает этот и все другие #yСтатусы которые вы вытащили за этот ход, берёте #b1 карту."
 	]
   },
-  "Arrowhead": {
+  "Replay:Arrowhead": {
 	"NAME": "Наконечник Стрелы",
 	"FLAVOR": "Первая вещь, которую вы выковали.",
     "DESCRIPTIONS": [
 	"Вы #yУлучшаете 2 карты всегда, когда куёте."
 	]
   },
-  "Bandana": {
+  "Replay:Bandana": {
 	"NAME": "Бандана",
 	"FLAVOR": "Лучший атрибут карманника.",
     "DESCRIPTIONS": [
@@ -24,7 +24,7 @@
 	" Даёт #yВременное #yОЗ вместо лечения."
 	]
   },
-  "Baseball": {
+  "Replay:Baseball": {
 	"NAME": "Мяч Для Бейсбола",
 	"FLAVOR": "У всех нас есть любимый игрок.",
     "DESCRIPTIONS": [
@@ -519,7 +519,7 @@
 		" золота."
 	]
   },
-  "ReplayTheSpireMod:Bottled Flurry": {
+  "Replay:Bottled Flurry": {
     "NAME": "Закупоренный Поток",
 	"FLAVOR": "Прямо как игрушечный снежный шарик!",
     "DESCRIPTIONS": [
@@ -529,7 +529,7 @@
 		" в конце хода (или если #yЭфирная, то сбросишся)."
 	]
   },
-  "ReplayTheSpireMod:Bottled Steam": {
+  "Replay:Bottled Steam": {
     "NAME": "Закупоренный Гейзер",
 	"FLAVOR": "ВУУУУУУШЬ",
     "DESCRIPTIONS": [
@@ -539,7 +539,7 @@
 		" будет наверху стопки добора."
 	]
   },
-  "ReplayTheSpireMod:Bottled Whirlpool": {
+  "Replay:Bottled Whirlpool": {
     "NAME": "Закупоренный водоворот",
 	"FLAVOR": "zzz..zzz..zzz.. а, я тут перевод же делаю",
     "DESCRIPTIONS": [
@@ -549,7 +549,7 @@
 		" она играется автоматически, и вы берёте ещё 1 карту."
 	]
   },
-  "ReplayTheSpireMod:Bottled Firefly": {
+  "Replay:Bottled Firefly": {
     "NAME": "Светлячок В Банке ",
 	"FLAVOR": "Просто светлячок в банке. А ты чего хотел?",
     "DESCRIPTIONS": [
@@ -559,7 +559,7 @@
 		" имеет #yВозвратность #b1."
 	]
   },
-  "ReplayTheSpireMod:Bottled Eggs": {
+  "Replay:Bottled Eggs": {
     "NAME": "Яйца В Банке",
 	"FLAVOR": "МБ заточка?",
     "DESCRIPTIONS": [
@@ -569,14 +569,14 @@
 		" are #yUpgraded."
 	]
   },
-  "ReplayTheSpireMod:Multitool": {
+  "Replay:Multitool": {
     "NAME": "Мульти Инструмент",
 	"FLAVOR": "",
     "DESCRIPTIONS": [
 		"У вас есть #b2 дополнительные опции в лагере, выбираются случайно."
 	]
   },
-  "ReplayTheSpireMod:Pickaxe": {
+  "Replay:Pickaxe": {
     "NAME": "Кирка",
 	"FLAVOR": "Что насчет алмазов?",
     "DESCRIPTIONS": [

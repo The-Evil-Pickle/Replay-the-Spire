@@ -18,7 +18,7 @@ public class Accelerometer extends AbstractRelic implements ClickableRelic
     private boolean usedThisFight;
     
     public Accelerometer() {
-        super("Replay:Accelerometer", "replay_accelerometer.png", AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.SOLID);
+        super(ID, "replay_accelerometer.png", AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.SOLID);
     }
     
     public String getUpdatedDescription() {

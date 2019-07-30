@@ -43,16 +43,7 @@ public class Languid
   
   public void use(AbstractPlayer p, AbstractMonster m)
   {
-    if ((!this.dontTriggerOnUseCard) && (p.hasRelic("Blue Candle")))
-    {
-      useBlueCandle(p);
-    }
-    else
-    {
-      //AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DarknessPower(1), 1));
-      
-      //AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
-    }
+    
   }
   
     @Override

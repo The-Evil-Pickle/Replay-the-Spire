@@ -1,19 +1,15 @@
 package com.megacrit.cardcrawl.mod.replay.relics;
 
+import com.evacipated.cardcrawl.mod.stslib.relics.SuperRareRelic;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.mod.replay.actions.*;
-import com.megacrit.cardcrawl.mod.replay.actions.common.*;
-import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.relics.*;
-import com.megacrit.cardcrawl.unlock.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
-public class OnyxGauntlets extends AbstractRelic
+public class OnyxGauntlets extends AbstractRelic implements SuperRareRelic
 {
     public static final String ID = "ReplayTheSpireMod:Onyx Gauntlets";
     private static ArrayList<AbstractCard> cardsIncreased = new ArrayList<AbstractCard>();

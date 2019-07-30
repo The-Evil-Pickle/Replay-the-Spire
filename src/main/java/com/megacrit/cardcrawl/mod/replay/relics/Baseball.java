@@ -2,6 +2,7 @@ package com.megacrit.cardcrawl.mod.replay.relics;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardRarity;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -13,11 +14,11 @@ import java.util.*;
 
 public class Baseball extends AbstractRelic
 {
-    public static final String ID = "Baseball";
+    public static final String ID = "Replay:Baseball";
     public AbstractCard card;
     
     public Baseball() {
-        super("Baseball", "baseball.png", AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.SOLID);
+        super(ID, "baseball.png", AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.SOLID);
     }
     
     public String getUpdatedDescription() {
@@ -33,6 +34,12 @@ public class Baseball extends AbstractRelic
             }
         }
         Collections.shuffle(list, new Random(AbstractDungeon.miscRng.randomLong()));
+        if (list.get(0).rarity == CardRarity.BASIC) {
+        	Collections.shuffle(list, new Random(AbstractDungeon.miscRng.randomLong()));
+        }
+        while (list.get(0).rarity == CardRarity.CURSE) {
+        	Collections.shuffle(list, new Random(AbstractDungeon.miscRng.randomLong()));
+        }
         if (!list.isEmpty()) {
             list.get(0).cost = 0;
             list.get(0).costForTurn = 0;
