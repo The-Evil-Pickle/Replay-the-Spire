@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.mod.replay.actions.common.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.powers.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.IntangiblePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.dungeons.*;
@@ -40,8 +41,9 @@ public class RP_IncenseBurner extends AbstractPower
 			this.amount--;
 			if (this.amount <= 0) {
 				this.amount = 6;
-	            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 1), 1));
+	            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.owner, this.owner, new IntangiblePower(this.owner, 1), 1));
 			}
+			this.updateDescription();
         }
     }
     

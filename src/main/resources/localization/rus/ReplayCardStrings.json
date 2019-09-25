@@ -309,7 +309,8 @@
   },
   "ReplayTheSpireMod:Muscle Training": {
     "NAME": "Набор массы",
-    "DESCRIPTION": "Получите 1 Силу. NL Потеряйте !M! ОЗ. NL Сжигаемость !stslib:ex!."
+    "DESCRIPTION": "Получите 1 Силу. NL Потеряйте !M! ОЗ. NL Сжигаемость !stslib:ex!.",
+	"UPGRADE_DESCRIPTION": "Получите 1 Силу. NL Получите !M! урона. NL Сжигаемость !stslib:ex!."
   },
   "ReplayTheSpireMod:Speed Training": {
     "NAME": "Общая физ. подготовка",

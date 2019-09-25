@@ -16,17 +16,16 @@ import com.megacrit.cardcrawl.orbs.Dark;
 import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import com.megacrit.cardcrawl.orbs.Plasma;
+
+import javassist.CtBehavior;
+
 import com.evacipated.cardcrawl.modthespire.lib.*;
 
 @SpirePatch(cls = "com.megacrit.cardcrawl.orbs.AbstractOrb", method = "getRandomOrb")
 public class ReplayOrbRandomPatch {
 	
-	public static AbstractOrb Replace(final boolean useCardRng) {
-		final ArrayList<AbstractOrb> orbs = new ArrayList<AbstractOrb>();
-        orbs.add(new Dark());
-        orbs.add(new Frost());
-        orbs.add(new Lightning());
-        orbs.add(new Plasma());
+	@SpireInsertPatch(locator = Locator.class, localvars = {"orbs"})
+    public static void addInfiniteSpireOrbs(boolean useCardRng, ArrayList<AbstractOrb> orbs) {
 		if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("Iron Core")) {
 			orbs.add(new HellFireOrb());
 		} else {
@@ -35,10 +34,13 @@ public class ReplayOrbRandomPatch {
 		if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("m_SpellCore")) {
 			orbs.add(new ManaSparkOrb());
 		}
-        if (useCardRng) {
-            return orbs.get(AbstractDungeon.cardRng.random(orbs.size() - 1));
+    }
+	public static class Locator extends SpireInsertLocator {
+        @Override
+        public int[] Locate(CtBehavior ctBehavior) throws Exception {
+            Matcher matcher = new Matcher.MethodCallMatcher(ArrayList.class, "add");
+            return LineFinder.findInOrder(ctBehavior, matcher);
         }
-        return orbs.get(MathUtils.random(orbs.size() - 1));
-	}
+    }
 	
 }

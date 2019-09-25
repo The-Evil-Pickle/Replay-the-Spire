@@ -63,8 +63,9 @@ public class RP_KunaiPower extends AbstractPower
 			if (this.amount == 0) {
 				this.flash();
 				this.amount = 3;
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, 1), 1));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, this.damage), this.damage));
 			}
+			this.updateDescription();
 		}
     }
 	

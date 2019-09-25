@@ -309,7 +309,8 @@
   },
   "ReplayTheSpireMod:Muscle Training": {
     "NAME": "무게 훈련",
-    "DESCRIPTION": "힘 을 1 얻습니다. NL 체력을 !M! 잃습니다. NL 고갈 !stslib:ex!"
+    "DESCRIPTION": "힘 을 1 얻습니다. NL 체력을 !M! 잃습니다. NL 고갈 !stslib:ex!",
+	"UPGRADE_DESCRIPTION": "힘 을 1 얻습니다. NL 피해를 !M! 받습니다. NL 고갈 !stslib:ex!"
   },
   "ReplayTheSpireMod:Speed Training": {
     "NAME": "속도 훈련",

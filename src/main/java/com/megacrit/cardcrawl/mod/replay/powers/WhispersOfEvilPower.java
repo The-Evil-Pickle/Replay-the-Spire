@@ -75,11 +75,11 @@ public class WhispersOfEvilPower extends AbstractPower implements CloneablePower
 	{
 		this.flash();
 		for (int i = 0; i < this.amount; i++) {
-			AbstractCard card = AbstractDungeon.returnRandomCurse().makeStatEquivalentCopy();
-			while (!isCurseValid(card)) {
-				card = AbstractDungeon.returnRandomCurse().makeStatEquivalentCopy();
+			AbstractCard card = AbstractDungeon.returnRandomCurse();
+			while (card == null || !isCurseValid(card)) {
+				card = AbstractDungeon.returnRandomCurse();
 			}
-	        AbstractDungeon.actionManager.addToBottom(new EchoToDrawAction(card, 1));
+	        AbstractDungeon.actionManager.addToBottom(new EchoToDrawAction(card.makeCopy(), 1));
 		}
 	}
 

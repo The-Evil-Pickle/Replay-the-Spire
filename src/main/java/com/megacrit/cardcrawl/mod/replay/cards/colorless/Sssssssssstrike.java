@@ -24,7 +24,7 @@ public class Sssssssssstrike extends CustomCard
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
-    private static final int COST = 1;
+    private static final int COST = -1;
     
     public Sssssssssstrike() {
         super(ID, Sssssssssstrike.NAME, "cards/replay/replayBetaAttack.png", COST, Sssssssssstrike.DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);

@@ -40,6 +40,7 @@ public class RP_GiryaPower extends AbstractPower
             this.flash();
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 1), 1));
 			this.amount--;
+			this.updateDescription();
         }
     }
     

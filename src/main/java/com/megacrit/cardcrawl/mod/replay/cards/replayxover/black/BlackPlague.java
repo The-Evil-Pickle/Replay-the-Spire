@@ -56,7 +56,7 @@ public class BlackPlague extends BlackCard {
 		this.initializeDescription();
 	}
 	public BlackPlague(int cost, ArrayList<Integer> effects, int magic, int splits, boolean upgraded) {
-		super(ID, NAME, "cards/replay/replayBetaSkill.png", cost, DESCRIPTION, CardType.SKILL, CardTarget.ENEMY);
+		super(ID, NAME, "cards/replay/replayBetaSkillDark.png", cost, DESCRIPTION, CardType.SKILL, CardTarget.ENEMY);
 		this.baseMagicNumber = magic;
 		this.magicNumber = this.baseMagicNumber;
 		this.upgraded = this.upgradedMagicNumber = upgraded;
@@ -120,8 +120,8 @@ public class BlackPlague extends BlackCard {
 				e1.add(this.effects.get(2));
 				e2.add(this.effects.get(3));
 			}
-			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new BlackPlague(Math.max(this.cost - 1, 0), e1, Math.max((this.magicNumber+1)/2, 1), this.splits+1, this.upgraded), 1));
-			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new BlackPlague(Math.max(this.cost - 1, 0), e2, Math.max((this.magicNumber+1)/2, 1), this.splits+1, this.upgraded), 1));
+			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new BlackPlague(Math.max(this.cost - 1, 0), e1, Math.max((this.magicNumber+1)/2, 1), this.splits+1, this.upgraded), 1));
+			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new BlackPlague(Math.max(this.cost - 1, 0), e2, Math.max((this.magicNumber+1)/2, 1), this.splits+1, this.upgraded), 1));
 		}
 	}
 

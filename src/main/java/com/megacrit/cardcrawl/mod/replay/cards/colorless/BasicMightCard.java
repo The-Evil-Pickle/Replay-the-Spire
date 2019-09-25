@@ -23,7 +23,7 @@ public class BasicMightCard
   public BasicMightCard()
   {
     super(ID, NAME, "cards/replay/replayBetaPower.png", BasicMightCard.COST, DESCRIPTION, AbstractCard.CardType.POWER, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.NONE);
-    RefundVariable.setBaseValue(this, 1);
+    RefundVariable.setBaseValue(this, 2);
   }
   
   public void use(AbstractPlayer p, AbstractMonster m)

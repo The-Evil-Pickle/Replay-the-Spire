@@ -328,7 +328,8 @@
   },
   "ReplayTheSpireMod:Muscle Training": {
     "NAME": "Weight Training",
-    "DESCRIPTION": "Gain 1 Strength. NL Lose !M! HP. NL Exhaustive !stslib:ex!."
+    "DESCRIPTION": "Gain 1 Strength. NL Lose !M! HP. NL Exhaustive !stslib:ex!.",
+	"UPGRADE_DESCRIPTION": "Gain 1 Strength. NL Take !M! damage."
   },
   "ReplayTheSpireMod:Speed Training": {
     "NAME": "Speed Training",

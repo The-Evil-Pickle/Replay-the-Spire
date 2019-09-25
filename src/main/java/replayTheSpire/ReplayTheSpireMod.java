@@ -1380,12 +1380,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new SystemScan());
 		AddAndUnlockCard(new SolidLightProjector());
 		AddAndUnlockCard(new CalculationTraining());
-		AddAndUnlockCard(new ReflectiveLens(), false);
+		//AddAndUnlockCard(new ReflectiveLens(), false);
 		AddAndUnlockCard(new Crystallizer());
 		AddAndUnlockCard(new ReroutePower());
 		AddAndUnlockCard(new FabricateWheel(), foundmod_hubris || foundmod_conspire || Loader.isModLoaded("jedi") || Loader.isModLoaded("StrawberrySpire"));
 		logger.info("adding colorless cards...");
-		AddAndUnlockCard(new Improvise(), false);
+		//AddAndUnlockCard(new Improvise(), false);
 		AddAndUnlockCard(new PoisonedStrike());
 		AddAndUnlockCard(new PrivateReserves());
 		AddAndUnlockCard(new Specialist());

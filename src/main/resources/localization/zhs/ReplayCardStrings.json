@@ -328,7 +328,8 @@
   },
   "ReplayTheSpireMod:Muscle Training": {
     "NAME": "举重训练",
-    "DESCRIPTION": "获得 1 点 力量 。 NL 失去 !M! 生命。 NL 消耗性 !stslib:ex! 。"
+    "DESCRIPTION": "获得 1 点 力量 。 NL 失去 !M! 生命。 NL 消耗性 !stslib:ex! 。",
+	"UPGRADE_DESCRIPTION": "获得 1 点 力量 。 NL 受到 !M! 点伤害。 NL 消耗性 !stslib:ex! 。"
   },
   "ReplayTheSpireMod:Speed Training": {
     "NAME": "速度训练",

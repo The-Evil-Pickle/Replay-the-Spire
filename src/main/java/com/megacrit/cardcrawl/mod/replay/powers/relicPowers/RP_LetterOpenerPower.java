@@ -66,6 +66,7 @@ public class RP_LetterOpenerPower extends AbstractPower
 				this.amount = 3;
 				AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 			}
+			this.updateDescription();
 		}
     }
 	

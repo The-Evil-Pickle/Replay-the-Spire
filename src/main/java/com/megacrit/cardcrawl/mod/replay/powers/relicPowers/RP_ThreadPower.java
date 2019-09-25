@@ -41,6 +41,7 @@ public class RP_ThreadPower extends AbstractPower
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.owner, this.owner, new PlatedArmorPower(this.owner, 5), 5));
 			this.amount--;
         }
+		this.updateDescription();
     }
     
     static {
