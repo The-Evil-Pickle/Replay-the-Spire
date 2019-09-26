@@ -27,7 +27,7 @@ public class EclipseAction extends AbstractGameAction
             final int count = AbstractDungeon.player.hand.size();
             AbstractDungeon.actionManager.addToTop(new EclipseSecondAction(count));
             for (int i = 0; i < count; ++i) {
-                AbstractDungeon.actionManager.addToTop(new ExhaustAction(AbstractDungeon.player, AbstractDungeon.player, 1, true, true));
+                AbstractDungeon.actionManager.addToTop(new ExhaustAction(1, true, true));
             }
             /*
             if (this.refund > 0 ) {

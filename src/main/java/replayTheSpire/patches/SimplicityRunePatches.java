@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.cards.green.Defend_Green;
 import com.megacrit.cardcrawl.cards.green.Strike_Green;
 import com.megacrit.cardcrawl.cards.red.Defend_Red;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.mod.replay.relics.SimpleRune;
 
@@ -91,7 +92,7 @@ public class SimplicityRunePatches {
 		        card.upgradedDamage = true;
 				card.upgraded = true;
 		        card.timesUpgraded++;
-		        card.name = Strike_Red.NAME + "+" + card.timesUpgraded;
+		        card.name = CardCrawlGame.languagePack.getCardStrings(Strike_Red.ID).NAME + "+" + card.timesUpgraded;
 				return SpireReturn.Return(null);
 			}
 			return SpireReturn.Continue();
@@ -105,7 +106,7 @@ public class SimplicityRunePatches {
 		        card.upgradedDamage = true;
 				card.upgraded = true;
 		        card.timesUpgraded++;
-		        card.name = Strike_Green.NAME + "+" + card.timesUpgraded;
+		        card.name = CardCrawlGame.languagePack.getCardStrings(Strike_Green.ID).NAME + "+" + card.timesUpgraded;
 				return SpireReturn.Return(null);
 			}
 			return SpireReturn.Continue();
@@ -119,7 +120,7 @@ public class SimplicityRunePatches {
 		        card.upgradedDamage = true;
 				card.upgraded = true;
 		        card.timesUpgraded++;
-		        card.name = Strike_Blue.NAME + "+" + card.timesUpgraded;
+		        card.name = CardCrawlGame.languagePack.getCardStrings(Strike_Blue.ID).NAME + "+" + card.timesUpgraded;
 				return SpireReturn.Return(null);
 			}
 			return SpireReturn.Continue();
@@ -133,7 +134,7 @@ public class SimplicityRunePatches {
 		        card.upgradedBlock = true;
 				card.upgraded = true;
 		        card.timesUpgraded++;
-		        card.name = Defend_Red.NAME + "+" + card.timesUpgraded;
+		        card.name = CardCrawlGame.languagePack.getCardStrings(Defend_Red.ID).NAME + "+" + card.timesUpgraded;
 				return SpireReturn.Return(null);
 			}
 			
@@ -148,7 +149,7 @@ public class SimplicityRunePatches {
 		        card.upgradedBlock = true;
 				card.upgraded = true;
 		        card.timesUpgraded++;
-		        card.name = Defend_Green.NAME + "+" + card.timesUpgraded;
+		        card.name = CardCrawlGame.languagePack.getCardStrings(Defend_Green.ID).NAME + "+" + card.timesUpgraded;
 				return SpireReturn.Return(null);
 			}
 			
@@ -163,7 +164,7 @@ public class SimplicityRunePatches {
 		        card.upgradedBlock = true;
 				card.upgraded = true;
 		        card.timesUpgraded++;
-		        card.name = Defend_Blue.NAME + "+" + card.timesUpgraded;
+		        card.name = CardCrawlGame.languagePack.getCardStrings(Defend_Blue.ID).NAME + "+" + card.timesUpgraded;
 				return SpireReturn.Return(null);
 			}
 			

@@ -172,6 +172,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	public static Texture polymerizeButton;
 	public static Texture exploreButton;
 	public static Texture rebottleButton;
+	public static Texture burnButton;
+	public static Texture brewButton;
 	public static int playerShielding = 0;
 	public static ArrayList<Integer> monsterShielding = new ArrayList<Integer>();
 	public static boolean monstersUsingShielding = false;
@@ -576,6 +578,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.polymerizeButton = ImageMaster.loadImage("images/ui/campfire/replay/polymerize.png");
 		ReplayTheSpireMod.multitaskButton = ImageMaster.loadImage("images/ui/campfire/replay/multitask.png");
 		ReplayTheSpireMod.exploreButton = ImageMaster.loadImage("images/ui/campfire/replay/explore.png");
+		ReplayTheSpireMod.burnButton = ImageMaster.loadImage("images/ui/campfire/ritual.png");
+		ReplayTheSpireMod.brewButton = ImageMaster.loadImage("images/ui/campfire/brew.png");
 		
 		foundmod_science = checkForMod("madsciencemod.MadScienceMod");
 	    foundmod_seeker = checkForMod("fruitymod.FruityMod");
@@ -908,6 +912,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ReplayTheSpireMod.multitaskButton = ImageMaster.loadImage("images/ui/campfire/replay/multitask.png");
 		ReplayTheSpireMod.exploreButton = ImageMaster.loadImage("images/ui/campfire/replay/explore.png");
 		ReplayTheSpireMod.rebottleButton = ImageMaster.loadImage("images/ui/campfire/replay/rebottle.png");
+		ReplayTheSpireMod.burnButton = ImageMaster.loadImage("images/ui/campfire/ritual.png");
+		ReplayTheSpireMod.brewButton = ImageMaster.loadImage("images/ui/campfire/brew.png");
 		ReplayTheSpireMod.renderFishFG = false;
 		ReplayTheSpireMod.fishAtlas = new TextureAtlas(Gdx.files.internal("images/replayScenes/fishfight.atlas"));
 		ReplayTheSpireMod.fishFG = ReplayTheSpireMod.fishAtlas.findRegion("mod/fg");

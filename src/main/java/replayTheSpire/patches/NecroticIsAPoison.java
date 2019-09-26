@@ -55,8 +55,6 @@ public class NecroticIsAPoison {
 	                	__Instance.isDone = true;
 	                    return;
 	                }
-	                __Instance.target.damageFlash = true;
-	                __Instance.target.damageFlashFrames = 4;
 	                AbstractDungeon.effectList.add(new FlashAtkImgEffect(__Instance.target.hb.cX, __Instance.target.hb.cY, __Instance.attackEffect));
 	            }
 	            duration -= Gdx.graphics.getDeltaTime();

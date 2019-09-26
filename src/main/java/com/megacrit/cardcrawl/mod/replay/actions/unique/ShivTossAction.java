@@ -1,7 +1,7 @@
 package com.megacrit.cardcrawl.mod.replay.actions.unique;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.colorless.Shiv;
+import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.mod.replay.actions.*;

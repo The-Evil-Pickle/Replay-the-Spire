@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.relics.Sozu;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.dungeons.*;
 
+import replayTheSpire.ReplayTheSpireMod;
 import replayTheSpire.patches.SozuPatches;
 
 import com.megacrit.cardcrawl.rewards.*;
@@ -30,7 +31,7 @@ public class ChameleonBrewOption extends AbstractCampfireOption
         } else {
         	this.description = ChameleonBrewOption.TEXT[1];
         }
-        this.img = ImageMaster.CAMPFIRE_BREW_BUTTON;
+        this.img = ReplayTheSpireMod.brewButton;
     }
     
     @Override

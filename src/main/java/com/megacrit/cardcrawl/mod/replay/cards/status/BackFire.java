@@ -99,7 +99,7 @@ public class BackFire extends AbstractCard
             this.upgradeName();
             this.upgradeDamage(2);
             this.actualBurnDamage = this.UPG_DAMAGE;
-            this.rawDescription = Burn.UPGRADE_DESCRIPTION;
+            this.rawDescription = this.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }
