@@ -990,6 +990,24 @@
 		"At the start of combat, gain #b2 orb slots if you have none, or #yChannel #b1 #yHellfire otherwise. NL Certain #rRed and #bBlue cards can appear in future card reward screens."
 	]
   },
+  "Replay:M_SmolderingBlood": {
+    "NAME": "Smoldering Blood",
+	"FLAVOR": "The fire has calmed.",
+    "DESCRIPTIONS": [
+		" [#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]combat.[] NL Enter #yCalm.",
+		" NL Certain #rRed cards can appear in future card reward screens.",
+		" NL Certain #pPurple cards can appear in future card reward screens."
+	]
+  },
+  "Replay:M_StaffOfTheSnake": {
+    "NAME": "Staff of the Snake",
+	"FLAVOR": "ssssssssssssssssssssssstaff",
+    "DESCRIPTIONS": [
+		"At the start of each combat, add an #yInsight to your hand.",
+		" NL Certain #gGreen cards can appear in future card reward screens.",
+		" NL Certain #pPurple cards can appear in future card reward screens."
+	]
+  },
   "m_BlackCat":{
 		"NAME": "Curse Cat",
 		"FLAVOUR": "Woem",

@@ -971,6 +971,10 @@
     "DESCRIPTION": "Cantrip. NL Add a Shiv to your hand. NL Draw a card.",
     "UPGRADE_DESCRIPTION": "Cantrip. NL Add an Upgraded Shiv to your hand. NL Draw a card."
   },
+  "m_Survivalism": {
+    "NAME": "Survivalism",
+    "DESCRIPTION": "Gain !B! Block. NL Scry !M!."
+  },
   "Replay:NecroticArchetypeSelectCard": {
     "NAME": "Necrotic Poison",
     "DESCRIPTION": "Adds Necrotic Poison cards to the rewards pool."

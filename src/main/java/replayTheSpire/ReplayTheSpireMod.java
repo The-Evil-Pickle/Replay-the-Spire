@@ -73,9 +73,6 @@ import blackbeard.TheBlackbeardMod;
 import blackrusemod.BlackRuseMod;
 import chronomuncher.ChronoMod;
 import coloredmap.ColoredMap;
-import fetch.FetchMod;
-import fruitymod.FruityMod;
-import fruitymod.seeker.patches.*;
 import infinitespire.InfiniteSpire;
 import mysticmod.MysticMod;
 import replayTheSpire.panelUI.*;
@@ -110,7 +107,6 @@ import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import java.util.*;
 import java.util.function.*;
 
-import static archetypeAPI.ArchetypeAPI.loadArchetypes;
 //SetUnlocksSubscriber, 
 
 @SpireInitializer
@@ -1083,10 +1079,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		
 		ReplayTheSpireMod.receiveEditUnlocks();
 		
-		if (Loader.isModLoaded("archetypeapi")) {
-			loadArchetypes("APIJsons/");
-		}
-		
     }
 	
     public void receiveEditKeywords() {
@@ -1207,7 +1199,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new WantedPoster(), RelicType.SHARED);
 		BaseMod.addRelic(new WaspNest(), RelicType.SHARED);
 		BaseMod.addRelic(new WaxSeal(), RelicType.SHARED);
-        
+
+		BaseMod.addRelic(new M_StaffOfTheSnake(), RelicType.SHARED);
+		BaseMod.addRelic(new M_SmolderingBlood(), RelicType.SHARED);
+		
 		ChaosEvent.addRing(new RingOfFury());
 		ChaosEvent.addRing(new RingOfPeace());
 		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfFangs(), AbstractPlayer.PlayerClass.THE_SILENT, true));
@@ -1438,6 +1433,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new IC_FireWall());
 		//AddAndUnlockCard(new IC_BasicHellfireCard());
 		AddAndUnlockCard(new WeaponsOverheat());
+		AddAndUnlockCard(new Survivalism());
 		if (foundmod_conspire) {
 			logger.info("adding conspire cards...");
 			AddAndUnlockCard(new DualPolarity());
@@ -1507,11 +1503,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     		initializeInfiniteMod(LoadType.RELIC);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
 			logger.info("Replay | Infinite Spire Mod not detected");
-		}
-    	try {
-			initializeFruityMod(LoadType.RELIC);
-		} catch (ClassNotFoundException | NoClassDefFoundError e) {
-			logger.info("Replay | FruityMod not detected");
 		}
     	try {
     		initializeServantMod(LoadType.RELIC);
@@ -1790,18 +1781,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 	}
 
-	private static void initializeFruityMod(LoadType type)throws ClassNotFoundException, NoClassDefFoundError {
-		Class<FruityMod> fruityMod = FruityMod.class;
-		logger.info("ReplayTheSpireMod | Detected FruityMod!");
-		foundmod_seeker = true;
-		if(type == LoadType.RELIC) {
-			logger.info("ReplayTheSpireMod | Initializing Relics for FruityMod...");
-			BaseMod.addRelicToCustomPool(new m_ArcaneBlood(), AbstractCardEnum.SEEKER_PURPLE);
-		}
-		if(type == LoadType.CARD) {
-			logger.info("ReplayTheSpireMod | Initializing Cards for FruityMod...");
-		}
-	}
 	
 	public static String SINGLE_SUFFIX = "";
 	public static String MULTI_SUFFIX = "s";

@@ -3,3 +3,4 @@
 .project
 **/*.psd
 .classpath
+pom.xml

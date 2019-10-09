@@ -33,6 +33,7 @@ public class ManyHands extends CustomCard
     public ManyHands() {
         super(ID, ManyHands.NAME, "cards/replay/replayBetaSkill.png", -1, ManyHands.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.RARE, CardTarget.SELF);
         ExhaustiveVariable.setBaseValue(this, 2);
+        this.cardsToPreview = new UndeathsTouch();
     }
     
     @Override

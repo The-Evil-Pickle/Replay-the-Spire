@@ -1,6 +1,5 @@
 package com.megacrit.cardcrawl.mod.replay.events.thebottom;
 
-import com.megacrit.cardcrawl.audio.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.blue.AutoShields;
@@ -14,6 +13,7 @@ import com.megacrit.cardcrawl.cards.blue.Recycle;
 import com.megacrit.cardcrawl.cards.blue.Reprogram;
 import com.megacrit.cardcrawl.cards.blue.Scrape;
 import com.megacrit.cardcrawl.cards.blue.SelfRepair;
+import com.megacrit.cardcrawl.cards.blue.SteamBarrier;
 import com.megacrit.cardcrawl.cards.blue.WhiteNoise;
 import com.megacrit.cardcrawl.cards.blue.Zap;
 import com.megacrit.cardcrawl.cards.green.AfterImage;
@@ -25,6 +25,11 @@ import com.megacrit.cardcrawl.cards.green.InfiniteBlades;
 import com.megacrit.cardcrawl.cards.green.Neutralize;
 import com.megacrit.cardcrawl.cards.green.Survivor;
 import com.megacrit.cardcrawl.cards.green.WellLaidPlans;
+import com.megacrit.cardcrawl.cards.purple.Defend_Watcher;
+import com.megacrit.cardcrawl.cards.purple.Eruption;
+import com.megacrit.cardcrawl.cards.purple.ForeignInfluence;
+import com.megacrit.cardcrawl.cards.purple.Strike_Purple;
+import com.megacrit.cardcrawl.cards.purple.Vigilance;
 import com.megacrit.cardcrawl.cards.red.Armaments;
 import com.megacrit.cardcrawl.cards.red.Bash;
 import com.megacrit.cardcrawl.cards.red.Brutality;
@@ -58,6 +63,7 @@ import com.megacrit.cardcrawl.mod.replay.vfx.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.relics.CrackedCore;
+import com.megacrit.cardcrawl.relics.PureWater;
 import com.megacrit.cardcrawl.relics.SnakeRing;
 import com.megacrit.cardcrawl.screens.select.*;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
@@ -68,7 +74,6 @@ import beaked.characters.BeakedTheCultist;
 import blackbeard.characters.TheBlackbeard;
 import blackrusemod.cards.Exchange;
 import blackrusemod.cards.KidneyShot;
-//import beaked.characters.*;
 import blackrusemod.characters.*;
 import chronomuncher.cards.PatternShift;
 import chronomuncher.cards.SecondHand;
@@ -78,7 +83,6 @@ import constructmod.cards.DefenseMode;
 import constructmod.characters.TheConstruct;
 import constructmod.relics.ClockworkPhoenix;
 import constructmod.relics.Cogwheel;
-import fruitymod.seeker.characters.*;
 import gluttonmod.characters.GluttonCharacter;
 import guardian.cards.CurlUp;
 import guardian.cards.TwinSlam;
@@ -263,6 +267,8 @@ public class MirrorMist
 			this.has_1b = CardHelper.hasCardWithID("Bash");
 			this.has_2 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Burning Blood");
 			this.has_2b = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Burning Blood");
+			this.has_3 = AbstractDungeon.player.hasRelic(BurningBlood.ID);
+			this.has_3b = CardHelper.hasCardWithID("Bash");
 			this.loss_c_1 = new Bash();
 			this.gain_c_1 = new Survivor();
 			this.gain_c_1b = new Neutralize();
@@ -270,18 +276,30 @@ public class MirrorMist
 			this.gain_c_2b = new SelfRepair();
 			this.gain_c_2b.upgrade();
 			this.gain_r_2 = new IronCore();
+			this.loss_r_3 = new BurningBlood();
+			this.gain_r_3 = new M_SmolderingBlood();
+			this.loss_c_3b = new Bash();
+			this.gain_c_3b = new Eruption();
+			this.thirdOption = true;
 			break;
 		}
 		case THE_SILENT: {
 			this.has_1 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Ring of the Snake");
 			this.has_2 = CardHelper.hasCardWithID("Survivor");
 			this.has_2b = CardHelper.hasCardWithID("Neutralize");
+			this.has_3 = AbstractDungeon.player.hasRelic("Ring Of The Snake");
+			this.has_3b = CardHelper.hasCardWithID("Survivor");
 			this.loss_r_1 = new SnakeRing();
 			this.gain_r_1 = new SizzlingBlood();
 			this.loss_c_2 = new Survivor();
 			this.loss_c_2b = new Neutralize();
 			this.gain_c_2 = new Leap();
 			this.gain_c_2b = new BeamCell();
+			this.loss_r_3 = new SnakeRing();
+			this.gain_r_3 = new M_StaffOfTheSnake();
+			this.loss_c_3b = new Survivor();
+			this.gain_c_3b = new Survivalism();
+			this.thirdOption = true;
 			break;
 		}
 		case DEFECT: {
@@ -289,6 +307,8 @@ public class MirrorMist
 			this.has_1b = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Cracked Core");
 			this.has_2b = this.has_1b;
 			this.has_2 = CardHelper.hasCardWithID("Zap");
+			this.has_3 = this.has_1;
+			this.has_3b = this.has_2;
 			this.loss_c_1 = new Dualcast();
 			this.gain_c_1 = new Bash();
 			this.loss_r_1b = new CrackedCore();
@@ -297,6 +317,30 @@ public class MirrorMist
 			this.gain_r_2b = new SnakeRing();
 			this.loss_c_2 = new Zap();
 			this.gain_c_2 = new DeadlyPoison();
+			this.loss_c_3 = new Dualcast();
+			this.loss_c_3b = new Zap();
+			this.gain_c_3 = new Vigilance();
+			this.gain_c_3b = new Eruption();
+			this.thirdOption = true;
+			break;
+		}
+		case WATCHER: {
+			this.has_1 = AbstractDungeon.player.hasRelic(PureWater.ID);
+			this.has_1b = CardHelper.hasCardWithID(Vigilance.ID);
+			this.has_2 = this.has_1;
+			this.has_3 = CardHelper.hasCardWithID(Strike_Purple.ID);
+			this.has_3b = CardHelper.hasCardWithID(Defend_Watcher.ID);
+			this.loss_r_1 = new PureWater();
+			this.gain_r_1 = new M_SmolderingBlood();
+			this.loss_c_1b = new Vigilance();
+			this.gain_c_1b = new Bash();
+			this.loss_r_2 = new PureWater();
+			this.gain_r_2 = new M_StaffOfTheSnake();
+			this.loss_c_3 = new Strike_Purple();
+			this.gain_c_3 = new ForeignInfluence();
+			this.loss_c_3b = new Defend_Watcher();
+			this.gain_c_3b = new SteamBarrier();
+			this.thirdOption = true;
 			break;
 		}
 		default: {
@@ -338,29 +382,6 @@ public class MirrorMist
 					}
 					this.gain_c_3 = new Scrape();
 				}
-				this.thirdOption = true;
-				break;
-			}
-			if (ReplayTheSpireMod.foundmod_seeker && AbstractDungeon.player instanceof TheSeeker) {
-				this.has_1 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic("Arcanosphere");
-				this.has_1b = CardHelper.hasCardWithID("AstralHaze");
-				this.has_2 = this.has_1b;
-				this.has_3 = this.has_2;
-				this.loss_r_1 = ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_getRelic("Arcanosphere");
-				this.gain_r_1 = new m_ArcaneBlood();
-				if (this.has_1b) {
-					for (final AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-						if (c.cardID.equals("AstralHaze")) {
-							this.loss_c_1b = c.makeCopy();
-						}
-					}
-					this.gain_c_1b = new Hemokinesis();
-				}
-				this.gain_c_1b = new RecklessCharge();
-				this.loss_c_2 = this.loss_c_1b;
-				this.loss_c_3 = this.loss_c_1b;
-				this.gain_c_2 = new EndlessAgony();
-				this.gain_c_3 = new Rebound();
 				this.thirdOption = true;
 				break;
 			}
@@ -1007,7 +1028,6 @@ public class MirrorMist
 			break;
 		}
       default: 
-        //logMetric("Wander");
         this.imageEventText.updateBodyText(RESULT_DIALOG_B);
 		float displayCount = 0.0F;
 		

@@ -41,6 +41,7 @@ public class AwakenedRitual extends CustomCard
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
         this.tips = new ArrayList<TooltipInfo>();
+        this.cardsToPreview = new RitualComponent();
     }
     
     @Override
@@ -63,12 +64,12 @@ public class AwakenedRitual extends CustomCard
         }
     }
 
-    @Override
+    /*@Override
     public List<TooltipInfo> getCustomTooltips() {
     	this.tips.clear();
         this.tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
         return this.tips;
-    }
+    }*/
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings("Crow Ritual");
         NAME = AwakenedRitual.cardStrings.NAME;

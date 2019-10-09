@@ -84,7 +84,6 @@ public class M_RuneBlood extends M_MistRelic
         tmpPool.add(new FieryHammer());
         tmpPool.add(new ShiftingStrike());
         tmpPool.add(new MetallurgicalResearch());
-        tmpPool.add(new Rearm());
         tmpPool.add(new DoubleUp());
         tmpPool.add(new Reinforce());
         tmpPool.add(new CraftFirestone());

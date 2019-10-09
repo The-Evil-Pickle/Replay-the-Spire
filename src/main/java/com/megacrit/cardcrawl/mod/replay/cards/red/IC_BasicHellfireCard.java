@@ -35,7 +35,9 @@ public class IC_BasicHellfireCard extends CustomCard
     private static final int FLAME_DAMAGE = 4;
     
     public IC_BasicHellfireCard() {
-        super("IC_BasicHellfireCard", IC_BasicHellfireCard.NAME, "cards/replay/replayBetaSkill.png", 1, IC_BasicHellfireCard.DESCRIPTION, CardType.SKILL, (AbstractDungeon.player == null) ? AbstractCard.CardColor.COLORLESS : ((AbstractDungeon.player instanceof Defect) ? AbstractCard.CardColor.RED : AbstractCard.CardColor.BLUE), (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(IronCore.ID)) ? CardRarity.COMMON : CardRarity.SPECIAL, CardTarget.SELF);
+        super("IC_BasicHellfireCard", IC_BasicHellfireCard.NAME, "cards/replay/replayBetaSkill.png", 1, IC_BasicHellfireCard.DESCRIPTION, CardType.SKILL, 
+        		(AbstractDungeon.player == null) ? AbstractCard.CardColor.COLORLESS : ((AbstractDungeon.player instanceof Defect) ? AbstractCard.CardColor.RED : AbstractCard.CardColor.BLUE), 
+        				(ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(IronCore.ID)) ? CardRarity.COMMON : CardRarity.SPECIAL, CardTarget.SELF);
 		this.exhaust = true;
     }
     
