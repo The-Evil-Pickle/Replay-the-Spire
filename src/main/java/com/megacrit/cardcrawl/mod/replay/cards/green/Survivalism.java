@@ -16,7 +16,7 @@ public class Survivalism extends AbstractCard
     private static final CardStrings cardStrings;
     
     public Survivalism() {
-        super("m_Survivalism", Survivalism.cardStrings.NAME, "cards/replay/replayBetaSkill.png", 1, Survivalism.cardStrings.DESCRIPTION, CardType.SKILL, 
+        super("m_Survivalism", Survivalism.cardStrings.NAME, "cards/replay/survivalism.png", 1, Survivalism.cardStrings.DESCRIPTION, CardType.SKILL, 
         		(AbstractDungeon.player == null) ? AbstractCard.CardColor.COLORLESS : ((AbstractDungeon.player instanceof Watcher) ? AbstractCard.CardColor.GREEN : AbstractCard.CardColor.PURPLE), 
         		CardRarity.BASIC, CardTarget.SELF);
         this.baseBlock = 8;

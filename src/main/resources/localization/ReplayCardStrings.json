@@ -345,6 +345,10 @@
     "DESCRIPTION": "Choose: Lose !M! Strength, Dexterity, or Focus. NL Choose: Gain !M! Strength, Dexterity, or Focus. NL Exhaust.",
 	"UPGRADE_DESCRIPTION": "Choose: Lose !M! Strength, Dexterity, or Focus. NL Choose: Gain !M! Strength, Dexterity, or Focus. NL Exhaust."
   },
+  "Replay:Hum": {
+    "NAME": "Hum",
+    "DESCRIPTION": "Scry !M!. NL Your attacks deal 25% more damage for !M! rounds."
+  },
   "Improvise": {
     "NAME": "Improvise",
     "DESCRIPTION": "Choose 1 of 3 random cards to add to your hand. It costs 1 less. NL Exhaust.",
@@ -533,6 +537,10 @@
   "ReplayTheSpireMod:Misquitos": {
 	"NAME": "A Very Large Swarm Of Misquitos",
 	"DESCRIPTION": "Autoplay. NL Deal !M! damage to ALL fighters."
+  },
+  "Replay:Hysterical Blindness": {
+	"NAME": "Hysterical Blindness",
+	"DESCRIPTION": "Unplayable. NL At the end of your turn, your Attacks become obscured for !M! turns. NL Exhaust."
   },
   "ReplayTheSpireMod:Imminent Threat": {
 	"NAME": "Imminent Threat",

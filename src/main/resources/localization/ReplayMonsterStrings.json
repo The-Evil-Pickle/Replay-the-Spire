@@ -129,40 +129,15 @@
       ""
     ]
   },
-  "J_louse_1": {
+  "Replay:BlueRogue": {
     "MOVES": [
-      "Grow"
+      "Rogue's Light",
+	  "Chaos Center",
+	  "Rushdown",
+	  "Wayward Explosives",
+	  "Quickstab"
     ],
-    "NAME": "Erik",
-    "DIALOG": [
-      ""
-    ]
-  },
-  "J_louse_2": {
-    "MOVES": [
-      "Spit"
-    ],
-    "NAME": "Yu",
-    "DIALOG": [
-      ""
-    ]
-  },
-  "J_louse_3": {
-    "MOVES": [
-      "Taunt",
-	  "Cry"
-    ],
-    "NAME": "Puro",
-    "DIALOG": [
-      ""
-    ]
-  },
-  "J_louse_4": {
-    "MOVES": [
-      "Steal Pants",
-	  "Cry"
-    ],
-    "NAME": "Jer the Pantsless",
+    "NAME": "Blue Rogue",
     "DIALOG": [
       ""
     ]

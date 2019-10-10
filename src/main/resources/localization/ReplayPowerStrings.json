@@ -190,6 +190,14 @@
 	" remaining this round."
     ]
   },
+  "ReplayBlindPower": {
+    "NAME": "Blind",
+    "DESCRIPTIONS": [
+	"Your #yAttacks are obscured. NL Lasts #b",
+	" round",
+	"This attack has been obscured."
+    ]
+  },
   "ReplayBrewPower": {
     "NAME": "Brewmaster",
     "DESCRIPTIONS": [

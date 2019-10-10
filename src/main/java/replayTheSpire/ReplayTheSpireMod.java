@@ -31,6 +31,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.colorless.*;
 import com.megacrit.cardcrawl.mod.replay.cards.curses.*;
 import com.megacrit.cardcrawl.mod.replay.cards.green.*;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
+import com.megacrit.cardcrawl.mod.replay.cards.purple.*;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.ArmamentsMkIIB;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.DualPolarity;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.ResoundingBlow;
@@ -48,9 +49,7 @@ import com.megacrit.cardcrawl.mod.replay.monsters.replay.CaptainAbe;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.PondfishBoss;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.Snechameleon;
-import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.J_louse_1;
-import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.J_louse_2;
-import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.J_louse_3;
+import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.BlueRogue;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.eastereggs.R_Hoarder;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.hec.Conductor;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.hec.HellsEngine;
@@ -1385,6 +1384,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Crystallizer());
 		AddAndUnlockCard(new ReroutePower());
 		AddAndUnlockCard(new FabricateWheel(), foundmod_hubris || foundmod_conspire || Loader.isModLoaded("jedi") || Loader.isModLoaded("StrawberrySpire"));
+		logger.info("adding cards for Watcher...");
+		AddAndUnlockCard(new Hum());
 		logger.info("adding colorless cards...");
 		//AddAndUnlockCard(new Improvise(), false);
 		AddAndUnlockCard(new PoisonedStrike());
@@ -1422,6 +1423,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Doomed());
 		AddAndUnlockCard(new DebtCurseIOU());
 		AddAndUnlockCard(new FaultyEquipment());
+		AddAndUnlockCard(new HystericalBlindness());
 		logger.info("adding unobtainable cards...");
 		AddAndUnlockCard(new PotOfGreed());
 		AddAndUnlockCard(new GhostDefend());
@@ -1477,11 +1479,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         BaseMod.addMonster("Pondfish", () -> new MonsterGroup(new AbstractMonster[] {new CaptainAbe(170.0f, -80.0f), new PondfishBoss(0.0f, -650.0f)}));
         BaseMod.addBoss("TheCity", "Pondfish", "images/ui/map/boss/pondfish.png", "images/ui/map/bossOutline/pondfish.png");
         BaseMod.addMonster("R_Hoarder", () -> new MonsterGroup(new AbstractMonster[] {new R_Hoarder(0, 10)}));
-        BaseMod.addMonster("Erikyupuro", () -> new MonsterGroup(new AbstractMonster[] { new J_louse_1(-350.0f, 25.0f), new J_louse_2(-125.0f, 10.0f), new J_louse_3(80.0f, 30.0f) }));
         BaseMod.addMonster("Fading Forest", () -> new MonsterGroup(new AbstractMonster[] {new FadingForestBoss()}));
         BaseMod.addMonster("Replay:Snechameleon", () -> new MonsterGroup(new AbstractMonster[] {new Snechameleon()}));
+        BaseMod.addMonster("Replay:BlueRogue", () -> new MonsterGroup(new AbstractMonster[] {new BlueRogue()}));
         BaseMod.addBoss("Exordium", "Fading Forest", "images/ui/map/boss/FableSpinner.png", "images/ui/map/bossOutline/FableSpinner.png");
         BaseMod.addEliteEncounter("TheCity", new MonsterInfo("Replay:Snechameleon", 0.9f));
+        BaseMod.addEliteEncounter("Exordium", new MonsterInfo("Replay:BlueRogue", 0.75f));
         BaseMod.addMonster(HellsEngine.ID, () -> new MonsterGroup(new AbstractMonster[] {new HellsEngine(), new Conductor()}));
         BaseMod.addBoss("TheBeyond", HellsEngine.ID, "images/ui/map/boss/HEC.png", "images/ui/map/bossOutline/HEC.png");
 	}
@@ -1906,12 +1909,6 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	}
 	
 	public void receivePostDraw(AbstractCard c) {
-		if (AbstractDungeon.player.hasPower("ReplayChaosPower") && AbstractDungeon.player.getPower("ReplayChaosPower").amount > 0) {
-			if (RingOfChaos.ChaosScrambleCard(c)) {
-				AbstractDungeon.player.getPower("ReplayChaosPower").amount--;
-				AbstractDungeon.player.getPower("ReplayChaosPower").updateDescription();
-			}
-		}
 		if (AbstractDungeon.player.hasPower("TPH_Confusion") && c.cost > -1 && c.color != AbstractCard.CardColor.CURSE && c.type != AbstractCard.CardType.STATUS && !(foundmod_snecko && sneckobs.isSneky(c))) {
 			if (BypassStupidBasemodRelicRenaming_hasRelic("Snecko Heart")) {
 				SneckoHeart snek = (SneckoHeart)BypassStupidBasemodRelicRenaming_getRelic("Snecko Heart");

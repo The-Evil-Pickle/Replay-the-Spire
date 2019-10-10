@@ -32,6 +32,7 @@ public class Snechameleon extends AbstractMonster
     private static final byte GLARE = 1;
     private static final byte BITE = 2;
     private static final byte TAIL = 3;
+    private static final byte SATURATION = 4;
     private static final int BITE_DAMAGE = 5;
     private static final int BITE_HITS = 3;
     private static final int TAIL_DAMAGE = 6;
@@ -107,6 +108,12 @@ public class Snechameleon extends AbstractMonster
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 2, true), 2));
                 break;
             }
+            case 4: {
+                AbstractDungeon.actionManager.addToBottom(new SFXAction("MONSTER_SNECKO_GLARE"));
+            	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ColorShiftPower(this, 1)));
+            	AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, 8));
+            	break;
+            }
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
     }
@@ -147,6 +154,9 @@ public class Snechameleon extends AbstractMonster
             this.firstTurn = false;
             this.setMove(Snechameleon.MOVES[0], (byte)1, Intent.DEBUFF);
             return;
+        }
+        if (!this.lastMove(SATURATION) && !this.hasPower(ColorShiftPower.POWER_ID) || (this.currentHealth <= this.maxHealth / 2 && this.currentHealth > 20 && this.getPower(ColorShiftPower.POWER_ID).amount == 1)) {
+        	this.setMove(SATURATION, Intent.DEFEND_BUFF);
         }
         if (num < 30) {
         	if (this.lastMove((byte)3)) {

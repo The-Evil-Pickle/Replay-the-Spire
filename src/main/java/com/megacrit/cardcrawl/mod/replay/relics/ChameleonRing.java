@@ -5,8 +5,10 @@ import java.util.*;
 
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.mod.replay.potions.*;
+import com.megacrit.cardcrawl.mod.replay.ui.campfire.ChameleonBrewOption;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.*;
+import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import com.megacrit.cardcrawl.characters.*;
 
 public class ChameleonRing extends AbstractRelic
@@ -30,6 +32,11 @@ public class ChameleonRing extends AbstractRelic
 				AbstractDungeon.player.obtainPotion(i, p.makeCopy());
 			}
 		}
+    }
+    
+    @Override
+    public void addCampfireOption(final ArrayList<AbstractCampfireOption> options) {
+        options.add(new ChameleonBrewOption());
     }
     
     @Override

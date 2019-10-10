@@ -102,7 +102,7 @@ public class M_StaffOfTheSnake extends M_MistRelic
         tmpPool.add(new JustLucky());
         tmpPool.add(new SimmeringFury());
         tmpPool.add(new EmptyMind());
-        tmpPool.add(new FlowState());
+        //tmpPool.add(new FlowState());
         tmpPool.add(new InnerPeace());
         tmpPool.add(new Tranquility());
         tmpPool.add(new TalkToTheHand());

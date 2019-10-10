@@ -74,67 +74,6 @@ public class ReplayCampButtonsPatch
 	}
 	
     public static void Postfix(final Object meObj) {
-
-		if (AbstractDungeon.player.hasRelic(ChameleonRing.ID)) {
-			final CampfireUI campfire = (CampfireUI)meObj;
-			try {
-				final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");
-				final ChameleonBrewOption button = new ChameleonBrewOption();
-				campfireButtons.add(button);
-				float x = 950.f;
-				float y = 990.0f - (270.0f * (float)((campfireButtons.size() + 1) / 2));
-				if (campfireButtons.size() % 2 == 0) {
-					x = 1110.0f;
-					campfireButtons.get(campfireButtons.size() - 2).setPosition(800.0f * Settings.scale, y * Settings.scale);
-				}
-				campfireButtons.get(campfireButtons.size() - 1).setPosition(x * Settings.scale, y * Settings.scale);
-			}
-			catch (SecurityException | IllegalArgumentException ex2) {
-				//final RuntimeException ex;
-				//final RuntimeException e = ex;
-				//e.printStackTrace();
-			}
-		}
-		if (AbstractDungeon.player.hasRelic("Replay:Pickaxe")) {
-			final CampfireUI campfire = (CampfireUI)meObj;
-			try {
-				final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");
-				final PickMineOption button = new PickMineOption();
-				campfireButtons.add(button);
-				float x = 950.f;
-				float y = 990.0f - (270.0f * (float)((campfireButtons.size() + 1) / 2));
-				if (campfireButtons.size() % 2 == 0) {
-					x = 1110.0f;
-					campfireButtons.get(campfireButtons.size() - 2).setPosition(800.0f * Settings.scale, y * Settings.scale);
-				}
-				campfireButtons.get(campfireButtons.size() - 1).setPosition(x * Settings.scale, y * Settings.scale);
-			}
-			catch (SecurityException | IllegalArgumentException ex2) {
-				//final RuntimeException ex;
-				//final RuntimeException e = ex;
-				//e.printStackTrace();
-			}
-		}
-		if (AbstractDungeon.player.hasRelic(PocketPolymer.ID)) {
-			final CampfireUI campfire = (CampfireUI)meObj;
-			try {
-				final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");
-				final PolymerizeTransformOption button = new PolymerizeTransformOption(true);
-				campfireButtons.add(button);
-				float x = 950.f;
-				float y = 990.0f - (270.0f * (float)((campfireButtons.size() + 1) / 2));
-				if (campfireButtons.size() % 2 == 0) {
-					x = 1110.0f;
-					campfireButtons.get(campfireButtons.size() - 2).setPosition(800.0f * Settings.scale, y * Settings.scale);
-				}
-				campfireButtons.get(campfireButtons.size() - 1).setPosition(x * Settings.scale, y * Settings.scale);
-			}
-			catch (SecurityException | IllegalArgumentException ex2) {
-				//final RuntimeException ex;
-				//final RuntimeException e = ex;
-				//e.printStackTrace();
-			}
-		}
 		if (AbstractDungeon.currMapNode == BonfirePatches.bonfireNode || AbstractDungeon.player.hasRelic(Multitool.ID)) {
 			final CampfireUI campfire = (CampfireUI)meObj;
 			try {
