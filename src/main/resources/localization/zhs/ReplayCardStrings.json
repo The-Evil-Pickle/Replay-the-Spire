@@ -603,7 +603,8 @@
 		" NL 将 !M! 张Cogs加入你的弃牌堆。",
 		" NL 分裂出一个随机史莱姆。 NL 对全部敌人给予 !M! 层 黏液 。",
 		" NL 将 !M! 张随机 Letters 加入你的抽牌堆。",
-		"这张牌的效果是被抽到时随机触发的。 这张牌需要的 [E] 越多，效果越多。"
+		"这张牌的效果是被抽到时随机触发的。 这张牌需要的 [E] 越多，效果越多。",
+		" NL Scry !M!. Add a Smite to your hand."
 	]
   },
   "ReplayTheSpireMod:Necrogeddon": {

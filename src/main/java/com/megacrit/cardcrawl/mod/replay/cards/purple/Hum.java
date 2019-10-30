@@ -42,6 +42,6 @@ public class Hum extends AbstractCard
     }
     
     static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings("CarveReality");
+        cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     }
 }

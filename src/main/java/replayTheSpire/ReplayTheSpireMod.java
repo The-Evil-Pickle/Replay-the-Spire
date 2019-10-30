@@ -93,12 +93,7 @@ import java.lang.reflect.*;
 import java.io.*;
 
 import com.megacrit.cardcrawl.random.Random;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.relics.BloodyIdol;
-import com.megacrit.cardcrawl.relics.Dodecahedron;
-import com.megacrit.cardcrawl.relics.Ectoplasm;
-import com.megacrit.cardcrawl.relics.SneckoEye;
-import com.megacrit.cardcrawl.relics.Sozu;
+import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
@@ -1207,7 +1202,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfFangs(), AbstractPlayer.PlayerClass.THE_SILENT, true));
 		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfPanic(), new String[]{SneckoEye.ID, SneckoHeart.ID}));
 		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfAddiction(), new String[]{Sozu.ID}));
-		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfSearing(), AbstractPlayer.PlayerClass.IRONCLAD, true, new String[]{Dodecahedron.ID}));
+		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfSearing(), AbstractPlayer.PlayerClass.IRONCLAD, true));//, new String[]{Dodecahedron.ID}
 		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfShattering(), AbstractPlayer.PlayerClass.DEFECT, false));
 		ChaosEvent.addRing(new RingOfHypnosis());
 		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfGreed(), new String[]{Ectoplasm.ID}));

@@ -14,6 +14,7 @@ import slimebound.powers.SlimedPower;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.tempCards.Shiv;
+import com.megacrit.cardcrawl.cards.tempCards.Smite;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -64,6 +65,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
 import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
+import com.megacrit.cardcrawl.actions.utility.ScryAction;
 
 public class SuperSneckoCrazyCard extends BlackCard
 {
@@ -125,6 +127,20 @@ public class SuperSneckoCrazyCard extends BlackCard
 		@Override
     	public SSCCEffect makeCopy() {
 			return new SSCCE_Orbs();
+		}
+    }
+    public static class SSCCE_Scry extends SSCCEffect {
+    	public SSCCE_Scry() {
+    		super(EXTENDED_DESCRIPTION[18]);
+    	}
+		@Override
+		public void use(AbstractPlayer p, AbstractCard c) {
+			AbstractDungeon.actionManager.addToBottom(new ScryAction(c.magicNumber));
+			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Smite(), 1));
+		}
+		@Override
+    	public SSCCEffect makeCopy() {
+			return new SSCCE_Scry();
 		}
     }
     public static class SSCCE_Refund extends SSCCEffect {
@@ -473,6 +489,7 @@ public class SuperSneckoCrazyCard extends BlackCard
         effects_src.add(new SSCCE_Exhaust());
         effects_src.add(new SSCCE_Shivs());
         effects_src.add(new SSCCE_Orbs());
+        effects_src.add(new SSCCE_Scry());
         if (Loader.isModLoaded("BlackRuseMod")) {
             effects_src.add(new SSCCE_Servant());
         }

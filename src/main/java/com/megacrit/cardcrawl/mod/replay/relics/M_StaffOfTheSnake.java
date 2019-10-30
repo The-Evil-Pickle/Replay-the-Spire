@@ -92,7 +92,7 @@ public class M_StaffOfTheSnake extends M_MistRelic
         tmpPool.add(new WraithForm());
         //watcher cards
         tmpPool.add(new CutThroughFate());
-        tmpPool.add(new Flick());
+        //tmpPool.add(new Flick());
         tmpPool.add(new Weave());
         tmpPool.add(new Nirvana());
         tmpPool.add(new SashWhip());

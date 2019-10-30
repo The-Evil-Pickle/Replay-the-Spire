@@ -579,7 +579,8 @@
 		" NL Add !M! Cogs to your 뽑을 카드 더미.",
 		" NL Split into a random Slime. NL Apply !M! Slimed to all enemies.",
 		" NL Shuffle !M! random Letters to your 뽑을 카드 더미.",
-		"This card's effects are randomized each time it is drawn. The more [E] this card costs, the more effects it gets."
+		"This card's effects are randomized each time it is drawn. The more [E] this card costs, the more effects it gets.",
+		" NL Scry !M!. Add a Smite to your hand."
 	]
   },
   "ReplayTheSpireMod:Necrogeddon": {

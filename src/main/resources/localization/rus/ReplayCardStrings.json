@@ -579,7 +579,8 @@
 		" NL Добавить !M! Шестерёнок в вашу стопку сброса.",
 		" NL Разделиться на несколько слизней. NL Наложить !M! В Слизи на всех врагов.",
 		" NL Перетасуйте !M! случайных Letters в стопку добора.",
-		"This card's effects are randomized each time it is drawn. The more [E] this card costs, the more effects it gets."
+		"This card's effects are randomized each time it is drawn. The more [E] this card costs, the more effects it gets.",
+		" NL Scry !M!. Add a Smite to your hand."
 	]
   },
   "ReplayTheSpireMod:Necrogeddon": {
