@@ -64,6 +64,7 @@ public class BlueRogue extends AbstractMonster
     private int stabDmg;
     private int stabBlk;
     private int blindAmt;
+    private int chaosAmt;
     private static final byte LIGHT = 1;
     private static final byte CHAOS = 2;
     private static final byte RUSHDOWN = 3;
@@ -107,10 +108,12 @@ public class BlueRogue extends AbstractMonster
             this.stabBlk = STAB_BLK;
         }
         if (AbstractDungeon.ascensionLevel >= 18) {
-        	this.blindAmt = 2;
+        	this.blindAmt = 3;
+        	this.chaosAmt = 3;
         }
         else {
-        	this.blindAmt = 1;
+        	this.blindAmt = 2;
+        	this.chaosAmt = 1;
         }
         this.damage.add(new DamageInfo(this, this.rushDmg));
         this.damage.add(new DamageInfo(this, this.blastDmg));
@@ -121,8 +124,8 @@ public class BlueRogue extends AbstractMonster
     public void takeTurn() {
         switch (this.nextMove) {
             case CHAOS: {
-            	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new ChaosPower(AbstractDungeon.player, 1, 3), 1));
-            	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new LanguidPower(AbstractDungeon.player, this.blindAmt+1, true), this.blindAmt+1));
+            	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new ChaosPower(AbstractDungeon.player, 1, this.chaosAmt), 1));
+            	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new LanguidPower(AbstractDungeon.player, this.blindAmt, true), this.blindAmt));
                 this.roared = true;
                 break;
             }
@@ -171,10 +174,17 @@ public class BlueRogue extends AbstractMonster
 		    		break;
 		    	}
 		    	default: {
-		    		if (!this.roared) {
+		    		if (num < 25 && !this.roared) {
 		    			this.setMove(MOVES[1], CHAOS, Intent.STRONG_DEBUFF);
 		    		} else {
-		    			this.setMove(MOVES[3], BLAST, Intent.ATTACK, this.damage.get(1).base);
+		    	        if (!this.lastMove(BLAST) && num % 2 == 0) {
+		    	        	this.setMove(MOVES[3], BLAST, Intent.ATTACK, this.damage.get(1).base);
+		    	            return;
+		    	        }
+		    	        if (!this.lastMove(RUSHDOWN) && num % 2 == 1) {
+		    	        	this.setMove(MOVES[2], RUSHDOWN, Intent.ATTACK_BUFF, this.damage.get(0).base, this.rushAmt, true);
+		    	            return;
+		    	        }
 		    		}
 		    		break;
 		    	}

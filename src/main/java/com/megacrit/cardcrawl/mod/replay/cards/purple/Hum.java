@@ -17,14 +17,14 @@ public class Hum extends AbstractCard
     private static final CardStrings cardStrings;
     
     public Hum() {
-        super(ID, Hum.cardStrings.NAME, "cards/replay/replayBetaSkill.png", 1, Hum.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, Hum.cardStrings.NAME, "cards/replay/replayBetaSkill.png", 1, Hum.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        this.addToBot(new ScryAction(this.magicNumber-1));
+        this.addToBot(new ScryAction(this.magicNumber));
         this.addToBot(new ApplyPowerAction(p, p, new MightPower(p, this.magicNumber, false), this.magicNumber));
     }
     

@@ -349,6 +349,10 @@
     "NAME": "Hum",
     "DESCRIPTION": "Scry !M!. NL Your attacks deal 25% more damage for !M! rounds."
   },
+  "Replay:placeholdertext1": {
+    "NAME": "placeholdertext1",
+    "DESCRIPTION": "If you are in Wrath, apply !M! Decrepit. NL If you are in Calm, apply !M! Languid. NL If you are in neither, gain !M! Mantra."
+  },
   "Improvise": {
     "NAME": "Improvise",
     "DESCRIPTION": "Choose 1 of 3 random cards to add to your hand. It costs 1 less. NL Exhaust.",

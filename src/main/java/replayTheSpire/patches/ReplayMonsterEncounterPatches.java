@@ -31,8 +31,8 @@ public class ReplayMonsterEncounterPatches {
 				AbstractDungeon.bossKey = ("LordOfAnnihilation");
 				final BaseMod.BossInfo bossInfo = BaseMod.getBossInfo(AbstractDungeon.bossKey);
 	            if (bossInfo != null) {
-	                DungeonMap.boss = bossInfo.bossMap;
-	                DungeonMap.bossOutline = bossInfo.bossMapOutline;
+	                DungeonMap.boss = bossInfo.loadBossMap();
+	                DungeonMap.bossOutline = bossInfo.loadBossMapOutline();
 	            } else {
 	            	DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/OldBossIcon.png");
 					DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/OldBossIcon.png");
@@ -54,8 +54,8 @@ public class ReplayMonsterEncounterPatches {
 			        } else {
 			        	final BaseMod.BossInfo bossInfo = BaseMod.getBossInfo(AbstractDungeon.bossKey);
 			            if (bossInfo != null) {
-			                DungeonMap.boss = bossInfo.bossMap;
-			                DungeonMap.bossOutline = bossInfo.bossMapOutline;
+			                DungeonMap.boss = bossInfo.loadBossMap();
+			                DungeonMap.bossOutline = bossInfo.loadBossMapOutline();
 			            } else {
 			            	DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/OldBossIcon.png");
 							DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/OldBossIcon.png");

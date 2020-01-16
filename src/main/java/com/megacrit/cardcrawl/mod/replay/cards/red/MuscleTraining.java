@@ -52,7 +52,9 @@ public class MuscleTraining extends CustomCard
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.rawDescription = UPGRADE_DESCRIPTION;
             ExhaustiveVariable.upgrade(this, 1);
+            initializeDescription();
         }
     }
     

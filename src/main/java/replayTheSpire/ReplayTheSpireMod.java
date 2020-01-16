@@ -1479,7 +1479,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         BaseMod.addMonster("Replay:BlueRogue", () -> new MonsterGroup(new AbstractMonster[] {new BlueRogue()}));
         BaseMod.addBoss("Exordium", "Fading Forest", "images/ui/map/boss/FableSpinner.png", "images/ui/map/bossOutline/FableSpinner.png");
         BaseMod.addEliteEncounter("TheCity", new MonsterInfo("Replay:Snechameleon", 0.9f));
-        BaseMod.addEliteEncounter("Exordium", new MonsterInfo("Replay:BlueRogue", 0.75f));
+        BaseMod.addEliteEncounter("Exordium", new MonsterInfo("Replay:BlueRogue", 0.82f));
         BaseMod.addMonster(HellsEngine.ID, () -> new MonsterGroup(new AbstractMonster[] {new HellsEngine(), new Conductor()}));
         BaseMod.addBoss("TheBeyond", HellsEngine.ID, "images/ui/map/boss/HEC.png", "images/ui/map/bossOutline/HEC.png");
 	}
