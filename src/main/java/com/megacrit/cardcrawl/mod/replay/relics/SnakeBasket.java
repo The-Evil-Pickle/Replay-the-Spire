@@ -22,7 +22,7 @@ public class SnakeBasket extends AbstractRelic
     public static final int POISON = 2;
     
     public SnakeBasket() {
-        super("Basket Of Snakes", "betaRelic.png", RelicTier.UNCOMMON, LandingSound.FLAT);
+        super("Basket Of Snakes", "basketOfSnakes.png", RelicTier.UNCOMMON, LandingSound.FLAT);
         this.counter = 0;
     }
     

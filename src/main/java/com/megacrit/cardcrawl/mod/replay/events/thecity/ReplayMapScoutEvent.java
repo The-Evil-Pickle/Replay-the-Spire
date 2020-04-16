@@ -57,8 +57,8 @@ public class ReplayMapScoutEvent  extends AbstractImageEvent
         }
         this.bossIDs = new ArrayList<String>();
         this.bossIDs.add("Awakened One");
-        this.bossIDs.add("Time Eater");
         this.bossIDs.add("Donu and Deca");
+        this.bossIDs.add("Time Eater");
         this.screen = CurScreen.INTRO;
         this.imageEventText.setDialogOption(OPTIONS[11]);
     }

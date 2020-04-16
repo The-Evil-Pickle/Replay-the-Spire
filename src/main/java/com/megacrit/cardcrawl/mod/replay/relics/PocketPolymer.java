@@ -14,7 +14,7 @@ public class PocketPolymer extends AbstractRelic
     public static final String ID = "Replay:PocketPolymizer";
     
     public PocketPolymer() {
-        super(ID, "betaRelic.png", RelicTier.RARE, LandingSound.MAGICAL);
+        super(ID, "pocketPolymer.png", RelicTier.RARE, LandingSound.MAGICAL);
     }
     
     @Override

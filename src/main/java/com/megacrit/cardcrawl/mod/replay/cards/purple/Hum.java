@@ -5,13 +5,16 @@ import com.megacrit.cardcrawl.mod.replay.powers.MightPower;
 import com.megacrit.cardcrawl.cards.tempCards.*;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.monsters.*;
+
+import basemod.abstracts.CustomCard;
+
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.core.*;
 
-public class Hum extends AbstractCard
+public class Hum extends CustomCard
 {
     public static final String ID = "Replay:Hum";
     private static final CardStrings cardStrings;

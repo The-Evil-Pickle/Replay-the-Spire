@@ -19,7 +19,7 @@ public class WaxSeal extends AbstractRelic implements ClickableRelic
     public static final String ID = "Replay:Wax Seal";
     public final static float DISCOUNT = 0.2F;
     public WaxSeal() {
-        super(ID, "betaRelic.png", AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.MAGICAL);
+        super(ID, "waxSeal.png", AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.MAGICAL);
     }
 
     @Override

@@ -153,7 +153,7 @@ public class GrabBag extends ReplayAbstractRelic
         String energyDescAlt2 = (akd.substring(akd.indexOf("]") + 1, akd.indexOf(".")));
         String energyDescB = (bkd.substring(0, bkd.indexOf("[")));
         for (AbstractRelic r : RelicLibrary.bossList) {
-        	if (!(r instanceof GrabBag)) {
+        	if (!(r instanceof GrabBag || r instanceof AncientBell)) {
         		if (r.canSpawn()) {
             		boolean g1 = false;
                 	boolean g2 = false;

@@ -344,6 +344,23 @@
     "NAME": "重构",
     "DESCRIPTION": "选择：失去 !M! 点 力量 ， 敏捷 或 集中 。 NL 选择： 获得 !M! 点 力量，敏捷 或 集中 。 NL 消耗 。",
 	"UPGRADE_DESCRIPTION": "选择：失去 !M! 点 力量 ， 敏捷 或 集中 。 NL 选择： 获得 !M! 点 力量，敏捷 或 集中 。 NL 消耗 。"
+  }, 
+  "Replay:Hum": {
+    "NAME": "低语",
+    "DESCRIPTION": "预见 !M! 。 NL !M! 个回合内，你的攻击牌额外造成25%的伤害。"
+  },
+  "Replay:Vibes": {
+    "NAME": "共鸣",
+    "DESCRIPTION": "愤怒 ：给予 !M! 层 衰老 。 NL 平静 ：给予 !M! 层 乏力 。 NL 其他 ：获得 !M! 层 真言 。",
+	"EXTENDED_DESCRIPTION": [
+		"善",
+		"恶"
+	]
+  },
+  "Replay:Cycle": {
+    "NAME": "轮回",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 每当你 预见 时，将这张牌从弃牌堆中加入你的手牌。 NL 消耗性 !stslib:ex! ",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 每当你 预见 时，将这张牌从弃牌堆中加入你的手牌。 NL 墓地 ， NL 消耗性 !stslib:ex! "
   },
   "Improvise": {
     "NAME": "凑合",
@@ -399,6 +416,10 @@
     "DESCRIPTION": "虚无 。NL 造成 !D! 点伤害。 NL 如果这名敌人的意图是攻击，获得 !M! 层 反射 。NL 消耗性 !stslib:ex! 。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果这名敌人的意图是攻击，获得 !M! 层 反射 。NL 消耗性 !stslib:ex! 。"
   },
+    "Replay:Bootleg Shield Generator": {
+    "NAME": "护盾生成器",
+    "DESCRIPTION": "获得 !B! 点 护盾 。 NL 消耗性 !stslib:ex! 。"
+  },
   "Replay:Dark Deal": {
     "NAME": "黑暗交易",
     "DESCRIPTION": "不能被打出。 NL 起动 ： 从 !M! 张牌选择一张黑色牌加入你的抽牌堆。",
@@ -435,7 +456,7 @@
   },
   "Crow Ritual": {
     "NAME": "觉醒仪式",
-    "DESCRIPTION": "在你的抽牌堆和弃牌堆加入 !M! 张 仪式组件。 NL 如果手牌中同时拥有 5 张仪式组件，将它们全部替换为造成 !D! 点伤害的攻击牌。",
+    "DESCRIPTION": "在你的抽牌堆和弃牌堆加入 !M! 张 *仪式组件。 NL 如果手牌中同时拥有 5 张仪式组件，将它们全部替换为造成 !D! 点伤害的攻击牌。",
 	"EXTENDED_DESCRIPTION": [
 		"仪式组件",
 		"耗费为 0 并抽 1 张牌的技能牌。"
@@ -534,6 +555,10 @@
 	"NAME": "蚊群",
 	"DESCRIPTION": " 自动打出 。 NL 对所有人造成 !M! 点伤害。"
   },
+    "Replay:Hysterical Blindness": {
+	"NAME": "神经性失明",
+	"DESCRIPTION": "不能被打出 。 NL 在你的回合结束时，接下来 !M! 个回合混淆你的攻击牌。 NL 消耗 。"
+  },
   "ReplayTheSpireMod:Imminent Threat": {
 	"NAME": "凶兆临头",
 	"DESCRIPTION": " 固有 。 NL 受到 !M! 点伤害。 NL 消耗 。 NL 转变为 凶兆将至 。"
@@ -594,7 +619,7 @@
 		" NL 获得 !M! 飞刀 和 !M! 层 护盾 。",
 		" NL 获得 !M! 升 燃料 并将 !M! 张Trinket加入你的抽牌堆。",
 		" NL 将 !M! 张随机 Cores 牌加入你的抽牌堆。",
-		" NL 将 !M! 张随机 Cantrips牌加入你的抽牌堆。",
+		" NL 将 !M! 张随机 Cantrips 牌加入你的抽牌堆。",
 		" NL 回复 !M! 生命并在你的手牌和弃牌堆的牌补充 !replay:M-1! 张牌的全部的 wither 和 消耗性 。",
 		" NL 复制 !M! 个随机遗物效果并本回合 保留 !M! 张牌。",
 		" NL 回复 !M! 生命并将 !M! 张Inspiration加入你的抽牌堆。",
@@ -604,7 +629,7 @@
 		" NL 分裂出一个随机史莱姆。 NL 对全部敌人给予 !M! 层 黏液 。",
 		" NL 将 !M! 张随机 Letters 加入你的抽牌堆。",
 		"这张牌的效果是被抽到时随机触发的。 这张牌需要的 [E] 越多，效果越多。",
-		" NL Scry !M!. Add a Smite to your hand."
+		" NL 预见 !M! 。将一张 *惩恶 加入你的手牌。"
 	]
   },
   "ReplayTheSpireMod:Necrogeddon": {
@@ -662,7 +687,7 @@
   },
   "Replay:Fractal Strike": {
     "NAME": "分形打击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽 1 张牌。 NL 增加一张新的分形打击到你的弃牌堆。 NL 消耗性 !stslib:ex! 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽 1 张牌。 NL 将一张 *分形打击 加入你的弃牌堆。 NL 消耗性 !stslib:ex! 。"
   },
   "ReplayTheSpireMod:Rythmic Step": {
 	"NAME": "律动碎步",
@@ -790,7 +815,7 @@
   },
   "ReplayTheSpireMod:Prepare the Ceremony": {
     "NAME": "准备仪式",
-    "DESCRIPTION": "增加 !M! 张仪式组件到你的手牌。 NL 本回合你每次打出技能牌时， 对随机一名敌人造成 !M! 点伤害。 NL 消耗性 !stslib:ex! 。",
+    "DESCRIPTION": "增加 !M! 张 *仪式组件 到你的手牌。 NL 本回合你每次打出技能牌时， 对随机一名敌人造成 !M! 点伤害。 NL 消耗性 !stslib:ex! 。",
 	"EXTENDED_DESCRIPTION": [
 		"仪式组件",
 		"0 费 抽 1技能牌。"
@@ -971,6 +996,10 @@
     "NAME": "剑缚",
     "DESCRIPTION": "戏法 。 NL 增加一张已升级的 小刀 到你的手牌中。 NL 抽 1 张牌。",
     "UPGRADE_DESCRIPTION": "戏法 。 NL 增加一张已升级的 小刀 到你的手牌中。 NL 抽 1 张牌。"
+  },
+  "m_Survivalism": {
+    "NAME": "生存主义",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 预见 !M! 。"
   },
   "Replay:NecroticArchetypeSelectCard": {
     "NAME": "暗毒",

@@ -194,6 +194,13 @@
 		      <scope>system</scope>
           <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1744254855/Bard.jar</systemPath>
 	      </dependency>
+        <dependency>
+	        <groupId>jorbs</groupId>
+		      <artifactId>jorbs</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1997053791/JorbsMod.jar</systemPath>
+	      </dependency>
     </dependencies>
   <build>
     <plugins>
@@ -216,5 +223,5 @@
     </plugins>
 	<finalName>${project.artifactId}</finalName>
   </build>
-  <version>1.5.4</version>
+  <version>1.5.10</version>
 </project>

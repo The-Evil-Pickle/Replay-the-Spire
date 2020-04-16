@@ -4,15 +4,19 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.mod.replay.powers.DecrepitPower;
 import com.megacrit.cardcrawl.mod.replay.powers.LanguidPower;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.*;
 
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomCard;
 
 import com.megacrit.cardcrawl.dungeons.*;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.core.*;
 
 public class CorrosionCurse extends CustomCard
@@ -23,12 +27,32 @@ public class CorrosionCurse extends CustomCard
     public static final String DESCRIPTION;
     private static final int COST = 1;
     private static final int EXHAUSTIVE_AMT = 2;
+    private static final String BETA_ART = "cards/replay/corrosionCurseBeta.png";
     
     public CorrosionCurse() {
         super(ID, CorrosionCurse.NAME, "cards/replay/corrosionCurse.png", COST, CorrosionCurse.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.UNCOMMON, CardTarget.ENEMY);
         ExhaustiveVariable.setBaseValue(this, EXHAUSTIVE_AMT);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
+        
+    }
+    
+    @Override
+    public void loadCardImage(final String img) {
+    	super.loadCardImage(img);
+        Texture cardTexture;
+        if (CustomCard.imgMap.containsKey(BETA_ART)) {
+            cardTexture = CustomCard.imgMap.get(BETA_ART);
+        }
+        else {
+            cardTexture = ImageMaster.loadImage(BETA_ART);
+            CustomCard.imgMap.put(BETA_ART, cardTexture);
+        }
+        cardTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+        final int tw = cardTexture.getWidth();
+        final int th = cardTexture.getHeight();
+        final TextureAtlas.AtlasRegion cardImg = new TextureAtlas.AtlasRegion(cardTexture, 0, 0, tw, th);
+        ReflectionHacks.setPrivateInherited(this, CustomCard.class, "jokePortrait", cardImg);
     }
     
     @Override

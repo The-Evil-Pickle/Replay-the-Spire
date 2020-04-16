@@ -163,6 +163,7 @@ public class RingOfAddiction extends AbstractRelic
 		greedlist.add(ToyOrnithopter.ID);
 		greedlist.add(WhiteBeast.ID);
 		greedlist.add(ChameleonRing.ID);
+		greedlist.add(SacredBark.ID);
 		if (Loader.isModLoaded("hubris")) {
 			greedlist.add("hubris:EmptyBottle");
 		}

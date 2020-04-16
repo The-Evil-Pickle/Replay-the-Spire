@@ -23,6 +23,20 @@ import java.util.*;
 
 public class ReplayMonsterEncounterPatches {
 	
+
+	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.TheBeyond", method = "initializeBoss")
+	public static class ReplayInitBeyondBossPatch {
+		public static void Postfix(TheBeyond __Instance) {
+			for (int i=0; i < TheBeyond.bossList.size(); i++) {
+				if (TheBeyond.bossList.get(i).equals(ReplayMapScoutEvent.bannedBoss)) {
+					TheBeyond.bossList.remove(i);
+					break;
+				}
+			}
+		}
+	}
+	
+	
 	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.AbstractDungeon", method = "setBoss")
 	public static class ReplaySetBossPatch {
 		public static void Postfix(AbstractDungeon __Instance, final String key) {

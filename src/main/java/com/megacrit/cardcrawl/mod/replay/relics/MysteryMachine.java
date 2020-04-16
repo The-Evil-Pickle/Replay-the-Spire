@@ -15,7 +15,7 @@ public class MysteryMachine extends AbstractRelic
     private boolean triggeredLast;
 	
     public MysteryMachine() {
-        super(ID, "betaRelic.png", RelicTier.COMMON, LandingSound.SOLID);
+        super(ID, "mysteryMachine.png", RelicTier.COMMON, LandingSound.SOLID);
 		this.counter = 0;
 		this.triggeredLast = false;
     }
