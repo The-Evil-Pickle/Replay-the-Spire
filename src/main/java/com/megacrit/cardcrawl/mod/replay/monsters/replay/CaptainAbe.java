@@ -56,14 +56,14 @@ public class CaptainAbe extends AbstractMonster
     private static final int BASH_DAMAGE = 12;
     private static final int SLASH_DAMAGE = 4;
     private static final int SLASH_COUNT = 2;
-    private static final int ORDERS_BLOCK = 10;
+    private static final int ORDERS_BLOCK = 15;
     private static final int ORDERS_STRENGTH = 3;
     private static final int A_COLLAPSE_DAMAGE = 4;
     private static final int A_COLLAPSE_COUNT = 4;
     private static final int A_BASH_DAMAGE = 14;
     private static final int A_SLASH_DAMAGE = 4;
     private static final int A_SLASH_COUNT = 2;
-    private static final int A_ORDERS_BLOCK = 15;
+    private static final int A_ORDERS_BLOCK = 20;
     private static final int FRAIL_AMT = 3;
 	private static final int WOUND_CD = 3;
     private int bashDmg;
@@ -364,7 +364,7 @@ public class CaptainAbe extends AbstractMonster
 						if (m.isDying) {
                             continue;
                         }
-						if (this.ordersStr > 0 && (this.isFirstOrders || ((m == this && (!m.hasPower("Strength") || m.getPower("Strength").amount < this.ordersStr)) || !m.hasPower("Strength") || m.getPower("Strength").amount < 1))) {
+						if (this.ordersStr > 0 && (this.isFirstOrders || (!m.hasPower("Strength") || m.getPower("Strength").amount < this.ordersStr))) {
 							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, 1), 1));
 						} else {
 							AbstractDungeon.actionManager.addToBottom(new HealAction(m, this, 10));

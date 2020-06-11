@@ -216,5 +216,5 @@
     </plugins>
 	<finalName>${project.artifactId}</finalName>
   </build>
-  <version>1.5.3</version>
+  <version>1.5.3-beta</version>
 </project>

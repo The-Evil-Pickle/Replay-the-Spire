@@ -65,7 +65,7 @@ public class PondfishBoss extends AbstractMonster
 	public static final int RAKE_COUNT = 2;
 	public static final int RAKE_VULN = 1;
 	public static final int DRAG_DROWN = 4;
-	public static final int UNDER_DAMAGE = 2;
+	public static final int UNDER_DAMAGE = 3;
 	public static final int UNDER_AMT = 6;
 	
 	public static final int A_CHOMP_DAMAGE = 4;
@@ -331,7 +331,7 @@ public class PondfishBoss extends AbstractMonster
 						AbstractDungeon.actionManager.addToBottom(new SFXAction("DARKLING_REGROW_1", MathUtils.random(-0.1f, 0.1f)));
 					}
 					abe.halfDead = false;
-					AbstractDungeon.actionManager.addToBottom(new HealAction(abe, this, (abe.maxHealth / 2)));
+					AbstractDungeon.actionManager.addToBottom(new HealAction(abe, this, ((abe.maxHealth / 4) * 3)));
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, abe, new AbePower(abe, this.deadWeight), 0));
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abe, this, new IntangiblePower(abe, 1), 1));
 					AbstractDungeon.actionManager.addToBottom(new TalkAction(abe, CaptainAbe.DIALOG[(int)(Math.random() * (3)) + 6]));
@@ -435,6 +435,9 @@ public class PondfishBoss extends AbstractMonster
 			//AbstractDungeon.actionManager.addToBottom(new TalkAction(this, CaptainAbe.DIALOG[2]));
 			 if (this.nextMove != PondfishBoss.LIVING_LANTERN) {
 				this.nextPlannedMove = this.nextMove;
+				if (this.nextPlannedMove == PondfishBoss.SPLASH) {
+					this.nextPlannedMove = PondfishBoss.CHOMP;
+				}
 				this.setMove(PondfishBoss.MOVES[1], PondfishBoss.LIVING_LANTERN, Intent.BUFF);
 				this.createIntent();
 				AbstractDungeon.actionManager.addToBottom(new TextAboveCreatureAction(this, TextAboveCreatureAction.TextType.INTERRUPTED));
