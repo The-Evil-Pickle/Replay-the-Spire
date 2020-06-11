@@ -71,7 +71,7 @@
 		"언젠가, 언제든지 다시 들러 주렴 새 이야기를 해주마."
 	]
   },
-  "Replay:지옥의 기계": {
+  "Replay:Hell Engine": {
     "MOVES": [
 		"Now Leaving",
 		"Hot Coals",
@@ -79,7 +79,7 @@
 		"Runaway Train",
 		"Living Steel"
     ],
-    "NAME": "Hell's Engine",
+    "NAME": "지옥의 기계",
     "DIALOG": [
 		""
     ]
@@ -90,7 +90,8 @@
 		"Please Remain Seated",
 		"Complementary Explosives",
 		"Rail Gunner",
-		"Cargo Hold"
+		"Cargo Hold",
+		"Stoke the Engine"
     ],
     "NAME": "The Conductor",
     "DIALOG": [

@@ -33,8 +33,8 @@ public class FF_LouseDefensive extends AbstractMonster
     public static final String NAME;
     public static final String[] MOVES;
     public static final String[] DIALOG;
-    private static final int HP_MIN = 20;
-    private static final int A_2_HP_MIN = 24;
+    private static final int HP_MIN = 11;
+    private static final int A_2_HP_MIN = 16;
     private static final byte BITE = 3;
     private static final byte WEAKEN = 4;
     private boolean isOpen;

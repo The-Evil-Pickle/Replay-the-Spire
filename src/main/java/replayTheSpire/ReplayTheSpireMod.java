@@ -1124,6 +1124,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		RelicLibrary.addBlue(new RaidersMask());
 		RelicLibrary.addBlue(new FrozenProgram());
 		BaseMod.addRelic(new Accelerometer(), RelicType.SHARED);
+		BaseMod.addRelic(new AncientBell(), RelicType.SHARED);
 		BaseMod.addRelic(new Arrowhead(), RelicType.SHARED);
 		BaseMod.addRelic(new AbesTreasure(), RelicType.SHARED);
 		BaseMod.addRelic(new Bandana(), RelicType.SHARED);
@@ -1381,6 +1382,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new FabricateWheel(), foundmod_hubris || foundmod_conspire || Loader.isModLoaded("jedi") || Loader.isModLoaded("StrawberrySpire"));
 		logger.info("adding cards for Watcher...");
 		AddAndUnlockCard(new Hum());
+		AddAndUnlockCard(new Cycle());
+		AddAndUnlockCard(new Vibes());
 		logger.info("adding colorless cards...");
 		//AddAndUnlockCard(new Improvise(), false);
 		AddAndUnlockCard(new PoisonedStrike());
@@ -1398,6 +1401,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Necrogeddon());
 		AddAndUnlockCard(new BasicMightCard());
 		AddAndUnlockCard(new Parry());
+		AddAndUnlockCard(new BootlegShieldGenerator());
 		if (Loader.isModLoaded("Friendly_Minions_0987678")) {
 			AddAndUnlockCard(new GrembosGang());
 		}
@@ -1479,7 +1483,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         BaseMod.addMonster("Replay:BlueRogue", () -> new MonsterGroup(new AbstractMonster[] {new BlueRogue()}));
         BaseMod.addBoss("Exordium", "Fading Forest", "images/ui/map/boss/FableSpinner.png", "images/ui/map/bossOutline/FableSpinner.png");
         BaseMod.addEliteEncounter("TheCity", new MonsterInfo("Replay:Snechameleon", 0.9f));
-        BaseMod.addEliteEncounter("Exordium", new MonsterInfo("Replay:BlueRogue", 0.75f));
+        BaseMod.addEliteEncounter("Exordium", new MonsterInfo("Replay:BlueRogue", 0.82f));
         BaseMod.addMonster(HellsEngine.ID, () -> new MonsterGroup(new AbstractMonster[] {new HellsEngine(), new Conductor()}));
         BaseMod.addBoss("TheBeyond", HellsEngine.ID, "images/ui/map/boss/HEC.png", "images/ui/map/bossOutline/HEC.png");
 	}
@@ -1824,9 +1828,9 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         String cardStrings = Gdx.files.internal(jsonPath + "ReplayCardStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
-		cardStrings = Gdx.files.internal(jsonPath + "ReplayOverrideCardStrings.json").readString(
+		/*cardStrings = Gdx.files.internal(jsonPath + "ReplayOverrideCardStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
-        ReplayTheSpireMod.doStringOverrides(CardStrings.class, cardStrings);
+        ReplayTheSpireMod.doStringOverrides(CardStrings.class, cardStrings);*/
         // PowerStrings
         String powerStrings = Gdx.files.internal(jsonPath + "ReplayPowerStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));

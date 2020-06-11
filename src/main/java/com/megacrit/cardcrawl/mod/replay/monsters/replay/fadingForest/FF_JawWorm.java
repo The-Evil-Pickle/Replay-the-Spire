@@ -45,8 +45,8 @@ public class FF_JawWorm extends AbstractMonster
     private static final int A_2_CHOMP_DMG = 12;
     private static final int THRASH_DMG = 7;
     private static final int THRASH_BLOCK = 5;
-    private static final int BELLOW_STR = 3;
-    private static final int A_2_BELLOW_STR = 4;
+    private static final int BELLOW_STR = 2;
+    private static final int A_2_BELLOW_STR = 3;
     private static final int BELLOW_BLOCK = 6;
     private int bellowBlock;
     private int chompDmg;

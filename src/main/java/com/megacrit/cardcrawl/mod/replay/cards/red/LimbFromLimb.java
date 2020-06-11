@@ -33,7 +33,7 @@ public class LimbFromLimb extends CustomCard
     private static final int THRESHOLD_UP = 2;
     
     public LimbFromLimb() {
-        super(ID, NAME, "cards/replay/replayBetaAttack.png", COST, DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, NAME, "cards/replay/limbFromLimb.png", COST, DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = ATTACK_DMG;
         this.baseMagicNumber = THRESHOLD;
         this.magicNumber = this.baseMagicNumber;

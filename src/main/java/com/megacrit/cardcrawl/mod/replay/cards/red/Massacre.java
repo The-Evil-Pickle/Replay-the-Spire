@@ -20,6 +20,9 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
+
+import basemod.abstracts.CustomCard;
+
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
@@ -27,7 +30,7 @@ import com.badlogic.gdx.math.MathUtils;
 import java.util.ArrayList;
 
 public class Massacre
-  extends AbstractCard
+  extends CustomCard
 {
   public static final String ID = "Massacre";
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Massacre");
@@ -39,7 +42,7 @@ public class Massacre
   
   public Massacre()
   {
-    super("Massacre", NAME, "red/attack/cleave", "red/attack/cleave", 1, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY);
+    super("Massacre", NAME, "cards/replay/massacre.png", 1, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.RED, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY);
     
     this.baseDamage = 1;
     this.isMultiDamage = true;

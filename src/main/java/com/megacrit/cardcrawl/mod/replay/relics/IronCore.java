@@ -22,7 +22,7 @@ public class IronCore extends M_MistRelic
     private boolean firstTurn;
     
     public IronCore() {
-        super("Iron Core", "ironCoreOrb.png", LandingSound.CLINK, CardColor.RED, CardColor.BLUE, 2);
+        super("Iron Core", "ironCoreOrb.png", LandingSound.CLINK, CardColor.RED, CardColor.BLUE, 0);
         this.hasReds = false;
         this.hasBlues = false;
         this.firstTurn = true;

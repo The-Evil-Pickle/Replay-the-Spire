@@ -261,6 +261,9 @@ public class Conductor extends AbstractMonster {
         if (!this.engine.isDeadOrEscaped() && !this.engine.isDying) {
         	this.engine.die();
         }
+        if (this.dynamite != null && !this.dynamite.isDeadOrEscaped() && !this.dynamite.isDying) {
+        	this.dynamite.die();
+        }
     }
     
     @Override

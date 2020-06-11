@@ -34,8 +34,8 @@ public class FF_LouseNormal extends AbstractMonster
     public static final String NAME;
     public static final String[] MOVES;
     public static final String[] DIALOG;
-    private static final int HP_MIN = 18;
-    private static final int A_2_HP_MIN = 20;
+    private static final int HP_MIN = 9;
+    private static final int A_2_HP_MIN = 14;
     private static final byte BITE = 3;
     private static final byte STRENGTHEN = 4;
     private boolean isOpen;

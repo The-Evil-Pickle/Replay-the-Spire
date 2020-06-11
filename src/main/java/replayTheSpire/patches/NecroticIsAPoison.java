@@ -23,9 +23,7 @@ public class NecroticIsAPoison {
 	@SpirePatch(cls = "com.megacrit.cardcrawl.actions.unique.DoublePoisonAction", method = "update")
 	public static class DoublePoisonPatch {
 		public static void Postfix(DoublePoisonAction __Instance) {
-			float duration = (float)ReflectionHacks.getPrivate((Object)__Instance, (Class)AbstractGameAction.class, "duration");
-			float startDuration = (float)ReflectionHacks.getPrivate((Object)__Instance, (Class)DoublePoisonAction.class, "startingDuration");
-			if (duration == startDuration && __Instance.target != null && __Instance.target.hasPower(NecroticPoisonPower.POWER_ID)) {
+			if (__Instance.target != null && __Instance.target.hasPower(NecroticPoisonPower.POWER_ID)) {
 	            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(__Instance.target, __Instance.source, new NecroticPoisonPower(__Instance.target, __Instance.source, __Instance.target.getPower("Necrotic Poison").amount), __Instance.target.getPower(NecroticPoisonPower.POWER_ID).amount));
 	        }
 		}
@@ -34,9 +32,7 @@ public class NecroticIsAPoison {
 	@SpirePatch(cls = "com.megacrit.cardcrawl.actions.unique.TriplePoisonAction", method = "update")
 	public static class TriplePoisonPatch {
 		public static void Postfix(TriplePoisonAction __Instance) {
-			float duration = (float)ReflectionHacks.getPrivate((Object)__Instance, (Class)AbstractGameAction.class, "duration");
-			float startDuration = (float)ReflectionHacks.getPrivate((Object)__Instance, (Class)TriplePoisonAction.class, "startingDuration");
-			if (duration == startDuration && __Instance.target != null && __Instance.target.hasPower(NecroticPoisonPower.POWER_ID)) {
+			if (__Instance.target != null && __Instance.target.hasPower(NecroticPoisonPower.POWER_ID)) {
 	            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(__Instance.target, __Instance.source, new NecroticPoisonPower(__Instance.target, __Instance.source, __Instance.target.getPower("Necrotic Poison").amount * 2), __Instance.target.getPower(NecroticPoisonPower.POWER_ID).amount * 2));
 	        }
 		}

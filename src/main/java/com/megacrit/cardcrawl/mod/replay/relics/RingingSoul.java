@@ -17,7 +17,7 @@ public class RingingSoul extends AbstractRelic {
 	public static final int HPGAIN = 3;
     
     public RingingSoul() {
-        super(ID, "betaRelic.png", RelicTier.UNCOMMON, LandingSound.CLINK);
+        super(ID, "ringingSoul.png", RelicTier.UNCOMMON, LandingSound.CLINK);
         this.pulse = true;
     }
 

@@ -10,189 +10,196 @@
             <artifactId>slaythespire</artifactId>
             <version>016</version>
             <scope>system</scope>
-            <systemPath>S:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/desktop-1.0.jar</systemPath>
+            <systemPath>D:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/desktop-1.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>basemod</groupId>
             <artifactId>basemod</artifactId>
             <version>2.10.0</version>
             <scope>system</scope>
-            <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1605833019/BaseMod.jar</systemPath>
+            <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1605833019/BaseMod.jar</systemPath>
         </dependency>
         <dependency>
 	        <groupId>com.evacipated.cardcrawl</groupId>
 		      <artifactId>ModTheSpire</artifactId>
 		      <version>2.6.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1605060445/ModTheSpire.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1605060445/ModTheSpire.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>madsciencemod</groupId>
 		      <artifactId>MadScienceMod</artifactId>
 		      <version>0.1.8</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1616050930/MadScienceMod.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1616050930/MadScienceMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>infinitespire</groupId>
 		      <artifactId>InfiniteSpire</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1610128058/InfiniteSpire.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1610128058/InfiniteSpire.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>coloredmap</groupId>
 		      <artifactId>ColoredMap</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1611666859/ColoredMap.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1611666859/ColoredMap.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>blackrusemod</groupId>
 		      <artifactId>BlackRuseMod</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1615745539/BlackRuseMod.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1615745539/BlackRuseMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>friendlyminions</groupId>
 		      <artifactId>FriendlyMinions</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1612426481/FriendlyMinions.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1612426481/FriendlyMinions.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>hubris</groupId>
 		      <artifactId>Hubris</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1609159603/Hubris.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1609159603/Hubris.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>halation</groupId>
 		      <artifactId>Halation</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1609810237/Halation.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1609810237/Halation.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>stslib</groupId>
 		      <artifactId>StSLib</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1609158507/StSLib.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1609158507/StSLib.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>mystic</groupId>
 		      <artifactId>TheMystic</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1609848111/TheMystic.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1609848111/TheMystic.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>deciple</groupId>
 		      <artifactId>TheDisciple</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1609846039/TheDisciple.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1609846039/TheDisciple.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>beaked</groupId>
 		      <artifactId>BeakedTheCultist</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1609820830/BeakedTheCultist.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1609820830/BeakedTheCultist.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>construct</groupId>
 		      <artifactId>Construct</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1612725037/ConstructMod.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1612725037/ConstructMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>gatherer</groupId>
 		      <artifactId>Gatherer</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1611788501/GathererMod.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1611788501/GathererMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>blackbeard</groupId>
 		      <artifactId>Blackbeard</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1612105245/TheBlackbeardMod.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1612105245/TheBlackbeardMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>conspire</groupId>
 		      <artifactId>Conspire</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1612329757/Conspire.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1612329757/Conspire.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>marisa</groupId>
 		      <artifactId>Marisa</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1614104912/TS05_Marisa.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1614104912/TS05_Marisa.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>glutton</groupId>
 		      <artifactId>Glutton</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1613729300/GluttonMod.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1613729300/GluttonMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>slimebound</groupId>
 		      <artifactId>Slimebound</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1610056683/SlimeboundMod.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1610056683/SlimeboundMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>clockwork</groupId>
 		      <artifactId>Clockwork</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1643253215/ClockworkMod.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1643253215/ClockworkMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>snekomod</groupId>
 		      <artifactId>SneckoMod</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1617257048/SneckoMod.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1617257048/SneckoMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>theJungle</groupId>
 		      <artifactId>TheJungle</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1632754046/TheJungle.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1632754046/TheJungle.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>runesmith</groupId>
 		      <artifactId>TheRunesmith</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1633549612/TheRunesmith.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1633549612/TheRunesmith.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>guardian</groupId>
 		      <artifactId>Guardian</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1667117805/GuardianMod.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1667117805/GuardianMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>bard</groupId>
 		      <artifactId>bard</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>S:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1744254855/Bard.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1744254855/Bard.jar</systemPath>
+	      </dependency>
+        <dependency>
+	        <groupId>jorbs</groupId>
+		      <artifactId>jorbs</artifactId>
+		      <version>1.0.0</version>
+		      <scope>system</scope>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1997053791/JorbsMod.jar</systemPath>
 	      </dependency>
     </dependencies>
   <build>
@@ -210,11 +217,11 @@
         <artifactId>maven-jar-plugin</artifactId>
         <version>2.3.1</version>
         <configuration>
-          <outputDirectory>S:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/mods</outputDirectory>
+          <outputDirectory>D:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/mods</outputDirectory>
         </configuration>
       </plugin>
     </plugins>
 	<finalName>${project.artifactId}</finalName>
   </build>
-  <version>1.5.3-beta</version>
+  <version>1.5.10</version>
 </project>

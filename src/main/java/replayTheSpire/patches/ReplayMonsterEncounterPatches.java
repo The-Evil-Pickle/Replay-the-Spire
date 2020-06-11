@@ -23,6 +23,20 @@ import java.util.*;
 
 public class ReplayMonsterEncounterPatches {
 	
+
+	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.TheBeyond", method = "initializeBoss")
+	public static class ReplayInitBeyondBossPatch {
+		public static void Postfix(TheBeyond __Instance) {
+			for (int i=0; i < TheBeyond.bossList.size(); i++) {
+				if (TheBeyond.bossList.get(i).equals(ReplayMapScoutEvent.bannedBoss)) {
+					TheBeyond.bossList.remove(i);
+					break;
+				}
+			}
+		}
+	}
+	
+	
 	@SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.AbstractDungeon", method = "setBoss")
 	public static class ReplaySetBossPatch {
 		public static void Postfix(AbstractDungeon __Instance, final String key) {
@@ -31,8 +45,8 @@ public class ReplayMonsterEncounterPatches {
 				AbstractDungeon.bossKey = ("LordOfAnnihilation");
 				final BaseMod.BossInfo bossInfo = BaseMod.getBossInfo(AbstractDungeon.bossKey);
 	            if (bossInfo != null) {
-	                DungeonMap.boss = bossInfo.bossMap;
-	                DungeonMap.bossOutline = bossInfo.bossMapOutline;
+	                DungeonMap.boss = bossInfo.loadBossMap();
+	                DungeonMap.bossOutline = bossInfo.loadBossMapOutline();
 	            } else {
 	            	DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/OldBossIcon.png");
 					DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/OldBossIcon.png");
@@ -54,8 +68,8 @@ public class ReplayMonsterEncounterPatches {
 			        } else {
 			        	final BaseMod.BossInfo bossInfo = BaseMod.getBossInfo(AbstractDungeon.bossKey);
 			            if (bossInfo != null) {
-			                DungeonMap.boss = bossInfo.bossMap;
-			                DungeonMap.bossOutline = bossInfo.bossMapOutline;
+			                DungeonMap.boss = bossInfo.loadBossMap();
+			                DungeonMap.bossOutline = bossInfo.loadBossMapOutline();
 			            } else {
 			            	DungeonMap.boss = ImageMaster.loadImage("images/ui/map/boss/OldBossIcon.png");
 							DungeonMap.bossOutline = ImageMaster.loadImage("images/ui/map/bossOutline/OldBossIcon.png");

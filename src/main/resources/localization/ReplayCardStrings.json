@@ -329,7 +329,7 @@
   "ReplayTheSpireMod:Muscle Training": {
     "NAME": "Weight Training",
     "DESCRIPTION": "Gain 1 Strength. NL Lose !M! HP. NL Exhaustive !stslib:ex!.",
-	"UPGRADE_DESCRIPTION": "Gain 1 Strength. NL Take !M! damage."
+	"UPGRADE_DESCRIPTION": "Gain 1 Strength. NL Take !M! damage. NL Exhaustive !stslib:ex!."
   },
   "ReplayTheSpireMod:Speed Training": {
     "NAME": "Speed Training",
@@ -348,6 +348,19 @@
   "Replay:Hum": {
     "NAME": "Hum",
     "DESCRIPTION": "Scry !M!. NL Your attacks deal 25% more damage for !M! rounds."
+  },
+  "Replay:Vibes": {
+    "NAME": "Vibes",
+    "DESCRIPTION": "If you are in Wrath, apply !M! Decrepit. NL If you are in Calm, apply !M! Languid. NL If you are in neither, gain !M! Mantra.",
+	"EXTENDED_DESCRIPTION": [
+		"Good ",
+		"Bad "
+	]
+  },
+  "Replay:Cycle": {
+    "NAME": "Cycle",
+    "DESCRIPTION": "Draw !M! card. NL Whenever you Scry, return this from your discard pile to your Hand. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Draw !M! card. NL Whenever you Scry, return this from your discard pile to your Hand. NL Grave. NL Exhaustive !stslib:ex!."
   },
   "Improvise": {
     "NAME": "Improvise",
@@ -402,6 +415,14 @@
     "NAME": "Parry",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! Reflection if target intends to attack. NL Ethereal. NL Exhaustive !stslib:ex!.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gain !M! Reflection if target intends to attack. NL Exhaustive !stslib:ex!."
+  },
+  "Replay:Bootleg Shield Generator": {
+    "NAME": "Shield Generator",
+    "DESCRIPTION": "Gain !B! Shielding. NL Exhaustive !stslib:ex!."
+  },
+  "Replay:Way of the Snecko": {
+    "NAME": "Way of the Snecko",
+    "DESCRIPTION": "Retain. Snecko. NL Randomize the cost of all cards in your hand for this turn. NL Refund !stslib:refund!."
   },
   "Replay:Dark Deal": {
     "NAME": "Dark Deal",
@@ -771,6 +792,28 @@
 		"Pentacast",
 		"Core Discharge"
 	]
+  },
+  "Replay:WandererBash": {
+    "NAME": "Red Memory: Bash",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Remember Envy. NL This card gains 1 damage permanently when you Snap.",
+	"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Remember Envy if you do not have Clarity of it. NL This card gains 1 damage permanently when you Snap."
+  },
+  "Replay:WandererFeed": {
+    "NAME": "Red Memory: Feed",
+    "DESCRIPTION": "Remember Gluttony. NL Deal !D! damage. NL Exhaust"
+  },
+  "Replay:WandererBerserk": {
+    "NAME": "Red Memory: Berserk",
+    "DESCRIPTION": "Remember Envy. NL Gain !M! Frail and Vulnerable. NL Gain [E] at the start of your turn."
+  },
+  "Replay:WandererArmaments": {
+    "NAME": "Red Memory: Armaments",
+    "DESCRIPTION": "Gain !B! Block. NL Remember Wrath. NL Upgrade a random card in your hand until the end of combat.",
+	"UPGRADE_DESCRIPTION": "Gain !B! Block. NL Remember Wrath. NL Upgrade a card in your hand until the end of combat."
+  },
+  "Replay:WandererSurvivor": {
+    "NAME": "Green Memory: Survivor",
+    "DESCRIPTION": "Gain !B! Block. NL Remember Sloth. NL This card gains 1 block permanently when you Snap."
   },
   "ReplayTheSpireMod:RavenHex": {
     "NAME": "Raven's Hex",

@@ -26,9 +26,6 @@ public class GhostDefend
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Ghost Defend");
   public static final String NAME = cardStrings.NAME;
   public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-  private static final int BLOCK_AMT = 5;
-  private static final int UPG_BLOCK = 3;
-  private static final int POOL = 0;
   
   public GhostDefend()
   {

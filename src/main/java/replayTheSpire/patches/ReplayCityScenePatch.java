@@ -7,6 +7,7 @@ import replayTheSpire.*;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.scenes.*;
 import com.megacrit.cardcrawl.core.*;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.*;
 
 public class ReplayCityScenePatch {
@@ -27,6 +28,7 @@ public class ReplayCityScenePatch {
 	public static class CitySceneFGPatch {
 		public static void Prefix(TheCityScene __instance, final SpriteBatch sb) {
 			if (AbstractDungeon.getCurrRoom() instanceof MonsterRoom && ReplayTheSpireMod.renderFishFG) {
+				sb.setColor(Color.WHITE);
 				sb.draw(ReplayTheSpireMod.fishFG.getTexture(), ReplayTheSpireMod.fishFG.offsetX * Settings.scale, ReplayTheSpireMod.fishFG.offsetY * Settings.scale + AbstractDungeon.sceneOffsetY, 0.0f, 0.0f, ReplayTheSpireMod.fishFG.packedWidth, ReplayTheSpireMod.fishFG.packedHeight, Settings.scale, Settings.scale, 0.0f, ReplayTheSpireMod.fishFG.getRegionX(), ReplayTheSpireMod.fishFG.getRegionY(), ReplayTheSpireMod.fishFG.getRegionWidth(), ReplayTheSpireMod.fishFG.getRegionHeight(), false, false);
 			}
 			//__instance.renderAtlasRegionIf(sb, ReplayCityScenePatch.fishFG, ReplayCityScenePatch.renderFishFG);
