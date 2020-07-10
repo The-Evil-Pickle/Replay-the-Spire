@@ -146,11 +146,11 @@
           <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1613729300/GluttonMod.jar</systemPath>
 	      </dependency>
         <dependency>
-	        <groupId>slimebound</groupId>
-		      <artifactId>Slimebound</artifactId>
+	        <groupId>downfall</groupId>
+		      <artifactId>Downfall</artifactId>
 		      <version>1.0.0</version>
 		      <scope>system</scope>
-          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1610056683/SlimeboundMod.jar</systemPath>
+          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1610056683/downfall.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>clockwork</groupId>
@@ -158,13 +158,6 @@
 		      <version>1.0.0</version>
 		      <scope>system</scope>
           <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1643253215/ClockworkMod.jar</systemPath>
-	      </dependency>
-        <dependency>
-	        <groupId>snekomod</groupId>
-		      <artifactId>SneckoMod</artifactId>
-		      <version>1.0.0</version>
-		      <scope>system</scope>
-          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1617257048/SneckoMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>theJungle</groupId>
@@ -179,13 +172,6 @@
 		      <version>1.0.0</version>
 		      <scope>system</scope>
           <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1633549612/TheRunesmith.jar</systemPath>
-	      </dependency>
-        <dependency>
-	        <groupId>guardian</groupId>
-		      <artifactId>Guardian</artifactId>
-		      <version>1.0.0</version>
-		      <scope>system</scope>
-          <systemPath>D:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1667117805/GuardianMod.jar</systemPath>
 	      </dependency>
         <dependency>
 	        <groupId>bard</groupId>
@@ -223,5 +209,5 @@
     </plugins>
 	<finalName>${project.artifactId}</finalName>
   </build>
-  <version>1.5.10</version>
+  <version>1.5.11</version>
 </project>

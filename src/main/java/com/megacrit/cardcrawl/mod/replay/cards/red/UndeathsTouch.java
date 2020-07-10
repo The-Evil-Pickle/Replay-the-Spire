@@ -38,7 +38,7 @@ public class UndeathsTouch extends CustomCard
     private static final int COST = 0;
     
     public UndeathsTouch() {
-        super(UndeathsTouch.ID, UndeathsTouch.NAME, "cards/replay/replayBetaAttack.png", UndeathsTouch.COST, UndeathsTouch.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.COMMON, CardTarget.ENEMY);
+        super(UndeathsTouch.ID, UndeathsTouch.NAME, "cards/replay/undeathstouch.png", UndeathsTouch.COST, UndeathsTouch.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.COMMON, CardTarget.ENEMY);
         this.exhaust = true;
         this.baseDamage = 1;
         this.baseMagicNumber = 2;

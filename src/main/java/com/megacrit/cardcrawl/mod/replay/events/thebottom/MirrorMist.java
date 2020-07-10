@@ -94,7 +94,7 @@ import com.megacrit.cardcrawl.helpers.*;
 import replayTheSpire.*;
 import runesmith.character.player.RunesmithCharacter;
 import slimebound.characters.SlimeboundCharacter;
-import sneckomod.characters.SneckoCharacter;
+import sneckomod.TheSnecko;
 import the_gatherer.character.TheGatherer;
 
 import com.megacrit.cardcrawl.unlock.*;
@@ -591,22 +591,6 @@ public class MirrorMist
 				this.thirdOption = true;
 				break;
 			}
-			if (ReplayTheSpireMod.foundmod_slimebound && AbstractDungeon.player instanceof SlimeboundCharacter) {
-				this.has_1 = AbstractDungeon.player.hasRelic("Slimebound:AbsorbEndCombat");
-				this.loss_r_1 = RelicLibrary.getRelic("Slimebound:AbsorbEndCombat").makeCopy();
-				this.gain_r_1 = new M_BurningSludge();
-				this.has_2 = AbstractDungeon.player.hasRelic("Slimebound:AbsorbEndCombat");
-				this.loss_r_2 = RelicLibrary.getRelic("Slimebound:AbsorbEndCombat").makeCopy();
-				this.gain_r_2 = new M_SlimeRing();
-				this.has_2b = CardHelper.hasCardWithID("Slimebound:CorrosiveSpit");
-				this.loss_c_2b = CardLibrary.getCopy("Slimebound:CorrosiveSpit");
-				this.gain_c_2b = new DeadlyPoison();
-				this.has_3 = CardHelper.hasCardWithID("Slimebound:Split");
-				this.loss_c_3 = CardLibrary.getCopy("Slimebound:Split");
-				this.gain_c_3 = new Chaos();
-				this.thirdOption = true;
-				break;
-			}
 			if (ReplayTheSpireMod.foundmod_runesmith && AbstractDungeon.player instanceof RunesmithCharacter) {
 				this.has_1 = AbstractDungeon.player.hasRelic("Runesmith:BrokenRuby");
 				this.loss_r_1 = RelicLibrary.getRelic("Runesmith:BrokenRuby").makeCopy();
@@ -622,25 +606,43 @@ public class MirrorMist
 				this.gain_c_2b = new Survivor();
 				break;
 			}
-			if (ReplayTheSpireMod.foundmod_guardian && AbstractDungeon.player instanceof GuardianCharacter) {
-				this.has_1 = AbstractDungeon.player.hasRelic("Guardian:ModeShifter");
-				this.loss_r_1 = RelicLibrary.getRelic("Guardian:ModeShifter").makeCopy();
-				this.gain_r_1 = new M_GuardianBlood();
-				this.has_1b = CardHelper.hasCardWithID(CurlUp.ID);
-				this.loss_c_1b = CardLibrary.getCopy(CurlUp.ID);
-				this.gain_c_1b = CardLibrary.getCopy(GuardianBash.ID);
-				this.has_2 = CardHelper.hasCardWithID(TwinSlam.ID);
-				this.has_2b = this.has_2;
-				this.loss_c_2 = CardLibrary.getCopy(TwinSlam.ID);
-				this.gain_c_2 = new Survivor();
-				this.gain_c_2b = new Neutralize();
-				this.has_3 = AbstractDungeon.player.hasRelic("Guardian:ModeShifter");
-				this.loss_r_3 = RelicLibrary.getRelic("Guardian:ModeShifter").makeCopy();
-				this.gain_r_3 = new CrackedCore();
-				this.has_3b = this.has_3;
-				this.gain_c_3b = CardLibrary.getCopy(GuardianCast.ID);
-				this.thirdOption = true;
-				break;
+			if (ReplayTheSpireMod.foundmod_downfall) {
+				if (AbstractDungeon.player instanceof SlimeboundCharacter) {
+					this.has_1 = AbstractDungeon.player.hasRelic("Slimebound:AbsorbEndCombat");
+					this.loss_r_1 = RelicLibrary.getRelic("Slimebound:AbsorbEndCombat").makeCopy();
+					this.gain_r_1 = new M_BurningSludge();
+					this.has_2 = AbstractDungeon.player.hasRelic("Slimebound:AbsorbEndCombat");
+					this.loss_r_2 = RelicLibrary.getRelic("Slimebound:AbsorbEndCombat").makeCopy();
+					this.gain_r_2 = new M_SlimeRing();
+					this.has_2b = CardHelper.hasCardWithID("Slimebound:CorrosiveSpit");
+					this.loss_c_2b = CardLibrary.getCopy("Slimebound:CorrosiveSpit");
+					this.gain_c_2b = new DeadlyPoison();
+					this.has_3 = CardHelper.hasCardWithID("Slimebound:Split");
+					this.loss_c_3 = CardLibrary.getCopy("Slimebound:Split");
+					this.gain_c_3 = new Chaos();
+					this.thirdOption = true;
+					break;
+				}
+				if (AbstractDungeon.player instanceof GuardianCharacter) {
+					this.has_1 = AbstractDungeon.player.hasRelic("Guardian:ModeShifter");
+					this.loss_r_1 = RelicLibrary.getRelic("Guardian:ModeShifter").makeCopy();
+					this.gain_r_1 = new M_GuardianBlood();
+					this.has_1b = CardHelper.hasCardWithID(CurlUp.ID);
+					this.loss_c_1b = CardLibrary.getCopy(CurlUp.ID);
+					this.gain_c_1b = CardLibrary.getCopy(GuardianBash.ID);
+					this.has_2 = CardHelper.hasCardWithID(TwinSlam.ID);
+					this.has_2b = this.has_2;
+					this.loss_c_2 = CardLibrary.getCopy(TwinSlam.ID);
+					this.gain_c_2 = new Survivor();
+					this.gain_c_2b = new Neutralize();
+					this.has_3 = AbstractDungeon.player.hasRelic("Guardian:ModeShifter");
+					this.loss_r_3 = RelicLibrary.getRelic("Guardian:ModeShifter").makeCopy();
+					this.gain_r_3 = new CrackedCore();
+					this.has_3b = this.has_3;
+					this.gain_c_3b = CardLibrary.getCopy(GuardianCast.ID);
+					this.thirdOption = true;
+					break;
+				}
 			}
 			if (ReplayTheSpireMod.foundmod_bard && AbstractDungeon.player instanceof Bard) {
 				this.has_1 = AbstractDungeon.player.hasRelic(PitchPipe.ID);
@@ -673,7 +675,7 @@ public class MirrorMist
 		this.imageEventText.setDialogOption(OPTIONS[10] + this.goldgain + OPTIONS[11] + this.searchcursechance + OPTIONS[12] + this.searchCurse.name + ".", this.searchCurse);
 		this.imageEventText.setDialogOption(OPTIONS[13] + this.searchCurse2.name + ".", this.searchCurse2);
 		this.thirdOption = false;
-		if (ReplayTheSpireMod.foundmod_snecko && AbstractDungeon.player instanceof SneckoCharacter) {
+		if (ReplayTheSpireMod.foundmod_snecko && AbstractDungeon.player instanceof TheSnecko) {
 			this.searchrelicchance2 = 100;
 			this.imageEventText.setDialogOption(OPTIONS[14] + this.searchrelicchance2 + OPTIONS[15] + this.searchcursechance2 + OPTIONS[12] + "(Random)" + ".");
 			this.thirdOption = true;
@@ -981,7 +983,7 @@ public class MirrorMist
 					UnlockTracker.markCardAsSeen(curse.cardID);
 				}
 				if (AbstractDungeon.miscRng.randomBoolean(((float)this.searchrelicchance2) / 100.0F)) {
-					if (ReplayTheSpireMod.foundmod_snecko && AbstractDungeon.player instanceof SneckoCharacter) {
+					if (ReplayTheSpireMod.foundmod_snecko && AbstractDungeon.player instanceof TheSnecko) {
 						AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, new M_SnakeBloodCore());
 					} else if (ReplayTheSpireMod.foundmod_hubris && !AbstractDungeon.player.hasRelic("hubris:DisguiseKit") && (AbstractDungeon.player.hasRelic("PrismaticShard") || AbstractDungeon.miscRng.randomBoolean(0.70f))) {
 						AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, RelicLibrary.getRelic("hubris:DisguiseKit"));

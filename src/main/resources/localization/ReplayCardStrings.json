@@ -906,117 +906,117 @@
   },
   "Replay:SS_forest_1": {
     "NAME": "Many Paths",
-    "DESCRIPTION": "Discard !M! card. NL Fetch !replay:M+1! cards. NL Exhaustive !stslib:ex!.",
-    "UPGRADE_DESCRIPTION": "Discard !M! cards. NL Fetch !replay:M+1! cards. NL Exhaustive !stslib:ex!."
+    "DESCRIPTION": "expansioncontent:Boss - Fable-Spinner. NL Discard !M! card. NL Fetch !replay:M+1! cards. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "expansioncontent:Boss - Fable-Spinner. NL Discard !M! cards. NL Fetch !replay:M+1! cards. NL Exhaustive !stslib:ex!."
   },
   "Replay:SS_forest_2": {
     "NAME": "Forest Treasure",
-    "DESCRIPTION": "Gain !M! random Relic effects."
+    "DESCRIPTION": "expansioncontent:Boss - Fable-Spinner. NL Gain !M! random Relic effects."
   },
   "Replay:SS_forest_3": {
     "NAME": "Patience",
-    "DESCRIPTION": "Draw 1 card. NL Retain your hand this turn.",
-    "UPGRADE_DESCRIPTION": "Draw 1 card. NL Retain your hand this turn. NL Your Block is not lost at the end of this round. NL Gain [E] at the start of next turn."
+    "DESCRIPTION": "expansioncontent:Boss - Fable-Spinner. NL Draw 1 card. NL Retain your hand this turn.",
+    "UPGRADE_DESCRIPTION": "expansioncontent:Boss - Fable-Spinner. NL Draw 1 card. NL Retain your hand this turn. NL Your Block is not lost at the end of this round. NL Gain [E] at the start of next turn."
   },
   "Replay:SS_forest_4": {
     "NAME": "The Mists",
-    "DESCRIPTION": "Gain 1 Intangible. NL Keep your Block at the end of this turn. NL Apply !M! Weak to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "expansioncontent:Boss - Fable-Spinner. NL Gain 1 Intangible. NL Keep your Block at the end of this turn. NL Apply !M! Weak to ALL enemies. NL Exhaust."
   },
   "Replay:SS_forest_5": {
     "NAME": "Lost Forever",
-    "DESCRIPTION": "Apply to an enemy. NL For every !M! health they lose, they gain 1 Languid."
+    "DESCRIPTION": "expansioncontent:Boss - Fable-Spinner. NL Apply to an enemy. NL For every !M! health they lose, they gain 1 Languid. NL Exhaust."
   },
   "Replay:SS_forest_6": {
     "NAME": "Forest Fishers",
-    "DESCRIPTION": "Choose: Gain !M! Dexterity, or heal 10 HP.",
+    "DESCRIPTION": "expansioncontent:Boss - Fable-Spinner. NL Choose: Gain !M! Dexterity, or heal !replay:M*2! HP.",
 	"EXTENDED_DESCRIPTION": [
 		"Choose",
 		"Doughnut",
 		"Gain !M! Dexterity",
 		"Banana",
-		"Heal 10 HP"
+		"Heal !replay:M*2! HP"
 	]
   },
   "Replay:SS_fish_1": {
     "NAME": "Drag to Hell",
-    "DESCRIPTION": "Apply !M! Drowning. NL Exhaust."
+    "DESCRIPTION": "expansioncontent:Boss - Pondfish. NL Apply !M! Drowning. NL Exhaust."
   },
   "Replay:SS_fish_2": {
     "NAME": "Living Lantern",
-    "DESCRIPTION": "Heal !M! HP. NL If you are below 50% max HP, gain 1 Intangible. NL Exhaustive !stslib:ex!."
+    "DESCRIPTION": "expansioncontent:Boss - Pondfish. NL Heal !M! HP. NL If you are below 50% max HP, gain 1 Intangible. NL Exhaust."
   },
   "Replay:SS_fish_3": {
     "NAME": "Six Feet Under",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Gain 2 Weak. NL Exhaust.",
-	"UPGRADE_DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust."
+    "DESCRIPTION": "expansioncontent:Boss - Pondfish. NL Deal !D! damage !M! times. NL Gain 2 Weak. NL Exhaust.",
+	"UPGRADE_DESCRIPTION": "expansioncontent:Boss - Pondfish. NL Deal !D! damage !M! times. NL Exhaust."
   },
   "Replay:SS_fish_4": {
     "NAME": "Captain's Orders",
-    "DESCRIPTION": "Gain !B! Block. NL If you have <1 Strength, gain !M! Strength. NL If you have <1 Potency, gain !M! Potency."
+    "DESCRIPTION": "expansioncontent:Boss - Captain Abe. NL Gain !B! Block. NL If you have <1 Strength, gain !M! Strength. NL If you have <1 Potency, gain !M! Potency."
   },
   "Replay:SS_hec_1": {
     "NAME": "Forged in Hellfire",
-    "DESCRIPTION": "Gain !replay:M-1! Artifact. NL All non-attack damage you recieve is reduced by !M!."
+    "DESCRIPTION": "expansioncontent:Boss - Hell's Engine. NL Gain !replay:M-1! Artifact. NL All non-attack damage you receive is reduced by !M!."
   },
   "Replay:SS_hec_2": {
     "NAME": "Steel Heart",
-    "DESCRIPTION": "Gain !M! Plated Armor."
+    "DESCRIPTION": "expansioncontent:Boss - Hell's Engine. NL Gain !B! Shielding. NL Gain !M! Plated Armor. NL At the start of your turn, if you have less than !replay:M/2! Plated Armor, gain 1 Plated Armor."
   },
   "Replay:SS_hec_3": {
     "NAME": "Run Them Down",
-    "DESCRIPTION": "Deal !D! damage and apply Surrounded to a random enemy."
+    "DESCRIPTION": "expansioncontent:Boss - Hell's Engine. NL Deal !D! damage and apply Surrounded to a random enemy."
   },
   "Replay:SS_hec_4": {
     "NAME": "Dynamite!",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies after !M! turns."
+    "DESCRIPTION": "expansioncontent:Boss - Hell's Engine. NL Deal !D! damage to ALL enemies after !M! turns."
   },
   "Replay:Jungle:SS_maw_1": {
     "NAME": "Spore Cloud",
-    "DESCRIPTION": "Apply 1 Vulnerable to a random enemy !M! times. NL Exhaust."
+    "DESCRIPTION": "expansioncontent:Boss - Mawshroom. NL Apply 1 Vulnerable to a random enemy !M! times. NL Exhaust."
   },
   "Replay:Jungle:SS_maw_2": {
     "NAME": "Assymilate",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Does double damage to Minions. NL Heal for unblocked damage dealt. NL Exhaust."
+    "DESCRIPTION": "expansioncontent:Boss - Mawshroom. NL Deal !D! damage to ALL enemies. NL Does double damage to Minions. NL Heal for unblocked damage dealt. NL Exhaust."
   },
   "Replay:Jungle:SS_maw_3": {
     "NAME": "Mending Spores",
-    "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Exhaustive !stslib:ex!."
+    "DESCRIPTION": "expansioncontent:Boss - Mawshroom. NL Gain !B! Block. NL Draw 1 card. NL Exhaustive !stslib:ex!."
   },
   "Replay:Jungle:SS_maw_4": {
     "NAME": "Grow",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Strength."
+    "DESCRIPTION": "expansioncontent:Boss - Mawshroom. NL Gain !B! Block. NL Gain !M! Strength."
   },
   "Replay:Jungle:SS_spyder_1": {
     "NAME": "Web Wall",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak to all enemies that intend to attack. NL Exhaust."
+    "DESCRIPTION": "expansioncontent:Boss - Spyder Queen. NL Gain !B! Block. NL Apply !M! Weak to all enemies that intend to attack. NL Exhaust."
   },
   "Replay:Jungle:SS_spyder_2": {
     "NAME": "Guarding Spyder",
-    "DESCRIPTION": "Gain !B! Shielding and !M! Buffer. NL Exhaust."
+    "DESCRIPTION": "expansioncontent:Boss - Spyder Queen. NL Gain !B! Shielding and !M! Buffer. NL Exhaust."
   },
   "Replay:Jungle:SS_spyder_3": {
     "NAME": "Attacking Spyder",
-    "DESCRIPTION": "Gain !B! Shielding. NL Deal !D! damage to a random enemy. NL Exhaust."
+    "DESCRIPTION": "expansioncontent:Boss - Spyder Queen. NL Gain !B! Shielding. NL Deal !D! damage to a random enemy. NL Exhaust."
   },
   "Replay:Jungle:SS_spyder_4": {
     "NAME": "Wrap",
-    "DESCRIPTION": "Apply to an enemy. NL They take !M! damage at the end of thier turns."
+    "DESCRIPTION": "expansioncontent:Boss - Spyder Queen. NL Apply to an enemy. NL They take !M! damage at the end of their turns."
   },
   "Replay:Jungle:SS_totem_1": {
     "NAME": "Guarding Totem",
-    "DESCRIPTION": "Gain !B! Shielding. NL Gain !M! Block each turn."
+    "DESCRIPTION": "expansioncontent:Boss - Totem Master. NL Gain !B! Shielding. NL Gain !M! Block each turn."
   },
   "Replay:Jungle:SS_totem_2": {
     "NAME": "Totemic Response",
-    "DESCRIPTION": "Gain !M! Thorns."
+    "DESCRIPTION": "expansioncontent:Boss - Totem Master. NL Gain !M! Thorns."
   },
   "Replay:Jungle:SS_totem_3": {
     "NAME": "Encouraging Totem",
-    "DESCRIPTION": "Gain !B! Shielding. NL Gain !M! Strength each turn."
+    "DESCRIPTION": "expansioncontent:Boss - Totem Master. NL Gain !B! Shielding. NL Gain !M! Strength each turn."
   },
   "Replay:Jungle:SS_totem_4": {
     "NAME": "Snekomania",
-    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times. NL Confuse all enemies. NL Exhaust. NL Ethereal."
+    "DESCRIPTION": "expansioncontent:Boss - Totem Master. NL Deal !D! damage to a random enemy !M! times. NL Confuse all enemies. NL Exhaust. NL Ethereal."
   },
   "m_BoundBlade": {
     "NAME": "Bound Blade",

@@ -5,6 +5,8 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.mod.replay.powers.ForgedInHellfireAltPower;
+import com.megacrit.cardcrawl.mod.replay.powers.ForgedInHellfirePower;
 import com.megacrit.cardcrawl.mod.replay.relics.DimensionalGlitch;
 import com.megacrit.cardcrawl.mod.replay.relics.GhostHeart;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -38,6 +40,9 @@ public class PlayerDamagePatch {
 			if (info.owner != null && info.owner != player && info.owner.hasPower("Specialist")) {
 				altered = true;
 				info.output += info.owner.getPower("Specialist").amount;
+			}
+			if (player.hasPower(ForgedInHellfireAltPower.POWER_ID)) {
+				altered = ((ForgedInHellfireAltPower)player.getPower(ForgedInHellfireAltPower.POWER_ID)).patchAttacked(info) || altered;
 			}
 			if (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(DimensionalGlitch.ID)) {
 				altered=true;

@@ -81,10 +81,10 @@ import replayTheSpire.patches.ReplayShopInitCardsPatch;
 import replayTheSpire.replayxover.beakedbs;
 import replayTheSpire.replayxover.chronobs;
 import replayTheSpire.replayxover.constructbs;
+import replayTheSpire.replayxover.downfallbs;
 import replayTheSpire.replayxover.guardianbs;
 import replayTheSpire.replayxover.infinitebs;
 import replayTheSpire.replayxover.marisabs;
-import replayTheSpire.replayxover.slimeboundbs;
 import replayTheSpire.replayxover.sneckobs;
 import replayTheSpire.replayxover.bard.bardbs;
 import replayTheSpire.variables.MagicArithmatic;
@@ -548,6 +548,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     public static boolean foundmod_runesmith = false;
     public static boolean foundmod_guardian = false;
     public static boolean foundmod_bard = false;
+    public static boolean foundmod_downfall = false;
     
 	public static void initialize() {
     	logger.info("========================= ReplayTheSpireMod INIT =========================");
@@ -595,6 +596,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	    foundmod_runesmith = Loader.isModLoaded("therunesmith");
 	    foundmod_guardian = Loader.isModLoaded("Guardian");
 	    foundmod_bard = Loader.isModLoaded("bard");
+	    foundmod_downfall = Loader.isModLoaded("downfall");
 	    
 	    if (foundmod_bard) {
 	    	bardbs.AddNote();
@@ -1458,17 +1460,27 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			AddAndUnlockCard(new ResoundingBlow());
 			AddAndUnlockCard(new WhispersOfEvil());
 		}
-		if (foundmod_slimebound) {
-			logger.info("adding slimebound cards...");
-			slimeboundbs.addBossCards();
-		}
 		if (foundmod_runesmith) {
 			logger.info("adding Runesmith cards...");
 			AddAndUnlockCard(new ArmamentsMkIIB());
 		}
-		if (foundmod_guardian) {
-			logger.info("adding guardian cards...");
-			guardianbs.addCards();
+		if (foundmod_downfall) {
+			logger.info("adding downfall cards...");
+			try {
+				guardianbs.addCards();
+				downfallbs.addBossCards();
+			} catch (NoClassDefFoundError e) {
+				logger.info("Replay | Downfall BS");
+			}
+		} else {
+			if (foundmod_guardian) {
+				logger.info("adding guardian cards...");
+				guardianbs.addCards();
+			}
+			if (foundmod_slimebound) {
+				logger.info("adding slimebound cards...");
+				//slimeboundbs.addBossCards();
+			}
 		}
 		logger.info("done editting cards");
 		//loadSettingsData();
@@ -1746,13 +1758,13 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 	}
 	private static void initializeSneckoMod(LoadType type) throws ClassNotFoundException, NoClassDefFoundError {
-		Class<sneckomod.patches.AbstractCardEnum> servMod = sneckomod.patches.AbstractCardEnum.class;
+		Class<sneckomod.TheSnecko> snekMod = sneckomod.TheSnecko.class;
 		logger.info("ReplayTheSpireMod | Detected Snek Mod!");
 		foundmod_snecko = true;
 
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for Snecko...");
-			BaseMod.addRelicToCustomPool(new M_SnakeBloodCore(), sneckomod.patches.AbstractCardEnum.SNECKO);
+			BaseMod.addRelicToCustomPool(new M_SnakeBloodCore(), sneckomod.TheSnecko.Enums.SNECKO_CYAN);
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Snecko...");

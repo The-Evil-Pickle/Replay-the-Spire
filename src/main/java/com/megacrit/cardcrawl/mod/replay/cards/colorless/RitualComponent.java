@@ -19,6 +19,8 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.core.*;
 import basemod.*;
 import basemod.abstracts.*;
+import replayTheSpire.ReplayTheSpireMod;
+import replayTheSpire.replayxover.sneckobs;
 
 public class RitualComponent extends CustomCard
 {
@@ -32,6 +34,9 @@ public class RitualComponent extends CustomCard
         super("Ritual Component", RitualComponent.NAME, "cards/replay/crow_ritual.png", 0, RitualComponent.DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
+        if (ReplayTheSpireMod.foundmod_downfall) {
+        	sneckobs.makeSneky(this);
+        }
     }
     
     @Override

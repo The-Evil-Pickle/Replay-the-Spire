@@ -1144,7 +1144,7 @@
 		"NAME": "Burning Sludge",
 		"FLAVOR": "Your entire being burns with rage.",
 		"DESCRIPTIONS": [
-			"At the end of combat, for each Spawned slime, heal #b2 HP. NL Certain #yRed cards can now be obtained."
+			"Whenever you #yslimeboundmod:Consume, heal 1 HP. ML At the end of combat, for each Spawned slime, heal #b2 HP. NL Certain #yRed cards can now be obtained."
 		]
 	},
 	"m_SlimeRing": {

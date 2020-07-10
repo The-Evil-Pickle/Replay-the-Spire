@@ -453,8 +453,8 @@
   "replay:ss_fish": {
     "NAME": "Study Pondfish",
     "DESCRIPTIONS": [
-			"Gain a random Pondfish or Captain Abe card at the start of next turn.",
-			"Gain a random Pondfish or Captain Abe card at the start of your next ",
+			"Gain a random Pondfish card at the start of next turn.",
+			"Gain a random Pondfish card at the start of your next ",
 			" turns."
 		]
   },
@@ -464,6 +464,22 @@
 			"Gain a random Fable-Spinner card at the start of next turn.",
 			"Gain a random Fable-Spinner card at the start of your next ",
 			" turns."
+		]
+  },
+  "replay:ss_hec": {
+    "NAME": "Study Hell's Engine",
+    "DESCRIPTIONS": [
+			"Gain a random Hell's Engine card at the start of next turn.",
+			"Gain a random Hell's Engine card at the start of your next ",
+			" turns."
+		]
+  },
+  "Replay:SteelHeart": {
+    "NAME": "Steel Heart",
+    "DESCRIPTIONS": [
+			"At the start of your turn, if you have less than #b",
+			" #yPlated #yArmor, gain #b",
+			" #yPlated #yArmor."
 		]
   }
 }

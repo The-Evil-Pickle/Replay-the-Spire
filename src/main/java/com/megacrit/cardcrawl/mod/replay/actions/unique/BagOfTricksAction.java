@@ -81,7 +81,8 @@ public class BagOfTricksAction extends AbstractGameAction
     		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new EnergizedPower(p, this.energyGain), this.energyGain));
             return;
         });
-    	AbstractDungeon.actionManager.addToTop(choice);
+        if (effect > 0)
+        	AbstractDungeon.actionManager.addToTop(choice);
 		if (!this.freeToPlayOnce) {
 			this.p.energy.use(EnergyPanel.totalCount);
 		}
