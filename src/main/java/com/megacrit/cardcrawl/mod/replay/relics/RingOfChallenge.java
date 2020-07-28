@@ -8,19 +8,33 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.mod.replay.events.shrines.ChaosEvent;
 import com.megacrit.cardcrawl.mod.replay.powers.TimeCollectorPower;
+import com.megacrit.cardcrawl.mod.replay.powers.relicPowers.RP_BronzeScales;
+import com.megacrit.cardcrawl.mod.replay.powers.relicPowers.RP_GiryaPower;
+import com.megacrit.cardcrawl.mod.replay.powers.relicPowers.RP_HourglassPower;
+import com.megacrit.cardcrawl.mod.replay.powers.relicPowers.RP_IncenseBurner;
+import com.megacrit.cardcrawl.mod.replay.powers.relicPowers.RP_Mango;
+import com.megacrit.cardcrawl.mod.replay.powers.relicPowers.RP_OrichalcumPower;
+import com.megacrit.cardcrawl.mod.replay.powers.relicPowers.RP_SelfFormingClay;
+import com.megacrit.cardcrawl.mod.replay.powers.relicPowers.RP_SmoothStonePower;
+import com.megacrit.cardcrawl.mod.replay.powers.relicPowers.RP_ThreadPower;
+import com.megacrit.cardcrawl.mod.replay.powers.relicPowers.RP_VajraPower;
+import com.megacrit.cardcrawl.mod.replay.powers.replayxover.SteelHeartPower;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.BarricadePower;
 import com.megacrit.cardcrawl.powers.CuriosityPower;
 import com.megacrit.cardcrawl.powers.CurlUpPower;
+import com.megacrit.cardcrawl.powers.IntangiblePower;
 import com.megacrit.cardcrawl.powers.MalleablePower;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 import com.megacrit.cardcrawl.powers.PainfulStabsPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.ReflectionPower;
 import com.megacrit.cardcrawl.powers.RegenerateMonsterPower;
+import com.megacrit.cardcrawl.powers.RitualPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
+import com.megacrit.cardcrawl.powers.TimeWarpPower;
 import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 
@@ -50,7 +64,7 @@ public class RingOfChallenge extends ReplayAbstractRelic implements ClickableRel
   		return r;
   	}
     public RingOfChallenge() {
-        super(ID, "betaRelic.png", RelicTier.SPECIAL, LandingSound.CLINK);
+        super(ID, "cring_sloth.png", RelicTier.SPECIAL, LandingSound.CLINK);
         this.usedThisBattle = 0;
         this.counter = 0;
         this.isFirstTurn = false;
@@ -123,8 +137,11 @@ public class RingOfChallenge extends ReplayAbstractRelic implements ClickableRel
         return AbstractRelic.RelicTier.UNCOMMON;
 	}
     private void giveRandomBuff(AbstractMonster m, int pwr) {
-    	switch (AbstractDungeon.miscRng.random(19)) {
+    	switch (AbstractDungeon.miscRng.random(21)) {
     	case 0:
+    		if (pwr > 2) {
+    			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new RitualPower(m, pwr - 2, false), 1));
+    		}
     	case 1:
     	case 2:
     		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new StrengthPower(m, pwr + 1), pwr + 1));
@@ -159,20 +176,48 @@ public class RingOfChallenge extends ReplayAbstractRelic implements ClickableRel
     		}
     	case 14:
     	case 15:
-    	case 16:
     		AbstractDungeon.actionManager.addToBottom(new IncreaseMaxHpAction(m, 0.25f, true));
     		break;
-    	case 17:
+    	case 16:
     		if (m.hasPower(PlatedArmorPower.POWER_ID) || m.hasPower(MetallicizePower.POWER_ID) || m.hasPower(BarricadePower.POWER_ID) || m.hasPower(CurlUpPower.POWER_ID) || m.hasPower(MalleablePower.POWER_ID)) {
     			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new ReflectionPower(m, 3), pwr));
     			break;
     		}
-    	case 18:
+    	case 17:
     		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new ThornsPower(m, pwr), pwr));
     		break;
-    	case 19:
+    	case 18:
     		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new CuriosityPower(m, Math.max(pwr - 1, 1)), Math.max(pwr - 1, 1)));
     		break;
+    	case 19:
+    		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new PlatedArmorPower(m, Math.max(pwr * 4, 5)), 5));
+    		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new SteelHeartPower(m, pwr * 3 + 2, 1), 1));
+    		break;
+    	case 20:
+    		if (pwr > 2 && m.hasPower(TimeWarpPower.POWER_ID) == false) {
+    			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new TimeWarpPower(m)));
+        		break;
+    		}
+    	case 21:
+        	switch (AbstractDungeon.miscRng.random(0, 4)) {
+    			case 0:
+    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new RP_OrichalcumPower(m), 6));
+    				break;
+    			case 1:
+    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new RP_HourglassPower(m), 3));
+    				break;
+    			case 2:
+    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new RP_SelfFormingClay(m), 3));
+    				break;
+    			case 3:
+    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new RP_GiryaPower(m), 3));
+    				break;
+    			case 4:
+    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new RP_IncenseBurner(m)));
+    				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new IntangiblePower(m, 1), 1));
+    				break;
+    		}
+        	break;
     	}
     }
 }

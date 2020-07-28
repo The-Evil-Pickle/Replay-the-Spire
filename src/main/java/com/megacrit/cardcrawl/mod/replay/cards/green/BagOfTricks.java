@@ -28,7 +28,7 @@ public class BagOfTricks extends CustomCard
 	  
 	  public BagOfTricks()
 	  {
-	    super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
+	    super(ID, NAME, "cards/replay/bagOfTricks.png", COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
 	    this.baseMagicNumber = 4;
 	    this.baseBlock = 7;
 	    this.block = this.baseBlock;

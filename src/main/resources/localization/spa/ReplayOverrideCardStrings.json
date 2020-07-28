@@ -1,6 +1,6 @@
 {
-  "Corpse Explosion": {
-    "NAME": "Explosión de Cadaver",
+  "DEPRECIATEDCorpse Explosion": {
+    "NAME": "DEPRECIATEDExplosión de Cadaver",
     "DESCRIPTION": "El enemigo pierde todo Veneno. Apply Necrotic Poison equal to the amount lost to ALL enemies. NL Agota.",
     "UPGRADE_DESCRIPTION": "El enemigo pierde todo Veneno. Apply Necrotic Poison equal to the amount lost to ALL enemies.",
     "EXTENDED_DESCRIPTION": [

@@ -1026,6 +1026,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BuildSettings(new Bandana());
 		BuildSettings(new EnergyBall());
 		BuildSettings(new GrabBag());
+		BuildSettings(new RingOfChallenge());
 		
 		loadSettingsData();
 		/*
@@ -1209,6 +1210,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfShattering(), AbstractPlayer.PlayerClass.DEFECT, false));
 		ChaosEvent.addRing(new RingOfHypnosis());
 		ChaosEvent.addRing(new ChaosEvent.RingListEntry(new RingOfGreed(), new String[]{Ectoplasm.ID}));
+		ChaosEvent.addRing(new RingOfChallenge());
 		ChaosEvent.addRing(new RingOfCollecting());
 		ChaosEvent.addRing(new RingOfExchange());
 		if (foundmod_stslib) {

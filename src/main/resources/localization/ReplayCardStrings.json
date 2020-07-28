@@ -93,7 +93,7 @@
   },
   "Replay:Bag of Tricks": {
     "NAME": "Bag of Tricks",
-    "DESCRIPTION": "Choose X: NL Apply !replay:M+1! Poison, NL add !replay:M-1! shivs to your hand, NL gain !B! block, draw !replay:M-2! cards, NL or gain [E] [E] next turn.",
+    "DESCRIPTION": "Choose X: NL Apply !replay:M+1! Poison, NL add !replay:M-1! shivs to your hand, NL gain !B! block, NL draw !replay:M-2! cards, NL or gain [E] [E] next turn.",
     "UPGRADE_DESCRIPTION": "Choose X: NL Apply !replay:M+2! Poison, NL add !replay:M-1! shivs to your hand, NL gain !B! block, draw !replay:M-2! cards, NL or gain [E] [E] [E] next turn.",
     "EXTENDED_DESCRIPTION": [
       "Choose ",

@@ -3,4 +3,10 @@ encoding//src/main/java/com/megacrit/cardcrawl/mod/replay/cards/red/UndeathsTouc
 encoding//src/main/java/com/megacrit/cardcrawl/mod/replay/relics/GrabBag.java=UTF-8
 encoding//src/main/java/replayTheSpire/ReplayTheSpireMod.java=UTF-8
 encoding//src/main/resources/localization/ReplayRelicStrings.json=UTF-8
+encoding//src/main/resources/localization/kor/ReplayOverrideCardStrings.json=UTF-8
+encoding//src/main/resources/localization/kor/ReplayPowerStrings.json=UTF-8
+encoding//src/main/resources/localization/rus/ReplayOverrideCardStrings.json=UTF-8
+encoding//src/main/resources/localization/rus/ReplayPowerStrings.json=UTF-8
+encoding//src/main/resources/localization/zhs/ReplayOverrideCardStrings.json=UTF-8
+encoding//src/main/resources/localization/zhs/ReplayPowerStrings.json=UTF-8
 encoding//src/main/resources/localization/zhs/ReplayRelicStrings.json=UTF-8

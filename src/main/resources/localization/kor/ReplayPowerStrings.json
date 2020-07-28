@@ -396,7 +396,7 @@
       "Gain #b1 #yIntangible every #b6 turns."
     ]
   },
-  "Fire Breathing": {
+  "DEPRECIATEDFire Breathing": {
     "NAME": "Fire Breathing",
     "DESCRIPTIONS": [
       "At the end of your turn, for each #yAttack played this turn deal #b",

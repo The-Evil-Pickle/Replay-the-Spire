@@ -12,6 +12,7 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -32,18 +33,12 @@ public class SnakeVenomPower extends AbstractPower implements CloneablePowerInte
         this.amount = newAmount;
         this.updateDescription();
         this.img = ImageMaster.loadImage("images/powers/32/envenom.png");
+        this.isTurnBased = true;
     }
     
     @Override
     public void updateDescription() {
         this.description = SnakeVenomPower.DESCRIPTIONS[0] + this.amount + SnakeVenomPower.DESCRIPTIONS[1];
-    }
-    
-    @Override
-    public void onUseCard(final AbstractCard card, final UseCardAction action) {
-        if (card.type == AbstractCard.CardType.ATTACK) {
-        	
-        }
     }
 	
     @Override
@@ -51,7 +46,16 @@ public class SnakeVenomPower extends AbstractPower implements CloneablePowerInte
         if (damageAmount > 0 && target != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, this.owner, new NecroticPoisonPower(target, this.owner, this.amount), this.amount, true));
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Snake Venom"));
+        }
+    }
+    
+    @Override
+    public void atEndOfRound() {
+        if (this.amount == 0) {
+            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        }
+        else {
+            this.addToBot(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
         }
     }
     

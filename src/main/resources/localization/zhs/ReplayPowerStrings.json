@@ -147,8 +147,8 @@
   "Snake Venom": {
     "NAME": "蛇毒",
     "DESCRIPTIONS": [
-	"下一张你打出的攻击牌给予未被格挡的目标 #b",
-	" 层 暗毒 。"
+         "每当你造成未被格挡的 #y攻击 伤害时，给予 #b",
+         " 层 #y暗毒 。 NL 每回合 #g蛇毒 减少 #b1 层。"
     ]
   },
   "GoodbyeWorld": {
@@ -426,7 +426,7 @@
       "每 #b6 回合获得 #b1 层 #y无实体 。"
     ]
   },
-  "Fire Breathing": {
+  "DEPRECIATEDFire Breathing": {
     "NAME": "火焰吐息",
     "DESCRIPTIONS": [
       "在你的回合结束时。 你这一回合每出过一张 #y攻击牌 ，就对所有敌人造成 #b",

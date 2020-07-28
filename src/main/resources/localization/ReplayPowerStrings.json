@@ -147,8 +147,8 @@
   "Snake Venom": {
     "NAME": "Snake Venom",
     "DESCRIPTIONS": [
-	"The next Attack you play applies #b",
-	" Necrotic Poison each time it deals unblocked damage."
+	"When you deal unblocked #yAttack damage, apply #b",
+	" #yNecrotic #yPoison. NL Reduced by #b1 each turn."
     ]
   },
   "GoodbyeWorld": {
@@ -434,7 +434,7 @@
       "Gain #b1 #yIntangible every #b6 turns."
     ]
   },
-  "Fire Breathing": {
+  "DEPRECIATEDFire Breathing": {
     "NAME": "Fire Breathing",
     "DESCRIPTIONS": [
       "At the end of your turn, for each #yAttack played this turn deal #b",

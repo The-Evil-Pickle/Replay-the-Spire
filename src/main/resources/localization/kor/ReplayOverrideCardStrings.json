@@ -1,6 +1,6 @@
 {
-  "Fire Breathing": {
-    "NAME": "불 뿜기",
+  "DEPRECIATEDFire Breathing": {
+    "NAME": "DEPRECIATED불 뿜기",
     "DESCRIPTION": "내 턴 종료 시, 이번 턴에 사용한 내 공격 카드마다 적 전체에게 피해를 !M! 줍니다. NL 매 번 피해가 !M! 증가합니다."
   }
 }

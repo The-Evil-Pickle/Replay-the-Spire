@@ -28,7 +28,7 @@ public class PrivateReserves
   
   public PrivateReserves()
   {
-    super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.NONE);
+    super(ID, NAME, "cards/replay/privateReserves.png", COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.NONE);
     AlwaysRetainField.alwaysRetain.set(this, true);
     this.retain = true;
     this.exhaust = true;

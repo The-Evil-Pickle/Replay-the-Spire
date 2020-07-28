@@ -311,9 +311,9 @@
     "NAME": "Basket of Snakes",
 	"FLAVOR": "Don't worry; they won't bite. At least, they won't bite you.",
     "DESCRIPTIONS": [
-		"Every #b",
-		"th #yAttack you play applies #b",
-		" #yNecrotic #yPoison each time it deals unblocked damage."
+		"Every time you play #b",
+		" #yAttacks in a single turn, gain #b",
+		" stack of #gSnake #gVenom. NL Whenever you deal unblocked #yAttack damage, apply #yNecrotic #yPoison equal to your #gSnake #gVenom. NL #gSnake #gVenom decreases by #b1 each turn."
 	]
   },
   "Counterbalance": {
@@ -865,6 +865,14 @@
 		"When you play #b3 cards that give #yBlock in a single turn, gain #b1 #yReflection."
 	]
   },
+  "Replay:Friendship Ring": {
+    "NAME": "Friendship Ring",
+	"FLAVOR": "A token of friendship from long ago.",
+    "DESCRIPTIONS": [
+		"On pickup, choose 1 of #b",
+		" random bosses. NL At the start of combat, add one copy of each of their #yexpansioncontent:Boss cards to your draw pile. These gain #rEthereal and #ysneckomod:Snekproof."
+	]
+  },
   "Ring of Fury": {
 	"NAME": "Ring of Fury",
 	"FLAVOR": "A cursed ring that heightens both senses and senselessness.",
@@ -969,7 +977,7 @@
 	"NAME": "Ring of Comfort",
 	"FLAVOR": "Comfort protects. Comfort shelters. Comfort blinds.",
 	"DESCRIPTIONS": [
-	"All healing you recieve is increased by #b",
+	"All healing you receive is increased by #b",
 	"%. NL When at less than #b",
 	"% Max HP, you must #yRest at rest sites."
 	]
