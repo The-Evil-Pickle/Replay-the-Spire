@@ -442,6 +442,13 @@
 	  " each time."
     ]
   },
+  "LoomingThreat": {
+    "NAME": "Looming Threat",
+    "DESCRIPTIONS": [
+      "At the end of your turn, deal #b",
+      " damage to a random enemy for each card #yRetained."
+    ]
+  },
   "GremboCoward": {
     "NAME": "Cowardice",
     "DESCRIPTIONS": [

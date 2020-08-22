@@ -38,7 +38,7 @@ public class ReplayGash extends CustomCard implements StartupCard
     private static final int COST = 2;
     
     public ReplayGash() {
-        super(ID, NAME, "cards/replay/replayBetaAttack.png", COST, DESCRIPTION, CardType.ATTACK, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, NAME, "cards/replay/claw_rake.png", COST, DESCRIPTION, CardType.ATTACK, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 2;
         this.isMultiDamage = true;
         GraveField.grave.set(this, true);

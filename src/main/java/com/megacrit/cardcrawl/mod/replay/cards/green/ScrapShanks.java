@@ -28,7 +28,7 @@ public class ScrapShanks extends CustomCard
     public static final String UPGRADE_DESCRIPTION;
     
     public ScrapShanks() {
-        super(ID, ScrapShanks.NAME, "cards/replay/replayBetaPower.png", 1, ScrapShanks.DESCRIPTION, CardType.POWER, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, ScrapShanks.NAME, "cards/replay/scrap_shanks.png", 1, ScrapShanks.DESCRIPTION, CardType.POWER, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
     }

@@ -865,6 +865,17 @@
 		"When you play #b3 cards that give #yBlock in a single turn, gain #b1 #yReflection."
 	]
   },
+  "Replay:Purple Gloves": {
+    "NAME": "Purple Gloves",
+	"FLAVOR": ".",
+    "DESCRIPTIONS": [
+		"Your max hand size is increased by #b",
+		". NL When you exit #yCalm, draw #b",
+		". NL When you enter #yDivinity, draw #b",
+		" card",
+		" cards"
+	]
+  },
   "Replay:Friendship Ring": {
     "NAME": "Friendship Ring",
 	"FLAVOR": "A token of friendship from long ago.",

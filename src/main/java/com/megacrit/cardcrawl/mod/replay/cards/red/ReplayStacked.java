@@ -25,7 +25,7 @@ public class ReplayStacked extends CustomCard
     private static final int EXHAUSTIVE_UP = 0;
     
     public ReplayStacked() {
-        super(ID, ReplayStacked.NAME, "cards/replay/replayBetaSkill.png", COST, ReplayStacked.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, ReplayStacked.NAME, "cards/replay/phantomShield.png", COST, ReplayStacked.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.UNCOMMON, CardTarget.SELF);
         ExhaustiveVariable.setBaseValue(this, EXHAUSTIVE_AMT);
         this.baseBlock = BLOCK_AMT;
     }

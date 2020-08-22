@@ -37,7 +37,7 @@ public class LeadingStrike extends CustomCard
     private static final int REFUND_UP = -1;
     
     public LeadingStrike() {
-        super(ID, LeadingStrike.NAME, "cards/replay/replayBetaAttack.png", COST, LeadingStrike.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, LeadingStrike.NAME, "cards/replay/leadingStrike.png", COST, LeadingStrike.DESCRIPTION, CardType.ATTACK, CardColor.RED, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.tags.add(AbstractCard.CardTags.STRIKE);
         this.baseDamage = LeadingStrike.ATTACK_DMG;
         this.baseMagicNumber = REFUND_AMT;

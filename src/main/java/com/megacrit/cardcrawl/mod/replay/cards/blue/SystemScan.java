@@ -27,7 +27,7 @@ public class SystemScan extends CustomCard
     private static final int COST = 1;
     
     public SystemScan() {
-        super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, NAME, "cards/replay/system_scan.png", COST, DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
 		this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }

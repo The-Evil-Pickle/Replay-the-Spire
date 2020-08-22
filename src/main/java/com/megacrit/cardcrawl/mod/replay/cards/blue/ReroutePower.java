@@ -24,7 +24,7 @@ public class ReroutePower extends CustomCard
     private static final int COST = 0;
     
     public ReroutePower() {
-        super(ID, ReroutePower.NAME, "cards/replay/replayBetaSkill.png", ReroutePower.COST, ReroutePower.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, ReroutePower.NAME, "cards/replay/reroute_power.png", ReroutePower.COST, ReroutePower.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.NONE);
 		this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
     }

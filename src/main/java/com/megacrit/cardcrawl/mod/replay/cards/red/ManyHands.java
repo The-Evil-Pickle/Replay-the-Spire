@@ -31,7 +31,7 @@ public class ManyHands extends CustomCard
     private static final int COST = -1;
     
     public ManyHands() {
-        super(ID, ManyHands.NAME, "cards/replay/replayBetaSkill.png", -1, ManyHands.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.RARE, CardTarget.SELF);
+        super(ID, ManyHands.NAME, "cards/replay/manyhands.png", -1, ManyHands.DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.RARE, CardTarget.SELF);
         ExhaustiveVariable.setBaseValue(this, 2);
         this.cardsToPreview = new UndeathsTouch();
     }

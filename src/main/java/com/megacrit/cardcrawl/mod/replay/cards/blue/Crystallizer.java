@@ -28,7 +28,7 @@ public class Crystallizer extends CustomCard
     private static final int COST = 0;
     
     public Crystallizer() {
-        super("Crystallizer", Crystallizer.NAME, "cards/replay/replayBetaPower.png", Crystallizer.COST, Crystallizer.DESCRIPTION, CardType.POWER, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
+        super("Crystallizer", Crystallizer.NAME, "cards/replay/crystallizer.png", Crystallizer.COST, Crystallizer.DESCRIPTION, CardType.POWER, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }

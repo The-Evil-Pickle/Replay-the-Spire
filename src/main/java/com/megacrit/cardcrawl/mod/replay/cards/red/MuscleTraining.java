@@ -26,7 +26,7 @@ public class MuscleTraining extends CustomCard
     private static final int COST = 0;
     
     public MuscleTraining() {
-        super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, NAME, "cards/replay/weightTraining.png", COST, DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.UNCOMMON, CardTarget.SELF);
 		this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
         ExhaustiveVariable.setBaseValue(this, 2);

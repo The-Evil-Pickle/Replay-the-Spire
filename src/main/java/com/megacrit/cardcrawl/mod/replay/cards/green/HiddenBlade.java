@@ -16,8 +16,10 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import basemod.abstracts.CustomCard;
+
 public class HiddenBlade
-  extends AbstractCard
+  extends CustomCard
 {
   public static final String ID = "Hidden Blade";
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Hidden Blade");
@@ -29,7 +31,7 @@ public class HiddenBlade
   
   public HiddenBlade()
   {
-    super("Hidden Blade", NAME, "status/beta", "status/beta", 1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
+    super(ID, NAME, "cards/replay/hiddenBlade.png", 1, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
     
     this.baseMagicNumber = 2;
     this.magicNumber = this.baseMagicNumber;

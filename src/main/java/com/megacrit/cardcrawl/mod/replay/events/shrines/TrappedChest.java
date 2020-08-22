@@ -149,7 +149,7 @@ public class TrappedChest
 				//logMetric("Take Damage");
 				break;
 			case 2: 
-				int r = MathUtils.random(100);
+				int r = AbstractDungeon.miscRng.random(100);
 				if (r > this.dodgeChance){
 					this.imageEventText.updateBodyText(DESCRIPTIONS[4]);
 					this.unlockTheChest();
@@ -171,7 +171,7 @@ public class TrappedChest
 		this.imageEventText.clearRemainingOptions();
         AbstractDungeon.getCurrRoom().rewards.clear();
 		
-		int rewardSet = MathUtils.random(8);
+		int rewardSet = AbstractDungeon.eventRng.random(8);
 		int goldAmt = MathUtils.random(20) + 15;
 		if (AbstractDungeon.ascensionLevel >= 15){
 			goldAmt -= 10;

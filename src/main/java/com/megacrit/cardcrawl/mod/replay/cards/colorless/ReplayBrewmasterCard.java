@@ -28,7 +28,7 @@ public class ReplayBrewmasterCard extends CustomCard
     private static final int COST = 3;
     
     public ReplayBrewmasterCard() {
-        super(ID, ReplayBrewmasterCard.NAME, "cards/replay/replayBetaPower.png", ReplayBrewmasterCard.COST, ReplayBrewmasterCard.DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.RARE, CardTarget.SELF);
+        super(ID, ReplayBrewmasterCard.NAME, "cards/replay/brewmaster.png", ReplayBrewmasterCard.COST, ReplayBrewmasterCard.DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.RARE, CardTarget.SELF);
         //this.isEthereal = true;
     }
     

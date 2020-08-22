@@ -31,7 +31,7 @@ public class Parry extends CustomCard
     private static final int COST = 1;
     
     public Parry() {
-        super(ID, Parry.NAME, "cards/replay/replayBetaAttack.png", COST, Parry.DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
+        super(ID, Parry.NAME, "cards/replay/parry.png", COST, Parry.DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
         ExhaustiveVariable.setBaseValue(this, 3);
         this.isEthereal = true;
         this.baseDamage = 4;

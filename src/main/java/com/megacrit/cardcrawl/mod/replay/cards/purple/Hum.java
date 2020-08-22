@@ -20,7 +20,7 @@ public class Hum extends CustomCard
     private static final CardStrings cardStrings;
     
     public Hum() {
-        super(ID, Hum.cardStrings.NAME, "cards/replay/replayBetaSkill.png", 1, Hum.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, Hum.cardStrings.NAME, "cards/replay/hum.png", 1, Hum.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }

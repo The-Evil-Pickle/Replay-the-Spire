@@ -30,7 +30,7 @@ public class CalculationTraining extends CustomCard implements StartupCard
     private static final int COST = 0;
     
     public CalculationTraining() {
-        super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, NAME, "cards/replay/calculation_training.png", COST, DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
 		this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
         ExhaustiveVariable.setBaseValue(this, 2);

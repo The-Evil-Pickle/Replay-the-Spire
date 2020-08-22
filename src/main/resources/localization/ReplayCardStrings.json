@@ -362,6 +362,44 @@
     "DESCRIPTION": "Draw !M! card. NL Whenever you Scry, return this from your discard pile to your Hand. NL Exhaustive !stslib:ex!.",
     "UPGRADE_DESCRIPTION": "Draw !M! card. NL Whenever you Scry, return this from your discard pile to your Hand. NL Grave. NL Exhaustive !stslib:ex!."
   },
+  "Replay:Anticipation": {
+    "NAME": "Anticipation",
+    "DESCRIPTION": "Enter Guard. NL Gain !M! Reflection. NL Exhaustive !stslib:ex!."
+  },
+  "Replay:Battleflow": {
+    "NAME": "Battleflow",
+    "DESCRIPTION": "Grave. NL Unplayable while in a Stance. NL Choose: Enter Wrath, Enter Calm, Enter Guard, or gain !M! Mantra.",
+    "UPGRADE_DESCRIPTION": "Unplayable while in a Stance. NL Choose: Enter Wrath, Enter Calm, Enter Guard, or gain !M! Mantra.",
+    "EXTENDED_DESCRIPTION": [
+    	"Direct the flow of battle",
+    	"Wrathful Flow",
+    	"Enter Wrath",
+    	"Calm Flow",
+    	"Enter Calm",
+    	"Guarded Flow",
+    	"Enter Guard",
+    	"Divine Flow",
+    	"Gain !M! Mantra"
+    ]
+  },
+  "Replay:AtTheReady": {
+    "NAME": "At The Ready",
+    "DESCRIPTION": "Retain. NL Enter Guard. NL Exhaust."
+  },
+  "Replay:AllIn": {
+    "NAME": "All In",
+    "DESCRIPTION": "Enter Wrath. NL Add an All Out to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Enter Wrath. NL Add an All Out to your hand."
+  },
+  "Replay:AllOut": {
+    "NAME": "All Out",
+    "DESCRIPTION": "Retain. NL Deal damage equal to your Block, then lose all your Block. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": " NL (Deals !D! damage.)"
+  },
+  "Replay:LoomingThreat": {
+    "NAME": "Looming Threat",
+    "DESCRIPTION": "At the end of your turn, deal !M! damage to a random enemy for each card Retained."
+  },
   "Improvise": {
     "NAME": "Improvise",
     "DESCRIPTION": "Choose 1 of 3 random cards to add to your hand. It costs 1 less. NL Exhaust.",

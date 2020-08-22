@@ -59,5 +59,11 @@
 			"decrepit"
 		],
 		"DESCRIPTION": "Fighters afflicted by #yDecrepit suffer 1 extra damage from attacks for each stack. NL Each turn #yDecrepit is decreased by #b1."
+	},
+	{
+		"NAMES": [
+			"guard"
+		],
+		"DESCRIPTION": "While in this #yStance, you gain double #yBlock from cards, but your #yAttack damage is reduced by #r90%."
 	}
 ]

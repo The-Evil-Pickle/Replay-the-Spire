@@ -1026,6 +1026,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BuildSettings(new Bandana());
 		BuildSettings(new EnergyBall());
 		BuildSettings(new GrabBag());
+		BuildSettings(new PurpleGloves());
 		BuildSettings(new RingOfChallenge());
 		
 		loadSettingsData();
@@ -1173,6 +1174,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		BaseMod.addRelic(new PocketPolymer(), RelicType.SHARED);
 		BaseMod.addRelic(new PondfishScales(), RelicType.SHARED);
 		BaseMod.addRelic(new PetGhost(), RelicType.SHARED);
+		BaseMod.addRelic(new PurpleGloves(), RelicType.PURPLE);
 		BaseMod.addRelic(new QuantumEgg(), RelicType.SHARED);
 		BaseMod.addRelic(new RingingSoul(), RelicType.SHARED);
 		BaseMod.addRelic(new RingOfChaos(), RelicType.SHARED);
@@ -1385,8 +1387,14 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new ReroutePower());
 		AddAndUnlockCard(new FabricateWheel(), foundmod_hubris || foundmod_conspire || Loader.isModLoaded("jedi") || Loader.isModLoaded("StrawberrySpire"));
 		logger.info("adding cards for Watcher...");
-		AddAndUnlockCard(new Hum());
+		AddAndUnlockCard(new AllIn());
+		AddAndUnlockCard(new AllOut());
+		AddAndUnlockCard(new Anticipation());
+		AddAndUnlockCard(new AtTheReady());
+		AddAndUnlockCard(new Battleflow());
 		AddAndUnlockCard(new Cycle());
+		AddAndUnlockCard(new Hum());
+		AddAndUnlockCard(new LoomingThreat());
 		AddAndUnlockCard(new Vibes());
 		logger.info("adding colorless cards...");
 		//AddAndUnlockCard(new Improvise(), false);
@@ -1873,6 +1881,10 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
         String orbStrings = Gdx.files.internal(jsonPath + "ReplayOrbStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(OrbStrings.class, orbStrings);
+        // StanceStrings
+        String stanceStrings = Gdx.files.internal(jsonPath + "ReplayStanceStrings.json").readString(
+        		String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(StanceStrings.class, stanceStrings);
 	}
 	
 	@Override

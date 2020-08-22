@@ -27,7 +27,7 @@ public class Necrosis extends CustomCard
 	  
 	  public Necrosis()
 	  {
-	    super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ALL_ENEMY);
+	    super(ID, NAME, "cards/replay/necrosis.png", COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ALL_ENEMY);
 	    this.exhaust = true;
 	  }
 	  
