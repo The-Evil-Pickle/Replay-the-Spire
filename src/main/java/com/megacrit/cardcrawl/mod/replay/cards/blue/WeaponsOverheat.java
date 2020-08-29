@@ -39,7 +39,7 @@ public class WeaponsOverheat extends CustomCard
     private static final int COST = 1;
     
     public WeaponsOverheat() {
-        super("WeaponsOverheat", WeaponsOverheat.NAME, "cards/replay/replayBetaSkill.png", 0, WeaponsOverheat.DESCRIPTION, CardType.SKILL, (AbstractDungeon.player == null) ? AbstractCard.CardColor.COLORLESS : ((AbstractDungeon.player instanceof Defect) ? AbstractCard.CardColor.RED : AbstractCard.CardColor.BLUE), (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(IronCore.ID)) ? CardRarity.COMMON : CardRarity.SPECIAL, CardTarget.SELF);
+        super("WeaponsOverheat", WeaponsOverheat.NAME, "cards/replay/overheated_weapon.png", 0, WeaponsOverheat.DESCRIPTION, CardType.SKILL, (AbstractDungeon.player == null) ? AbstractCard.CardColor.COLORLESS : ((AbstractDungeon.player instanceof Defect) ? AbstractCard.CardColor.RED : AbstractCard.CardColor.BLUE), (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(IronCore.ID)) ? CardRarity.COMMON : CardRarity.SPECIAL, CardTarget.SELF);
 		this.isEthereal = true;
 		this.showEvokeValue = true;
         this.showEvokeOrbCount = 1;

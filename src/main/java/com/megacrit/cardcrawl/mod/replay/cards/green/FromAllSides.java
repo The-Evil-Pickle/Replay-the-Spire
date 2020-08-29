@@ -25,7 +25,7 @@ public class FromAllSides
 	
 	public FromAllSides()
 	{
-	  super(ID, NAME, "cards/replay/replayBetaAttack.png", COST, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ALL_ENEMY);
+	  super(ID, NAME, "cards/replay/from_all_sides.png", COST, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.GREEN, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ALL_ENEMY);
 	  this.baseDamage = 3;
 	  this.baseMagicNumber = 1;
 	  this.magicNumber = this.baseMagicNumber;

@@ -22,7 +22,7 @@ public class ShivToss extends CustomCard
 	private static final int COST = 0;
     
     public ShivToss() {
-        super(ShivToss.ID, ShivToss.NAME, "cards/replay/replayBetaSkill.png", COST, ShivToss.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ShivToss.ID, ShivToss.NAME, "cards/replay/shiv_toss.png", COST, ShivToss.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
         ExhaustiveVariable.setBaseValue(this, 2);

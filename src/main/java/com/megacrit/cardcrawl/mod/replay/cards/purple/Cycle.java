@@ -18,7 +18,7 @@ public class Cycle extends CustomCard
     private static final CardStrings cardStrings;
     
     public Cycle() {
-        super(ID, Cycle.cardStrings.NAME, "cards/replay/replayBetaSkill.png", 0, Cycle.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, Cycle.cardStrings.NAME, "cards/replay/cycle.png", 0, Cycle.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseMagicNumber = this.magicNumber = 1;
         ExhaustiveVariable.setBaseValue(this, 3);
     }

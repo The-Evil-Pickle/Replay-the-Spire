@@ -400,6 +400,26 @@
     "NAME": "Looming Threat",
     "DESCRIPTION": "At the end of your turn, deal !M! damage to a random enemy for each card Retained."
   },
+  "Replay:ManipulateFuture": {
+    "NAME": "Manipulate Future",
+    "DESCRIPTION": "Scry !M!. NL Cards discarded by this cost 0 until played."
+  },
+  "Replay:ContraStrike": {
+    "NAME": "ContraStrike",
+    "DESCRIPTION": "Deal !D! damage. NL If this deals at least !M! unblocked damage, gain !B! Shielding and enter Calm."
+  },
+  "Replay:ContraDef": {
+    "NAME": "Contradef",
+    "DESCRIPTION": "Gain !B! Block. NL If you then have at least !M! Block, gain 1 Reflection and enter Wrath."
+  },
+  "Replay:DivineShield": {
+    "NAME": "Divine Shield",
+    "DESCRIPTION": "If you have no Block or Shielding, gain !B! Shielding. NL Otherwise, gain !M! Reflection."
+  },
+  "Replay:BluntJabs": {
+    "NAME": "Blunt Jabs",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Retain adjacent cards this turn."
+  },
   "Improvise": {
     "NAME": "Improvise",
     "DESCRIPTION": "Choose 1 of 3 random cards to add to your hand. It costs 1 less. NL Exhaust.",

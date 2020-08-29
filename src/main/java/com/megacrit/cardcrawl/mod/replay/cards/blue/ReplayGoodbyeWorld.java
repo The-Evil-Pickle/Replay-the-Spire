@@ -31,7 +31,7 @@ public class ReplayGoodbyeWorld extends CustomCard
     public ArrayList<TooltipInfo> tips;
     
     public ReplayGoodbyeWorld() {
-        super(ID, ReplayGoodbyeWorld.NAME, "cards/replay/replayBetaPower.png", ReplayGoodbyeWorld.COST, ReplayGoodbyeWorld.DESCRIPTION, CardType.POWER, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, ReplayGoodbyeWorld.NAME, "cards/replay/empty_bin.png", ReplayGoodbyeWorld.COST, ReplayGoodbyeWorld.DESCRIPTION, CardType.POWER, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
 		this.baseMagicNumber = 4;
         this.magicNumber = this.baseMagicNumber;
         this.tips = new ArrayList<TooltipInfo>();
