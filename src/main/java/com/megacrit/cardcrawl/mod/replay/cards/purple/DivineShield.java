@@ -30,7 +30,7 @@ public class DivineShield extends CustomCard
     
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-    	if (AbstractDungeon.player.currentBlock == 0 && ReplayTheSpireMod.playerShielding < 1) {
+    	if (AbstractDungeon.player.currentBlock == 0 && ReplayTheSpireMod.shieldingAmount(p) < 1) {
             this.addToBot(new ReplayGainShieldingAction(p, p, this.block));
         } else {
         	this.addToBot(new ApplyPowerAction(p, p, new ReflectionPower(p, this.magicNumber), this.magicNumber));

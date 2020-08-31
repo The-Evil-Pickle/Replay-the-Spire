@@ -362,6 +362,64 @@
     "DESCRIPTION": "抽 !M! 张牌。 NL 每当你 预见 时，将这张牌从弃牌堆中加入你的手牌。 NL 消耗性 !stslib:ex! ",
     "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 每当你 预见 时，将这张牌从弃牌堆中加入你的手牌。 NL 墓地 ， NL 消耗性 !stslib:ex! "
   },
+  "Replay:Anticipation": {
+    "NAME": "预判",
+    "DESCRIPTION": "进入 守备 。 NL 获得 !M! 层 反射 。 NL 消耗性 !stslib:ex! 。"
+  },
+  "Replay:Battleflow": {
+    "NAME": "战斗心流",
+    "DESCRIPTION": "墓地 。 NL 处于 姿态 时 不能被打出 。 NL 选择进入： 愤怒 、 平静 、守备 或获得 !M! 层 真言 。",
+    "UPGRADE_DESCRIPTION": "处于 姿态 时 不能被打出 。 NL 选择进入： 愤怒 、 平静 、守备 或获得 !M! 层 真言 。",
+    "EXTENDED_DESCRIPTION": [
+        "选择战斗心流",
+        "愤怒心流",
+        "进入 愤怒 ",
+        "平静心流",
+        "进入 平静 ",
+        "守备心流",
+        "进入 守备 ",
+        "神格心流",
+        "获得 !M! 层 真言 "
+    ]
+  },
+  "Replay:AtTheReady": {
+    "NAME": "伺机",
+    "DESCRIPTION": "保留 。 NL 进入 守备 。 NL 消耗 。"
+  },
+  "Replay:AllIn": {
+    "NAME": "集怒于内",
+    "DESCRIPTION": "进入 愤怒 。 NL 将一张 *迸发而出 加入你的手牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "进入 愤怒 。 NL 将一张 *迸发而出 加入你的手牌。"
+  },
+  "Replay:AllOut": {
+    "NAME": "迸发而出",
+    "DESCRIPTION": "保留 。 NL 造成你当前 格挡 值的伤害，失去你的 格挡 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " NL （造成 !D! 点伤害）"
+  },
+  "Replay:LoomingThreat": {
+    "NAME": "迫在眉睫",
+    "DESCRIPTION": "你的回合结束时，每有一张被 保留 的牌，对随机一名敌人造成 !M! 点伤害。"
+  },
+  "Replay:ManipulateFuture": {
+    "NAME": "操纵未来",
+    "DESCRIPTION": "预见 !M! 。 NL 被丢弃的牌直到打出前的耗能变为0。"
+  },
+  "Replay:ContraStrike": {
+    "NAME": "相斥打击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果至少造成了 !M! 点未被 格挡 的伤害，获得 !B! 点 护盾 并 进入 平静 。"
+  },
+  "Replay:ContraDef": {
+    "NAME": "相斥防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 如果获得 格挡 后你至少拥有 !M! 点 格挡 ，获得 1 层 反射 并 进入 愤怒。"
+  },
+  "Replay:DivineShield": {
+    "NAME": "圣罩",
+    "DESCRIPTION": "如果你没有 格挡 和 护盾 ，获得 !B! 点 护盾 。 NL 否则，获得 !M! 层 反射 。"
+  },
+  "Replay:BluntJabs": {
+    "NAME": "钝刺",
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 本回合 保留 临近的手牌。"
+  },
   "Improvise": {
     "NAME": "凑合",
     "DESCRIPTION": "从3张随机牌中选择1张加入你的手牌。 它的耗能降低1。 NL 消耗 。",

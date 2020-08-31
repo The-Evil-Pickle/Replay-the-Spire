@@ -1392,9 +1392,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		AddAndUnlockCard(new Anticipation());
 		AddAndUnlockCard(new AtTheReady());
 		AddAndUnlockCard(new Battleflow());
+		AddAndUnlockCard(new BluntJabs());
 		AddAndUnlockCard(new Cycle());
+		AddAndUnlockCard(new DivineShield());
 		AddAndUnlockCard(new Hum());
 		AddAndUnlockCard(new LoomingThreat());
+		AddAndUnlockCard(new ManipulateFuture());
 		AddAndUnlockCard(new Vibes());
 		logger.info("adding colorless cards...");
 		//AddAndUnlockCard(new Improvise(), false);

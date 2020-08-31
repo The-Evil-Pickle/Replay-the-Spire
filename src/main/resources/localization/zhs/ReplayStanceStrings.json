@@ -1,0 +1,8 @@
+{
+  "Replay:Guard": {
+    "NAME": "守备",
+    "DESCRIPTION": [
+      "翻倍从卡牌中获得的 #y格挡 ， NL 造成的 #y攻击 伤害减少 #r90% 。"
+    ]
+  }
+}

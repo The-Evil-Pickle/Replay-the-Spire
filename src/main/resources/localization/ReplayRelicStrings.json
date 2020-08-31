@@ -867,13 +867,20 @@
   },
   "Replay:Purple Gloves": {
     "NAME": "Purple Gloves",
-	"FLAVOR": ".",
+	"FLAVOR": "Hands are always improved by fancy gloves!",
     "DESCRIPTIONS": [
 		"Your max hand size is increased by #b",
 		". NL When you exit #yCalm, draw #b",
 		". NL When you enter #yDivinity, draw #b",
 		" card",
 		" cards"
+	]
+  },
+  "Replay:Ace of Pentacles": {
+    "NAME": "Ace of Pentacles",
+	"FLAVOR": ".",
+    "DESCRIPTIONS": [
+		"Whenever you add a card to your deck, change its cost to #b1."
 	]
   },
   "Replay:Friendship Ring": {

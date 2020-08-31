@@ -4,8 +4,8 @@
   "author_list": ["The_Evil_Pickle"],
   "description": "Huge content expansion mod. Adds new cards, relics, potions, events, monsters, and shenanigans.",
   "dependencies": ["basemod","stslib"],
-  "credits" : "Artists: Bakuhaku, Stewartisme, Lyman, RedDyeNo5, apinanaivot. \n OST: Slimer509. \n Translators: PJJLegend, TheGrobber, Rita-Bernstein, Rincewind. \n Also helped: DecadeDecaf, Reina, Blank the Evil.",
-  "version": "1.5.12",
+  "credits" : "Artists: Victorformat_cn, Bakuhaku, Stewartisme, Lyman, RedDyeNo5, Apinanaivot. \n OST: Slimer509. \n Translators: PJJLegend, TheGrobber, Rita-Bernstein, Rincewind. \n Also helped: DecadeDecaf, Reina, Blank the Evil.",
+  "version": "1.6.0",
   "sts_version": "01-14-2020",
   "mts_version": "3.15.0",
   "update_json": "https://api.github.com/repos/The-Evil-Pickle/Replay-the-Spire/releases/latest"
