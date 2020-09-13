@@ -28,7 +28,7 @@ public class ReplayRepulse extends CustomCard
     private static final int COST = 0;
     
     public ReplayRepulse() {
-        super(ID, NAME, "cards/replay/replayBetaSkill.png", COST, DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, NAME, "cards/replay/repulse.png", COST, DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
 		this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
     }

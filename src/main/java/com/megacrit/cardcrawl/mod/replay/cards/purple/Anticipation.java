@@ -22,7 +22,7 @@ public class Anticipation extends CustomCard
     private static final CardStrings cardStrings;
     
     public Anticipation() {
-        super(ID, Anticipation.cardStrings.NAME, "cards/replay/replayBetaSkill.png", 1, Anticipation.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, Anticipation.cardStrings.NAME, "cards/replay/anticipation.png", 1, Anticipation.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.UNCOMMON, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = 2;
         ExhaustiveVariable.setBaseValue(this, 3);
     }

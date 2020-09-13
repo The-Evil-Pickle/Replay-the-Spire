@@ -19,7 +19,7 @@ public class AtTheReady extends CustomCard
     private static final CardStrings cardStrings;
     
     public AtTheReady() {
-        super(ID, AtTheReady.cardStrings.NAME, "cards/replay/replayBetaSkill.png", 1, AtTheReady.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, AtTheReady.cardStrings.NAME, "cards/replay/at_the_ready.png", 1, AtTheReady.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.COMMON, CardTarget.SELF);
         this.exhaust = true;
         this.selfRetain = true;
     }

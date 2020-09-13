@@ -16,7 +16,7 @@ public class ManipulateFuture extends CustomCard
     private static final CardStrings cardStrings;
     
     public ManipulateFuture() {
-        super(ID, ManipulateFuture.cardStrings.NAME, "cards/replay/replayBetaSkill.png", 0, ManipulateFuture.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, ManipulateFuture.cardStrings.NAME, "cards/replay/manipulate_future.png", 0, ManipulateFuture.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.COMMON, CardTarget.SELF);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }

@@ -25,7 +25,7 @@ public class Vibes extends CustomCard
     private static final int COST = 1;
     
     public Vibes() {
-        super(ID, Vibes.NAME, "cards/replay/replayBetaSkill.png", COST, Vibes.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, Vibes.NAME, "cards/replay/vibes.png", COST, Vibes.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
         //this.updateStuff();
@@ -52,14 +52,21 @@ public class Vibes extends CustomCard
     public void switchedStance() {
     	this.updateStuff();
     }
-    
+    private void changeImage(String img) {
+    	this.textureImg = img;
+        if (img != null) {
+            this.loadCardImage(img);
+        }
+    }
     private void updateStuff() {
     	if (AbstractDungeon.player != null && AbstractDungeon.player.stance != null && AbstractDungeon.player.stance.ID.equals(WrathStance.STANCE_ID) || AbstractDungeon.player.stance.ID.equals(CalmStance.STANCE_ID)) {
     		this.target = CardTarget.ENEMY;
     		if (AbstractDungeon.player.stance.ID.equals(CalmStance.STANCE_ID)) {
         		this.name = Vibes.EXTENDED_DESCRIPTION[0] + Vibes.NAME;
+        		this.changeImage("cards/replay/good_vibes.png");
             } else {
             	this.name = Vibes.EXTENDED_DESCRIPTION[1] + Vibes.NAME;
+        		this.changeImage("cards/replay/bad_vibes.png");
             }
     		if (this.upgraded) {
     			this.name += "+";
@@ -68,6 +75,7 @@ public class Vibes extends CustomCard
     	} else {
     		this.target = CardTarget.SELF;
     		this.name = Vibes.NAME;
+    		this.changeImage("cards/replay/vibes.png");
     		if (this.upgraded) {
     			this.name += "+";
     	        this.initializeTitle();

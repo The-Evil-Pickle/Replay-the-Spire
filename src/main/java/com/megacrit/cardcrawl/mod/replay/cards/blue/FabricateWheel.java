@@ -39,7 +39,7 @@ public class FabricateWheel extends CustomCard
     private static final int COST = 3;
     
     public FabricateWheel() {
-        super(ID, FabricateWheel.NAME, "cards/replay/replayBetaSkill.png", FabricateWheel.COST, FabricateWheel.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.RARE, CardTarget.SELF);
+        super(ID, FabricateWheel.NAME, "cards/replay/Fabricate_wheel.png", FabricateWheel.COST, FabricateWheel.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.RARE, CardTarget.SELF);
 		FleetingField.fleeting.set(this, true);
     }
     

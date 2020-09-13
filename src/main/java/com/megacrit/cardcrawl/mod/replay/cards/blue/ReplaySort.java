@@ -31,7 +31,7 @@ public class ReplaySort extends CustomCard
     private static final int COST = 1;
     
     public ReplaySort() {
-        super("ReplaySort", ReplaySort.NAME, "cards/replay/replayBetaSkill.png", ReplaySort.COST, ReplaySort.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.NONE);
+        super("ReplaySort", ReplaySort.NAME, "cards/replay/sort.png", ReplaySort.COST, ReplaySort.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.NONE);
 		this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }

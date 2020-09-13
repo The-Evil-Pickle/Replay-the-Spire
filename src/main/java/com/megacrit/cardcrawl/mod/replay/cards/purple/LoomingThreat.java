@@ -27,7 +27,7 @@ public class LoomingThreat extends CustomCard
     public static final String DESCRIPTION;
     
     public LoomingThreat() {
-        super(ID, LoomingThreat.NAME, "cards/replay/replayBetaPower.png", 2, LoomingThreat.DESCRIPTION, CardType.POWER, CardColor.PURPLE, CardRarity.RARE, CardTarget.SELF);
+        super(ID, LoomingThreat.NAME, "cards/replay/Looming_threat.png", 1, LoomingThreat.DESCRIPTION, CardType.POWER, CardColor.PURPLE, CardRarity.RARE, CardTarget.SELF);
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
     }

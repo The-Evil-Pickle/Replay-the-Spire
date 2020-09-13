@@ -30,7 +30,7 @@ public class FIFOQueue extends CustomCard
     private static final int COST = 2;
     
     public FIFOQueue() {
-        super("FIFO Queue", FIFOQueue.NAME, "cards/replay/replayBetaPower.png", FIFOQueue.COST, FIFOQueue.DESCRIPTION, CardType.POWER, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
+        super("FIFO Queue", FIFOQueue.NAME, "cards/replay/FIFO_queue.png", FIFOQueue.COST, FIFOQueue.DESCRIPTION, CardType.POWER, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseMagicNumber = 4;
         this.magicNumber = this.baseMagicNumber;
     }
