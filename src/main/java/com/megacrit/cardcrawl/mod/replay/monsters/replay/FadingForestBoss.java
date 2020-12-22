@@ -576,7 +576,6 @@ public class FadingForestBoss extends CustomMonster
 							case 1:
 								this.imageEventText.updateBodyText(this.eDesc(3));
 								m = new FF_Lagavulin(true);
-								//AbstractDungeon.actionManager.addToTop(new GainBlockAction(m, m, 8));
 								AbstractDungeon.actionManager.addToTop(new SpawnForestMonsterAction(m, true));
 								break;
 							default:

@@ -29,10 +29,12 @@ public class GrabBag extends ReplayAbstractRelic
     boolean hasRelicFour;
     public static ArrayList<String> energyRelics = new ArrayList<String>();
     public static ArrayList<String> nonEnergyRelics = new ArrayList<String>();
-    public static ReplayBooleanSetting DOUBLE_RELICS = new ReplayBooleanSetting("grabBag_double", "Double relics, lose 1 energy", true);
+    public static ReplayBooleanSetting DOUBLE_RELICS = new ReplayBooleanSetting("grabBag_double", "Double energy relics, lose 1 energy", true);
+    public static ReplayBooleanSetting DOUBLE_RELICS_2 = new ReplayBooleanSetting("grabBag_noneng", "Double non-energy relics", false);
     public ArrayList<ReplayRelicSetting> BuildRelicSettings() {
     	ArrayList<ReplayRelicSetting> settings = new ArrayList<ReplayRelicSetting>();
     	settings.add(DOUBLE_RELICS);
+    	settings.add(DOUBLE_RELICS_2);
 		return settings;
 	}
     public GrabBag() {
@@ -44,7 +46,7 @@ public class GrabBag extends ReplayAbstractRelic
     }
     
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[DOUBLE_RELICS.value ? 2 : 0];
+        return this.DESCRIPTIONS[DOUBLE_RELICS.value ? 1 : 0] + this.DESCRIPTIONS[DOUBLE_RELICS_2.value ? 3 : 2] + this.DESCRIPTIONS[4];
     }
     
     public static String getRandomKey(ArrayList<String> whiteList) {
@@ -67,7 +69,7 @@ public class GrabBag extends ReplayAbstractRelic
     
     public void update() {
     	super.update();
-    	if ((DOUBLE_RELICS.value ? !this.hasRelicFour : !this.hasRelicTwo) && AbstractDungeon.isScreenUp == false && AbstractDungeon.player.relics.get(AbstractDungeon.player.relics.size()-1).isDone) {
+    	if ((DOUBLE_RELICS_2.value ? !this.hasRelicFour : !this.hasRelicTwo) && AbstractDungeon.isScreenUp == false && AbstractDungeon.player.relics.get(AbstractDungeon.player.relics.size()-1).isDone) {
     		if (!this.hasRelicOne) {
     			ReplayTheSpireMod.noSkipRewardsRoom = true;
     			if (AbstractDungeon.getCurrRoom() instanceof TreasureRoomBoss) {
@@ -191,10 +193,11 @@ public class GrabBag extends ReplayAbstractRelic
         this.hasRelicTwo = false;
         if (DOUBLE_RELICS.value) {
         	this.hasRelicThree = false;
-            this.hasRelicFour = false;
             final EnergyManager energy = AbstractDungeon.player.energy;
             --energy.energyMaster;
         }
+        if (DOUBLE_RELICS_2.value)
+            this.hasRelicFour = false;
         GrabBag.buildLists();
     }
     

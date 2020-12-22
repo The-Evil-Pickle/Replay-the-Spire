@@ -6,10 +6,12 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.red.*;
+import com.megacrit.cardcrawl.characters.AbstractPlayer.PlayerClass;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
+import champ.ChampChar;
 import guardian.cards.*;
 
 public class M_GuardianBlood extends M_MistRelic
@@ -22,7 +24,18 @@ public class M_GuardianBlood extends M_MistRelic
     
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+    	String desc = this.DESCRIPTIONS[0];
+    	if (AbstractDungeon.player != null) {
+    		if (AbstractDungeon.player.chosenClass != PlayerClass.IRONCLAD) {
+    			desc += this.DESCRIPTIONS[1];
+    		}
+    		if (AbstractDungeon.player.chosenClass != guardian.patches.GuardianEnum.GUARDIAN) {
+    			desc += this.DESCRIPTIONS[2];
+    		}
+    	} else {
+    		desc += this.DESCRIPTIONS[1] + this.DESCRIPTIONS[2];
+    	}
+        return desc;
     }
     
     @Override

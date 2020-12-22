@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -46,6 +47,13 @@ public abstract class ReplayAbstractRelic extends AbstractRelic {
 			return false;
 		}
 		return true;
+	}
+	
+	public void updateDesc() {
+		this.description = this.getUpdatedDescription();
+        this.tips = new ArrayList<PowerTip>();
+        this.tips.add(new PowerTip(this.name, this.description));
+        this.initializeTips();
 	}
 	
 	@Override

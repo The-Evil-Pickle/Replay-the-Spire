@@ -70,6 +70,7 @@ import basemod.interfaces.*;
 import beaked.Beaked;
 import blackbeard.TheBlackbeardMod;
 import blackrusemod.BlackRuseMod;
+import champ.ChampChar;
 import chronomuncher.ChronoMod;
 import coloredmap.ColoredMap;
 import infinitespire.InfiniteSpire;
@@ -88,6 +89,7 @@ import replayTheSpire.replayxover.marisabs;
 import replayTheSpire.replayxover.sneckobs;
 import replayTheSpire.replayxover.bard.bardbs;
 import replayTheSpire.variables.MagicArithmatic;
+import theHexaghost.TheHexaghost;
 
 import java.lang.reflect.*;
 import java.io.*;
@@ -1053,7 +1055,8 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		logger.info("Events");
 		BaseMod.addEvent(MirrorMist.ID, MirrorMist.class, "Exordium");
 		BaseMod.addEvent(Stuck.ID, Stuck.class, "Exordium");
-		BaseMod.addEvent(ReplayMapScoutEvent.ID, ReplayMapScoutEvent.class, "TheCity");
+		if (!foundmod_downfall)
+			BaseMod.addEvent(ReplayMapScoutEvent.ID, ReplayMapScoutEvent.class, "TheCity");
 		BaseMod.addEvent(TrappedChest.ID, TrappedChest.class);
 		BaseMod.addEvent(ChaosEvent.ID, ChaosEvent.class);
 		if (Loader.isModLoaded("Friendly_Minions_0987678")) {
@@ -1594,7 +1597,12 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
     	try {
     		initializeBardMod(LoadType.RELIC);
 		} catch (ClassNotFoundException | NoClassDefFoundError e) {
-			logger.info("Replay | Guardian mod not detected");
+			logger.info("Replay | Bard mod not detected");
+		}
+    	try {
+    		initializeDownfallUniqueMod(LoadType.RELIC);
+		} catch (ClassNotFoundException | NoClassDefFoundError e) {
+			logger.info("Replay | Downfall mod not detected");
 		}
     }
 
@@ -1805,6 +1813,20 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Guardian...");
+		}
+	}
+	private static void initializeDownfallUniqueMod(LoadType type)throws ClassNotFoundException, NoClassDefFoundError {
+		Class<TheHexaghost> hexboi = TheHexaghost.class;
+		logger.info("ReplayTheSpireMod | Detected Guardian!");
+		foundmod_guardian = true;
+		if(type == LoadType.RELIC) {
+			logger.info("ReplayTheSpireMod | Initializing Relics for Hexaghost...");
+			BaseMod.addRelicToCustomPool(new M_DevilBlood(), TheHexaghost.Enums.GHOST_GREEN);
+			BaseMod.addRelicToCustomPool(new M_Hexaring(), TheHexaghost.Enums.GHOST_GREEN);
+			BaseMod.addRelicToCustomPool(new M_IronCrown(), ChampChar.Enums.CHAMP_GRAY);
+		}
+		if(type == LoadType.CARD) {
+			logger.info("ReplayTheSpireMod | Initializing Cards for Hexaghost...");
 		}
 	}
 
@@ -2075,7 +2097,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			logger.error("Failed to load ReplayTheSpireMod settings data!");
 			e.printStackTrace();
 		}
-    	
+    	for (ReplayAbstractRelic _r : RelicSettings.keySet()) {
+    		AbstractRelic r = RelicLibrary.getRelic(_r.relicId);
+    		if (r != null)
+    			((ReplayAbstractRelic)r).updateDesc();
+    	}
     }
 	
 	public static boolean rua_DefeatedAbe = false;

@@ -11,24 +11,19 @@ import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.curses.UnknownCurse;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.spireboss.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.PondfishBoss;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.hec.HellsEngine;
-import com.megacrit.cardcrawl.mod.replay.powers.replayxover.StudyFableSpinnerPower;
-import com.megacrit.cardcrawl.mod.replay.powers.replayxover.StudyHecPower;
-import com.megacrit.cardcrawl.mod.replay.powers.replayxover.StudyPondfishPower;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import basemod.BaseMod;
 import downfall.cards.OctoChoiceCard;
+import downfall.patches.EvilModeCharacterSelect;
 import expansioncontent.expansionContentMod;
 import expansioncontent.cards.QuickStudy;
-import expansioncontent.cards.StudyTheSpire;
 import slimebound.powers.SlimedPower;
 
 public class downfallbs {
@@ -42,9 +37,16 @@ public class downfallbs {
 		BaseMod.addCard(new SS_Hec_ForgedInHellfire());
 		BaseMod.addCard(new SS_Hec_SteelHeart());
 		BaseMod.addCard(new SS_Hec_Dynamite());
+		BaseMod.addCard(new UnknownCurse());
 	}
-	
-	
+	/*
+	public static boolean inEvilMode() {
+    	try {
+    		return EvilModeCharacterSelect.evilMode;
+		} catch (NoClassDefFoundError e) {
+			return false;
+		}
+	}*/
 	
 	
 	
@@ -121,6 +123,16 @@ public class downfallbs {
 		        return SpireReturn.Return(null);
 			}
 	        return SpireReturn.Continue();
+	    }
+	}
+    
+    @SpirePatch(cls = "sneckomod.cards.AbstractSneckoCard", method = "getCorrectPlaceholderImage", optional = true)
+	public static class SnekboiPatch
+	{
+	    public static SpireReturn<String> Prefix(final String img) {
+	    	if (img == "cards/replay/betaCurse.png")
+	    		return SpireReturn.Return(img);
+	    	return SpireReturn.Continue();
 	    }
 	}
 }

@@ -75,6 +75,10 @@ import blackbeard.characters.TheBlackbeard;
 import blackrusemod.cards.Exchange;
 import blackrusemod.cards.KidneyShot;
 import blackrusemod.characters.*;
+import champ.ChampChar;
+import champ.cards.Execute;
+import champ.cards.Taunt;
+import champ.relics.ChampionCrown;
 import chronomuncher.cards.PatternShift;
 import chronomuncher.cards.SecondHand;
 import chronomuncher.character.*;
@@ -95,6 +99,9 @@ import replayTheSpire.*;
 import runesmith.character.player.RunesmithCharacter;
 import slimebound.characters.SlimeboundCharacter;
 import sneckomod.TheSnecko;
+import theHexaghost.TheHexaghost;
+import theHexaghost.cards.Float;
+import theHexaghost.relics.SpiritBrand;
 import the_gatherer.character.TheGatherer;
 
 import com.megacrit.cardcrawl.unlock.*;
@@ -614,9 +621,9 @@ public class MirrorMist
 					this.has_2 = AbstractDungeon.player.hasRelic("Slimebound:AbsorbEndCombat");
 					this.loss_r_2 = RelicLibrary.getRelic("Slimebound:AbsorbEndCombat").makeCopy();
 					this.gain_r_2 = new M_SlimeRing();
-					this.has_2b = CardHelper.hasCardWithID("Slimebound:CorrosiveSpit");
+					/*this.has_2b = CardHelper.hasCardWithID("Slimebound:CorrosiveSpit");
 					this.loss_c_2b = CardLibrary.getCopy("Slimebound:CorrosiveSpit");
-					this.gain_c_2b = new DeadlyPoison();
+					this.gain_c_2b = new DeadlyPoison();*/
 					this.has_3 = CardHelper.hasCardWithID("Slimebound:Split");
 					this.loss_c_3 = CardLibrary.getCopy("Slimebound:Split");
 					this.gain_c_3 = new Chaos();
@@ -666,6 +673,37 @@ public class MirrorMist
 				this.thirdOption = true;
 				break;
 			}
+			if (ReplayTheSpireMod.foundmod_downfall && AbstractDungeon.player instanceof TheHexaghost) {
+				this.has_1 = AbstractDungeon.player.hasRelic(SpiritBrand.ID);
+				this.loss_r_1 = RelicLibrary.getRelic(SpiritBrand.ID).makeCopy();
+				this.gain_r_1 = new M_DevilBlood();
+				this.has_2 = AbstractDungeon.player.hasRelic(SpiritBrand.ID);
+				this.loss_r_2 = RelicLibrary.getRelic(SpiritBrand.ID).makeCopy();
+				this.gain_r_2 = new M_Hexaring();
+				this.has_2b = CardHelper.hasCardWithID(Float.ID);
+				this.loss_c_2b = CardLibrary.getCopy(Float.ID);
+				this.gain_c_2b = CardLibrary.getCopy(Survivor.ID);
+				break;
+			}
+			if (ReplayTheSpireMod.foundmod_downfall && AbstractDungeon.player instanceof ChampChar) {
+				this.has_1 = AbstractDungeon.player.hasRelic(ChampionCrown.ID);
+				this.loss_r_1 = RelicLibrary.getRelic(ChampionCrown.ID).makeCopy();
+				this.gain_r_1 = new M_IronCrown();
+				this.has_2 = CardHelper.hasCardWithID(Taunt.ID);
+				this.loss_c_2 = CardLibrary.getCopy(Taunt.ID);
+				this.gain_c_2 = CardLibrary.getCopy(Survivor.ID);
+				this.has_2b = CardHelper.hasCardWithID(Execute.ID);
+				this.loss_c_2b = CardLibrary.getCopy(Execute.ID);
+				this.gain_c_2b = CardLibrary.getCopy(Neutralize.ID);
+				this.has_3 = CardHelper.hasCardWithID(Taunt.ID);
+				this.loss_c_3 = CardLibrary.getCopy(Taunt.ID);
+				this.gain_c_3 = CardLibrary.getCopy(Vigilance.ID);
+				this.has_3b = CardHelper.hasCardWithID(Execute.ID);
+				this.loss_c_3b = CardLibrary.getCopy(Execute.ID);
+				this.gain_c_3b = CardLibrary.getCopy(Eruption.ID);
+				this.thirdOption = true;
+				break;
+			}
 			
 			this.moddedguy = true;
 		}
@@ -692,6 +730,9 @@ public class MirrorMist
 		AbstractCard prevcard_1 = null;
 		AbstractCard prevcard_2 = null;
 		AbstractCard prevcard_3 = null;
+		AbstractRelic prevrelic_1 = null;
+		AbstractRelic prevrelic_2 = null;
+		AbstractRelic prevrelic_3 = null;
 		if (this.has_1 || this.has_1b) {
 			string_1 = OPTIONS[2];
 			String obstring = OPTIONS[8];
@@ -706,6 +747,7 @@ public class MirrorMist
 					prevcard_1 = this.gain_c_1;
 				} else if (this.gain_r_1 != null) {
 					obstring += FontHelper.colorString(this.gain_r_1.name, "g");
+					prevrelic_1 = this.gain_r_1;
 				}
 			}
 			if (this.has_1b) {
@@ -760,6 +802,7 @@ public class MirrorMist
 					prevcard_2 = this.gain_c_2;
 				} else if (this.gain_r_2 != null) {
 					obstring += FontHelper.colorString(this.gain_r_2.name, "g");
+					prevrelic_2 = this.gain_r_2;
 				}
 			}
 			if (this.has_2b) {
@@ -815,6 +858,7 @@ public class MirrorMist
 					prevcard_3 = this.gain_c_3;
 				} else if (this.gain_r_3 != null) {
 					obstring += FontHelper.colorString(this.gain_r_3.name, "g");
+					prevrelic_3 = this.gain_r_3;
 				}
 			}
 			if (this.has_3b) {
@@ -856,20 +900,38 @@ public class MirrorMist
 			string_3 += ".";
 		}
 		if (prevcard_1 == null) {
-			this.imageEventText.setDialogOption(string_1, (!this.has_1 && !this.has_1b));
+			if (prevrelic_1 == null)
+				this.imageEventText.setDialogOption(string_1, (!this.has_1 && !this.has_1b));
+			else
+				this.imageEventText.setDialogOption(string_1, prevrelic_1);
 		} else {
-			this.imageEventText.setDialogOption(string_1, prevcard_1);
+			if (prevrelic_1 == null)
+				this.imageEventText.setDialogOption(string_1, prevcard_1);
+			else
+				this.imageEventText.setDialogOption(string_1, prevcard_1, prevrelic_1);
 		}
 		if (prevcard_2 == null) {
-			this.imageEventText.setDialogOption(string_2, (!this.has_2 && !this.has_2b));
+			if (prevrelic_2 == null)
+				this.imageEventText.setDialogOption(string_2, (!this.has_2 && !this.has_2b));
+			else
+				this.imageEventText.setDialogOption(string_2, prevrelic_2);
 		} else {
-			this.imageEventText.setDialogOption(string_2, prevcard_2);
+			if (prevrelic_2 == null)
+				this.imageEventText.setDialogOption(string_2, prevcard_2);
+			else
+				this.imageEventText.setDialogOption(string_2, prevcard_2, prevrelic_2);
 		}
 		if (this.thirdOption) {
 			if (prevcard_3 == null) {
-				this.imageEventText.setDialogOption(string_3, (!this.has_3 && !this.has_3b));
+				if (prevrelic_3 == null)
+					this.imageEventText.setDialogOption(string_3, (!this.has_3 && !this.has_3b));
+				else
+					this.imageEventText.setDialogOption(string_3, prevrelic_3);
 			} else {
-				this.imageEventText.setDialogOption(string_3, prevcard_3);
+				if (prevrelic_3 == null)
+					this.imageEventText.setDialogOption(string_3, prevcard_3);
+				else
+					this.imageEventText.setDialogOption(string_3, prevcard_3, prevrelic_3);
 			}
 		}
 	}
