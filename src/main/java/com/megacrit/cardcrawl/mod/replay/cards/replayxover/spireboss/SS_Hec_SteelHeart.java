@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.*;
 import expansioncontent.expansionContentMod;
 import expansioncontent.cards.AbstractExpansionCard;
 import replayTheSpire.replayxover.downfallbs;
-import replayTheSpire.replayxover.downfallen;
 
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.powers.*;
@@ -27,7 +26,7 @@ public class SS_Hec_SteelHeart extends AbstractExpansionCard
     
     public SS_Hec_SteelHeart() {
         super(ID, "replay/ss_hec_heart", COST, AbstractCard.CardType.POWER, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
-        this.tags.add(downfallen.STUDY_HEC);
+       // this.tags.add(downfallen.STUDY_HEC);
         this.tags.add(expansionContentMod.STUDY);
         this.magicNumber = this.baseMagicNumber = 10;
         this.block = this.baseBlock = 5;

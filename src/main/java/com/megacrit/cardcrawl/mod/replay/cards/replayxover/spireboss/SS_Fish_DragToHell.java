@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.*;
 import expansioncontent.expansionContentMod;
 import expansioncontent.cards.AbstractExpansionCard;
 import replayTheSpire.replayxover.downfallbs;
-import replayTheSpire.replayxover.downfallen;
 
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
@@ -25,10 +24,12 @@ public class SS_Fish_DragToHell extends AbstractExpansionCard
     
     public SS_Fish_DragToHell() {
         super(ID, "replay/ss_fish_drown", COST, AbstractCard.CardType.SKILL, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
-        this.tags.add(downfallen.STUDY_PONDFISH);
+       //this.tags.add(downfallen.STUDY_PONDFISH);
         this.tags.add(expansionContentMod.STUDY);
         this.magicNumber = this.baseMagicNumber = 6;
         this.exhaust = true;
+        this.setBackgroundTexture("expansioncontentResources/images/512/bg_boss_skill.png", "expansioncontentResources/images/1024/bg_boss_skill.png");
+
     }
     
     public void use(final AbstractPlayer p, final AbstractMonster m) {

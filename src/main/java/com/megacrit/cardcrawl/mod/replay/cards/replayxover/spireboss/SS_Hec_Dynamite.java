@@ -11,7 +11,6 @@ import expansioncontent.expansionContentMod;
 import expansioncontent.cards.AbstractExpansionCard;
 import replayTheSpire.patches.CardFieldStuff;
 import replayTheSpire.replayxover.downfallbs;
-import replayTheSpire.replayxover.downfallen;
 
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
@@ -26,7 +25,7 @@ public class SS_Hec_Dynamite extends AbstractExpansionCard
     
     public SS_Hec_Dynamite() {
         super(ID, "replay/ss_hec_dynamite", COST, AbstractCard.CardType.ATTACK, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY);
-        this.tags.add(downfallen.STUDY_HEC);
+      //  this.tags.add(downfallen.STUDY_HEC);
         this.tags.add(expansionContentMod.STUDY);
         this.tags.add(CardFieldStuff.CHAOS_NEGATIVE_MAGIC);
         this.isMultiDamage = true;

@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.*;
 import expansioncontent.expansionContentMod;
 import expansioncontent.cards.AbstractExpansionCard;
 import replayTheSpire.replayxover.downfallbs;
-import replayTheSpire.replayxover.downfallen;
 
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.powers.*;
@@ -26,7 +25,7 @@ public class SS_Fish_LivingLantern extends AbstractExpansionCard
     
     public SS_Fish_LivingLantern() {
         super(ID, "replay/ss_fish_light", COST, AbstractCard.CardType.SKILL, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
-        this.tags.add(downfallen.STUDY_PONDFISH);
+        //this.tags.add(downfallen.STUDY_PONDFISH);
         this.tags.add(expansionContentMod.STUDY);
         this.magicNumber = this.baseMagicNumber = 8;
         //ExhaustiveVariable.setBaseValue(this, 2);

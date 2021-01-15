@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.*;
 import expansioncontent.expansionContentMod;
 import expansioncontent.cards.AbstractExpansionCard;
 import replayTheSpire.replayxover.downfallbs;
-import replayTheSpire.replayxover.downfallen;
 
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -27,7 +26,7 @@ public class SS_Fish_SixFeetUnder extends AbstractExpansionCard
     
     public SS_Fish_SixFeetUnder() {
         super(ID, "replay/ss_fish_attack", COST, AbstractCard.CardType.ATTACK, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
-        this.tags.add(downfallen.STUDY_PONDFISH);
+       // this.tags.add(downfallen.STUDY_PONDFISH);
         this.tags.add(expansionContentMod.STUDY);
         this.magicNumber = this.baseMagicNumber = 6;
         this.damage = this.baseDamage = 3;
