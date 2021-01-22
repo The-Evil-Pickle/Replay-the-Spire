@@ -6,6 +6,34 @@
 	"每次洗牌时, 获得 #b1 层 #y人工制品 。 NL 每当你抽到一张 #y状态牌 时， 失去 #b1 层 #y人工制品 来 #y消耗 所有本回合的 #y状态牌 ， 每消耗一张抽 #b1 张牌。"
 	]
   },
+  
+    "Replay:M_SmolderingBlood": {
+    "NAME": "阴燃之血",
+    "FLAVOR": "火焰已被沉息",
+    "DESCRIPTIONS": [
+      " 每战限用一次。 NL 进入 #y平静",
+      " NL 一些 #r红色 牌会出现在奖励界面。",
+      " NL 一些 #p紫色 牌会出现在奖励界面。"
+    ]
+  },
+
+  "Replay:Kaleidoscope": {
+    "NAME": "万花筒",
+    "FLAVOR": "色彩斑斓，千变万化。",
+    "DESCRIPTIONS": [
+      "每当在一个回合内打出3张提供格挡的牌，获得 #b1 层 #y反射 。"
+    ]
+  },
+
+  "Replay:Antivirus Software": {
+    "NAME": "杀毒软件",
+    "FLAVOR": "等价于机器用的疫苗。",
+    "DESCRIPTIONS": [
+      "每当洗牌，获得1层 #y人工制品 。 NL 每当抽到 #y状态牌 ，失去 #b1 层 #y人工制品 来 #y消耗 所有本回合抽到的状态牌，抽等量牌。"
+    ]
+  },
+  
+  
   "Replay:Arrowhead": {
 	"NAME": "箭头",
 	"FLAVOR": "这是你打造的第一件东西.",

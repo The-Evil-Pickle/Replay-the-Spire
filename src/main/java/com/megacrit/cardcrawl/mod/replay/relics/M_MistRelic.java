@@ -5,9 +5,15 @@ import java.util.ArrayList;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
+import com.megacrit.cardcrawl.cards.blue.*;
 import com.megacrit.cardcrawl.cards.green.*;
 import com.megacrit.cardcrawl.cards.red.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.mod.replay.cards.blue.ReplayOmegaCannon;
+import com.megacrit.cardcrawl.mod.replay.cards.blue.ReplayRepulse;
+import com.megacrit.cardcrawl.mod.replay.cards.blue.ReplaySort;
+import com.megacrit.cardcrawl.mod.replay.cards.blue.SystemScan;
+import com.megacrit.cardcrawl.mod.replay.cards.green.FluidMovement;
 import com.megacrit.cardcrawl.mod.replay.cards.green.HiddenBlade;
 import com.megacrit.cardcrawl.mod.replay.cards.green.PoisonSmokescreen;
 import com.megacrit.cardcrawl.mod.replay.cards.green.ShivToss;
@@ -16,6 +22,8 @@ import com.megacrit.cardcrawl.mod.replay.cards.red.LeadingStrike;
 import com.megacrit.cardcrawl.mod.replay.cards.red.LifeLink;
 import com.megacrit.cardcrawl.mod.replay.cards.red.Massacre;
 import com.megacrit.cardcrawl.mod.replay.cards.red.MuscleTraining;
+import com.megacrit.cardcrawl.mod.replay.cards.red.ReplayReversal;
+import com.megacrit.cardcrawl.mod.replay.cards.red.ReplayStacked;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -160,7 +168,44 @@ public abstract class M_MistRelic extends AbstractRelic
         tmpPool.add(new Hemogenesis());
         tmpPool.add(new LifeLink());
     }
-    
+    public static void cardlist_StatusRed(ArrayList<AbstractCard> tmpPool) {
+    	tmpPool.add(new WildStrike());
+    	tmpPool.add(new Evolve());
+    	tmpPool.add(new FireBreathing());
+    	tmpPool.add(new PowerThrough());
+    	tmpPool.add(new RecklessCharge());
+    }
+    public static void cardlist_StatusBlue(ArrayList<AbstractCard> tmpPool) {
+    	tmpPool.add(new Turbo());
+    	tmpPool.add(new Overclock());
+    	tmpPool.add(new ReplayRepulse());
+    	tmpPool.add(new ReplaySort());
+    	tmpPool.add(new SystemScan());
+    	tmpPool.add(new ReplayOmegaCannon());
+    }
+    public static void cardlist_BlockRed(ArrayList<AbstractCard> tmpPool) {
+    	tmpPool.add(new BodySlam());
+    	tmpPool.add(new ShrugItOff());
+    	tmpPool.add(new Entrench());
+    	tmpPool.add(new FlameBarrier());
+    	tmpPool.add(new GhostlyArmor());
+    	tmpPool.add(new Metallicize());
+    	tmpPool.add(new ReplayStacked());
+    	tmpPool.add(new ReplayReversal());
+    	tmpPool.add(new Barricade());
+    	tmpPool.add(new Impervious());
+    	tmpPool.add(new Juggernaut());
+    }
+    public static void cardlist_BlockGreen(ArrayList<AbstractCard> tmpPool) {
+    	tmpPool.add(new Backflip());
+    	tmpPool.add(new Deflect());
+    	tmpPool.add(new DodgeAndRoll());
+    	tmpPool.add(new Blur());
+    	tmpPool.add(new Caltrops());
+    	tmpPool.add(new Footwork());
+    	tmpPool.add(new EscapePlan());
+    	tmpPool.add(new FluidMovement());
+    }
     
     
 	@SpirePatch(cls = "com.megacrit.cardcrawl.helpers.CardLibrary", method = "initialize")

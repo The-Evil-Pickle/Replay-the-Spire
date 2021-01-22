@@ -52,6 +52,9 @@ import com.megacrit.cardcrawl.mod.replay.cards.curses.*;
 import com.megacrit.cardcrawl.mod.replay.cards.green.*;
 import com.megacrit.cardcrawl.mod.replay.cards.red.*;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.ArmamentsMkIIB;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.downfall.M_BronzeAgony;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.downfall.M_BronzeBash;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.downfall.M_BronzeSurvivor;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.guardian.GuardianBash;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.guardian.GuardianCast;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.marisa.LightBash;
@@ -70,6 +73,9 @@ import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.*;
 
 import ThMod.characters.Marisa;
+import automaton.AutomatonChar;
+import automaton.cards.Goto;
+import automaton.cards.Replicate;
 import beaked.characters.BeakedTheCultist;
 import blackbeard.characters.TheBlackbeard;
 import blackrusemod.cards.Exchange;
@@ -702,6 +708,21 @@ public class MirrorMist
 				this.loss_c_3b = CardLibrary.getCopy(Execute.ID);
 				this.gain_c_3b = CardLibrary.getCopy(Eruption.ID);
 				this.thirdOption = true;
+				break;
+			}
+			if (ReplayTheSpireMod.foundmod_downfall && AbstractDungeon.player instanceof AutomatonChar) {
+				this.has_1 = AbstractDungeon.player.hasRelic(automaton.relics.BronzeCore.ID);
+				this.loss_r_1 = RelicLibrary.getRelic(automaton.relics.BronzeCore.ID).makeCopy();
+				this.gain_r_1 = new M_BronzeBlood();
+				this.has_1b = CardHelper.hasCardWithID(Goto.ID);
+				this.loss_c_1b = CardLibrary.getCopy(Goto.ID);
+				this.gain_c_1b = CardLibrary.getCopy(M_BronzeBash.ID);
+				this.has_2 = CardHelper.hasCardWithID(Replicate.ID);
+				this.loss_c_2 = CardLibrary.getCopy(Replicate.ID);
+				this.gain_c_2 = CardLibrary.getCopy(M_BronzeAgony.ID);
+				this.has_2b = CardHelper.hasCardWithID(Goto.ID);
+				this.loss_c_2b = CardLibrary.getCopy(Goto.ID);
+				this.gain_c_2b = CardLibrary.getCopy(M_BronzeSurvivor.ID);
 				break;
 			}
 			

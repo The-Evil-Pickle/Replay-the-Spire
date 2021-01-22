@@ -24,7 +24,7 @@ public class SolidLightProjector extends CustomCard
     private static final int COST = 1;
     
     public SolidLightProjector() {
-        super(ID, SolidLightProjector.NAME, "cards/replay/replayBetaSkill.png", COST, SolidLightProjector.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, SolidLightProjector.NAME, "cards/replay/solid_light_projector.png", COST, SolidLightProjector.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseBlock = 2;
         this.baseMagicNumber = 5;
         this.magicNumber = this.baseMagicNumber;

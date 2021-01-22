@@ -1295,6 +1295,25 @@
 			" NL Certain #yChamp cards can now be obtained"
 		]
 	},
+	"m_BronzeBlood": {
+		"NAME": "Bronze Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the end of each combat, heal #b",
+			" HP.",
+			" NL Certain #rRed cards can now be obtained.",
+			" NL Certain #yAutomaton cards can now be obtained"
+		]
+	},
+	"m_CrackedBronzeCore": {
+		"NAME": "Cracked Bronze Core",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"The first #yFunction you create each combat costs #b1 less.",
+			" NL Certain #bBlue cards can now be obtained.",
+			" NL Certain #yAutomaton cards can now be obtained"
+		]
+	},
 	"replay:Trail_Library": {
 		"NAME": "Library Looter",
 		"FLAVOR": "aight listen i KNOW its bad form to implement a custom run mod with a relic but y'know what sometimes you just gotta look urself in the mirror and ask \"do i really feel like dealing with patching shit when relics have a perfectly good hook for opening chests\" and sometimes the answer is no.",

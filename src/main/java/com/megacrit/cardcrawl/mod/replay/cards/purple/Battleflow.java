@@ -35,7 +35,7 @@ public class Battleflow extends CustomCard
     private static final String[] EXTENDED_DESCRIPTION;
     
     public Battleflow() {
-        super(ID, Battleflow.cardStrings.NAME, "cards/replay/replayBetaSkill.png", 0, Battleflow.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, Battleflow.cardStrings.NAME, "cards/replay/battleflow.png", 0, Battleflow.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.UNCOMMON, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = 3;
         GraveField.grave.set(this, true);
     }

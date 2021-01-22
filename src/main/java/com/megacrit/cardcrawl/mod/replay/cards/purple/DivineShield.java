@@ -21,7 +21,7 @@ public class DivineShield extends CustomCard
     private static final CardStrings cardStrings;
     
     public DivineShield() {
-        super(ID, DivineShield.cardStrings.NAME, "cards/replay/replayBetaSkill.png", 1, DivineShield.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, DivineShield.cardStrings.NAME, "cards/replay/divine_shield.png", 1, DivineShield.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
         this.baseBlock = 7;

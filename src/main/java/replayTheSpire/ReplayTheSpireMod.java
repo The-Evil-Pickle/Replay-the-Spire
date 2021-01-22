@@ -70,7 +70,6 @@ import basemod.interfaces.*;
 import beaked.Beaked;
 import blackbeard.TheBlackbeardMod;
 import blackrusemod.BlackRuseMod;
-import champ.ChampChar;
 import chronomuncher.ChronoMod;
 import coloredmap.ColoredMap;
 import infinitespire.InfiniteSpire;
@@ -1485,6 +1484,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			try {
 				guardianbs.addCards();
 				downfallbs.addBossCards();
+				downfallbs.addMistCards();
 			} catch (NoClassDefFoundError e) {
 				logger.info("Replay | Downfall BS");
 			}
@@ -1817,13 +1817,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 	}
 	private static void initializeDownfallUniqueMod(LoadType type)throws ClassNotFoundException, NoClassDefFoundError {
 		Class<TheHexaghost> hexboi = TheHexaghost.class;
-		logger.info("ReplayTheSpireMod | Detected Guardian!");
+		logger.info("ReplayTheSpireMod | Detected Downfall!");
 		foundmod_guardian = true;
 		if(type == LoadType.RELIC) {
-			logger.info("ReplayTheSpireMod | Initializing Relics for Hexaghost...");
-			BaseMod.addRelicToCustomPool(new M_DevilBlood(), TheHexaghost.Enums.GHOST_GREEN);
-			BaseMod.addRelicToCustomPool(new M_Hexaring(), TheHexaghost.Enums.GHOST_GREEN);
-			BaseMod.addRelicToCustomPool(new M_IronCrown(), ChampChar.Enums.CHAMP_GRAY);
+			logger.info("ReplayTheSpireMod | Initializing Relics for Hexaghost/Champ/Automaton...");
+			downfallbs.addMistRelics();
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Hexaghost...");

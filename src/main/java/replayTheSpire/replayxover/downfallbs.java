@@ -14,17 +14,27 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.curses.UnknownCurse;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.downfall.M_BronzeAgony;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.downfall.M_BronzeBash;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.downfall.M_BronzeSurvivor;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.spireboss.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.PondfishBoss;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.hec.HellsEngine;
+import com.megacrit.cardcrawl.mod.replay.relics.M_BronzeBlood;
+import com.megacrit.cardcrawl.mod.replay.relics.M_DevilBlood;
+import com.megacrit.cardcrawl.mod.replay.relics.M_Hexaring;
+import com.megacrit.cardcrawl.mod.replay.relics.M_IronCrown;
 
+import automaton.AutomatonChar;
 import basemod.BaseMod;
+import champ.ChampChar;
 import downfall.cards.OctoChoiceCard;
 import downfall.patches.EvilModeCharacterSelect;
 import expansioncontent.expansionContentMod;
 import expansioncontent.cards.QuickStudy;
 import slimebound.powers.SlimedPower;
+import theHexaghost.TheHexaghost;
 
 public class downfallbs {
 	public static void addBossCards() {
@@ -52,6 +62,19 @@ public class downfallbs {
 		 **/
 
 		//BaseMod.addCard(new UnknownCurse());
+	}
+	
+	public static void addMistCards() {
+		BaseMod.addCard(new M_BronzeBash());
+		BaseMod.addCard(new M_BronzeSurvivor());
+		BaseMod.addCard(new M_BronzeAgony());
+	}
+	
+	public static void addMistRelics() {
+		BaseMod.addRelicToCustomPool(new M_DevilBlood(), TheHexaghost.Enums.GHOST_GREEN);
+		BaseMod.addRelicToCustomPool(new M_Hexaring(), TheHexaghost.Enums.GHOST_GREEN);
+		BaseMod.addRelicToCustomPool(new M_IronCrown(), ChampChar.Enums.CHAMP_GRAY);
+		BaseMod.addRelicToCustomPool(new M_BronzeBlood(), AutomatonChar.Enums.BRONZE_AUTOMATON);
 	}
 	/*
 	public static boolean inEvilMode() {
@@ -155,6 +178,19 @@ public class downfallbs {
 	    public static SpireReturn<String> Prefix(final String img) {
 	    	if (img == "cards/replay/betaCurse.png")
 	    		return SpireReturn.Return(img);
+	    	return SpireReturn.Continue();
+	    }
+	}
+    @SpirePatch(cls = "automaton.cards.AbstractBronzeCard", method = "getCorrectPlaceholderImage", optional = true)
+	public static class AutocardPatch
+	{
+	    public static SpireReturn<String> Prefix(final AbstractCard.CardType type, final String id) {
+	    	if (id == M_BronzeAgony.ID)
+	    		return SpireReturn.Return("cards/replay/agony.png");
+	    	if (id == M_BronzeBash.ID)
+	    		return SpireReturn.Return("cards/replay/bash.png");
+	    	if (id == M_BronzeSurvivor.ID)
+	    		return SpireReturn.Return("cards/replay/survivalism.png");
 	    	return SpireReturn.Continue();
 	    }
 	}
