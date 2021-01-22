@@ -1,3 +1,4 @@
+/*
 package com.megacrit.cardcrawl.mod.replay.powers.replayxover;
 
 import com.megacrit.cardcrawl.powers.*;
@@ -50,3 +51,4 @@ public class StudyFableSpinnerPower extends AbstractPower
         }
     }
 }
+*/

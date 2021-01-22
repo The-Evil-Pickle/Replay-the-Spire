@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.dungeons.*;
 import expansioncontent.expansionContentMod;
 import expansioncontent.cards.AbstractExpansionCard;
 import replayTheSpire.replayxover.downfallbs;
-import replayTheSpire.replayxover.downfallen;
 
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.powers.*;
@@ -28,7 +27,7 @@ public class SS_Forest_Fishers extends AbstractExpansionCard
     
     public SS_Forest_Fishers() {
         super(ID, "replay/ss_forest_fish", COST, AbstractCard.CardType.POWER, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
-        this.tags.add(downfallen.STUDY_FOREST);
+       // this.tags.add(downfallen.STUDY_FOREST);
         this.tags.add(expansionContentMod.STUDY);
         this.magicNumber = this.baseMagicNumber = 4;
     }

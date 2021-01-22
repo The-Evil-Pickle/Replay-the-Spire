@@ -11,7 +11,6 @@ import expansioncontent.expansionContentMod;
 import expansioncontent.cards.AbstractExpansionCard;
 import replayTheSpire.patches.CardFieldStuff;
 import replayTheSpire.replayxover.downfallbs;
-import replayTheSpire.replayxover.downfallen;
 
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
@@ -26,7 +25,7 @@ public class SS_Forest_LostForever extends AbstractExpansionCard
     
     public SS_Forest_LostForever() {
         super(ID, "replay/ss_forest_skill", COST, AbstractCard.CardType.SKILL, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
-        this.tags.add(downfallen.STUDY_FOREST);
+       // this.tags.add(downfallen.STUDY_FOREST);
         this.tags.add(expansionContentMod.STUDY);
         this.tags.add(CardFieldStuff.CHAOS_NEGATIVE_MAGIC);
         this.magicNumber = this.baseMagicNumber = 15;

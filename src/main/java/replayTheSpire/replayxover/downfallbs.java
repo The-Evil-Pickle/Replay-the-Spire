@@ -28,16 +28,30 @@ import slimebound.powers.SlimedPower;
 
 public class downfallbs {
 	public static void addBossCards() {
+
+		/**
+		Bosses each only have one card now, to avoid thickening the pool too much.  Feel free to add this back in as desired.
+		Boss cards need to have a template override assigned, which each of the three uncommented ones do.
+		**/
+
 		BaseMod.addCard(new SS_Fish_DragToHell());
-		BaseMod.addCard(new SS_Fish_LivingLantern());
-		BaseMod.addCard(new SS_Fish_SixFeetUnder());
+		//BaseMod.addCard(new SS_Fish_LivingLantern());
+		//BaseMod.addCard(new SS_Fish_SixFeetUnder());
 		BaseMod.addCard(new SS_Forest_Treasure());
-		BaseMod.addCard(new SS_Forest_LostForever());
-		BaseMod.addCard(new SS_Forest_Fishers());
+		//BaseMod.addCard(new SS_Forest_LostForever());
+		//BaseMod.addCard(new SS_Forest_Fishers());
 		BaseMod.addCard(new SS_Hec_ForgedInHellfire());
-		BaseMod.addCard(new SS_Hec_SteelHeart());
-		BaseMod.addCard(new SS_Hec_Dynamite());
-		BaseMod.addCard(new UnknownCurse());
+		//BaseMod.addCard(new SS_Hec_SteelHeart());
+		//BaseMod.addCard(new SS_Hec_Dynamite());
+
+
+		/**
+		 Unknowns are VERY different now and would probably tough to make a new one.  I didn't see this hooked up to anything,
+		 so I didn't worry about it right now.  But we'll probably need to do some support on our end to allow modded Unknowns.
+		 Unknown Curse is set up to be basically what Unknowns are now, but there's a lot of hooks elsewhere.
+		 **/
+
+		//BaseMod.addCard(new UnknownCurse());
 	}
 	/*
 	public static boolean inEvilMode() {
@@ -47,9 +61,13 @@ public class downfallbs {
 			return false;
 		}
 	}*/
-	
-	
-	
+
+
+
+	/**
+	 Quick Study and the like are now fully tag-driven, so no patches are needed any more.
+	 **/
+
 	/*@SpirePatch(cls = "expansioncontent.cards.StudyTheSpire", method = "use", optional = true)
 	public static class StudyTheSpirePatch
 	{
@@ -60,6 +78,7 @@ public class downfallbs {
 	        powers.add(new StudyHecPower(p, p, __instance.magicNumber, __instance.upgraded));
 	    }
 	}*/
+	/*
     @SpirePatch(cls = "slimebound.powers.SlimedPower", method = "onAttacked", optional = true)
 	public static class SlimedRelicPatch
 	{
@@ -72,6 +91,8 @@ public class downfallbs {
 	    	}
 	    }
 	}
+
+
     @SpirePatch(cls = "expansioncontent.cards.QuickStudy", method = "choiceList", optional = true)
 	public static class QuickStudyPatch
 	{
@@ -125,7 +146,9 @@ public class downfallbs {
 	        return SpireReturn.Continue();
 	    }
 	}
-    
+	*/
+
+
     @SpirePatch(cls = "sneckomod.cards.AbstractSneckoCard", method = "getCorrectPlaceholderImage", optional = true)
 	public static class SnekboiPatch
 	{

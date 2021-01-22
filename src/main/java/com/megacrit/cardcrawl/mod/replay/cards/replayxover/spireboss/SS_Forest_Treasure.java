@@ -21,7 +21,6 @@ import com.megacrit.cardcrawl.dungeons.*;
 import expansioncontent.expansionContentMod;
 import expansioncontent.cards.AbstractExpansionCard;
 import replayTheSpire.replayxover.downfallbs;
-import replayTheSpire.replayxover.downfallen;
 
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
@@ -36,10 +35,12 @@ public class SS_Forest_Treasure extends AbstractExpansionCard
     
     public SS_Forest_Treasure() {
         super(ID, "replay/ss_forest_treasure", COST, AbstractCard.CardType.POWER, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
-        this.tags.add(downfallen.STUDY_FOREST);
+       // this.tags.add(downfallen.STUDY_FOREST);
         this.tags.add(expansionContentMod.STUDY);
         this.magicNumber = this.baseMagicNumber = 2;
-    }
+		this.setBackgroundTexture("expansioncontentResources/images/512/bg_boss_power.png", "expansioncontentResources/images/1024/bg_boss_power.png");
+
+	}
     
     public void use(final AbstractPlayer p, final AbstractMonster m) {
     	for (int i=0; i<this.magicNumber; i++) {

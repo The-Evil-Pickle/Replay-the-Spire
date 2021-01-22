@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.*;
 import expansioncontent.expansionContentMod;
 import expansioncontent.cards.AbstractExpansionCard;
 import replayTheSpire.replayxover.downfallbs;
-import replayTheSpire.replayxover.downfallen;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
@@ -27,7 +26,7 @@ public class SS_Forest_ManyPaths extends AbstractExpansionCard
     
     public SS_Forest_ManyPaths() {
         super(ID, "replay/ss_forest_skill", COST, AbstractCard.CardType.SKILL, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
-        this.tags.add(downfallen.STUDY_FOREST);
+      //  this.tags.add(downfallen.STUDY_FOREST);
         this.tags.add(expansionContentMod.STUDY);
         this.magicNumber = this.baseMagicNumber = 1;
         ExhaustiveVariable.setBaseValue(this, 3);

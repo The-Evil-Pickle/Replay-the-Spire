@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.dungeons.*;
 import expansioncontent.expansionContentMod;
 import expansioncontent.cards.AbstractExpansionCard;
 import replayTheSpire.replayxover.downfallbs;
-import replayTheSpire.replayxover.downfallen;
 
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.powers.*;
@@ -28,7 +27,7 @@ public class SS_Fish_CaptainsOrders extends AbstractExpansionCard
     
     public SS_Fish_CaptainsOrders() {
         super(ID, "replay/ss_fish_orders", COST, AbstractCard.CardType.POWER, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
-        this.tags.add(downfallen.STUDY_PONDFISH);
+        //this.tags.add(downfallen.STUDY_PONDFISH);
         this.tags.add(expansionContentMod.STUDY);
         this.magicNumber = this.baseMagicNumber = 1;
         this.block = this.baseBlock = 10;
