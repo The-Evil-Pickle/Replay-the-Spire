@@ -682,10 +682,10 @@ public class MirrorMist
 			if (ReplayTheSpireMod.foundmod_downfall && AbstractDungeon.player instanceof TheHexaghost) {
 				this.has_1 = AbstractDungeon.player.hasRelic(SpiritBrand.ID);
 				this.loss_r_1 = RelicLibrary.getRelic(SpiritBrand.ID).makeCopy();
-				this.gain_r_1 = new M_DevilBlood();
+				this.gain_r_1 = RelicLibrary.getRelic(M_DevilBlood.ID).makeCopy();
 				this.has_2 = AbstractDungeon.player.hasRelic(SpiritBrand.ID);
 				this.loss_r_2 = RelicLibrary.getRelic(SpiritBrand.ID).makeCopy();
-				this.gain_r_2 = new M_Hexaring();
+				this.gain_r_2 = RelicLibrary.getRelic(M_Hexaring.ID).makeCopy();
 				this.has_2b = CardHelper.hasCardWithID(Float.ID);
 				this.loss_c_2b = CardLibrary.getCopy(Float.ID);
 				this.gain_c_2b = CardLibrary.getCopy(Survivor.ID);

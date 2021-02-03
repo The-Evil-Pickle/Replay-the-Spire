@@ -518,7 +518,7 @@
   },
   "Crow Ritual": {
     "NAME": "Awakened One Ritual",
-    "DESCRIPTION": "Add !M! Ï€Ritual Components to your draw and discard piles. If 5 are ever in your hand at once, they become !D! damage Attacks.",
+    "DESCRIPTION": "Add !M! πRitual Components to your draw and discard piles. If 5 are ever in your hand at once, they become !D! damage Attacks.",
 	"EXTENDED_DESCRIPTION": [
 		"Ritual Component",
 		"A 0-cost Skill that draws 1 card."
@@ -749,7 +749,7 @@
   },
   "Replay:Fractal Strike": {
     "NAME": "Fractal Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL Add a new Fractal Ï€Strike to your discard pile. NL Exhaustive !stslib:ex!."
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL Add a new Fractal πStrike to your discard pile. NL Exhaustive !stslib:ex!."
   },
   "ReplayTheSpireMod:Rythmic Step": {
 	"NAME": "Rythmic Step",
@@ -899,7 +899,7 @@
   },
   "ReplayTheSpireMod:Prepare the Ceremony": {
     "NAME": "Prepare the Ceremony",
-    "DESCRIPTION": "Add !M! Ï€Ritual Components to your hand. NL Each time you play a Skill this turn, deal !M! damage to a random enemy. NL Exhaustive !stslib:ex!.",
+    "DESCRIPTION": "Add !M! πRitual Components to your hand. NL Each time you play a Skill this turn, deal !M! damage to a random enemy. NL Exhaustive !stslib:ex!.",
 	"EXTENDED_DESCRIPTION": [
 		"Ritual Component",
 		"A 0-cost Skill that draws 1 card."
