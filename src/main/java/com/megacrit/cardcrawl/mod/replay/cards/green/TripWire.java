@@ -23,7 +23,7 @@ public class TripWire extends CustomCard
     private static final int COST = 2;
     
     public TripWire() {
-        super(ID, TripWire.NAME, "cards/replay/replayBetaSkill.png", TripWire.COST, TripWire.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, TripWire.NAME, "cards/replay/tripwire.png", TripWire.COST, TripWire.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF);
         this.exhaust = true;
         this.baseBlock = 2;
         this.block = this.baseBlock;

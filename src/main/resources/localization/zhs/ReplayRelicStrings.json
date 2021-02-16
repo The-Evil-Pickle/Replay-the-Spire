@@ -6,34 +6,6 @@
 	"每次洗牌时, 获得 #b1 层 #y人工制品 。 NL 每当你抽到一张 #y状态牌 时， 失去 #b1 层 #y人工制品 来 #y消耗 所有本回合的 #y状态牌 ， 每消耗一张抽 #b1 张牌。"
 	]
   },
-  
-    "Replay:M_SmolderingBlood": {
-    "NAME": "阴燃之血",
-    "FLAVOR": "火焰已被沉息",
-    "DESCRIPTIONS": [
-      " 每战限用一次。 NL 进入 #y平静",
-      " NL 一些 #r红色 牌会出现在奖励界面。",
-      " NL 一些 #p紫色 牌会出现在奖励界面。"
-    ]
-  },
-
-  "Replay:Kaleidoscope": {
-    "NAME": "万花筒",
-    "FLAVOR": "色彩斑斓，千变万化。",
-    "DESCRIPTIONS": [
-      "每当在一个回合内打出3张提供格挡的牌，获得 #b1 层 #y反射 。"
-    ]
-  },
-
-  "Replay:Antivirus Software": {
-    "NAME": "杀毒软件",
-    "FLAVOR": "等价于机器用的疫苗。",
-    "DESCRIPTIONS": [
-      "每当洗牌，获得1层 #y人工制品 。 NL 每当抽到 #y状态牌 ，失去 #b1 层 #y人工制品 来 #y消耗 所有本回合抽到的状态牌，抽等量牌。"
-    ]
-  },
-  
-  
   "Replay:Arrowhead": {
 	"NAME": "箭头",
 	"FLAVOR": "这是你打造的第一件东西.",
@@ -851,16 +823,32 @@
         "拾起时，选择获得 #b3 件 #y遗物 和 #b3 张 #r诅咒 。 NL 选项都是三选一，不能跳过。"
     ]
   },
-  "Replay:Purple Gloves": {
-    "NAME": "紫色手套",
-    "FLAVOR": "精美的手套，据说可以给佩戴者带来好运！",
+  "Replay:Mythril Seive": {
+    "NAME": "神话传说",
+    "FLAVOR": "世界上谁用传说中的金属做炊具？",
     "DESCRIPTIONS": [
-        "你的最大手牌数量提高 #b",
-        "。 NL 每当你退出 #y平静 时，抽 #b",
-        "。 NL 每当你进入 #y神格 时，抽 #b",
-        " 张牌",
-        " 张牌"
+        "每当你使用药水时，获得 #b",
+        " 点 #y格挡 。 NL 每当你在战斗中丢弃药水，获得 #b",
+        " 点 #y临时生命。 NL 每当你在战斗以外丢弃药水，获得 #b",
+        " #y金币 并回复 #b",
+        " 点生命。"
     ]
+  },
+    "Replay:WIPTBD": {
+    "NAME": "",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"每场战斗你前 #b",
+		" 次打出 #y消耗性 牌时不会降低计数。"
+	]
+  },
+  "Replay:WIPTBD2": {
+    "NAME": "",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"每场战斗结束时，你每有一件“右键使用”遗物没有使用，回复 #b",
+		" 点生命。"
+	]
   },
   "Replay:Fungal Core": {
     "NAME": "真菌核心",
@@ -870,6 +858,39 @@
 		" 张随机 #r孢子 洗入你的抽牌堆。",
 		"孢子",
 		"孢子是 0 费的 #r状态 牌 ，打出可以抽一张牌 ，但有一点负面效果。"
+	]
+  },
+    "Replay:Kaleidoscope": {
+    "NAME": "万花筒",
+	"FLAVOR": "颜色在其中扭曲，折射，交织在一起。",
+    "DESCRIPTIONS": [
+		"每当你一回合内打出 #b3 张获得 #y格挡 的牌，获得 #b1 层 #y反射 。"
+	]
+  },
+  "Replay:Purple Gloves": {
+    "NAME": "紫色手套",
+	"FLAVOR": "人靠衣装佛靠金装",
+    "DESCRIPTIONS": [
+		"你的手牌上限提高 #b",
+		" 。 NL 每当你退出 #y平静 时，抽 #b",
+		" 张牌。 NL 每当你进入 #y神格 时，抽 #b",
+		" 张牌。",
+		" 张牌。"
+	]
+  },
+  "Replay:Ace of Pentacles": {
+    "NAME": "五星王牌",
+	"FLAVOR": ".",
+    "DESCRIPTIONS": [
+		"每当你牌组加入一张牌，其耗能变为 #b1 。"
+	]
+  },
+  "Replay:Friendship Ring": {
+    "NAME": "友谊戒指",
+	"FLAVOR": "曾经友谊的象征",
+    "DESCRIPTIONS": [
+		"拾起时，从 #b",
+		" 位随机首领中选择 #b1 种。 NL 每场战斗开始时，将其对应的 #yexpansioncontent:首领 牌加入手牌。其获得 #r虚无 和 #ysneckomod:蛇证 。"
 	]
   },
   "Ring of Fury": {
@@ -1031,6 +1052,24 @@
 		"每场战斗开始时，如果你没有充能球栏位，获得 #b2 个，否则 #y生成 #b1 个 #y狱炎充能球 。 NL #r红色 牌 和 #b蓝色 牌将会出现在你以后的卡牌和奖励里。"
 	]
   },
+    "Replay:M_SmolderingBlood": {
+    "NAME": "闷烧之血",
+	"FLAVOR": "怒火平息了",
+    "DESCRIPTIONS": [
+		" #y每场战斗一次 。 NL 进入 #y平静 。",
+		" NL #r红色 牌将会出现在你以后的卡牌和奖励里。",
+		" NL #r紫色 牌将会出现在你以后的卡牌和奖励里。"
+	]
+  },
+  "Replay:M_StaffOfTheSnake": {
+    "NAME": "异蛇参谋",
+	"FLAVOR": "参参参参参参参参谋",
+    "DESCRIPTIONS": [
+		"每场战斗开始时，将一张 #y洞见 加入手牌。",
+		" NL #r绿色 牌将会出现在之后的卡牌和奖励里。",
+		" NL #r紫色 牌将会出现在之后的卡牌和奖励里。"
+	]
+  },
   "m_BlackCat":{
 		"NAME": "诅咒猫",
 		"FLAVOUR": "苗口",
@@ -1172,7 +1211,7 @@
 		"DESCRIPTIONS": [
 			"在战斗结束时，回复 #b6 点生命。",
 			" NL #r红色 牌将会出现在你以后的卡牌和奖励里。",
-			""
+			" NL #r守护者 牌将会出现在你以后的卡牌和奖励里。"
 		]
 	},
 		"m_CorellonBlood": {
@@ -1203,6 +1242,76 @@
 			"每场战斗开始时，额外抽 #b1 张牌并获得 #b",
 			" 个充能球栏位。 NL 每场战斗结束后回复 #b",
 			" 点生命。 NL #r红色 、#g绿色 和 #b蓝色 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_EldritchBlood": {
+		"NAME": "Eldritch Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the start of each combat, remember #yTemperance. NL At the end of each combat, heal #b",
+			" HP per #yClarity.",
+			" NL #r红色 牌将会出现在你以后的卡牌和奖励里。",
+			" NL Certain #yWanderer cards can now be obtained"
+		]
+	},
+	"m_ForgottonRing": {
+		"NAME": "遗忘戒指",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the start of each combat, remember #yDilligence. NL At the end of each combat, heal #b",
+			" HP per #yClarity.",
+			" NL #r绿色 牌将会出现在你以后的卡牌和奖励里。",
+			" NL Certain #pWanderer cards can now be obtained"
+		]
+	},
+	"m_DevilBlood": {
+		"NAME": "恶魔之血",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"每场战斗结束时，每有一种不同的 #y点燃 的鬼火，回复 #b",
+			" 点生命。",
+			" NL #r红色 牌将会出现在你以后的卡牌和奖励里。",
+			" NL #r六火亡魂 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_HexaRing": {
+		"NAME": "六边戒指",
+		"FLAVOR": "幽灵戒指",
+		"DESCRIPTIONS": [
+			"每 #b",
+			" 次你给予 #y灼魂 时，将 #b",
+			" 层 #y灼魂 转化为 #y中毒 。",
+			" NL #r绿色 牌将会出现在你以后的卡牌和奖励里。",
+			" NL #r六火亡魂 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_IronCrown": {
+		"NAME": "钢铁王冠",
+		"FLAVOR": "强壮结实，但没有想象的那么漂亮。",
+		"DESCRIPTIONS": [
+			"每场战斗结束时，回复 #b",
+			" 点生命。",
+			" NL #r红色 牌将会出现在你以后的卡牌和奖励里。",
+			" NL #r第一勇士 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_BronzeBlood": {
+		"NAME": "铜之血",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"每场战斗结束时，回复 #b",
+			" 点生命。",
+			" NL #r红色 牌将会出现在你以后的卡牌和奖励里。",
+			" NL #r铜制机械人偶 牌将会出现在你以后的卡牌和奖励里。"
+		]
+	},
+	"m_CrackedBronzeCore": {
+		"NAME": "破损铜核",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"每场战斗你生成的第一张 #y方法 耗能降低 #b1 。",
+			" NL #r蓝色 牌将会出现在你以后的卡牌和奖励里。",
+			" NL #r铜制机械人偶 牌将会出现在你以后的卡牌和奖励里。"
 		]
 	},
 	"replay:Trail_Library": {

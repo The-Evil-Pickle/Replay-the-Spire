@@ -27,7 +27,7 @@ public class TheWorks extends CustomCard
 	public boolean copyPlayedThisTurn = false;
     
     public TheWorks() {
-        super(TheWorks.ID, TheWorks.NAME, "cards/replay/replayBetaSkill.png", 0, TheWorks.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(TheWorks.ID, TheWorks.NAME, "cards/replay/the_works.png", 0, TheWorks.DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseMagicNumber = 4;
         this.magicNumber = this.baseMagicNumber;
     }

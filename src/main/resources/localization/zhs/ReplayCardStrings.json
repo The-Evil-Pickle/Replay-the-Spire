@@ -31,8 +31,8 @@
   },
   "Sneak Up": {
     "NAME": "蛰伏",
-    "DESCRIPTION": " 固有 。 虚无 。 NL 获得 !M! 层 无实体 。 NL 丢弃所有攻击牌。 NL 回馈 !stslib:refund! 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": " 固有 。 虚无 。 NL 获得 !M! 层 无实体 。 NL 回馈 !stslib:refund! 。 NL 消耗 。"
+    "DESCRIPTION": " 固有 。 虚无 。NL 获得 !M! 层 无实体 。 NL 丢弃所有攻击牌。 NL 回馈 !stslib:refund! 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " 固有 。 虚无 。NL 获得 !M! 层 无实体 。 NL 回馈 !stslib:refund! 。 NL 消耗 。"
   },
   "ReplayTheSpireMod:Necrosis": {
     "NAME": "暗蚀",
@@ -119,8 +119,8 @@
   },
   "Abandon": {
     "NAME": "舍弃",
-    "DESCRIPTION": "虚无 ， NL  消耗至多 !M! 张牌 。 NL 每消耗一张牌，抽 1 张牌。 NL  将一张 虚空 加入你的弃牌堆。 NL 消耗性 !stslib:ex! 。",
-    "UPGRADE_DESCRIPTION": "虚无 ， NL  消耗至多 !M! 张牌 。 NL 每消耗一张牌，抽 1 张牌。 NL  将一张 眩晕 加入你的弃牌堆。 NL 消耗性 !stslib:ex! 。"
+    "DESCRIPTION": "虚无 ，NL 消耗至多 !M! 张牌 。 NL 每消耗一张牌，抽 1 张牌。 NL  将一张 虚空 加入你的弃牌堆。 NL 消耗性 !stslib:ex! 。",
+    "UPGRADE_DESCRIPTION": "虚无 ，NL 消耗至多 !M! 张牌 。 NL 每消耗一张牌，抽 1 张牌。 NL  将一张 眩晕 加入你的弃牌堆。 NL 消耗性 !stslib:ex! 。"
   },
   "Defy Death": {
     "NAME": "反抗死亡",
@@ -215,7 +215,7 @@
   },
   "ReplayGash": {
     "NAME": "爪耙",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 对所有敌人造成 !D! 点伤害。 NL 被视为爪击牌。 墓地 。 NL 起动 ：如果你的牌组没有普通的爪击牌，加入一张到你的抽牌堆。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 对所有敌人造成 !D! 点伤害。 NL 被视为爪击牌。 墓地 。NL 起动 ：如果你的牌组没有普通的爪击牌，加入一张到你的抽牌堆。"
   },
   "Crystallizer": {
     "NAME": "结晶器",
@@ -229,7 +229,7 @@
   },
   "Mirror Shield": {
     "NAME": "镜盾",
-    "DESCRIPTION": "生成一个 晶体 充能球 和一个 冰霜 充能球 。 NL 获得 !B! 点 格挡 。 NL 获得 !M! 层 反射 。"
+    "DESCRIPTION": "生成一个 晶体 充能球 和一个 冰霜 充能球 。NL 获得 !B! 点 格挡 。 NL 获得 !M! 层 反射 。"
   },
   "ReplayTheSpireMod:Repulse": {
     "NAME": "击退",
@@ -274,7 +274,7 @@
     "UPGRADE_DESCRIPTION": "生成 1 个 晶体 充能球。 NL 生成 1 个随机充能球。"
   },
   "ReplayIlluminate": {
-    "NAME": "光辉",
+    "NAME": "流明",
     "DESCRIPTION": "生成 1 个 光明 充能球 。 NL 消耗 。"
   },
   "ReplaySort": {
@@ -292,7 +292,7 @@
 	]
   },
   "ReplaySolidLightProjector": {
-    "NAME": "固态光投影仪",
+    "NAME": "实光护盾",
     "DESCRIPTION": "你的弃牌堆每有 !M! 张牌，获得 !B! 点护盾。 NL 消耗性 !stslib:ex! 。",
 	"EXTENDED_DESCRIPTION": [
 		" NL （总共获得 ",
@@ -436,8 +436,8 @@
   },
   "ReplayTheSpireMod:Private Reserves": {
     "NAME": "私人储备",
-    "DESCRIPTION": "保留 。 NL 获得 [E] 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 获得 [E] ， NL  抽 1 张牌。 NL 消耗 。"
+    "DESCRIPTION": "保留 。NL 获得 [E] 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。NL 获得 [E] ，NL 抽 1 张牌。 NL 消耗 。"
   },
   "Poisoned Strike": {
     "NAME": "毒素打击",
@@ -471,12 +471,16 @@
   },
     "Replay:Parry": {
     "NAME": "招架",
-    "DESCRIPTION": "虚无 。 NL 造成 !D! 点伤害。 NL 如果这名敌人的意图是攻击，获得 !M! 层 反射 。 NL 消耗性 !stslib:ex! 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果这名敌人的意图是攻击，获得 !M! 层 反射 。 NL 消耗性 !stslib:ex! 。"
+    "DESCRIPTION": "虚无 。NL 造成 !D! 点伤害。 NL 如果这名敌人的意图是攻击，获得 !M! 层 反射 。NL 消耗性 !stslib:ex! 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果这名敌人的意图是攻击，获得 !M! 层 反射 。NL 消耗性 !stslib:ex! 。"
   },
     "Replay:Bootleg Shield Generator": {
     "NAME": "护盾生成器",
     "DESCRIPTION": "获得 !B! 点 护盾 。 NL 消耗性 !stslib:ex! 。"
+  },
+    "Replay:Way of the Snecko": {
+    "NAME": "异蛇之道",
+    "DESCRIPTION": "保留 。 异蛇 。 NL 本回合随机化手牌耗能。 NL 回馈 !stslib:refund! 。"
   },
   "Replay:Dark Deal": {
     "NAME": "黑暗交易",
@@ -819,8 +823,8 @@
   },
   "WeaponsOverheat": {
     "NAME": "过热武器",
-    "DESCRIPTION": "  虚无 。 NL 集中 小于0时，获得 1 点 集中 ，集中 大于0时，失去 1 点 集中 。 NL 生成 1 狱炎 充能球。 NL 将一张 回火 加入你的弃牌。 ",
-    "UPGRADE_DESCRIPTION": " 虚无 。 NL 集中 小于0时，获得 1 点 集中 ，集中 大于0时，失去 1 点 集中 。 NL 生成 1 狱炎 充能球。"
+    "DESCRIPTION": "  虚无 。NL 集中 小于0时，获得 1 点 集中 ，集中 大于0时，失去 1 点 集中 。 NL 生成 1 狱炎 充能球。 NL 将一张 回火 加入你的弃牌。 ",
+    "UPGRADE_DESCRIPTION": " 虚无 。NL 集中 小于0时，获得 1 点 集中 ，集中 大于0时，失去 1 点 集中 。 NL 生成 1 狱炎 充能球。"
   },
   "Replay:Light Bash": {
     "NAME": "激光射线",
@@ -831,13 +835,13 @@
     "DESCRIPTION": "生成 !M! 个 魔力火花 充能球 。 NL 增幅 [E] : 先 生成 !M! 个 水晶 充能球。 NL 消耗 。"
   },
   "Replay:GuardianBash": {
-    "NAME": "猛！击！",
+    "NAME": "猛烈痛击",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。"
   },
   "Replay:GuardianCast": {
     "NAME": "单播",
-    "DESCRIPTION": "虚无 。 NL 激发所有的 闪电 充能球。 NL 这张牌中每镶嵌一颗 宝石 ，额外激发第一个闪电充能球 1 次。 NL 消耗 。",
-	"UPGRADE_DESCRIPTION": "保留 。 NL 激发所有的 闪电 充能球。 NL 这张牌中每镶嵌一颗 宝石 ，额外激发第一个闪电充能球 1 次。 NL 消耗 。",
+    "DESCRIPTION": "虚无 。NL 激发所有的 闪电 充能球。 NL 这张牌中每镶嵌一颗 宝石 ，额外激发第一个闪电充能球 1 次。 NL 消耗 。",
+	"UPGRADE_DESCRIPTION": "保留 。NL 激发所有的 闪电 充能球。 NL 这张牌中每镶嵌一颗 宝石 ，额外激发第一个闪电充能球 1 次。 NL 消耗 。",
 	"EXTENDED_DESCRIPTION": [
 		"单播",
 		"双播",
@@ -846,6 +850,28 @@
 		"五播",
 		"核心释放"
 	]
+  },
+    "Replay:WandererBash": {
+    "NAME": "红色回忆：痛击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。 NL 回忆Envy。 NL This card gains 1 damage permanently when you Snap.",
+	"UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。 NL Remember Envy if you do not have Clarity of it. NL This card gains 1 damage permanently when you Snap."
+  },
+  "Replay:WandererFeed": {
+    "NAME": "红色回忆：狂宴",
+    "DESCRIPTION": "回忆Gluttony。 NL 造成 !D! 点伤害。 NL 消耗 。"
+  },
+  "Replay:WandererBerserk": {
+    "NAME": "红色回忆：狂暴",
+    "DESCRIPTION": "回忆Envy。 NL 获得 !M! 层 脆弱 和 易伤 。 NL 你的回合开始时获得 [E] 。"
+  },
+  "Replay:WandererArmaments": {
+    "NAME": "红色回忆：武装",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 回忆Wrath。 NL 战斗结束时随机升级一张牌。",
+	"UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 回忆Wrath。 NL 战斗结束时升级一张牌。"
+  },
+  "Replay:WandererSurvivor": {
+    "NAME": "绿色回忆：生存者",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 回忆Sloth。 NL 每当Snap时，这张牌的格挡永久提高1。"
   },
   "ReplayTheSpireMod:RavenHex": {
     "NAME": "鸦之邪咒",
@@ -1048,7 +1074,7 @@
   },
   "Replay:Jungle:SS_totem_4": {
     "NAME": "异蛇狂热",
-    "DESCRIPTION": " 虚无 。 NL 对随机敌人造成 !D! 点伤害 !M! 次。 NL 混乱全部的敌人。 NL 消耗 。"
+    "DESCRIPTION": " 虚无 。NL 对随机敌人造成 !D! 点伤害 !M! 次。 NL 混乱全部的敌人。 NL 消耗 。"
   },
   "m_BoundBlade": {
     "NAME": "剑缚",
@@ -1058,6 +1084,30 @@
   "m_Survivalism": {
     "NAME": "生存主义",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 预见 !M! 。"
+  },
+    "m_Bronzebash": {
+    "NAME": "铜铁痛击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。 NL bronze:编译 - 获得 !B! 层 护盾 。",
+    "EXTENDED_DESCRIPTION": [
+      "猛烈",
+      "痛击"
+    ]
+  },
+    "m_BronzeSurvivor": {
+    "NAME": "保存",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 丢弃一张牌。 NL bronze:编译 - 下一回合抽 !M! 张牌。",
+    "EXTENDED_DESCRIPTION": [
+      "生存",
+      "保存"
+    ]
+  },
+  "m_BronzeAgony": {
+    "NAME": "机械苦痛",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 每当你抽到这张牌，都增加一张其复制品到你的手牌。",
+    "EXTENDED_DESCRIPTION": [
+      "无尽",
+      "苦痛"
+    ]
   },
   "Replay:NecroticArchetypeSelectCard": {
     "NAME": "暗毒",
@@ -1070,5 +1120,9 @@
   "Replay:SilentWeakSelectCard": {
     "NAME": "弱点",
     "DESCRIPTION": "在你的奖励池中增加能给予 虚弱 或能与 虚弱 配合的牌。"
+  },
+    "Replay:UnknownCurse": {
+    "NAME": "？？？",
+    "DESCRIPTION": "sneckomod:未知 诅咒牌。"
   }
 }

@@ -122,5 +122,12 @@
 		" #r诅咒，获得一个随机boss遗物 ]",
 		"[ #r每回合开始时失去 [E] ， #g获得两个随机boss遗物 ]"
 	]
+  },
+    "Replay:SettingWarnings": {
+	"TEXT": [
+		"重启游戏才能生效！",
+		"如果有boss不在这个列表里面， ",
+		"把Replay拉到mts的mod列表最下面。"
+	]
   }
 }
