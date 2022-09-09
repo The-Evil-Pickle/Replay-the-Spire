@@ -590,12 +590,12 @@
   },
   "ReplayTheSpireMod:Doomed": {
 	"NAME": "Condamné",
-	"DESCRIPTION": "Mourrez. NL Fugitive. NL Éthérée. NL Fosse."
+	"DESCRIPTION": "Mourrez. NL Éphémère. NL Éthérée. NL Fosse."
   },
   "ReplayTheSpireMod:Faulty Equipment": {
 	"NAME": "Faulty Equipment",
 	"DESCRIPTION": "Injouable. NL Destinée.",
-	"UPGRADE_DESCRIPTION": "Fugitive."
+	"UPGRADE_DESCRIPTION": "Éphémère."
   },
   "ReplayTheSpireMod:Restless Dread": {
 	"NAME": "Effroi sans fin",
@@ -607,7 +607,7 @@
   },
   "ReplayTheSpireMod:IOU": {
 	"NAME": "I.O.U.",
-	"DESCRIPTION": "Coûte !M! d'or pour la jouer. NL Fugitive. NL Destinée."
+	"DESCRIPTION": "Coûte !M! d'or pour la jouer. NL Éphémère. NL Destinée."
   },
   "ReplayTheSpireMod:Whispers of Evil": {
 	"NAME": "Murmures du mal",
