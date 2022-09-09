@@ -1,0 +1,492 @@
+{
+  "Doomed": {
+    "NAME": "Condamné",
+    "DESCRIPTIONS": [
+	"Va perdre #b",
+	" PV dans #b",
+	" tours.",
+	" tour."
+    ]
+  },
+  "Life Bind": {
+    "NAME": "Lien de Vie",
+    "DESCRIPTIONS": [
+	"Lorsque vous perdez de la vie, les ennemis avec #yLien #yde #yVie vont également prendre des dégâts.",
+	"Prend des dégâts lorsque vous perdez de la vie."
+    ]
+  },
+  "Replay:Enemy Life Bind": {
+    "NAME": "Âme couplée",
+    "DESCRIPTIONS": [
+	"Cet ennemi partage sa vie avec les autres ennemis possédant ce pouvoir."
+    ]
+  },
+  "Replay:Forged in Hellfire": {
+    "NAME": "Forgé par les Enfers",
+    "DESCRIPTIONS": [
+	"Tous les dégâts reçus qui ne sont #rpas #rdes #rAttaques sont réduits de #b",
+	"%"
+    ]
+  },
+  "Replay:Off the Rails": {
+    "NAME": "Hors des Rails",
+    "DESCRIPTIONS": [
+	"Les dégâts qui touche #yTOUS les ennemis n'infligent que #b",
+	" dégâts à #rCET ennemi."
+    ]
+  },
+  "Reflection": {
+    "NAME": "Réflexion",
+    "DESCRIPTIONS": [
+	"Lorsque vous bloquez complètement des dégâts, renvoyez-en autant à l'attaquant."
+    ]
+  },
+  "Replay:Might": {
+    "NAME": "Puissance",
+    "DESCRIPTIONS": [
+	"Tous les dégâts d'Attaque infligés sont augmentés de #b25% pour le/les ",
+	" prochains tours.",
+	" prochain tour."
+    ]
+  },
+  "Necrotic Poison": {
+    "NAME": "Poison Nécrotique",
+    "DESCRIPTIONS": [
+	"Au début de votre tour, perdez #b",
+	" PV, puis réduit le taux de #yPoison #yNécrotique de moitié.",
+	"Au début de son tour, perd #b",
+	" NL Le #yPoison Régulier ne diminuera pas."
+    ]
+  },
+  "Retain Some Block": {
+    "NAME": "Maintien en Bloc",
+    "DESCRIPTIONS": [
+	"À la fin de chaque tour, gardez jusqu'à #b",
+	" #yd'Armure."
+    ]
+  },
+  "Retain Some Energy": {
+    "NAME": "Maintien d'Énergie",
+    "DESCRIPTIONS": [
+	"À la fin de chaque tour, gardez jusqu'à #b",
+	" #yÉnergie(s)."
+    ]
+  },
+  "Scrap Shanks": {
+    "NAME": "Tiges de ferraille",
+    "DESCRIPTIONS": [
+	"Lorsque vous défaussez une carte durant votre tour, ajoutez #b",
+	" Surin",
+	" Surins",
+	" et #b",
+	" Amélioré",
+	" dans votre main."
+    ]
+  },
+  "The Works": {
+    "NAME": "Travailleur",
+    "DESCRIPTIONS": [
+	"Pour toutes les #b",
+	" cartes que vous piochez, gagnez ",
+	" et infligez #b",
+	" dégâts à un ennemi aléatoire."
+    ]
+  },
+  "Specialist": {
+    "NAME": "Spécialiste",
+    "DESCRIPTIONS": [
+	"Augmente les dégâts qui ne sont pas d'Attaque de #b",
+	"Diminue les dégâts qui ne sont pas d'Attaque de #b"
+    ]
+  },
+  "Awakened Ritual": {
+    "NAME": "Rituel de l'Éveillé",
+    "DESCRIPTIONS": [
+	"Si vous avez au moins #b5 #yComposants #yde #yRituel dans votre main, ils sont remplacés par des attaques #yÉcho #yObscur.",
+	" NL (encore besoin #b",
+	" de plus en main)"
+    ]
+  },
+  "Reflective Lens": {
+    "NAME": "Lentilles Réflectives",
+    "DESCRIPTIONS": [
+	"À la fin de votre tour, gagnez #b",
+	" de #yRéflexion pour chacun de vos orbes de #yVerre."
+	]
+  },
+  "ReplayTheSpireMod:RefundNext": {
+    "NAME": "Rembourser la Prochaine Carte",
+    "DESCRIPTIONS": [
+	"La prochaine carte que vous jouez ce tour possède #yRemboursez de #b",
+	"."
+	]
+  },
+  "replay:ExhaustiveNegationPower": {
+	"NAME": "Ignorer l'Épuisable",
+    "DESCRIPTIONS": [
+	"La/les #b",
+	" prochaine(s) fois que vous jouez une carte Épuisable, le décompte d'Épuisable ne diminuera pas."
+	]
+  },
+  "replay:DelayedReturnCardPower": {
+	"NAME": "Carte Rendue",
+    "DESCRIPTIONS": [
+	"Dans #b",
+	" tours, ",
+	" reviendra dans votre pioche."
+	]
+  },
+  "ReplayTheSpireMod:SystemScan": {
+    "NAME": "Scan du Système",
+    "DESCRIPTIONS": [
+	"La/Les #b",
+	" prochaine carte #yStatut que vous piochez #ys'Épuise et fait piocher une carte.",
+	" prochaines cartes #yStatut que vous piochez #ys'Épuisent et font piocher une carte."
+	]
+  },
+  "Snake Venom": {
+    "NAME": "Venin de Serpent",
+    "DESCRIPTIONS": [
+	"Lorsque vous infligez des dégâts #yd'Attaque non-bloqués, applique #b",
+	" de #yPoison #yNécrotique. NL Réduit de #b1 chaque tour."
+    ]
+  },
+  "GoodbyeWorld": {
+    "NAME": "Corbeille vide",
+    "DESCRIPTIONS": [
+	"À la fin de votre tour, #yÉpuisez toutes les cartes #yCommunes dans votre main et gagnez #b",
+	" #yd'Armure pour chaque carte."
+    ]
+  },
+  "Firewall": {
+    "NAME": "Firewall",
+    "DESCRIPTIONS": [
+	"Lorsque vous bloquez des dégâts, #yCanalisez #b",
+	" orbe #yInfernal."
+    ]
+  },
+  "Crystallizer": {
+    "NAME": "Cristallisoir",
+    "DESCRIPTIONS": [
+	"Les Orbes de Cristal donnent #b",
+	" de #yConcentration supplémentaire aux orbes adjacents. NL À la fin de votre tour, si au moins la moitié de vos emplacements d'orbe sont vides, #yCanalisez #b",
+	" orbe(s) de #yCristal. NL Les emplacements contenant des orbes de #yVerre sont comptés comme étant vides."
+    ]
+  },
+  "LanguidPower": {
+    "NAME": "Langui",
+    "DESCRIPTIONS": [
+	"Tous les dégâts infligés par ",
+	" sont réduits de #b",
+	". Dure pour encore #b",
+	" tours."
+    ]
+  },
+  "ReplayChaosPower": {
+    "NAME": "CHAOS!",
+    "DESCRIPTIONS": [
+	"Chaque tour, #b",
+	" des cartes uque vous piochez ont leurs stats et leurs effets mélangés jusqu'à la fin de votre tour. NL #b",
+	" restantes ce tour."
+    ]
+  },
+  "ReplayBlindPower": {
+    "NAME": "Aveuglé",
+    "DESCRIPTIONS": [
+	"Vos #yAttaques sont obscurcies. NL Dure pour #b",
+	" tour",
+	"Cette attaque a été obscurcie."
+    ]
+  },
+  "ReplayBrewPower": {
+    "NAME": "Maître brasseur",
+    "DESCRIPTIONS": [
+	"Obtenez #b",
+	" potion aléatoire au début de chaque tour.",
+	" potions aléatoires au début de chaque tour."
+    ]
+  },
+  "Friendly": {
+    "NAME": "Amical",
+    "DESCRIPTIONS": [
+	"Ce monstre est de votre côté, et attaquera les ennemis ou vous aidera."
+    ]
+  },
+  "Drowning": {
+    "NAME": "Noyade",
+    "DESCRIPTIONS": [
+	"À la fin du tour, perd #b",
+	"À la fin du tour, gagne #b",
+	" PV. NL Augmente lorsque vous prenez des dégâts non-bloqués, diminue lorsque vous infligez des dégâts non-bloqués. NL La plage est de #b",
+	" jusqu'à ",
+	" #b"
+    ]
+  },
+  "AbePower": {
+    "NAME": "Poids Mort",
+    "DESCRIPTIONS": [
+	"#yCapitaine #yAbe ne peux pas se battre lorsque vous êtes sous l'eau (lorsque votre niveau de #yNoyade est à #b",
+	" ou plus haut). NL NL Quel genre de pirate ne sait pas nager?"
+    ]
+  },
+  "TimeCollector": {
+    "NAME": "Collecteur de Temps",
+    "DESCRIPTIONS": [
+	"Si vous jouez #b",
+	" cartes en un seul tour, celui-ci se termine. NL #yCollecteur #yde #yTemps ne peut s'activer qu'une fois par combat."
+    ]
+  },
+  "Replay:Storyteller": {
+    "NAME": "Conteuse d'histoires",
+    "DESCRIPTIONS": [
+	"Elle veut juste que vous écoutiez son histoire. NL Lorsque l'histoire se termine dans #b",
+	" tours, vous pourrez partir."
+    ]
+  },
+  "Replay:Aging": {
+    "NAME": "Âgé",
+    "DESCRIPTIONS": [
+	"Pour tous les #b",
+	" dégâts reçus, ",
+	" gagne #b1 de #yLangueur."
+    ]
+  },
+  "Replay:Tripwire": {
+    "NAME": "Fil-Piège",
+    "DESCRIPTIONS": [
+	"Au début du tour, #yÉtourdissez un ennemi aléatoire #b",
+	" fois."
+    ]
+  },
+  "Replay:Fed": {
+    "NAME": "Bien nourri",
+    "DESCRIPTIONS": [
+	"A gagné #b",
+	" de #yForce. NL Perdra #b",
+	" de #yForce à la fin de ce tour."
+    ]
+  },
+  "Replay:Whispers Of Evil": {
+    "NAME": "Soupirs du Mal",
+    "DESCRIPTIONS": [
+	"Au début du tour, piochez #b",
+	" carte. NL À la fin du tour, ajoutez #b",
+	" #yÉcho de #yMalédiction aléatoire dans votre pioche.",
+	" cartes. NL À la fin du tour, ajoutez #b",
+	" #yÉchos de #yMalédiction aléatoires dans votre pioche."
+    ]
+  },
+  "Replay:Echo Chamber": {
+    "NAME": "Chambre d'Échos",
+    "DESCRIPTIONS": [
+	"Faites un #yÉcho de(s) la/les #b",
+	" première(s) cartes(s) non-Éthérée(s) qui n'est pas un Pouvoir.",
+	" que vous jouez chaque tour."
+    ]
+  },
+  "Replay:Color Shift": {
+    "NAME": "Changement de Couleur",
+    "DESCRIPTIONS": [
+	"Chaque tour, choisissez 1 effet aléatoire parmi 3. NL Les effets durent pour #b",
+	" tour(s).",
+	"Couleur Jaune",
+	"Confusion",
+	"Vous êtes #yConfus pendant #b",
+	"Couleur Verte",
+	"Envenimement",
+	"Possède #yEnvenimement pendant #b",
+	"Couleur Rouge",
+	"Vulnérabilité",
+	"Vous êtes Vulnérable pendant #b",
+	"Couleur Orange",
+	"Retour de Flammes",
+	" est ajouté dans votre pioche au début de votre tour pendant #b",
+	"Couleur Bleue",
+	"Maudit",
+	"Vous êtes #yMaudit pendant #b",
+	"Couleur Violette",
+	"Ralenti",
+	"Vous êtes Ralenti pendant #b",
+	"Couleur Pâle",
+	"Intangible",
+	"Intangible pendant #b",
+	"Couleur Bronze",
+	"Épines",
+	"A des #yÉpines pendant #b",
+	"Couleur Obscure",
+	"Pulsation de la Mort",
+	"Pulsation de la Mort pendant #b"
+    ]
+  },
+  "Sleeping": {
+    "NAME": "Endormi",
+    "DESCRIPTIONS": [
+	"Ne fera rien pour l'instant. Se réveille après être blessé ou après #b",
+	" tours."
+    ]
+  },
+  "FF_Spore Cloud": {
+    "NAME": "Spores de Brumes",
+    "DESCRIPTIONS": [
+      "Si tué après #yFade, vous applique #yVulnérabilité pendant #b",
+      " tours."
+    ]
+  },
+  "FF_Thievery": {
+    "NAME": "Soul Stealer",
+    "DESCRIPTIONS": [
+      "Chaque fois ",
+	  " inflige des dégâts d'attaque non-bloqués, ils volent #b",
+	  " buffs aléatoires de la cible."
+    ]
+  },
+  "FF_Rage": {
+    "NAME": "Rage Éthérée",
+    "DESCRIPTIONS": [
+      "Chaque fois qu'un monstre meurt, gagne #b",
+	  " de #yForce."
+    ]
+  },
+  "RP_HourglassPower": {
+    "NAME": "Sablier de mercure",
+    "DESCRIPTIONS": [
+      "Au début de votre tour, infligez #b",
+	  " dégâts à TOUS les ennemis.",
+      "Au début du tour de ",
+	  " , vous inflige #b",
+	  " dégâts."
+    ]
+  },
+  "RP_ThreadPower": {
+    "NAME": "Fil et aiguille",
+    "DESCRIPTIONS": [
+      "Donne #b5 #yd'Armure #yPlaquée."
+    ]
+  },
+  "RP_OrichalcumPower": {
+    "NAME": "Orichalque",
+    "DESCRIPTIONS": [
+      "Lorsqu'un tour est terminé sans #yArmure, donne #b",
+	  " #yd'Armure."
+    ]
+  },
+  "RP_SmoothStonePower": {
+    "NAME": "Pierre étrangement lisse",
+    "DESCRIPTIONS": [
+      "Donne #b1 de #yDextérité."
+    ]
+  },
+  "RP_VajraPower": {
+    "NAME": "Vajra",
+    "DESCRIPTIONS": [
+      "Donne #b1 de #yForce."
+    ]
+  },
+  "RP_GiryaPower": {
+    "NAME": "Girya",
+    "DESCRIPTIONS": [
+      "Donne #b1 de #yForce au début du tour. NL #b",
+	  " restant(s)."
+    ]
+  },
+  "RP_KunaiPower": {
+    "NAME": "Kunai",
+      "DESCRIPTIONS": [
+      "Si vous jouez #b",
+      " #yAttaque supplémentaire ce tour, gagnez #b",
+      " de #yDextérité.",
+      " #yAttaques supplémentaires ce tour, gagnez #b"
+    ]
+  },
+  "RP_LetterOpenerPower": {
+    "NAME": "Coupe-papier",
+	"DESCRIPTIONS": [
+      "Si vous jouez #b",
+      " #yCompétence supplémentaire ce tour, infligez #b",
+      " dégâts à TOUS les ennemis.",
+      " #yCompétences supplémentaires ce tour, infligez #b"
+    ]
+  },
+  "RP_Mango": {
+    "NAME": "Mangue",
+	"DESCRIPTIONS": [
+      "Les PV Max sont augmentés de #b",
+      "."
+    ]
+  },
+  "RP_BronzeScales": {
+    "NAME": "Écailles de bronze",
+	"DESCRIPTIONS": [
+      "Lorsque des dégâts #yd'Attaque sont reçus, renvoie #b",
+      " dégâts."
+    ]
+  },
+  "RP_SelfFormingClay": {
+    "NAME": "Argile auto-formante",
+	"DESCRIPTIONS": [
+      "Lorsque des dégâts #yd'Attaque non-bloqués sont reçus, gives #b",
+	  " #yBlock next round."
+    ]
+  },
+  "RP_IncenseBurner": {
+    "NAME": "Brûleur d'encens",
+	"DESCRIPTIONS": [
+      "Gagne #b1 #yd'Intangible tous les #b6 tours."
+    ]
+  },
+  "DEPRECIATEDFire Breathing": {
+    "NAME": "Souffle de feu",
+    "DESCRIPTIONS": [
+      "À la fin de votre tour, pour chaque #yAttaque jouée ce tour infligez #b",
+      " dégâts à TOUS les ennemis, augmentant les dégâts de #b",
+	  " à chaque fois."
+    ]
+  },
+  "LoomingThreat": {
+    "NAME": "Menace imminente",
+    "DESCRIPTIONS": [
+      "À la fin du tour infligez #b",
+      " dégâts à un ennemi aléatoire pour chaque carte #yRetenue."
+    ]
+  },
+  "GremboCoward": {
+    "NAME": "Lâcheté",
+    "DESCRIPTIONS": [
+      "À la fin de votre tour, pour chaque #yAttaque jouée ce tour infligez #b",
+      " dégâts à TOUS les ennemis, augmentant les dégâts de #b",
+	  " à chaque fois."
+    ]
+  },
+  "replay:ss_fish": {
+    "NAME": "Étude : Pondfish",
+    "DESCRIPTIONS": [
+			"Gagnez une carte de Pondfish aléatoire au début de votre prochain tour.",
+			"Gagnez une carte de Pondfish aléatoire au début de vos ",
+			" prochains tours."
+		]
+  },
+  "replay:ss_forest": {
+    "NAME": "Étude : Conteuse",
+    "DESCRIPTIONS": [
+			"Gagnez une carte de la Conteuse aléatoire au début de votre prochain tour.",
+			"Gagnez une carte de la Conteuse aléatoire au début de vos ",
+			" prochains tours."
+		]
+  },
+  "replay:ss_hec": {
+    "NAME": "Étude : Moteur des Enfers",
+    "DESCRIPTIONS": [
+			"Gagnez une carte du Moteur des Enfers aléatoire au début de votre prochain tour.",
+			"Gagnez une carte du Moteur des Enfers aléatoire au début de vos ",
+			" prochains tours."
+		]
+  },
+  "Replay:SteelHeart": {
+    "NAME": "Cœur d'Acier",
+    "DESCRIPTIONS": [
+			"Au début de votre tour, si vous avez moins de #b",
+			" #ys'Armure #yPlaquée, gagnez #b",
+			" #yd'Armure #yPlaquée."
+		]
+  }
+}

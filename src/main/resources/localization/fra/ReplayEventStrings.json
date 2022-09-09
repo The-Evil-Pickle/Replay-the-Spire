@@ -1,0 +1,230 @@
+{
+  "Stuck": {
+	"NAME": "Bloqué",
+    "DESCRIPTIONS": [
+			"En rampant dans les décombres, vous vous coincez la jambe dans des rochers.",
+			"Que faire ?",
+			"Espérons que personne ne vous voie comme ça!",
+			"Votre dignité est plus importante que le temps."
+	],
+    "OPTIONS": [
+			"[Continuer]",
+			"[Retirer son pantalon] #rPerdez ",
+			"[Tirer] #gAméliorez ",
+			"[Verrouillé] Requiert: Carte non-Améliorée",
+			"[Quitter]"
+    ]
+  },
+  "ReplayTeleport": {
+	"NAME": "Portail",
+    "DESCRIPTIONS": [
+			"L'espace lui-même se tord et se transforme sous vos yeux!"
+	],
+    "OPTIONS": [
+			"[Entrer dans le Portail]"
+    ]
+  },
+  "Mirror Mist": {
+	"NAME": "Miroir brumeux",
+	"DESCRIPTIONS": [
+		"Dans la brume, vous voyez un reflet tordu de vous-même. Vous luttez pour garder vos pensées propres alors que des couleurs tourbillonnantes vous entourent.",
+		"Vous vous rappelez brièvement de souvenirs perdus, mais ils appartiennent à quelqu'un d'autre que vous. La brume se dissipe, vous laissant quelque peu désorienté.",
+		"Vous avez l'impression qu'une partie de vous a été perdue, mais vous n'arrivez pas à la situer. Lorsque la brume se dissipe, ce sentiment est vite oublié."
+	],
+	"OPTIONS": [
+		"[Verrouillé] Requiert: ",
+		".",
+		"[Perdez ",
+		"] #gObtenez #gSurvivant #gand #gNeutralisation.",
+		"] #gObtenez #gSang #gArdent.",
+		"[Errer] Transformez et améliorez une carte aléatoire.",
+		"[Quitter]",
+		"] #gObtenez #gSang #gCrépitant.",
+		"] #gObtenez ",
+		" et ",
+		"[Rechercher] #gObtenez ",
+		" #gd'Or. #r",
+		"%: #rDevenez #rMaudit #r- #r",
+		"[Méditer] #gSoignez-vous #gentièrement. #rDevenez #rMaudit #r- #r",
+		"[Regarder] #g",
+		"%: #gObtenez #gune #gRelique. #r"
+	]
+  },
+  "Trapped Chest": {
+	"NAME": "Coffre piégé",
+	"DESCRIPTIONS": [
+		"Vous trouvez un coffre verrouillé. Mais il y a quelque chose qui cloche...",
+		"Quand vous ouvrez le coffre, des fléchettes jaillissent soudainement sur vous!",
+		"La clé permet de déverrouiller le coffre sans déclencher le mécanisme du piège.",
+		"Malgré tous vos efforts, le piège a réussi à atteindre sa cible. Mais au moins, le coffre est déverrouillé !",
+		"Vous parvenez à esquiver les fléchettes - mais de justesse.",
+		"Le coffre contient des objets dissimulés!"
+	],
+	"OPTIONS": [
+		"[Crocheter la serrure] #gObtenez #gun #gloot #galéatoire. #rDéclenchez #run #rpiège.",
+		"[Utiliser la Clé Maudite] #gObtenez #gun #gloot #galéatoire. #rObtenez #rune #rmalédiction #raléatoire.",
+		"[Verrouillé] Requiert: Clé Maudite.",
+		"[Quitter]",
+		"[Endurer] #rDevenez #rMaudit #r- #r",
+		"[Bloquer] #rPrenez #r",
+		" #rdégâts.",
+		"[] #r",
+		"%: #rPrenez #r",
+		"[Ouvrir le coffre]",
+		"[Verrouillé] Requiert: Matriochkas.",
+		"[Verrouillé] Aucune charge de Matriochkas restante.",
+		"[Utiliser une charge de Matriochkas] #gObtenez #gle #gdouble #gdu #gloot."
+	]
+  },
+  "Chaos Ring Event": {
+	"NAME": "Anneaux du Mort",
+	"DESCRIPTIONS": [
+		"En passant près d'un squelette, vous remarquez qu'il porte un #yanneau #yrouge à chaque main. Vous ressentez une sorte #r~d'énergie~ #r~chaotique~ qui émane d'eux; rien que de les regarder, votre tête commence à tourner.",
+		"Vous ne voyez pas comment ramasser des anneaux maudits trouvés sur une personne morte pourrait être autre chose qu'une idée fantastique."
+	],
+	"OPTIONS": [
+		"[Main Droite] #gObtenez #gune #gRelique. #r50%: #rDevenez #rMaudit - ",
+		"[Main Gauche] #gObtenez #gune #gRelique. #r50%: #rDevenez #rMaudit - ",
+		"[Deux Mains] #gObtenez #g2 #gReliques. #r75%: #rDevenez #rMaudit #r(aléatoire)",
+		"[Quitter]"
+	]
+  },
+  "ReplayMapScout": {
+	"NAME": "Guide de la Tour",
+	"DESCRIPTIONS": [
+		"Un jeune homme au regard sauvage s'approche de vous et vous parle des dangers de la Tour. NL \"Des monstres au-delà de toute imagination vous attendent ! ~Ah,~ ~mais~ ~Je,~ @Je@ @connais@ @cet@ @endroit!@ J'ai vu où ces #r~dangers~ résident, et comment les éviter! Vous êtes intéressés, pas vrai?\"",
+		"Il semble qu'il sache comment éviter certaines menaces et qu'il soit prêt à partager son savoir - pour un peu d'or, en tout cas.",
+		"Vous décidez qu'il est préférable de continuer à avancer.",
+		"L'homme s'empresse de vous dire ce que vous vouliez savoir, ainsi que plusieurs autres choses dont vous n'avez que faire. NL Vous ajustez votre itinéraire dans la zone suivante en fonction de ces nouvelles informations.",
+		"Vous dites à l'homme que vous n'avez pas besoin d'éviter le danger, et vous lui demandez de vous indiquer où réside l'être le plus puissant qu'il connaisse. NL L'homme devint inhabituellement silencieux pendant un moment, un large sourire s'étendant sur son visage. NL NL #r~\"...~ #r~Vous~ #r~êtes~ #r~sûr?\"~",
+		"L'homme éclate de rire avant de vous tendre une carte défraîchie et ensanglantée sur laquelle figure un lieu. NL Vous ne savez pas ce que vous allez affronter, mais vous le saurez bientôt."
+	],
+	"OPTIONS": [
+		"[Locked] Requiert: ",
+		" d'or",
+		"[Perdez ",
+		"] Vous ne rencontrerez pas #yl'Éveillé au prochain acte.",
+		"] Vous ne rencontrerez pas #yDéca #yet #yDonu au prochain acte.",
+		"] Vous ne rencontrerez pas #yLe #yDévoreur #yde #yTemps au prochain acte.",
+		"[Ignorer]",
+		"[Quitter]",
+		"[Défier le destin] Vous rencontrerez #rQuelque #rChose #rde #rTerrifiant au prochain acte.",
+		"#rOui",
+		"#gNon",
+		"[Continuer]"
+	]
+  },
+  "Grembo": {
+	"NAME": "Grembo le Grand",
+	"DESCRIPTIONS": [
+		"Un petit diablotin porte une petite épée vous approche. NL \"Voici! C'est moi, #y@GREMBO@ #y@LE@ #y@GRAND!\"@ NL La créature semble se croire beaucoup plus menaçante qu'elle ne l'est en réalité.",
+		"Le diablotin parle. NL \"Grembo a vu votre combat. Grembo aime aussi combattre! Grembo vous prêtera une #ggrande #gforce, si vous donnez des trucs #ybrillants!\" NL Il semble digne de confiance, bien qu'un peu délirant.",
+		"\"Un paiement adéquat! La force légendaire de #yGrembo est la vôtre!\" NL Alors qu'il dit ça, une bande de #bdiablotins sort de l'ombre. On dirait que vous vous êtes fait des amis.",
+		"\"Bien. Grembo s'en fiche ! Grembo a d'autres guerriers plus forts à qui prêter son épée!\" NL Il n'est pas très doué pour cacher sa déception. Il disparaît dans les ombres de la ville."
+	],
+	"OPTIONS": [
+		"[Continuer]",
+		"[Verrouillé] Requiert: ",
+		"[Perdez ",
+		" d'Or",
+		"] #yUnissez #gvos #gforces #gavec #gGrembo #gle #gGrand.",
+		"[Décliner]"
+	]
+  },
+  "Tinkerer": {
+	"NAME": "Le Bricoleur",
+	"DESCRIPTIONS": [
+		"Un homme aux cheveux en désordre et aux yeux vifs cachés derrière des lunettes de protection apparaît dans les ruelles. NL \" @BIENVENUE!@ Je suis connu sous le nom du #yBricoleur. Puis-je jeter un coup d'oeil à votre équipement?\"",
+		"Le Bricoleur réduit en pièces l'objet que vous avez offert, et utilise les morceaux pour améliorer certains de vos autres équipements. Il semble apprécier la tâche..",
+		"L'homme produit un certain nombre d'outils et commence à travailler. NL ",
+		"L'homme prend joyeusement l'objet offert et commence à le démonter et à réarranger ses entrailles. NL ",
+		"Dans un élan, l'homme saisit l'objet et ajuste ses différents composants. NL ",
+		"Après un moment, il vous présente fièrement le résultat de son travail.",
+		"Quand il vous rend l'appareil, vous le reconnaissez à peine.",
+		"Il finit par revenir sur le sujet de son expérience, tout excité, en vous parlant des nouvelles fonctionnalités et des améliorations qu'il a ajoutées.",
+		"Dans une soudaine explosion de lumière et de feu, l'objet est détruit. Dans un état de panique, l'homme s'excuse abondamment pour son échec.",
+		"Lorsque vous récupérez votre équipement, il n'est plus qu'un tas de pièces inutiles. L'homme ne semble pas en avoir conscience."
+	],
+	"OPTIONS": [
+		"[Quitter]",
+		"[Verrouillé] Requiert: ???",
+		"[Verrouillé] Requiert: Upgraded Card",
+		"[Perdez une carte Améliorée] #gAméliorez #g",
+		" #gcartes.",
+		"[Perdez ",
+		"] #g",
+		"% #gObtenez ",
+		"[Utilisé]",
+		"Retirez une carte",
+		"Améliorez 2 cartes"
+	]
+  },
+  "ReplayTheSpireMod:TheMausoleumExtra": {
+	"NAME": "Le Mausolée",
+	"DESCRIPTIONS": [
+		"Vous poussez le cercueil. Un #p~brouillard~ #p~noir~ jaillit soudainement et recouvre toute la pièce ! A l'intérieur, vous ne trouvez pas de corps, seulement une #y~relique.~ Vous prenez cette dernière et avancez, #r@toussant@ #r@violemment.@",
+		"Vous poussez le cercueil. Le brouillard se dissipe inoffensivement. À l'intérieur, vous trouvez la dépouille mortelle d'un soldat décoré qui tient une vieille #yrelique. Vous la chapardez et passez à autre chose."
+	],
+	"OPTIONS": [
+		"[Ouvrir le cercueil] #gObtenez #gune #gRelique. #r",
+		"%: #rDevenez #rMaudit #r(Aléatoire)."
+	]
+  },
+  "ReplayTheSpireMod:TheJoustExtra": {
+	"NAME": "La Joute",
+	"DESCRIPTIONS": [
+		"Le fantôme avec lequel vous avez voyagé court vers le chevalier, tout excité. NL #y@\"Noodles!!\"@ NL Le chevalier est ravi de retrouver son animal, même s'il s'agit désormais d'un fantôme. En versant des larmes de joie, il vous offre une #grécompense pour les avoir réunis. NL NL L'autre chevalier est juste... parti."
+	],
+	"OPTIONS": [
+		"[Verrouillé] Requiert: Fantôme de Compagnie.",
+		"[Perdez Fantôme de Compagnie] #gObtenez #g",
+		" #gd'Or. #gChoisissez #gune #gcarte #grare #gà #gobtenir."
+	]
+  },
+  "ReplayTheSpireMod:DesignerExtra": {
+	"NAME": "Designer In-Spiré",
+	"DESCRIPTIONS": [
+		"...c'est débile."
+	],
+	"OPTIONS": [
+		"[Embrasser] #g",
+		"[Arrêter]",
+		"[Continuer] #g",
+		"[PASSION] #g",
+		"[DÉSIR] #g",
+		"%: #gAméliorez #gune #gcarte #galéatoire.",
+		"%: #rChoisissez #r1 #rMalédiction #raléatoire #rparmi #r3 #rà #rObtenir.",
+		"#rPerdez #r",
+		" #rPV."
+	]
+  },
+  "ReplayTheSpireMod:DanceKnight": {
+	"NAME": "Testing Knight",
+	"DESCRIPTIONS": [
+		"Un grand #bchevalier vous barre la route. NL @\"Halte!@ Seuls ceux qui #yprouvent #yleur #yvaleur peuvent passer!\"",
+		"\"Qu'il en soit ainsi ! Battez mes #gdoux #ggestes, et je vous laisserai passer!\"",
+		"Vous n'êtes pas de taille contre le #bChevalier. NL \"Une démonstration #rpitoyable! Pensiez-vous vraiment pouvoir me battre avec de tels mouvements? @HA!\"@",
+		"\"#gBien #gjoué! Vous avez #yprouvé #yvotre #yvaleur, voyageur. Tenez, un petit #gcadeau pour votre peine. Je vous souhaite bonne chance pour votre aventure!\"",
+		"#g@\"FANTASTIQUE!\"@ NL Le chevalier est très impressionné par vos compétences. NL \"Je n'ai jamais vu autant de #y~grâce~, quelle #b@majesté!@ Tenez, prenez cette #gbabiole en remerciements de m'avoir montré un tel spectacle!\" NL Il vous tend quelque chose et s'écarte pour vous laisser passer.",
+		"\"Pas d'humeur à se battre, hein ? Je ne peux pas vous en vouloir - vous avez dû vous battre toute la journée, avec tous ces monstres partout. Très bien, ce sera des #bQuestions!\"",
+		"\"Laquelle des propositions suivantes n'a #rpas #yd'Artéfact ?\"",
+		"\"Laquelle des propositions suivantes est la plus #yRare ?\""
+		
+	],
+	"OPTIONS": [
+		"[Prouver votre Force] Épreuve du combat.",
+		"[Prouver votre Dextérité] Épreuve de danse.",
+		"[Prouver votre Concentration] Épreuve de questions.",
+		"[Continuer]",
+		"[Le Gardien]",
+		"[Orbes de Bronze]",
+		"[L'Orbiste]",
+		"[Tête géante]",
+		"[Sentinelles]",
+		"[Gardiens sphériques]",
+		"[Automate de Bronze]",
+		"[Donu]",
+		"[]"
+	]
+  }
+}

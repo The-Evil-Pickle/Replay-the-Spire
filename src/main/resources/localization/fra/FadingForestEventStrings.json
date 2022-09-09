@@ -1,0 +1,255 @@
+{
+	"FF_Enter": {
+		"NAME": "Entrée de la Forêt",
+		"DESCRIPTIONS": [
+			"Vous voyez devant vous une forêt d'arbres étranges. Ressentant une présence démoniaque, vous vous retournez, mais les arbres vous entourent de tous les côtés. NL NL Vous avez été enveloppé par les bois.",
+			"La forêt est tortueuse et sauvage, sans chemins clairs. Vous n'êtes pas sûr des directions que vous prenez ou que vous avez prises; c'est comme si les arbres bougaient lorsque vous ne les regardez pas.",
+			"Vous vous frayez un chemin à travers les arbres et le brouillard. Il ne faut pas longtemps avant de tomber sur un monstre qui fait la même chose.",
+			"Vous décidez de vous arrêter et de récupérer vos forces avant de reprendre. Alors que l'obscurité et le brouillard se lèvent, vous prenez conscience d'une autre créature se reposant aux alentours.",
+			"Vous vous arrêtez et observez la situation, en regardant attentivement à travers la brume et les arbres autour de vous. Vous pouvez à peine distinguer des formes qui se déplacent - et qui s'approchent."
+		],
+		"OPTIONS": [
+			"[Continuer]",
+			"[Se frayer un chemin] #rRencontrez #rquelque #rchose #d'acharné.",
+			"[Stop and rest] #rRencontrez #rquelque #rchose #de #rparesseux.",
+			"[Analyze the situation] #rRencontrez #rquelque #rchose #rd'impitoyable.",
+			"[Combattez!]"
+		]
+	},
+	"FF_Serpent": {
+		"NAME": "Le Faux Serpent",
+		"DESCRIPTIONS": [
+			"Vous trouvez une fosse inhabituelle dans les profondeurs de la forêt. Alors que vous vous approchez de l'ouverture, une créature serpentine familière se matérialise devant vous. NL NL ~\"Ho~ ~hooo!~ ~Bonjour!~ ~bonjour!~ ~Qu'avons~ ~nous~ ~iccccci?~ Bienvenue aventurier, Je vous demande une sssssimple quessssstion. NL La vie la plus ssssssatisfaisante est cccccelle où l'on peut #y~tout~ #y~avoir!~ NL N'êtes-vous pas d'accord?\"",
+			"~\"Ouiiiiiiiiii!~ NL ~Ccccccela~ ~en~ ~vaudra~ ~la~ ~peine.~ NL ~..ssSSs.....~ ~ss...~ ~sssss....!\"~",
+			"The serpent is silent for a time. Without warning, it suddently lunges at you with blinding speed - but fades into harmless mist just inches from your face.",
+			"The serpent's grin widens, and it rears its head upwards. Before it can do anything, it disperses into mist - but leaves behind a reward."
+		],
+		"OPTIONS": [
+			"[Accord] #gObtenez #gun #geffet #gde #gRelique #galéatoire. #rAjoutez #rune #rcopie #rde #rDoute #rdans #rvotre #rpioche.",
+			"[Désaccord]",
+			"[Continuer]",
+			"[Quitter]"
+		]
+	},
+	"FF_Scrap Ooze": {
+		"NAME": "Faux Slime",
+		"DESCRIPTIONS": [
+			"En faisant votre chemin à travers les arbres vous entendez un ~gargouillis~ et le @cliquetis@ d'objets métalliques. Devant vous se trouve une créature visqueuse avec des artéfacts étranges tout autour d'elle. Vous pouvez voir un #yTrésor au centre... mais le slime semble déjà être irrité par votre présence.",
+			"Vous arrivez à aggriper la #yRelique et à la retirer. Vos vêtements récoltent une grosse quantité de slime dans le processus."
+		],
+		"OPTIONS": [
+			"[Atteindre l'intérieur] #gObtenez #gun #geffet #gde #gRelique #galéatoire. #rAjoutez #r3 #rEnglué #rdans #rvotre #rmain.",
+			"[Quitter]"
+		]
+	},
+	"FF_Big Fish": {
+		"NAME": "Les Faux Choix",
+		"DESCRIPTIONS": [
+			"En faisant votre chemin à travers les arbres vous découvrez une #ybanane, un #ydonut, et une #yboîte en train de ~flotter~. Vous vous souvenez d'une même situation auparavant, mais un regard plus attentif révèle qu'il n'y a pas de ficelles ou de pièges qui maintiennent les objets en place. NL Que faites-vous?",
+			"Vous mangez la #ybanane. Elle est nutritive et légèrement #bmagique, vous soignant. NL Les autres objets deviennent de la brume et disparaissent.",
+			"Vous mangez le #ydonut. Vous êtes empli d'énergie! Votre #yDexterité augmente. NL Les autres objets deviennent de la brume et disparaissent.",
+			"Vous attrapez la #yboîte. À l'intérieur se trouve une #yrelique! NL Cependant, les nourritures qui avaient l'air délicieuses se transforment en brume et disparaissent devant vous... NL Vous êtes rempli de ~tristesse,~ mais surtout de #rregret.."
+		],
+		"OPTIONS": [
+			"[Banane] #gSoignez-vous #gde #g",
+			" #gPV.",
+			"[Donut] #gGagnez #g",
+			" #gde #yDextérité.",
+			"[Boîte] #gObtenez #gun #geffet #gde #gRelique #galéatoire. #rAjoutez #rune #rcopie #rde #rRegret #rdans #rvotre #rpioche.",
+			"[Quitter]"
+		]
+	},
+	"FF_Will-o-Wisp": {
+		"NAME": "Feu follet",
+		"DESCRIPTIONS": [
+			"Une lumière flottante émerge du brouillard, planant sinistrement tout près. Un fantôme, ou un esprit - un feu follet.",
+			"La chaleur de l'esprit est étrangement confortable.",
+			"Vous suivez la lumière erratne pendant un certain temps, vous enfonçant dans la forêt. Alors que vous marchez, vous avez l'impression d'avoir laissé vos soucis derrière vous.",
+			"Le feu follet explose en une gerbe de feu et de lumière. Lorsque vous recouvrez votre vision, une relique a été laissée derrière."
+		],
+		"OPTIONS": [
+			"[Toucher] #gSoignez-vous #gde #g",
+			" #gPV.",
+			"[Suivre] #gÉpuisez #gn'importe #gquelle #gCarte #g(hors-Malédiction).",
+			"[Frapper] #gObtenez #gun #geffet #gde #gRelique #galéatoire. #rAjoutez #rune #rcopie #rde #rBrûlure+ #rdans #rvotre #rpioche.",
+			"[Quitter]"
+		]
+	},
+	"FF_Drug Dealer": {
+		"NAME": "Faux échange",
+		"DESCRIPTIONS": [
+			"Une tête familière émerge de la brume. NL \"Bienvenue. Vous voulez de la #yD.O.P.E.? Il vous donnera la force que vous désirez. Vous en aurez besoin si vous avez l'intention de traverser cet endroit. NL Et bien? Qu'en dites-vous ?\" NL ",
+			"~\"Excellent.\"~ NL Une seringue inquiétante remplie de liquide lumineux se matérialise dans la main de l'homme, et vous la donne. Dès que vous la prenez, la silhouette disparaît dans le brouillard de la forêt..",
+			"\"Un choix peu judicieux. Vous verrez...\" NL La voix de l'homme s'éteint alors qu'il disparaît lui-même devant vous."
+		],
+		"OPTIONS": [
+			"[Accepter] #rPerdez #r",
+			" #rPV: #gGagnez #g",
+			" #gde #yStrength.",
+			"[Quitter]",
+			"[Décliner]"
+		]
+	},
+	"FF_Golden Idol": {
+		"NAME": "La Fausse Idole",
+		"DESCRIPTIONS": [
+			"Vous découvrez un piédestal inaperçu sur lequel est assis paisiblement une #ystatuette #ydorée. Votre esprit ne peut s'empêcher d'obtenir cet objet. Vous @DEVEZ@ l'avoir! NL Inconscient de votre entourage, vous avancez...",
+			"Aussitôt que vous touchez l'idole, elle se transforme en brume dans vos mains. Alors que vous reprenez vos esprits, un énorme rocher surgit de la brume, poussé vers vous par une force invisible.",
+			"@COURRRRRRREZ!@ NL Le rocher semble avoir son propre esprit, changeant de direction pour vous suivre à travers les arbres. NL Éventuellement, le grondement derrière vous s'arrête. Vous vous retournez et voyez qu'il n'y a plus de trace du rocher. Malheureusement, on dirait que vous vous êtes tordu quelque chose durant votre course.",
+			"Vous vous jetez sur le rocher avec tout ce que vous avez. Il s'évapore dès lors que vous l'avez frappé, mais une force puissante vous repousse, vous écransant contre un arbre à proximité.",
+			"Le rocher vous suit, accompagnant chacun de vos gestes. Alors que vous pensiez l'avoir perdu, celui-ci se fracasse contre une lignée d'arbres. NL @WHAM!@ Un des arbres tombe sur vous, vous laissant avec beaucoup de bleus et encore plus d'échardes. Lorsque vous vous relevez, le rocher n'est plus là."
+		],
+		"OPTIONS": [
+			"[Continuer]",
+			"[S'échapper] #rjoutez #r",
+			" #rBlessures #rdans #rvotre #rpioche.",
+			"[Détruire] #rPrenez #r",
+			" #rDégâts.",
+			"[Se cacher] #rPrenez #r",
+			" #rDégâts. #rGagnez #r",
+			" de #rVulnérabilité."
+		]
+	},
+	"FF_Mushrooms": {
+		"NAME": "Le Faux Terrain de Champignons",
+		"DESCRIPTIONS": [
+			"Vous entrez dans une clairière parmi les arbres. Dans cette clairière se trouve un champ de #b~champignons~ #b~colorés~ #b~hypnotisants.~ NL Vous ressentez qu'ils ne sont ~pas~ ~de~ ~ce~ ~monde...~ mais malgré cela, vous vous sentez bizarrement obligé de manger un #b~champignon...~",
+			"As soon as you touch the idol, it turns to mist in your hands. As you snap back to your senses, a huge boulder fades in from out of the mist, pushed towards you by some unseen force.",
+			"@RUUUUUUUUUUN!@ NL The boulder seems to have a mind of its own, changing direction to keep following you through the trees. NL Eventually, the rumbling behind you stops. Turning around, you can see no trace the boulder was ever there. Unfortunately, it feels like you sprained something during your escape.",
+			"You throw yourself at the boulder with everything you have. It evaporates as soon as you strike it, but a powerful force throws you back, slamming you into a nearby tree.",
+			"The boulder follows you, matching your every turn. Just when you think you've lost it, it crashes through a line of trees. NL @WHAM!@ One of the fallen trees lands on you, leaving you with many bruises and more splinters. When you stand back up, the boulder is nowhere to be found."
+		],
+		"OPTIONS": [
+			"[Continuer]",
+			"[Écraser] #rMettez #ren #colère #rles #rChampignons.",
+			"[Manger] #rPrenez #r",
+			" #rDégâts. #r",
+			"%: #rAjoutez #rInfection #rDiffuse #rdans #rvotre #rdéfausse.",
+			"[Courir] #rAjoutez #r",
+			" #rSpores #raléatoires #rdans #rvotre #rdéfausse."
+		]
+	},
+	"FF_SensoryStone": {
+		"NAME": "Le Faux Tesseract",
+		"DESCRIPTIONS": [
+			"Alors que vous vous enfoncez dans les bois, vous découvrez un #btesseract #bbrillant, @tournant@ et ~lévitant~ doucement dans les airs.",
+			"Vous le touchez. NL NL Une #r@douleur@ #r@aigüe@ vous traverse, suivi par des flashs vifs d'un souvenir lointain. NL ...À qui appartient ces souvenirs?",
+			"#r~PEUR.~ NL NL Une créature démoniaque vous domine, ailes déployées, hurlant de rire. Les cadavres d'une tribu vous entourent tandis que le village est englouti dans de terribles #p~flammes~ #p~sombres.~ NL NL Le démon hurle, se moquant de vous. NL NL \" #r@TU@ #r@ES@ #r@LE@ #r@PLUS@ #r@FORT@ #r@MAINTENANT!@ #r@Haha..@ #r@HEHE...@ #r@HAHAHAAAAH!!@ \" NL NL Ce laughter résonne à jamais... ",
+			"#g~TRIOMPHE.~ NL NL Les restes d'une #p~créature~ #p~fantômatique~ plonge lentement dans la boue devant vous, à peine visible par la pleine lune. Vous avez fait vos preuves parmi vos sœurs. NL NL Debout, victorieuse, vous attendez en silence pendant que les autres placent cérémonieusement le #ycrâne #yde #yla #ycréature sur votre tête. Le rituel est terminé. NL NL You head towards the Spire...",
+			"#b~CONFUSION.~ NL NL #y[OBJECTIF] #gÉQUILIBRE #gDOIT #gÊTRE #gRENFORCÉ NL #y[DÉFINIR] #gÉQUILIBRE NL #y[ERREUR] #gÉQUILIBRE #gNON #gTROUVÉ NL #y[DÉFINIR] #gÉQUILIBRE NL #y[ERREUR] #gÉQUILIBRE #gNON #gTROUVÉ NL #y[ATTENTION] #rObjet #rlarge #ren #rapproche NL NL ~\"Je...~ ~..suis~ ~....Neow..\"~"
+		],
+		"OPTIONS": [
+			"[Se Rappeler] #gAjoutez #g1 #gcarte #gIncolore #gdans #gvotre #gmain. #rPrenez #r",
+			"[Se Rappeler] #gAjoutez #g1 #gcartes #gIncolores #gdans #gvotre #gmain. #rPrenez #r",
+			"[Se Rappeler] #gAjoutez #g1 #gcartes #gIncolores #gdans #gvotre #gmain. #rPrenez #r",
+			" #rDégâts #r",
+			" #rFois.",
+			"[Quitter]",
+			"[Interagir]"
+		]
+	},
+	"FF_Vampires": {
+		"NAME": "Faux Vampires",
+		"DESCRIPTIONS": [
+			"Votre navigation dans la forêt est interrompue par un certain nombre de silhouettes encapuchonnées qui émergent des arbres tout autour de vous. Le plus grand d'entre eux montre des dents crochues et tend une longue main pâle vers vous. NL ~\"Rejoignez-nous~ ~mon~ ~frère,~ ~et~ ~ressentez~ ~le~ ~confort~ ~de~ ~la~ ~Forêt.\"~ NL Ils n'ont pas l'air de vouloir vous attaquer, mais ils n'ont pas non plus l'air d'accepter un refus....",
+			"Votre navigation dans la forêt est interrompue par un certain nombre de silhouettes encapuchonnées qui émergent des arbres tout autour de vous. Le plus grand d'entre eux montre des dents crochues et tend une longue main pâle vers vous. NL ~\"Rejoignez-nous~ ~ma~ ~sœur,~ ~et~ ~ressentez~ ~le~ ~confort~ ~de~ ~la~ ~Forêt.\"~ NL Ils n'ont pas l'air de vouloir vous attaquer, mais ils n'ont pas non plus l'air d'accepter un refus....",
+			"Votre navigation dans la forêt est interrompue par un certain nombre de silhouettes encapuchonnées qui émergent des arbres tout autour de vous. Le plus grand d'entre eux montre des dents crochues et tend une longue main pâle vers vous. NL ~\"Rejoignez-nous~ ~être~ ~perdu,~ ~et~ ~ressentez~ ~le~ ~confort~ ~de~ ~la~ ~Forêt.\"~ NL Ils n'ont pas l'air de vouloir vous attaquer, mais ils n'ont pas non plus l'air d'accepter un refus....",
+			"Le grand personnage saisit votre bras, vous tire en avant et enfonce ses crocs dans votre cou. Vous ressentez une @force@ @obscure@ se déverser dans votre cou et @parcourir@ votre corps. Les silhouettes encapuchonnées se transforment alors en brume et disparaissent, une par une. NL Une ~faim~ intense parcourt à travers votre corps. Vous devez #rvous #rnourrir...",
+			"Vous décidez de vous battre pour sortir. Tous les ennemis touchés par vos attaques s'évaporent, mais un nombre infini d'entre eux continue de sortir des arbres. NL Vous fuyez. Vous combattez. Vous prenez des dégâts. Vous clignez des yeux. Ils ont disparu."
+		],
+		"OPTIONS": [
+			"[Accepter] #gÉpuisez #gtoutes #gvos #gFrappes. #gObtenez #g5 #gMorsures. #rPerdez #r",
+			" #rPV.",
+			"[Passer à travers] #rPrenez #r",
+			" #rdégâts.",
+			"[Continuer]"
+		]
+	},
+	"FF_Headache": {
+		"NAME": "Migraine",
+		"DESCRIPTIONS": [
+			"Alors que vous passez d'un arbre à l'autre, vos pensées se mélangent. Vous ressentez un @bourdonnement@ dans votre tête. NL Après un court moment, la douleur devient #rinsupportable.",
+			"Vous ignorez la douleur et allez de l'avant. Faire cela mobilise une grande partie de vos forces.",
+			"Vous fermez vos yeux. Vous vous concentrez sur vos pensées, sur vos battements de cœur, sur vous-même. La douleur s'atténue un peu - mais vous avez perdu la notion des dangers qui vous entourent.",
+			"Vous essayez de vous distraire de la douleur, et de la forêt inquiétante qui vous entoure. La douleur s'estompe rapidement. En grande partie."
+		],
+		"OPTIONS": [
+			"[Ignorer] #rGagnez #r",
+			" #rde #rFaiblesse.",
+			"[Se concentrer] #rGagnez #r",
+			" #rde #rFragilité.",
+			"[Distraire] #rAjoutez #r",
+			" #rHébètements #rdans #rvotre #rdéfausse.",
+			"[Quitter]"
+		]
+	},
+	"FF_Curse": {
+		"NAME": "Faux Murs",
+		"DESCRIPTIONS": [
+			"Les arbres autour de vous se déplacent soudainement, formant un mur pour vous piéger en un seul endroit. Des #b~runes~ #b~brillantes~ s'enflamment soudainement sur les côtés de la cage. Vous ressentez une ~puissance~ ~magique~ venant d'elles....",
+			"Vous sentez une magie maléfique vous envahir. NL Les arbres s'écartent, et vous vous frayez rapidement un chemin vers l'extérieur."
+		],
+		"OPTIONS": [
+			"[Rune Bleue] #rDevenez #rMaudit.",
+			"[Rune Verte] #rBecome #rConfus.",
+			"[Rune Rouge] #rBecome #rRalenti.",
+			"[Quitter]"
+		]
+	},
+	"FF_Fork": {
+		"NAME": "Bifurcation",
+		"DESCRIPTIONS": [
+			"Vous rencontrez une bifurcation dans le chemin à travers les arbres. Chaque option est identique, à l'exception des bruits provenant de chacune d'elles.",
+			"Le chemin devient aussitôt boueux et humide. Avant que vous ne le voyez, vous êtes piégés par des slimes vivants !",
+			"Vous pouvez entendre des choses bouger dans le feuillage lorsque vous marchez. Les créatures de la forêt se montre devant vous, montrant les crocs!",
+			"Vous pouvez entendre des chuchotements et des soupirs en gremmish. Assez tôt, un petit groupe de diablotins apparaît devant vous!"
+		],
+		"OPTIONS": [
+			"[Clapotis] #rCombattez #rdes #rSlimes.",
+			"[Grognement] #rCombattez #rdes #rBêtes.",
+			"[Moqueries] #rCombattez #rdes #rDiablotins.",
+			"[Combattre]"
+		]
+	},
+	"FF_Fork2": {
+		"NAME": "Les deux chemins",
+		"DESCRIPTIONS": [
+			"En errant sans but, vous vous trouvez devant deux chemins clairs. L'un semble avoir été sculpté par le feu, l'autre marqué par des empreintes de pas.",
+			"Vous prenez le chemin carbonisé et fumant. La cause des incendies qui vous entourent devient vite évidente : cette piste a été taillée par un automate!",
+			"Ceux qui sont venus ici avant vous connaissent peut-être la sortie. Vous suivez les traces de pas. NL Malheureusement, ce que vous trouvez n'est pas une sortie, mais un ennemi!",
+			"Espérant éviter tout problème, vous vous promenez dans les arbres sans suivre aucun des deux chemins. Vos espoirs sont vains, bien sûr; vous faites peu après face à une nouvelle menace!"
+		],
+		"OPTIONS": [
+			"[Suivre le chemin brûlé] #rCombattez #rquelque #rchose #rde #rMécanique.",
+			"[Suivre les traces de pas] #rCombattez #rquelque #rchose #rd'Humain.",
+			"[Éviter les deux] #rCombattez #rquelque #rchose #rd'Inconnu.",
+			"[Combattre]"
+		]
+	},
+	"FF_Ravine": {
+		"NAME": "Ravin",
+		"DESCRIPTIONS": [
+			"Un ravin bloque votre chemin. En faisant demi-tour, vous remarquez qu'il est également à votre dos. NL Les parois sont recouverts de rochers pointus; les escalader vont sûrement vous blesser. Vous pourriez peut-être sauter par-dessus, mais cela semble loin...",
+			"Vous escaladez prudemment, mais les rochers acérés et les pentes raides vous font des ravages.",
+			"Avec grâce mais surtout de la panique vous arrivez à sauter le gouffre sain et sauf.",
+			"Votre saut dans les airs vous a conduit au fond du gouffre. Vous devez escalader pour remonter - et pire encore, on dirait que vous vous êtes #rbrisé quelque chose."
+		],
+		"OPTIONS": [
+			"[Grimper] #rPrenez #r",
+			" #rdégâts.",
+			"[Sauter] #r",
+			"%: #rPrenez #r",
+			" #rdégâts #ret #robtenez #r1 #rBlessure.",
+			"[Continuer]"
+		]
+	},
+	"FF_Finale": {
+		"NAME": "La Forêt s'Estompe",
+		"DESCRIPTIONS": [
+			"Les brouillards tourbillonnants qui vous entourent commencent à se dissiper ; les menaces commencent à disparaître de la réalité. Bientôt, la forêt elle-même disparaît, vous ramenant en territoire familier. NL Vous avez survécu à l'épreuve de la forêt."
+		],
+		"OPTIONS": [
+			"[Continuer]"
+		]
+	}
+}

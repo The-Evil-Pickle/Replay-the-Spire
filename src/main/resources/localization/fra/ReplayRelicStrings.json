@@ -1,0 +1,1325 @@
+{
+	"Replay:Antivirus Software": {
+	"NAME": "Logiciel antivirus",
+	"FLAVOR": "L'équivalent robotique d'un vaccin.",
+    "DESCRIPTIONS": [
+	"Chaque fois que vous mélangez votre deck, gagnez #b1 #yArtéfact. NL Lorsque vous piochez un #yStatut, consomme #b1 #yArtéfact pour #yl'Épuiser ainsi que tous les autres cartes #yStatut piochées ce tour, piochant #b1 carte à chaque fois."
+	]
+  },
+  "Replay:Arrowhead": {
+	"NAME": "Tête de flèche",
+	"FLAVOR": "La première chose que vous avez jamais forgée.",
+    "DESCRIPTIONS": [
+	"Vous pouvez #yAméliorer 2 cartes lorsque vous forgez."
+	]
+  },
+  "Replay:Bandana": {
+	"NAME": "Bandana",
+	"FLAVOR": "Le meilleur article pour le pickpocket.",
+    "DESCRIPTIONS": [
+	"Gagnez #b",
+	" de #yBraquage pour les #b",
+	" premiers tours du combat. NL #ySynergie - ",
+	"Lorsque ceci est actif, ",
+	" vous donne des #yPV #yTemporaires à la place du soin."
+	]
+  },
+  "Replay:Baseball": {
+	"NAME": "Balle de baseball",
+	"FLAVOR": "Nous avons tous un joueur préféré.",
+    "DESCRIPTIONS": [
+	"Lorsque vous la récupérez, une carte aléatoire de votre deck devient gratuite."
+	]
+  },
+  "Divine Protection": {
+    "NAME": "Protection divine",
+	"FLAVOR": "La force de continuer dans les épreuves les plus dures.",
+	"DESCRIPTIONS": [
+		"Gagnez #b",
+		" de #yBlindage au début du combat.",
+		" #yPV #yTemporaires au début du combat."
+	]
+  },
+  "Electric Blood": {
+	"NAME": "Sang électrique",
+	"FLAVOR": "Vous sentez votre corps débordant de puissance. Cela vous fait du mal.",
+    "DESCRIPTIONS": [
+	"Gagnez [R] [R] au début de chaque tour the start of each turn. NL Perdez #b1 PV pour chaque [R] que vous utilisez, excluant les #b",
+	" premières utilisées chaque tour."
+	]
+  },
+  "ReplayFunnel": {
+	"NAME": "Entonnoir",
+	"FLAVOR": "Utilisez chaque goutte.",
+    "DESCRIPTIONS": [
+	"À la fin de votre tour, l'énergie non-utilisée est convertie en #b4 #yd'Armure chacun."
+	]
+  },
+  "Garlic": {
+	"NAME": "Ail",
+	"FLAVOR": "En prendre une bouffée peut faire pleurer vos yeux.",
+    "DESCRIPTIONS": [
+	"Au début du combat, appliquez #b3 de #yLangueur à TOUS les ennemis."
+	]
+  },
+  "Iron Hammer": {
+	"NAME": "Marteau de fer",
+	"FLAVOR": "Un outil pratique - et lourd.",
+	"DESCRIPTIONS": [
+	"Durant le premier tour, piocher une carte l'améliore."
+	]
+  },
+  "Mirror": {
+	"NAME": "Miroir de poche",
+	"FLAVOR": "Vous pouvez vous voir à travers le verre. Le bien tout comme le mal.",
+    "DESCRIPTIONS": [
+	"Lorsque vous êtes #yVulnérable ou #yAffaibli, cela est appliqué également à l'ennemi qui vous l'a appliqué.",
+	"Reflété"
+	]
+  },
+  "Onion Ring": {
+	"NAME": "Onion Ring",
+	"FLAVOR": "L'oignon est enrobé d'une chapelure frite.",
+    "DESCRIPTIONS": [
+	"Vous gagnez 3 de #yForce au début de chaque combat. NL Vous perdez 1 de #yForce durant les 3 prochains tours."
+	]
+  },
+  "ReplayTheSpireMod:Shallot": {
+	"NAME": "Échalote",
+	"FLAVOR": "C'est une échalote. Pas grand-chose à en dire à son sujet.",
+    "DESCRIPTIONS": [
+	"Vous gagnez 3 de #yDextérité et de #yMétallisation au début de chaque combat. NL Vous perdez 1 de #yDextérité et de #yMétallisation pendant les 3 prochains tours."
+	]
+  },
+  "Pet Ghost": {
+	"NAME": "Fantôme de compagnie",
+	"FLAVOR": "Le fantôme d'un animal de compagnie appartenant auparavant à un chevalier.",
+    "DESCRIPTIONS": [
+	"Ajoutez une carte fantômatique dans votre main chaque tour. NL La taille max de votre main est augmentée de #b1."
+	]
+  },
+  "Ring of Chaos": {
+	"NAME": "Bague du Chaos",
+	"FLAVOR": "Une bague aux effets magiques sauvages et imprévisibles.",
+	"DESCRIPTIONS": [
+	"Certaines récompenses de cartes ont des stats et des effets altérés aléatoirement."
+	]
+  },
+  "Simple Rune": {
+	"NAME": "Rune de Simplicité",
+	"FLAVOR": "Des fois, les choses ne sont pas aussi compliquées qu'elles le semblent.",
+	"DESCRIPTIONS": [
+		"Les Frappes et les Défenses peuvent être #yAméliorées de façon illimité. NL Lorsque vous la récupérez, #yAméliorez-en #b",
+		" aléatoirement."
+	]
+  },
+  "Snack Pack": {
+	"NAME": "Paquet de snacks",
+	"FLAVOR": "Toujours venir préparé avec des snacks.",
+    "DESCRIPTIONS": [
+	"Chaque fois que vous jouez 3 #yAttaques en un seul tour, gagnez 2 PV."
+	]
+  },
+  "Snecko Scales": {
+	"NAME": "Écailles de geckobra",
+	"FLAVOR": "Des écailles d'un Geckobra qui a mué. Elles semblent refléter la lumière avec des couleurs chatoyantes.",
+    "DESCRIPTIONS": [
+	"Piochez #b",
+	" cartes supplémentaires chaque tour. NL Lorsque vous jouez une carte qui coûte plus que #b0 énergie, défaussez une carte."
+	]
+  },
+  "Snecko Heart": {
+	"NAME": "Cœur de geckobra",
+	"FLAVOR": "Le cœur préservé d'un Geckobra tombé au combat.",
+    "DESCRIPTIONS": [
+	"Commencez chaque combat #yConfus. NL La #yConfusion ne peut jamais augmenter le coût d'une carte de plus de #b1. NL La première carte que vous piochez chaque tour coûte toujours #b0."
+	]
+  },
+  "Pondfish Scales": {
+	"NAME": "Écailles du Poisson-Lune",
+	"FLAVOR": "Des écailles parfois détenues par ceux qui ont vaincu le capitaine Abe au combat.",
+    "DESCRIPTIONS": [
+	"Lorsque vous jouez une #yCompétence qui ne donne pas #yd'Armure, gagnez #b",
+	" #yd'Armure."
+	]
+  },
+  "Abe's Treasure": {
+	"NAME": "Trésor d'Abe",
+	"FLAVOR": "Maudit?",
+    "DESCRIPTIONS": [
+	"Gagnez [E] au début de votre tour. NL Commencez chaque combat avec #yNoyade. NL Lorsque vous le récupérez, ajoutez une copie de #rRevanche #rd'Abe dans votre deck."
+	]
+  },
+  "Transient Totem": {
+	"NAME": "Transient Totem",
+	"FLAVOR": "This wooden totem can only be percived by those who have passed through The Fading Forest.",
+    "DESCRIPTIONS": [
+	"Gain [E] at the start of your turn. NL Mimics the #rnegative effect of a random #yBoss #yRelic each combat. NL ",
+	"#yOut #yof #yCombat: You're not in combat right now, but when you are, the negative effect of this relic will display here.",
+	"#yCursed #yKey: #b",
+	" random #rCurses have been shuffled into your deck (1 for each chest opened since you got this relic).",
+	"#yEctoplasm: You will not be able to obtain gold from this fight.",
+	"#ySozu: You will not be able to obtain potions during or as a reward for this fight.",
+	"#yMark #yof #yPain: #b2 #yWounds have been shuffled into your deck.",
+	"#yVelvet #yChoker: You may not play more than #b6 cards each turn.",
+	"#yRunic #yDome: You cannot see enemy intents.",
+	"#yPhilosopher's #yStone: All enemies have been given #b+2 #yStrength.",
+	"#yBusted #yCrown: Card rewards from this fight will give you #b2 fewer options to choose from.",
+	"#ySnecko #yEye: You are #yConfused.",
+	"#yRunic #yPyramid: You draw #b1 less card each turn.",
+	"#yHoney #yJar: You may not skip rewards from this combat.",
+	"#ySnecko #yScales: When you play a card that costs more than #b0, discard a card.",
+	"#yPandora's #yBox: #b5 random cards have been shuffled into your deck.",
+	"#yBlack #yStar: No negative effect. Lucky!",
+	"#yEternal #yFeather: No negative effect. Lucky!",
+	"#yWhite #yBeast #yStatue: No negative effect. Lucky!",
+	"#yTiny #yHouse: No negative effect. Lucky!",
+	"#yCalling #yBell: #b3 random #rCurses have been shuffled into your deck.",
+	"#yKintsugi: #b2 random #rCurses have been shuffled into your deck.",
+	"#yBlack #yBlood: Burning Blood will not trigger at the end of this combat."
+	]
+  },
+  "King of Hearts": {
+	"NAME": "Roi de Cœur",
+	"FLAVOR": "Traditionnellement dessiné avec son épée traversant sa tête, il est parfois connu sous le nom de Roi Suicide.",
+	"DESCRIPTIONS": [
+	"Lorsque vous perdez des PV durant votre tour, gagnez le double de ceci en Armure."
+	]
+  },
+  "Ooze Armor": {
+	"NAME": "Armure gluante",
+	"FLAVOR": "Une armure ayant la flexibilité et la résistance d'un slime vivant.",
+    "DESCRIPTIONS": [
+	" NL Gagnez #b4 #yMalléable et #b-3 de #yRalenti au début du combat",
+	"Gagnez [R] au début de chaque tour.",
+	"Gagnez [G] au début de chaque tour.",
+	"Gagnez [E] au début de chaque tour."
+	]
+  },
+  "ChewingGum": {
+	"NAME": "Chewing Gum",
+	"FLAVOR": "Collant et sucré.",
+    "DESCRIPTIONS": [
+	"Gagnez [E] au début de chaque tour? NL Chaque fois que vous mélangez votre deck, ajoutez #b",
+	" #rEnglué dans votre pioche."
+	]
+  },
+  "Gremlin Food": {
+	"NAME": "Nourriture pour Diablotin",
+	"FLAVOR": "Certains diablotins sont connus pour voler de la nourriture des gens, mais en retour leur font une faveur pendant que l'aventurier dort.",
+    "DESCRIPTIONS": [
+	"Lorsque vous vous Reposez, #yAméliorez une carte aléatoire."
+	]
+  },
+  "BranchBurnRelic": {
+    "NAME": "Petit bois",
+    "FLAVOR": "Le feu brûle avec éclat.",
+    "DESCRIPTIONS": [
+      "Lorsque vous entrez dans un site de repos, commencez le prochain combat avec #b",
+	  " de #yRégénération."
+    ]
+  },
+  "Guide Book": {
+	"NAME": "Guide Tour-istique",
+	"FLAVOR": "Un livre détaillant les \"sites touristiques\" de la Tour. Il semble être écrit par le marchand.",
+    "DESCRIPTIONS": [
+	"Lorsque vous le récupérez, #yAméliorez ",
+	" cartes aléatoirement. NL Priorité aux cartes plus rares."
+	]
+  },
+  "Painkiller Herb": {
+	"NAME": "Fleur douce",
+	"FLAVOR": "L'odeur nauséabonde de cette fleur vous donne le vertige....",
+    "DESCRIPTIONS": [
+	" NL Vous possédez moins d'infos sur la carte.",
+	"Gagnez [E] au début de chaque tour.",
+	" NL #ySynergie - ",
+	" Chaque vois que vous montez un étage, soignez-vous de #b",
+	" PV."
+	]
+  },
+  "Honey Jar": {
+	"NAME": "Pot de Miel",
+	"FLAVOR": "Délicieux!",
+    "DESCRIPTIONS": [
+	"Vous ne pouvez pas passer les récompenses.",
+	"Pendant 1 Acte, vous ne pouvez pas passer les récompenses.",
+	"Piochez #b",
+	" ",
+	" carte supplémentaire chaque tour.",
+	" cartes supplémentaires chaque tour.",
+	"#yRetenez jusqu'à #b",
+	"Vosu avez un choix supplémentaire sur les écrans de récompense des cartes.",
+	"Lorsque vous le récupérez, gagnez #b",
+	" emplacement de potion supplémentaire.",
+	" emplacements de potion supplémentaires.",
+	"Increases Max Hand Size by #b",
+	"Gagnez ",
+	" au début de chaque tour."
+	]
+  },
+  "ReplayTheSpireMod:DimensionalGlitch": {
+	"NAME": "Glitch Dimensionnel",
+	"FLAVOR": "UPDATE BODY TEXT",
+    "DESCRIPTIONS": [
+	"Gagnez [E] au début de chaque tour. NL Tous les #ydégâts #yhors-attaques que vous infligez est #rréduit de #bmoitié, arrondi à #rl'inférieur. NL Tous les #ydégâts #yhors-attaques que vous recevez est #raugmenté de #bmoitié, arrondi au #rsupérieur. NL Tous les #ysoins #ydurant #yle #ycombat ques vous recevez est #rréduit de #bmoitié, arrondi au #gsupérieur."
+	]
+  },
+  "Replay:Grab Bag": {
+	"NAME": "Sac à Main",
+	"FLAVOR": "Des babioles et des gâteries. Que recevrez-vous?",
+    "DESCRIPTIONS": [
+	"Choisissez #b1 Relique #yd'Énergie de Boss et ",
+	"Perdez [E] au début de chaque tour. NL Lorsque vous le récupérez, choisissez #b2 Reliques #yd'Énergie de Boss et ",
+	"#b1 Relique de Boss qui n'est #ypas #yd'Énergie à obtenir.",
+	"#b2 Reliques de Boss qui ne sont #ypas #yd'Énergie à obtenir.",
+	" NL Tous les choix seront parmi #b3 reliques aléatoires, et ne peuvent pas être passées."
+	]
+  },
+  "Sizzling Blood": {
+	"NAME": "Sang crépitant",
+	"FLAVOR": "Il brûle avec du feu et du poison.",
+    "DESCRIPTIONS": [
+	"À la fin du combat soignez-vous de #b",
+	" PV. NL Gagnez #b",
+	" PV max lorsque vous le récupérez."
+	]
+  },
+  "Chameleon Ring": {
+	"NAME": "Anneau du chaméléon",
+	"FLAVOR": "Un anneau qui scintille de couleurs qui évoluent doucement.",
+    "DESCRIPTIONS": [
+	"Vos potions sont plus puissantes. NL Vous pouvez maintenant #yPréparer des potions aux Sites de Repos."
+	]
+  },
+  "Grinning Jar": {
+    "NAME": "Jarre souriante",
+	"FLAVOR": "\"Je joue la Jarre souriante, qui me permet de piochet 2 cartes de mon deck!\"",
+    "DESCRIPTIONS": [
+		"Obtenez une Compétence qui fait piocher 2 cartes. NL Obtenez une copie supplémentaire pour toutes #b",
+		" autres cartes ajoutées à votre deck.",
+		"La jarre est satisfaite"
+	]
+  },
+  "Durian": {
+    "NAME": "Durian",
+	"FLAVOR": "Sent terriblement mauvais, a un très bon goût.",
+    "DESCRIPTIONS": [
+		"Lorsque vous obtenez un #rDébuff, gagnez du #yBlindage égal à la somme reçue. NL Au début de votre tour, réduisez vos Débuffs basés sur les tours de #b2. NL Lorsque vous le récupérez, augmentez vos PV max de #b",
+		"Lorsque vous obtenez un #rDébuff, gagnez des #yPV #yTemporaires égaux à la somme reçue. NL Au début de votre tour, réduisez vos Débuffs basés sur les tours de #b2. NL Lorsque vous le récupérez, augmentez vos PV max de #b"
+	]
+  },
+  "Basket Of Snakes": {
+    "NAME": "Basket of Snakes",
+	"FLAVOR": "Don't worry; they won't bite. At least, they won't bite you.",
+    "DESCRIPTIONS": [
+		"Chaque fois que vous jouez #b",
+		" #yAttaques en un seul tour, obtenez #b",
+		" stack de #gVenin #gde #gSerpent. NL Lorsque vous infligez des dégâts #yd'Attaque non-bloqués, appliquez du #yPoison #yNécrotique égal à votre #gVenin #gde #gSerpent. NL Le #gVenin #gde #gSerpent diminue de #b1 chaque tour."
+	]
+  },
+  "Counterbalance": {
+    "NAME": "Contrebalance",
+	"FLAVOR": "Pour chaque forece, il y  une faiblesse.",
+    "DESCRIPTIONS": [
+		"Durant les combats de Boss et d'Élite, les gains de #yForce, #yd'Armure et de #ySoin de l'ennemi sont réduits de moitié."
+	]
+  },
+  "Golden Egg": {
+    "NAME": "Œuf doré",
+	"FLAVOR": "Non approuvé par la FDA.",
+    "DESCRIPTIONS": [
+		"Lorsque vous ajoutez une carte #yRare dans votre deck, elle est automatiquement #yAméliorée. NL Lorsque vous achetez une carte du Marchand, elle est automatiquement #yAméliorée. "
+	]
+  },
+  "Quantum Egg": {
+    "NAME": "Œuf quantum",
+	"FLAVOR": "A le goût de [SUPPRIMÉ].",
+    "DESCRIPTIONS": [
+		"Lorsque vous créez une carte durant le combat, celle-ci est automatiquement #yAméliorée."
+	]
+  },
+  "Blue Doll": {
+    "NAME": "Sac d'étiquettes",
+	"FLAVOR": "Une collection colorée.",
+    "DESCRIPTIONS": [
+		"Les boutiques ont maintenant 3 types d'étiquettes de vente. NL Ces étiquettes peuvent apparaître sur les cartes Incolores. NL Les cartes en vente sont moins chères."
+	]
+  },
+  "Byrd Skull": {
+    "NAME": "Crâne d'Oizo",
+	"FLAVOR": "Le crâne d'un Oizo déchu.",
+    "DESCRIPTIONS": [
+		"Vos cartes #yInnées vous #yRemboursent de #b1 et vous font piocher #b1 carte."
+	]
+  },
+  "Vampiric Spirits": {
+    "NAME": "Esprits vampiriques",
+	"FLAVOR": "Un penchant pour les ombres, une soif de sang; des traits de caractère que l'on retrouve aussi bien chez les voleurs que chez les vampires.",
+    "DESCRIPTIONS": [
+		"Durant le premier tour du combat, #b",
+		"% de tous les dégâts d'Attaque non-bloqués que vous infligez vous sont renvoyés en soin."
+	]
+  },
+  "ReplayTheSpireMod:GhostHeart": {
+    "NAME": "Cœur de fantôme",
+	"FLAVOR": "La gratitude persistante d'un certain esprit.",
+    "DESCRIPTIONS": [
+		"Une fois par combat, lorsque vous mourrez, ressucitez avec du #yBlindage égal à #b10% de vos PV max et #b",
+		" #yd'Intangible. NL Si vous n'avez qu'un PV au début du combat, se déclenche immédiatement."
+	]
+  },
+  "ReplayTheSpireMod:Lightbulb": {
+	"NAME": "Ampoule",
+	"FLAVOR": "Depuis combien de temps n'avez-vous pas vu le soleil ?",
+    "DESCRIPTIONS": [
+	"Si vous avez des [E] non-dépensés à la fin de votre tour, piochez autant de cartes que ce nombre au début de votre prochain tour."
+	]
+  },
+  "ReplayTheSpireMod:CursedCoin": {
+	"NAME": "Pièce maudite",
+	"FLAVOR": "Une pièce maudite qui apporte le malheur à son propriétaire. Le seul moyen de s'en débarasser est de la vendre.",
+    "DESCRIPTIONS": [
+	"Lorsque vous la récupérez, obtenez #b",
+	" d'Or et une #rMalédiction aléatoire."
+	]
+  },
+  "Replay:WaspNest": {
+	"NAME": "Nid de guêpes",
+	"FLAVOR": "Comme un nid d'abeilles, mais plus diabolique.",
+    "DESCRIPTIONS": [
+	"Chaque fois que vous perdez des PV pendant le combat, gagnez #b",
+	" #yd'Épines."
+	]
+  },
+  "Replay:Accelerometer": {
+	"NAME": "Accéléromètre",
+	"FLAVOR": "Temps après temps.",
+    "DESCRIPTIONS": [
+	" [#2aecd7]Utilisable [#2aecd7]une [#2aecd7]fois [#2aecd7]par [#2aecd7]combat.[] NL Diminuez vos Débuffs basés sur les tours de #b1. NL Augmentez tous les Débuffs basés sur les tours de l'ennemi de #b1."
+	]
+  },
+  "Replay:Winged Headress": {
+	"NAME": "Winged Headdress",
+	"FLAVOR": "Poyo!",
+    "DESCRIPTIONS": [
+	" [#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]turn.[] NL Replenish #b1 use of all #yWither cards in your hand, and #yExhaust them. NL [#2aecd7]Cannot [#2aecd7]be [#2aecd7]used [#2aecd7]once [#2aecd7]your [#2aecd7]deck [#2aecd7]has [#2aecd7]been [#2aecd7]shuffled [#2aecd7]on [#2aecd7]a [#2aecd7]previous [#2aecd7]turn [#2aecd7]this [#2aecd7]combat. NL [#2aecd7](Can [#2aecd7]be [#2aecd7]used [#2aecd7]the [#2aecd7]turn [#2aecd7]it [#2aecd7]is [#2aecd7]first [#2aecd7]shuffled, [#2aecd7]but [#2aecd7]not [#2aecd7]the [#2aecd7]turns [#2aecd7]after)"
+	]
+  },
+  "ReplayTheSpireMod:Onyx Gauntlets": {
+	"NAME": "Roue d'hamster",
+	"FLAVOR": "Continuez à courir.",
+    "DESCRIPTIONS": [
+	"Gagnez [E] chaque fois que vous piochez une carte. NL Piocher une carte augmente son coût de #b1 pour le tour. NL Au début du combat, ajoutez une #rMalédiction aléatoire dans votre pioche pour chaque carte coûtant X dans votre deck."
+	]
+  },
+  "ReplayTheSpireMod:Ninjato": {
+	"NAME": "Ninjato",
+	"FLAVOR": "Stab stab stab",
+    "DESCRIPTIONS": [
+		"La troisième #yAttaque que vous jouez chaque tour vous rembourse de #b",
+		"Chaque fois que vous jouez #b",
+		" #yAttaques dans un seul tour, piochez #b",
+		" cartes."
+	]
+  },
+  "ReplayTheSpireMod:EnergyBall": {
+	"NAME": "Balle d'Énergie",
+	"FLAVOR": "Smashing!",
+    "DESCRIPTIONS": [
+		" [#2aecd7]Utilisable [#2aecd7]une [#2aecd7]fois [#2aecd7]par [#2aecd7]combat.[] NL Consomme les [E] non dépensées à la fin de votre toou pour gagner des charges, jusqu'à #b",
+		" maximum. NL L'utiliser dépense #b",
+		" charges pour jouer le Pouvoir de la Forme de votre personnage."
+	]
+  },
+  "ReplayTheSpireMod:TigerMarble": {
+	"NAME": "Bille tigrée",
+	"FLAVOR": "L'œil du Tigre",
+    "DESCRIPTIONS": [
+		"Au début de chaque combat, ajoutez une carte aléatoire qui #ys'Épuise dans votre main. NL Elle coûte #b0 jusqu'à ce qu'elle soit jouée."
+	]
+  },
+  "ReplayTheSpireMod:asdfghhj": {
+	"NAME": "sdadgkfgjrtdf",
+	"FLAVOR": "---",
+    "DESCRIPTIONS": [
+		"On pickup, choose a #yPower that costs #b1 or less. NL You start combat with the chosen #yPower."
+	]
+  },
+  "ReplayTheSpireMod:Spearhead": {
+	"NAME": "Fer de lance",
+	"FLAVOR": "A qui l'épée et le cœur ne suffisent point, Lance et cuirasse ne lui suffiront pas",
+    "DESCRIPTIONS": [
+		"À la fin de votre tour, tous les ennemis perdent des PV égaux à leur #yVulnérabilité."
+	]
+  },
+  "ReplayTheSpireMod:TinkerService": {
+	"NAME": "Tinker Service",
+	"FLAVOR": "The merchant is a strange man, but one of many skills.",
+    "DESCRIPTIONS": [
+		"#rDowngrade a card. NL #yUpgrade a card."
+	]
+  },
+  "ReplayTheSpireMod:SealedPack": {
+	"NAME": "Paquet scellé",
+	"FLAVOR": "Un booster standard de 5 cartes. Peut-être aurez-vous de la chance?",
+    "DESCRIPTIONS": [
+		"Choisissez une carte #yBasique à obtenir. NL Choisissez une carte #yRare à obtenir. NL Choisissez une carte #yIncolore à obtenir. NL Choisissez une carte #yNoire à obtenir. NL Choisissez une #rMalédiction à obtenir. NL La #rMalédiction ne peut être passée, et devient #yDestinée.",
+		"Voyons ce qu'il y a à l'intérieur...",
+		"Prenez votre poison"
+	]
+  },
+  "ReplayTheSpireMod:ShopPack": {
+	"NAME": "Paquet de vente",
+	"FLAVOR": "Un booster de 3 cartes bon marché. Probablement truqué par le marchand.",
+    "DESCRIPTIONS": [
+		"Choisissez #b",
+		" cartes #yIncolores à obtenir. NL Garanti d'avoir au moins 1 carte #yRare!",
+		" NL Chance d'obtenir une #ySpécialité #ydu #yMarché super rare!",
+		"Voyons ce qu'il y a à l'intérieur..."
+	]
+  },
+  "Another Sword": {
+    "NAME": "Autre épée",
+	"FLAVOR": "Une seconde épée. Vous en avez deux maintenant.",
+    "DESCRIPTIONS": [
+		"La première carte contenant \"Frappe\" que vous jouez chaque tour est jouée deux fois. NL Demande #b1 tour supplémentaire à recharger pour chaque [R] dépensée sur la carte."
+	]
+  },
+  "Kintsugi": {
+    "NAME": "Kintsugi",
+	"FLAVOR": "Ce qui est cassé peut être amélioré.",
+    "DESCRIPTIONS": [
+		"Retirez #b",
+		" cartes de votre deck. NL Choisissez #b",
+		" #rMalédictions à obtenir. NL (Tenter de supprimer les Malédictions avec le premier effet les #yTransforme à la place).",
+		"Choisissez des cartes à retirer",
+		"Choisissez des Malédictions à obtenir"
+	]
+  },
+  "ReplayTheSpireMod:Blightstone": {
+    "NAME": "Blightstone",
+	"FLAVOR": "Ew",
+    "DESCRIPTIONS": [
+		"Gain [E] at the start of each turn. NL On pick up, choose a #rBlight to obtain."
+	]
+  },
+  "ReplayTheSpireMod:Blightapple": {
+    "NAME": "Blighted Apple",
+	"FLAVOR": "Ew",
+    "DESCRIPTIONS": [
+		"Gain [E] at the start of each turn. NL On pick up, lose #b",
+		" Max HP."
+	]
+  },
+  "BargainBundle": {
+    "NAME": "Offre groupée",
+	"FLAVOR": "Quelle affaire!",
+    "DESCRIPTIONS": [
+		"Lorsque vous achetez cette relique, le coût des cartes, des potions et du service de retrait de cartes dans la même boutique est réduit de #b",
+		"Lorsque vous achetez cette relique, le coût des cartes, des reliques, des potions et du service de retrait de cartes dans la même boutique est réduit de #b",
+		" Or."
+	]
+  },
+  "Replay:Bottled Flurry": {
+    "NAME": "Rafale embouteillée",
+	"FLAVOR": "C'est comme une boule à neige!",
+    "DESCRIPTIONS": [
+		"Lorsque vous la récupérez, choisissez une carte. NL Vous #yRetenez cette carte à la fin de votre tour. NL Si la carte devait #ys'Épuiser parce qu'elle est #yÉthérée, elle est défaussée à la place..",
+		"Choisissez une carte à Retenir",
+		"Vous #yRetiendrez ",
+		" à la fin du tour (ou si elle est #yÉthérée, se défaussera à la place)."
+	]
+  },
+  "Replay:Bottled Steam": {
+    "NAME": "Geyser embouteillé",
+	"FLAVOR": "FWOOOOOOSH!",
+    "DESCRIPTIONS": [
+		"Lorsque vous le récupérez, choisissez une carte. NL Chaque fois que vous mélangez votre jeu, cette carte est placée sur le dessus.",
+		"Choisissez une carte à mettre au dessus.",
+		"Lorsque vous mélangez votre deck, ",
+		" sera placée au-dessus."
+	]
+  },
+  "Replay:Bottled Whirlpool": {
+    "NAME": "Bottled Whirlpool",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"On pick up, choose a card. NL Each time you draw that card, it is played immediately and you draw another card. NL The cost of the card is still paid; if you have less [E] than the cost, all your [E] is spent.",
+		"Choose card to auto-play",
+		"Each time you draw ",
+		" it is played immediately, and you draw another card."
+	]
+  },
+  "Replay:Bottled Firefly": {
+    "NAME": "Bottled Firefly",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"On pick up, choose a card. NL It gains #yRefund #b1.",
+		"Choose card to give Refund",
+		"",
+		" has #yRefund #b1."
+	]
+  },
+  "Replay:Bottled Eggs": {
+    "NAME": "Œufs embouteillés",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Lorsque vous les récupérez, choisissez une carte. NL Toutes les copies de cette carte que vous avez sont #yAméliorées. NL Toutes les futures copies de cette carte que vous obtiendrez seront #yAméliorées.",
+		"Choisissez une carte à Améliorer",
+		"Toutes les copies de ",
+		" seront #yAméliorées."
+	]
+  },
+  "Replay:Bottled Snecko": {
+    "NAME": "Geko embouteillé",
+	"FLAVOR": "Malgré la taille des adultes, les bébés gekos sont assez petits pour tenir dans votre poche - et ils sont mignons!",
+    "DESCRIPTIONS": [
+		"Lorsque vous le récupérez, vous pouvez choisir une carte. NL Elle gagne #yGeko. NL Si vous ne choisissez #rpas une carte, vous pourrez en choisir une plus tard aux #ysites #yde #yrepos en tant #gqu'action #ggratuite."
+	]
+  },
+  "Replay:Multitool": {
+    "NAME": "Couteau suisse",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Vous avez #b2 options supplémentaires aux sites de repos, choisies aléatoirement."
+	]
+  },
+  "Replay:Pickaxe": {
+    "NAME": "Pickaxe",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"You can now #yMine at rest sites."
+	]
+  },
+  "Replay:PocketPolymizer": {
+    "NAME": "Pocket Polymer",
+	"FLAVOR": "The power of SCIENCE! Probably.",
+    "DESCRIPTIONS": [
+		"You can now #yTransform a card at rest sites as a #gfree #gaction."
+	]
+  },
+  "minegem_1": {
+    "NAME": "Ruby",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Increases Max HP by #b",
+		". NL #ySell #yValue: #b"
+	]
+  },
+  "minegem_2": {
+    "NAME": "Emerald",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Heal #b",
+		" HP at the end of combat. NL #ySell #yValue: #b"
+	]
+  },
+  "minegem_3": {
+    "NAME": "Saphire",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Gain #b",
+		" #yShieling at the start of combat. NL #ySell #yValue: #b"
+	]
+  },
+  "minegem_4": {
+    "NAME": "Cursed Gem",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Add a #rCurse to your discard pile at the start of combat. NL #ySell #yValue: #b"
+	]
+  },
+  "minegem_5": {
+    "NAME": "Diamond",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"Gain #b",
+		" #yBlock at the end of your turn. NL #ySell #yValue: #b"
+	]
+  },
+  "Solar Panel": {
+    "NAME": "Solar Panel",
+	"FLAVOR": "Clean, renewable power.",
+    "DESCRIPTIONS": [
+		"At the end of combat, heal #b",
+		" HP for each of your active Lightning orbs."
+	]
+  },
+  "Carrot": {
+    "NAME": "Carrot",
+	"FLAVOR": "Filled with power.",
+    "DESCRIPTIONS": [
+		"You gain #b3 #yFocus at the start of combat. You lose #b1 #yFocus over the next #b3 turns."
+	]
+  },
+  "Backup Battery": {
+    "NAME": "Backup Battery",
+	"FLAVOR": "Emergency rations for robots.",
+    "DESCRIPTIONS": [
+		"At the end of each round, conserve up to #b",
+		" energy. NL Increase this effect by #b1 until end of combat each time you #yEvoke #yPlasma (up to #b",
+		" max)."
+	]
+  },
+  "Geode": {
+    "NAME": "Geode",
+	"FLAVOR": "Brisez-la!",
+    "DESCRIPTIONS": [
+		"La première fois que vous perdez des PV à chaque combat, déclenchez l'effet passif de tous vos orbes canalisés et #yCanalisez #b1 #yCristal."
+	]
+  },
+  "Raider's Mask": {
+    "NAME": "Masque du Raider",
+	"FLAVOR": "Ne laissez aucun survivant.",
+    "DESCRIPTIONS": [
+		"À la fin de votre tour, si un orbe #ySombre a plus de dégâts stockés que les PV de l'ennemi ayant la plus faible santé, il est #yInvoqué."
+	]
+  },
+  "Replay:Frozen Program": {
+    "NAME": "Programme gelé",
+	"FLAVOR": "FROST.exe a cessé de fonctionner.",
+    "DESCRIPTIONS": [
+		"Chaque fois que #yInvoquez un Orbe #yGlaciaire, gagnez #b1 de #yRéflection."
+	]
+  },
+  "Replay:Sigil": {
+    "NAME": "Sigil of the Unseen Hand",
+	"FLAVOR": "...",
+    "DESCRIPTIONS": [
+		"Gain [E] at the start of your turn. NL During combat, some of your cards will be obscured."
+	]
+  },
+  "Replay:Towering Pillar of Hats": {
+    "NAME": "Tour de Chapeaux",
+	"FLAVOR": "\"Ne ternissez pas la majesté de ma TOUR de CHAPEAUX!\"",
+    "DESCRIPTIONS": [
+		"La taille maximale de votre main est augmentée de #b",
+		". NL À la fin de votre tour, #yRetenez les cartes le plus à droite de votre main. #yRetient #b1 carte pour cahque groupe de #b",
+		" dans votre main.",
+		" NL #ySynergie - ",
+		"#ySlimy #yHat NL NL La taille maximale de votre main est encore augmentée de #b1.",
+		"#yTop #yHat NL NL Si vous terminez votre tour avec #b10 cartes ou plus en main, piochez #b1 carte supplémentaire au prochain tour."
+	]
+  },
+  "Replay:Ringing Soul": {
+    "NAME": "Âme résonnante",
+	"FLAVOR": "Comme c'est désagréable!",
+    "DESCRIPTIONS": [
+		"Une fois par salle, lorsque vous ajoutez une carte à votre deck, gagnez #b",
+		" PV max."
+	]
+  },
+  "Replay:Gravy": {
+    "NAME": "Gravy",
+	"FLAVOR": "Goes great with large, flightless byrds.",
+    "DESCRIPTIONS": [
+		"On pick up, choose up to #b",
+		" cards in your deck. NL They gain #yGrave."
+	]
+  },
+  "Replay:Lucky Slots": {
+    "NAME": "Lucky Slots",
+	"FLAVOR": "Spin to win!",
+    "DESCRIPTIONS": [
+		"Whenever a fighter loses exactly #b7 HP, gain #yCritical. NL If this triggers #b",
+		" times in one combat, gain #b",
+		" gold."
+	]
+  },
+  "Replay:Wanted Poster": {
+    "NAME": "Poster Recherché",
+	"FLAVOR": "L'or et le sang : pesés sur la même balance.",
+    "DESCRIPTIONS": [
+		"Gagnez [E] au début de chaque tour. NL Pour chaque #b",
+		" d'or en-dessous de #b",
+		" que vous avez, les ennemis commencent avec un buff aléatoire. NL Gagnez #b",
+		" d'Or lorsque vous le récupérez.",
+		" NL Lorsque vous avez plus de #b",
+		" d'Or, divers #rvoleurs et #rchasseurs #rde #rprimes pourraient s'en prendre à vo."
+	]
+  },
+  "Replay:Byrd Feeder": {
+    "NAME": "Byrd Feeder",
+	"FLAVOR": "Feeling... peckish?",
+    "DESCRIPTIONS": [
+		"In combat, healing beyond your Max HP grants #yTemporary #yHP."
+	]
+  },
+  "Replay:Rubber Ducky": {
+    "NAME": "Canard en plastique",
+	"FLAVOR": "Lorsque vous le pressez, ça fait du bruit.",
+    "DESCRIPTIONS": [
+		"Chaque fois que vous jouez un #yPouvoir, gagnez du #yBlindage égal à #b",
+		" fois son coût en [E] ."
+	]
+  },
+  "Replay:Wax Seal": {
+    "NAME": "Sceau en cire",
+	"FLAVOR": "Le genre utilisé pour fermer les enveloppes, pas la créature marine.",
+    "DESCRIPTIONS": [
+		"[#2aecd7]Clic [#2aecd7]droit [#2aecd7]dans [#2aecd7]un [#2aecd7]magasin [#2aecd7]pour [#2aecd7]l'activer:[]",
+		" NL Empruntez #b",
+		" d'Or. Ajoutez une #rMalédiction dans votre deck jusqu'à ce que vous la payez en retour.",
+		"Les #yReliques dans les magasins coûtent #b",
+		"% de moins. NL "
+	]
+  },
+  "Replay:Drink Me": {
+    "NAME": "Breuvage rétrécissant",
+	"FLAVOR": "L'étiquette lit \"Bois-moi.\"",
+    "DESCRIPTIONS": [
+		"Perdez [E] et piochez #b",
+		" cartes au début de votre tour. NL Commencez chaque combat avec #b",
+		" de #yDextérité. NL Si vous jouez au moins #b",
+		" cartes en un tour, gagnez [E] au début de votre prochain tour. NL Lorsque vous le récupérez, retirez #b",
+		" cartes de votre deck et perdez #b",
+		"% de vos PV Max. NL #ySynergie - #yMaisonette",
+		"Choisissez des cartes à retirer.",
+		"Si vous avez #yMaisonette, commencez chaque combat avec #b15 de #yBlindage."
+	]
+  },
+  "Replay:Bronze Core": {
+    "NAME": "Noyau de bronze",
+	"FLAVOR": "Même maintenant, il agit pour défendre la Tour.",
+    "DESCRIPTIONS": [
+		"Gagnez [E] au début de votre tour. NL Chaque combat inclut un Orbe de Bronze larbin qui ne va pas attaquer, mais mettra des cartes en stase jusqu'à ce qu'il soit tué."
+	]
+  },
+  "Replay:Cursed D8": {
+    "NAME": "D8 maudit",
+	"FLAVOR": "Lancez le dé, rencontrez votre destinée.",
+    "DESCRIPTIONS": [
+		"Gagnez [E] et piochez une carte au début de votre tour draw. NL Mélangez un #yÉcho d'une #rMalédiction dans votre pioche à la fin de votre tour."
+	]
+  },
+  "Replay:Blank Codex": {
+    "NAME": "Blank Codex",
+	"FLAVOR": "Full of empty. Full of evil.",
+    "DESCRIPTIONS": [
+		"At the start of combat and each time you shuffle your deck, you may choose 1 of 3 random #yBlack cards to add to your discard pile. If you do, also add a random #rCurse to your discard pile."
+	]
+  },
+  "Replay:Broken Controller": {
+    "NAME": "Broken Controller",
+	"FLAVOR": "A bad craftsman blames his tools. You swear this one is actually broken though.",
+    "DESCRIPTIONS": [
+		"When you die in combat, revive with #b",
+		" HP. NL All active #yPowers are lost on revival. NL Half your cards are #yExhausted at random on revival. NL Can revive you up to #b",
+		" times per combat."
+	]
+  },
+  "Replay:Mystery Machine": {
+    "NAME": "Machine mystère",
+	"FLAVOR": "Pour ceux qui aiment vagabonder.",
+    "DESCRIPTIONS": [
+		"Gagne #b1 charge chaque fois que vous entrez dans une salle #y? . NL Perd #b1 charge chaque fois que vous passez entre 2 pièces qui ne sont #rpas #r? . NL Commencez le combat avec #b1 de #yForce ou de #yDextérité aléatoirement pour chaque vharge qu'a cette relique."
+	]
+  },
+  "Replay:Ancient Bell": {
+    "NAME": "Cloche antique",
+	"FLAVOR": "Une relique longtemps oubliée.",
+    "DESCRIPTIONS": [
+		"Lorsque vous la récupérez, choisissez #b3 #yReliques et #b3 #rMalédictions à obtenir. NL Tous les choix sont entre 3 options et ne peuvent pas être passés."
+	]
+  },
+  "Replay:Mythril Seive": {
+    "NAME": "Mythril Seive",
+	"FLAVOR": "Who in the world uses legendary metals for cooking implements?",
+    "DESCRIPTIONS": [
+		"When you use a potion, gain #b",
+		" #yBlock. NL When you #rdiscard a potion during combat, gain #b",
+		" #yTemporary #yHP. NL When you #rdiscard a potion out of combat, gain #b",
+		" #yGold and heal #b",
+		" health."
+	]
+  },
+  "Replay:WIPTBD": {
+    "NAME": "",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"The first #b",
+		" times you play an #yExhaustive card each combat, its #yExhaustive counter does not go down."
+	]
+  },
+  "Replay:WIPTBD2": {
+    "NAME": "",
+	"FLAVOR": "",
+    "DESCRIPTIONS": [
+		"At the end of combat, heal #b",
+		" HP for each \"right click to activate\" relic you did not use."
+	]
+  },
+  "Replay:Fungal Core": {
+    "NAME": "Fungal Core",
+	"FLAVOR": "Composed of living fungi that scatter spores around.",
+    "DESCRIPTIONS": [
+		"Gain [E] at the start of each turn. NL At the start of combat, #b",
+		" random #rSpores are shuffled into your draw pile.",
+		"Spores",
+		"Spores are #rStatus cards that #bcost #b0 to play and #bdraw #b1 #bcard, but have some minor #rnegative effect."
+	]
+  },
+  "Replay:Kaleidoscope": {
+    "NAME": "Kaléidoscope",
+	"FLAVOR": "Colore, tord, et reflète la lumière.",
+    "DESCRIPTIONS": [
+		"Lorsque vous jouez #b3 cartes qui donnent de #yl'Armure en un seul tour, gagnez #b1 de #yRéflection."
+	]
+  },
+  "Replay:Purple Gloves": {
+    "NAME": "Gants violets",
+	"FLAVOR": "Les mains sont toujours améliorées par des gants raffinés!",
+    "DESCRIPTIONS": [
+		"La taille maximale de votre main est augmentée de #b",
+		". NL Lorsque vous quittez votre #yCalme, piochez #b",
+		". NL Lorsque vous quittez votre #yDivinité, piochez #b",
+		" carte",
+		" cartes"
+	]
+  },
+  "Replay:Ace of Pentacles": {
+    "NAME": "Ace of Pentacles",
+	"FLAVOR": ".",
+    "DESCRIPTIONS": [
+		"Whenever you add a card to your deck, change its cost to #b1."
+	]
+  },
+  "Replay:Friendship Ring": {
+    "NAME": "Friendship Ring",
+	"FLAVOR": "A token of friendship from long ago.",
+    "DESCRIPTIONS": [
+		"On pickup, choose 1 of #b",
+		" random bosses. NL At the start of combat, add one copy of each of their #yexpansioncontent:Boss cards to your draw pile. These gain #rEthereal and #ysneckomod:Snekproof."
+	]
+  },
+  "Ring of Fury": {
+	"NAME": "Anneau de Fureur",
+	"FLAVOR": "Un anneau maudit qui augmente à la fois les sens et le non-sens.",
+	"DESCRIPTIONS": [
+	"Au début du combat gagnez #b",
+	" de #yForce et perdez #b",
+	" de #yDextérité."
+	]
+  },
+  "Ring of Peace": {
+	"NAME": "Anneau de Paix",
+	"FLAVOR": "La paix ne dure jamais longtemps dans la Tour.",
+	"DESCRIPTIONS": [
+	"Au début du combat appliquez #b",
+	" de #yFaiblesse à TOUS les combattants et gagnez #b",
+	" de #yTampon"
+	]
+  },
+  "Ring of Panic": {
+	"NAME": "Anneau de Panique",
+	"FLAVOR": "La peur sert son but.",
+	"DESCRIPTIONS": [
+	"Au début du combat vous devenez #yConfus pendant #b",
+	" tours. NL Gagnez [E] [E] au début des tours 1 et 2. NL Gagnez [E] au début de votre troisième tour."
+	]
+  },
+  "Ring of Hypnosis": {
+	"NAME": "Anneau d'Hypnose",
+	"FLAVOR": "Les couleurs étranges et les lumières réfléchies attirent l'esprit sur un chemin errant.",
+	"DESCRIPTIONS": [
+	"Tous les ennemis commencent avec #b",
+	" de #yConfusion."
+	]
+  },
+  "Ring of Searing": {
+	"NAME": "Anneau de Brûlure",
+	"FLAVOR": "Un anneau maudit qui réduit en cendres tout ce qui l'entoure.",
+	"DESCRIPTIONS": [
+	"Au début de votre tour, TOUS les ennemis au-dessus de #b",
+	"% de leurs PV max perdent #b",
+	"% de leurs PV actuels. NL À la fin de chaque tour, si vous êtes au-dessus de #b",
+	"% de vos PV max, perdez #b",
+	" PV."
+	]
+  },
+  "Ring of Burning": {
+	"NAME": "Anneau d'Épuisement",
+	"FLAVOR": "Trop de culture épuise un champ fertile.",
+	"DESCRIPTIONS": [
+	"Lorsque vous êtes à court d'énergie, le coût des cartes en main est réduit à #b0 pour le tour. NL Les cartes jouées à court d'énergie ont #b",
+	"% de chance #yd'Épuiser. NL Chaque fois que vous dépensez de l'énergie, vous subissez autant de dégâts."
+	]
+  },
+  "Ring of Fangs": {
+	"NAME": "Anneau de Crocs",
+	"FLAVOR": "Les crocs s'enfoncent dans le porteur, rendant difficile le maniement des armes.",
+	"DESCRIPTIONS": [
+	"Au début du combat perdez #b",
+	" de #yForce. NL Lorsque vous infligez des dégâts d'attaque non-bloqués, appliquez #b1 de #yPoison."
+	]
+  },
+  "Ring of Shattering": {
+	"NAME": "Anneau de Brisure",
+	"FLAVOR": "J'ai déchiré des pages et des pages - Dans le miroir j'ai brisé mon visage.",
+	"DESCRIPTIONS": [
+	"Au début du combat vous gagnez #b",
+	" de #yConcentration et perdez #b",
+	" emplacements d'Orbe."
+	]
+  },
+  "Ring of Misfortune": {
+	"NAME": "Anneau de Malheur",
+	"FLAVOR": "Un accessoire las.",
+	"DESCRIPTIONS": [
+	"At the start of combat add a random #rCurse to your discard pile. NL Each time you draw a #rCurse, gain [E] and #b",
+	" #yTemporary #yHP. NL Each time you draw a #rStatus, gain #b",
+	" #yBlock."
+	]
+  },
+  "Ring of Greed": {
+	"NAME": "Anneau de la Cupidité",
+	"FLAVOR": "Une grande richesse s'accompagne souvent d'un grand désespoir.",
+	"DESCRIPTIONS": [
+	"Lorsque vous le récupérez, obtenez #b",
+	" d'Or et #b",
+	" reliques aléatoires avec des effets liés à l'or ou les magasins. NL Pour tous les #b",
+	" d'Or que vous obtenez, ajoutez #b1 #rMalédiction aléatoire dans votre deck."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Addiction": {
+	"NAME": "Anneau d'Addiction",
+	"FLAVOR": "Le bien dans l'abondance engendre le mal.",
+	"DESCRIPTIONS": [
+	"Lorsque vous le récupérez, obtenez #b",
+	" potions et #b",
+	" reliques aléatoires avec des effets liés aux potions. NL Chaque fois que vous passez à travers #b",
+	" salles sans utiliser de potion, perdez #b",
+	" PV max."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Comfort": {
+	"NAME": "Ring of Comfort",
+	"FLAVOR": "Comfort protects. Comfort shelters. Comfort blinds.",
+	"DESCRIPTIONS": [
+	"All healing you receive is increased by #b",
+	"%. NL When at less than #b",
+	"% Max HP, you must #yRest at rest sites."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Crippling": {
+	"NAME": "Ring of Crippling",
+	"FLAVOR": "\"Do unto others...\"",
+	"DESCRIPTIONS": [
+	" [#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]combat.[] NL ALL fighters gain #b1 #yWeak, #b2 #yLanguid, and #b3 #yVulnerable."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Challenge": {
+	"NAME": "Ring of Challenge",
+	"FLAVOR": "There is a fine line between bravery and stupidity.",
+	"DESCRIPTIONS": [
+	"[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]the [#2aecd7]first [#2aecd7]turn [#2aecd7]of [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] [#2aecd7]Usable [#2aecd7]up [#2aecd7]to [#2aecd7]",
+	" [#2aecd7]times [#2aecd7]per [#2aecd7]combat.[] NL Apply random buffs to all enemies. NL Gain #b~",
+	" gold. NL Every #b",
+	" times you use this relic, you will obtain an random relic at the end of the fight."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Exchange": {
+	"NAME": "Ring of Exchange",
+	"FLAVOR": "You never know the value of what you have until it is lost.",
+	"DESCRIPTIONS": [
+	"Shop relics can sometimes appear in boss chests. NL Boss relics can sometimes appear in shops."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Collecting": {
+	"NAME": "Ring of Collecting",
+	"FLAVOR": "A full set is greater than the sum of its parts, yet not nessearily worth the cost.",
+	"DESCRIPTIONS": [
+	"Non-boss chests contain a random ring relic in addition to thier normal contents. NL Shops will sometimes sell ring relics."
+	]
+  },
+  "ReplayTheSpireMod:Ring of Sloth": {
+	"NAME": "Ring of Sloth",
+	"FLAVOR": "Energy saved is too often energy wasted.",
+	"DESCRIPTIONS": [
+	"Start combat with #b",
+	" #rSlothful. NL Each time you shuffle your deck, gain [E] that turn and the next, and gain #b1 #rSlothful. NL All #yPowers in your deck have #yRefund #b"
+	]
+  },
+  "Iron Core": {
+    "NAME": "Noyau de fer",
+	"FLAVOR": "Propulsé par des flammes et une rage incessantes.",
+    "DESCRIPTIONS": [
+		"Au début du combat, Canalisez #b1 #yInfernal.",
+		"Au début du combat, gagnez #b2 emplacements d'orbe.",
+		" NL Certaines cartes #rRouges peuvent apparaître dans les futurs écrans de récompense des cartes.",
+		" NL Certaines cartes #bBleues peuvent apparaître dans les futurs écrans de récompense des cartes.",
+		"Au début du combat, gagnez #b2 emplacements d'orbe si vous en avez aucun, ou #yCanalisez #b1 #yInfernal sinon. NL Certaines cartes #rRouges et #bBleues peuvent apparaître dans les futurs écrans de récompense des cartes."
+	]
+  },
+  "Replay:M_SmolderingBlood": {
+    "NAME": "Sang bouillant",
+	"FLAVOR": "Le feu s'est calmé.",
+    "DESCRIPTIONS": [
+		" [#2aecd7]Utilisable [#2aecd7]une [#2aecd7]fois [#2aecd7]par [#2aecd7]combat.[] NL Entrez en #yCalme.",
+		" NL Certaines cartes #rRouges et #pViolettes peuvent apparaître dans les futurs écrans de récompense des cartes.",
+		" "
+	]
+  },
+  "Replay:M_StaffOfTheSnake": {
+    "NAME": "Bâton du serpent",
+	"FLAVOR": "ssssssssssssssssssssssstaff",
+    "DESCRIPTIONS": [
+		"Au début de chaque combat, ajoutez une #yPersicacité dans votre mainù.",
+		" NL Certaines cartes #gVertes et #pViolettes peuvent apparaître dans les futurs écrans de récompense des cartes.",
+		" "
+	]
+  },
+  "m_BlackCat":{
+		"NAME": "Curse Cat",
+		"FLAVOUR": "Woem",
+		"DESCRIPTIONS":["Shuffle a random Curse in your deck at the beginning of each fight."]
+	},
+	"m_Cross Pendant": {
+		"NAME": "Cross Pendant",
+		"FLAVOR": "A simple cross shaped pendant. Praying on it is said to bring good fortunes.",
+		"DESCRIPTIONS": [
+			"At the start of each combat, choose a card out of three and add it to your hand. It has Exhaust."
+		]
+	},
+	"m_ChemicalBlood": {
+		"NAME": "Chemical Blood",
+		"FLAVOR": "The excruciating results of mad experimentation.",
+		"DESCRIPTIONS": [
+			"Whenever you take damage during your turn, gain #b1 #yFuel. NL At the end of combat, gain HP equal to your total fuel, up to #b",
+			" max. NL Certain #rRed cards can now be obtained."
+		]
+	},
+	"m_ArcaneBlood": {
+		"NAME": "Arcane Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the end of combat, gain #b",
+			" HP for each different debuff you have. NL Certain #rRed cards can now be obtained."
+		]
+	},
+	"m_ScarletBlood": {
+		"NAME": "Scarlet Blood",
+		"FLAVOR": "As your rage builds and your senses sharpen, so does your blood.",
+		"DESCRIPTIONS": [
+			"Each time you gain #yStrength, gain twice that many #yKnives. NL Certain #rRed cards can now be obtained."
+		]
+	},
+	"m_SnakeCloak": {
+		"NAME": "Cloak of the Snake",
+		"FLAVOR": "Draping it over your shoulders, you hear a faint hissing sound where the clinking of knives once was.",
+		"DESCRIPTIONS": [
+			"Draw #b2 additional cards on the first turn of combat. NL Certain #gGreen cards can now be obtained."
+		]
+	},
+	"m_BookOfShivs": {
+		"NAME": "Book of the Snake",
+		"FLAVOR": "It's written in a strange language. When read out loud, only hissing can be heard.",
+		"DESCRIPTIONS": [
+			"Shuffle #b2 random #yCantrips into your draw pile at the start of combat. NL Certain #gGreen cards can now be obtained."
+		]
+	},
+	"m_MercuryCore": {
+		"NAME": "Mercury Core",
+		"FLAVOR": "The liquid inside sloshes around, ready to fulfill its timely purpose.",
+		"DESCRIPTIONS": [
+			"At the start of combat, #yReplicate 1 Mercury. NL Certain #bBlue cards can now be obtained."
+		]
+	},
+	"m_ByrdBlood": {
+		"NAME": "Byrd's Blood",
+		"FLAVOR": "Your blood burns with righteous fury in the Awakened One's name.",
+		"DESCRIPTIONS": [
+			"At the end of combat, heal #b6 HP. NL All other healing you recieve during combat is #b50% more effective. NL Gaining #yStrength also heals you. NL Certain #yRed cards can now be obtained."
+		]
+	},
+	"m_SeaBlood": {
+		"NAME": "Sea Blood",
+		"FLAVOR": "Your blood becomes merged with the rage of the far-off seas.",
+		"DESCRIPTIONS": [
+			"At the end of combat, heal #b6 HP. NL Certain #yRed cards can now be obtained."
+		]
+	},
+	"m_SerpentRing": {
+		"NAME": "Ring of the Sea Serpent",
+		"FLAVOR": "Supposedly the remains of a great sea creature from times long past.",
+		"DESCRIPTIONS": [
+			"At the start of each combat, add #b2 #yShivs to your hand. NL Certain #yGreen cards can now be obtained."
+		]
+	},
+	"m_SpellCore": {
+		"NAME": "Spell Core",
+		"FLAVOR": "An orb of concentrated magical power. Its effects are slow, but consistent.",
+		"DESCRIPTIONS": [
+			"At the start of each combat, gain #b3 orb slots and #yChannel #b1 #yManaspark. NL Certain #yBlue cards can now be obtained."
+		]
+	},
+	"m_TsuchinokoRing": {
+		"NAME": "Ring of the Tsuchinoko",
+		"FLAVOR": "The charm hisses every time power is channeled through it.",
+		"DESCRIPTIONS": [
+			"Draw #b2 additional cards on the first turn of combat. NL Each time you play a #ySkill or #y0-Cost card, gain #b1 #yCharge-Up. NL Certain #yGreen cards can now be obtained."
+		]
+	},
+	"m_IronSupplements": {
+		"NAME": "Iron Supplements",
+		"FLAVOR": "The gnawing hunger subsides, only to be replaced with a burning rage...",
+		"DESCRIPTIONS": [
+			"At the end of combat, heal #b6 HP. NL Certain #yRed cards can now be obtained."
+		]
+	},
+	"m_BurningSludge": {
+		"NAME": "Boue brûlante",
+		"FLAVOR": "Votre être entier brûle de rage.",
+		"DESCRIPTIONS": [
+			"Lorsque vous #yslimeboundmod:Consumez, soignez d'1 PV. NL À la fin du combat, pour chaque Slime invoqué, soignez-vous de #b2 PV.",
+			" NL Certaines cartes #rRouges peuvent maintenant être obtenues.",
+			" NL Certaines cartes du #yParrain #ySlime peuvent maintenant être obtenues."
+		]
+	},
+	"m_SlimeRing": {
+		"NAME": "Anneau du Slime",
+		"FLAVOR": "Cette partie de vous agit de son propre chef, jamais complètement divisée, et jamais complètement fusionnée.",
+		"DESCRIPTIONS": [
+			"Piochez #b2 cartes supplémentaires au premier tour du combat.",
+			" NL Certaines cartes #gVertes peuvent maintenant être obtenues.",
+			" NL Certaines cartes du #yParrain #ySlime peuvent maintenant être obtenues."
+		]
+	},
+	"m_RuneBlood": {
+		"NAME": "Ignis Sanguine",
+		"FLAVOR": "Where the broken gem once was, only the intense heat of a forge remains.",
+		"DESCRIPTIONS": [
+			"Each time you deal #b",
+			" damage in a single turn, gain #b",
+			" Ignis. NL Heal #b",
+			" HP at the end of combat. NL Certain #yRed cards can now be obtained."
+		]
+	},
+	"m_RuneCore": {
+		"NAME": "Runic Core",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"Gain #b",
+			" orb slots and #b1 #yFocus at the start of combat. NL All other #yFocus gained in combat also gives #yPotency, and vise-versa. NL Certain #yBlue cards can now be obtained. NL NL #gWhile #gyou #ghave #gat #gleast #b",
+			" #gactive #yRunes: NL  #g* #gWhen #gyou #gwould #yCraft #ga #yFirestone #grune, #ginstead #yChannel #yLightning. NL  #g* #gWhen #gyou #gwould #yCraft #ga #yProtectio #grune, #ginstead #yChannel #yFrost. NL  #g* #gWhen #gyou #gwould #yCraft #gan #yIndustria #grune, #ginstead #yChannel #yPlasma. NL  #g* #gWhen #gyou #gwould #yCraft #ga #yPotentia #grune, #ginstead #yChannel #yCrystal."
+		]
+	},
+	"m_GuardianBlood": {
+		"NAME": "Sang surchauffé",
+		"FLAVOR": "Vous sentez votre machinerie interne bouillir de fureur..",
+		"DESCRIPTIONS": [
+			"À la fin du combat, soignez-vous de #b6 PV.",
+			" NL Certaines cartes #rRouges peuvent maintenant être obtenues.",
+			" NL Certaines cartes du #yGardien peuvent maintenant être obtenues."
+		]
+	},
+	"m_CorellonBlood": {
+		"NAME": "Larethian Blood",
+		"FLAVOR": "Blood of the ancient god Corellon Larethian.",
+		"DESCRIPTIONS": [
+			"At the start of combat, gain #b6 #yTemporary #yHP. NL Certain #yRed cards can now be obtained."
+		]
+	},
+	"m_ChordRing": {
+		"NAME": "Chord Ring",
+		"FLAVOR": "This ring is composed of a series of rotating metal bands, each sporting carvings of notes.",
+		"DESCRIPTIONS": [
+			"Draw #b2 additional cards on the first turn of combat. NL Certain #yGreen cards can now be obtained."
+		]
+	},
+	"m_MusicBox": {
+		"NAME": "Music Box",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the start of combat, gain #b3 orb slots and #ybard:Queue a [OrbNote] [REMOVE_SPACE]. NL Certain #yBlue cards can now be obtained."
+		]
+	},
+	"m_SnakeBloodCore": {
+		"NAME": "Noyau de sang de serpent",
+		"FLAVOR": "Les souvenirs et les expériences de trois personnes fusionnent... qui êtes-vous, et que ferez-vous ??",
+		"DESCRIPTIONS": [
+			"Piochez #b1 carte supplémentaire et gagnez #b",
+			" emplacements d'orbe au premier tour du combat. NL Soignez-vous de #b",
+			" PV à la fin du combat. NL Certaines cartes #rRouges, #gVertes, et #bBleues peuvent maintenant être obtenues."
+		]
+	},
+	"m_EldritchBlood": {
+		"NAME": "Eldritch Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the start of each combat, remember #yTemperance. NL At the end of each combat, heal #b",
+			" HP per #yClarity.",
+			" NL Certain #rRed cards can now be obtained.",
+			" NL Certain #yWanderer cards can now be obtained"
+		]
+	},
+	"m_ForgottonRing": {
+		"NAME": "Forgotten Ring",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the start of each combat, remember #yDilligence. NL At the end of each combat, heal #b",
+			" HP per #yClarity.",
+			" NL Certain #gGreen cards can now be obtained.",
+			" NL Certain #pWanderer cards can now be obtained"
+		]
+	},
+	"m_DevilBlood": {
+		"NAME": "Sang de démon",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"À la fin de chaque combat, soignez-vous de #b",
+			" PV pour chaque Feu Follet différent que vous avez #yAllumé.",
+			" NL Certaines cartes #rRouges peuvent maintenant être obtenues.",
+			" NL Certaines cartes de #yl'Hexaplasme peuvent maintenant être obtenues"
+		]
+	},
+	"m_HexaRing": {
+		"NAME": "Anneau à six côtés",
+		"FLAVOR": "Anneau du spectre.",
+		"DESCRIPTIONS": [
+			"Toutes les #b",
+			" fois que vous appliquez de le #yBrûlure, convertissez #b",
+			" de #yBrûlure sur tous les ennemis en #yPoison.",
+			" NL Certaines cartes #gVertes peuvent maintenant être obtenues.",
+			" NL Certaines cartes de #yl'Hexaplasme peuvent maintenant être obtenues"
+		]
+	},
+	"m_IronCrown": {
+		"NAME": "Couronne de fer",
+		"FLAVOR": "Solide et robuste, mais pas aussi fantaisiste.",
+		"DESCRIPTIONS": [
+			"À la fin de chaque combat, soignez-vous de #b",
+			" PV.",
+			" NL Certaines cartes #gRouges peuvent maintenant être obtenues.",
+			" NL Certaines cartes du #yChampion peuvent maintenant être obtenues."
+		]
+	},
+	"m_BronzeBlood": {
+		"NAME": "Sang de bronze",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"À la fin de chaque combat, soignez-vous de #b",
+			" PV.",
+			" NL Certaines cartes #gRouges peuvent maintenant être obtenues.",
+			" NL Certaines cartes de #yl'Automate peuvent maintenant être obtenues."
+		]
+	},
+	"m_CrackedBronzeCore": {
+		"NAME": "Orbe de bronze craquelé",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"La première #yFonction que vous créez chaque combat coûte #b1 [E] de moins.",
+			" NL Certaines cartes #bBleues peuvent maintenant être obtenues.",
+			" NL Certaines cartes de #yl'Automate peuvent maintenant être obtenues."
+		]
+	},
+	"replay:Trail_Library": {
+		"NAME": "Pilleur de librairie",
+		"FLAVOR": "aight listen i KNOW its bad form to implement a custom run mod with a relic but y'know what sometimes you just gotta look urself in the mirror and ask \"do i really feel like dealing with patching shit when relics have a perfectly good hook for opening chests\" and sometimes the answer is no.",
+		"DESCRIPTIONS": [
+			"#bModificateur #bde #bRun #bCustom NL Chaque fois que vous ouvrez un coffre qui n'est pas de boss, choisissez 1 carte parmi 15 à obtenir.",
+			"Choisissez une carte à obtenir."
+		]
+	}
+}

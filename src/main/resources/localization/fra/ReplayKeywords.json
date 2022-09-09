@@ -1,0 +1,69 @@
+[
+	{
+		"NAMES": [
+			"nécrotique"
+		],
+		"DESCRIPTION": "Un poison puissant qui inflige 2 dégâts par tour, mais ne dure pas aussi longtemps."
+	},
+	{
+		"NAMES": [
+			"cristal"
+		],
+		"DESCRIPTION": "Orbe: Donne #b+2 #bde #yConcentration aux orbes adjacents. Quand #yActivé, si vous avez moins de #b3 emplacements d'orbe, gagnez-en. NL L'effet #yPassif n'est pas affecté par la #yConcentration."
+	},
+	{
+		"NAMES": [
+			"infernal"
+		],
+		"DESCRIPTION": "Orbe: Au début de votre tour, gagnez #b+2 #bde #yStrength jusqu'à la fin de votre tour. NL Quand #yActivé, applique 1 de #yVulnérabilité à un ennemi aléatoire."
+	},
+	{
+		"NAMES": [
+			"glass"
+		],
+		"DESCRIPTION": "Orbe: Pas d'effet #yPassif. Lorsqu'il est #yActivé et que vous avez plus de #b3 emplacements d'orbe, détruit celui qui est le plus à gauche et #yActive l'orbe qui y occupe"
+	},
+	{
+		"NAMES": [
+			"réflexion"
+		],
+		"DESCRIPTION": "Diminue de 1 chaque tour, est retiré à 0. NL Quand elle est active, bloquer complètement une Attaque renvoie les dégâts de celle-ci à l'attaquant."
+	},
+	{
+		"NAMES": [
+			"blindage"
+		],
+		"DESCRIPTION": "Une forme alternative #yd'Armure qui ne se perd pas à la fin du tour."
+	},
+	{
+		"NAMES": [
+			"langueur"
+		],
+		"DESCRIPTION": "Les Combattants #yLanguis infligent 1 dégât #yd'Attaque de moins par pile. NL Est réduit de #b1 à la fin de chaque tour."
+	},
+	{
+		"NAMES": [
+			"retour de flammes",
+			"retours de flammes"
+		],
+		"DESCRIPTION": "#yStatut: Inflige #b4 dégâts et #ys'Épuise à la fin du tour. NL Affecté par vos modificateurs de dégâts."
+	},
+	{
+		"NAMES": [
+			"manaspark"
+		],
+		"DESCRIPTION": "Orb: At the start of your turn, gain #b3 #yCharge-Up. NL When #yEvoked, gain [e] and #b5 #yCharge-Up."
+	},
+	{
+		"NAMES": [
+			"décrepitude"
+		],
+		"DESCRIPTION": "Les Combattants #yDécrepis prennent 1 dégât supplémentaire des attaques pour chaque pile. NL Chaque tour la #yDécrepitude est réduite de #b1."
+	},
+	{
+		"NAMES": [
+			"garde"
+		],
+		"DESCRIPTION": "Dans cette #yPose, vous gagnez le double #yd'Armure des cartes, mais les dégâts de vos #yAttaques sont réduits de #r90%."
+	}
+]
