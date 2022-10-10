@@ -421,7 +421,7 @@
     "DESCRIPTION": "Infligez !D! dégâts !M! fois. NL Retenez les cartes adjacentes ce tour."
   },
   "Improvise": {
-    "NAME": "Improvise",
+    "NAME": "Improvisation",
     "DESCRIPTION": "Choose 1 of 3 random cards to add to your hand. It costs 1 less. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Choose 1 of 3 random cards to upgrade and add to your hand. NL It costs 1 less. NL Exhaust."
   },
