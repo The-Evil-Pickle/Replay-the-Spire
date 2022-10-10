@@ -232,26 +232,26 @@
     "DESCRIPTION": "Canalisez 1 Orbe de Cristal. NL Canalisez 1 Orbe Glaciaire. NL Gagnez !B! d'Armure. NL Gagnez !M! de Réflexion."
   },
   "ReplayTheSpireMod:Repulse": {
-    "NAME": "Repulse",
+    "NAME": "Répulsion",
     "DESCRIPTION": "Gagnez !M! de Réflexion. NL Mélangez 1 Retour de Flammes dans votre défausse."
   },
   "ReplayTheSpireMod:Omega Cannon": {
-    "NAME": "Omega Cannon",
+    "NAME": "Canon Oméga",
     "DESCRIPTION": "Infligez !D! dégâts à TOUS les ennemis !M! fois. NL Ajoutez 2 Retours de Flammes dans votre défausse."
   },
   "ReplayTheSpireMod:Dual Polarity": {
-    "NAME": "Dual Polarity",
-    "DESCRIPTION": "Channel !M! Lightning and Dark, NL Crystal and Frost, NL Water and Hellfire, NL or Glass and Plasma.",
+    "NAME": "Double polarité",
+    "DESCRIPTION": "Canalisez !M! orbes Lumineux et Obscur, NL orbes de Cristal et Glaciaire, NL orbes Aquatique et Infernal, NL ou orbe de Verre et Plasmatique.",
 	"EXTENDED_DESCRIPTION": [
-		"Choose",
-		"Light and Dark",
-		"Channel !M! Lightning. NL Channel !M! Dark.",
-		"Stone and Ice",
-		"Channel !M! Crystal. NL Channel !M! Frost.",
-		"Water and Fire",
-		"Channel !M! Water. NL Channel !M! Hellfire.",
-		"Entropy and Energy",
-		"Channel !M! Glass. NL Channel !M! Plasma."
+		"Choisissez",
+		"Lumière et Obscurité",
+		"Canalisez !M! orbe Lumineux. NL Canalisez !M! orbe Obscur.",
+		"Pierre et glace",
+		"Canalisez !M! orbe de Cristal. NL Canalisez !M! orbe Glaciaire.",
+		"Eau et Feu",
+		"Canalisez !M! orbe Aquatique. NL Canalisez !M! orbe Infernal.",
+		"Entropie et Énergie",
+		"Canalisez !M! orbe de Verre. NL Canalisez !M! orbe Plasmatique."
 	]
   },
   "Reflective Lens": {
@@ -322,9 +322,9 @@
     "UPGRADE_DESCRIPTION": "Échangez votre Force et votre Concentration. NL Piochez !M! carte. NL Retenue."
   },
   "ReplayTheSpireMod:Fabricate Wheel": {
-    "NAME": "Fabricate Wheel",
-    "DESCRIPTION": "Obtain a Prayer Wheel relic. NL Fleeting.",
-    "UPGRADE_DESCRIPTION": "Obtain a Prayer Wheel relic. NL You may choose 1 of 3 random Rare cards to permanently add to your deck. NL Fleeting."
+    "NAME": "Fabriquer la roue",
+    "DESCRIPTION": "Obtenez la relique du Moulin à prières. NL Éphémère.",
+    "UPGRADE_DESCRIPTION": "Obtenez la relique du Moulin à prières. NL Vous pouveze choisir 1 carte Rare parmi 3 à ajouter dans votre deck. NL Éphémère."
   },
   "ReplayTheSpireMod:Muscle Training": {
     "NAME": "Entraînement au poids",
@@ -618,7 +618,7 @@
 	"DESCRIPTION": "Autoplay. NL Deal !M! damage to ALL fighters."
   },
   "Replay:Hysterical Blindness": {
-	"NAME": "Hysterical Blindness",
+	"NAME": "Aveuglement hystérique",
 	"DESCRIPTION": "Injouable. NL À la fin de votre tour, vos Attaquess deviennent obscurcies pendant !M! tours. NL Épuisement."
   },
   "ReplayTheSpireMod:Imminent Threat": {
@@ -738,9 +738,9 @@
 	"UPGRADE_DESCRIPTION": "Make an Echo of the first !M! cards you play each turn."
   },
   "ReplayTheSpireMod:Brewmster": {
-	"NAME": "Brewmaster",
-	"DESCRIPTION": "Obtain a random potion at the start of each round.",
-	"UPGRADE_DESCRIPTION": "Obtain a random potion at the start of each round."
+	"NAME": "Maître brasseur",
+	"DESCRIPTION": "Obtenez une potion aléatoire au début de chaque tour.",
+	"UPGRADE_DESCRIPTION": "Obtenez une potion aléatoire au début de chaque tour."
   },
   "ReplayTheSpireMod:Dark Transmutation": {
 	"NAME": "Dark Transmutation",
@@ -760,8 +760,8 @@
 	"DESCRIPTION": "Deal !D! damage. NL Switches into Rythmic Step."
   },
   "ReplayTheSpireMod:Uncanny Aura": {
-	"NAME": "Uncanny Aura",
-	"DESCRIPTION": "Unplayable. NL Fosse. NL At the end of your turn, gain !M! Strength and Dexterity for each other Unplayable card in your hand."
+	"NAME": "Aura inquiétante",
+	"DESCRIPTION": "Injouable. NL Fosse. NL À la fin de votre tour, gagnez !M! de Force et de Dextérité pour toutes les autres cartes Injouables dans votre main."
   },
   "ReplayTheSpireMod:Five Aces": {
 	"NAME": "Five Aces",
@@ -772,32 +772,32 @@
 	"DESCRIPTION": "Gain !M! Plated Armor. NL Exhaustive !stslib:ex!"
   },
   "Replay:BasicMightCard": {
-	"NAME": "Might",
-	"DESCRIPTION": "For X turns, your Attacks deal 25% more damage. NL Refund !stslib:refund!."
+	"NAME": "Courage",
+	"DESCRIPTION": "Pendant X tours, vos Attaques infligent 25% de dégâts supplémentaires. NL Remboursement de !stslib:refund!."
   },
   "Ghost Swipe": {
-    "NAME": "Ghost Swipe",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust. NL Ethereal."
+    "NAME": "Balayage fantômatique",
+    "DESCRIPTION": "Infligez !D! dégâts. NL Épuisement. NL Éthérée."
   },
   "Ghost Defend": {
-    "NAME": "Ghost Defend",
-    "DESCRIPTION": "Gain !B! Block. NL Exhaust. NL Ethereal."
+    "NAME": "Défense fantômatique",
+    "DESCRIPTION": "Gagnez !B! d'Armure. NL Épuisement. NL Éthérée."
   },
   "Ghost Fetch": {
-    "NAME": "Ghost Fetch",
-    "DESCRIPTION": "Choose a basic card from your draw pile and place it into your hand. NL Exhaust. NL Ethereal.",
-	"UPGRADE_DESCRIPTION": "Choose a basic card from your draw pile and place it into your hand. NL It costs 0 this turn. NL Exhaust. NL Ethereal.",
+    "NAME": "Recherche fantômatique",
+    "DESCRIPTION": "Choisissez une carte basique de votre piochez et placez-la dans votre main. NL Épuisement. NL Éthérée.",
+	"UPGRADE_DESCRIPTION": "Choisissez une carte basique de votre piochez et placez-la dans votre main. Elle coûte 0 ce tour. NL Épuisement. NL Éthérée.",
 	"EXTENDED_DESCRIPTION": [
-    	"There are no Basic cards NL in my draw pile."
+    	"Il n'y a pas de cartes Basiques NL dan ma pioche."
     ]
   },
   "Pot Of Greed": {
-    "NAME": "Grinning Jar",
-    "DESCRIPTION": "Draw !M! cards. NL You may not play another Grinning Jar this turn.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards.",
+    "NAME": "Jarre souriante",
+    "DESCRIPTION": "Piochez !M! cartes. NL Vous ne pouvez pas jouer d'autre Jarre Souriante.",
+    "UPGRADE_DESCRIPTION": "Piochez !M! cartes.",
 	"EXTENDED_DESCRIPTION": [
-		"I've already played a Grinning Jar this turn!",
-		"I've already played this card once this turn!"
+		"J'ai déjà joué une Jarre souriante ce tour!",
+		"J'ai déjà joué cette carte ce tour!"
 	]
   },
   "GremboGang": {
