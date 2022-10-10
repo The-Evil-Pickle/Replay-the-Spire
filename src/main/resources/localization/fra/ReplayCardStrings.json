@@ -124,7 +124,7 @@
   },
   "Defy Death": {
     "NAME": "Défier la Mort",
-    "DESCRIPTION": "Gagnez !B! d'Armure. NL Coûte 1 [R] de moins pour chaque carde que vous avez Épuisé ce combat. NL Fosse."
+    "DESCRIPTION": "Gagnez !B! d'Armure. NL Coûte 1 [R] de moins pour chaque carte que vous avez Épuisé ce combat. NL Fosse."
   },
   "Life Link": {
     "NAME": "Lien de vie",
@@ -139,7 +139,7 @@
     "DESCRIPTION": "Infligez !D! dégâts. Gagnez !B! d'Armure. Soignez-vous de !M! PV. Épuisement. NL Améliorez chaque fois que vous perdez des PV lorsque ceci est dans votre main."
   },
   "Run Through": {
-    "NAME": "Passez au travers",
+    "NAME": "Passer au travers",
     "DESCRIPTION": "La cible ennemie perd !D! PV et !M! d'Armure."
   },
   "ReplayTheSpireMod:Hemoarmum": {
@@ -198,7 +198,7 @@
   },
   "ReplayTheSpireMod:Limb From Limb": {
     "NAME": "Membre par membre",
-    "DESCRIPTION": "Infligez !D! dégâts. NL Si ceci inflige au moins !M! dégâts non-bloqués, elle est Remboursée de 2 et fait piochez 2 cartes."
+    "DESCRIPTION": "Infligez !D! dégâts. NL Si ceci inflige au moins !M! dégâts non-bloqués, elle est Remboursée de 2 et fait piocher 2 cartes."
   },
   "Replay:Sporebomb": {
     "NAME": "Sporebomb",
