@@ -18,18 +18,20 @@ public class WaxSeal extends AbstractRelic implements ClickableRelic
 {
     public static final String ID = "Replay:Wax Seal";
     public final static float DISCOUNT = 0.2F;
+    public final static int MAX_USES = 3;
+    
     public WaxSeal() {
         super(ID, "waxSeal.png", AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.MAGICAL);
     }
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[3] + (Math.round(DISCOUNT * 100F)) + this.DESCRIPTIONS[4] + this.DESCRIPTIONS[0] + this.DESCRIPTIONS[1] + DebtCurseIOU.GOLD_COST + this.DESCRIPTIONS[2];
+        return this.DESCRIPTIONS[3] + (Math.round(DISCOUNT * 100F)) + this.DESCRIPTIONS[4] + this.DESCRIPTIONS[0] + this.DESCRIPTIONS[1] + DebtCurseIOU.GOLD_COST + this.DESCRIPTIONS[2] + this.DESCRIPTIONS[5] + MAX_USES + this.DESCRIPTIONS[6];
     }
 
     @Override
     public void onRightClick() {
-        if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof ShopRoom) {
+        if (this.counter > 0 && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof ShopRoom) {
             this.flash();
             if (AbstractDungeon.player.hasRelic(Omamori.ID) && AbstractDungeon.player.getRelic(Omamori.ID).counter > 0) {
             	AbstractDungeon.player.getRelic(Omamori.ID).flash();
@@ -38,6 +40,7 @@ public class WaxSeal extends AbstractRelic implements ClickableRelic
             	AbstractDungeon.topLevelEffects.add(new FastCardObtainEffect(new DebtCurseIOU(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
             }
             AbstractDungeon.player.gainGold(DebtCurseIOU.GOLD_COST);
+            this.counter--;
         }
     }
 
@@ -47,6 +50,7 @@ public class WaxSeal extends AbstractRelic implements ClickableRelic
     	if (shop == null) {
     		return;
     	}
+        this.counter = MAX_USES;
     	final ArrayList<StoreRelic> relics = (ArrayList<StoreRelic>)ReflectionHacks.getPrivate((Object)shop, (Class)ShopScreen.class, "relics");
 		for (StoreRelic r : relics) {
 			r.price = Math.round(r.price * (1F -  DISCOUNT));
@@ -55,6 +59,16 @@ public class WaxSeal extends AbstractRelic implements ClickableRelic
     @Override
     public AbstractRelic makeCopy() {
         return new WaxSeal();
+    }
+    
+
+    @Override
+    public void onEnterRoom(final AbstractRoom room) {
+    	if (room != null && room instanceof ShopRoom) { 
+    		this.counter = MAX_USES;
+    	} else {
+    		this.counter = -1;
+    	}
     }
     
     @Override

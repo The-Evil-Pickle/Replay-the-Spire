@@ -25,7 +25,7 @@ public class Trickstab
   
   public Trickstab()
   {
-    super(ID, NAME, "cards/replay/replayBetaAttack.png", 1, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
+    super(ID, NAME, "cards/replay/trickstab.png", 1, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
     
     this.baseDamage = ATTACK_DMG;
     this.baseBlock = ATTACK_DMG;

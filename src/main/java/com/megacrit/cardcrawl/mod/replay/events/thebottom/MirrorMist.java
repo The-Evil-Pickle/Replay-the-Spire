@@ -55,6 +55,7 @@ import com.megacrit.cardcrawl.mod.replay.cards.replayxover.ArmamentsMkIIB;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.downfall.M_BronzeAgony;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.downfall.M_BronzeBash;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.downfall.M_BronzeSurvivor;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.downfall.M_GremlinBash;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.guardian.GuardianBash;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.guardian.GuardianCast;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.marisa.LightBash;
@@ -94,6 +95,7 @@ import constructmod.characters.TheConstruct;
 import constructmod.relics.ClockworkPhoenix;
 import constructmod.relics.Cogwheel;
 import gluttonmod.characters.GluttonCharacter;
+import gremlin.characters.GremlinCharacter;
 import guardian.cards.CurlUp;
 import guardian.cards.TwinSlam;
 import guardian.characters.GuardianCharacter;
@@ -725,7 +727,27 @@ public class MirrorMist
 				this.gain_c_2b = CardLibrary.getCopy(M_BronzeSurvivor.ID);
 				break;
 			}
-			
+			if (ReplayTheSpireMod.foundmod_downfall && AbstractDungeon.player instanceof GremlinCharacter) {
+				this.has_1 = AbstractDungeon.player.hasRelic("Gremlin:GremlinKnob");
+				this.loss_r_1 = RelicLibrary.getRelic("Gremlin:GremlinKnob").makeCopy();
+				this.gain_r_1 = new M_NobBlood();
+				this.has_1b = CardHelper.hasCardWithID("Gremlin:GremlinDance");
+				this.loss_c_1b = CardLibrary.getCopy("Gremlin:GremlinDance");
+				this.gain_c_1b = CardLibrary.getCopy(M_GremlinBash.ID);
+				this.has_2 = AbstractDungeon.player.hasRelic("Gremlin:GremlinKnob");
+				this.loss_r_2 = RelicLibrary.getRelic("Gremlin:GremlinKnob").makeCopy();
+				this.gain_r_2 = new M_HornedRing();
+				this.has_2b = this.has_2;
+				this.gain_c_2b = CardLibrary.getCopy("Neutralize");
+				this.has_3 = CardHelper.hasCardWithID("Gremlin:GremlinDance");
+				this.has_3b = CardHelper.hasCardWithID("Gremlin:TagTeam");
+				this.loss_c_3 = CardLibrary.getCopy("Gremlin:GremlinDance");
+				this.loss_c_3b = CardLibrary.getCopy("Gremlin:TagTeam");
+				this.gain_c_3 = new Eruption();
+				this.gain_c_3b = new Vigilance();
+				this.thirdOption = true;
+				break;
+			}
 			this.moddedguy = true;
 		}
 	}

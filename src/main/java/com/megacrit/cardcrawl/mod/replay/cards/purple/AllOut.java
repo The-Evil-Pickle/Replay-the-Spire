@@ -19,7 +19,7 @@ public class AllOut extends CustomCard
     private static final CardStrings cardStrings;
     
     public AllOut() {
-        super(ID, AllOut.cardStrings.NAME, "cards/replay/replayBetaAttack.png", 0, AllOut.cardStrings.DESCRIPTION, CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ENEMY);
+        super(ID, AllOut.cardStrings.NAME, "cards/replay/all_out.png", 0, AllOut.cardStrings.DESCRIPTION, CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ENEMY);
         this.baseDamage = 0;
         this.exhaust = true;
         this.selfRetain = true;

@@ -494,7 +494,7 @@
   "Replay:Duplecho": {
     "NAME": "Duplecho",
     "DESCRIPTION": "Create X Echoes of a card in your hand.",
-	"UPGRADE_DESCRIPTION": "Create X Echoes of a card in your hand. NL Refund !stslib!."
+	"UPGRADE_DESCRIPTION": "Create X Echoes of a card in your hand. NL Refund !stslib:refund!."
   },
   "Replay:SS_Removal": {
     "NAME": "Shop Special: Card Removal Service",
@@ -1108,6 +1108,13 @@
       "endless",
       "Agony"
     ]
+  },
+  "m_GremlinBash": {
+    "NAME": "Bonk",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable. NL Has a different effect based on which Gremlin you are.",
+    "EXTENDED_DESCRIPTION": ["Deal !D! damage", " and apply !M! Vulnerable",
+    " to ALL enemies.", ". NL gremlin:Swap to Mad Gremlin",
+    "Gain !B! Block", " and apply !M! Languid", ". NL Gain !M! Strength.", " and !replay:M-1! Decrepit.", ". NL Gain !M! gremlin:Wiz."]
   },
   "Replay:NecroticArchetypeSelectCard": {
     "NAME": "Necrotic Poison",

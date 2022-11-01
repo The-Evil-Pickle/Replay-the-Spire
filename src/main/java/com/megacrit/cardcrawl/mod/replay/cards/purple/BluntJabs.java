@@ -23,7 +23,7 @@ public class BluntJabs extends CustomCard
     private static final CardStrings cardStrings;
     
     public BluntJabs() {
-        super(ID, BluntJabs.cardStrings.NAME, "cards/replay/replayBetaAttack.png", 1, BluntJabs.cardStrings.DESCRIPTION, CardType.ATTACK, CardColor.PURPLE, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, BluntJabs.cardStrings.NAME, "cards/replay/blunt_jabs.png", 1, BluntJabs.cardStrings.DESCRIPTION, CardType.ATTACK, CardColor.PURPLE, CardRarity.COMMON, CardTarget.ENEMY);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
         this.baseDamage = 4;

@@ -6,6 +6,9 @@ import com.megacrit.cardcrawl.mod.replay.actions.unique.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import basemod.abstracts.CustomCard;
+
 import com.megacrit.cardcrawl.cards.AbstractCard;
 //import com.megacrit.cardcrawl.cards.CardColor;
 //import com.megacrit.cardcrawl.cards.CardRarity;
@@ -15,7 +18,7 @@ import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.core.*;
 
-public class ReplayRNGCard extends AbstractCard
+public class ReplayRNGCard extends CustomCard
 {
     public static final String ID = "ReplayRNGCard";
     private static final CardStrings cardStrings;
@@ -25,7 +28,7 @@ public class ReplayRNGCard extends AbstractCard
     private static final int COST = -1;
     
     public ReplayRNGCard() {
-        super("ReplayRNGCard", ReplayRNGCard.NAME, "blue/skill/tempest", "blue/skill/tempest", -1, ReplayRNGCard.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.RARE, CardTarget.SELF);
+        super("ReplayRNGCard", ReplayRNGCard.NAME, "cards/replay/RNG.png", -1, ReplayRNGCard.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.RARE, CardTarget.SELF);
         this.showEvokeValue = true;
         this.showEvokeOrbCount = 3;
     }

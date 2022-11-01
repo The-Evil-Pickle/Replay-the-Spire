@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.CursedKey;
+import com.megacrit.cardcrawl.relics.SlaversCollar;
 import com.megacrit.cardcrawl.rewards.chests.BossChest;
 import com.megacrit.cardcrawl.rooms.TreasureRoomBoss;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
@@ -171,7 +172,7 @@ public class GrabBag extends ReplayAbstractRelic
                 		if (g2) {
                 			GrabBag.energyRelics.add(r.relicId);
                 		} else {
-                			if (r instanceof OnyxGauntlets || r instanceof CursedDEight || r.relicId.equals("RNG:RNG")) {
+                			if (r instanceof OnyxGauntlets || r instanceof CursedDEight || r.relicId.equals("RNG:RNG") || r instanceof SlaversCollar) {
                 				GrabBag.energyRelics.add(r.relicId);
                 			} else if (r instanceof DrinkMe) {
                 				GrabBag.nonEnergyRelics.add(r.relicId);

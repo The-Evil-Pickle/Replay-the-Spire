@@ -27,7 +27,7 @@ public class Sssssssssstrike extends CustomCard
     private static final int COST = -1;
     
     public Sssssssssstrike() {
-        super(ID, Sssssssssstrike.NAME, "cards/replay/replayBetaAttack.png", COST, Sssssssssstrike.DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
+        super(ID, Sssssssssstrike.NAME, "cards/replay/ssstrike.png", COST, Sssssssssstrike.DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
         SneckoField.snecko.set(this, true);
         this.tags.add(AbstractCard.CardTags.STRIKE);
         this.baseDamage = 4;

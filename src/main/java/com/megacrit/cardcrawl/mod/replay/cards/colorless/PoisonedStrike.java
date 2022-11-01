@@ -30,7 +30,7 @@ public class PoisonedStrike
   
   public PoisonedStrike()
   {
-    super("Poisoned Strike", NAME, "cards/replay/replayBetaAttack.png", 0, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
+    super("Poisoned Strike", NAME, "cards/replay/poisonousstrike.png", 0, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
     this.tags.add(AbstractCard.CardTags.STRIKE);
     this.baseDamage = 3;
   }

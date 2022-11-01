@@ -37,7 +37,7 @@ public ReplayOmegaCannon()
 {
   super(ID, NAME, "cards/replay/omegaCannon.png", COST, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.BLUE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ALL_ENEMY);
   
-  this.baseDamage = 7;
+  this.baseDamage = 6;
   this.isMultiDamage = true;
   this.baseMagicNumber = 4;
   this.magicNumber = this.baseMagicNumber;
@@ -62,8 +62,9 @@ public void upgrade()
   if (!this.upgraded)
   {
     upgradeName();
-    upgradeMagicNumber(1);
-    upgradeDamage(-1);
+    //upgradeMagicNumber(1);
+    //upgradeDamage(-1);
+    upgradeDamage(1);
   }
 }
 

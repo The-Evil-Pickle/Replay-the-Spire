@@ -24,6 +24,7 @@ import com.badlogic.gdx.graphics.g2d.*;
 import java.io.*;
 import com.megacrit.cardcrawl.screens.mainMenu.*;
 import basemod.*;
+import replayTheSpire.ReplayTheSpireMod;
 
 public class CursedDEight extends AbstractRelic
 {
@@ -35,6 +36,8 @@ public class CursedDEight extends AbstractRelic
     
     @Override
     public String getUpdatedDescription() {
+    	if (ReplayTheSpireMod.foundmod_downfall)
+    		return this.DESCRIPTIONS[0].replace("Echo", "gremlin:Echo");
         return this.DESCRIPTIONS[0];
     }
 	

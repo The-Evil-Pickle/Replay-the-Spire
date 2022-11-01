@@ -20,7 +20,7 @@ public class AllIn extends CustomCard
     private static final CardStrings cardStrings;
     
     public AllIn() {
-        super(ID, AllIn.cardStrings.NAME, "cards/replay/replayBetaSkill.png", 1, AllIn.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.RARE, CardTarget.SELF);
+        super(ID, AllIn.cardStrings.NAME, "cards/replay/all_in.png", 1, AllIn.cardStrings.DESCRIPTION, CardType.SKILL, CardColor.PURPLE, CardRarity.RARE, CardTarget.SELF);
         this.cardsToPreview = new AllOut();
         this.exhaust = true;
     }

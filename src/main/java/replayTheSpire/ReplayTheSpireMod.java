@@ -1485,6 +1485,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 				guardianbs.addCards();
 				downfallbs.addBossCards();
 				downfallbs.addMistCards();
+				downfallbs.addMiscCards();
 			} catch (NoClassDefFoundError e) {
 				logger.info("Replay | Downfall BS");
 			}
@@ -1496,6 +1497,11 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 			if (foundmod_slimebound) {
 				logger.info("adding slimebound cards...");
 				//slimeboundbs.addBossCards();
+			}
+			if (foundmod_glutton) {
+				logger.info("adding glutton cards...");
+				AddAndUnlockCard(new ResoundingBlow());
+				AddAndUnlockCard(new WhispersOfEvil());
 			}
 		}
 		logger.info("done editting cards");
@@ -1822,6 +1828,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		if(type == LoadType.RELIC) {
 			logger.info("ReplayTheSpireMod | Initializing Relics for Hexaghost/Champ/Automaton...");
 			downfallbs.addMistRelics();
+			downfallbs.addMiscRelics();
 		}
 		if(type == LoadType.CARD) {
 			logger.info("ReplayTheSpireMod | Initializing Cards for Hexaghost...");
@@ -2097,7 +2104,7 @@ EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostDrawSubscr
 		}
     	for (ReplayAbstractRelic _r : RelicSettings.keySet()) {
     		AbstractRelic r = RelicLibrary.getRelic(_r.relicId);
-    		if (r != null)
+    		if (r != null && r.relicId != Circlet.ID)
     			((ReplayAbstractRelic)r).updateDesc();
     	}
     }

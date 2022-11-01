@@ -48,6 +48,6 @@ public class WhispersOfEvil extends CustomCard
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         NAME = WhispersOfEvil.cardStrings.NAME;
-        DESCRIPTION = WhispersOfEvil.cardStrings.DESCRIPTION;
+        DESCRIPTION = WhispersOfEvil.cardStrings.DESCRIPTION.replace("Echo", "gremlin:Echo");
     }
 }

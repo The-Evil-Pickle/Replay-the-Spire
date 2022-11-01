@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.vfx.combat.*;
 
+import basemod.abstracts.CustomCard;
 import replayTheSpire.ReplayTheSpireMod;
 
 import com.megacrit.cardcrawl.actions.animations.*;
@@ -24,7 +25,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.*;
 
-public class IC_FireWall extends AbstractCard
+public class IC_FireWall extends CustomCard
 {
     public static final String ID = "Firewall";
     private static final CardStrings cardStrings;
@@ -35,7 +36,7 @@ public class IC_FireWall extends AbstractCard
     private static final int FLAME_DAMAGE = 4;
     
     public IC_FireWall() {
-        super("Firewall", IC_FireWall.NAME, null, "red/skill/flameBarrier", 2, IC_FireWall.DESCRIPTION, CardType.SKILL, (AbstractDungeon.player == null) ? AbstractCard.CardColor.COLORLESS : ((AbstractDungeon.player instanceof Defect) ? AbstractCard.CardColor.RED : AbstractCard.CardColor.BLUE), (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(IronCore.ID)) ? CardRarity.RARE : CardRarity.SPECIAL, CardTarget.SELF);
+        super("Firewall", IC_FireWall.NAME, "cards/replay/firewall.png", 2, IC_FireWall.DESCRIPTION, CardType.SKILL, (AbstractDungeon.player == null) ? AbstractCard.CardColor.COLORLESS : ((AbstractDungeon.player instanceof Defect) ? AbstractCard.CardColor.RED : AbstractCard.CardColor.BLUE), (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(IronCore.ID)) ? CardRarity.RARE : CardRarity.SPECIAL, CardTarget.SELF);
         this.baseBlock = 10;
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;

@@ -16,8 +16,10 @@ import com.megacrit.cardcrawl.mod.replay.actions.unique.ImprovAction;
 import com.megacrit.cardcrawl.mod.replay.actions.unique.MidasAction;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import basemod.abstracts.CustomCard;
+
 public class MidasTouch
-  extends AbstractCard
+  extends CustomCard
 {
   public static final String ID = "Midas Touch";
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Midas Touch");
@@ -28,7 +30,7 @@ public class MidasTouch
   
   public MidasTouch()
   {
-    super("Midas Touch", NAME, "status/beta", "status/beta", MidasTouch.COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.NONE);
+    super("Midas Touch", NAME, "cards/replay/midas_touch.png", MidasTouch.COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.NONE);
     
     this.exhaust = true;
   }

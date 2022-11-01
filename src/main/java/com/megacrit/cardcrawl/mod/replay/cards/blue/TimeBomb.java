@@ -31,7 +31,7 @@ public class TimeBomb extends CustomCard
     private static final int COST = 1;
     
     public TimeBomb() {
-        super("Time Bomb", TimeBomb.NAME, "cards/replay/replayBetaSkill.png", TimeBomb.COST, TimeBomb.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
+        super("Time Bomb", TimeBomb.NAME, "cards/replay/time_bomb.png", TimeBomb.COST, TimeBomb.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
         this.showEvokeValue = true;
         this.showEvokeOrbCount = 1;
         this.baseMagicNumber = 2;

@@ -762,7 +762,9 @@
 		" NL Borrow #b",
 		" gold. Add a #rCurse to your deck until you pay it back.",
 		"#yRelics in shops cost #b",
-		"% less. NL "
+		"% less. NL ",
+		" NL [#2aecd7]Usable [#2aecd7]up [#2aecd7]to [#2aecd7]",
+	    " [#2aecd7]times [#2aecd7]per [#2aecd7]shop.[]"
 	]
   },
   "Replay:Drink Me": {
@@ -1251,7 +1253,7 @@
 			"At the start of each combat, remember #yTemperance. NL At the end of each combat, heal #b",
 			" HP per #yClarity.",
 			" NL Certain #rRed cards can now be obtained.",
-			" NL Certain #yWanderer cards can now be obtained"
+			" NL Certain #yWanderer cards can now be obtained."
 		]
 	},
 	"m_ForgottonRing": {
@@ -1261,7 +1263,7 @@
 			"At the start of each combat, remember #yDilligence. NL At the end of each combat, heal #b",
 			" HP per #yClarity.",
 			" NL Certain #gGreen cards can now be obtained.",
-			" NL Certain #pWanderer cards can now be obtained"
+			" NL Certain #pWanderer cards can now be obtained."
 		]
 	},
 	"m_DevilBlood": {
@@ -1271,7 +1273,7 @@
 			"At the end of each combat, heal #b",
 			" HP for each different Ghostflame you #yIgnited.",
 			" NL Certain #rRed cards can now be obtained.",
-			" NL Certain #yHexaghost cards can now be obtained"
+			" NL Certain #yHexaghost cards can now be obtained."
 		]
 	},
 	"m_HexaRing": {
@@ -1282,7 +1284,7 @@
 			" times you apply #ySoulburn, convert #b",
 			" #ySoulburn on all enemies to #yPoison.",
 			" NL Certain #gGreen cards can now be obtained.",
-			" NL Certain #yHexaghost cards can now be obtained"
+			" NL Certain #yHexaghost cards can now be obtained."
 		]
 	},
 	"m_IronCrown": {
@@ -1292,7 +1294,7 @@
 			"At the end of each combat, heal #b",
 			" HP.",
 			" NL Certain #rRed cards can now be obtained.",
-			" NL Certain #yChamp cards can now be obtained"
+			" NL Certain #yChamp cards can now be obtained."
 		]
 	},
 	"m_BronzeBlood": {
@@ -1302,7 +1304,7 @@
 			"At the end of each combat, heal #b",
 			" HP.",
 			" NL Certain #rRed cards can now be obtained.",
-			" NL Certain #yAutomaton cards can now be obtained"
+			" NL Certain #yAutomaton cards can now be obtained."
 		]
 	},
 	"m_CrackedBronzeCore": {
@@ -1311,7 +1313,27 @@
 		"DESCRIPTIONS": [
 			"The first #yFunction you create each combat costs #b1 less.",
 			" NL Certain #bBlue cards can now be obtained.",
-			" NL Certain #yAutomaton cards can now be obtained"
+			" NL Certain #yAutomaton cards can now be obtained."
+		]
+	},
+	"m_HornedRing": {
+		"NAME": "Horned Ring",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the start of each combat, draw #b2 cards, and #ySwap to the next Gremlin.",
+			" NL Certain #gGreen cards can now be obtained.",
+			" NL Certain #yGremlin cards can now be obtained."
+		]
+	},
+	"m_NobBlood": {
+		"NAME": "Nob Blood",
+		"FLAVOR": ".",
+		"DESCRIPTIONS": [
+			"At the start of each combat, #ySwap to the next Gremlin. NL At the end of each combat, heal #b",
+			" HP if the current Gremlin is below 50% HP, otherwise heal all Gremlins by #b",
+			" HP.",
+			" NL Certain #rRed cards can now be obtained.",
+			" NL Certain #yGremlin cards can now be obtained."
 		]
 	},
 	"replay:Trail_Library": {

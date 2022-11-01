@@ -16,10 +16,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import basemod.abstracts.CustomCard;
+
 import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
 
 public class GhostSwipe
-  extends AbstractCard
+  extends CustomCard
 {
   public static final String ID = "Ghost Swipe";
   private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Ghost Swipe");
@@ -31,7 +34,7 @@ public class GhostSwipe
   
   public GhostSwipe()
   {
-    super("Ghost Swipe", NAME, "colorless/attack/swiftStrike", "colorless/attack/swiftStrike", 1, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.ENEMY);
+    super(ID, NAME, "cards/replay/ghostswipe.png", 1, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.ENEMY);
     
     this.baseDamage = 6;
     this.exhaust = true;

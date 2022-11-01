@@ -77,6 +77,8 @@ public class BonfirePatches {
 						}
 					}
 				}
+				if (bonfireNode == null)
+					return;
 				if (closestLeftNode != null && adjLeftFire != null) {
 					if (closestLeftNode.isConnectedTo(bonfireNode) && !closestLeftNode.isConnectedTo(adjLeftFire)) {
 						closestLeftNode.addEdge(new MapEdge(closestLeftNode.x, closestLeftNode.y, closestLeftNode.offsetX, closestLeftNode.offsetY, adjLeftFire.x, adjLeftFire.y, adjLeftFire.offsetX, adjLeftFire.offsetY, false));

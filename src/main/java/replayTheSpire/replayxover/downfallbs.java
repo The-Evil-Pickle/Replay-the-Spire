@@ -14,20 +14,27 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.curses.UnknownCurse;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.curses.WhispersOfEvil;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.downfall.M_BronzeAgony;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.downfall.M_BronzeBash;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.downfall.M_BronzeSurvivor;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.downfall.M_GremlinBash;
+import com.megacrit.cardcrawl.mod.replay.cards.replayxover.downfall.ResoundingBlow;
 import com.megacrit.cardcrawl.mod.replay.cards.replayxover.spireboss.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.FadingForestBoss;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.PondfishBoss;
 import com.megacrit.cardcrawl.mod.replay.monsters.replay.hec.HellsEngine;
+import com.megacrit.cardcrawl.mod.replay.relics.CursedDEight;
 import com.megacrit.cardcrawl.mod.replay.relics.M_BronzeBlood;
 import com.megacrit.cardcrawl.mod.replay.relics.M_DevilBlood;
 import com.megacrit.cardcrawl.mod.replay.relics.M_Hexaring;
+import com.megacrit.cardcrawl.mod.replay.relics.M_HornedRing;
 import com.megacrit.cardcrawl.mod.replay.relics.M_IronCrown;
+import com.megacrit.cardcrawl.mod.replay.relics.M_NobBlood;
 
 import automaton.AutomatonChar;
 import basemod.BaseMod;
+import basemod.helpers.RelicType;
 import champ.ChampChar;
 import downfall.cards.OctoChoiceCard;
 import downfall.patches.EvilModeCharacterSelect;
@@ -68,6 +75,7 @@ public class downfallbs {
 		BaseMod.addCard(new M_BronzeBash());
 		BaseMod.addCard(new M_BronzeSurvivor());
 		BaseMod.addCard(new M_BronzeAgony());
+		BaseMod.addCard(new M_GremlinBash());
 	}
 	
 	public static void addMistRelics() {
@@ -75,6 +83,15 @@ public class downfallbs {
 		BaseMod.addRelicToCustomPool(new M_Hexaring(), TheHexaghost.Enums.GHOST_GREEN);
 		BaseMod.addRelicToCustomPool(new M_IronCrown(), ChampChar.Enums.CHAMP_GRAY);
 		BaseMod.addRelicToCustomPool(new M_BronzeBlood(), AutomatonChar.Enums.BRONZE_AUTOMATON);
+		BaseMod.addRelicToCustomPool(new M_HornedRing(), gremlin.patches.AbstractCardEnum.GREMLIN);
+		BaseMod.addRelicToCustomPool(new M_NobBlood(), gremlin.patches.AbstractCardEnum.GREMLIN);
+	}
+	public static void addMiscRelics() {
+		BaseMod.addRelic(new CursedDEight(), RelicType.SHARED);
+	}
+	public static void addMiscCards() {
+		BaseMod.addCard(new ResoundingBlow());
+		BaseMod.addCard(new WhispersOfEvil());
 	}
 	/*
 	public static boolean inEvilMode() {

@@ -7,6 +7,9 @@ import com.megacrit.cardcrawl.mod.replay.actions.utility.*;
 import com.megacrit.cardcrawl.mod.replay.cards.*;
 import com.megacrit.cardcrawl.mod.replay.monsters.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import basemod.abstracts.CustomCard;
+
 import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 //import com.megacrit.cardcrawl.cards.CardColor;
@@ -19,7 +22,7 @@ import com.megacrit.cardcrawl.dungeons.*;
 import java.util.*;
 import com.megacrit.cardcrawl.core.*;
 
-public class GhostFetch extends AbstractCard
+public class GhostFetch extends CustomCard
 {
     public static final String ID = "Ghost Fetch";
     private static final CardStrings cardStrings;
@@ -30,7 +33,7 @@ public class GhostFetch extends AbstractCard
     private static final int POOL = 1;
     
     public GhostFetch() {
-        super("Ghost Fetch", GhostFetch.NAME, "colorless/skill/goodInstincts", "colorless/skill/goodInstincts", 0, GhostFetch.DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+        super("Ghost Fetch", GhostFetch.NAME, "cards/replay/ghostfetch.png", 0, GhostFetch.DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
         this.exhaust = true;
 		this.isEthereal = true;
     }

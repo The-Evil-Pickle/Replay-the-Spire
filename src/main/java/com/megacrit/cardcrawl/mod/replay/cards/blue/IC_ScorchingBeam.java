@@ -38,7 +38,7 @@ public class IC_ScorchingBeam extends CustomCard
     private static final int COST = 2;
     
     public IC_ScorchingBeam() {
-        super("Scorching Beam", IC_ScorchingBeam.NAME, "cards/replay/replayBetaAttack.png", IC_ScorchingBeam.COST, IC_ScorchingBeam.DESCRIPTION, CardType.ATTACK, (AbstractDungeon.player == null) ? AbstractCard.CardColor.COLORLESS : ((AbstractDungeon.player instanceof Defect) ? AbstractCard.CardColor.RED : AbstractCard.CardColor.BLUE), (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(IronCore.ID)) ? CardRarity.UNCOMMON : CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
+        super("Scorching Beam", IC_ScorchingBeam.NAME, "cards/replay/scorching_beam.png", IC_ScorchingBeam.COST, IC_ScorchingBeam.DESCRIPTION, CardType.ATTACK, (AbstractDungeon.player == null) ? AbstractCard.CardColor.COLORLESS : ((AbstractDungeon.player instanceof Defect) ? AbstractCard.CardColor.RED : AbstractCard.CardColor.BLUE), (ReplayTheSpireMod.BypassStupidBasemodRelicRenaming_hasRelic(IronCore.ID)) ? CardRarity.UNCOMMON : CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
         this.baseDamage = 8;
         this.isMultiDamage = true;
         this.baseMagicNumber = 1;

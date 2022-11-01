@@ -748,7 +748,9 @@
 		" NL #b",
 		" 골드 만큼 빌립니다. 갚을 때까지 #r저주 카드를 1 장 덱에 넣습니다.",
 		"상점의 #y유물 비용이 #b",
-		"% 감소합니다. NL "
+		"% 감소합니다. NL ",
+		" NL [#2aecd7]Usable [#2aecd7]up [#2aecd7]to [#2aecd7]",
+	    " [#2aecd7]times [#2aecd7]per [#2aecd7]shop.[]"
 	]
   },
   "Replay:Drink Me": {

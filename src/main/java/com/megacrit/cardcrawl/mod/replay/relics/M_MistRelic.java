@@ -13,7 +13,9 @@ import com.megacrit.cardcrawl.mod.replay.cards.blue.ReplayOmegaCannon;
 import com.megacrit.cardcrawl.mod.replay.cards.blue.ReplayRepulse;
 import com.megacrit.cardcrawl.mod.replay.cards.blue.ReplaySort;
 import com.megacrit.cardcrawl.mod.replay.cards.blue.SystemScan;
+import com.megacrit.cardcrawl.mod.replay.cards.green.ExploitWeakness;
 import com.megacrit.cardcrawl.mod.replay.cards.green.FluidMovement;
+import com.megacrit.cardcrawl.mod.replay.cards.green.FromAllSides;
 import com.megacrit.cardcrawl.mod.replay.cards.green.HiddenBlade;
 import com.megacrit.cardcrawl.mod.replay.cards.green.PoisonSmokescreen;
 import com.megacrit.cardcrawl.mod.replay.cards.green.ShivToss;
@@ -136,6 +138,14 @@ public abstract class M_MistRelic extends AbstractRelic
         tmpPool.add(new NoxiousFumes());
         tmpPool.add(new PoisonedStab());
         tmpPool.add(new PoisonSmokescreen());
+    }
+    public static void cardlist_Weak(ArrayList<AbstractCard> tmpPool) {
+    	tmpPool.add(new SuckerPunch());
+        tmpPool.add(new ExploitWeakness());
+        tmpPool.add(new HeelHook());
+        tmpPool.add(new LegSweep());
+        tmpPool.add(new FromAllSides());
+        tmpPool.add(new Malaise());
     }
     public static void cardlist_Strength(ArrayList<AbstractCard> tmpPool) {
         tmpPool.add(new DoubleTap());
