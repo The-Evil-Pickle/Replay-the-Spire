@@ -29,6 +29,7 @@ public class ReplayBrewmasterCard extends CustomCard
     
     public ReplayBrewmasterCard() {
         super(ID, ReplayBrewmasterCard.NAME, "cards/replay/brewmaster.png", ReplayBrewmasterCard.COST, ReplayBrewmasterCard.DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.RARE, CardTarget.SELF);
+        this.tags.add(CardTags.HEALING);
         //this.isEthereal = true;
     }
     
