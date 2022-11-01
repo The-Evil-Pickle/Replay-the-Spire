@@ -1,0 +1,133 @@
+{
+  "Brew Option": {
+    "TEXT": [
+		"Brasser",
+		"Préparez 2 potions aléatoires.",
+		"Préparez 1 potion aléatoire. Surpasse le Sozu."
+	]
+  },
+  "Mine Option": {
+    "TEXT": [
+		"Miner",
+		"Gagnez 50-100 d'Or."
+	]
+  },
+  "Polymerize Option": {
+    "TEXT": [
+		"Polymériser",
+		"Transformez une carte.",
+		"Chosissez une carte à Transformer.",
+		" Action gratuite."
+	]
+  },
+  "Multitask Option": {
+    "TEXT": [
+		"Multitâche",
+		"Améliorez une carte aléatoire. Soignez-vous de 20% de vos PV max (",
+		" PV)."
+	]
+  },
+  "Prepare Option": {
+    "TEXT": [
+		"Préparer",
+		"Commencez le prochain combat avec 2 de Force et de Dexterité."
+	]
+  },
+  "Explore Option": {
+    "TEXT": [
+		"Explorer",
+		"Rencontrez un évènement aléatoire."
+	]
+  },
+  "Burn Branch Option": {
+    "TEXT": [
+		"Allumer la Branche",
+		"Perdez la Branche Morte. Obtenez une relique spéciale. Action gratuite."
+	]
+  },
+  "Re-Bottle Option": {
+    "TEXT": [
+		"Remettre en bouteille (",
+		")",
+		"Changez quelle carte cette relique embouteillée cible.",
+		" Action gratuite.",
+		"Pitch",
+		"Changez aléatoirement quelle carte la Balle de Baseball cible."
+	]
+  },
+  "Claw Rake": {
+    "TEXT": [
+		"Sélectionnez carte à défausser.",
+		"Sélectionnez cartes à défausser."
+	]
+  },
+  "ReduceCostToForTurnAction": {
+    "TEXT": [
+      "Réduisez le Coût"
+    ]
+  },
+  "PlannedCardIntent": {
+    "TEXT": [
+      "Intention: Statut",
+	  " a l'intention de vous donner ",
+	  "."
+    ]
+  },
+  "Replay:BombIntent": {
+    "TEXT": [
+      "Intention: Bombe",
+	  "Cet ennemi a l'intention de vous lancer une bombe ennemie qui infligera #b",
+	  " dégâts si elle n'est pas détruite dans #b3 tours."
+    ]
+  },
+  "Replay:SettingsNames": {
+	"TEXT": [
+		"Désactiver les Boss Custom",
+		"Customiser les Paramètres des Salles",
+		"Paramètres des Récompenses de Neow",
+		"Chance de l'Étiquette de Vente Normale",
+		"Chance de l'Étiquette de Vente Spéciale",
+		"Chance de l'Étiquette 2 pour 1",
+		"Chance de Mélanger les Stats de l'édition Spéciale",
+		"Chance de Feu de Joie",
+		"Chance de Portail",
+		"Filtre de carte: Rouge",
+		"Filtre de carte: Bleu",
+		"Filtre de carte: Vert",
+		"Filtre de carte: Incolore",
+		"Filtre de carte: Malédiction",
+		"Paramètres des Étiquettes de Vente"
+	]
+  },
+  "Replay:NeowSettings": {
+	"TEXT": [
+		"Cartes Basiques Aléatoires",
+		"Malédictions pour les Reliques de Boss (0 désactivées)",
+		"Les Malédictions des Reliques de Boss sont Destinées",
+		"Option de carte Incolore",
+		"Option d'Évènement aléatoire",
+		"Relique de départ -> options de remplacements par des reliques de boss",
+		"Désactivé",
+		"Activé sur les personnages ayant des reliques de départ importantes.",
+		"Activé sur tous les personnages"
+	]
+  },
+  "Replay:NeowOptions": {
+	"TEXT": [
+		"[ #rObtenez #r",
+		" #rcartes #rbasiques #raléatoires ",
+		"[ #gObtenez #gune #gcarte #galéatoire #gIncolore ]",
+		"[ #gRencontrez #gun #gévènement #galéatoire. ]",
+		" #rDestinée",
+		" #rMalédictions #gObtenez #gune #gRelique #gde #gboss #galéatoire ]",
+		"[ #rPerdez [E] #rau #rdébut #rde #rchaque #rtour. #gObtenez #g2 #gReliques #gde #gboss #galéatoires ]"
+	]
+  },
+  "Replay:SettingWarnings": {
+	"TEXT": [
+		"Le jeu doit être redémarré pour que les changements prennent effet!",
+		"Si un boss n'apparaît pas sur la liste, ",
+		"mettez Replay en bas de la liste de mods dans le launcher."
+	]
+  }
+}

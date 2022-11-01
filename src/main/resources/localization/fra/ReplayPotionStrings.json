@@ -1,0 +1,146 @@
+{
+  "Adrenaline Potion": {
+	"NAME": "Potion d'adrénaline",
+    "DESCRIPTIONS": [
+			"Piochez #b",
+			" carte",
+			" et gagnez #b",
+			" Énergies."
+	]
+  },
+  "Death Potion": {
+	"NAME": "Potion mortelle",
+    "DESCRIPTIONS": [
+			"Infligez #b",
+			" dégâts. Perdez #b",
+			" PV."
+	]
+  },
+  "Doom Potion": {
+	"NAME": "Potion catastrophique",
+    "DESCRIPTIONS": [
+			"Détruisez un ennemi après #b",
+			" tours."
+	]
+  },
+  "Elixir": {
+	"NAME": "Élixir",
+    "DESCRIPTIONS": [
+			"#yÉpuisez TOUTES les cartes #yStatut et #yMalédiction.",
+			"#yÉpuisez toutes les cartes #yStatut et #yMalédiction de votre main.",
+			"",
+			"Ça n'a eu aucun effet..."
+	]
+  },
+  "Spirit Potion": {
+	"NAME": "Potion spirituelle",
+    "DESCRIPTIONS": [
+			"Gagnez #b",
+			" #yd'Intangible."
+	]
+  },
+  "Thorns Potion": {
+	"NAME": "Potion épineuse",
+    "DESCRIPTIONS": [
+			"Gagnez #b",
+			" #yd'Épines."
+	]
+  },
+  "Toxic Potion": {
+	"NAME": "Potion toxique",
+    "DESCRIPTIONS": [
+			"Appliquez #b",
+			" de #yPoison #yNécrotique sur TOUS les ennemis.",
+			" #yVulnérabilité et de #b",
+			" #yFragilité."
+	]
+  },
+  "Venom Potion": {
+	"NAME": "Potion venimeuse",
+    "DESCRIPTIONS": [
+			"Appliquez #b",
+			" de #yPoison aux ennemis quand vous leur faites des dégâts.",
+			" Perdez #b",
+			" de #yForce."
+	]
+  },
+  "Ironskin Potion": {
+	"NAME": "Potion de Peau de Fer",
+    "DESCRIPTIONS": [
+			"Gagnez #b",
+			" #yd'Armure à la fin de chaque tour."
+	]
+  },
+  "Inspiration Potion": {
+	"NAME": "Potion d'Inspiration",
+    "DESCRIPTIONS": [
+			"Ajoutez un Pouvoir aléatoire Amélioré dans votre main.",
+			"Ajoutez un Pouvoir aléatoire Amélioré dans votre main.",
+			" NL Il coûte 0."
+	]
+  },
+  "Milkshake": {
+	"NAME": "Milkshake",
+    "DESCRIPTIONS": [
+			"Vous pouvez retenir jusqu'à #b",
+			" #yÉnergies pendant des tours jusqu'à la fin du combat."
+	]
+  },
+  "Cursed Concoction": {
+	"NAME": "Concoction maudite",
+    "DESCRIPTIONS": [
+			"Gagnez #b",
+			" de #yForce et #b",
+			" de #yDextérité. NL Ajoutez une #yMalédicition aléatoire dans votre pioche et votre défausse."
+	]
+  },
+  "Confusion Potion": {
+	"NAME": "Potion de Confusion",
+    "DESCRIPTIONS": [
+			"Appliquez #b",
+			" de #yConfusion."
+	]
+  },
+  "Salt Potion": {
+	"NAME": "Potion salée",
+    "DESCRIPTIONS": [
+			"Recommencez le combat. NL Votre adversaire pourrait être différent."
+	]
+  },
+  "ReplayShieldPotion": {
+	"NAME": "Potion de Bouclier",
+    "DESCRIPTIONS": [
+			"Gagnez #b",
+			" de #yBlindage."
+	]
+  },
+  "LifebloodPotion": {
+	"NAME": "Source de vie",
+    "DESCRIPTIONS": [
+			"Gagnez #b",
+			" de #yPV #yTemporaires."
+	]
+  },
+  "Languid Potion": {
+	"NAME": "Potion de Langueur",
+    "DESCRIPTIONS": [
+			"Appliquez #b",
+			" de #yLangueur."
+	]
+  },
+  "Reflective Coating": {
+	"NAME": "Revêtement réflecteur",
+    "DESCRIPTIONS": [
+			"Gagnez #b",
+			" de #yFlou. NL Gagnez #b",
+			" de #yRéflexion."
+	]
+  },
+  "Flashbang": {
+	"NAME": "Poudre flash",
+    "DESCRIPTIONS": [
+			"#yÉtourdissez un ennemi.",
+			"#yÉtourdissez tous les ennemis."
+	]
+  }
+}

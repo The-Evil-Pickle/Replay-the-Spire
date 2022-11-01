@@ -1,0 +1,192 @@
+{
+  "Captain Abe": {
+    "MOVES": [
+      "l'Effondrement",
+      "Ordres du Capitaine",
+      "Tirez la quille",
+      "Vol à l'aveugle",
+      "Dernier tour",
+      "Au-delà de l'enfer"
+    ],
+    "NAME": "Capitaine Abe",
+    "DIALOG": [
+      "@SORTEZ@ @LES@ @VOILES!@",
+      "@LEVEZ@ @L'ANCRE!@",
+      "@EN@ @AVANT@ NL @CHIEN@ @ENRAGÉ!@",
+      "@SABORDEZ@ @L'ÉPAVE!@",
+      "Meurs, terrien!",
+      "Tout le monde sur le pont!",
+      "Arg, J't'aurai pour ça!",
+      "~eh?~ NL ~Que?~",
+      "Capt'n Abe NL met les voiles une fois de plus!",
+      "Pense pas que tu puisses NL battre ~Capt'n~ ~Abe~ NL sans blessures!",
+      "~Je~ ~ne~ ~suis~ ~pas~ ~encore~ ~mort!~",
+      "... 'ttendez. Je suis mort.",
+      "~Arg!~ NL Fuyez terrien, ou NL @SOYEZ@ #r@MAUDIT@ @À@ @JAMAIS!@"
+    ]
+  },
+  "Pondfish": {
+    "MOVES": [
+      "Traîner en enfer",
+      "Lanterne Vivante",
+      "Râteau de dents",
+      "6 Pieds sous Terre",
+      "Splash"
+    ],
+    "NAME": "Poisson-lune",
+    "DIALOG": [
+      "...",
+      "o- >:["
+    ]
+  },
+  "FadingForestBoss": {
+    "MOVES": [
+		"Bienvenue...",
+		"La Forêt Guide",
+		"La Forêt se Renouvelle",
+		"La Forêt Protecte",
+		"La Forêt se Fade"
+	],
+    "NAME": "La Conteuse",
+    "DIALOG": [
+		"Venez, venez! NL J'ai une magnifique histoire à vous raconter.",
+		"Bienvenue, mon cher. NL Avez-vous un moment pour écouter une histoire d'une vieille femme?",
+		"Oh, de la compagnie! Voulez-vous entendre une histoire?",
+		"Bonjour, aventurier. NL J'ai une histoire qui devrait vous plaire. Vous voulez l'écouter?",
+		"Tout commença dans une mystérieuse forêt...",
+		"Il était une fois, dans un bois magique...",
+		"Il y a longtemps, un aventurier se perdit dans les bois...",
+		"On raconte que quelque part dans la Tour, une forêt d'arbres étranges a poussé...",
+		"Dans cette forêt on pouvait trouver toutes sortes de ~choses~ ~étranges~ ~et~ ~merveilleuses...~",
+		"Dans cette forêt on pouvait trouver toutes sortes de ~choses~ ~étranges~ ~et~ ~horribles...~",
+		"Mais la forêt portait une ~terrible~ ~malédiction...~",
+		"Les créatures de la forêt étaient familières, quoique ~étranges...~",
+		"On n'est jamais seul dans un tel endroit...",
+		"Les bois recueillaient moult créatures, chacune semblait ~pas~ ~tout~ ~à~ ~fait~ ~normale...~",
+		"Merci d'avoir écouté. La plupart s'enfuient avant la fin de l'histoire.",
+		"Vous êtes un gentil aventurier. NL Et un très bon auditeur!",
+		"Merci de m'avoir tenu compagnie. J'espère que vous avez apprécié l'histoire.",
+		"Merci de m'avoir fait plaisir. J'adore raconter des contes!",
+		"Revenez quand vous voulez, mon cher. J'ai plein d'autres histoires à raconter!",
+		"N'hésitez pas à revenir me voir un jour, je vous raconterai une nouvelle histoire."
+	]
+  },
+  "Replay:Hell Engine": {
+    "MOVES": [
+		"Sur le Départ",
+		"Charbons Ardents",
+		"Les Portes se Ferment",
+		"Train en fuite",
+		"Acier Vivant"
+    ],
+    "NAME": "Hell's Engine",
+    "DIALOG": [
+		""
+    ]
+  },
+  "Replay:Conductor": {
+    "MOVES": [
+		"Destination : Nulle Part",
+		"Veuillez Rester Assis",
+		"Explosifs Supplémentaires",
+		"Tireur de Rails",
+		"Cale à Bagages",
+		"Embraser le Moteur"
+    ],
+    "NAME": "The Conductor",
+    "DIALOG": [
+		"TCHOO TCHOO CONNARD"
+    ]
+  },
+  "Replay:ConductorBomb": {
+    "MOVES": [
+		""
+    ],
+    "NAME": "Dynamite",
+    "DIALOG": [
+		""
+    ]
+  },
+  "Replay:GhostMerchant": {
+    "MOVES": [
+		""
+    ],
+    "NAME": "Ghost Merchant",
+    "DIALOG": [
+		"~VENGEANCE...~",
+		"@...@",
+		"~Cadeau~ ~de~ ~la~ ~maison...~"
+    ]
+  },
+  "FF_ComboSlime_L": {
+    "MOVES": [
+      "Crachat mixte",
+      "Divison",
+      "Léchouille"
+    ],
+    "NAME": "Faux Combo Slime (L)",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "Replay:BlueRogue": {
+    "MOVES": [
+      "Lumière du Voleur",
+	  "Centre du Chaos",
+	  "Foncer desssus",
+	  "Explosifs capricieux",
+	  "Poignard"
+    ],
+    "NAME": "Mage Bleu",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "R_Hoarder": {
+    "MOVES": [
+      "Surflot",
+	  "Collecteur de Reliques"
+    ],
+    "NAME": "Accumulateur Rhapsodique",
+    "DIALOG": [
+      "Eh bien, votre pioche a l'air fine!",
+	  "Augmentons ce chiffre à, disons, ",
+	  " cartes?"
+    ]
+  },
+  "Replay:Snechameleon": {
+    "MOVES": [
+      "Regard Paralysant",
+	  "Saisisseurs",
+	  "Mâchonneurs"
+    ],
+    "NAME": "Geckaméléon",
+    "DIALOG": [
+		""
+    ]
+  },
+  "ReplayMimic": {
+    "MOVES": [
+      "Fermer le couvercle",
+      "Lame mimétique",
+      "Mimétisme fou",
+      "BOO!"
+    ],
+    "NAME": "Mimique",
+    "DIALOG": [
+      "Au dépourvu"
+    ]
+  },
+  "GremlinCook": {
+    "MOVES": [
+      "Servir",
+      "Surcuire"
+    ],
+    "NAME": "Chef Diablotin",
+    "DIALOG": [
+      "",
+      "Venez le chercher!",
+      "Eep!"
+    ]
+  }
+}

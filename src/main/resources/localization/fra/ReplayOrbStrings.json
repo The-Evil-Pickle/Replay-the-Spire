@@ -1,0 +1,52 @@
+{
+  "Light": {
+    "DESCRIPTION": [
+      "#yPassive: À la fin du tour, soignez-vous de #b",
+      ". NL #yActivation: Gagnez #b",
+      " de #yRégéneration."
+    ],
+    "NAME": "Lumineux"
+  },
+  "Crystal": {
+    "DESCRIPTION": [
+      "#yPassif: Les orbes adjacents gagnent #b+",
+      " de #yConcentration. NL #yActivation: Si vous avez moins de #b",
+      " amplacements d'orbe, gagnez-en un. NL L'effet #yPassif n'est pas affecté par la #yConcentration."
+    ],
+    "NAME": "Cristal"
+  },
+  "Glass": {
+    "DESCRIPTION": [
+      "#yPassif: Aucun effet.",
+      " NL #yActivation: Si vous avez plus de #b",
+	  " amplacements d'orbe, détruit celuil le plus à gauche et #yActive n'importe quel orbe qui y occupe (excepté ceux de verre).",
+      "#yPassif: À la fin du tour, gagnez #b",
+	  " de #yRéflection."
+    ],
+    "NAME": "Verre"
+  },
+  "Hellfire": {
+    "DESCRIPTION": [
+      "#yPassif: Au début du tour, gagnez #b",
+      " de #yForce jusqu'à la fin du tour. NL #yActivation: Gagnez #b",
+      " de #yForce jusqu'à la fin du tour et appliquez #yVulnérabilité à un ennemi aléatoire #b",
+	  " fois."
+    ],
+    "NAME": "Infernal"
+  },
+  "Acid": {
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, apply #b",
+      " #yPoison to a random enemy. NL #yEvoke: Replace all #yPoison with #yNecrotic #yPoison."
+    ],
+    "NAME": "Acid"
+  },
+  "ManaSpark": {
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, gain #b",
+      " #yCharge-Up. NL #yEvoke: Gain [E] and #b",
+      " #yCharge-Up."
+    ],
+    "NAME": "Manaspark"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "Dead Branch": {
+    "NAME": "Branche morte",
+    "FLAVOR": "La branche d'un arbre d'une époque oubliée.",
+    "DESCRIPTIONS": [
+      "Lorsque vous #yÉpuisez une carte, ajoutez une carte aléatoire dans votre main. NL Peut être #yBrûlée dans les sites de repos."
+    ]
+  }
+}

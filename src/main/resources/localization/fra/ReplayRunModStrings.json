@@ -1,0 +1,22 @@
+{
+	"replay:Chaotic": {
+		"NAME": "Chaotique",
+		"DESCRIPTION": "Commencez avec la \"Bague du Chaos\". Les cartes sont brouillées plus fréquemment."
+	},
+	"replay:Library Looter": {
+		"NAME": "Pilleur de bibliothèque",
+		"DESCRIPTION": "Chaque fois que vous ouvrez un coffre qui n'est pas de boss, choisissez 1 carte parmi 15 à obtenir."
+	},
+	"replay:Mists": {
+		"NAME": "Brumes",
+		"DESCRIPTION": "La première salle sera l'évènement ''Miroir brumeux''."
+	},
+	"replay:ALWAYS": {
+		"NAME": "ALWAYS WHALE",
+		"DESCRIPTION": "Neow apparaît souvent."
+	},
+	"replay:honeycakes": {
+		"NAME": "Gâteaux au miel",
+		"DESCRIPTION": "Commencez avec Pot de Miel et Cupcake à tête de chat."
+	}
+}

@@ -1,0 +1,37 @@
+{
+  "Replay:FocusUpMelody": {
+    "NAME": "Focus Up",
+    "DESCRIPTION": "Gain 1 Focus.",
+	"NOTES": [
+		"U", "O", "O"
+	]
+  },
+  "Replay:LightningMelody": {
+    "NAME": "Lightning",
+    "DESCRIPTION": "Channel 1 Lightning.",
+	"NOTES": [
+		"O", "A", "A"
+	]
+  },
+  "Replay:FrostMelody": {
+    "NAME": "Frost",
+    "DESCRIPTION": "Channel 1 Frost.",
+	"NOTES": [
+		"O", "B", "B"
+	]
+  },
+  "Replay:PlasmaMelody": {
+    "NAME": "Plasma",
+    "DESCRIPTION": "Channel 1 Plasma.",
+	"NOTES": [
+		"O", "U", "U", "O"
+	]
+  },
+  "Replay:ReflectMelody": {
+    "NAME": "Reflection",
+    "DESCRIPTION": "Gain 1 Reflection.",
+	"NOTES": [
+		"B", "A", "B", "A"
+	]
+  }
+}
