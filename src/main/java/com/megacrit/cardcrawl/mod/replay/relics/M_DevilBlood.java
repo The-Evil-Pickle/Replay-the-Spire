@@ -12,7 +12,7 @@ import theHexaghost.cards.*;
 import theHexaghost.cards.seals.FirstSeal;
 import theHexaghost.cards.seals.SixthSeal;
 import theHexaghost.ghostflames.AbstractGhostflame;
-import theHexaghost.util.OnChargeSubscriber;
+import theHexaghost.util.*;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.characters.AbstractPlayer.PlayerClass;

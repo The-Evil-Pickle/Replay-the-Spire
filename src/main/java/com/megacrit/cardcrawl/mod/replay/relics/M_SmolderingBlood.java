@@ -39,7 +39,7 @@ public class M_SmolderingBlood extends M_MistRelic implements ClickableRelic
     public static final String ID = "Replay:M_SmolderingBlood";
     private boolean usedThisFight;
     public M_SmolderingBlood() {
-        super(ID, "sizzlingBlood.png", LandingSound.MAGICAL, CardColor.PURPLE, CardColor.RED);
+        super(ID, "burningBlood_purple.png", LandingSound.MAGICAL, CardColor.PURPLE, CardColor.RED);
     }
     
     @Override

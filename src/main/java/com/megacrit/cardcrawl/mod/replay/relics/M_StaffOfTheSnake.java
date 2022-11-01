@@ -42,7 +42,7 @@ public class M_StaffOfTheSnake extends M_MistRelic
 {
     public static final String ID = "Replay:M_StaffOfTheSnake";
     public M_StaffOfTheSnake() {
-        super(ID, "sizzlingBlood.png", LandingSound.MAGICAL, CardColor.PURPLE, CardColor.GREEN);
+        super(ID, "snakeRing.png", LandingSound.MAGICAL, CardColor.PURPLE, CardColor.GREEN);
     }
     
     @Override
