@@ -1,5 +1,5 @@
 # Replay the Spire
-#### Expansion mod for Slay the Spire by The_Evil_Pickle, AstroPenguin642, Bakuhaku, Stewartisme, and Slimer509.
+#### Expansion mod for Slay the Spire by The_Evil_Pickle, DecadeDecaf, Bakuhaku, Stewartisme, and Slimer509.
 ###### (Currently maintained by The_Evil_Pickle)
 Support this mod at https://www.patreon.com/the_evil_pickle/overview
 
